@@ -65,6 +65,7 @@ export const ChapterIntentSchema = z.object({
   arcDirective: z.string().min(1).optional(),
   moodDirective: z.string().min(1).optional(),
   titleDirective: z.string().min(1).optional(),
+  conflictDirective: z.string().min(1).optional(),
   mustKeep: z.array(z.string()).default([]),
   mustAvoid: z.array(z.string()).default([]),
   styleEmphasis: z.array(z.string()).default([]),

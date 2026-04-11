@@ -56,6 +56,65 @@ const COLLECTIVE_SHOCK_PATTERNS = [
   /(?:全场|一片)[，,]?(?:寂静|哗然|沸腾|震动)/,
 ];
 
+// --- Internal monologue ending detector ---
+
+function detectInternalMonologueEnding(
+  content: string,
+  language: "zh" | "en",
+): ReadonlyArray<PostWriteViolation> {
+  const violations: PostWriteViolation[] = [];
+
+  const paragraphs = content
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter((p) => p.length > 0)
+    .filter((p) => !p.startsWith("#"))
+    .filter((p) => p !== "---");
+
+  if (paragraphs.length < 2) return [];
+  const lastParagraph = paragraphs[paragraphs.length - 1]!;
+
+  // Good ending signals
+  const hasDialogue = /[""「『]/.test(lastParagraph);
+  const hasExternalScene = /(?:门|门响|脚步声|来人|火光|灯火|雷声|雨声|烟|影|灯灭|灭了|月|星辰|夜风|风|雪|云|鸟鸣|犬吠|更鼓|鼓声|钟声|水声|余烬|灶火)/.test(lastParagraph);
+  // Future-event promise is a hook, not monologue
+  const hasFuturePromise = /(?:三天后|明日|明天|后天|当晚|当夜|待到)/.test(lastParagraph)
+    && /(?:见分晓|再|答案|届时|动手)/.test(lastParagraph);
+
+  // Subjective word count
+  const subjMarkers = ["也许", "可能", "大概", "估计", "想必", "只需", "只需要"];
+  let subjCount = 0;
+  for (const m of subjMarkers) {
+    if (lastParagraph.includes(m)) subjCount++;
+  }
+
+  // Bad ending signals
+  const hasMentalVerb = /(?:他|她|它)(?:想|琢磨|盘算|暗忖|衡量|算计)(?:着|的)?/.test(lastParagraph);
+  const hasReflection = /(?:这就是|这便是).{1,15}?的.*[。！？]$/.test(lastParagraph);
+  // Planning without specific promise
+  const hasPlanning = /(?:明天|后天|接下来)[，,]?(?:要|得|该|先)/.test(lastParagraph) && !hasFuturePromise;
+
+  const isBadEnding = !hasDialogue
+    && !hasExternalScene
+    && !hasFuturePromise
+    && (hasMentalVerb || hasReflection || hasPlanning || subjCount >= 2);
+
+  if (isBadEnding) {
+    violations.push({
+      rule: language === "en" ? "internal-monologue-ending" : "内心独白结尾",
+      severity: "error",
+      description: language === "en"
+        ? "Chapter ends with protagonist internal monologue (reflection/planning without external event)."
+        : "章节以主角内心独白收尾（反思/计划式结尾，无外部事件），违反「禁止内心独白结尾」规则。",
+      suggestion: language === "en"
+        ? "End with an external event, an unanswered question, or a character action—not the protagonist's thoughts."
+        : "改为具体外部事件/动作/对话收尾。例如：有人敲门、意外来客、远处异响、悬念对话未答。",
+    });
+  }
+
+  return violations;
+}
+
 // --- Validator ---
 
 export function validatePostWrite(
@@ -165,7 +224,24 @@ export function validatePostWrite(
     });
   }
 
-  // 7. 作者说教词
+  // 7. 正文中的章节号指称（如"第33章"、"chapter 33"）
+  const chapterRefPattern = /(?:第\s*\d+\s*章|[Cc]hapter\s+\d+)/g;
+  const chapterRefs = content.match(chapterRefPattern);
+  if (chapterRefs && chapterRefs.length > 0) {
+    const unique = [...new Set(chapterRefs)];
+    violations.push({
+      rule: isEnglish ? "chapter-number-reference" : "章节号指称",
+      severity: "error",
+      description: isEnglish
+        ? `Chapter text contains explicit chapter number references: ${unique.map(r => `"${r}"`).join(", ")}. Characters do not know they are in a numbered chapter.`
+        : `正文中出现了章节号指称：${unique.map(r => `"${r}"`).join("、")}。角色不知道自己在第几章。`,
+      suggestion: isEnglish
+        ? "Replace with natural references: 'that night', 'when the warehouse burned', 'the incident at the dock'"
+        : '改成自然表达："那天晚上"、"仓库出事那次"、"码头上的事"',
+    });
+  }
+
+  // 8. 作者说教词
   const foundSermons: string[] = [];
   for (const word of SERMON_WORDS) {
     if (content.includes(word)) {
@@ -238,7 +314,10 @@ export function validatePostWrite(
 
   violations.push(...detectParagraphShapeWarnings(content, "zh"));
 
-  // 11. Book-level prohibitions
+  // 11. 章节结尾类型检查：禁止以主角内心独白/盘算收尾
+  violations.push(...detectInternalMonologueEnding(content, "zh"));
+
+  // 12. Book-level prohibitions
   // Short prohibitions (2-30 chars): exact substring match
   // Long prohibitions (>30 chars): skip — these are conceptual rules for prompt-level enforcement only
   if (bookRules?.prohibitions) {

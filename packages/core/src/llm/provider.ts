@@ -257,6 +257,32 @@ function wrapStreamRequiredError(
   );
 }
 
+// === Retry helper for transient server errors ===
+
+const RETRYABLE_STATUSES = ["500", "429"];
+
+function isRetryable(error: unknown): boolean {
+  return RETRYABLE_STATUSES.some((s) => String(error).includes(s));
+}
+
+async function retryOnTransientError<T>(fn: () => Promise<T>, maxAttempts = 3): Promise<T> {
+  let lastError: unknown;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastError = err;
+      if (attempt < maxAttempts && isRetryable(err)) {
+        const delay = Math.pow(2, attempt) * 1000;
+        await new Promise((resolve) => setTimeout(resolve, delay));
+      } else {
+        break;
+      }
+    }
+  }
+  throw lastError;
+}
+
 // === Simple Chat (used by all agents via BaseAgent.chat()) ===
 
 export async function chatCompletion(
@@ -280,20 +306,21 @@ export async function chatCompletion(
   const onStreamProgress = options?.onStreamProgress;
   const errorCtx = { baseUrl: client._openai?.baseURL ?? "(anthropic)", model };
 
+  const dispatch = (): Promise<LLMResponse> =>
+    client.provider === "anthropic"
+      ? client.stream
+        ? chatCompletionAnthropic(client._anthropic!, model, messages, resolved, client.defaults.thinkingBudget, onStreamProgress)
+        : chatCompletionAnthropicSync(client._anthropic!, model, messages, resolved, client.defaults.thinkingBudget)
+      : client.apiFormat === "responses"
+        ? client.stream
+          ? chatCompletionOpenAIResponses(client._openai!, model, messages, resolved, options?.webSearch, onStreamProgress)
+          : chatCompletionOpenAIResponsesSync(client._openai!, model, messages, resolved, options?.webSearch)
+        : client.stream
+          ? chatCompletionOpenAIChat(client._openai!, model, messages, resolved, options?.webSearch, onStreamProgress)
+          : chatCompletionOpenAIChatSync(client._openai!, model, messages, resolved, options?.webSearch);
+
   try {
-    if (client.provider === "anthropic") {
-      return client.stream
-        ? await chatCompletionAnthropic(client._anthropic!, model, messages, resolved, client.defaults.thinkingBudget, onStreamProgress)
-        : await chatCompletionAnthropicSync(client._anthropic!, model, messages, resolved, client.defaults.thinkingBudget);
-    }
-    if (client.apiFormat === "responses") {
-      return client.stream
-        ? await chatCompletionOpenAIResponses(client._openai!, model, messages, resolved, options?.webSearch, onStreamProgress)
-        : await chatCompletionOpenAIResponsesSync(client._openai!, model, messages, resolved, options?.webSearch);
-    }
-    return client.stream
-      ? await chatCompletionOpenAIChat(client._openai!, model, messages, resolved, options?.webSearch, onStreamProgress)
-      : await chatCompletionOpenAIChatSync(client._openai!, model, messages, resolved, options?.webSearch);
+    return await retryOnTransientError(dispatch);
   } catch (error) {
     // Stream interrupted but partial content is usable — return truncated response
     if (error instanceof PartialResponseError) {
@@ -405,8 +432,22 @@ async function chatCompletionOpenAIChat(
     ...(webSearch ? { web_search_options: { search_context_size: "medium" as const } } : {}),
     ...stripReservedKeys(options.extra),
   };
+  const abortController = new AbortController();
+  let lastChunkTime = Date.now();
+  let idleTimer: ReturnType<typeof setTimeout> | undefined;
+
+  // Abort after 11min of inactivity — MiniMax API enforces a 10min/server-side timeout.
+  // Setting a slightly longer client timeout so the abort fires close to that limit,
+  // allowing a fast retry rather than waiting for an indefinite hang.
+  const IDLE_TIMEOUT_MS = 660_000;
+  const resetIdleTimer = () => {
+    if (idleTimer) clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => abortController.abort(), IDLE_TIMEOUT_MS);
+  };
+  resetIdleTimer();
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const stream = await client.chat.completions.create(createParams) as any;
+  const stream = await client.chat.completions.create({ ...createParams, signal: abortController.signal }) as any;
 
   const chunks: string[] = [];
   let inputTokens = 0;
@@ -415,6 +456,8 @@ async function chatCompletionOpenAIChat(
 
   try {
     for await (const chunk of stream) {
+      lastChunkTime = Date.now();
+      resetIdleTimer();
       const delta = chunk.choices[0]?.delta?.content;
       if (delta) {
         chunks.push(delta);
@@ -427,6 +470,7 @@ async function chatCompletionOpenAIChat(
     }
   } catch (streamError) {
     monitor.stop();
+    if (idleTimer) clearTimeout(idleTimer);
     const partial = chunks.join("");
     if (partial.length >= MIN_SALVAGEABLE_CHARS) {
       throw new PartialResponseError(partial, streamError);
@@ -434,6 +478,7 @@ async function chatCompletionOpenAIChat(
     throw streamError;
   } finally {
     monitor.stop();
+    if (idleTimer) clearTimeout(idleTimer);
   }
 
   const content = chunks.join("");
@@ -592,6 +637,16 @@ async function chatCompletionOpenAIResponses(
     ? [{ type: "web_search_preview" as const }]
     : undefined;
 
+  const abortController = new AbortController();
+  let idleTimer: ReturnType<typeof setTimeout> | undefined;
+  // MiniMax API enforces a 10min/server-side timeout; use 11min client-side buffer.
+  const IDLE_TIMEOUT_MS = 660_000;
+  const resetIdleTimer = () => {
+    if (idleTimer) clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => abortController.abort(), IDLE_TIMEOUT_MS);
+  };
+  resetIdleTimer();
+
   const stream = await client.responses.create({
     model,
     input,
@@ -599,7 +654,7 @@ async function chatCompletionOpenAIResponses(
     max_output_tokens: options.maxTokens,
     stream: true,
     ...(tools ? { tools } : {}),
-  });
+  }, { signal: abortController.signal });
 
   const chunks: string[] = [];
   let inputTokens = 0;
@@ -608,6 +663,7 @@ async function chatCompletionOpenAIResponses(
 
   try {
     for await (const event of stream) {
+      resetIdleTimer();
       if (event.type === "response.output_text.delta") {
         chunks.push(event.delta);
         monitor.onChunk(event.delta);
@@ -619,6 +675,7 @@ async function chatCompletionOpenAIResponses(
     }
   } catch (streamError) {
     monitor.stop();
+    if (idleTimer) clearTimeout(idleTimer);
     const partial = chunks.join("");
     if (partial.length >= MIN_SALVAGEABLE_CHARS) {
       throw new PartialResponseError(partial, streamError);
@@ -626,6 +683,7 @@ async function chatCompletionOpenAIResponses(
     throw streamError;
   } finally {
     monitor.stop();
+    if (idleTimer) clearTimeout(idleTimer);
   }
 
   const content = chunks.join("");
@@ -782,6 +840,16 @@ async function chatCompletionAnthropic(
     .join("\n\n");
   const nonSystem = messages.filter((m) => m.role !== "system");
 
+  const abortController = new AbortController();
+  let idleTimer: ReturnType<typeof setTimeout> | undefined;
+  // MiniMax API enforces a 10min/server-side timeout; use 11min client-side buffer.
+  const IDLE_TIMEOUT_MS = 660_000;
+  const resetIdleTimer = () => {
+    if (idleTimer) clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => abortController.abort(), IDLE_TIMEOUT_MS);
+  };
+  resetIdleTimer();
+
   const stream = await client.messages.create({
     model,
     ...(systemText ? { system: systemText } : {}),
@@ -794,7 +862,7 @@ async function chatCompletionAnthropic(
       : { temperature: options.temperature }),
     max_tokens: options.maxTokens,
     stream: true,
-  });
+  }, { signal: abortController.signal });
 
   const chunks: string[] = [];
   let inputTokens = 0;
@@ -803,6 +871,7 @@ async function chatCompletionAnthropic(
 
   try {
     for await (const event of stream) {
+      resetIdleTimer();
       if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
         chunks.push(event.delta.text);
         monitor.onChunk(event.delta.text);
@@ -816,6 +885,7 @@ async function chatCompletionAnthropic(
     }
   } catch (streamError) {
     monitor.stop();
+    if (idleTimer) clearTimeout(idleTimer);
     const partial = chunks.join("");
     if (partial.length >= MIN_SALVAGEABLE_CHARS) {
       throw new PartialResponseError(partial, streamError);
@@ -823,6 +893,7 @@ async function chatCompletionAnthropic(
     throw streamError;
   } finally {
     monitor.stop();
+    if (idleTimer) clearTimeout(idleTimer);
   }
 
   const content = chunks.join("");

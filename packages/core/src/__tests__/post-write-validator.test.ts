@@ -275,3 +275,51 @@ describe("validatePostWrite", () => {
     expect(result.title).toContain("塔楼");
   });
 });
+
+describe("章节结尾类型检查", () => {
+  function findEnding(violations: ReadonlyArray<PostWriteViolation>) {
+    return violations.find(v => v.rule === "内心独白结尾");
+  }
+
+  it("✓ 对话结尾是好的", () => {
+    const content = `他走过去，敲了敲门。\n\n门外传来一个低沉的声音："进来吧。"`;
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findEnding(result)).toBeUndefined();
+  });
+
+  it("✓ 外部场景描写结尾是好的", () => {
+    const content = `他走出门，雨已经小了。\n\n远处，青云门的灯火彻夜未熄。`;
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findEnding(result)).toBeUndefined();
+  });
+
+  it("✓ 未来承诺结尾是好的（三天后+具体事件）", () => {
+    const content = `他转身离去，背影消失在夜色中。\n\n三天后，枯井边见分晓。`;
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findEnding(result)).toBeUndefined();
+  });
+
+  it("✗ 主角内心盘算结尾是违规", () => {
+    const content = `他躺在床上，闭上眼睛。\n\n他想，明天得想个办法把这件事解决了。`;
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findEnding(result)?.severity).toBe("error");
+  });
+
+  it("✗ 反思式结尾是违规（这就是...的...）", () => {
+    const content = "他望着窗外的夜色。\n\n这就是他一直追寻的意义。";
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findEnding(result)?.severity).toBe("error");
+  });
+
+  it("✗ 计划式结尾无外部事件是违规", () => {
+    const content = `他站起身，拍了拍衣服上的土。\n\n明天要去找那个猎人问清楚情况。`;
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findEnding(result)?.severity).toBe("error");
+  });
+
+  it("✗ 多主观词结尾无外部事件是违规", () => {
+    const content = `门关上了，夜色吞没了最后一点光。\n\n也许，这就是命吧。大概如此。`;
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findEnding(result)?.severity).toBe("error");
+  });
+});

@@ -16,7 +16,7 @@ export function buildEnglishCoreRules(_book: BookConfig): string {
 ### Narrative Technique
 6. **Show, don't tell**: Convey through action and sensory detail, not exposition. Values expressed through behavior, not declared.
 7. **Sensory grounding**: Each scene includes 1-2 sensory details beyond the visual.
-8. **Chapter hooks**: Every chapter ending needs a hook—question, reveal, threat, promise.
+8. **Chapter hooks (required)**: Every chapter ending must close with an external event/action/dialogue—not the protagonist's inner thoughts. ✓ Good: a knock at the door, an unexpected visitor, an overheard conversation, a strange mark discovered. ✗ Bad: the protagonist thinking about tomorrow's plans, summing up what happened, musing on the situation.
 9. **Information layering**: Worldbuilding emerges through action. Key lore revealed at plot-critical moments. Never dump exposition.
 10. **Description serves narrative**: Environment descriptions set mood or foreshadow. One line is enough.
 11. **Downtime earns its place**: Quiet scenes must plant hooks, advance relationships, or build contrast. Pure filler is padding.

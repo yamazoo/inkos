@@ -163,9 +163,15 @@ ${gp.numericalSystem ? `numericalSystemOverrides:
   resourceTypes: [(核心资源类型列表)]` : ""}
 prohibitions:
   - (3-5条本书禁忌)
+progressiveDisclosure:
+  unknownWorldMysteries: []
+  mandatoryRules:
+    - 禁止在铺垫前揭露世界真相——必须先有"异常/线索"（≥3章），再揭露答案
+    - 禁止旁白灌输——世界观通过角色行为、对话、物品传达
 chapterTypesOverride: []
 fatigueWordsOverride: []
-additionalAuditDimensions: []
+additionalAuditDimensions:
+  - 渐进式披露：世界真相揭露前必须有≥3章铺垫
 enableFullCastTracking: false
 ---
 
@@ -174,7 +180,11 @@ enableFullCastTracking: false
 
 ## 核心冲突驱动
 (描述本书的核心矛盾和驱动力)
+
+## 渐进式世界观揭露设计
+(每个核心世界真相：谜题名 → 铺垫方式 → 揭露章节)
 \`\`\``;
+
 
     const currentStatePrompt = resolvedLanguage === "en"
       ? `Initial state card (Chapter 0), include:
@@ -186,7 +196,10 @@ enableFullCastTracking: false
 | Current Goal | (first goal) |
 | Current Constraint | (initial constraint) |
 | Current Alliances | (initial relationships) |
-| Current Conflict | (first conflict) |`
+| Current Conflict | (first conflict) |
+| protagonistKnowsNow | (what the protagonist knows at the start — facts, not guesses) |
+| protagonistDoesNotKnow | (what is still [UNKNOWN] — these are the world's mysteries the story will gradually reveal) |
+| readerSuspenseAnchors | (3-5 key mysteries that keep readers reading — format: "Mystery: revealed at chapter X") |`
       : `初始状态卡（第0章），包含：
 | 字段 | 值 |
 |------|-----|
@@ -196,7 +209,10 @@ enableFullCastTracking: false
 | 当前目标 | (第一个目标) |
 | 当前限制 | (初始限制) |
 | 当前敌我 | (初始关系) |
-| 当前冲突 | (第一个冲突) |`;
+| 当前冲突 | (第一个冲突) |
+| 主角已知世界真相 | (主角开篇就知道的事实，而非猜测) |
+| 主角未知（[未知]标注） | (世界观谜题，故事将逐步揭露，例如：[未知]末法原因) |
+| 读者悬念锚点 | (3-5个核心悬念，格式：悬念名：预计在第X章揭露) |`;
 
     const pendingHooksPrompt = resolvedLanguage === "en"
       ? `Initial hook pool (Markdown table):
@@ -206,7 +222,8 @@ Rules for the hook table:
 - Column 5 must be a pure chapter number, never natural-language description
 - During book creation, all planned hooks are still unapplied, so last_advanced_chapter = 0
 - Column 7 must be one of: immediate / near-term / mid-arc / slow-burn / endgame
-- If you want to describe the initial clue/signal, put it in notes instead of column 5`
+- If you want to describe the initial clue/signal, put it in notes instead of column 5
+- **Do NOT include planning/checklist rows** (e.g. rows with empty type — only real hooks with a non-empty type belong in the table)`
       : `初始伏笔池（Markdown表格）：
 | hook_id | 起始章节 | 类型 | 状态 | 最近推进 | 预期回收 | 回收节奏 | 备注 |
 
@@ -214,7 +231,8 @@ Rules for the hook table:
 - 第5列必须是纯数字章节号，不能写自然语言描述
 - 建书阶段所有伏笔都还没正式推进，所以第5列统一填 0
 - 第7列必须填写：立即 / 近期 / 中程 / 慢烧 / 终局 之一
-- 如果要说明“初始线索/最初信号”，写进备注，不要写进第5列`;
+- 如果要说明”初始线索/最初信号”，写进备注，不要写进第5列
+- **禁止混入规划/清单类行**（如”书名”、”主角”、”时代”等非伏笔条目）`;
 
     const finalRequirementsPrompt = resolvedLanguage === "en"
       ? `Generated content must:
@@ -225,7 +243,13 @@ ${powerBlock}
 ${eraBlock}
 3. Give the protagonist a clear personality and behavioral boundaries
 4. Keep hooks and payoffs coherent
-5. Make supporting characters independently motivated rather than pure tools`
+5. Make supporting characters independently motivated rather than pure tools
+6. Progressive Disclosure Principle — ALL books must follow this:
+   - The world truth files (current_state.md) must distinguish between "what the protagonist knows NOW" vs "what is still unknown"
+   - Mark world-building mysteries as [UNKNOWN] — the protagonist learns them through events, not narration
+   - NEVER reveal world secrets before planting at least 3 "clue / anomaly" chapters first
+   - NEVER use narrator voice to dump world lore — convey truth through character behavior, dialogue, or artifacts
+   - The protagonist's knowledge boundary = the reader's suspense boundary (first-person limited)`
       : `生成内容必须：
 1. 符合${book.platform}平台口味
 2. 符合${gp.name}题材特征
@@ -234,7 +258,13 @@ ${powerBlock}
 ${eraBlock}
 3. 主角人设鲜明，有明确行为边界
 4. 伏笔前后呼应，不留悬空线
-5. 配角有独立动机，不是工具人`;
+5. 配角有独立动机，不是工具人
+6. 【渐进式世界观披露原则】—— 所有书籍必须遵循：
+   - 世界真相文件（current_state.md）必须区分"主角当前已知"和"主角仍然未知"
+   - 世界观谜题必须标注 [未知] —— 主角通过事件探索来发现，而非旁白灌输
+   - 禁止在至少3章"异常/线索"铺垫之前揭露世界真相
+   - 禁止用叙述者旁白直接倾倒世界观 —— 必须通过角色行为、对话或物品来传达
+   - 主角认知边界 = 读者悬念边界（第一人称有限视角）`;
 
     const systemPrompt = `你是一个专业的网络小说架构师。你的任务是为一本新的${gp.name}小说生成完整的基础设定。${contextBlock}${reviewFeedbackBlock}
 
@@ -279,7 +309,7 @@ ${finalRequirementsPrompt}`;
     const response = await this.chat([
       { role: "system", content: langPrefix + systemPrompt },
       { role: "user", content: userMessage },
-    ], { maxTokens: 16384, temperature: 0.8 });
+    ], { maxTokens: 32768, temperature: 0.8 });
 
     return this.parseSections(response.content);
   }
@@ -351,6 +381,7 @@ ${finalRequirementsPrompt}`;
     chaptersText: string,
     externalContext?: string,
     reviewFeedback?: string,
+    options?: { readonly importMode?: "continuation" | "series" },
   ): Promise<ArchitectOutput> {
     const { profile: gp, body: genreBody } =
       await readGenreProfile(this.ctx.projectRoot, book.genre);
@@ -522,23 +553,107 @@ ${numericalBlock}
 ${powerBlock}
 ${eraBlock}`;
 
-    const systemPrompt = `你是一个专业的网络小说架构师。你的任务是从已有的小说正文中反向推导完整的基础设定。${contextBlock}
+    const isSeries = options?.importMode === "series";
+    const continuationDirectiveEn = isSeries
+      ? `## Continuation Direction Requirements (Critical)
+The continuation portion (chapters in volume_outline that have not happened yet) must open up **new narrative space**:
+1. **New conflict dimension**: Do not merely stretch the imported conflict longer. Introduce at least one new conflict vector not yet covered by the source text (new character, new faction, new location, or new time horizon)
+2. **Ignite within 5 chapters**: The first continuation volume must establish a fresh suspense engine within 5 chapters. Do not spend 3 chapters recapping known information
+3. **Scene freshness**: At least 50% of key continuation scenes must happen in locations or situations not already used in the imported chapters
+4. **No repeated meeting rooms**: If the imported chapters end on a meeting/discussion beat, the continuation must restart from action instead of opening another meeting`
+      : `## Continuation Direction
+The volume_outline should naturally extend the existing narrative arc. Continue from where the imported chapters left off — advance existing conflicts, pay off planted hooks, and introduce new complications that arise organically from the current situation. Do not recap known information.`;
+    const continuationDirectiveZh = isSeries
+      ? `## 续写方向要求（关键）
+续写部分（volume_outline 中尚未发生的章节）必须设计**新的叙事空间**：
+1. **新冲突维度**：续写不能只是把导入章节的冲突继续拉长。必须引入至少一个原文未涉及的新冲突方向（新角色、新势力、新地点、新时间跨度）
+2. **5章内引爆**：续写的第一卷必须在前5章内建立新悬念，不允许用3章回顾已知信息
+3. **场景新鲜度**：续写部分至少50%的关键场景发生在导入章节未出现的地点或情境中
+4. **不重复会议**：如果导入章节以会议/讨论结束，续写必须从行动开始，不能再开一轮会`
+      : `## 续写方向
+卷纲应自然延续已有叙事弧线。从导入章节的结尾处接续——推进现有冲突、兑现已埋伏笔、引入从当前局势中有机产生的新变数。不要回顾已知信息。`;
 
-## 工作模式
+    const workingModeEn = isSeries
+      ? `## Working Mode
+
+This is not a zero-to-one foundation pass. You must extract durable story truth from the imported chapters **and design a continuation path**. You need to:
+1. Extract worldbuilding, factions, characters, and systems from the source text -> generate story_bible
+2. Infer narrative structure and future arc direction -> generate volume_outline (review existing chapters + design a **new continuation direction**)
+3. Infer protagonist lock, prohibitions, and narrative constraints from character behavior -> generate book_rules
+4. Reflect the latest chapter state -> generate current_state
+5. Extract all active hooks already planted in the text -> generate pending_hooks`
+      : `## Working Mode
+
+This is not a zero-to-one foundation pass. You must extract durable story truth from the imported chapters **and preserve a clean continuation path**. You need to:
+1. Extract worldbuilding, factions, characters, and systems from the source text -> generate story_bible
+2. Infer narrative structure and near-future arc direction -> generate volume_outline (review existing chapters + continue naturally from where the imported chapters stop)
+3. Infer protagonist lock, prohibitions, and narrative constraints from character behavior -> generate book_rules
+4. Reflect the latest chapter state -> generate current_state
+5. Extract all active hooks already planted in the text -> generate pending_hooks`;
+    const workingModeZh = isSeries
+      ? `## 工作模式
 
 这不是从零创建，而是从已有正文中提取和推导，**并设计续写方向**。你需要：
 1. 从正文中提取世界观、势力、角色、力量体系 → 生成 story_bible
 2. 从叙事结构推断卷纲 → 生成 volume_outline（已有章节的回顾 + **续写部分的新方向设计**）
 3. 从角色行为推断主角锁定和禁忌 → 生成 book_rules
 4. 从最新章节状态推断 current_state（反映最后一章结束时的状态）
-5. 从正文中识别已埋伏笔 → 生成 pending_hooks
+5. 从正文中识别已埋伏笔 → 生成 pending_hooks`
+      : `## 工作模式
 
-## 续写方向要求（关键）
-续写部分（volume_outline 中尚未发生的章节）必须设计**新的叙事空间**：
-1. **新冲突维度**：续写不能只是把导入章节的冲突继续拉长。必须引入至少一个原文未涉及的新冲突方向（新角色、新势力、新地点、新时间跨度）
-2. **5章内引爆**：续写的第一卷必须在前5章内建立新悬念，不允许用3章回顾已知信息
-3. **场景新鲜度**：续写部分至少50%的关键场景发生在导入章节未出现的地点或情境中
-4. **不重复会议**：如果导入章节以会议/讨论结束，续写必须从行动开始，不能再开一轮会
+这不是从零创建，而是从已有正文中提取和推导，**并为自然续写保留清晰延续路径**。你需要：
+1. 从正文中提取世界观、势力、角色、力量体系 → 生成 story_bible
+2. 从叙事结构推断卷纲 → 生成 volume_outline（回顾已有章节，并从导入章节结束处自然接续）
+3. 从角色行为推断主角锁定和禁忌 → 生成 book_rules
+4. 从最新章节状态推断 current_state（反映最后一章结束时的状态）
+5. 从正文中识别已埋伏笔 → 生成 pending_hooks`;
+
+    const systemPrompt = resolvedLanguage === "en"
+      ? `You are a professional web-fiction architect. Your task is to reverse-engineer a complete foundation from existing chapters.${contextBlock}
+
+${workingModeEn}
+
+All output sections — story_bible, volume_outline, book_rules, current_state, and pending_hooks — MUST be written in English. Keep the === SECTION: === tags unchanged.
+
+${continuationDirectiveEn}
+${reviewFeedbackBlock}
+## Book Metadata
+
+- Title: ${book.title}
+- Platform: ${book.platform}
+- Genre: ${gp.name} (${book.genre})
+- Target Chapters: ${book.targetChapters}
+- Chapter Target Length: ${book.chapterWordCount}
+
+## Genre Profile
+
+${genreBody}
+
+## Output Contract
+
+Generate the following sections. Separate every section with === SECTION: <name> ===:
+
+=== SECTION: story_bible ===
+${storyBiblePrompt}
+
+=== SECTION: volume_outline ===
+${volumeOutlinePrompt}
+
+=== SECTION: book_rules ===
+${bookRulesPrompt}
+
+=== SECTION: current_state ===
+${currentStatePrompt}
+
+=== SECTION: pending_hooks ===
+${pendingHooksPrompt}
+
+${keyPrinciplesPrompt}`
+      : `你是一个专业的网络小说架构师。你的任务是从已有的小说正文中反向推导完整的基础设定。${contextBlock}
+
+${workingModeZh}
+
+${continuationDirectiveZh}
 ${reviewFeedbackBlock}
 ## 书籍信息
 
@@ -777,25 +892,28 @@ ${trimmed}\n`;
     }
 
     const language: "zh" | "en" = /[\u4e00-\u9fff]/.test(section) ? "zh" : "en";
-    const normalizedHooks = dataRows.map((row, index) => {
-      const rawProgress = row[4] ?? "";
-      const normalizedProgress = this.parseHookChapterNumber(rawProgress);
-      const seedNote = normalizedProgress === 0 && this.hasNarrativeProgress(rawProgress)
-        ? (language === "zh" ? `初始线索：${rawProgress}` : `initial signal: ${rawProgress}`)
-        : "";
-      const notes = this.mergeHookNotes(row[6] ?? "", seedNote, language);
+    const normalizedHooks = dataRows
+      .map((row, index) => {
+        const rawProgress = row[4] ?? "";
+        const normalizedProgress = this.parseHookChapterNumber(rawProgress);
+        const seedNote = normalizedProgress === 0 && this.hasNarrativeProgress(rawProgress)
+          ? (language === "zh" ? `初始线索：${rawProgress}` : `initial signal: ${rawProgress}`)
+          : "";
+        const notes = this.mergeHookNotes(row[6] ?? "", seedNote, language);
 
-      return {
-        hookId: row[0] || `hook-${index + 1}`,
-        startChapter: this.parseHookChapterNumber(row[1]),
-        type: row[2] ?? "",
-        status: row[3] ?? "open",
-        lastAdvancedChapter: normalizedProgress,
-        expectedPayoff: row[5] ?? "",
-        payoffTiming: row.length >= 8 ? row[6] ?? "" : "",
-        notes: row.length >= 8 ? this.mergeHookNotes(row[7] ?? "", seedNote, language) : notes,
-      };
-    });
+        return {
+          hookId: row[0] || `hook-${index + 1}`,
+          startChapter: this.parseHookChapterNumber(row[1]),
+          type: row[2] ?? "",
+          status: row[3] ?? "open",
+          lastAdvancedChapter: normalizedProgress,
+          expectedPayoff: row[5] ?? "",
+          payoffTiming: row.length >= 8 ? row[6] ?? "" : "",
+          notes: row.length >= 8 ? this.mergeHookNotes(row[7] ?? "", seedNote, language) : notes,
+        };
+      })
+      // Skip rows where type is empty (e.g. template/planning rows the LLM accidentally included)
+      .filter((hook) => hook.type.length > 0);
 
     return renderHookSnapshot(normalizedHooks, language);
   }

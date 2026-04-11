@@ -165,6 +165,9 @@ export interface ImportChaptersInput {
   readonly bookId: string;
   readonly chapters: ReadonlyArray<{ readonly title: string; readonly content: string }>;
   readonly resumeFrom?: number;
+  /** "continuation" (default) = pick up where the text left off, no new spacetime.
+   *  "series" = shared universe but independent new story, requires new spacetime. */
+  readonly importMode?: "continuation" | "series";
 }
 
 export interface ImportChaptersResult {
@@ -580,7 +583,7 @@ export class PipelineRunner {
   }
 
   /** Write a single draft chapter. Saves chapter file + truth files + index + snapshot. */
-  async writeDraft(bookId: string, context?: string, wordCount?: number): Promise<DraftResult> {
+  async writeDraft(bookId: string, context?: string, wordCount?: number, allowReapply?: boolean): Promise<DraftResult> {
     const releaseLock = await this.state.acquireBookLock(bookId);
     try {
       await this.state.ensureControlDocuments(bookId);
@@ -612,6 +615,7 @@ export class PipelineRunner {
         ...writeInput,
         lengthSpec,
         ...(wordCount ? { wordCountOverride: wordCount } : {}),
+        ...(allowReapply ? { allowReapply: true } : {}),
       });
       const writerCount = countChapterLength(output.content, lengthSpec.countingMode);
       let totalUsage: TokenUsageSummary = output.tokenUsage ?? {
@@ -1189,6 +1193,7 @@ export class PipelineRunner {
       lengthSpec,
       ...(wordCount ? { wordCountOverride: wordCount } : {}),
       ...(temperatureOverride ? { temperatureOverride } : {}),
+      allowReapply: true,
     });
     const writerCount = countChapterLength(output.content, lengthSpec.countingMode);
 
@@ -1527,6 +1532,7 @@ export class PipelineRunner {
       chapterNumber: targetChapter,
       title: targetMeta.title,
       content,
+      allowReapply: true,
     });
     const validator = new StateValidatorAgent(this.agentCtxFor("state-validator", bookId));
     let validation = await validator.validate(

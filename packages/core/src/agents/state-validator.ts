@@ -13,7 +13,10 @@ export interface ValidationResult {
 /**
  * Validates Settler output by comparing old and new truth files via LLM.
  * Catches contradictions, missing state changes, and temporal inconsistencies.
- * Fail-closed: validator execution/format failures must surface to the pipeline.
+ *
+ * Uses a minimal verdict protocol instead of requiring structured JSON:
+ *   Line 1: PASS or FAIL
+ *   Remaining lines: free-form warnings (one per line, optional category prefix)
  */
 export class StateValidatorAgent extends BaseAgent {
   get name(): string {
@@ -51,24 +54,27 @@ Given the chapter text and the CHANGES made to truth files (state card + hooks p
 4. Hook anomaly — a hook disappeared without being marked resolved, or a new hook has no basis in the chapter
 5. Retroactive edit — truth file change implies something happened in a PREVIOUS chapter, not the current one
 
-Output JSON:
-{
-  "warnings": [
-    { "category": "missing_state_change", "description": "..." },
-    { "category": "unsupported_change", "description": "..." }
-  ],
-  "passed": true/false
-}
+Output format (simple, NOT JSON):
+- First line: exactly PASS or FAIL (nothing else on this line)
+- Following lines: one warning per line, optionally prefixed with [category]
+- If no issues at all, just output: PASS
 
-passed = true means no serious contradictions found. Minor observations are still reported as warnings.
-If there are no issues at all, return {"warnings": [], "passed": true}.
+Example:
+PASS
+[unsupported_change] State card says character moved to the forest, but text only shows intent
+[minor] Hook H03 advanced but text mention is brief
 
-IMPORTANT: Set passed=false ONLY for hard contradictions — facts that directly conflict with the chapter text (e.g., character said to be dead but is alive in text, location stated as X but text clearly shows Y). Do NOT fail for:
-- Slightly ahead-of-text inferences (e.g., "about to go to X" when text shows intent but not arrival)
-- Missing details (state card doesn't capture every minor event)
-- Reasonable extrapolations from text (e.g., "slightly relieved" from "took a sip of water")
-- Hook management differences (hooks added/removed that don't contradict text)
-These should be warnings with passed=true, not failures.`;
+Or if there are hard contradictions:
+FAIL
+[contradiction] State says character is dead but chapter text shows them speaking
+[unsupported_change] New location not mentioned anywhere in chapter text
+
+IMPORTANT: Output FAIL ONLY for hard contradictions — facts that directly conflict with the chapter text. Do NOT fail for:
+- Slightly ahead-of-text inferences
+- Missing details that the state card didn't capture
+- Reasonable extrapolations from text
+- Hook management differences that don't contradict text
+These should be warnings with PASS, not FAIL.`;
 
     const userPrompt = `Chapter ${chapterNumber} validation:
 
@@ -120,23 +126,69 @@ ${chapterContent.slice(0, 6000)}`;
       throw new Error("LLM returned empty response");
     }
 
-    const parsed = extractFirstValidJsonObject<{
-      warnings?: Array<{ category?: string; description?: string }>;
-      passed?: boolean;
-    }>(trimmed);
-    if (!parsed) {
-      throw new Error("State validator returned invalid JSON");
+    const jsonResult = this.tryParseJsonResult(trimmed);
+    if (jsonResult) {
+      return jsonResult;
     }
 
+    const lines = trimmed.split("\n").map((line) => line.trim()).filter(Boolean);
+    if (lines.length === 0) {
+      throw new Error("LLM returned empty response");
+    }
+
+    const verdictLine = lines[0]!;
+    if (!/^(PASS|FAIL)$/i.test(verdictLine)) {
+      throw new Error("State validator returned invalid response");
+    }
+    const passed = /^PASS$/i.test(verdictLine);
+
+    const warnings: ValidationWarning[] = [];
+    for (let i = 1; i < lines.length; i++) {
+      const line = lines[i]!;
+      if (/^(PASS|FAIL)$/i.test(line)) continue;
+
+      const categoryMatch = line.match(/^\[([^\]]+)\]\s*(.+)$/);
+      if (categoryMatch) {
+        warnings.push({
+          category: categoryMatch[1]!.trim(),
+          description: categoryMatch[2]!.trim(),
+        });
+      } else if (line.startsWith("- ") || line.startsWith("* ")) {
+        warnings.push({
+          category: "general",
+          description: line.slice(2).trim(),
+        });
+      } else if (line.length > 5) {
+        warnings.push({
+          category: "general",
+          description: line,
+        });
+      }
+    }
+
+    return { warnings, passed };
+  }
+
+  private tryParseJsonResult(text: string): ValidationResult | null {
+    const direct = this.tryParseExactJsonResult(text);
+    if (direct) {
+      return direct;
+    }
+
+    const candidate = extractBalancedJsonObject(text);
+    if (!candidate) {
+      return null;
+    }
+    return this.tryParseExactJsonResult(candidate);
+  }
+
+  private tryParseExactJsonResult(text: string): ValidationResult | null {
     try {
-      if (typeof parsed.passed !== "boolean") {
-        throw new Error("missing boolean 'passed' field");
-      }
-
-      if (parsed.warnings !== undefined && !Array.isArray(parsed.warnings)) {
-        throw new Error("'warnings' must be an array");
-      }
-
+      const parsed = JSON.parse(text) as {
+        warnings?: Array<{ category?: string; description?: string }>;
+        passed?: boolean;
+      };
+      if (typeof parsed.passed !== "boolean") return null;
       return {
         warnings: (parsed.warnings ?? []).map((w) => ({
           category: w.category ?? "unknown",
@@ -144,40 +196,18 @@ ${chapterContent.slice(0, 6000)}`;
         })),
         passed: parsed.passed,
       };
-    } catch (error) {
-      throw new Error(`State validator returned invalid response: ${String(error)}`);
+    } catch {
+      return null;
     }
   }
 }
 
-function extractFirstValidJsonObject<T>(text: string): T | null {
-  const direct = tryParseJson<T>(text);
-  if (direct) {
-    return direct;
-  }
-
-  for (let index = 0; index < text.length; index += 1) {
-    if (text[index] !== "{") continue;
-    const candidate = extractBalancedJsonObject(text, index);
-    if (!candidate) continue;
-    const parsed = tryParseJson<T>(candidate);
-    if (parsed) {
-      return parsed;
-    }
-  }
-
-  return null;
-}
-
-function tryParseJson<T>(text: string): T | null {
-  try {
-    return JSON.parse(text) as T;
-  } catch {
+function extractBalancedJsonObject(text: string): string | null {
+  const start = text.indexOf("{");
+  if (start < 0) {
     return null;
   }
-}
 
-function extractBalancedJsonObject(text: string, start: number): string | null {
   let depth = 0;
   let inString = false;
   let escaped = false;

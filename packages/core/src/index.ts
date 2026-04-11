@@ -78,12 +78,12 @@ export { ArchitectAgent, type ArchitectOutput } from "./agents/architect.js";
 export {
   WriterAgent,
   DEFAULT_REVISE_MODE,
-  type ReviseMode,
-  type ReviseOutput,
   type WriteChapterInput,
   type WriteChapterOutput,
   type TokenUsage,
 } from "./agents/writer.js";
+export { ReviserAgent } from "./agents/reviser.js";
+export type { ReviseMode, ReviseOutput } from "./agents/writer.js";
 export { LengthNormalizerAgent, type NormalizeLengthInput, type NormalizeLengthOutput } from "./agents/length-normalizer.js";
 export { ContinuityAuditor, type AuditResult, type AuditIssue } from "./agents/continuity.js";
 export { RadarAgent, type RadarResult, type RadarRecommendation } from "./agents/radar.js";
@@ -127,6 +127,14 @@ export {
   type HookDisposition,
 } from "./utils/hook-governance.js";
 export { arbitrateRuntimeStateDeltaHooks, type HookArbiterDecision } from "./utils/hook-arbiter.js";
+export {
+  optimizePrompts,
+  splitChaptersForOptimization,
+  readHistory,
+  getOptimizationTrajectory,
+  applyOptimizedRun,
+  createBackup,
+} from "./prompt-tuning/index.js";
 export { analyzeHookHealth } from "./utils/hook-health.js";
 
 // Pipeline

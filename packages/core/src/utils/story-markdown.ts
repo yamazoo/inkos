@@ -89,7 +89,7 @@ export function parsePendingHooksMarkdown(markdown: string): StoredHook[] {
 
   if (tableRows.length > 0) {
     return tableRows
-      .filter((row) => normalizeHookId(row[0]).length > 0)
+      .filter((row) => normalizeHookId(row[0]).length > 0 && (row[2] ?? "").trim().length > 0)
       .map((row) => parsePendingHookRow(row));
   }
 

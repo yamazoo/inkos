@@ -381,9 +381,9 @@ export class StateManager {
       } catch {
         // snapshot structured state missing — skip
       }
-      if (!restoredStructuredState) {
-        await rm(stateDir, { recursive: true, force: true });
-      }
+      // NOTE: We do NOT delete state/ when the snapshot has no structured state,
+      // because the manifest.json lives in state/ and must be preserved for
+      // applyRuntimeStateDelta to function correctly on the next delta apply.
 
       return true;
     } catch {

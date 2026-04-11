@@ -140,7 +140,7 @@ export class PlannerAgent extends BaseAgent {
     readonly outlineNode: string | undefined;
     readonly matchedOutlineAnchor: boolean;
     readonly chapterSummaries: string;
-  }): Pick<ChapterIntent, "sceneDirective" | "arcDirective" | "moodDirective" | "titleDirective"> {
+  }): Pick<ChapterIntent, "sceneDirective" | "arcDirective" | "moodDirective" | "titleDirective" | "conflictDirective"> {
     const recentSummaries = parseChapterSummariesMarkdown(input.chapterSummaries)
       .filter((summary) => summary.chapter < input.chapterNumber)
       .sort((left, right) => left.chapter - right.chapter)
@@ -165,6 +165,7 @@ export class PlannerAgent extends BaseAgent {
       sceneDirective: this.buildSceneDirective(input.language, cadence),
       moodDirective: this.buildMoodDirective(input.language, cadence),
       titleDirective: this.buildTitleDirective(input.language, cadence),
+      conflictDirective: this.buildConflictDirective(input.language, cadence),
     };
   }
 
@@ -356,7 +357,7 @@ export class PlannerAgent extends BaseAgent {
     const repeatedType = cadence.scenePressure.repeatedType;
 
     return this.isChineseLanguage(language)
-      ? `最近章节连续停留在“${repeatedType}”，本章必须更换场景容器、地点或行动方式。`
+      ? `最近章节连续停留在"${repeatedType}"，本章必须更换场景容器、地点或行动方式。`
       : `Recent chapters are stuck in repeated ${repeatedType} beats. Change the scene container, location, or action pattern this chapter.`;
   }
 
@@ -384,8 +385,18 @@ export class PlannerAgent extends BaseAgent {
     const repeatedToken = cadence.titlePressure.repeatedToken;
 
     return this.isChineseLanguage(language)
-      ? `标题不要再围绕“${repeatedToken}”重复命名，换一个新的意象或动作焦点。`
+      ? `标题不要再围绕"${repeatedToken}"重复命名，换一个新的意象或动作焦点。`
       : `Avoid another ${repeatedToken}-centric title. Pick a new image or action focus for this chapter title.`;
+  }
+
+  private buildConflictDirective(
+    language: string | undefined,
+    cadence: ReturnType<typeof analyzeChapterCadence>,
+  ): string | undefined {
+    // Always require a conflict beat — the story needs external tension every chapter
+    return this.isChineseLanguage(language)
+      ? "本章必须包含至少一个外部冲突节拍：威胁出现/战斗爆发/关系决裂/正面谈判/意外阻碍/紧急抉择。上述冲突必须来自外部事件，不能仅靠主角内心推动。禁止以主角内心独白（反思/计划/盘算）作为章节结尾。"
+      : "This chapter must contain at least one external conflict beat: a threat emerges, a fight erupts, a relationship fractures, a negotiation occurs, an obstacle appears, or an urgent decision must be made. The conflict must be driven by external events, not the protagonist's internal deliberation. Internal-monologue endings are forbidden.";
   }
 
   private renderHookBudget(activeCount: number, language: "zh" | "en"): string {
@@ -665,6 +676,7 @@ export class PlannerAgent extends BaseAgent {
       intent.sceneDirective ? `- scene: ${intent.sceneDirective}` : undefined,
       intent.moodDirective ? `- mood: ${intent.moodDirective}` : undefined,
       intent.titleDirective ? `- title: ${intent.titleDirective}` : undefined,
+      intent.conflictDirective ? `- conflict: ${intent.conflictDirective}` : undefined,
     ].filter(Boolean).join("\n") || "- none";
     const hookAgenda = [
       "### Must Advance",
