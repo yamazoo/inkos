@@ -2,6 +2,37 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { ArcUpdaterAgent } from "../agents/arc-updater.js";
 import type { AgentContext } from "../agents/base.js";
 import type { ChapterCompletionReport } from "../models/runtime-state.js";
+import { loadTracker, saveTracker } from "../state/tracker-store.js";
+
+// Mock the tracker-store module
+vi.mock("../state/tracker-store.js", () => ({
+  loadTracker: vi.fn().mockResolvedValue(null),  // always return null (bootstrap)
+  saveTracker: vi.fn().mockResolvedValue(undefined),  // no-op
+  bootstrapArcTracker: vi.fn().mockReturnValue({
+    schemaVersion: 1,
+    volumeId: "vol-1",
+    volumeTitle: "测试卷",
+    chapterRange: [1, 50],
+    currentChapter: 0,
+    outlineNodes: [],
+    mainSuspense: { hookId: "H001", description: "主悬念", plantedAt: 1, currentProgress: 0, expectedPayoff: null },
+    nextChapterDirection: { targetNodeId: null, targetProgress: 30, tone: "intensify" as const },
+  }),
+  bootstrapFactionLedger: vi.fn().mockReturnValue({
+    schemaVersion: 1,
+    factions: {},
+    protagonist: { name: "主角", powerLevel: { power: 30, resources: 20, influence: 10, morale: 50 }, exposureRisk: 0, socialCapital: 10, recentDeltas: [] },
+    relationships: [],
+  }),
+  bootstrapMoodArc: vi.fn().mockReturnValue({
+    schemaVersion: 1,
+    volumeId: "vol-1",
+    entries: [],
+    arcShape: "alternating" as const,
+    arcDescription: "",
+    nextChapterMoodTarget: { tension: "up" as const, excitement: "same" as const, warmth: "same" as const, reason: "init" },
+  }),
+}));
 
 const mockLogger = {
   debug: vi.fn(),
@@ -68,7 +99,7 @@ describe("ArcUpdaterAgent", () => {
     const ctx = makeCtx();
     const agent = new ArcUpdaterAgent(ctx);
     // Spy on the agent's protected chat method via the base class
-    vi.spyOn(agent as unknown as { chat: (...args: unknown[]) => Promise<unknown> }, "chat")
+    vi.spyOn(agent as any, "chat")
       .mockRejectedValue(new Error("network error"));
     const result = await agent.updateTrackers({
       bookId: "test-book",
@@ -84,7 +115,7 @@ describe("ArcUpdaterAgent", () => {
   it("gracefully skips when tracker files are missing (bootstrap)", async () => {
     const ctx = makeCtx();
     const agent = new ArcUpdaterAgent(ctx);
-    vi.spyOn(agent as unknown as { chat: (...args: unknown[]) => Promise<unknown> }, "chat")
+    vi.spyOn(agent as any, "chat")
       .mockResolvedValue({
         content: JSON.stringify({
           arcTracker: {
@@ -161,5 +192,7 @@ describe("ArcUpdaterAgent", () => {
     expect(result.errors).toHaveLength(0);
     expect(result.arcTracker.currentChapter).toBe(1);
     expect(result.factionLedger.protagonist.exposureRisk).toBe(5);
+    // Verify saveTracker was called (no real disk I/O)
+    expect(vi.mocked(saveTracker)).toHaveBeenCalled();
   });
 });
