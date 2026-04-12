@@ -36,7 +36,7 @@ export function buildWriterSystemPrompt(
   const resolvedLengthSpec = lengthSpec ?? buildLengthSpec(book.chapterWordCount, isEnglish ? "en" : "zh");
 
   const outputSection = mode === "creative"
-    ? buildCreativeOutputFormat(book, genreProfile, resolvedLengthSpec)
+    ? buildCreativeOutputFormat(book, genreProfile, resolvedLengthSpec, chapterNumber)
     : buildOutputFormat(book, genreProfile, resolvedLengthSpec);
 
   const sections = isEnglish
@@ -524,7 +524,7 @@ function buildPreWriteChecklist(book: BookConfig, gp: GenreProfile): string {
 // Creative-only output format (no settlement blocks)
 // ---------------------------------------------------------------------------
 
-function buildCreativeOutputFormat(book: BookConfig, gp: GenreProfile, lengthSpec: LengthSpec): string {
+function buildCreativeOutputFormat(book: BookConfig, gp: GenreProfile, lengthSpec: LengthSpec, chapterNumber?: number): string {
   const resourceRow = gp.numericalSystem
     ? "| 当前资源总量 | X | 与账本一致 |\n| 本章预计增量 | +X（来源） | 无增量写+0 |"
     : "";
@@ -541,6 +541,41 @@ ${resourceRow}| 待回收伏笔 | 用真实 hook_id 填写（无则写 none） |
 | 章节类型 | ${gp.chapterTypes.join("/")} | |
 | 风险扫描 | OOC/信息越界/设定冲突${gp.powerScaling ? "/战力崩坏" : ""}/节奏/词汇疲劳 | |`;
 
+  const completionReportSection = `
+
+<!-- COMPLETION_REPORT
+{
+  "schemaVersion": 1,
+  "bookId": "",
+  "chapter": ${chapterNumber ?? 0},
+  "cost": "（一句话描述本章主角付出的代价）",
+  "gain": "（一句话描述本章主角的收获）",
+  "factionChanges": [],
+  "moodChange": {
+    "tensionBefore": 50,
+    "tensionAfter": 50,
+    "warmthBefore": 50,
+    "warmthAfter": 50,
+    "overallShift": "same",
+    "chapterTone": ""
+  },
+  "hookChanges": {
+    "advanced": [],
+    "newlyPlanted": [],
+    "paidOff": []
+  },
+  "arcProgress": {
+    "nodeId": "",
+    "progressBefore": 0,
+    "progressAfter": 0
+  },
+  "selfCheck": {
+    "beatCoverage": [],
+    "dialogueCheck": []
+  }
+}
+-->`;
+
   return `## 输出格式（严格遵守）
 
 ${preWriteTable}
@@ -551,7 +586,9 @@ ${preWriteTable}
 === CHAPTER_CONTENT ===
 (正文内容，目标${lengthSpec.target}字，允许区间${lengthSpec.softMin}-${lengthSpec.softMax}字)
 
-【重要】本次只需输出以上三个区块（PRE_WRITE_CHECK、CHAPTER_TITLE、CHAPTER_CONTENT）。
+${completionReportSection}
+
+【重要】本次只需输出以上区块（PRE_WRITE_CHECK、CHAPTER_TITLE、CHAPTER_CONTENT、COMPLETION_REPORT）。
 状态卡、伏笔池、摘要等追踪文件将由后续结算阶段处理，请勿输出。`;
 }
 

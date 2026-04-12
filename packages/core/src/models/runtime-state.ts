@@ -131,21 +131,29 @@ export const RuntimeStateDeltaSchema = z.object({
 
 export type RuntimeStateDelta = z.infer<typeof RuntimeStateDeltaSchema>;
 
+// ── HookLedger ─────────────────────────────────────────────────
+// Mirror of HooksStateSchema but named consistently for the 4-tracker design
+export const HookLedgerSchema = z.object({
+  hooks: z.array(HookRecordSchema).default([]),
+});
+
+export type HookLedger = z.infer<typeof HookLedgerSchema>;
+
 // ── ArcTracker ────────────────────────────────────────────────
 export const OutlineNodeSchema = z.object({
-  nodeId: z.string(),
-  title: z.string(),
+  nodeId: z.string().min(1),
+  title: z.string().min(1),
   status: z.enum(["pending", "active", "completed"]),
-  startChapter: z.number(),
-  completedChapter: z.number().nullable(),
+  startChapter: z.number().int(),
+  completedChapter: z.number().int().nullable(),
   completionNote: z.string().optional(),
   progress: z.number().min(0).max(100).default(0),
 });
 
 export const MainSuspenseSchema = z.object({
-  hookId: z.string(),
-  description: z.string(),
-  plantedAt: z.number(),
+  hookId: z.string().min(1),
+  description: z.string().min(1),
+  plantedAt: z.number().int(),
   currentProgress: z.number().min(0).max(100).default(0),
   expectedPayoff: z.number().nullable(),
 });
@@ -154,8 +162,8 @@ export const ArcTrackerSchema = z.object({
   schemaVersion: z.literal(1),
   volumeId: z.string(),
   volumeTitle: z.string(),
-  chapterRange: z.tuple([z.number(), z.number()]),
-  currentChapter: z.number(),
+  chapterRange: z.tuple([z.number().int(), z.number().int()]),
+  currentChapter: z.number().int(),
   outlineNodes: z.array(OutlineNodeSchema),
   mainSuspense: MainSuspenseSchema,
   nextChapterDirection: z.object({
@@ -176,15 +184,15 @@ export const FactionPowerLevelSchema = z.object({
 });
 
 export const FactionDeltaSchema = z.object({
-  chapter: z.number(),
+  chapter: z.number().int(),
   powerDelta: z.number().optional(),
   stanceDelta: z.number().optional(),
   event: z.string(),
 });
 
 export const FactionLedgerEntrySchema = z.object({
-  factionId: z.string(),
-  factionName: z.string(),
+  factionId: z.string().min(1),
+  factionName: z.string().min(1),
   stance: z.enum(["ally", "neutral", "hostile", "unknown"]),
   stanceTowardsProtagonist: z.number().min(-100).max(100).default(0),
   powerLevel: FactionPowerLevelSchema,
@@ -197,11 +205,11 @@ export const FactionLedgerEntrySchema = z.object({
 });
 
 export const RelationshipSchema = z.object({
-  from: z.string(),
-  to: z.string(),
+  from: z.string().min(1),
+  to: z.string().min(1),
   type: z.enum(["trust", "rivalry", "debt", "secret"]),
   strength: z.number().min(-100).max(100).default(0),
-  lastChangedChapter: z.number(),
+  lastChangedChapter: z.number().int(),
   event: z.string().optional(),
 });
 
@@ -222,13 +230,13 @@ export type FactionLedger = z.infer<typeof FactionLedgerSchema>;
 
 // ── MoodArc ────────────────────────────────────────────────────
 export const MoodArcEntrySchema = z.object({
-  chapter: z.number(),
+  chapter: z.number().int(),
   tension: z.number().min(0).max(100).default(50),
   excitement: z.number().min(0).max(100).default(50),
   mystery: z.number().min(0).max(100).default(50),
   warmth: z.number().min(0).max(100).default(50),
   overall: z.enum(["suppressed", "tense", "intense", "breakthrough", "relief"]),
-  chapterTone: z.string(),
+  chapterTone: z.string().min(1),
 });
 
 export const MoodArcSchema = z.object({
@@ -274,7 +282,7 @@ export const NewlyPlantedHookSchema = z.object({
 
 export const PaidOffHookSchema = z.object({
   hookId: z.string(),
-  payoffChapter: z.number(),
+  payoffChapter: z.number().int(),
   payoffNote: z.string(),
 });
 
@@ -289,8 +297,8 @@ export const MoodChangeSchema = z.object({
 
 export const ArcProgressSchema = z.object({
   nodeId: z.string(),
-  progressBefore: z.number(),
-  progressAfter: z.number(),
+  progressBefore: z.number().int(),
+  progressAfter: z.number().int(),
   completionNote: z.string().optional(),
 });
 
@@ -307,9 +315,10 @@ export const DialogueCheckSchema = z.object({
 
 export const ChapterCompletionReportSchema = z.object({
   schemaVersion: z.literal(1),
-  chapter: z.number(),
-  cost: z.string(),
-  gain: z.string(),
+  bookId: z.string(),
+  chapter: z.number().int(),
+  cost: z.string().min(1),
+  gain: z.string().min(1),
   factionChanges: z.array(FactionChangeSchema).default([]),
   moodChange: MoodChangeSchema,
   hookChanges: z.object({

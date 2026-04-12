@@ -2,23 +2,14 @@ import { BaseAgent } from "./base.js";
 import {
   ArcTrackerSchema,
   FactionLedgerSchema,
-  HooksStateSchema,
   MoodArcSchema,
-  ChapterCompletionReportSchema,
   type ChapterCompletionReport,
   type ArcTracker,
   type FactionLedger,
   type MoodArc,
-  type HooksState,
 } from "../models/runtime-state.js";
-import {
-  loadTracker,
-  saveTracker,
-  bootstrapArcTracker,
-  bootstrapFactionLedger,
-  bootstrapMoodArc,
-} from "../state/tracker-store.js";
 import { buildArcUpdaterSystemPrompt, buildArcUpdaterUserPrompt } from "./arc-updater-prompts.js";
+import { loadTracker, saveTracker, bootstrapArcTracker, bootstrapFactionLedger, bootstrapMoodArc } from "../state/tracker-store.js";
 
 export interface ArcUpdaterInput {
   readonly bookId: string;
@@ -32,7 +23,6 @@ export interface ArcUpdaterInput {
 export interface ArcUpdaterOutput {
   readonly arcTracker: ArcTracker;
   readonly factionLedger: FactionLedger;
-  readonly hookLedger: HooksState;
   readonly moodArc: MoodArc;
   readonly errors: Array<{ type: string; detail: string }>;
 }
@@ -42,33 +32,19 @@ export class ArcUpdaterAgent extends BaseAgent {
     return "arc-updater";
   }
 
-  /**
-   * Validate the completion report against the chapter content,
-   * then update all four trackers. Returns errors if validation fails.
-   */
   async updateTrackers(input: ArcUpdaterInput): Promise<ArcUpdaterOutput> {
     const lang = input.language ?? "zh";
 
-    // Load existing trackers (null means not yet bootstrapped)
-    const [arcTrackerRaw, factionLedgerRaw, hookLedgerRaw, moodArcRaw] = await Promise.all([
+    const [loadedArc, loadedFaction, loadedMood] = await Promise.all([
       loadTracker(input.bookDir, "arc-tracker", ArcTrackerSchema),
       loadTracker(input.bookDir, "faction-ledger", FactionLedgerSchema),
-      loadTracker(input.bookDir, "hook-ledger", HooksStateSchema),
       loadTracker(input.bookDir, "mood-arc", MoodArcSchema),
     ]);
 
-    const arcTrackerCurrent: ArcTracker = arcTrackerRaw !== null
-      ? (arcTrackerRaw as ArcTracker)
-      : bootstrapArcTracker("（未命名卷）", "vol-1", [1, 1], "H001", "主悬念");
-    const factionLedgerCurrent: FactionLedger = factionLedgerRaw !== null
-      ? (factionLedgerRaw as FactionLedger)
-      : bootstrapFactionLedger("主角");
-    const moodArcCurrent: MoodArc = moodArcRaw !== null
-      ? (moodArcRaw as MoodArc)
-      : bootstrapMoodArc("vol-1");
-    const hookLedger: HooksState = hookLedgerRaw !== null
-      ? (hookLedgerRaw as HooksState)
-      : { hooks: [] };
+    // ?? on T | null yields T | null; use ! to narrow to T (bootstrap always valid fallback)
+    const arcTrackerCurrent = (loadedArc ?? bootstrapArcTracker("", "未命名卷", [1, 1], "H001", "主悬念")) as ArcTracker;
+    const factionLedgerCurrent = (loadedFaction ?? bootstrapFactionLedger("主角")) as FactionLedger;
+    const moodArcCurrent = (loadedMood ?? bootstrapMoodArc("vol-1")) as MoodArc;
 
     const prompt = buildArcUpdaterUserPrompt(
       input.completionReport,
@@ -85,36 +61,27 @@ export class ArcUpdaterAgent extends BaseAgent {
 
     let response;
     try {
-      response = await this.chat(
-        [
-          { role: "system", content: buildArcUpdaterSystemPrompt(lang) },
-          { role: "user", content: prompt },
-        ],
-        { temperature: 0.2, maxTokens: 4096 },
-      );
+      response = await this.chat([
+        { role: "system", content: buildArcUpdaterSystemPrompt(lang) },
+        { role: "user", content: prompt },
+      ], { temperature: 0.2, maxTokens: 4096 });
     } catch (err) {
       this.log?.warn(`[arc-updater] LLM call failed: ${err}`);
-      // Degrade gracefully — return trackers unchanged with error flag
       return {
         arcTracker: arcTrackerCurrent,
         factionLedger: factionLedgerCurrent,
-        hookLedger,
         moodArc: moodArcCurrent,
         errors: [{ type: "llm_failure", detail: String(err) }],
       };
     }
 
-    // Parse LLM response — try to extract JSON blocks
+    // Parse JSON from LLM response
     const jsonMatch =
       response.content.match(/```(?:json)?\n([\s\S]*?)\n```/)
       ?? response.content.match(/\{[\s\S]*\}/);
     let parsed: Record<string, unknown> | null = null;
     if (jsonMatch) {
-      try {
-        parsed = JSON.parse(jsonMatch[1] ?? jsonMatch[0]);
-      } catch {
-        /* ignore parse errors */
-      }
+      try { parsed = JSON.parse(jsonMatch[1] ?? jsonMatch[0]); } catch { /* ignore */ }
     }
 
     const errors: Array<{ type: string; detail: string }> = [];
@@ -127,31 +94,28 @@ export class ArcUpdaterAgent extends BaseAgent {
       }
     }
 
-    // Apply updates if no errors
-    let arcTracker = arcTrackerCurrent;
-    let factionLedger = factionLedgerCurrent;
-    let moodArc = moodArcCurrent;
+    let arcTracker: ArcTracker = arcTrackerCurrent;
+    let factionLedger: FactionLedger = factionLedgerCurrent;
+    let moodArc: MoodArc = moodArcCurrent;
 
     if (errors.length === 0 && parsed) {
       try {
-        if (parsed.arcTracker) arcTracker = ArcTrackerSchema.parse(parsed.arcTracker);
-        if (parsed.factionLedger) factionLedger = FactionLedgerSchema.parse(parsed.factionLedger);
-        if (parsed.moodArc) moodArc = MoodArcSchema.parse(parsed.moodArc);
+        if (parsed.arcTracker) arcTracker = ArcTrackerSchema.parse(parsed.arcTracker) as ArcTracker;
+        if (parsed.factionLedger) factionLedger = FactionLedgerSchema.parse(parsed.factionLedger) as FactionLedger;
+        if (parsed.moodArc) moodArc = MoodArcSchema.parse(parsed.moodArc) as MoodArc;
       } catch (parseErr) {
-        this.log?.warn(`[arc-updater] Tracker parse error, using current state: ${parseErr}`);
+        this.log?.warn(`[arc-updater] Tracker parse error: ${parseErr}`);
       }
     }
 
-    // Persist updated trackers
-    // (skip hook-ledger write — HooksState uses existing state/reducer pipeline)
     await Promise.all([
       saveTracker(input.bookDir, "arc-tracker", arcTracker),
       saveTracker(input.bookDir, "faction-ledger", factionLedger),
       saveTracker(input.bookDir, "mood-arc", moodArc),
     ]);
 
-    this.log?.info(`[arc-updater] Chapter ${input.chapter} trackers updated, errors: ${errors.length}`);
+    this.log?.info(`[arc-updater] Chapter ${input.chapter} updated, errors: ${errors.length}`);
 
-    return { arcTracker, factionLedger, hookLedger, moodArc, errors };
+    return { arcTracker, factionLedger, moodArc, errors };
   }
 }

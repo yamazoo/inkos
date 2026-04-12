@@ -5,6 +5,7 @@ import { readGenreProfile } from "./rules-reader.js";
 import { writeFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
 import { renderHookSnapshot } from "../utils/memory-retrieval.js";
+import { bootstrapArcTracker, bootstrapFactionLedger, bootstrapMoodArc, saveTracker } from "../state/tracker-store.js";
 
 export interface ArchitectOutput {
   readonly storyBible: string;
@@ -319,6 +320,9 @@ ${finalRequirementsPrompt}`;
     output: ArchitectOutput,
     numericalSystem: boolean = true,
     language: "zh" | "en" = "zh",
+    bookTitle?: string,
+    targetChapters?: number,
+    protagonistName?: string,
   ): Promise<void> {
     const storyDir = join(bookDir, "story");
     await mkdir(storyDir, { recursive: true });
@@ -369,6 +373,23 @@ ${finalRequirementsPrompt}`;
     );
 
     await Promise.all(writes);
+
+    // Initialize four trackers during book creation
+    const arcTracker = bootstrapArcTracker(
+      output.volumeOutline ?? "",  // use volume outline to extract outline nodes
+      bookTitle ?? "未命名",
+      [1, targetChapters ?? 50],
+      "H001",
+      "主悬念",
+    );
+    const factionLedger = bootstrapFactionLedger(protagonistName ?? "主角");
+    const moodArc = bootstrapMoodArc("vol-1");
+
+    await Promise.all([
+      saveTracker(bookDir, "arc-tracker", arcTracker),
+      saveTracker(bookDir, "faction-ledger", factionLedger),
+      saveTracker(bookDir, "mood-arc", moodArc),
+    ]);
   }
 
   /**

@@ -23,6 +23,7 @@ import { ContinuityAuditor } from "../agents/continuity.js";
 import { StateValidatorAgent, type ValidationResult, type ValidationWarning } from "../agents/state-validator.js";
 import { RadarAgent } from "../agents/radar.js";
 import type { RadarSource } from "../agents/radar-source.js";
+import { ArcUpdaterAgent } from "../agents/arc-updater.js";
 import { readGenreProfile } from "../agents/rules-reader.js";
 import { analyzeAITells } from "../agents/ai-tells.js";
 import { analyzeSensitiveWords } from "../agents/sensitive-words.js";
@@ -478,6 +479,9 @@ export class PipelineRunner {
         foundation,
         gp.numericalSystem,
         book.language ?? gp.language,
+        book.title,
+        book.targetChapters,
+        undefined, // protagonistName — BookConfig has no protagonist field; defaults to "主角" in bootstrapFactionLedger
       );
 
       this.logStage(stageLanguage, { zh: "初始化控制文档", en: "initializing control documents" });
@@ -567,6 +571,9 @@ export class PipelineRunner {
       foundation,
       gp.numericalSystem,
       book.language ?? gp.language,
+      book.title,
+      book.targetChapters,
+      undefined, // protagonistName — defaults to "主角" in bootstrapFactionLedger
     );
     this.logStage(stageLanguage, { zh: "初始化控制文档", en: "initializing control documents" });
     await this.state.ensureControlDocuments(book.id, this.config.externalContext);
@@ -667,6 +674,29 @@ export class PipelineRunner {
         ? `# Chapter ${chapterNumber}: ${draftOutput.title}`
         : `# 第${chapterNumber}章 ${draftOutput.title}`;
       await writeFile(filePath, `${heading}\n\n${draftOutput.content}`, "utf-8");
+
+      // ── ArcUpdater: validate completion report and update trackers ───────
+      const chapterContent = await readFile(filePath, "utf-8");
+      const reportMatch = chapterContent.match(/<!-- COMPLETION_REPORT\n([\s\S]*?)\n-->/);
+      if (reportMatch) {
+        try {
+          const completionReport = JSON.parse(reportMatch[1]) as import("../models/runtime-state.js").ChapterCompletionReport;
+          const arcUpdater = new ArcUpdaterAgent(this.agentCtxFor("arc-updater", book.id));
+          const result = await arcUpdater.updateTrackers({
+            bookId: book.id,
+            bookDir,
+            chapter: chapterNumber,
+            completionReport,
+            chapterContent,
+            language: book.language ?? "zh",
+          });
+          if (result.errors.length > 0) {
+            this.config.logger?.warn(`[arc-updater] chapter ${chapterNumber}: ${result.errors.map(e => e.type).join(", ")}`);
+          }
+        } catch (err) {
+          this.config.logger?.warn(`[arc-updater] chapter ${chapterNumber} failed: ${err}`);
+        }
+      }
 
       // Save truth files
       this.logStage(stageLanguage, { zh: "落盘草稿与真相文件", en: "persisting draft and truth files" });
@@ -1890,6 +1920,9 @@ ${matrix}`,
           foundation,
           gp.numericalSystem,
           resolvedLanguage,
+          book.title,
+          book.targetChapters,
+          undefined, // protagonistName — defaults to "主角" in bootstrapFactionLedger
         );
         await this.resetImportReplayTruthFiles(bookDir, resolvedLanguage);
         await this.state.saveChapterIndex(input.bookId, []);

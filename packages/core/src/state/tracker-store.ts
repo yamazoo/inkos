@@ -1,32 +1,23 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
-import type { ZodSchema } from "zod";
-import type { ArcTracker, FactionLedger, HooksState, MoodArc } from "../models/runtime-state.js";
 import {
   ArcTrackerSchema,
   FactionLedgerSchema,
-  HooksStateSchema,
   MoodArcSchema,
+  type ArcTracker,
+  type FactionLedger,
+  type MoodArc,
 } from "../models/runtime-state.js";
 
-// ── Paths ────────────────────────────────────────────────────────────────────
+const STATE_DIR = "state" as const;
 
-function stateDir(bookDir: string): string {
-  return join(bookDir, "story", "state");
-}
-
-function trackerPath(bookDir: string, name: string): string {
-  return join(stateDir(bookDir), `${name}.json`);
-}
-
-// ── Load / Save ──────────────────────────────────────────────────────────────
-
+/** Load a tracker JSON, return null if missing. */
 export async function loadTracker<T>(
   bookDir: string,
-  name: string,
-  schema: ZodSchema<T>,
+  name: "arc-tracker" | "faction-ledger" | "mood-arc",
+  schema: import("zod").ZodType<T>,
 ): Promise<T | null> {
-  const path = trackerPath(bookDir, name);
+  const path = join(bookDir, "story", STATE_DIR, `${name}.json`);
   try {
     const raw = await readFile(path, "utf-8");
     return schema.parse(JSON.parse(raw)) as T;
@@ -35,36 +26,53 @@ export async function loadTracker<T>(
     if (err instanceof Error && "code" in err && (err as { code: string }).code === "ENOENT") {
       return null;
     }
-    // Any other error (corrupted JSON, permission, etc.) — surface it so caller can decide
+    // For any other error (corruption, permission, etc.), surface it so caller can decide
     throw err;
   }
 }
 
-export async function saveTracker<T extends object>(
+/** Save a tracker JSON. */
+export async function saveTracker<T>(
   bookDir: string,
-  name: string,
+  name: "arc-tracker" | "faction-ledger" | "mood-arc",
   data: T,
 ): Promise<void> {
-  await mkdir(stateDir(bookDir), { recursive: true });
-  await writeFile(trackerPath(bookDir, name), JSON.stringify(data, null, 2), "utf-8");
+  const dir = join(bookDir, "story", STATE_DIR);
+  await mkdir(dir, { recursive: true });
+  const path = join(dir, `${name}.json`);
+  try {
+    await writeFile(path, JSON.stringify(data, null, 2), "utf-8");
+  } catch (err) {
+    throw new Error(`Failed to write tracker ${name} to ${path}`, { cause: err });
+  }
 }
 
-// ── Bootstrappers ────────────────────────────────────────────────────────────
-
+/** Create an initial ArcTracker from volume outline. */
 export function bootstrapArcTracker(
+  volumeOutlineContent: string,
   volumeTitle: string,
-  volumeId: string,
   chapterRange: [number, number],
   mainSuspenseHookId: string,
   mainSuspenseDescription: string,
 ): ArcTracker {
+  const nodeMatches = [...volumeOutlineContent.matchAll(/#{1,2}\s+[节点转折点篇章节][：:]\s*(.+)/g)]
+    .map((m, i) => ({
+      nodeId: `node-${i + 1}`,
+      title: m[1].trim(),
+      status: i === 0 ? ("active" as const) : ("pending" as const),
+      startChapter: chapterRange[0] + i,
+      completedChapter: null,
+      completionNote: undefined,
+      progress: 0,
+    }));
+
   return ArcTrackerSchema.parse({
     schemaVersion: 1,
-    volumeId,
+    volumeId: "vol-1",
     volumeTitle,
     chapterRange,
     currentChapter: chapterRange[0] - 1,
-    outlineNodes: [],
+    outlineNodes: nodeMatches,
     mainSuspense: {
       hookId: mainSuspenseHookId,
       description: mainSuspenseDescription,
@@ -73,44 +81,37 @@ export function bootstrapArcTracker(
       expectedPayoff: null,
     },
     nextChapterDirection: {
-      targetNodeId: null,
-      targetProgress: 0,
+      targetNodeId: nodeMatches[0]?.nodeId ?? null,
+      targetProgress: 30,
       tone: "intensify",
     },
   });
 }
 
+/** Create an initial FactionLedger for a protagonist. */
 export function bootstrapFactionLedger(protagonistName: string): FactionLedger {
   return FactionLedgerSchema.parse({
     schemaVersion: 1,
     factions: {},
     protagonist: {
       name: protagonistName,
-      powerLevel: { power: 50, resources: 50, influence: 50, morale: 50 },
+      powerLevel: { power: 30, resources: 20, influence: 10, morale: 50 },
       exposureRisk: 0,
-      socialCapital: 50,
+      socialCapital: 10,
       recentDeltas: [],
     },
     relationships: [],
   });
 }
 
+/** Create an initial MoodArc for a volume. */
 export function bootstrapMoodArc(volumeId: string): MoodArc {
   return MoodArcSchema.parse({
     schemaVersion: 1,
     volumeId,
     entries: [],
-    arcShape: "escalating",
+    arcShape: "alternating",
     arcDescription: "",
-    nextChapterMoodTarget: {
-      tension: "up",
-      excitement: "up",
-      warmth: "same",
-      reason: "",
-    },
+    nextChapterMoodTarget: { tension: "up", excitement: "same", warmth: "same", reason: "init" },
   });
-}
-
-export function bootstrapHookLedger(): HooksState {
-  return HooksStateSchema.parse({ hooks: [] });
 }

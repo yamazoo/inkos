@@ -91,6 +91,7 @@ export interface WriteChapterOutput {
   readonly content: string;
   readonly wordCount: number;
   readonly preWriteCheck: string;
+  readonly completionReport?: unknown;
   readonly postSettlement: string;
   readonly runtimeStateDelta?: RuntimeStateDelta;
   readonly runtimeStateSnapshot?: RuntimeStateSnapshot;
@@ -515,6 +516,7 @@ export class WriterAgent extends BaseAgent {
       content: finalContent,
       wordCount: creative.wordCount,
       preWriteCheck: creative.preWriteCheck,
+      completionReport: creative.completionReport,
       postSettlement: settlement.postSettlement,
       runtimeStateDelta: resolvedRuntimeStateDelta,
       runtimeStateSnapshot: runtimeStateArtifacts?.snapshot ?? settlement.runtimeStateSnapshot,
