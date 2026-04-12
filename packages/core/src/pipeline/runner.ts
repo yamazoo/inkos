@@ -10,6 +10,7 @@ import { FoundationReviewerAgent } from "../agents/foundation-reviewer.js";
 import { PlannerAgent, type PlanChapterOutput } from "../agents/planner.js";
 import { ComposerAgent } from "../agents/composer.js";
 import { BeatPlannerAgent } from "../agents/beat-planner.js";
+import { ScenePlannerAgent } from "../agents/scene-planner.js";
 import {
   WriterAgent,
   DEFAULT_REVISE_MODE,
@@ -2124,12 +2125,12 @@ ${matrix}`,
     bookDir: string,
     chapterNumber: number,
     externalContext?: string,
-  ): Promise<Pick<WriteChapterInput, "externalContext" | "chapterIntent" | "contextPackage" | "ruleStack" | "trace" | "beatSheet">> {
+  ): Promise<Pick<WriteChapterInput, "externalContext" | "chapterIntent" | "contextPackage" | "ruleStack" | "trace" | "beatSheet" | "scenePlan">> {
     if ((this.config.inputGovernanceMode ?? "v2") === "legacy") {
       return { externalContext };
     }
 
-    const { plan, composed, beatPlannerOutput } = await this.createGovernedArtifacts(
+    const { plan, composed, beatPlannerOutput, scenePlannerOutput } = await this.createGovernedArtifacts(
       book,
       bookDir,
       chapterNumber,
@@ -2143,6 +2144,12 @@ ${matrix}`,
       ruleStack: composed.ruleStack,
       trace: composed.trace,
       beatSheet: beatPlannerOutput?.beatSheet,
+      scenePlan: scenePlannerOutput ? {
+        scenePlan: scenePlannerOutput.scenePlan,
+        scenes: scenePlannerOutput.scenes,
+        totalScenes: scenePlannerOutput.totalScenes,
+        totalTargetWords: scenePlannerOutput.totalTargetWords,
+      } : undefined,
     };
   }
 
@@ -2813,6 +2820,7 @@ ${matrix}`,
     plan: PlanChapterOutput;
     composed: Awaited<ReturnType<ComposerAgent["composeChapter"]>>;
     beatPlannerOutput: import("../models/input-governance.js").BeatPlannerOutput | null;
+    scenePlannerOutput: import("../models/input-governance.js").ScenePlannerOutput | null;
   }> {
     const plan = await this.resolveGovernedPlan(book, bookDir, chapterNumber, externalContext, options);
 
@@ -2844,6 +2852,11 @@ ${matrix}`,
     const pendingHooksRaw = await readFile(join(storyDir, "pending_hooks.md"), "utf-8").catch(() => "");
     const emotionalArcsRaw = await readFile(join(storyDir, "emotional_arcs.md"), "utf-8").catch(() => "");
 
+    // Load FactionLedger for BeatPlanner context
+    const { loadTracker } = await import("../state/tracker-store.js");
+    const { FactionLedgerSchema } = await import("../models/runtime-state.js");
+    const factionLedger = await loadTracker(bookDir, "faction-ledger", FactionLedgerSchema).catch(() => null);
+
     const { profile: gp } = await this.loadGenreProfile(book.genre);
     const pendingHooks = parsePendingHooksMarkdown(pendingHooksRaw).map((h) => ({
       hookId: h.hookId,
@@ -2869,6 +2882,11 @@ ${matrix}`,
       },
       genreChapterTypes: gp?.chapterTypes ?? [],
       language: book.language ?? "zh",
+      factionLedgerContext: factionLedger ? {
+        exposureRisk: factionLedger.protagonist.exposureRisk ?? 0,
+        socialCapital: factionLedger.protagonist.socialCapital ?? 0,
+        keyFactions: Object.keys(factionLedger.factions),
+      } : undefined,
     };
 
     const beatPlanner = new BeatPlannerAgent(this.agentCtxFor("beat-planner", book.id));
@@ -2879,7 +2897,28 @@ ${matrix}`,
       this.config.logger?.warn(`BeatPlanner failed for chapter ${chapterNumber}: ${err}`);
     }
 
-    return { plan, composed, beatPlannerOutput };
+    // ── ScenePlanner: breakdown beats into scenes ─────────────────────────────────
+    let scenePlannerOutput = null;
+    if (beatPlannerOutput) {
+      const scenePlanner = new ScenePlannerAgent(this.agentCtxFor("scene-planner", book.id));
+      try {
+        scenePlannerOutput = await scenePlanner.planScenes({
+          bookId: book.id,
+          chapterNumber,
+          beatSheet: beatPlannerOutput.beatSheet,
+          wordCount: {
+            min: Math.floor(book.chapterWordCount * 0.8),
+            target: book.chapterWordCount,
+            max: Math.ceil(book.chapterWordCount * 1.3),
+          },
+          language: book.language ?? "zh",
+        }, runtimeDir);
+      } catch (err) {
+        this.config.logger?.warn(`[scene-planner] failed for chapter ${chapterNumber}: ${err}`);
+      }
+    }
+
+    return { plan, composed, beatPlannerOutput, scenePlannerOutput };
   }
 
   private async resolveGovernedPlan(

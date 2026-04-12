@@ -3,6 +3,7 @@ import type { LLMResponse } from "../llm/provider.js";
 import type { BookConfig } from "../models/book.js";
 import type { GenreProfile } from "../models/genre-profile.js";
 import type { BookRules } from "../models/book-rules.js";
+import type { Scene } from "../models/input-governance.js";
 import { buildWriterSystemPrompt, type FanficContext } from "./writer-prompts.js";
 import {
   repairChapterWithWriter,
@@ -54,6 +55,12 @@ export interface WriteChapterInput {
   readonly ruleStack?: RuleStack;
   readonly trace?: ChapterTrace;
   readonly beatSheet?: string;
+  readonly scenePlan?: {
+    readonly scenePlan: string;
+    readonly scenes: readonly Scene[];
+    readonly totalScenes: number;
+    readonly totalTargetWords: number;
+  };
   readonly lengthSpec?: LengthSpec;
   readonly wordCountOverride?: number;
   readonly temperatureOverride?: number;
@@ -241,6 +248,7 @@ export class WriterAgent extends BaseAgent {
           ruleStack: input.ruleStack,
           trace: input.trace,
           beatSheet: input.beatSheet,
+          scenePlan: input.scenePlan,
           lengthSpec: resolvedLengthSpec,
           language: book.language ?? genreProfile.language,
           varianceBrief: englishVarianceBrief?.text,
@@ -978,6 +986,11 @@ ${lengthRequirementBlock}
     readonly ruleStack: RuleStack;
     readonly trace?: ChapterTrace;
     readonly beatSheet?: string;
+    readonly scenePlan?: {
+      readonly scenePlan: string;
+      readonly totalScenes: number;
+      readonly totalTargetWords: number;
+    };
     readonly lengthSpec: LengthSpec;
     readonly language?: "zh" | "en";
     readonly varianceBrief?: string;
@@ -1024,12 +1037,35 @@ ${lengthRequirementBlock}
         : `\n## 章节节拍骨架（软约束）\n${params.beatSheet}\n`
       : "";
 
+    const scenePlanBlock = params.scenePlan
+      ? params.language === "en"
+        ? `\n## Scene Plan
+共 ${params.scenePlan.totalScenes} scenes, target ~${params.scenePlan.totalTargetWords} words.
+${params.scenePlan.scenePlan}
+
+## Scene Constraints
+- Write strictly in the given scene order
+- Each scene must cover the specified events, character reactions, and pacing notes
+- Per-scene word targets are listed in scenePlan.pacing[].wordCountTarget
+`
+        : `\n## 场景大纲（ScenePlan）
+共 ${params.scenePlan.totalScenes} 个场景，目标字数约 ${params.scenePlan.totalTargetWords} 字。
+${params.scenePlan.scenePlan}
+
+## 场景约束
+- 严格按照场景顺序写作
+- 每个场景必须包含指定的事件、人物反应、节奏指示
+- 每场景字数目标见 ScenePlan 中的 pacing.wordCountTarget
+`
+      : "";
+
     if (params.language === "en") {
       return `Write chapter ${params.chapterNumber}.
 
 ## Chapter Intent
 ${params.chapterIntent}
 ${beatSheetBlock}
+${scenePlanBlock}
 ## Selected Context
 ${contextSections || "(none)"}
 ${selectedEvidenceBlock}
@@ -1057,6 +1093,7 @@ ${lengthRequirementBlock}
 ## 本章意图
 ${params.chapterIntent}
 ${beatSheetBlock}
+${scenePlanBlock}
 ## 已选上下文
 ${contextSections || "(无)"}
 ${selectedEvidenceBlock}
