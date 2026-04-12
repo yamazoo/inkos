@@ -53,6 +53,7 @@ export interface WriteChapterInput {
   readonly contextPackage?: ContextPackage;
   readonly ruleStack?: RuleStack;
   readonly trace?: ChapterTrace;
+  readonly beatSheet?: string;
   readonly lengthSpec?: LengthSpec;
   readonly wordCountOverride?: number;
   readonly temperatureOverride?: number;
@@ -238,6 +239,7 @@ export class WriterAgent extends BaseAgent {
           contextPackage: input.contextPackage,
           ruleStack: input.ruleStack,
           trace: input.trace,
+          beatSheet: input.beatSheet,
           lengthSpec: resolvedLengthSpec,
           language: book.language ?? genreProfile.language,
           varianceBrief: englishVarianceBrief?.text,
@@ -973,6 +975,7 @@ ${lengthRequirementBlock}
     readonly contextPackage: ContextPackage;
     readonly ruleStack: RuleStack;
     readonly trace?: ChapterTrace;
+    readonly beatSheet?: string;
     readonly lengthSpec: LengthSpec;
     readonly language?: "zh" | "en";
     readonly varianceBrief?: string;
@@ -1013,12 +1016,18 @@ ${lengthRequirementBlock}
         : `\n## 显式 Hook Agenda\n${explicitHookAgenda}\n`
       : "";
 
+    const beatSheetBlock = params.beatSheet
+      ? params.language === "en"
+        ? `\n## Chapter Beat Skeleton (Soft Constraint)\n${params.beatSheet}\n`
+        : `\n## 章节节拍骨架（软约束）\n${params.beatSheet}\n`
+      : "";
+
     if (params.language === "en") {
       return `Write chapter ${params.chapterNumber}.
 
 ## Chapter Intent
 ${params.chapterIntent}
-
+${beatSheetBlock}
 ## Selected Context
 ${contextSections || "(none)"}
 ${selectedEvidenceBlock}
@@ -1045,7 +1054,7 @@ ${lengthRequirementBlock}
 
 ## 本章意图
 ${params.chapterIntent}
-
+${beatSheetBlock}
 ## 已选上下文
 ${contextSections || "(无)"}
 ${selectedEvidenceBlock}
