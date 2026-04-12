@@ -210,8 +210,8 @@ export interface BeatPlannerOutput {
 
 // ── SceneSchema（Layer 3）─────────────────────────────────────────────
 export const SceneSchema = z.object({
-  sceneId: z.string(),
-  beatId: z.string(),
+  sceneId: z.string().min(1),
+  beatId: z.string().min(1),
   location: z.string(),
   sceneType: z.enum(["action", "dialogue", "revelation", "reflection", "transition"]),
   event: z.string(),
@@ -247,11 +247,11 @@ export type Scene = z.infer<typeof SceneSchema>;
 // ── BeatSheetOutputSchemaV2 ─────────────────────────────────────────
 export const BeatSheetOutputSchemaV2 = z.object({
   schemaVersion: z.literal(2),
-  chapter: z.number(),
+  chapter: z.number().int().min(1),
   chapterType: ChapterTypeSchema,
   totalTargetWords: z.number(),
   beats: z.array(z.object({
-    beatId: z.string(),
+    beatId: z.string().min(1),
     name: z.string(),
     targetWordsPct: z.number(),
     targetWords: z.number(),
@@ -265,7 +265,7 @@ export const BeatSheetOutputSchemaV2 = z.object({
     })).default([]),
     hookAdvance: z.array(z.string()).default([]),
     pacing: z.object({
-      speed: z.enum(["slow", "moderate", "fast", "urgent"]),
+      speed: z.enum(["slow", "moderate", "fast", "urgent", "breath"]),
       voice: z.enum(["narration", "dialogue-heavy", "mixed"]),
       mood: z.string(),
     }),
@@ -293,10 +293,10 @@ export type BeatSheetOutputV2 = z.infer<typeof BeatSheetOutputSchemaV2>;
 
 // ── ChapterIntentSchemaV2 ─────────────────────────────────────────
 export const ArcPositionSchema = z.object({
-  volumeId: z.string(),
-  currentNodeId: z.string(),
-  nodeProgress: z.number(),
-  overallProgress: z.number(),
+  volumeId: z.string().min(1),
+  currentNodeId: z.string().min(1),
+  nodeProgress: z.number().min(0).max(100),
+  overallProgress: z.number().min(0).max(100),
   nextNodeId: z.string().nullable(),
 });
 
@@ -314,8 +314,8 @@ export const MustAdvanceSchema = z.object({
 });
 
 export const FactionContextSchema = z.object({
-  currentThreatLevel: z.number(),
-  protagonistExposureRisk: z.number(),
+  currentThreatLevel: z.number().min(0).max(100),
+  protagonistExposureRisk: z.number().min(0).max(100),
   keyRelationshipChanges: z.array(z.object({
     faction: z.string(),
     change: z.string(),
