@@ -3,9 +3,11 @@ import { BeatPlannerAgent } from "../agents/beat-planner.js";
 import type { AgentContext } from "../agents/base.js";
 
 const mockLogger = {
+  debug: vi.fn(),
   info: vi.fn(),
   warn: vi.fn(),
   error: vi.fn(),
+  child: vi.fn(() => mockLogger),
 };
 
 function makeCtx(overrides: Partial<AgentContext> = {}): AgentContext {
