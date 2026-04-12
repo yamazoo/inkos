@@ -1,5 +1,6 @@
 import { BaseAgent } from "./base.js";
 import type { BeatPlannerInput, BeatPlannerOutput, ChapterType } from "../models/input-governance.js";
+import { ChapterTypeSchema } from "../models/input-governance.js";
 import { buildBeatPlannerSystemPrompt, buildBeatPlannerUserPrompt } from "./beat-planner-prompts.js";
 
 export class BeatPlannerAgent extends BaseAgent {
@@ -32,7 +33,8 @@ export class BeatPlannerAgent extends BaseAgent {
     // Parse chapter type from beatSheet (format: "**章类**: 战斗章" or "**Chapter Type**: combat")
     const chapterTypeMatch = beatSheet.match(/\*\*(?:章类|Chapter Type)\*\*[:：]\s*(\S+)/);
     const rawType = chapterTypeMatch?.[1]?.replace(/[`*\[\]]/g, "") ?? "combat";
-    const chapterType: ChapterType = rawType as ChapterType;
+    const parsed = ChapterTypeSchema.safeParse(rawType);
+    const chapterType: ChapterType = parsed.success ? parsed.data : "combat";
 
     // Parse hook to advance (format: "推进钩子: hook-xxx")
     const hookMatch = beatSheet.match(/推进钩子[:：]\s*(\S+)/);
@@ -46,6 +48,7 @@ export class BeatPlannerAgent extends BaseAgent {
     await writeFile(beatsPath, beatSheet, "utf-8");
 
     this.log?.info(`[beat-planner] Beat sheet written to ${beatsPath}`);
+    this.log?.info(`[beat-planner] chapter type: ${chapterType}, beat count: ${beatCount}, hook: ${hookToAdvance}`);
 
     return { beatSheet, chapterType, hookToAdvance, beatCount };
   }
