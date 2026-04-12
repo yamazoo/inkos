@@ -51,6 +51,9 @@ export {
   type RuleStackSections,
   type RuleStack,
   type ChapterTrace,
+  type ChapterType,
+  type BeatPlannerInput,
+  type BeatPlannerOutput,
   ChapterConflictSchema,
   HookMovementSchema,
   HookPressureLevelSchema,
@@ -65,6 +68,7 @@ export {
   RuleStackSectionsSchema,
   RuleStackSchema,
   ChapterTraceSchema,
+  ChapterTypeSchema,
 } from "./models/input-governance.js";
 export { PlannerAgent, type PlanChapterInput, type PlanChapterOutput } from "./agents/planner.js";
 export { ComposerAgent, type ComposeChapterInput, type ComposeChapterOutput } from "./agents/composer.js";

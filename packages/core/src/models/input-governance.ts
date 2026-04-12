@@ -156,3 +156,54 @@ export const ChapterTraceSchema = z.object({
 });
 
 export type ChapterTrace = z.infer<typeof ChapterTraceSchema>;
+
+export const ChapterTypeSchema = z.enum([
+  "combat",      // 战斗章
+  "upgrade",     // 升级章
+  "scheme",      // 布局章
+  "payoff",      // 回收章
+  "transition",  // 过渡章
+  "tribulation", // 渡劫章 (xianxia only)
+  "enlightenment", // 悟道章 (xianxia only)
+]);
+export type ChapterType = z.infer<typeof ChapterTypeSchema>;
+
+/** Input passed to BeatPlannerAgent.planBeats() */
+export interface BeatPlannerInput {
+  readonly bookId: string;
+  readonly chapterNumber: number;
+  /** Parsed chapter intent from PlannerAgent */
+  readonly intent: ChapterIntent;
+  /** Last 2-3 paragraphs of previous chapter (from Composer.buildRecentEndingTrail) */
+  readonly lastChapterEnding: string | undefined;
+  /** Last 3 chapter endings for structural dedup (from Composer) */
+  readonly recentEndings: readonly string[];
+  /** Global state summary text */
+  readonly currentState: string;
+  /** Pending hooks from pending_hooks.md */
+  readonly pendingHooks: readonly {
+    readonly hookId: string;
+    readonly type: string;
+    readonly status: string;
+    readonly expectedPayoff: string;
+    readonly notes: string;
+  }[];
+  /** Emotional arcs data */
+  readonly emotionalArcs: string;
+  /** Optional chapter type hint from genre profile (null = auto-detect) */
+  readonly chapterTypeHint: ChapterType | null;
+  /** Target word count for this chapter */
+  readonly wordCount: { readonly min: number; readonly target: number; readonly max: number };
+  /** Genre profile chapterTypes list */
+  readonly genreChapterTypes: readonly string[];
+  /** Language */
+  readonly language: "zh" | "en";
+}
+
+/** Output from BeatPlannerAgent.planBeats() */
+export interface BeatPlannerOutput {
+  readonly beatSheet: string;
+  readonly chapterType: ChapterType;
+  readonly hookToAdvance: string | null;
+  readonly beatCount: number;
+}
