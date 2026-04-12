@@ -54,8 +54,7 @@ function makeCtx(overrides: Partial<AgentContext> = {}): AgentContext {
 
 function makeReport(chapter: number = 1): ChapterCompletionReport {
   return {
-    schemaVersion: 1,
-    bookId: "test-book",
+    schemaVersion: 1 as const,
     chapter,
     cost: "青云门盯上主角",
     gain: "结识帮腔者",
