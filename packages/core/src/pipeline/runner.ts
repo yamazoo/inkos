@@ -267,8 +267,33 @@ export class PipelineRunner {
     readonly maxRetries?: number;
   }): Promise<ArchitectOutput> {
     const maxRetries = params.maxRetries ?? 2;
-    let foundation = await params.generate();
 
+    // Step 1: initial generate; retry with format reminder on parse failure
+    let foundation: ArchitectOutput;
+    let initialParseError: Error | undefined;
+    try {
+      foundation = await params.generate();
+    } catch (err) {
+      if (err instanceof Error && err.message.includes("missing required section")) {
+        initialParseError = err;
+        this.logWarn(params.stageLanguage, {
+          zh: `Architect 输出缺少必需 section，正在用格式提醒重试...`,
+          en: `Architect missing required section, retrying with format reminder...`,
+        });
+        const formatReminder = params.language === "en"
+          ? "\n\n## FORMAT REMINDER\nYou MUST use these exact section headers:\n=== SECTION: story_bible ===\n...\n=== SECTION: volume_outline ===\n...\n=== SECTION: book_rules ===\n...\n=== SECTION: current_state ===\n...\n=== SECTION: pending_hooks ===\n..."
+          : "\n\n## 格式提醒\n你必须在回复中包含以下精确的 section 标记：\n=== SECTION: story_bible ===\n...\n=== SECTION: volume_outline ===\n...\n=== SECTION: book_rules ===\n...\n=== SECTION: current_state ===\n...\n=== SECTION: pending_hooks ===\n...";
+        try {
+          foundation = await params.generate(formatReminder);
+        } catch (err2) {
+          throw initialParseError ?? err2;
+        }
+      } else {
+        throw err;
+      }
+    }
+
+    // Step 2: review + retry loop
     for (let attempt = 0; attempt < maxRetries; attempt++) {
       this.logStage(params.stageLanguage, {
         zh: `审核基础设定（第${attempt + 1}轮）`,
@@ -299,10 +324,27 @@ export class PipelineRunner {
         en: `Foundation rejected (${review.totalScore}/100), regenerating...`,
       });
 
-      foundation = await params.generate(this.buildFoundationReviewFeedback(review, params.language));
+      const feedback = this.buildFoundationReviewFeedback(review, params.language);
+
+      try {
+        foundation = await params.generate(feedback);
+      } catch (err) {
+        if (err instanceof Error && err.message.includes("missing required section")) {
+          const formatReminder = params.language === "en"
+            ? "\n\n## FORMAT REMINDER\nYou MUST use these exact section headers in your response:\n=== SECTION: story_bible ===\n...\n=== SECTION: volume_outline ===\n...\n=== SECTION: book_rules ===\n...\n=== SECTION: current_state ===\n...\n=== SECTION: pending_hooks ===\n..."
+            : "\n\n## 格式提醒\n你必须在回复中包含以下精确的 section 标记：\n=== SECTION: story_bible ===\n...\n=== SECTION: volume_outline ===\n...\n=== SECTION: book_rules ===\n...\n=== SECTION: current_state ===\n...\n=== SECTION: pending_hooks ===\n...";
+          try {
+            foundation = await params.generate(feedback + formatReminder);
+          } catch (err2) {
+            throw initialParseError ?? err2;
+          }
+        } else {
+          throw err;
+        }
+      }
     }
 
-    // Final review
+    // Step 3: final review
     const finalReview = await params.reviewer.review({
       foundation,
       mode: params.mode,
