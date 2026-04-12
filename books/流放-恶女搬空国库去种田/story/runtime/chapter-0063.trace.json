@@ -1,0 +1,46 @@
+{
+  "chapter": 63,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\author_intent.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\current_focus.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\story_bible.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\volume_outline.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\chapter_summaries.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\book_rules.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\current_state.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\pending_hooks.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\memory.db"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0063.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "runtime/hook_debt#hook_按察使司动向",
+    "runtime/hook_debt#hook_左眉疤灰袍人",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#1",
+    "story/chapter_summaries.md#57",
+    "story/chapter_summaries.md#61",
+    "story/chapter_summaries.md#62",
+    "story/pending_hooks.md#hook_凤凰涅槃",
+    "story/pending_hooks.md#hook_济世堂欠命",
+    "story/pending_hooks.md#hook_老夫人身份",
+    "story/pending_hooks.md#hook_苏家灭门案",
+    "story/pending_hooks.md#hook_周砚",
+    "story/pending_hooks.md#hook_郑老卒",
+    "story/pending_hooks.md#hook_沈蓉交锋",
+    "story/pending_hooks.md#hook_城西可疑背影"
+  ],
+  "notes": []
+}

@@ -1,0 +1,104 @@
+{
+  "hooks": [
+    {
+      "hookId": "H004",
+      "startChapter": 1,
+      "type": "设定",
+      "status": "progressing",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "125",
+      "payoffTiming": "endgame",
+      "notes": "大劫真相 - 本章深化：青云门追踪+灰袍男揭示\"天裂需要东西去填，钥匙需要引线去牵\""
+    },
+    {
+      "hookId": "H010",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "60+",
+      "payoffTiming": "mid-arc",
+      "notes": "玄清阁灭门真相 - 本章关联：青云门追踪持续；灰袍男\"找了快一万年\""
+    },
+    {
+      "hookId": "H011",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "80+",
+      "payoffTiming": "mid-arc",
+      "notes": "筑基真相：万年前筑基是起点；引线发烫；灰袍男确认顾长命\"身上气息和针有关\""
+    },
+    {
+      "hookId": "H039",
+      "startChapter": 11,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "门后之人身份 - 本章无直接推进"
+    },
+    {
+      "hookId": "H040",
+      "startChapter": 11,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "老七命线转移机制 - 本章无直接推进"
+    },
+    {
+      "hookId": "H041",
+      "startChapter": 11,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "立即",
+      "payoffTiming": "immediate",
+      "notes": "青云门要往裂缝里\"塞什么\" - 本章推进：灰袍男透露\"天裂需要东西去填\""
+    },
+    {
+      "hookId": "H042",
+      "startChapter": 11,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "顾长命\"不是普通人\" - 本章重大推进：灰袍男确认\"青云门找这根针找了快一万年，从来没听说过有人能被引线认主。你身上的气息，和那根针……\""
+    },
+    {
+      "hookId": "H037",
+      "startChapter": 9,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "14-15",
+      "payoffTiming": "near-term",
+      "notes": "小鱼被拽回去的时间 - 瓷瓶发热；小鱼掌心青紫印记蔓延；分头逃亡"
+    },
+    {
+      "hookId": "H043",
+      "startChapter": 14,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "小鱼如何逃脱 - 新增：右边墙洞通往何处？小鱼方向感不强但有感知能力"
+    },
+    {
+      "hookId": "H044",
+      "startChapter": 14,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "顾长命诱敌计划 - 新增：独自面对三人围堵，银针已用，准备正面对敌"
+    }
+  ]
+}

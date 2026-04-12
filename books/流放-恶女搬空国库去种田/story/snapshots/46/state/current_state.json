@@ -1,0 +1,53 @@
+{
+  "chapter": 46,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "瘴气林子内（未出），距离岭南城大半个月路程",
+      "validFromChapter": 46,
+      "validUntilChapter": null,
+      "sourceChapter": 46
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "冷静、深谋、警觉；手腕无异样；前世记忆确认；原主背景已知",
+      "validFromChapter": 46,
+      "validUntilChapter": null,
+      "sourceChapter": 46
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "安全穿过瘴气林子；安全抵达岭南（约大半个月路程）；**评估济世堂岭南分号可信度**",
+      "validFromChapter": 46,
+      "validUntilChapter": null,
+      "sourceChapter": 46
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "解毒丸储备有限（已消耗两颗：老李分给领路的+昏迷犯人1颗）；瘴气林子内无法绕路",
+      "validFromChapter": 46,
+      "validUntilChapter": null,
+      "sourceChapter": 46
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "核心阵营：苏晚清、翠竹、方德正（彻底稳固）、老李（彻底稳住，表态赴汤蹈火）；敌对：镇国公府（提审危机升级中，沈蓉第二轮失败）、苏晏清；立场不明：济世堂岭南分号陈掌柜（存疑）",
+      "validFromChapter": 46,
+      "validUntilChapter": null,
+      "sourceChapter": 46
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "瘴气林子穿越；镇国公府后续追击威胁；**济世堂岭南分号可信度存疑（新增）**",
+      "validFromChapter": 46,
+      "validUntilChapter": null,
+      "sourceChapter": 46
+    }
+  ]
+}

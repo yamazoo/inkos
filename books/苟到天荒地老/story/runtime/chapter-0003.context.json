@@ -1,0 +1,120 @@
+{
+  "chapter": 3,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第2章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "灵气稀薄：仅为上古的千分之一"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "揭露大劫真相"
+    },
+    {
+      "source": "story/chapter_summaries.md#chapter_2_bridge",
+      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
+      "excerpt": "第2章《故人遗音》 | 出场人物：顾长命、小鱼、中年男子（青云门）、张婶（提及） | 本章事件：1.镇口修士神识监视，出镇计划搁置；2.疯道士传言→三年前老道士关联；3.中年男子换装追问老道士下落；4.揭露\"大劫\"真相：百年前大劫毁天道断灵根；5.老道士遗言\"此间有故人，他日必相逢\"；6.确认镇北土地庙地道作为退路 | 状态变化：青云门威胁升级为身份暴露危机；确认玉简/功法残卷/门槛退路仍在；镇北地道进入视野 | 悬念活动：H001升级（故人线索锁定）；H002推进（叛逃散修身份）；H003新增（地道退路）；H004推进（大劫真相框架）；H006升级（青云门主谋登场）；H009新增（东海姜姓线索）"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "2: 故人遗音 | 1: 回春堂前"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "2: 暗流涌动、压迫感升级、回忆与现实交织 / 推进章/揭露章 | 1: 平静、暗流涌动 / 建制章"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch1: 他没有回头。 | ch2: 他走回桌边，端起已经凉透的粥碗，喝了一口。"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 末法灵气稀薄；不能暴露筑基实力；周天成觊觎回春堂；青云门监视网"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 青云门已锁定\"故人\"线索；主角需在下次被找上门前找到应对之策"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 甩掉青云门追踪；找机会带小鱼离镇"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 警觉升级；准备探查镇北地道作为退路"
+    },
+    {
+      "source": "story/chapter_summaries.md#1",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "回春堂前 | 青云门盘查；周公子上门闹事；小鱼出场 | 青云门监视网确认；小鱼能感知修士 | H001/H002/H005/H006/H007/H008种下"
+    },
+    {
+      "source": "story/chapter_summaries.md#2",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "故人遗音 | 1.镇口修士神识监视，出镇计划搁置；2.疯道士传言→三年前老道士关联；3.中年男子换装追问老道士下落；4.揭露\"大劫\"真相：百年前大劫毁天道断灵根；5.老道士遗言\"此间有故人，他日必相逢\"；6.确认镇北土地庙地道作为退路 | 青云门威胁升级为身份暴露危机；确认玉简/功法残卷/门槛退路仍在；镇北地道进入视野 | H001升级（故人线索锁定）；H002推进（叛逃散修身份）；H003新增（地道退路）；H004推进（大劫真相框架）；H006升级（青云门主谋登场）；H009新增（东海姜姓线索）"
+    },
+    {
+      "source": "story/pending_hooks.md#H009",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 50+ | slow-burn | 东海之滨姜姓老头→老道士指引的去处（大劫真相线索）"
+    },
+    {
+      "source": "story/pending_hooks.md#H004",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "设定 | open | 125 | endgame | 大劫真相→百年前大劫毁了天道、断了灵根（青云门揭露）"
+    },
+    {
+      "source": "story/pending_hooks.md#H003",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 15-20 | mid-arc | 镇北土地庙地道→废弃庙宇下的逃生通道"
+    },
+    {
+      "source": "story/pending_hooks.md#H001",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 3 | immediate | 青云门盘查→升级为身份暴露危机（\"故人\"线索锁定）"
+    },
+    {
+      "source": "story/pending_hooks.md#H002",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 140 | endgame | 老道士身份→青云门追查\"三年前叛逃散修\"；遗言\"此间有故人\""
+    },
+    {
+      "source": "story/pending_hooks.md#H006",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 3 | immediate | 中年男子异常→青云门真正负责人（换装登场）；威胁性质升级"
+    },
+    {
+      "source": "story/pending_hooks.md#H005",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 31+ | mid-arc | 小鱼身世之谜"
+    },
+    {
+      "source": "story/pending_hooks.md#H007",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 16-18 | mid-arc | 周天成觊觎回春堂"
+    }
+  ]
+}

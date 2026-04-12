@@ -1,0 +1,363 @@
+{
+  "hooks": [
+    {
+      "hookId": "H025",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "非绑定单位——筛选机制——系统对部分人类连\"非绑定单位\"都不标记",
+      "notes": ""
+    },
+    {
+      "hookId": "H026",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "李父意识独立存在",
+      "notes": ""
+    },
+    {
+      "hookId": "H023",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "\"确认同步\"",
+      "notes": ""
+    },
+    {
+      "hookId": "H024",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "\"确认同步\"与李父警告",
+      "notes": ""
+    },
+    {
+      "hookId": "H001",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "系统神秘标记（橙色光圈）- 已揭示为使徒标记",
+      "notes": ""
+    },
+    {
+      "hookId": "H002",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "神秘掉落物品「???」无法鉴定 - 触发观测者扫描",
+      "notes": ""
+    },
+    {
+      "hookId": "H003",
+      "startChapter": 0,
+      "type": "open",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H009",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "已回收",
+      "notes": "末日降临机制"
+    },
+    {
+      "hookId": "H010",
+      "startChapter": 0,
+      "type": "open",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H019",
+      "startChapter": 4,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "已回收",
+      "notes": "「???」吸引机制"
+    },
+    {
+      "hookId": "H070",
+      "startChapter": 7,
+      "type": "**新埋**",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "**待定**",
+      "notes": "**仓库异常——红点带有荧光特征，与休眠舱阵列颜色相似；可能与\"觉醒者消失\"有关，不是普通污染体**"
+    },
+    {
+      "hookId": "H078",
+      "startChapter": 29,
+      "type": "大伏笔（真相）",
+      "status": "progressing",
+      "lastAdvancedChapter": 33,
+      "expectedPayoff": "卷末",
+      "payoffTiming": "mid-arc",
+      "notes": "E-032已解锁\"等待唤醒指令\"；昨晚看到的光点确认是休眠舱阵列深处的光柱；陈默前往唤醒E-032"
+    },
+    {
+      "hookId": "H079",
+      "startChapter": 29,
+      "type": "同步率",
+      "status": "progressing",
+      "lastAdvancedChapter": 31,
+      "expectedPayoff": "31",
+      "notes": "同步率达标30%触发唤醒协议部分执行；徽章与机器绑定关系确认"
+    },
+    {
+      "hookId": "H080",
+      "startChapter": 29,
+      "type": "关键物品",
+      "status": "progressing",
+      "lastAdvancedChapter": 31,
+      "expectedPayoff": "31",
+      "notes": "132个休眠舱=132个唤醒名额；唤醒协议已执行；三个红灯熄灭（净化成功）；四个红灯更亮（被污染者觉醒）；部分执行后污染先驱者退回休眠舱"
+    },
+    {
+      "hookId": "H084",
+      "startChapter": 31,
+      "type": "中伏笔（情节）",
+      "status": "progressing",
+      "lastAdvancedChapter": 32,
+      "expectedPayoff": "20章内",
+      "payoffTiming": "mid-arc",
+      "notes": "**\"保护他们/保护自己\"测试→陈默质疑非此即彼→正在思考第三个选项→\"如果系统本身是bug呢？\"→测试可能与先驱者协议第七条/光柱有关**"
+    },
+    {
+      "hookId": "H076",
+      "startChapter": 26,
+      "type": "中伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "30+",
+      "notes": "\"保护他们/保护自己\"测试：守护者提问与反向转化协议代价形成两害相权"
+    },
+    {
+      "hookId": "H070",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "仓库异常——红点带有荧光特征，与休眠舱阵列颜色相似",
+      "notes": ""
+    },
+    {
+      "hookId": "H062",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "记忆碎片分布——确认碎片在\"别的地方\"，部分不在这个世界",
+      "notes": ""
+    },
+    {
+      "hookId": "H063",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "先驱者姓名——名字被加密遮盖，白衣女人可能知道，需要特定条件解锁；先驱者与白衣女人关系暗示为\"更多\"",
+      "notes": ""
+    },
+    {
+      "hookId": "H030",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "第一天入侵差异——有人听到不同内容对应不同结果；**王德发补充：每人问题不同**",
+      "notes": ""
+    },
+    {
+      "hookId": "E1·末日降临",
+      "startChapter": 1,
+      "type": "系统觉醒之夜",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "系统绑定完成，原住民出现，观测者扫描",
+      "notes": ""
+    },
+    {
+      "hookId": "H004",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "神秘掉落物品「???」持续发热，与系统关联待解",
+      "notes": ""
+    },
+    {
+      "hookId": "H005",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "橙色光圈女人「下次见面」警告",
+      "notes": ""
+    },
+    {
+      "hookId": "H006",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**仓库异常——二楼发现安全部主管张伟尸体（无声击杀），暗示存在比普通怪物更危险的存在；红眼带有荧光特征，与休眠舱颜色相似；可能与\"觉醒者消失\"有关**",
+      "notes": ""
+    },
+    {
+      "hookId": "H084",
+      "startChapter": 30,
+      "type": "**新埋**",
+      "status": "open",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "**待定**",
+      "notes": "**赵磊数据流共振——脑子里的徽章信息在帮助抵抗回收程序；赵磊意识中出现\"继承者协议\"相关信息**"
+    },
+    {
+      "hookId": "H086",
+      "startChapter": 36,
+      "type": "中伏笔（情节）",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "10章内",
+      "payoffTiming": "mid-arc",
+      "notes": "墙壁符号能加速同步率上涨；与休眠舱同系统；可能是主动控制同步率的手段"
+    },
+    {
+      "hookId": "H087",
+      "startChapter": 36,
+      "type": "中伏笔（情节）",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "15章内",
+      "payoffTiming": "mid-arc",
+      "notes": "休眠舱阵列是完整系统（组件+核心）；光柱是核心；陈默身体能与光柱产生相同颜色的光"
+    },
+    {
+      "hookId": "H082",
+      "startChapter": 30,
+      "type": "中伏笔（情节）",
+      "status": "open",
+      "lastAdvancedChapter": 32,
+      "expectedPayoff": "20章内",
+      "payoffTiming": "mid-arc",
+      "notes": "污染指数几乎归零；四个污染先驱者退回休眠舱完全停战；可能与光柱有关"
+    },
+    {
+      "hookId": "H085",
+      "startChapter": 35,
+      "type": "观测者线",
+      "status": "open",
+      "lastAdvancedChapter": 32,
+      "expectedPayoff": "待定",
+      "payoffTiming": "mid-arc",
+      "notes": "天花板数据乱码（断断续续闪烁）；李思雨看到但选择隐瞒"
+    },
+    {
+      "hookId": "H045",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "守护者职业——王德发是第一天觉醒者，获得\"守护者\"职业；职责是保护未觉醒者度过第一夜；**本章揭示：被动威胁感应（50米）/ 安全区域气场**",
+      "notes": ""
+    },
+    {
+      "hookId": "H049",
+      "startChapter": 18,
+      "type": "记忆缺失",
+      "status": "progressing",
+      "lastAdvancedChapter": 18,
+      "expectedPayoff": "待定",
+      "notes": "\"不是遗忘，是拒绝\""
+    },
+    {
+      "hookId": "H081",
+      "startChapter": 30,
+      "type": "关键抉择",
+      "status": "open",
+      "lastAdvancedChapter": 31,
+      "expectedPayoff": "31",
+      "notes": "反向转化协议揭示：先驱者继承者可将残骸转化为保护屏障，代价是失去所有\"末日之前\"的记忆；陈默面临艰难选择：执行协议失去记忆，还是不执行让污染继续"
+    },
+    {
+      "hookId": "H035",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "筛选机制——答案不重要，选择背后的原因才重要",
+      "notes": ""
+    },
+    {
+      "hookId": "H046",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**新埋**",
+      "notes": "第二枚钥匙机制——成对使用（一枚开锁一枚解锁）；第一枚\"在它该在的地方\""
+    },
+    {
+      "hookId": "H047",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "神秘灵视者造访——留徽章和纸条给王德发；可能认识李远山遗物",
+      "notes": ""
+    },
+    {
+      "hookId": "H048",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**新埋**",
+      "notes": "B3方向金属齿轮声——休眠舱阵列异常？暗示B3有沉睡的先驱者或装置"
+    },
+    {
+      "hookId": "H088",
+      "startChapter": 32,
+      "type": "**中伏笔（情节）**",
+      "status": "progressing",
+      "lastAdvancedChapter": 33,
+      "expectedPayoff": "20章内",
+      "payoffTiming": "mid-arc",
+      "notes": "**赵磊伤口异常愈合：比正常速度快3-4倍，伤口边缘蓝光几乎消失，只剩淡疤→可能与觉醒/污染指数/同步率上涨有关→赵磊需要观察**"
+    },
+    {
+      "hookId": "H089",
+      "startChapter": 32,
+      "type": "**中伏笔（情节）**",
+      "status": "open",
+      "lastAdvancedChapter": 32,
+      "expectedPayoff": "20章内",
+      "payoffTiming": "mid-arc",
+      "notes": "**王德发情绪压力：三十年等待→王淑芬唤醒决策→陈默暂缓决定→王德发与陈默冲突→可能影响团队稳定性**"
+    },
+    {
+      "hookId": "H085",
+      "startChapter": 32,
+      "type": "**观测者线**",
+      "status": "progressing",
+      "lastAdvancedChapter": 33,
+      "expectedPayoff": "**待定**",
+      "notes": "**天花板数据乱码（断断续续闪烁）→本章多次闪烁→陈默注意到信号→李思雨假装没看到（她看到了什么？）→可能与系统/观测者有关**"
+    }
+  ]
+}

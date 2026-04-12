@@ -1,0 +1,80 @@
+{
+  "chapter": 19,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**世界名称**：荒界"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "### 第一卷：县城风云（第1-60章）"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 三天内找到第二块铁牌→与钱通谈判→救出苏青禾→追查铁牌与黑松林的关联→今晚柳巷东行动→**孙麻子失踪→出城路线断绝**"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **三天内：弄清铁牌真相→找到第二块铁牌→与钱通谈判→救出苏青禾**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 气血7.0/剁骨刀法42/左前臂旧伤（老郎中新包扎/草药/三天后换药）+右肩撕裂+后背三道血痕+左肋抓伤（愈合中）/怀揣短刀+剁骨刀+狼骨+铜牌+约5两碎银+六十余文+止血散1包+活血散1包+应急药粉1小包+狼肉约5斤+**老郎中遗言纸条（\"林中有巢/入者无归/别走\"）+老郎中铜钱+孙麻子定金铜钱（沾血）**"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 黑虎帮全城搜捕/今晚柳巷东行动/时间紧迫（钱通改时间为今晚/苏青禾随时可能被转移）/身份已被暴露/柳巷东只有一个出口（已发现暗沟逃生路线）/孙麻子出城路线已出问题（接头人失踪）/铁牌来源不明/铁牌不止一块"
+    },
+    {
+      "source": "story/chapter_summaries.md#16",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "入城 | ①从水门成功进城 ②发现镇内气氛紧张，黑虎帮在搜人 ③找到西边穷人区歪斜土屋地窖藏身 ④敷药疗伤（全部金疮药用尽）⑤夜半听到搜人队经过，未被发现 ⑥次日找陈老刀获取情报 ⑦得知周铁山已死，钱通掌权 ⑧得知苏青禾被关在黑虎帮后院柴房 ⑨得知苏父从黑松林回归，带回贵重东西 ⑩获得钱通给的见面地址纸条 | 伤势已止血但未痊愈（金疮药已用尽），气血仍消耗过半，狼肉剩余约5斤，获得钱通地址纸条，获得陈老刀情报（周铁山死/苏青禾位置/苏父回归） | H062回收（入城），H061/H002/H006/H010推进（钱通示好/黑虎帮权力交接），H064/H065/H066/H067/H068新增"
+    },
+    {
+      "source": "story/chapter_summaries.md#17",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "西市卖皮 | ①西市卖狼皮狼筋，得银3.4两 ②被皮货老头叫来的人盯梢 ③甩掉盯梢（躲夹缝） ④推理钱通意图：不是杀，是想\"用\" ⑤推理苏父东西的价值：比苏青禾重要得多 ⑥推理钱通目的：不是交易，是吞掉 | 碎银+0.4两（3→3.4两），狼皮狼筋已出售，狼骨仍在手 | H056/H057/H059/H069/H070/H071/H072新增"
+    },
+    {
+      "source": "story/chapter_summaries.md#18",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "第18章 | ①卖狼肉5.2斤得260文 ②被黑虎帮两个汉子盯上 ③躲夹缝逃脱 ④被追到死胡同 ⑤被郎中老头救进门 ⑥老头帮忙包扎伤口 ⑦老头告知苏父情报（带回东西/黑虎帮满城找/苏青禾被关是筹码） ⑧从后院小路离开 | 碎银+0.26两（3.4→约3.66两），狼肉0斤（已全部出售），左前臂伤口被老头用草药包扎 | H069确认（皮货老头=黑虎帮线人），H073/H074/H075/H076新增"
+    },
+    {
+      "source": "story/pending_hooks.md#它们怕光",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "伏笔 | open | 待展开 | 活物怕光但不完全怕/可利用阴影控制"
+    },
+    {
+      "source": "story/pending_hooks.md#伏笔-SU40\"它们\"的身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "伏笔 | open | 待展开 | 钱进临死透露：\"它们给的\"/\"别看它们的眼睛\"/\"巢\"/结合洞穴深处阴影/滴答声/灰白草茎/尸体薄膜"
+    },
+    {
+      "source": "story/pending_hooks.md#伏笔-两年前女人",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**伏笔** | open | 待展开 | **两年前进山/收到灰白草茎/\"走了没再回来\"→是否是苏青禾？→时间线矛盾（七年前vs两年前）→**64章推进：阿纱确认女人\"还了会死/没还会走\"**"
+    },
+    {
+      "source": "story/pending_hooks.md#H052",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "伏笔 | open | - | 铁骨狼群。延续"
+    }
+  ]
+}

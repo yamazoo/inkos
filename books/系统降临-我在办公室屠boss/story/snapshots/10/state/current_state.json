@@ -1,0 +1,101 @@
+{
+  "chapter": 10,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "华榕生活超市仓库（末日第二天清晨→战斗撤退中）",
+      "validFromChapter": 10,
+      "validUntilChapter": null,
+      "sourceChapter": 10
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "持有「???」（已发热·已与李思雨绑定）；文具剪刀（已钝）；铁棍（临时武器）；同步稳定器（已使用）；能量42%；生命值100/100",
+      "validFromChapter": 10,
+      "validUntilChapter": null,
+      "sourceChapter": 10
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "撤退到地下停车场；寻找安全据点；继续营救李雨薇",
+      "validFromChapter": 10,
+      "validUntilChapter": null,
+      "sourceChapter": 10
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "末日第二天清晨；武器简陋；能量42%；污染体数量增加",
+      "validFromChapter": 10,
+      "validUntilChapter": null,
+      "sourceChapter": 10
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "污染体（数量增加，Lv.2已清除，Lv.1若干）；普通幸存者：李国强（警戒）、赵磊（无系统·战斗异常）、李雨薇（华腾科技三楼·待救援）、新救三人组（中年男人+年轻女人+少年·被救治中）",
+      "validFromChapter": 10,
+      "validUntilChapter": null,
+      "sourceChapter": 10
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "末日降临；污染体围攻；能量不足；白衣女人消失与遗言；「???」的秘密；李远山遗物；先觉者/先驱者组织存在",
+      "validFromChapter": 10,
+      "validUntilChapter": null,
+      "sourceChapter": 10
+    },
+    {
+      "subject": "current_state",
+      "predicate": "核心认知",
+      "object": "系统已绑定；同步稳定器已使用；赵磊无系统但拥有感知能力；\"筛选机制\"存在；第一亿三千七百万赛季；先驱者与先觉者组织存在二十年前；\"非绑定单位\"≠无资格；观测者无答案，选择权在人类",
+      "validFromChapter": 10,
+      "validUntilChapter": null,
+      "sourceChapter": 10
+    },
+    {
+      "subject": "current_state",
+      "predicate": "击杀统计",
+      "object": "2（原住民×2）；1（污染体Lv.1·能量+2%→44%）",
+      "validFromChapter": 10,
+      "validUntilChapter": null,
+      "sourceChapter": 10
+    },
+    {
+      "subject": "current_state",
+      "predicate": "已建立关系",
+      "object": "李国强（队友）；李思雨（队友·「???」绑定关联·灵视潜力）；赵磊（无系统·异常感知）；李雨薇（待救援）；新救三人组（被救治中）",
+      "validFromChapter": 10,
+      "validUntilChapter": null,
+      "sourceChapter": 10
+    },
+    {
+      "subject": "current_state",
+      "predicate": "系统状态",
+      "object": "能量42%；【鉴定】技能已激活；弱点直觉Lv.1",
+      "validFromChapter": 10,
+      "validUntilChapter": null,
+      "sourceChapter": 10
+    },
+    {
+      "subject": "current_state",
+      "predicate": "新增伏笔",
+      "object": "H036（白衣女人·先觉者·零号）；H037（第一亿三千七百万赛季）；H031推进（李远山是先驱者/先觉者身份确认）；H034推进（赵磊老板参与先驱者计划）；\"那个人\"身份模糊",
+      "validFromChapter": 10,
+      "validUntilChapter": null,
+      "sourceChapter": 10
+    },
+    {
+      "subject": "current_state",
+      "predicate": "已回收伏笔",
+      "object": "H027（部分）- 铁箱子内容揭示；H036推进（白衣女人出现并消失）",
+      "validFromChapter": 10,
+      "validUntilChapter": null,
+      "sourceChapter": 10
+    }
+  ]
+}

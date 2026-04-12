@@ -1,0 +1,72 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_二月初三二十两",
+      "startChapter": 81,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**81章新增：苏家出事当天二十两支走+关联苏家灭门案**"
+    },
+    {
+      "hookId": "hook_济世堂中间空白",
+      "startChapter": 81,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**81章新增：济世堂中间几个月空白+不明使用者+可能与苏远山有关**"
+    },
+    {
+      "hookId": "hook_墨香斋后墙根",
+      "startChapter": 79,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**81章深化：药草相同+都在角落+都用油纸包=苏远山在用济世堂的可能性大增**"
+    },
+    {
+      "hookId": "hook_清风巷主人",
+      "startChapter": 77,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**81章深化+83章重大推进：济世堂踩点完成+新线索串联+苏远山可信度降至新低+**今早派人送字条+知道她们今天出发（他怎么知道的？）**"
+    },
+    {
+      "hookId": "hook_隔壁新住客",
+      "startChapter": 75,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（身份待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "75章新增+76章重大推进+77章深化+78章确认+79-81章未直接提及但威胁存在（81章结尾走廊脚步声）"
+    },
+    {
+      "hookId": "hook_左眉疤灰袍人",
+      "startChapter": 83,
+      "type": "**mystery**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**岭南府城（待揭露）**",
+      "notes": "**83章新增：左眉上方一道旧疤+身形瘦削+蒙面+声音沙哑+送苏远山字条+知道她们今天出发+步态与济世堂跟踪者不同=可能是苏远山的人？但也可能不是？**"
+    },
+    {
+      "hookId": "hook_苏青身体亏空",
+      "startChapter": 83,
+      "type": "**mystery**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**岭南府城（待揭露）**",
+      "notes": "**83章新增：济世堂三个月被灌药治咳嗽+身体亏空+今天赶路顶不住+半路发烧+左手攥袖口+苏晚清追问才知道**"
+    }
+  ]
+}

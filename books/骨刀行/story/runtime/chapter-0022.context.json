@@ -1,0 +1,80 @@
+{
+  "chapter": 22,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**世界名称**：荒界"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "### 第一卷：县城风云（第1-60章）"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | **三天期限/苏青禾等待/暗道探索/父亲遗产待深入**"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **探索暗道/寻找灵脉核心/返回破庙见苏青禾（三天期限进行中/剩余约2天）**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 气血5.8/剁骨刀法42/左前臂旧伤（知觉恢复进度：指尖→手腕→小臂中段→肘弯→大臂知觉开始恢复→肩头痒意减轻）/右肩撕裂+后背三道血痕+左肋划伤+左手掌心刀伤+右肩新刀伤（已撒止血散/血止）+右手虎口裂开/持有：剁骨刀+杀猪刀+铁钎+狼骨+铜牌+约3两碎银+五十余文+止血散1包（剩余约1/6）+活血散1包+应急药粉1小包+老郎中遗言纸条+荒卫令牌（37号/已合二为一）+钥匙串（赵三爷肉铺）/**灰白草茎×2（怀中）**"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | **三天期限（进行中/已过约1夜/剩余约2天）/老人断腿留在原地等待（最多三天）/苏青禾独自在破庙等待（已妥善安置）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#19",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "养伤与变局 | ①地窖醒来检查伤口（发痒，愈合中） ②去西市买糙米5斤+盐（20文） ③听到黑虎帮汉子对话：\"舵把子要活的\" ④听到路人议论：老苏住柳巷东/从黑松林带回好东西/黑虎帮满城找/苏青禾被带走 ⑤确认：三个\"柳巷东\"（钱通/老郎中/苏父）同一地点 ⑥购买干粮+药粉（40+文） ⑦回到地窖思考对策 ⑧准备武器（狼骨包好/短刀缠紧） ⑨计划：养伤/打探消息/准备退路 ⑩思考老郎中动机（可能在试探） | 碎银约-0.6两（3.66→3两），获得糙米5斤+粗盐+干粮+药粉；伤势持续愈合；武器准备就绪 | H073/H074/H075/H076/H077推进（老郎中动机/三柳巷东同一地点/苏父东西/钱通棋子/舵把子称呼）；H069/H070/H071/H072延续（皮货老头线人/钱通意图/苏父东西价值）"
+    },
+    {
+      "source": "story/chapter_summaries.md#20",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "第20章 | ①老郎中提前来访（用暗号敲门） ②告知钱通改时间：今晚柳巷东（不是三天后） ③揭示老郎中动机：苏老实救过他一命 ④揭示苏老实与老郎中的关系：老郎中派苏老实去黑松林收账 ⑤揭示苏老实带回的东西来源：抵账品，\"不干净\" ⑥告知钱通今晚要灭口，不是谈判 ⑦告知黑虎帮也在找老郎中 ⑧老郎中给铜钱让找孙麻子出城 ⑨老郎中要留下撑住帮陆沉拖时间 ⑩苏青禾今晚会被用来钓苏老实 ⑪陆沉面临抉择：去=死局，不去=苏青禾死+自己迟早被抓 | 获得桂花糕×2；获得铜钱×1（找孙麻子）；糙米消耗；时间线提前（今晚=死局） | H073/H074/H075/H076回收（老郎中动机/柳巷东时间/苏父东西来源）；H078/H079/H080/H081新增（孙麻子/老郎中命运/苏青禾今晚）"
+    },
+    {
+      "source": "story/chapter_summaries.md#21",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "铜钱与退路 | ①找孙麻子谈出城方案②确认黑虎帮三门各布六七人③收费标准：2人150文+余款④今晚子时三刻城南门乱葬岗交接⑤得知钱通今晚柳巷东三层包围⑥苏青禾被关在柳巷东隔壁院子⑦孙麻子暗示\"从里面\"突破⑧陆沉决定找苏青禾或老郎中从内部进入⑨付定金二钱碎银⑩计划：子时三刻带两人出城 | 碎银约-0.2两（3→约2.8两）；铜钱已交给孙麻子；伤势持续愈合中 | H078/H079/H080/H082/H083/H084/H085新增（孙麻子方案/柳巷东内部缺口/苏青禾位置/策略确定）"
+    },
+    {
+      "source": "story/pending_hooks.md#SP040-它们身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "剧情 | open | 待展开 | 十几只手/灰白鳞片/乌黑指甲"
+    },
+    {
+      "source": "story/pending_hooks.md#铁匣刻字\"别走\"",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬案 | progressing | **65章新解** | **65章新解：\"别走\"是警告即将到来的手，不是警告匣内活物→与草茎规则矛盾已初步解释**"
+    },
+    {
+      "source": "story/pending_hooks.md#SP039-匣内活物之谜",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "剧情 | open | 待展开 | 铁匣活物/四只/怕光/絮状物巢穴"
+    },
+    {
+      "source": "story/pending_hooks.md#H021",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "剧情 | progressing | 待展开 | 前两天刚从林子出来/伤了元气"
+    }
+  ]
+}

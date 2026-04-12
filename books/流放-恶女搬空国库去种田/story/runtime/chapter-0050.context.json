@@ -1,0 +1,85 @@
+{
+  "chapter": 50,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**清醒理智**：不被原书剧情和情感绑架，一切以生存和利益最大化为核心。"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "1. 穿越觉醒，利用空间物资收买押送官，改善生存环境。"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 引蛇出洞策略（正式启动）；驿站眼线监控（济世堂已出牌）；解毒丸异常（控神毒药成分待验证）；岭南未知局势（陈掌柜真实意图）"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 继续前往岭南（约大半个月路程）；接触陈掌柜验证情报；引蛇出洞策略待验证（老李递信任务明日启动）；深入研究凤凰玉佩12人名单；驿站眼线动向监控"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 冷静、深谋、警觉；穿越瘴气林子成功；驿站眼线身份确认；引蛇出洞策略正式启动；解毒丸异常察觉（疑似被掺入控神毒药成分）；凤凰玉佩绢纸备份交翠竹保管"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 解毒丸储备剩余2颗（翠竹1颗+苏晚清1颗）——发现异常需更换；老李递信任务待明日执行；济世堂岭南势力已知苏晚清要来并已派眼线跟踪；敌方（陈掌柜+老驿卒眼线）已进入主动接触阶段"
+    },
+    {
+      "source": "story/chapter_summaries.md#37",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "审问·遗孤 | 苏晚清审问俘虏获取济世堂关键情报（凤凰玉佩目标、苏氏遗孤身份、脉案被篡改），同时收买老李（辣酱+解毒丸）和方德正（太后赏赐锦盒），彻底稳固押送官阵营 | 苏晚清：良好→身世之谜正式激活；老李：已收买→承诺忠诚；方德正：深度合作→达成交易彻底稳固；俘虏：被俘→透露关键情报 | hook_苏氏遗孤 advanced; hook_济世堂脉案篡改 advanced; hook_凤凰玉佩秘密 advanced; hook_济世堂岭南分号 advanced; hook_京城眼线 advanced"
+    },
+    {
+      "source": "story/chapter_summaries.md#43",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "寒潮将至 | 镇国公府沈蓉持太后相关公文试图提审苏晚清，被苏晚清以太后亲判和公文合法性反击，并亮出迷药瓶+拍手召周管事人手反包围，成功逼退沈蓉。 | 押送官阵营彻底稳固（老李护驾+方德正戒备）；沈蓉提审失败退走但危机未解除；苏晚清公开与镇国公府对立并发出反威胁。 | hook_镇国公府提审深化 advanced; hook_落花坡第三轮伏击 advanced"
+    },
+    {
+      "source": "story/chapter_summaries.md#44",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "暗流（3） | 沈蓉撤退→落花坡伏击触发→苏晚清识别迷药→信号弹召唤援兵→迷药反制→周管事救援成功→沈蓉撤退→苏晚清揭示原主被退婚/诬陷背景→决定研究凤凰玉佩→方德正警告落花坡有暗桩 | 沈蓉第一轮失败退走；落花坡伏击反制成功；周管事暗中跟踪确认；押送官阵营稳固；苏晚清坚定决心；原主背景揭示 | hook_落花坡第三轮伏击 resolved；hook_镇国公府提审深化 advanced；hook_周管事动机 new；hook_凤凰玉佩秘密 new"
+    },
+    {
+      "source": "story/chapter_summaries.md#46",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "瘴气初临 | 迷魂瘴情报→京城催促入冬前送达→解毒丸分发→老李表态赴汤蹈火→进入瘴气林子→年轻犯人瘴气入体昏迷→苏晚清诊断救治→方德正试探药理→发现水洼蛇群→苏晚清提出应对策略→质疑瘴气林子与济世堂关联 | 苏晚清：冷静深谋警觉；老李：彻底稳固+表态赴汤蹈火；方德正：深化+试探药理；解毒丸消耗两颗 | hook_岭南/瘴气环境活跃；hook_济世堂内部隐患活跃；hook_济世堂与镇国公府岭南勾连活跃；hook_陈掌柜身份new"
+    },
+    {
+      "source": "story/pending_hooks.md#hook-1",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "unspecified | open | **类型**: identity"
+    },
+    {
+      "source": "story/pending_hooks.md#hook-10",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "unspecified | open | **备注**: 这是一张网，苏晚清踩进中心。需要揭示这12人的身份和作用。"
+    },
+    {
+      "source": "story/pending_hooks.md#hook-11",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "unspecified | open | **类型**: strategy"
+    },
+    {
+      "source": "story/pending_hooks.md#hook-12",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "unspecified | open | **状态**: open"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "chapter": 54,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**清醒理智**：不被原书剧情和情感绑架，一切以生存和利益最大化为核心。"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "1. 穿越觉醒，利用空间物资收买押送官，改善生存环境。"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 凤凰玉佩作为筹码；镇国公府持续追杀（沈蓉撤退但威胁持续）；苏氏遗孤身世谜团；**哨卡暗桩认出令牌记号（异常）→岭南城西可能有接应**；孙押役与可疑村民有关联；岭南城西可能有埋伏"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 安全抵达岭南；接触陈掌柜验证情报；调查济世堂岭南城西分号；揭露苏氏遗孤身世真相；监视孙押役（已初步控制）；**警惕哨卡暗桩（令牌被做标记）**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 身体虚弱但稳定；凤凰玉佩在手（背面刻'苏氏'）；空间泉水恢复中；空间物资（压缩饼干/花生饼/干果/花生糖/药酒已消耗一瓶）；**孙押役已服用\"驱寒药\"（三五日内乏力）**"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 身体虚弱未完全恢复；**哨卡暗桩认出令牌记号（异常）**；镇国公府/济世堂持续追杀；孙押役嫌疑确认（与可疑村民有关联待查）；岭南城西可能有埋伏"
+    },
+    {
+      "source": "story/chapter_summaries.md#33",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "暗棋 | **路线图分析+销毁**；**方德正二次善意提醒（济世堂药丸/岭南城西分号）**；**老李话多——队里有人起别的心思**；**明日提前启程（京城催促）**；**苏晏清想让苏晚清死在岭南确认**；**物资清点完成（驱蛇虫药粉/解毒丸/止血散/金创药/烟花）**；**烟花预警构想**；**棋盘分析完成** | 流放休整结束；**进入启程前夕**；**方德正合作深化（二次善意）**；**老李立场存疑**；**物资筹备完成**；**执棋人认知确立** | **hook_落花坡激活（路线图+预警构想）**；**hook_济世堂城西分号激活**；**hook_老李异常激活**；mystery-岭南瘴气陷阱深化；hook_0029/0034推进"
+    },
+    {
+      "source": "story/chapter_summaries.md#37",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "审问·遗孤 | 苏晚清审问俘虏获取济世堂关键情报（凤凰玉佩目标、苏氏遗孤身份、脉案被篡改），同时收买老李（辣酱+解毒丸）和方德正（太后赏赐锦盒），彻底稳固押送官阵营 | 苏晚清：良好→身世之谜正式激活；老李：已收买→承诺忠诚；方德正：深度合作→达成交易彻底稳固；俘虏：被俘→透露关键情报 | hook_苏氏遗孤 advanced; hook_济世堂脉案篡改 advanced; hook_凤凰玉佩秘密 advanced; hook_济世堂岭南分号 advanced; hook_京城眼线 advanced"
+    },
+    {
+      "source": "story/chapter_summaries.md#43",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "寒潮将至 | 镇国公府沈蓉持太后相关公文试图提审苏晚清，被苏晚清以太后亲判和公文合法性反击，并亮出迷药瓶+拍手召周管事人手反包围，成功逼退沈蓉。 | 押送官阵营彻底稳固（老李护驾+方德正戒备）；沈蓉提审失败退走但危机未解除；苏晚清公开与镇国公府对立并发出反威胁。 | hook_镇国公府提审深化 advanced; hook_落花坡第三轮伏击 advanced"
+    },
+    {
+      "source": "story/chapter_summaries.md#44",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "暗流（3） | 沈蓉撤退→落花坡伏击触发→苏晚清识别迷药→信号弹召唤援兵→迷药反制→周管事救援成功→沈蓉撤退→苏晚清揭示原主被退婚/诬陷背景→决定研究凤凰玉佩→方德正警告落花坡有暗桩 | 沈蓉第一轮失败退走；落花坡伏击反制成功；周管事暗中跟踪确认；押送官阵营稳固；苏晚清坚定决心；原主背景揭示 | hook_落花坡第三轮伏击 resolved；hook_镇国公府提审深化 advanced；hook_周管事动机 new；hook_凤凰玉佩秘密 new"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_镇国公府追杀",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "conflict | open | 岭南（彻底解决） | 沈蓉第二轮追击失败；凤凰玉佩作为筹码发挥作用；追杀升级但暂时退让；威胁持续"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_姓孙的押送兵",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "progressing | open | 待定 | 第33章老李首次提出；方德正多次警告（第46、51章）；孙押役选岔路口险道+主动问药油+攥紧瓷瓶+往队伍前头凑+偷偷与人传递消息——多重可疑信号持续积累；**本章：已服药控制，但与可疑村民关联待查**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_孙押役内鬼",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "event | open | 岭南（揭露真相） | 孙押役异常行为确认：与可疑村民接触、被施恩控制后三五日乏力、阻止通风报信；**本章：方德正持续监视，往队伍前头凑行为被记录**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_济世堂岭南城西分号",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "progressing | open | 俘虏供出城西坊分号\"见不得光的生意\"；**本章：苏晚清计划到岭南后去分号调查**"
+    }
+  ]
+}

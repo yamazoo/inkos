@@ -1,0 +1,80 @@
+{
+  "chapter": 21,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**世界名称**：荒界"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "### 第一卷：县城风云（第1-60章）"
+    },
+    {
+      "source": "story/current_state.md#当前位置",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前位置 | 城东十五里破庙（马七势力范围）"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | **钱进要两块令牌凑齐（三十七+三十八）/苏青禾在钱进手中/三天期限已用一天半/孟三逼问令牌未果/马七介入/老东家身份悬念/马七师兄同名悬念/孟三北上乱葬岗**"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **养伤（还剩两天）→准备行动→营救苏青禾（城中/钱进手中）**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 气血7.0↑/剁骨刀法42/左前臂旧伤（老郎中草药+马七新药/愈合加速/知觉恢复中）+右肩撕裂+后背三道血痕+左肋划伤+膝盖撞伤/双手新伤（抠井沿/愈合中）/怀揣剁骨刀+狼骨（啃剩半根）+铜牌+约4.8两碎银+五十余文+止血散1包+活血散1包+应急药粉1小包+老郎中遗言纸条+**荒卫令牌（三十七号/青铜/荒卫司）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#18",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "第18章 | ①卖狼肉5.2斤得260文 ②被黑虎帮两个汉子盯上 ③躲夹缝逃脱 ④被追到死胡同 ⑤被郎中老头救进门 ⑥老头帮忙包扎伤口 ⑦老头告知苏父情报（带回东西/黑虎帮满城找/苏青禾被关是筹码） ⑧从后院小路离开 | 碎银+0.26两（3.4→约3.66两），狼肉0斤（已全部出售），左前臂伤口被老头用草药包扎 | H069确认（皮货老头=黑虎帮线人），H073/H074/H075/H076新增"
+    },
+    {
+      "source": "story/chapter_summaries.md#19",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "养伤与变局 | ①地窖醒来检查伤口（发痒，愈合中） ②去西市买糙米5斤+盐（20文） ③听到黑虎帮汉子对话：\"舵把子要活的\" ④听到路人议论：老苏住柳巷东/从黑松林带回好东西/黑虎帮满城找/苏青禾被带走 ⑤确认：三个\"柳巷东\"（钱通/老郎中/苏父）同一地点 ⑥购买干粮+药粉（40+文） ⑦回到地窖思考对策 ⑧准备武器（狼骨包好/短刀缠紧） ⑨计划：养伤/打探消息/准备退路 ⑩思考老郎中动机（可能在试探） | 碎银约-0.6两（3.66→3两），获得糙米5斤+粗盐+干粮+药粉；伤势持续愈合；武器准备就绪 | H073/H074/H075/H076/H077推进（老郎中动机/三柳巷东同一地点/苏父东西/钱通棋子/舵把子称呼）；H069/H070/H071/H072延续（皮货老头线人/钱通意图/苏父东西价值）"
+    },
+    {
+      "source": "story/chapter_summaries.md#20",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "第20章 | ①老郎中提前来访（用暗号敲门） ②告知钱通改时间：今晚柳巷东（不是三天后） ③揭示老郎中动机：苏老实救过他一命 ④揭示苏老实与老郎中的关系：老郎中派苏老实去黑松林收账 ⑤揭示苏老实带回的东西来源：抵账品，\"不干净\" ⑥告知钱通今晚要灭口，不是谈判 ⑦告知黑虎帮也在找老郎中 ⑧老郎中给铜钱让找孙麻子出城 ⑨老郎中要留下撑住帮陆沉拖时间 ⑩苏青禾今晚会被用来钓苏老实 ⑪陆沉面临抉择：去=死局，不去=苏青禾死+自己迟早被抓 | 获得桂花糕×2；获得铜钱×1（找孙麻子）；糙米消耗；时间线提前（今晚=死局） | H073/H074/H075/H076回收（老郎中动机/柳巷东时间/苏父东西来源）；H078/H079/H080/H081新增（孙麻子/老郎中命运/苏青禾今晚）"
+    },
+    {
+      "source": "story/pending_hooks.md#SP039",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**伏笔** | open | **65章需明确交代** | **断手活物去向：64章确认匣内三只活物/第四只（断手）状态未交代→按2-3章回收ETA已逾期→需65章明确交代**"
+    },
+    {
+      "source": "story/pending_hooks.md#伏笔-断手活物（SP039）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**伏笔** | open | **64章仍未处理→超过5章→警告** | **60章切断的手腕下落不明→63章确认匣内\"三只一起动\"→64章确认匣内三只→第四只（断手）状态未交代→按2-3章回收ETA已逾期→需65章明确交代**"
+    },
+    {
+      "source": "story/pending_hooks.md#伏笔-活物怕光",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**伏笔** | open | **待展开** | **64章确认：三只活物见火光收缩/怕光特性→可利用阴影控制**"
+    },
+    {
+      "source": "story/pending_hooks.md#H012",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "人物 | progressing | 待展开 | 黑松林地图交换"
+    }
+  ]
+}

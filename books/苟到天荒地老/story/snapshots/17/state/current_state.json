@@ -1,0 +1,53 @@
+{
+  "chapter": 17,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "枯井底部石门内空间（十七只眼睛墙壁前）",
+      "validFromChapter": 17,
+      "validUntilChapter": null,
+      "sourceChapter": 17
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "沉稳·坚定·保护欲极强·倒计时压力极大·行动决断",
+      "validFromChapter": 17,
+      "validUntilChapter": null,
+      "sourceChapter": 17
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "问清续命具体操作步骤；救小鱼",
+      "validFromChapter": 17,
+      "validUntilChapter": null,
+      "sourceChapter": 17
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "小鱼命线印记已蔓延至肩膀（加速恶化）；青云门外围警戒网；门后之人已揭示身份（那根针）；三样凑齐已知但具体续命步骤未知",
+      "validFromChapter": 17,
+      "validUntilChapter": null,
+      "sourceChapter": 17
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "青云门：外围警戒网监控中；门后之人：信息提供者（那根针/持针者）",
+      "validFromChapter": 17,
+      "validUntilChapter": null,
+      "sourceChapter": 17
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "时间压力：小鱼命线加速被拽（青紫已至肩膀）；具体续命步骤未知；青云门警戒网存在",
+      "validFromChapter": 17,
+      "validUntilChapter": null,
+      "sourceChapter": 17
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "chapter": 17,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第17章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "灵气稀薄：仅为上古的千分之一"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "揭露大劫真相"
+    },
+    {
+      "source": "story/chapter_summaries.md#chapter_16_bridge",
+      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
+      "excerpt": "第16章《夜路寻踪》 | 出场人物：顾长命、小鱼 | 本章事件：1. 上章青云门追捕者离开（第15章）→ 本章顾长命消化信息后开始追踪小鱼：根据掌心疤痕发热判断方向，沿田埂北上寻找。2. 野外追踪：灌木折断痕迹、草丛倒伏方向、干泥温度感应，确认小鱼逃向东北乱石滩。3. 掌心疤痕发热确认小鱼已近：三年前和十二年前同样的发热感应。4. 在乱石滩干涸溪沟找到小鱼：她熬了一夜，筋疲力尽，手攥削尖木棍防身。5. 顾长命给水给粮，检查小瓷瓶：热度从\"温热\"升为\"更烫\"，瓶底釉面透出青紫。6. 小鱼掌心青紫印记比昨天更深：已从掌心蔓延至手腕，像活物往胳膊方向爬。7. 顾长命决定不告诉她真相（锁芯身份/被拽回去）；问她\"信我吗\"，小鱼答\"信\"。8. 两掌相触验证：引线疤痕与锁芯疤痕接触后发热碰撞，顾长命疤痕也更红——确认三样凑齐可续命的机制。9. 新困境浮现：针在玉简里，取针需要开门；门怎么开、门后的人还在不在、续命具体怎么做都不清楚。10. 青云门换策略：外围警示符石未撤（镇东/镇北/通往枯井小路），改用符石监控。11. 顾长命决定带小鱼回枯井见门后之人问清楚。 | 状态变化：位置：林边→乱石滩→青石镇方向田埂；小鱼找到，汇合成功；小鱼状态：熬一夜，极度疲惫，命线印记加速蔓延至手腕，瓷瓶持续发烫；顾长命目标转变：找小鱼→带小鱼回枯井；青云门威胁转变：追捕→外围警戒网监控 | 悬念活动：H037 resolved（小鱼位置确认/命线收紧状态/逃亡汇合）；H039 progressed（决定回枯井问门后之人）；H040 progressed（续命机制验证+具体操作仍未知）；H045 new（青云门外围警戒网）；H046 new（玉简取针风险/续命具体操作未知）"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "16: 夜路寻踪 | 15: 林中脱困 | 14: 林间分岔 | 13: 夜尽天明 | 11: 井底问门"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "16: 沉稳·坚定·紧迫·温情（找小鱼）·保护欲强·倒计时压力（印记加速蔓延/瓷瓶持续升温） / 搜救章/推进章/承上启下章 | 15: 沉稳·释然·紧绷解除·坚定·倒计时压力仍在 / 揭露章/降调章 | 14: 警觉·紧迫·决断·保护·紧张对峙·诱敌决心 / 追逐章/推进章 | 13: 沉重·警觉·紧迫·温情·决断·追逐开始 / 喘息章/推进章/温情章 | 11: 沉重·警觉·紧迫·决断·倒计时 / 核心揭露章/推进章/承上启下章"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch14: \"来得好。\" | ch15: 风吹过来，带着草木的清香。 | ch16: 他把手攥紧，朝镇子的方向走去。身后，乱石滩上的影子被越拉越长。"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 甩掉青云门追踪；弄清天裂真相；寻找提升实力之法"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 青云门追至石室；老道士断后掩护；小鱼安置待确认"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 沉稳·谨慎·算计深远·保护欲强·行动决断"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 青云门外围警戒网；修为炼气三层；灵石近乎耗尽"
+    },
+    {
+      "source": "story/chapter_summaries.md#3",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "枯井窥天 | 进入玄清阁；老道士揭露大劫真相；青云门追至；老道士消失 | 枯井之约完成；青云门威胁升级为追杀；玉简新能力显现 | H003/H004/H009/H010/H011/H013/H014/H015/H016/H017"
+    },
+    {
+      "source": "story/chapter_summaries.md#9",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "线断之处 | 1.顾长命去老君庙见老庙主师兄；2.老僧揭露命线图真相：十七道口子=十七只眼睛；天裂是药引子；3.小鱼命线十二年前断了，缠在顾长命身上；4.小鱼喊过\"接住我\"；5.续命线需要钥匙+引线；引线在顾长命手上（两道疤）；6.小鱼会被拽回去\"填进裂缝里\"；7.老僧给绢帛（命线图）+细绳（引线）；8.老僧说去井底见门后的人；9.青云门周平带8人来回春堂抓人；10.青云门锁定小鱼是\"引线\"；11.顾长命提前转移小鱼到夹壁暗道（昨夜已做）；12.青云门搜空后离开，说明早\"喝茶\"；13.周老爷子今夜断气；14.小鱼掌心疤泛青紫（命线在动）；15.顾长命决定天亮前去井底 | 获得绢帛+细绳；小鱼命线开始动；青云门锁定小鱼是引线；周老爷子今夜断气；顾长命决心天亮前见井底门后之人 | H033/H034/H032/H028回收；H036/H037/H038新开；H004/H029/H030/H031推进"
+    },
+    {
+      "source": "story/chapter_summaries.md#15",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "林中脱困 | 1. 上章顾长命独自引敌被三人围堵（第14章）→ 本章顾长命主动摊牌：展示掌心疤痕揭示自己是引线宿主，讲述三年前枯井边接住小鱼、十二年前捡到小鱼的事实，以信息换提问权。2. 上章灰袍男揭示天裂需东西填、钥匙需引线牵（第14章）→ 本章灰袍男完整揭露大劫真相：万年前三愚者烧天49天撕裂天道→先塞17个活人→后换成针线钥匙三样→青云门烧断线只留钥匙在外→针线钥匙都在青石镇都在顾长命手里。3. 上章青云门追了三万年（第9章老僧提及）→ 本章追捕者承认：是万年前烧天的三个人，追了小鱼三万年，确认顾长命三年前接住了她。4. 上章青云门围堵对峙（第14章）→ 本章三人听完真相后主动离开，没有动手。5. 上章小瓷瓶交给小鱼带走（第13章）→ 本章顾长命确认瓷瓶仍温热，说明小鱼还活着，正在三十里外逃亡。 | 顾长命从林间深处移至林边，追捕者离开后威胁暂时解除；大劫真相（天裂、针线钥匙、烧天者身份）在本章完整揭示，信息量巨大但追捕者主动退场形成情绪降调；小鱼仍在外逃亡（方向未知），瓷瓶温热是唯一存活信号；青云门追捕从「围堵」转入「信息掌握后放手」的不确定状态。 | H004 advanced（终局伏笔大劫真相完整揭露）；H041 resolved（青云门往裂缝塞什么完全揭示）；H042 resolved（引线宿主身份确认）；H043 resolved（小鱼逃脱成功）；H044 resolved（诱敌计划成功）；H010/H011顺带推进"
+    },
+    {
+      "source": "story/chapter_summaries.md#16",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "夜路寻踪 | 1. 上章青云门追捕者离开（第15章）→ 本章顾长命消化信息后开始追踪小鱼：根据掌心疤痕发热判断方向，沿田埂北上寻找。2. 野外追踪：灌木折断痕迹、草丛倒伏方向、干泥温度感应，确认小鱼逃向东北乱石滩。3. 掌心疤痕发热确认小鱼已近：三年前和十二年前同样的发热感应。4. 在乱石滩干涸溪沟找到小鱼：她熬了一夜，筋疲力尽，手攥削尖木棍防身。5. 顾长命给水给粮，检查小瓷瓶：热度从\"温热\"升为\"更烫\"，瓶底釉面透出青紫。6. 小鱼掌心青紫印记比昨天更深：已从掌心蔓延至手腕，像活物往胳膊方向爬。7. 顾长命决定不告诉她真相（锁芯身份/被拽回去）；问她\"信我吗\"，小鱼答\"信\"。8. 两掌相触验证：引线疤痕与锁芯疤痕接触后发热碰撞，顾长命疤痕也更红——确认三样凑齐可续命的机制。9. 新困境浮现：针在玉简里，取针需要开门；门怎么开、门后的人还在不在、续命具体怎么做都不清楚。10. 青云门换策略：外围警示符石未撤（镇东/镇北/通往枯井小路），改用符石监控。11. 顾长命决定带小鱼回枯井见门后之人问清楚。 | 位置：林边→乱石滩→青石镇方向田埂；小鱼找到，汇合成功；小鱼状态：熬一夜，极度疲惫，命线印记加速蔓延至手腕，瓷瓶持续发烫；顾长命目标转变：找小鱼→带小鱼回枯井；青云门威胁转变：追捕→外围警戒网监控 | H037 resolved（小鱼位置确认/命线收紧状态/逃亡汇合）；H039 progressed（决定回枯井问门后之人）；H040 progressed（续命机制验证+具体操作仍未知）；H045 new（青云门外围警戒网）；H046 new（玉简取针风险/续命具体操作未知）"
+    },
+    {
+      "source": "story/pending_hooks.md#H004",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open | 大劫真相——本章统一为\"天道自身崩解，三人接骨匠被误认为罪人\""
+    },
+    {
+      "source": "story/pending_hooks.md#H003",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open | 大劫具体原因——天道崩解内衰外促三重叠加"
+    },
+    {
+      "source": "story/pending_hooks.md#H009",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open | 天裂之处的秘密——郑怀恩手札记载十七道裂缝"
+    },
+    {
+      "source": "story/pending_hooks.md#H012",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open | 玄清阁与青石镇的关联——大劫源头在附近"
+    },
+    {
+      "source": "story/pending_hooks.md#H005",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "progressing | open | 小鱼身世——待续（王婶代为照看/老道士暗中保护）"
+    },
+    {
+      "source": "story/pending_hooks.md#H013",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open | 玉简的感应能力——本次发热响应未知"
+    },
+    {
+      "source": "story/pending_hooks.md#H010",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open | 玄清阁灭门真相——郑怀恩追查千年死在真相面前"
+    },
+    {
+      "source": "story/pending_hooks.md#H007",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open | 周天成觊觎回春堂——威胁暂缓"
+    }
+  ]
+}

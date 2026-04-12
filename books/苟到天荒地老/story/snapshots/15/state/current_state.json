@@ -1,0 +1,61 @@
+{
+  "chapter": 15,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "青云门追捕（暂时解除）→ 新的不确定性：小鱼去向；大劫真相完整揭示后新的抉择",
+      "validFromChapter": 15,
+      "validUntilChapter": null,
+      "sourceChapter": 15
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "无变化",
+      "validFromChapter": 15,
+      "validUntilChapter": null,
+      "sourceChapter": 15
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "找到小鱼",
+      "validFromChapter": 15,
+      "validUntilChapter": null,
+      "sourceChapter": 15
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "青石镇林边",
+      "validFromChapter": 15,
+      "validUntilChapter": null,
+      "sourceChapter": 15
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "青云门追捕者暂时离开（信息交换后）；小瓷瓶温热说明小鱼仍存活但不知具体位置",
+      "validFromChapter": 15,
+      "validUntilChapter": null,
+      "sourceChapter": 15
+    },
+    {
+      "subject": "current_state",
+      "predicate": "当前资源",
+      "object": "玉简、石子、令牌、绢帛、细绳、老郎中银针-1（剩余待确认）、青云门灵气印记、压命线瓷瓶（小鱼持有）",
+      "validFromChapter": 14,
+      "validUntilChapter": null,
+      "sourceChapter": 14
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "沉稳·释然·坚定·行动中",
+      "validFromChapter": 15,
+      "validUntilChapter": null,
+      "sourceChapter": 15
+    }
+  ]
+}

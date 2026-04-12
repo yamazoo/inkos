@@ -1,0 +1,85 @@
+{
+  "chapter": 28,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**清醒理智**：不被原书剧情和情感绑架，一切以生存和利益最大化为核心。"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "1. 穿越觉醒，利用空间物资收买押送官，改善生存环境。"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 凤凰玉佩争夺战（太后vs王氏vs苏晚清）；嫡长女身份恢复vs太后另有所图；苏家三十年前旧案vs济世堂vs\"本该是嫡长女的人\"；苏父vs太后（信息不对称）；太后与苏母旧识关系；王氏不知太后与苏母关系（信息差）；宫里来人（新增威胁/机遇）"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 近期：三日后入宫觐见太后（太后要求正经身份）；中期：揭露苏家三十年前旧案真相；终极：揭露王氏/太傅真实目的，做执棋人而非棋子"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 精神坚定；身心良好（携带：匕首一枚、凤凰玉佩一枚、铜哨一枚、普通玉佩一枚待用）；被软禁偏院（四周有眼线）；与王氏达成协议（出席宴席换嫡长女身份）；太后赏赐已收（赤金凤钗、妆花缎、珠玉）；太傅设宴已完成；三日后入宫觐见太后；王氏已承诺恢复嫡长女身份记入族谱"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 太傅夫人宫里有人；偏院软禁（四周有眼线）；太傅设宴已完成；协议达成（嫡长女身份恢复承诺中）；太后知道凤凰玉佩且想要；太后与苏母旧识关系；苏父已知晓凤凰玉佩；京兆府搜府已完成（未搜到人）；苏父刚透露济世堂与先头夫人之死有关联；苏父追问苏晚清是否去过济世堂（苏晚清否认）；苏父正在做艰难抉择"
+    },
+    {
+      "source": "story/chapter_summaries.md#12",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "杀鸡儆猴 | 苏晚清击退黑狗帮铁头等5人；周管事透露黑狗帮内情和七杀情报；翠竹带回情报确认七杀目标是自己；苏晚清给小女孩馒头开始收拢人心；夜间黑狗帮13人来袭被周管事抓捕送官；寒潮将至 | 成功立威击退黑狗帮两次；与周管事建立初步合作；确认七杀追杀目标是自己；开始收拢人心 | H032推进（七杀接头地点确认）、H034推进（赵大势力削弱）、H035推进（周管事合作）、H036激活（五千两买命）、H037激活（寒潮）、H038激活（小女孩）"
+    },
+    {
+      "source": "story/chapter_summaries.md#25",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "子时博弈 | 子时正院会面王氏→识破棋子意图→谈判达成协议（出席换身份）→收到苏父冷信→发现\"鱼已入网\"回信→安排明日送信济世堂→心理蓄势 | 偏院→正院→偏院；与王氏首次正式交锋达成暂时协议；济世堂棋子确认就绪；三日后太傅宴客（太后介入） | 王氏真实目的（棋子）揭晓；吴家娘子态度确认（\"鱼已入网\"）；太后介入（新增威胁）；苏父冷漠（新增）；王氏后手（新增威胁）；苏晚棠结局（揭晓）；苏晚清条件（激活）"
+    },
+    {
+      "source": "story/chapter_summaries.md#26",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "宴上交锋 | 宴席试探（凤钗vs素银簪）；周嬷嬷传太后口谕（三日后入宫觐见）；周嬷嬷问凤凰玉佩；王氏提恢复嫡长女身份；苏晚清质疑\"另有其人\"；王氏透露苏家三十年前旧案；京兆府搜府（朝廷要犯）；苏晚清判断\"鱼已入网\"引发风波 | 偏院→正厅→偏院→正院；身份从\"民女\"→即将恢复嫡长女；济世堂棋子确认就绪；主动引发搜府事件作为筹码 | 新增3个伏笔（苏家三十年前旧案、凤凰玉佩与太后、京兆府搜府）；推进3个伏笔（太后介入、凤凰玉佩真伪、太傅会见）；情绪基调：蓄势→试探→博弈→掌控→突发转折"
+    },
+    {
+      "source": "story/chapter_summaries.md#27",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "偏院暗涌 | 京兆府搜府结果（空）；周嬷嬷派人来见被拒；三日后再见；苏父传见；苏父透露双生胎真相（先出来的是嫡长女，生下来\"没了气息\"）；济世堂与先头老夫人之死相关；太后vs苏父信息差；宫里来人（紧急转折） | 偏院→太傅书房；身份认知深化（知晓自己是双生胎中的次女）；苏父从\"冷漠\"升级为\"复杂/在做抉择\"；济世堂关联先头老夫人死；新增紧急变数（宫里来人） | 推进3个伏笔（京兆府搜府、苏家三十年前旧案、凤凰玉佩）；新增4个伏笔（济世堂与先头老夫人、双生胎之谜、太后vs苏父信息差、宫里来人）；情绪基调：冷静→蓄势→揭示真相→震惊→转折"
+    },
+    {
+      "source": "story/pending_hooks.md#hook-双生胎之谜",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "plot | open | 待定 | 苏父透露母亲怀的是双生胎；先出来的女儿\"没了气息\"但可能没死？待查"
+    },
+    {
+      "source": "story/pending_hooks.md#hook-太后vs苏父信息差",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "plot | open | 第28-30章 | 苏父判断太后不知道全部真相；但太后知道的部分在增加（与苏母旧识关系）；太后\"每每想起总觉遗憾\"暗示情感联系"
+    },
+    {
+      "source": "story/pending_hooks.md#hook-王氏后手",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "threat | open | 待定 | 王氏已透露苏家三十年前旧案涉及\"本该是嫡长女的人\"；京兆府搜府是否与此相关待查"
+    },
+    {
+      "source": "story/pending_hooks.md#hook-京兆府搜府",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "\"鱼已入网\"触发京兆府搜府；搜府结果：未搜到人（空）；周主簿脸色难看 | open"
+    }
+  ]
+}

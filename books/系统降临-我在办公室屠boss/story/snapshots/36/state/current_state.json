@@ -1,0 +1,93 @@
+{
+  "chapter": 36,
+  "facts": [
+    {
+      "subject": "current_state",
+      "predicate": "note_1",
+      "object": "陆焚：使徒/橙色光圈标记/猎杀普通玩家/主动撤离/对陈默产生兴趣",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_2",
+      "object": "王德发：守护者/B2层保安/妻子王淑芬在E-142休眠舱/职业恢复/**已完全消化妻子与刘建国的关系（前世夫妻/选择守护刘建国/等待继承者）**/**情绪稳定后主动选择支持唤醒决定**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_3",
+      "object": "赵磊：觉醒者/协助者/身体出现D-127纹路/梦里看到D-127数字/**听到楼梯间脚步声（已确认为老张）/B3-7-3坐标梦/守电梯口时入睡/B3-7-3坐标梦境新线索（被注视感）**/**脑内存在另一份徽章数据（与先驱者徽章共振/正在抵抗回收程序）**/**脑内异常力量已消退但仍存在（疑似帮助抵抗回收协议）**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_4",
+      "object": "李国强：觉醒者/B2层幸存者/财务部老员工（17年）/女儿李雨薇在3楼财务室/等待救援结果",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_5",
+      "object": "李雨薇：待救援/财务部实习生/第一天上班/长发偏瘦",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_6",
+      "object": "**E-032：创造系统的人/拒绝成为神的人/正在苏醒（唤醒进度3%）/等待继承者指令/唤醒协议待执行**；**中央机器同步率30.1%**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_7",
+      "object": "**三十年前的陈默/先驱者：灵魂投影实验者/守护三十年/已融合回本体**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_8",
+      "object": "**刘建国：残骸守护者/王淑芬的前世丈夫/三十年前第一批觉醒者/唤醒失败转化案例/已消散（守护了三十年）**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_9",
+      "object": "**白衣女人/灵视者：留下纸条的人/E-142休眠者相关信息来源**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_10",
+      "object": "**三十年前女先驱者/光点：与陈默同批先驱者/唤醒协议担保者/已融入休眠舱阵列/持续观察状态**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_11",
+      "object": "**四个污染先驱者：被回收协议控制的觉醒者/污染指数15%/39%/50%/66%/回收协议进入冷却/等待陈默的选择**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    }
+  ]
+}

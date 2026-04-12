@@ -1,0 +1,69 @@
+{
+  "chapter": 20,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "凉州城至营地途中（赴王氏之约）",
+      "validFromChapter": 20,
+      "validUntilChapter": null,
+      "sourceChapter": 20
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "精神坚定；与李知府达成交易（信已送出/账册副本为代价）；持匕首+假纸条做保险；察觉风雪中有黑衣人跟踪",
+      "validFromChapter": 20,
+      "validUntilChapter": null,
+      "sourceChapter": 20
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "今夜：见王氏（龙潭虎穴）；后续：等镇国公府反应+账册后续",
+      "validFromChapter": 20,
+      "validUntilChapter": null,
+      "sourceChapter": 20
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "王氏之约（三天期限第二天）；营地被围；黑衣人身份不明",
+      "validFromChapter": 20,
+      "validUntilChapter": null,
+      "sourceChapter": 20
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "敌：王氏（主谋）、陈管事（执行/态度存疑）、镇国公府来人；盟：翠竹、周管事、小草、张婶；中：李知府（交易达成/暂时合作）",
+      "validFromChapter": 20,
+      "validUntilChapter": null,
+      "sourceChapter": 20
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "王氏之约（鸿门宴）；李知府交易后续；黑衣人身份",
+      "validFromChapter": 20,
+      "validUntilChapter": null,
+      "sourceChapter": 20
+    },
+    {
+      "subject": "current_state",
+      "predicate": "情绪基调",
+      "object": "冷静→博弈→警觉→决心（赴险前夕）",
+      "validFromChapter": 20,
+      "validUntilChapter": null,
+      "sourceChapter": 20
+    },
+    {
+      "subject": "current_state",
+      "predicate": "章节类型",
+      "object": "推进章/布局章（谈判+布局+赴险）",
+      "validFromChapter": 20,
+      "validUntilChapter": null,
+      "sourceChapter": 20
+    }
+  ]
+}

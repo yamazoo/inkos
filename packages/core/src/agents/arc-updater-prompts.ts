@@ -43,7 +43,7 @@ export function buildArcUpdaterSystemPrompt(_language: "zh" | "en" = "zh"): stri
 - 如果 arcProgress 表明节点完成 → status → "completed"，下一个 pending 节点 → "active"
 
 ## 输出格式
-校验通过时，返回更新后的四个追踪器 JSON 对象（arcTracker, factionLedger, hookLedger, moodArc）。
+校验通过时，返回更新后的三个追踪器 JSON 对象（arcTracker, factionLedger, moodArc）。
 校验失败时，返回错误：
 { "error": "validation_failed", "errors": [{ "type": "...", "detail": "..." }] }`;
 }
@@ -54,7 +54,6 @@ export function buildArcUpdaterUserPrompt(
   existingTrackers: {
     arcTrackerJson: string;
     factionLedgerJson: string;
-    hookLedgerJson: string;
     moodArcJson: string;
   },
   language: "zh" | "en" = "zh",
@@ -80,11 +79,6 @@ ${existingTrackers.arcTrackerJson}
 ${existingTrackers.factionLedgerJson}
 \`\`\`
 
-### HookLedger
-\`\`\`json
-${existingTrackers.hookLedgerJson}
-\`\`\`
-
 ### MoodArc
 \`\`\`json
 ${existingTrackers.moodArcJson}
@@ -103,6 +97,5 @@ ${chapterContent.slice(0, 8000)}
 ## Existing Trackers
 ${existingTrackers.arcTrackerJson}
 ${existingTrackers.factionLedgerJson}
-${existingTrackers.hookLedgerJson}
 ${existingTrackers.moodArcJson}`;
 }

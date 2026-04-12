@@ -1,0 +1,53 @@
+{
+  "chapter": 59,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "岭南城街道（离开济世堂后往流放营方向）",
+      "validFromChapter": 59,
+      "validUntilChapter": null,
+      "sourceChapter": 59
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "身体虚弱但稳定；凤凰玉佩在手（背面刻'苏氏'）+陈掌柜持有另一块玉佩（已确认同源）；空间泉水恢复中；空间物资（压缩饼干/花生饼/干果/花生糖/药酒已消耗一瓶）；孙押役已服药控制（三五日内乏力，在北边营房）；已入住流放营；**新增同伴苏青**",
+      "validFromChapter": 59,
+      "validUntilChapter": null,
+      "sourceChapter": 59
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "**带苏青处理伤势并安置**；揭露苏氏遗孤身世真相；揭露控神毒药案秘密；调查济世堂背后势力（按察使司+老夫人）；监视孙押役（已去北边营房）；揭露城西分号\"见不得光的生意\"；**寻找左眉疤灰袍人（翠竹任务）**",
+      "validFromChapter": 59,
+      "validUntilChapter": null,
+      "sourceChapter": 59
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "身体虚弱未完全恢复；岭南城西可能有接应（哨卡暗桩已确认）；济世堂参与哨卡记号（直接参与确认）；镇国公府/济世堂持续追杀；孙押役药效中（三日内危险期）但已去北边营房；流放营规矩（逢五逢十点卯，缺一次打二十板子）；**苏青伤势需要处理**",
+      "validFromChapter": 59,
+      "validUntilChapter": null,
+      "sourceChapter": 59
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "老李（彻底稳固+持续执行盯人任务）；翠竹（忠诚执行）；方德正（深度合作+情报持续分享）；周管事（暗处跟随）；吴管事（流放营管事，已打点）；孙押役（已服药控制+去北边营房+待观察）；陈掌柜（济世堂岭南分号掌柜+被迫交出苏青+记号直接参与确认）；苏青（**新盟友**+控神毒药案幸存者+苏家侍女之子+了解济世堂和岭南）；济世堂（追踪凤凰玉佩23年+\"替人办事\"+背后有\"买家\"+按察使司有人+有\"老夫人\"）",
+      "validFromChapter": 59,
+      "validUntilChapter": null,
+      "sourceChapter": 59
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "凤凰玉佩两块（苏晚清持有+陈掌柜持有）；苏氏遗孤身世真相（控神毒药案+两块玉佩+唯一幸存孩子）；陈掌柜\"替谁办事\"（**按察使司有人+老夫人**）；济世堂与镇国公府的关系（**可能不是同一势力**）；城西分号\"见不得光的生意\"待揭露；岭南城西接应（哨卡暗桩持续）；**苏青安置问题**；**左眉疤灰袍人身份**",
+      "validFromChapter": 59,
+      "validUntilChapter": null,
+      "sourceChapter": 59
+    }
+  ]
+}

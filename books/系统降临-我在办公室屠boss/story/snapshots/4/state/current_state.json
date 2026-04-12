@@ -1,0 +1,93 @@
+{
+  "chapter": 4,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "中化第六建设门岗室→仓库区",
+      "validFromChapter": 4,
+      "validUntilChapter": null,
+      "sourceChapter": 4
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "持有「???」（微微发烫·已与李思雨绑定）；文具剪刀（已钝）；未绑定觉醒者；无职业；无技能；能量94%；生命值100/100",
+      "validFromChapter": 4,
+      "validUntilChapter": null,
+      "sourceChapter": 4
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "搜索中化第六建设；寻找地下通道线索（通往华腾科技）；后续营救李雨薇（三楼财务室）和赵磊（二楼等待区）",
+      "validFromChapter": 4,
+      "validUntilChapter": null,
+      "sourceChapter": 4
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "末日降临初期；武器简陋；能量有限；被污染体追踪（疑似「???」吸引）",
+      "validFromChapter": 4,
+      "validUntilChapter": null,
+      "sourceChapter": 4
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "使徒：陆焚（橙圈，已离开）；原住民（部分已清除）；污染体（数量增加，正在靠近）；普通幸存者：李国强（一楼警戒）、赵磊（华腾科技一楼等待·通讯中断）、李雨薇（华腾科技三楼·待救援）",
+      "validFromChapter": 4,
+      "validUntilChapter": null,
+      "sourceChapter": 4
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "末日降临；陆焚的威胁；「???」的秘密；污染体逼近；李雨薇和赵磊待救援",
+      "validFromChapter": 4,
+      "validUntilChapter": null,
+      "sourceChapter": 4
+    },
+    {
+      "subject": "current_state",
+      "predicate": "核心认知",
+      "object": "系统已绑定；「???」无法鉴定且微微发烫；使徒猎杀普通玩家；橙色光圈=使徒标记；「???」与笔记本存在同源信号共振；先觉者联盟整理过系统攻略；先驱者知道真相但选择沉默",
+      "validFromChapter": 4,
+      "validUntilChapter": null,
+      "sourceChapter": 4
+    },
+    {
+      "subject": "current_state",
+      "predicate": "击杀统计",
+      "object": "2（原住民×2）",
+      "validFromChapter": 4,
+      "validUntilChapter": null,
+      "sourceChapter": 4
+    },
+    {
+      "subject": "current_state",
+      "predicate": "已建立关系",
+      "object": "李国强（队友，警戒中）；李思雨（队友·「???」绑定关联·灵视潜力）；赵磊（华腾科技等待·通讯中断）；李雨薇（待救援）",
+      "validFromChapter": 4,
+      "validUntilChapter": null,
+      "sourceChapter": 4
+    },
+    {
+      "subject": "current_state",
+      "predicate": "系统状态",
+      "object": "能量94%；【鉴定】技能已激活；弱点直觉Lv.1",
+      "validFromChapter": 4,
+      "validUntilChapter": null,
+      "sourceChapter": 4
+    },
+    {
+      "subject": "current_state",
+      "predicate": "新增伏笔",
+      "object": "H090（系统界面熟悉感）已显性埋设；H093（先觉者联盟与先驱者的关系）；H094（「???」与李思雨父亲的联系）；H095（地下通道·通往华腾科技）",
+      "validFromChapter": 4,
+      "validUntilChapter": null,
+      "sourceChapter": 4
+    }
+  ]
+}

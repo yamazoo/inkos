@@ -1,0 +1,409 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook-1",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**类型**: identity"
+    },
+    {
+      "hookId": "hook-2",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**状态**: open"
+    },
+    {
+      "hookId": "hook-3",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**回收预期**: 岭南（揭示济世堂情报网络）"
+    },
+    {
+      "hookId": "hook-4",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**最近动态**: 第49章确认老驿卒是济世堂/凤凰玉佩势力眼线，飞鸽传信行为确认。驿站与岭南分号有联系。本章\"有意思的人\"判断与第48章形成呼应，眼线身份已坐实。"
+    },
+    {
+      "hookId": "hook-5",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**备注**: 驿站破旧但养着信鸽，位置恰好在瘴气林子与岭南之间。老驿卒对苏晚清腰间佩玉格外关注，暗示已知凤凰玉佩目标。"
+    },
+    {
+      "hookId": "hook-6",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**类型**: mystery"
+    },
+    {
+      "hookId": "hook-7",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**状态**: open"
+    },
+    {
+      "hookId": "hook-8",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**回收预期**: 岭南（完整揭示）"
+    },
+    {
+      "hookId": "hook-9",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**最近动态**: 第49章苏晚清将凤凰玉佩绢纸12人名单备份交给翠竹保管，增加保险措施。"
+    },
+    {
+      "hookId": "hook-10",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**备注**: 这是一张网，苏晚清踩进中心。需要揭示这12人的身份和作用。"
+    },
+    {
+      "hookId": "hook-11",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**类型**: strategy"
+    },
+    {
+      "hookId": "hook-12",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**状态**: open"
+    },
+    {
+      "hookId": "hook-13",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**回收预期**: 岭南（策略验证）"
+    },
+    {
+      "hookId": "hook-14",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**最近动态**: 第49章老李递信任务正式启动（明日执行），引蛇出洞策略进入实施阶段。方德正主动坦白陈掌柜旧账（曾用毒控制走镖兄弟），动机是自保+请求老李代为递信。"
+    },
+    {
+      "hookId": "hook-15",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**备注**: 陈掌柜决定'备好茶，等她来'——这是正面回应还是陷阱？老李递信能否成功到达？引蛇出洞的效果待验证。"
+    },
+    {
+      "hookId": "hook-16",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**类型**: 计划"
+    },
+    {
+      "hookId": "hook-17",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**状态**: open"
+    },
+    {
+      "hookId": "hook-18",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**回收预期**: 岭南（策略验证）"
+    },
+    {
+      "hookId": "hook-19",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**最近动态**: 第48章制定→第49章正式启动（老李明日递信）"
+    },
+    {
+      "hookId": "hook-20",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**备注**: 主动出击试探敌方"
+    },
+    {
+      "hookId": "hook-21",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**类型**: 往事"
+    },
+    {
+      "hookId": "hook-22",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**状态**: open"
+    },
+    {
+      "hookId": "hook-23",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**回收预期**: 岭南（接触陈掌柜验证）"
+    },
+    {
+      "hookId": "hook-24",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**最近动态**: 第49章方德正主动坦白：曾有兄弟被陈掌柜用毒控制（茶中下毒控制神智），该兄弟后来废掉半年后去世。方德正因此害怕陈掌柜，请求让老李代为递信。"
+    },
+    {
+      "hookId": "hook-25",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**备注**: 济世堂与京城隐秘联系线索；方德正动机已强化（自身恐惧+自保需求）"
+    },
+    {
+      "hookId": "hook-26",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**类型**: 情报"
+    },
+    {
+      "hookId": "hook-27",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**状态**: open"
+    },
+    {
+      "hookId": "hook-28",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**回收预期**: 岭南（验证济世堂参与）"
+    },
+    {
+      "hookId": "hook-29",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**最近动态**: 第48章完成蛇蜕分析→第49章过渡至驿站，此伏笔暂挂"
+    },
+    {
+      "hookId": "hook-30",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**备注**: 瘴气林子人为维持证据"
+    },
+    {
+      "hookId": "hook-31",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**类型**: mystery"
+    },
+    {
+      "hookId": "hook-32",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**状态**: open"
+    },
+    {
+      "hookId": "hook-33",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**回收预期**: 岭南（完整揭示）"
+    },
+    {
+      "hookId": "hook-34",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**最近动态**: 第49章苏晚清攥紧凤凰玉佩+绢纸备份翠竹保管"
+    },
+    {
+      "hookId": "hook-35",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**备注**: 苏氏遗孤身份之谜"
+    },
+    {
+      "hookId": "hook-36",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**类型**: 情报（新增）"
+    },
+    {
+      "hookId": "hook-37",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**状态**: open"
+    },
+    {
+      "hookId": "hook-38",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**回收预期**: 岭南（验证济世堂下毒）"
+    },
+    {
+      "hookId": "hook-39",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**最近动态**: 第49章翠竹发现解毒丸异常（比正常更麻），苏晚清判断可能掺入控神毒药成分。绢纸备份交翠竹保管。"
+    },
+    {
+      "hookId": "hook-40",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**备注**: 新增伏笔——济世堂可能在解毒丸中动手脚，作为控制苏晚清的手段"
+    },
+    {
+      "hookId": "hook-41",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**类型**: 悬念"
+    },
+    {
+      "hookId": "hook-42",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**状态**: open"
+    },
+    {
+      "hookId": "hook-43",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**回收预期**: 待定"
+    },
+    {
+      "hookId": "hook-44",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**最近动态**: 第44章确认暗中跟踪→第49章未直接推进"
+    },
+    {
+      "hookId": "hook-45",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "**备注**: 周管事与济世堂/镇国公府的关系待揭示"
+    }
+  ]
+}

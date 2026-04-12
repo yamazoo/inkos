@@ -1,0 +1,64 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_左眉疤灰袍人",
+      "startChapter": 71,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（身份待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "71章新增伏笔：左眉疤灰袍人=济世堂相关？镇国公府探子？宫中来人？苏晚清判断至少两人跟踪；72章确认：换装甩掉成功"
+    },
+    {
+      "hookId": "hook_苏家接应网运转",
+      "startChapter": 69,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（接应网运转中）",
+      "payoffTiming": "mid-arc",
+      "notes": "69章推进：安福巷客栈→城西落星桥回春堂接应链运转中"
+    },
+    {
+      "hookId": "hook_两个周砚",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南→落梅村→青石镇→府城（两股势力追人）",
+      "payoffTiming": "mid-arc",
+      "notes": "71章深化：府城门抓人+劲装汉子押送嫌犯+京城来人到府城查访；72章深化：客栈再次听到京城来人查苏家案子"
+    },
+    {
+      "hookId": "hook_控神毒药配方",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "落梅村（风声过后回取）",
+      "payoffTiming": "mid-arc",
+      "notes": "71章新增：苏晚清获得周掌柜纸条（城西落星桥=回春堂接应点）；72章确认：明天去联络接应点"
+    },
+    {
+      "hookId": "hook_流放营内鬼",
+      "startChapter": 64,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南（追查中→待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "内鬼威胁仍在但苏晚清已脱离监视范围；府中周砚势力可能接手"
+    },
+    {
+      "hookId": "hook_郑老卒身份",
+      "startChapter": 61,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南（身份已揭露→引开追兵→任务完成确认）",
+      "payoffTiming": "mid-arc",
+      "notes": "71章确认：老头安全躲过搜捕，任务完成；72章稳定"
+    }
+  ]
+}

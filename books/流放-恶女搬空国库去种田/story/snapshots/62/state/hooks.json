@@ -1,0 +1,122 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_周砚",
+      "startChapter": 61,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 62,
+      "expectedPayoff": "岭南（控神毒药案）",
+      "payoffTiming": "mid-arc",
+      "notes": "**62章：陈掌柜评价周砚\"不好对付\"+如果查到济世堂与镇国公府的关系会更惨**；苏晚清决定\"去会会周砚\""
+    },
+    {
+      "hookId": "hook_郑老卒",
+      "startChapter": 61,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 62,
+      "expectedPayoff": "岭南（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "62章：未直接推进，孙押役已见完郑老卒"
+    },
+    {
+      "hookId": "hook_陈掌柜站队",
+      "startChapter": 61,
+      "type": "mystery",
+      "status": "resolved",
+      "lastAdvancedChapter": 62,
+      "expectedPayoff": "**岭南（名单明日送）**",
+      "notes": "**62章：站队成功——陈掌柜被迫开口揭露控神毒药案真相+老夫人身份+济世堂背后是镇国公府+承诺明日送名单+提供按察使司负责控神毒药案的人+提供左眉疤灰袍人来路**"
+    },
+    {
+      "hookId": "hook_城西可疑背影",
+      "startChapter": 59,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 62,
+      "expectedPayoff": "岭南（背影确认）",
+      "payoffTiming": "mid-arc",
+      "notes": "62章：未直接推进"
+    },
+    {
+      "hookId": "hook_左眉疤灰袍人",
+      "startChapter": 57,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 62,
+      "expectedPayoff": "岭南（身份揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**62章：苏晚清要求陈掌柜查清左眉疤灰袍人的来路**"
+    },
+    {
+      "hookId": "hook_按察使司动向",
+      "startChapter": 57,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 62,
+      "expectedPayoff": "岭南（查控神毒药案）",
+      "payoffTiming": "mid-arc",
+      "notes": "**62章：苏晚清要求陈掌柜查清按察使司负责控神毒药案的人是谁**"
+    },
+    {
+      "hookId": "hook_俘虏画符号",
+      "startChapter": 58,
+      "type": "mystery",
+      "status": "resolved",
+      "lastAdvancedChapter": 62,
+      "expectedPayoff": "**岭南（符号含义已揭示）**",
+      "notes": "**62章：符号含义揭露——控神毒药案里死的人的记号+每一个被灭口的人身上都会留下+济世堂门楣刻这个是记念也是警告**"
+    },
+    {
+      "hookId": "hook_沈蓉交锋",
+      "startChapter": 60,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 62,
+      "expectedPayoff": "岭南（后续交锋）",
+      "payoffTiming": "mid-arc",
+      "notes": "62章：未直接推进，威胁持续"
+    },
+    {
+      "hookId": "hook_苏家灭门案",
+      "startChapter": 62,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 62,
+      "expectedPayoff": "岭南（揭露真相）",
+      "payoffTiming": "mid-arc",
+      "notes": "**62章新建立：控神毒药案真相——苏家是南疆医族+控神毒药是苏家炼的+朝廷灭口+苏家满门没了+只有老夫人（苏家嫡女）和苏青母亲（侍女）活下来**"
+    },
+    {
+      "hookId": "hook_老夫人身份",
+      "startChapter": 62,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 62,
+      "expectedPayoff": "岭南（待见老夫人）",
+      "payoffTiming": "mid-arc",
+      "notes": "**62章新建立：老夫人=苏家嫡女+嫁进镇国公府+保管\"苏氏\"玉佩+想保族人但没保住+济世堂背后是镇国公府+苏晚清要带苏青去见她**"
+    },
+    {
+      "hookId": "hook_凤凰涅槃",
+      "startChapter": 62,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 62,
+      "expectedPayoff": "岭南（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**62章新建立：凤凰涅槃——俘虏口供里提过+陈掌柜不知道玉佩里藏的是什么+只说\"苏家的根，烧了十五年的火，只要那东西在，苏家就还有翻身的余地\"**"
+    },
+    {
+      "hookId": "hook_济世堂欠命",
+      "startChapter": 62,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 62,
+      "expectedPayoff": "岭南（待回收）",
+      "payoffTiming": "mid-arc",
+      "notes": "**62章新建立：济世堂欠苏青母亲一条命——苏青母亲用命护住\"念奴\"玉佩+济世堂一直保管\"苏氏\"玉佩+陈掌柜被追问\"这笔账怎么还\"**"
+    }
+  ]
+}

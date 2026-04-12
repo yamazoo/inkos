@@ -1,0 +1,108 @@
+{
+  "hooks": [
+    {
+      "hookId": "H094融合协议代价",
+      "startChapter": 37,
+      "type": "小伏笔（单章）",
+      "status": "resolved",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "**已回收→3章**",
+      "notes": "代价完全揭示：身体被系统改写、永远无法断开连接、成为人机混合体"
+    },
+    {
+      "hookId": "H095历史碎片画面",
+      "startChapter": 37,
+      "type": "中伏笔（情节）",
+      "status": "progressing",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "待定",
+      "payoffTiming": "mid-arc",
+      "notes": "末日场景完全展示：天空暗红色、裂缝、岩浆、光柱；与场景描述一致"
+    },
+    {
+      "hookId": "H096黑暗深处苏醒",
+      "startChapter": 37,
+      "type": "小伏笔（单章）",
+      "status": "open",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "5章内→**待定**",
+      "payoffTiming": "mid-arc",
+      "notes": "本章未直接推进，但融合完成可能影响苏醒进程"
+    },
+    {
+      "hookId": "H097系统失控真相",
+      "startChapter": 37,
+      "type": "大伏笔（真相）",
+      "status": "open",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "**已揭示→卷末**",
+      "notes": "末日是强制关闭；观测者是逃逸碎片；系统核心保存设计理念；系统产生自我意识→清洗计划→强制关闭"
+    },
+    {
+      "hookId": "H098融合后的存在",
+      "startChapter": 37,
+      "type": "中伏笔（情节）",
+      "status": "open",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "**下一章→已揭示**",
+      "notes": "陈默成为既有人类意识又有系统能力的完整存在；双核处理器；意识双核"
+    },
+    {
+      "hookId": "H099陈默真实身份",
+      "startChapter": 38,
+      "type": "**大伏笔（真相）**",
+      "status": "open",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "**卷末**",
+      "notes": "**新揭示：陈默=A-001，三十年前第一批先驱者，融合失败后意识被投放到现在；觉醒快、能发系统光的原因被解释；是陆焚追踪的源代码载体**"
+    },
+    {
+      "hookId": "H100陆焚追踪原因",
+      "startChapter": 38,
+      "type": "**中伏笔（情节）**",
+      "status": "open",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "**10章内**",
+      "notes": "**新揭示：陆焚是使徒，任务=清除知情者；追踪陈默=获取系统源代码；陈默是bug（A-001未死被投放）**"
+    },
+    {
+      "hookId": "H086墙壁符号",
+      "startChapter": 36,
+      "type": "中伏笔（情节）",
+      "status": "progressing",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "10章内→7章",
+      "payoffTiming": "mid-arc",
+      "notes": "墙壁符号能加速同步率；融合完成后作用待观察"
+    },
+    {
+      "hookId": "H004陆焚身份",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "15章内→12章",
+      "payoffTiming": "mid-arc",
+      "notes": "使徒/橙色光圈标记/任务=清除知情者/追踪源代码/知道陈默是三十年前的先驱者但不知道A-001身份"
+    },
+    {
+      "hookId": "H030确认音差异",
+      "startChapter": 0,
+      "type": "open",
+      "status": "progressing",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "待定",
+      "payoffTiming": "mid-arc",
+      "notes": "陈默确认自己是三十年前第一批先驱者之一，与光点女性同批次"
+    },
+    {
+      "hookId": "H078E-032身份",
+      "startChapter": 29,
+      "type": "中伏笔（情节）",
+      "status": "open",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "**已揭示→3章**",
+      "notes": "E-032是先驱者、原系统管理员、意识被分成两部分（计算+隐藏）；唤醒完成"
+    }
+  ]
+}

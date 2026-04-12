@@ -1,0 +1,103 @@
+{
+  "hooks": [
+    {
+      "hookId": "Hook ID",
+      "startChapter": 0,
+      "type": "预期回收",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "hook-17",
+      "startChapter": 0,
+      "type": "岭南/瘴气环境",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "hook-1",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "hook-10",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "hook-11",
+      "startChapter": 0,
+      "type": "岭南途中",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "章节",
+      "startChapter": 0,
+      "type": "出场人物",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "伏笔动态",
+      "notes": "情绪基调"
+    },
+    {
+      "hookId": "12",
+      "startChapter": 0,
+      "type": "苏晚清、翠竹、赵三、铁头、周管事、黑狗帮成员、瘦弱小女孩",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "H032推进、H034推进、H035推进、H036激活、H037激活、H038激活",
+      "notes": "警觉→战斗→掌控→合作→决心"
+    },
+    {
+      "hookId": "31",
+      "startChapter": 0,
+      "type": "苏晚清,方大人,苏晏清,瘦高男子(黑狗帮),王氏婆子",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "hook_0029 advanced；hook_0034 advanced；mystery-济世堂脉案篡改 mentioned；mystery-双生胎真相 mentioned",
+      "notes": "紧绷→战斗→谈判→蓄势"
+    },
+    {
+      "hookId": "33",
+      "startChapter": 0,
+      "type": "苏晚清、方德正（方大人）、**老李（押送官）**",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**hook_落花坡激活（路线图+预警构想）**；**hook_济世堂城西分号激活**；**hook_老李异常激活**；mystery-岭南瘴气陷阱深化",
+      "notes": "警觉→深虑→决意→冷静→决意→掌控"
+    },
+    {
+      "hookId": "37",
+      "startChapter": 0,
+      "type": "苏晚清、翠竹、老李、方德正、济世堂俘虏",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "hook_苏氏遗孤 advanced；hook_济世堂脉案篡改 advanced；hook_凤凰玉佩秘密 advanced；hook_岭南城西分号 advanced；hook_京城眼线 advanced",
+      "notes": "警觉→深谋→冷峻→决意"
+    },
+    {
+      "hookId": "43",
+      "startChapter": 0,
+      "type": "**苏晚清、方德正、老李、沈蓉、周管事**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**hook_10 advanced（按察使司内应情报）；hook_11 advanced（岭南途中）；hook_1 advanced（镇国公府第二轮伏击反制）**",
+      "notes": "**警觉→冷静→迎敌→坚定**"
+    }
+  ]
+}

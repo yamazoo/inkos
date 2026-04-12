@@ -1,0 +1,93 @@
+{
+  "chapter": 31,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "岭南官道（流放途中第一日）",
+      "validFromChapter": 31,
+      "validUntilChapter": null,
+      "sourceChapter": 31
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "良好（精神紧绷但冷静，执棋人姿态）",
+      "validFromChapter": 31,
+      "validUntilChapter": null,
+      "sourceChapter": 31
+    },
+    {
+      "subject": "current_state",
+      "predicate": "当前装备",
+      "object": "凤凰玉佩（贴身·空间）、铜哨（腕间）、翡翠滴珠耳坠（耳上）、太傅夫人银票（空间）、太后赏赐（空间）、苏父银票（空间）",
+      "validFromChapter": 31,
+      "validUntilChapter": null,
+      "sourceChapter": 31
+    },
+    {
+      "subject": "current_state",
+      "predicate": "当前资源",
+      "object": "一千两银票已付押送官方大人、太后赏赐（空间内）、苏父三千两银票（空间）、太傅夫人资源待开发",
+      "validFromChapter": 31,
+      "validUntilChapter": null,
+      "sourceChapter": 31
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "安全抵达岭南；追查济世堂脉案真相；追查吴婆子背后主家线索（太傅夫人已处理吴婆子）；追查城西赵掌柜妻子",
+      "validFromChapter": 31,
+      "validUntilChapter": null,
+      "sourceChapter": 31
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "流放犯身份；太后明旨流放；苏晏清公然敌对；黑狗帮追杀",
+      "validFromChapter": 31,
+      "validUntilChapter": null,
+      "sourceChapter": 31
+    },
+    {
+      "subject": "current_state",
+      "predicate": "关键信息",
+      "object": "**新增**：太傅夫人传话\"济世堂旧档有人留了一份\"；济世堂赵掌柜三年前病故，其妻今在城西暗巷第七家；太后觐见被苏晏清用木芙蓉+济世堂证据陷害；太后态度复杂（被迫结案但暗示玉佩留着是筹码）",
+      "validFromChapter": 31,
+      "validUntilChapter": null,
+      "sourceChapter": 31
+    },
+    {
+      "subject": "current_state",
+      "predicate": "翠竹状态",
+      "object": "**留在太傅府**（苏晚清主动留下保命）",
+      "validFromChapter": 31,
+      "validUntilChapter": null,
+      "sourceChapter": 31
+    },
+    {
+      "subject": "current_state",
+      "predicate": "押送官",
+      "object": "方大人（已被收买，一千两，一路护送至岭南）",
+      "validFromChapter": 31,
+      "validUntilChapter": null,
+      "sourceChapter": 31
+    },
+    {
+      "subject": "current_state",
+      "predicate": "伏笔进度",
+      "object": "hook_0029（木芙蓉→济世堂→城西赵家→御史大夫家老夫人）推进；hook_0034（城西赵家势力）推进；mystery-济世堂脉案篡改推进；mystery-吴婆子背后主家**太傅夫人介入处理**",
+      "validFromChapter": 31,
+      "validUntilChapter": null,
+      "sourceChapter": 31
+    },
+    {
+      "subject": "current_state",
+      "predicate": "状态",
+      "object": "执棋人姿态·危机应对中",
+      "validFromChapter": 31,
+      "validUntilChapter": null,
+      "sourceChapter": 31
+    }
+  ]
+}

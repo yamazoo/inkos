@@ -1,0 +1,229 @@
+{
+  "chapter": 36,
+  "facts": [
+    {
+      "subject": "current_state",
+      "predicate": "note_1",
+      "object": "陈默：同步率30.1%（设备间净化后）/ 王德发已营救待归队",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_2",
+      "object": "李思雨：灵视消耗恢复中 / 同行 / 观察到天花板闪烁但选择隐瞒",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_3",
+      "object": "赵磊：守备中 / 同行 / 做梦梦见数据流（异常未解）/ 伤口愈合异常（蓝光）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_4",
+      "object": "李国强：B2入口守备 / 注意到物资异常",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_5",
+      "object": "王德发：守护者身份确认 / 情绪焦虑（寻找妻子中）/ 刚被救出设备间",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_6",
+      "object": "三个非绑定幸存者：行为可疑（物资减少嫌疑）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_7",
+      "object": "老张：守护者/B2层幸存者 / 妻子E-089在休眠舱中",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_8",
+      "object": "能量：约35%（紧张）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_9",
+      "object": "同步率：30.1%",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_10",
+      "object": "物资：紧张（发现异常减少）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_11",
+      "object": "第二枚钥匙（B3层可能有线索）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_12",
+      "object": "先驱者与先觉者关系待解",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_13",
+      "object": "先驱者路标含义",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_14",
+      "object": "王德发妻子位置（马尾辫女人，三十来岁）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_15",
+      "object": "休眠舱不只给一个人用",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_16",
+      "object": "守护者职责与筛选机制关联",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_17",
+      "object": "赵磊异常（做梦+蓝光+数据流）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_18",
+      "object": "物资异常减少（非绑定幸存者嫌疑）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_19",
+      "object": "天花板闪烁/数据乱码（李思雨观察隐瞒）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_20",
+      "object": "\"保护他们/保护自己\"测试待回应",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_21",
+      "object": "第三个选项可能性",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_22",
+      "object": "**H045推进**：守护者职业机制（考验、重置、第一周任务）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_23",
+      "object": "**H030/H035推进**：筛选机制细节（守护者职责=保护未觉醒者度过第一夜）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_24",
+      "object": "**H025推进**：非绑定单位——王德发虽被困但通过筛选",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_25",
+      "object": "**H084推进**：\"保护他们/保护自己\"测试——等待陈默回应",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_26",
+      "object": "**H085埋设**：天花板数据乱码闪烁——李思雨观察到但选择隐瞒",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_27",
+      "object": "**新支线关联**：赵磊异常与守护者/觉醒者关联假设",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_28",
+      "object": "**支线推进**：王德发寻找妻子（马尾辫女人）——冲突暂缓",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    }
+  ]
+}

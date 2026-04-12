@@ -1,0 +1,164 @@
+{
+  "hooks": [
+    {
+      "hookId": "H004",
+      "startChapter": 1,
+      "type": "设定",
+      "status": "progressing",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "125",
+      "payoffTiming": "endgame",
+      "notes": "本章深化：青云门一万年前亲手把针送进去；天裂根连灵脉源头；青云门怕根重新活过来"
+    },
+    {
+      "hookId": "H009",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "8",
+      "notes": "本章重大揭露：小鱼是十二年前从口子掉下来那人的\"一部分\"；\"她是回来找你的\"；老庙主暗示顾长命梦里见过\"她\""
+    },
+    {
+      "hookId": "H025",
+      "startChapter": 6,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "8",
+      "notes": "本章完成：老庙主给了令牌，指引去找井底同门；三十七年前封口子的同门知道全部真相"
+    },
+    {
+      "hookId": "H032",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "未知",
+      "payoffTiming": "immediate",
+      "notes": "本章深化：老庙主确认天裂根扎在地底连着灵脉源头；青云门怕根重新活过来"
+    },
+    {
+      "hookId": "H023",
+      "startChapter": 6,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "125",
+      "payoffTiming": "endgame",
+      "notes": "本章深化：玉简是第一把钥匙；周老爷子给的石子是第二把钥匙"
+    },
+    {
+      "hookId": "H027",
+      "startChapter": 6,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "未知",
+      "notes": "本章深化：周老爷子透露三十七年前有人从天上掉下来，留下石子"
+    },
+    {
+      "hookId": "H030",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "8",
+      "notes": "本章完成：小鱼就是十二年前从口子掉下来那人的\"一部分\"；周老爷子确认她\"不是凡人\""
+    },
+    {
+      "hookId": "H031",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "8",
+      "notes": "本章完成：青云门今天提前到达（不是明天）；三人入镇监视"
+    },
+    {
+      "hookId": "H010",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "60+",
+      "payoffTiming": "mid-arc",
+      "notes": "玄清阁灭门真相 - 本章提及青云门找钥匙，玉简+石子=两把钥匙"
+    },
+    {
+      "hookId": "H011",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "80+",
+      "payoffTiming": "mid-arc",
+      "notes": "筑基真相：万年前筑基是起点"
+    },
+    {
+      "hookId": "H019",
+      "startChapter": 5,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "8",
+      "notes": "本章完成：十二年前有人从口子掉下来，小鱼是那人的\"一部分\""
+    },
+    {
+      "hookId": "H020",
+      "startChapter": 5,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "8",
+      "notes": "本章完成：十二年前时间线完整，小鱼=从天上来的人的一部分"
+    },
+    {
+      "hookId": "H028",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "未知",
+      "payoffTiming": "immediate",
+      "notes": "井底封印体身份 - 本章老庙主确认门后有同门，井底封印体可能是此人"
+    },
+    {
+      "hookId": "H029",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "未知",
+      "payoffTiming": "immediate",
+      "notes": "井底\"压着的东西\" - 本章深化：天裂根连灵脉源头，青云门怕根重新活"
+    },
+    {
+      "hookId": "H033",
+      "startChapter": 8,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "**未知**",
+      "notes": "**\"那根线\"之谜** - 周老爷子让顾长命问小鱼\"记不记得那根线\"；老庙主暗示梦里见过\"她\""
+    },
+    {
+      "hookId": "H034",
+      "startChapter": 8,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "**未知**",
+      "notes": "**顾长命与针的联系** - 老庙主给令牌时说\"你既然来了，就不该问\"；老庙主暗示梦里见过\"她\"；顾长命旧痕与针的联系（见第7章）"
+    },
+    {
+      "hookId": "H035",
+      "startChapter": 8,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "**未知**",
+      "notes": "**青云门两把钥匙** - 青云门知道有两道门需要两把钥匙；老郎中一直在监视"
+    }
+  ]
+}

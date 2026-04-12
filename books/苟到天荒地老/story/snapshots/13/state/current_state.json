@@ -1,0 +1,61 @@
+{
+  "chapter": 13,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "镇西馄饨摊→镇口→镇外荒野（被两面包抄中）",
+      "validFromChapter": 13,
+      "validUntilChapter": null,
+      "sourceChapter": 13
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "警觉·沉重·紧迫·决断·温情流露·行动中",
+      "validFromChapter": 13,
+      "validUntilChapter": null,
+      "sourceChapter": 13
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "甩掉两面包抄的追兵；保护小鱼；压命线瓷瓶已交给小鱼",
+      "validFromChapter": 13,
+      "validUntilChapter": null,
+      "sourceChapter": 13
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "青云门两面包抄（灰袍+黑衣）；距离十几丈；引线发烫；瓷瓶发热；天亮后动手倒计时",
+      "validFromChapter": 13,
+      "validUntilChapter": null,
+      "sourceChapter": 13
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "青云门（灰袍男：谈判试探+跟踪；黑衣：配合包抄；周平：守镇东巷口）",
+      "validFromChapter": 13,
+      "validUntilChapter": null,
+      "sourceChapter": 13
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "青云门两面包抄；引线响应命线；小鱼命线收紧（掌心青紫印记蔓延）；天亮后动手",
+      "validFromChapter": 13,
+      "validUntilChapter": null,
+      "sourceChapter": 13
+    },
+    {
+      "subject": "current_state",
+      "predicate": "周老爷子状态",
+      "object": "已确认死亡（昨夜走）",
+      "validFromChapter": 13,
+      "validUntilChapter": null,
+      "sourceChapter": 13
+    }
+  ]
+}

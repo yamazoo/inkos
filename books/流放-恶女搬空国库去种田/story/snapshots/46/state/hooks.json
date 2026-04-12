@@ -1,0 +1,58 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_岭南/瘴气环境",
+      "startChapter": 17,
+      "type": "environment",
+      "status": "open",
+      "lastAdvancedChapter": 46,
+      "expectedPayoff": "岭南瘴气陷阱/岭南城",
+      "notes": "**本章队伍正式进入瘴气林子；发现迷魂瘴情报；年轻犯人瘴气入体昏迷；发现水洼蛇群；苏晚清提出应对策略；质疑瘴气林子可能是人为维持**"
+    },
+    {
+      "hookId": "hook-17: 岭南/瘴气环境",
+      "startChapter": 0,
+      "type": "environment",
+      "status": "open",
+      "lastAdvancedChapter": 46,
+      "expectedPayoff": "岭南瘴气陷阱",
+      "notes": "同上"
+    },
+    {
+      "hookId": "hook_济世堂内部隐患",
+      "startChapter": 45,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 46,
+      "expectedPayoff": "岭南城/岭南分号接触",
+      "notes": "**苏晚清质疑：瘴气林子与济世堂岭南分号相邻→巧合还是布局？→怀疑陈掌柜**"
+    },
+    {
+      "hookId": "hook_济世堂与镇国公府岭南勾连",
+      "startChapter": 45,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 46,
+      "expectedPayoff": "岭南城/岭南分号接触",
+      "notes": "**苏晚清关联分析：济世堂岭南分号在城西→城西与这片林子相邻→陈掌柜与镇国公府可能有关联→瘴气林子可能是布局**"
+    },
+    {
+      "hookId": "hook_0040",
+      "startChapter": 40,
+      "type": "environment",
+      "status": "open",
+      "lastAdvancedChapter": 46,
+      "expectedPayoff": "待定",
+      "notes": "城西神秘女人→催促动手→消失于夜色→去向不明"
+    },
+    {
+      "hookId": "hook_陈掌柜身份",
+      "startChapter": 45,
+      "type": "character",
+      "status": "open",
+      "lastAdvancedChapter": 46,
+      "expectedPayoff": "岭南分号接触",
+      "notes": "**济世堂岭南分号掌柜；据说与镇国公府有些说不清的关系；周管事透露其知情但不清楚详情；苏晚清到岭南后需评估可信度**"
+    }
+  ]
+}

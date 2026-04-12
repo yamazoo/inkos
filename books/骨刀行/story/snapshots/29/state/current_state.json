@@ -1,0 +1,77 @@
+{
+  "chapter": 29,
+  "facts": [
+    {
+      "subject": "current_state",
+      "predicate": "当前故事线",
+      "object": "**城北宅子营救成功→返回破庙据点→苏青禾救治中→马七情报进展（令牌/三十七号/父亲线索）→孟三威胁待处理（往北/乱葬岗方向）→青云宗追兵待处理**",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "**城东十五里/荒野破庙**",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "左臂麻木（恢复中/已能握拳）/右肩刀伤（恢复中/金创药）/右腰刀伤（恢复中/金创药）/双手伤口（恢复中）/双腿脱力（恢复中/减轻）/体温正常/**怀中：铁牌×1（苏老实遗物/\"别走\"铁牌/温热不烫）/荒卫令牌（荒卫司/三十七号/马七情报进展中/父亲线索待查）/脉晶×2/碎碗片×1（孙麻子暗号/锅灰/城西方向）/短刀×1（孙麻子遗物）/银袋（约17两）/剁骨刀（手中/刀身裹布伪装）/金创药×1/城北宅子草图×1（马七提供）**",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "**苏青禾救治（进行中/破庙据点）→寻找孙麻子（紧急/被救走/下落不明/苏青禾证实活着）→查明令牌之谜（马七进展中/三十七人关系网/父亲线索）→应对孟三威胁（进行中/往北/乱葬岗方向）→应对青云宗追兵（待处理/今晚或明早到达）→追查父亲往事（待推进/马七知情）**",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "**体力恢复中/孙麻子失联（被救走/马七搜索未果/救者身份不明）/城北荒野有灰白人活动/孟三往北（乱葬岗方向/带五人/在找陆沉）/青云宗追兵（今晚或明早到达/灰衣/两人从县城方向来）**",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "**黑虎帮（分散搜城中/往城北方向移动）/钱进势力残余（群龙无首/争抢地盘/城北宅子守卫减少）/**~~钱进追杀残余势力~~**（已解除/钱进追杀令随其死亡失效）**/**孟三（已出城/往北/带五人/可能去乱葬岗/在找陆沉）/青云宗追兵（今晚或明早到达/灰衣/两人从县城方向来）**",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "current_state",
+      "predicate": "苏青禾状态",
+      "object": "**交给孙麻子出城（约两天前）→被钱进的人截住（约两天前）→关押在城北宅子地窖（约两天）→**~~独自等待~~**→**被陆沉营救（29章成功）**→**救治中（破庙据点/多处外伤/虚弱）**",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "current_state",
+      "predicate": "孙麻子状态",
+      "object": "**送苏青禾出城（约两天前）→被钱进的人截住（约两天前）→被打伤扔在野地→被人救走（约两天前/下落不明/苏青禾证实被救/救者身份不明）→马七派人搜索未果**",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "current_state",
+      "predicate": "马七状态",
+      "object": "**城东十五里破庙据点→提供城北宅子情报→协助营救行动→安排苏青禾救治→令牌情报进展中（三十七号与父亲有关）→动机确认：借刀杀人对付周执事/查清师兄死因**",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    }
+  ]
+}

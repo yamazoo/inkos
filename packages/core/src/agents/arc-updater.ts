@@ -2,8 +2,8 @@ import { BaseAgent } from "./base.js";
 import {
   ArcTrackerSchema,
   FactionLedgerSchema,
-  MoodArcSchema,
   HooksStateSchema,
+  MoodArcSchema,
   ChapterCompletionReportSchema,
   type ChapterCompletionReport,
   type ArcTracker,
@@ -76,7 +76,6 @@ export class ArcUpdaterAgent extends BaseAgent {
       {
         arcTrackerJson: JSON.stringify(arcTrackerCurrent, null, 2),
         factionLedgerJson: JSON.stringify(factionLedgerCurrent, null, 2),
-        hookLedgerJson: JSON.stringify(hookLedger, null, 2),
         moodArcJson: JSON.stringify(moodArcCurrent, null, 2),
       },
       lang,
@@ -138,7 +137,6 @@ export class ArcUpdaterAgent extends BaseAgent {
         if (parsed.arcTracker) arcTracker = ArcTrackerSchema.parse(parsed.arcTracker);
         if (parsed.factionLedger) factionLedger = FactionLedgerSchema.parse(parsed.factionLedger);
         if (parsed.moodArc) moodArc = MoodArcSchema.parse(parsed.moodArc);
-        if (parsed.hookLedger) HooksStateSchema.parse(parsed.hookLedger);
       } catch (parseErr) {
         this.log?.warn(`[arc-updater] Tracker parse error, using current state: ${parseErr}`);
       }

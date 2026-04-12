@@ -1,0 +1,77 @@
+{
+  "chapter": 57,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "**穴居人村洞（洞口侧→洞内）**",
+      "validFromChapter": 57,
+      "validUntilChapter": null,
+      "sourceChapter": 57
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "左臂恢复知觉/双手擦伤/后背三道血痕/右肩刀伤撕裂/腰侧刀伤（已结痂）/肋下刀伤（渗血反复）/左手新刀伤（深/已包扎）/虎口裂开/体力透支→已服用脉晶（三分之一）/守脉者印记激活→发热→已稳定/左脚踝扭伤（溪沟跳跃时新伤/轻微）/蛟鳞印记边缘新增纹路（与铁匣竖线/沈师兄眉心竖纹同形）/铁盒子（已打开/内容物已取出）/**铁匣子×3（怀中1只/岩石台上2只/均在发热）**/脉晶（腰间/温热/印记回应中）/银袋（约14两+碎银）/钥匙串/干粮（部分留给苏青禾）/**金疮药（小袋/已使用部分给苏青禾）**/三十七号令牌（怀中）/三十八号令牌（手中/已合一）/\"焚\"字令牌（怀中/父亲遗物）/陆焚玉牌（怀中/父亲遗物）/地底走向图（怀中）/匕首×2/账本（怀中）/**陆焚第二封信（怀中/未拆封）**/**铁牌\"巢\"（怀中/新获得）**",
+      "validFromChapter": 57,
+      "validUntilChapter": null,
+      "sourceChapter": 57
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "**进入灵脉核心✓/确认铁匣子来历✓/吃脉晶稳住印记✓/获得关键情报（钱进=血食/铁匣=母亲遗物/四样东西分散藏/阿纱知道更多）✓/铁匣=灵脉七寸（青云宗情报）/沈师兄与铁匣竖线有关联（新增线索）/蛟鳞印记边缘新增纹路（新增线索）/带苏青禾安全离开（进行中）/打开铁匣子的\"另一种办法\"（待探索）/确认母亲去向/钱进已死（待处理）/铁牌\"巢\"含义（待解）/阿纱知道洞穴外威胁是什么（待追问）**",
+      "validFromChapter": 57,
+      "validUntilChapter": null,
+      "sourceChapter": 57
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "**满身伤势+多处新伤/左脚踝扭伤（轻微）/体力透支/青云宗三人已往山下方向离去（暂时威胁→疤脸在地上刻了标记/沈师兄仍在山上搜索）/苏青禾膝盖+脚踝伤势（已处理/可行动）/铁匣竖线与沈师兄眉心竖纹同形→蛟鳞印记边缘新增同形纹路→三处关联待揭示/沈师兄可能已锁定陆沉方向/疤脸发现篝火处有人/疤脸在地上刻了三横一箭标记指向钱进藏身处/青云宗会回来/洞穴外威胁逼近（滴答声→湿润蠕动质感）**",
+      "validFromChapter": 57,
+      "validUntilChapter": null,
+      "sourceChapter": 57
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "**青云宗三人（疤脸/两人/往山下方向离去/疤脸在地上刻了标记/沈师兄仍在山上搜索）/青云宗另外两人在营地**",
+      "validFromChapter": 57,
+      "validUntilChapter": null,
+      "sourceChapter": 57
+    },
+    {
+      "subject": "current_state",
+      "predicate": "苏青禾状态",
+      "object": "**膝盖蹭伤（已上金疮药/已包扎/血迹已干/灰白薄膜外敷止血）/脚踝扭伤（消肿中/仍肿胀）/已服三分之一脉晶/体力恢复中/在灌木丛中等待陆沉/攥着灰白草茎（叶尖已蔫）**",
+      "validFromChapter": 57,
+      "validUntilChapter": null,
+      "sourceChapter": 57
+    },
+    {
+      "subject": "current_state",
+      "predicate": "守脉者状态",
+      "object": "**印记激活→发热→已稳定/灵脉蓝光回应→已确认身份/血是钥匙（已确认）/蛟鳞印记边缘新增纹路（与铁匣竖线/沈师兄眉心竖纹同形）**",
+      "validFromChapter": 57,
+      "validUntilChapter": null,
+      "sourceChapter": 57
+    },
+    {
+      "subject": "current_state",
+      "predicate": "新增线索",
+      "object": "**钱进遗言\"巢\"字=青云宗所称\"灵脉七寸\"（巢穴/根基/命脉=七寸）/沈师兄与铁匣竖线的关联（眉心竖纹与铁匣刻痕同形）/蛟鳞印记边缘新增纹路（与前两者同形→三重关联）/铁匣能捏住灵脉七寸（青云宗情报）/三年前有女人把铁匣放进裂缝后消失/老钱（钱进）进去找后也没了/铁牌\"巢\"（新获得/钱进临死前交付/纹路与溶洞痕迹相似但不同/青云宗所刻？\"它们\"所给？）/疤脸习惯动作：拇指蹭眉心（与沈师兄眉心竖纹暗示关联）/疤脸在地上刻了标记（三横一箭指向钱进藏身处）**",
+      "validFromChapter": 57,
+      "validUntilChapter": null,
+      "sourceChapter": 57
+    },
+    {
+      "subject": "current_state",
+      "predicate": "钱进状态",
+      "object": "**死亡**",
+      "validFromChapter": 57,
+      "validUntilChapter": null,
+      "sourceChapter": 57
+    }
+  ]
+}

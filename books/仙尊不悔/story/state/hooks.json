@@ -1,0 +1,247 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_001",
+      "startChapter": 1,
+      "type": "核心金手指",
+      "status": "open",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "长期伏笔",
+      "notes": "重生最大底牌，需隐藏存在"
+    },
+    {
+      "hookId": "hook_006",
+      "startChapter": 1,
+      "type": "身份伪装",
+      "status": "open",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "长期伏笔",
+      "notes": "隐藏实力策略执行中"
+    },
+    {
+      "hookId": "hook_042",
+      "startChapter": 23,
+      "type": "新增-《花酒遗策》蛊方",
+      "status": "resolved",
+      "lastAdvancedChapter": 104,
+      "expectedPayoff": "长期伏笔",
+      "notes": "**已回收**"
+    },
+    {
+      "hookId": "hook_045",
+      "startChapter": 24,
+      "type": "新增-二转酒虫",
+      "status": "open",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "长期伏笔",
+      "notes": "真元品质乙等效果显现"
+    },
+    {
+      "hookId": "hook_048",
+      "startChapter": 25,
+      "type": "新增-方正觉醒",
+      "status": "progressing",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "长期伏笔",
+      "notes": "方正正式修炼中"
+    },
+    {
+      "hookId": "hook_167",
+      "startChapter": 62,
+      "type": "新增-古月冻土残余势力活动",
+      "status": "progressing",
+      "lastAdvancedChapter": 98,
+      "expectedPayoff": "长期伏笔",
+      "notes": "与四十年前秘密关联"
+    },
+    {
+      "hookId": "hook_224",
+      "startChapter": 79,
+      "type": "新增-三转蛊师放过方源",
+      "status": "progressing",
+      "lastAdvancedChapter": 99,
+      "expectedPayoff": "第79-100章",
+      "notes": "身份待确认"
+    },
+    {
+      "hookId": "hook_228",
+      "startChapter": 80,
+      "type": "新增-四代族长封印三转蛊虫",
+      "status": "resolved",
+      "lastAdvancedChapter": 105,
+      "expectedPayoff": "第80-100章",
+      "notes": "**已回收**"
+    },
+    {
+      "hookId": "hook_251",
+      "startChapter": 88,
+      "type": "新增-阿虎与四十年前旧事",
+      "status": "open",
+      "lastAdvancedChapter": 99,
+      "expectedPayoff": "长期伏笔",
+      "notes": "身份确认，动机存疑"
+    },
+    {
+      "hookId": "hook_252",
+      "startChapter": 88,
+      "type": "新增-阿虎与古月寒关系",
+      "status": "open",
+      "lastAdvancedChapter": 103,
+      "expectedPayoff": "第88-105章",
+      "notes": "阿虎成为关键棋子"
+    },
+    {
+      "hookId": "hook_255",
+      "startChapter": 89,
+      "type": "新增-阿虎背后外部势力",
+      "status": "progressing",
+      "lastAdvancedChapter": 99,
+      "expectedPayoff": "长期伏笔",
+      "notes": "动机明确"
+    },
+    {
+      "hookId": "hook_275",
+      "startChapter": 95,
+      "type": "新增-\"它会苏醒\"",
+      "status": "progressing",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第95-110章",
+      "notes": "三个月内可能冲破封印"
+    },
+    {
+      "hookId": "hook_280",
+      "startChapter": 96,
+      "type": "新增-山寨混乱",
+      "status": "progressing",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第96-110章",
+      "notes": "家族应对危机"
+    },
+    {
+      "hookId": "hook_287",
+      "startChapter": 97,
+      "type": "新增-秘宝",
+      "status": "resolved",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第97-106章",
+      "notes": "**已回收**"
+    },
+    {
+      "hookId": "hook_289",
+      "startChapter": 98,
+      "type": "新增-秘宝位置",
+      "status": "resolved",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第98-106章",
+      "notes": "**已回收**"
+    },
+    {
+      "hookId": "hook_301",
+      "startChapter": 100,
+      "type": "新增-秘宝与天机砂",
+      "status": "resolved",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第100-106章",
+      "notes": "**已回收**"
+    },
+    {
+      "hookId": "hook_304",
+      "startChapter": 101,
+      "type": "新增-方正修炼进展",
+      "status": "progressing",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第101-115章",
+      "notes": "实力提升"
+    },
+    {
+      "hookId": "hook_305",
+      "startChapter": 101,
+      "type": "新增-秘宝盒子特征",
+      "status": "resolved",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第101-115章",
+      "notes": "**已回收**"
+    },
+    {
+      "hookId": "hook_306",
+      "startChapter": 101,
+      "type": "新增-秘宝钥匙确认",
+      "status": "resolved",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第101章",
+      "notes": "**已回收**"
+    },
+    {
+      "hookId": "hook_328",
+      "startChapter": 105,
+      "type": "新增-光阴蛊残蜕",
+      "status": "progressing",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第105-120章",
+      "notes": "核心资源，代价一半寿元"
+    },
+    {
+      "hookId": "hook_329",
+      "startChapter": 105,
+      "type": "新增-古月阴封印裂痕",
+      "status": "progressing",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第105-120章",
+      "notes": "时间限制"
+    },
+    {
+      "hookId": "hook_331",
+      "startChapter": 105,
+      "type": "新增-方正决心变强",
+      "status": "progressing",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第105-115章",
+      "notes": "角色成长"
+    },
+    {
+      "hookId": "hook_332",
+      "startChapter": 105,
+      "type": "新增-族长调查守卫死亡",
+      "status": "progressing",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第105-110章",
+      "notes": "潜在危机"
+    },
+    {
+      "hookId": "hook_333",
+      "startChapter": 106,
+      "type": "新增-光阴蛊残蜕使用代价",
+      "status": "open",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第106-120章",
+      "notes": "核心抉择"
+    },
+    {
+      "hookId": "hook_334",
+      "startChapter": 106,
+      "type": "新增-丙等资质炼化困难",
+      "status": "open",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第106-120章",
+      "notes": "技术限制"
+    },
+    {
+      "hookId": "hook_335",
+      "startChapter": 106,
+      "type": "新增-后山山洞研究地点",
+      "status": "open",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第106-115章",
+      "notes": "安全地点"
+    },
+    {
+      "hookId": "hook_336",
+      "startChapter": 106,
+      "type": "新增-花酒行者光阴蛊来源",
+      "status": "open",
+      "lastAdvancedChapter": 106,
+      "expectedPayoff": "第106-120章",
+      "notes": "来源之谜"
+    }
+  ]
+}

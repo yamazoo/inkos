@@ -1,0 +1,27 @@
+{
+  "chapter": 22,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\骨刀行\\story\\runtime\\chapter-0022.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\骨刀行\\story\\runtime\\chapter-0022.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#19",
+    "story/chapter_summaries.md#20",
+    "story/chapter_summaries.md#21",
+    "story/pending_hooks.md#SP040-它们身份",
+    "story/pending_hooks.md#铁匣刻字\"别走\"",
+    "story/pending_hooks.md#SP039-匣内活物之谜",
+    "story/pending_hooks.md#H021"
+  ],
+  "notes": []
+}

@@ -1,0 +1,94 @@
+{
+  "hooks": [
+    {
+      "hookId": "H001",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "3",
+      "payoffTiming": "immediate",
+      "notes": "青云门盘查→升级为身份暴露危机（\"故人\"线索锁定）"
+    },
+    {
+      "hookId": "H002",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "140",
+      "payoffTiming": "endgame",
+      "notes": "老道士身份→青云门追查\"三年前叛逃散修\"；遗言\"此间有故人\""
+    },
+    {
+      "hookId": "H003",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "15-20",
+      "payoffTiming": "mid-arc",
+      "notes": "镇北土地庙地道→废弃庙宇下的逃生通道"
+    },
+    {
+      "hookId": "H004",
+      "startChapter": 1,
+      "type": "设定",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "125",
+      "payoffTiming": "endgame",
+      "notes": "大劫真相→百年前大劫毁了天道、断了灵根（青云门揭露）"
+    },
+    {
+      "hookId": "H005",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "31+",
+      "payoffTiming": "mid-arc",
+      "notes": "小鱼身世之谜"
+    },
+    {
+      "hookId": "H006",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "3",
+      "payoffTiming": "immediate",
+      "notes": "中年男子异常→青云门真正负责人（换装登场）；威胁性质升级"
+    },
+    {
+      "hookId": "H007",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "16-18",
+      "payoffTiming": "mid-arc",
+      "notes": "周天成觊觎回春堂"
+    },
+    {
+      "hookId": "H008",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "3",
+      "payoffTiming": "immediate",
+      "notes": "镇上可疑行商（青云门弟子询问目标）"
+    },
+    {
+      "hookId": "H009",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "50+",
+      "payoffTiming": "slow-burn",
+      "notes": "东海之滨姜姓老头→老道士指引的去处（大劫真相线索）"
+    }
+  ]
+}

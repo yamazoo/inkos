@@ -1,0 +1,60 @@
+{
+  "chapter": 1,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**清醒理智**：不被原书剧情和情感绑架，一切以生存和利益最大化为核心。"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "：穿越开局，危机四伏。女主在流放路上醒来，浑身是伤，面临差役的鞭打和继母庶妹的假惺惺刁难。核心冲突：马上要被饿死/打死。"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | **生存层面**：偏院监视与反监视<br>**社会层面**：嫡女身份争夺、王氏vs苏晚清vs苏晏清三角博弈<br>**命运层面**：原书必死剧情 vs 女主逆天改命<br>**核心**：太后、王氏、太傅夫人、苏晏清四方势力各怀心思，苏晚清要做执棋人"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **近期**：应对新眼线吴婆子事件；识破吴婆子背后主家；追查济世堂买药去向；追查木芙蓉簪来历<br>**中期**：揭露苏家三十年前旧案真相<br>**终极**：揭露王氏/太傅/太后/苏晏清真实目的，做执棋人而非棋子"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 精神坚定；身心良好（携带：匕首一枚、凤凰玉佩一枚、铜哨一枚、普通玉佩一枚待用）；被软禁偏院（有新眼线吴婆子）；嫡长女身份正式恢复；太后觐见已完成；太后还回凤凰玉佩但叮嘱不可轻示人；**已敲打吴婆子（提到黑水镇+黑狗帮）；已识破王氏装病+苏晏清补刀**"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 偏院软禁（有新眼线吴婆子）；嫡女身份恢复协议（王氏vs苏父立场对立）；太后知道凤凰玉佩且想要（已见过实物）；太后与苏母旧识关系（已直接确认）；太后对木芙蓉簪有反应；**吴婆子非王氏单线安排，背后另有主家**；王氏装病（不见客）；苏晏清立场愈发可疑（补刀王氏）；枯井疑云（推迟处理中）；太傅夫人与母亲有渊源（信息差）"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_0034",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "身份追踪 | open | 待查 | 吴婆子与黑狗帮有某种关联"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_0035",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "物品追踪 | open | 待查 | 苏晏清送的簪子，来源成谜"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_0036",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "事件追踪 | open | 待查 | 王氏装病（假风寒）"
+    }
+  ]
+}

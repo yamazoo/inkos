@@ -1,0 +1,110 @@
+{
+  "chapter": 3,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第34章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**入侵触发时间**：2024年某夜23:59:59，所有人同时听到同一句话：\"赛季开启，欢迎降临\""
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "三人小队决定："
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "2: 系统这东西，居然还能鉴定队友？ | 1: 深夜加班，赛季开启"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "2: 紧张→专注→果断→后怕 / 战斗+成长 | 1: 震惊→紧张→冷静分析→坚定 / 觉醒+遭遇战"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch1: 真是谢谢了啊。 | ch2: 她会在哪里等着？"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 收集剩余记忆碎片；唤醒E-032；理解三十年前的真相"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 持有先驱者钥匙（已使用·激活休眠协议）；同步率28%（目标40%）；灵视触发；手发光（系统光同频）；"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 同步率不足（28%<40%）；需继续收集记忆碎片"
+    },
+    {
+      "source": "story/chapter_summaries.md#1",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "深夜加班，赛季开启 | 系统绑定；末日降临；获得神秘黑盒子；遭遇使徒陆焚；观测者扫描；决定下楼救人 | 主角获得系统能力；获得神秘物品「???」；获得成就「末日第一夜」；遭遇第一个使徒敌人 | H003已回收（H001/H002/H004/H005/H006新埋）；E1末日降临正式开启"
+    },
+    {
+      "source": "story/chapter_summaries.md#2",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "系统这东西，居然还能鉴定队友？ | 首次使用【鉴定】技能；遇到幸存者李国强父女；击杀Lv.3污染体；使用【深度分析】标记弱点；获得成就「不是猎物」和技能「弱点直觉」 | 击杀污染体获得经验50、敏捷+2、污染核心×1；解锁弱点直觉Lv.1；生命值-8；系统能量92% | H003已验证；H002持续悬空；H007/H008新埋"
+    },
+    {
+      "source": "story/pending_hooks.md#H090（新）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | Ch.5-8 | **系统界面给陈默\"莫名熟悉感\"——暗示三十年前创造者身份**"
+    },
+    {
+      "source": "story/pending_hooks.md#H091（新）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | Ch.5-8 | **检测到橙色信号源（使徒方向）——第3章钩子**"
+    },
+    {
+      "source": "story/pending_hooks.md#H092（新）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | Ch.5-8 | **李雨薇手中订书机的特殊含义——第3章可回收**"
+    },
+    {
+      "source": "story/pending_hooks.md#office_uncertainty",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 待定 | 办公室同事的命运（暗示已知但不可控）"
+    },
+    {
+      "source": "story/pending_hooks.md#H088",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | progressing | 15章内 | 赵磊伤口异常愈合→做梦梦见数据流→陈默记录此异常"
+    },
+    {
+      "source": "story/pending_hooks.md#H089",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "情节 | progressing | 20章内 | 王德发情绪压力→坚持要唤醒妻子→老张劝他在E-142边等→情绪暂时稳定"
+    },
+    {
+      "source": "story/pending_hooks.md#E1·末日降临",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "2 | open"
+    },
+    {
+      "source": "story/pending_hooks.md#H001",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "1-2 | open"
+    }
+  ]
+}

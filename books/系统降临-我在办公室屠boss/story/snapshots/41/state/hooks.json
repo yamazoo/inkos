@@ -1,0 +1,114 @@
+{
+  "hooks": [
+    {
+      "hookId": "H004陆焚身份",
+      "startChapter": 0,
+      "type": "大伏笔（真相）",
+      "status": "progressing",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "10章内",
+      "payoffTiming": "mid-arc",
+      "notes": "追杀对峙中；被墙壁符号暂时压制于门外；揭示更多过去"
+    },
+    {
+      "hookId": "H086墙壁符号",
+      "startChapter": 36,
+      "type": "情节",
+      "status": "progressing",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "近期",
+      "payoffTiming": "mid-arc",
+      "notes": "墙壁符号密集区域；触发A-001融合失败记忆画面；同步率+0.3%→47.3%"
+    },
+    {
+      "hookId": "H099陈默真实身份",
+      "startChapter": 38,
+      "type": "大伏笔（真相）",
+      "status": "progressing",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "卷末",
+      "payoffTiming": "slow-burn",
+      "notes": "A-001融合失败真相揭示：融合过程中试图反抗，主动中断导致系统失控；亲手撕开观测者逃跑通道"
+    },
+    {
+      "hookId": "H100陆焚追踪原因",
+      "startChapter": 38,
+      "type": "中伏笔（情节）",
+      "status": "progressing",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "10章内",
+      "payoffTiming": "mid-arc",
+      "notes": "清道协议追杀；被暂时阻止于门外；持续追踪"
+    },
+    {
+      "hookId": "H101S-001身份",
+      "startChapter": 40,
+      "type": "中伏笔（情节）",
+      "status": "progressing",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "10章内",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：S-001是观测者离开前指定的第一个继承者；E-017是S-001留下的后门"
+    },
+    {
+      "hookId": "H102融合体共振",
+      "startChapter": 40,
+      "type": "情节",
+      "status": "progressing",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "待观察",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：E-032在沉睡中与核心区域产生共振；核心区域唤醒时同步波动"
+    },
+    {
+      "hookId": "H103E-017独立节点",
+      "startChapter": 40,
+      "type": "情节",
+      "status": "progressing",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "**深化**：E-017是S-001留下的后门；能建立通讯；位于维护序列"
+    },
+    {
+      "hookId": "H104陆焚嘲讽",
+      "startChapter": 40,
+      "type": "情节",
+      "status": "progressing",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "10章内",
+      "payoffTiming": "slow-burn",
+      "notes": "**深化**：揭示A-001三十年前融合失败更多细节；\"失败品\"\"逃避三十年\""
+    },
+    {
+      "hookId": "H096黑暗深处苏醒",
+      "startChapter": 37,
+      "type": "中伏笔（情节）",
+      "status": "resolved",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "**已回收**",
+      "payoffTiming": "immediate",
+      "notes": "**回收**：核心区域激活；巨大轮廓睁开眼睛；末日协议最终阶段启动"
+    },
+    {
+      "hookId": "mystery-001陈默真实身份过去",
+      "startChapter": 39,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "卷末",
+      "payoffTiming": "slow-burn",
+      "notes": "A-001融合失败历史画面；\"不。我不要。这不对。\"反抗嘶吼"
+    },
+    {
+      "hookId": "plot-系统核心区域修复",
+      "startChapter": 39,
+      "type": "plot",
+      "status": "progressing",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "同步率30.1%→47.3%；中央核心区域已激活；源代码同步问题待修复"
+    }
+  ]
+}

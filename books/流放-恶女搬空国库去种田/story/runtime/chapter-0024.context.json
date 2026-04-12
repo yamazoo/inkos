@@ -1,0 +1,85 @@
+{
+  "chapter": 24,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**清醒理智**：不被原书剧情和情感绑架，一切以生存和利益最大化为核心。"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "1. 穿越觉醒，利用空间物资收买押送官，改善生存环境。"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 王氏期限今夜到期；太傅会见暗主时间窗口（三日后）；管家嬷嬷监视+与城东茶商联络；狗剩身份疑云；太傅夫人动向（宫里惊动）"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 近期：今夜王氏期限到期→等待太傅府反应→三日后太傅府后门行动；中期：收拢人心稳定流放队伍；终极：揭露王氏真实目的"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 精神坚定；身心良好（携带：匕首、凤凰玉佩已交付吴家娘子、暗格暗号\"鱼入网\"已部署、药粉瓷瓶已交给狗剩）；连续多日高度警觉后短暂从容"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 王氏期限（今晚子时到期）；太傅已知信件存在；管家嬷嬷监视（关系紧张升级）；柳树屯是太傅地界；三日后太傅会见暗主"
+    },
+    {
+      "source": "story/chapter_summaries.md#12",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "杀鸡儆猴 | 苏晚清击退黑狗帮铁头等5人；周管事透露黑狗帮内情和七杀情报；翠竹带回情报确认七杀目标是自己；苏晚清给小女孩馒头开始收拢人心；夜间黑狗帮13人来袭被周管事抓捕送官；寒潮将至 | 成功立威击退黑狗帮两次；与周管事建立初步合作；确认七杀追杀目标是自己；开始收拢人心 | H032推进（七杀接头地点确认）、H034推进（赵大势力削弱）、H035推进（周管事合作）、H036激活（五千两买命）、H037激活（寒潮）、H038激活（小女孩）"
+    },
+    {
+      "source": "story/chapter_summaries.md#21",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "龙潭虎穴 | 苏晚清被带到宅院与管家嬷嬷交锋，用假账册位置拖延时间，被识破后声称记错了，王氏来信要求明天回京，苏晚清同意配合 | 被软禁→假位置被识破→同意回京→留下墨点暗号 | H002推进、H017推进、H025推进、H054推进、H062推进、H065埋设"
+    },
+    {
+      "source": "story/chapter_summaries.md#22",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "暗棋初动 | 墨点暗号留给周管事；周管事纸条烧毁（吴大夫情报）；启程回京，8护卫+管家嬷嬷押送；更衣时留树枝暗号给周管事的人；途中分析王氏可能知道信件存在；与管家嬷嬷谈判达成柳树屯绕道交易；马车驶向柳树屯 | 被软禁→启程→谈判成功→准备进村 | H002推进（王氏阴谋）、H017推进（吴大夫家人任务）、H025推进（太傅会见暗主）、H054推进（管家嬷嬷关系变化：敌对→暂时合作）、新伏笔埋设（王氏真实目的）"
+    },
+    {
+      "source": "story/chapter_summaries.md#23",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "柳屯查访 | 进入柳树屯；遇到狗剩（眉眼似吴大夫）；抵达济世堂；与吴家娘子密谈；揭露其太傅府丫鬟出身；交付凤凰玉佩；指定三日后太傅府后门接头；管家嬷嬷在院中监视；狗剩再次出现（翠竹塞干粮）；马车离开柳树屯；暗格留暗号\"鱼已入网\" | 柳树屯任务完成初步布局→三日后太傅府行动待命→周管事联络网待命 | 新增4个伏笔（狗剩身份、吴家娘子态度、管家嬷嬷监视、凤凰玉佩）；推进3个伏笔（吴大夫家人任务、太傅会见、王氏真实目的）；伏笔债务+4"
+    },
+    {
+      "source": "story/pending_hooks.md#mission-吴大夫家人成功营救后正式获得太傅府内应",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mission | progressing | 凤凰玉佩已交付吴家娘子，三日后太傅府后门接头任务已部署 | \"鱼入网\"纸条确认柳树屯棋子成功；催吴家娘子纸条\"凤凰将至静候佳音\"已交付翠竹待明日送信"
+    },
+    {
+      "source": "story/pending_hooks.md#hook-王氏真实目-的-不只是替身",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | progressing | 王氏让苏晚清回京的真正目的 | 今夜子时到期；苏晚清三天内无任何动作（未服软未反抗）；管家嬷嬷将如实汇报；太傅夫人那边闹得厉害宫里惊动——多重压力下王氏态度待观察"
+    },
+    {
+      "source": "story/pending_hooks.md#threat-太傅追查信件-失败后加大反-击力度",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open | 太傅追查信件失败后加大反击力度 | 太傅亲眼看到苏晚清亮出信件，脸色大变并下令追查"
+    },
+    {
+      "source": "story/pending_hooks.md#hook-凤凰玉佩真伪",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 苏晚清仿制玉佩，成色极好；太傅夫人若念旧情会见吴家娘子"
+    }
+  ]
+}

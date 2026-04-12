@@ -1,0 +1,141 @@
+{
+  "chapter": 36,
+  "facts": [
+    {
+      "subject": "current_state",
+      "predicate": "note_1",
+      "object": "生命值：100/100",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_2",
+      "object": "系统能量：约92%",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_3",
+      "object": "未绑定单位（无系统标记）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_4",
+      "object": "李思雨：状态恢复中；持有李远山照片相框；父亲警告\"遇到他的东西要毁掉\"",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_5",
+      "object": "李国强：仓库探索同行者；发现铁箱子；熟悉二十年前中化第六建设老照片",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_6",
+      "object": "赵磊：外卖员身份；无系统标记（未绑定单位）；末日降临夜听到不同内容；愿意合作",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_7",
+      "object": "老张：普通幸存者",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_8",
+      "object": "新5人：均无系统标记（未绑定单位）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_9",
+      "object": "符文锁芯（损坏）：特殊锁定装置组件，与筛选机制相关",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_10",
+      "object": "休眠核心（能量耗尽97%）：来源不明，疑似与观测者计划相关",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_11",
+      "object": "李远山照片相框：二十年前中化第六建设合影",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_12",
+      "object": "遗留纸条：\"别相信绑定。筛选已经开始。找到未绑定的人。问他们第一天听到了什么。\"",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_13",
+      "object": "筛选机制真相",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_14",
+      "object": "未绑定单位与绑定单位的区别",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_15",
+      "object": "李远山发现的\"真相\"是什么",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_16",
+      "object": "休眠核心的用途",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_17",
+      "object": "李父的警告和意图",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "chapter": 83,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第82章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**清醒理智**：不被原书剧情和情感绑架，一切以生存和利益最大化为核心。"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "：穿越开局，危机四伏。女主在流放路上醒来，浑身是伤，面临差役的鞭打和继母庶妹的假惺惺刁难。核心冲突：马上要被饿死/打死。"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "82: 安顺客栈：暖阳与闲话 | 81: 济世堂：断壁与药香 | 80: 安顺客栈：晨光与酱肉 | 79: 暗流：窗缝 | 77: 翠竹"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "82: 平静→满足→感动→放松→坚定 / 喘息章/温情章（养伤日常+糖葫芦回忆+江南约定+出发前休整） | 81: **警觉→凝重→坚定→警觉→凝重→紧张→警觉→坚定→平静→坚定→警觉→平静→凝重→坚定→平静→警觉** / **推进章/情报章/危机潜伏章（济世堂踩点+关键线索发现+新威胁信号+日常喘息+伏笔埋设）** | 80: **警觉→凝重→坚定→警觉→凝重→平静→警觉→凝重→坚定→平静→警觉→坚定** / **推进章/喘息章/情报章（危机中温情+关键线索发现+新威胁信号+日常喘息）** | 79: **警觉→凝重→质疑→坚定→警觉→凝重→坚定→警觉→坚定→凝重→坚定** / **推进章/验证章（苏远山验证+关键线索获取+矛盾发现+三人后落梅村行待定）** | 77: 警觉→凝重→坚定→沉重→坚定→紧张→凝重→坚定 / 推进章/转折章/危机升级章"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch80: 明天得去一趟济世堂旧址。三年前换了东家，那之后是谁在经营，总得踩个点。落梅村之行前，多一分了解就多一分把握。 | ch81: 走廊那头传来一声轻响，像是谁的脚步在隔壁门前停了停，又走远了。 | ch82: 今天，是出发前的最后一天。该准备的，都要准备好。"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | **苏远山可信度（济世堂药草与墨香斋同一种+墨香斋是苏远山的+济世堂有人在用=苏远山在用济世堂？）**；**济世堂中间几个月空白（半年前封+三个月前周掌柜死+中间是谁？）**；**苏青的三叔记忆（瘦+花白头发+药味）vs 苏远山没药味**；**济世堂三年前换东家（谁接手？苏远山当时在哪？）**；**钱顺可能是找周掌柜的灰袍人**；**两块凤凰玉佩合璧能开苏家密库（催命符）**；京城来人查控神毒药配方（府城斩首行动）；苏家接应网被渗透；**安顺客栈走廊有脚步**；**灰衣跟踪者**；**劲装男人（城西茶摊/定点观察）**；**左眉疤灰袍人**；两天后落梅村之行（苏远山跟不跟？）"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 验证苏远山真假；保管好两块玉佩+铜哨+账本副本；**保全苏青**；**明天练走，后天出发去落梅村取配方**；继续观察苏远山言行；济世堂旧址踩点已完成"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 两块凤凰玉佩在手；二十两银子；铜哨一枚（确认在腰间）；账本副本；匕首随身；暂时安全（住进安顺客栈）；**神经略松弛但仍有警觉**；苏青伤势持续好转（**能站起+扶桌角+额角沁汗不晕**+后天出发去落梅村）；**铜板剩余13个（翠竹掰指头算账结果）**"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 府城在抓人审讯苏家（城南连续斩首）；京城来人到处查控神毒药配方；苏家接应网已被渗透；周掌柜已被灭口；回春堂被人盯着；**隔壁新住客和赵掌柜是京城来人（会回来）**；**劲装男人（城西茶摊/定点观察/不同于城门口那个）**；**左眉疤灰袍人（可能在附近出现）**；安顺客栈房间有可疑痕迹；苏远山自称堂叔但有可疑之处；墨香斋后墙根有药草味；济世堂三年前换东家（谁接手？苏远山当时在哪？）；济世堂半年前被封+中间几个月空白（谁在用？）；济世堂有新人脚印（昨天留下）；济世堂小屋有治外伤药草（与墨香斋同一种）；有人跟踪苏晚清（灰衣人+步子压着）；苏家出事那天有二十两从济世堂支走"
+    },
+    {
+      "source": "story/chapter_summaries.md#1",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "开局就是死局 | 穿越开局，女主在流放路上醒来，原主刚被鞭打致死；女主用智谋暂时说服赵押司不打死她；编造\"春桃私藏金银\"情报，偷听发现竟是真的；苏明珠假意示好被识破 | 穿越完成，灵魂融合；暂时保命但食物未解决；获得关键情报筹码 | hook_001激活（空间确认）；hook_006激活（春桃情报）；hook_007激活（今夜杀机）"
+    },
+    {
+      "source": "story/chapter_summaries.md#74",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "安福巷：晨光与粥香 | 清晨醒来（无追兵）→早饭（稀粥+卤肉干）→苏青脸色好转（能坐起来+结痂）→苏青提及玉佩（\"念奴\"+ \"苏氏\"+两块合璧开密库）→苏青担忧配方→苏晚清安抚（等风过去了再取）→翠竹报告（城南抓人今早砍了+苏家相关）→掌柜送肉包子→苏青换药→苏青午睡→苏晚清外出侦察（绕巷一圈+广场看糖人）→回客栈见劲装男人（精瘦+挂刀+不像本地）→苏晚清联想71章府城门劲装汉子→劲装男人已离开→苏晚清把玩凤凰玉佩\"念奴\"+感慨\"新的一天还没出事\" | **苏青伤势持续好转（结痂+淤青褪去+能坐起+明天可下地走动预告）**；**获得掌柜赠送肉包子**；**使用周老伯包袱中药膏给苏青换药**；**凤凰玉佩\"念奴\"确认是母亲遗物+两块合璧开密库（苏青补充信息）**；**劲装男人出现（新增威胁信号）**；**苏晚清外出侦察一圈未发现跟踪** | **hook_两个周砚 深化（翠竹报告斩首+劲装男人出现）**；**hook_控神毒药配方 深化（苏青提及+等待时机）**；**hook_左眉疤灰袍人 状态确认（苏晚清警惕但未发现）**；**hook_苏家接应网运转 维持（暂缓联络其他接应点）**；**hook_劲装男人 NEW（客栈门口+关联71章府城门劲装汉子）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#80",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "安顺客栈：晨光与酱肉 | 清晨醒来（难得无噩梦+账本副本看了三遍）→翠竹用十个铜板换白粥馒头→苏青醒来（快辰时+伤口结痂比昨天好）→苏青再养两天可下地→苏青看账本副本发现广记药铺→广记药铺是济世堂前身→三年前济世堂还是苏家产业→三年前后换了东家（谁接手？）→苏远山当时在哪？（新问题）→翠竹提议买酱肉→苏青肚子叫→买了酱肉（三个铜板一两）→三人吃酱肉（掌柜老方子酱二十年）→阳光照三人像苏府日子→苏晚清感慨压下→街角灰袍身影一闪（左眉疤灰袍人？）→发现劲装男人（城西茶摊+定点观察+跑惯江湖+不同于之前两个）→苏晚清警觉但未动→翠竹数铜板（剩十七个）→账本副本研究（暗语看不懂+周掌柜最后出现是两年前+再往后空白）→走廊脚步声压着→隔壁停→消失→脚步声频率记住→明天去济世堂旧址踩点 | **苏青伤势持续好转（伤口结痂+再养两天可下地）**；**新发现：广记药铺是济世堂前身**；**新问题：济世堂三年前换东家（谁接手？苏远山当时在哪？）**；**劲装男人（城西茶摊/定点观察/跑惯江湖/与之前两个不同）**；**左眉疤灰袍人可能出现在附近**；**铜板剩余十七个**；**账本副本深入研究（暗语+空白期）**；**三天后落梅村行**；**明天济世堂旧址踩点** | **hook_清风巷主人 深化（济世堂三年前换东家+苏远山当时在哪？）**；**hook_控神毒药配方 推进（三天后取配方+济世堂线索）**；**hook_劲装男人 重大推进（城西茶摊+定点观察+第三方势力？）**；**hook_左眉疤灰袍人 推进（街角身影+威胁仍在）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#82",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "安顺客栈：暖阳与闲话 | 苏青尝试下地站立成功（扶桌角+站片刻+额角沁汗不晕）；翠竹买包子顺带获赠糖葫芦；三人在窗边分食糖葫芦忆往事；苏晚清与苏青约定事毕后同去江南；苏晚清次日醒来准备出发行囊 | 苏青伤势从\"再养两天可下地\"进展为\"能站起+明天练走+后天出发\"；铜板从状态卡原11个修正为13个（翠竹算账）；苏晚清从高度紧绷降至略疲惫但放松；新增苏晚清↔苏青江南约定 | 无推进（喘息章）"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_二月初三二十两",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**mystery** | open | **岭南府城（待揭露）** | **81章新增关键伏笔：苏家出事当天二十两支走+关联苏家灭门案**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_济世堂中间空白",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**mystery** | open | **岭南府城（待揭露）** | **81章新增关键伏笔：济世堂中间几个月空白+不明使用者+可能与苏远山有关**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_墨香斋后墙根",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 岭南府城（待揭露） | mid-arc | **81章深化：药草相同+都在角落+都用油纸包=苏远山在用济世堂的可能性大增**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_清风巷主人",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 岭南府城（待揭露） | mid-arc | **81章深化：济世堂踩点完成+新线索串联（药草同源+账册记录）+苏远山可信度降至新低**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_隔壁新住客",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 岭南府城（身份待揭露） | mid-arc | 75章新增+76章重大推进+77章深化+78章确认+79-81章未直接提及但威胁存在（81章结尾走廊脚步声）"
+    }
+  ]
+}

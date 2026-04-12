@@ -1,0 +1,58 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_苏氏遗孤身世",
+      "startChapter": 37,
+      "type": "identity",
+      "status": "open",
+      "lastAdvancedChapter": 50,
+      "expectedPayoff": "岭南（接触陈掌柜验证）",
+      "notes": "苏晚清对身世追问\"分得清轻重\"——暂时搁置，抵达岭南后揭开"
+    },
+    {
+      "hookId": "hook_济世堂岭南分号炼丹痕迹",
+      "startChapter": 49,
+      "type": "痕迹",
+      "status": "open",
+      "lastAdvancedChapter": 49,
+      "expectedPayoff": "岭南（实地验证）",
+      "notes": "岭南深山炼丹炉；陈掌柜坐镇"
+    },
+    {
+      "hookId": "hook_十五年前南疆控神毒药案",
+      "startChapter": 49,
+      "type": "往事",
+      "status": "open",
+      "lastAdvancedChapter": 50,
+      "expectedPayoff": "岭南（接触陈掌柜验证）",
+      "notes": "老李媳妇表哥三年前在潮州被控神毒药所害；时间线吻合"
+    },
+    {
+      "hookId": "hook_凤凰玉佩线索串联",
+      "startChapter": 49,
+      "type": "情报",
+      "status": "progressing",
+      "lastAdvancedChapter": 51,
+      "expectedPayoff": "岭南（玉佩秘密完整揭露）",
+      "notes": "凤凰玉佩背面字迹用特殊颜料写成，月光下泛荧光——这行小字'苏氏'可能不是全部秘密，特殊颜料暗示更深的隐藏信息"
+    },
+    {
+      "hookId": "hook_济世堂控神毒药网",
+      "startChapter": 50,
+      "type": "情报",
+      "status": "open",
+      "lastAdvancedChapter": 50,
+      "expectedPayoff": "岭南（完整揭露）",
+      "notes": "三年前潮州案例+老李媳妇表哥+控神毒药害人链条——这是一张大网"
+    },
+    {
+      "hookId": "hook_引蛇出洞策略",
+      "startChapter": 50,
+      "type": "strategy",
+      "status": "resolved",
+      "lastAdvancedChapter": 51,
+      "expectedPayoff": "岭南（陈掌柜回应）",
+      "notes": "第一步完成——老李递信成功；陈掌柜已收到消息，准备\"接驾\""
+    }
+  ]
+}

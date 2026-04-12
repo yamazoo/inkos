@@ -1,0 +1,99 @@
+{
+  "hooks": [
+    {
+      "hookId": "H105引导者程序",
+      "startChapter": 42,
+      "type": "大伏笔（真相）",
+      "status": "open",
+      "lastAdvancedChapter": 43,
+      "expectedPayoff": "**卷末**",
+      "notes": "**重大深化**：引导者揭示三个选择（意识接管/交出源代码/被困死）；揭示源代码326天后反噬（不稳定率达246.9%）；陈默拒绝三选一，提出寻找第四个选项；增长率可变（可压低？）；引导者消失但悬而未决"
+    },
+    {
+      "hookId": "H101S-001身份",
+      "startChapter": 40,
+      "type": "中伏笔（情节）",
+      "status": "progressing",
+      "lastAdvancedChapter": 43,
+      "expectedPayoff": "**10章内**",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：E-017是S-001留下的后门；S-001是第一个继承者候选人；S-001发现引导者存在后选择另一条路；创造E-017等待另一个继承者；引导者说S-001等了三十年"
+    },
+    {
+      "hookId": "H102融合体共振",
+      "startChapter": 40,
+      "type": "情节",
+      "status": "progressing",
+      "lastAdvancedChapter": 43,
+      "expectedPayoff": "待观察",
+      "payoffTiming": "mid-arc",
+      "notes": "**持续深化**：E-032从意识深处传来声音（更清晰）；陈默与E-032高速双核运转；E-032提示\"增长率可变\"；墙壁符号在黑暗中持续发光"
+    },
+    {
+      "hookId": "H103E-017独立节点",
+      "startChapter": 40,
+      "type": "情节",
+      "status": "open",
+      "lastAdvancedChapter": 43,
+      "expectedPayoff": "**近期**",
+      "notes": "**重大深化+悬念**：E-017帮陈默进入核心区域、建立通讯、发建筑结构图；但S-001创造它的目的是\"帮继承者绕过收割程序\"→E-017到底是S-001的后手、引导者的后手、还是有自己的想法？"
+    },
+    {
+      "hookId": "H104陆焚嘲讽",
+      "startChapter": 40,
+      "type": "情节",
+      "status": "progressing",
+      "lastAdvancedChapter": 43,
+      "expectedPayoff": "10章内",
+      "payoffTiming": "slow-burn",
+      "notes": "**持续深化**：陆焚主动切断通讯；压制结束后恢复行动能力；选择断开不想被追踪；可能在等待另一个时机"
+    },
+    {
+      "hookId": "mystery-001陈默真实身份过去",
+      "startChapter": 39,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 43,
+      "expectedPayoff": "卷末",
+      "payoffTiming": "slow-burn",
+      "notes": "**持续深化**：A-001在同步率50%时发现引导者存在；发现后主动中断融合导致源代码不稳定；打开通道让观测者离开导致末日（但末日是必然）"
+    },
+    {
+      "hookId": "plot-系统核心区域修复",
+      "startChapter": 39,
+      "type": "plot",
+      "status": "progressing",
+      "lastAdvancedChapter": 43,
+      "expectedPayoff": "近期",
+      "notes": "**持续**：源代码同步47.3%（目标100%）；需要创造者权限；增长率8.1%/小时+0.3%；326天后反噬"
+    },
+    {
+      "hookId": "H099陈默真实身份",
+      "startChapter": 38,
+      "type": "大伏笔（真相）",
+      "status": "progressing",
+      "lastAdvancedChapter": 43,
+      "expectedPayoff": "卷末",
+      "payoffTiming": "slow-burn",
+      "notes": "**持续深化**：陈默拒绝三选一，选择找第四个选项；增长率可变；\"你和他不一样\"（E-032评价）"
+    },
+    {
+      "hookId": "H106增长率可变",
+      "startChapter": 43,
+      "type": "**情节**",
+      "status": "open",
+      "lastAdvancedChapter": 43,
+      "expectedPayoff": "**近期**",
+      "notes": "**新埋**：源代码同步不稳定率增长率8.1%/小时+0.3%；这个增长率可以被改变吗？如果能压低增长率，时间窗口可能更长"
+    },
+    {
+      "hookId": "H107第四个选项",
+      "startChapter": 43,
+      "type": "**情节**",
+      "status": "open",
+      "lastAdvancedChapter": 43,
+      "expectedPayoff": "**10章内**",
+      "notes": "**新埋**：陈默拒绝三选一；目标是在源代码稳定情况下找到第四个选项；引导者质疑\"增长率能被改变吗？\"；E-032评价\"你在赌\"；陈默\"那就找个新的下法\""
+    }
+  ]
+}

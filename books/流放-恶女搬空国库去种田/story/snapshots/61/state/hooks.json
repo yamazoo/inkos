@@ -1,0 +1,121 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_苏青母亲",
+      "startChapter": 59,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 60,
+      "expectedPayoff": "岭南（后续揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "60章：苏青完整揭露母亲用命护玉佩经过（侍女+案发夜抱孩子逃出+藏地窖+带玉佩引开追兵+被抓受刑致死+货郎送信到济世堂）"
+    },
+    {
+      "hookId": "hook_苏青身世",
+      "startChapter": 59,
+      "type": "event",
+      "status": "open",
+      "lastAdvancedChapter": 60,
+      "expectedPayoff": "岭南（后续揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "60章：苏青身份完整揭露（苏家侍女之子+控神毒药案幸存者+被关三个月+跛左腿+铁链勒痕）+获救成为盟友"
+    },
+    {
+      "hookId": "hook_两块玉佩同源",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 61,
+      "expectedPayoff": "岭南（明日至城西分号）",
+      "payoffTiming": "mid-arc",
+      "notes": "61章：苏晚清解释策略——用两块玉佩逼陈掌柜站队；两块合在一起才是完整线索"
+    },
+    {
+      "hookId": "hook_俘虏画符号",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 58,
+      "expectedPayoff": "岭南（符号含义待揭示）",
+      "payoffTiming": "mid-arc",
+      "notes": "门楣莲花符号确认与俘虏画的一样；符号含义待揭示"
+    },
+    {
+      "hookId": "hook_城西可疑背影",
+      "startChapter": 59,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 61,
+      "expectedPayoff": "岭南（背影确认）",
+      "payoffTiming": "mid-arc",
+      "notes": "61章：翠竹在济世堂门口看到灰袍人背影（身形高瘦+往城西方向去）"
+    },
+    {
+      "hookId": "hook_左眉疤灰袍人",
+      "startChapter": 57,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 61,
+      "expectedPayoff": "岭南（身份揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "61章：翠竹今天没见着左眉疤灰袍人本人，但在济世堂门口看到类似背影"
+    },
+    {
+      "hookId": "hook_按察使司动向",
+      "startChapter": 57,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 61,
+      "expectedPayoff": "岭南（查控神毒药案）",
+      "payoffTiming": "mid-arc",
+      "notes": "**61章：翠竹打听结果——周砚（按察使司佥事+三年前从京城调来+督办要案+查城西+抓铺子掌柜问话+找十五年前控神毒药案相关东西）**"
+    },
+    {
+      "hookId": "hook_沈蓉交锋",
+      "startChapter": 60,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 60,
+      "expectedPayoff": "岭南（后续交锋）",
+      "payoffTiming": "mid-arc",
+      "notes": "60章：正面交锋+警告\"你会后悔的\"+敌对升级"
+    },
+    {
+      "hookId": "hook_济世堂欠人情",
+      "startChapter": 60,
+      "type": "event",
+      "status": "open",
+      "lastAdvancedChapter": 60,
+      "expectedPayoff": "岭南（人情回收）",
+      "payoffTiming": "mid-arc",
+      "notes": "60章：济世堂欠苏晚清人情确立"
+    },
+    {
+      "hookId": "hook_周砚",
+      "startChapter": 61,
+      "type": "**新建立**",
+      "status": "open",
+      "lastAdvancedChapter": 61,
+      "expectedPayoff": "**岭南（控神毒药案）**",
+      "notes": "**61章新建立：周砚（按察使司佥事+三年前从京城调来+很得刘使台信任+专门负责督办要案+查城西动作大+抓铺子掌柜问话+济世堂不在彻查名单上/或是周砚目标待收网+找十五年前控神毒药案相关东西+被陈掌柜评价\"难缠\"+\"手伸太长\"+\"刘使台亲自压下去\"）**"
+    },
+    {
+      "hookId": "hook_郑老卒",
+      "startChapter": 61,
+      "type": "**新建立**",
+      "status": "open",
+      "lastAdvancedChapter": 61,
+      "expectedPayoff": "**岭南（待揭露）**",
+      "notes": "**61章新建立：郑老卒（原军中百夫长+犯事被贬岭南+孙押役今日去北边营房见他+两人\"能说上话挺稀奇\"+三五日内危险期的人硬撑着去见）**"
+    },
+    {
+      "hookId": "hook_陈掌柜站队",
+      "startChapter": 61,
+      "type": "**新建立**",
+      "status": "open",
+      "lastAdvancedChapter": 61,
+      "expectedPayoff": "**岭南（明日城西）**",
+      "notes": "**61章新建立：苏晚清计划明日去城西济世堂分号，用两块玉佩逼陈掌柜站队——让陈掌柜知道苏晚清手上有他想要的东西+苏晚清能保他**"
+    }
+  ]
+}

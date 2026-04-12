@@ -1,0 +1,103 @@
+{
+  "hooks": [
+    {
+      "hookId": "mission-吴大夫家人成-功营救后正式-获得太傅府内",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 22,
+      "expectedPayoff": "吴大夫家人成功营救后正式获得太傅府内应",
+      "notes": "苏晚清承诺救吴大夫家人，交付凤凰玉佩，指定三日后太傅府后门接头。狗剩身份存疑（眉眼似吴大夫），管家嬷嬷已起疑"
+    },
+    {
+      "hookId": "mystery-太傅会见暗主-之人-揭露暗主更多",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 22,
+      "expectedPayoff": "太傅会见暗主之人——揭露暗主更多内幕或投敌细节",
+      "notes": "吴大夫透露三日后太傅在书房会见暗主的人，苏晚清已部署柳树屯棋子，等待接应"
+    },
+    {
+      "hookId": "hook-王氏真实目-的-不只是替身",
+      "startChapter": 22,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 23,
+      "expectedPayoff": "王氏让苏晚清回京的真正目的",
+      "notes": "苏晚清告知吴家娘子\"吴大夫手上有太傅把柄\"；管家嬷嬷对密谈内容起疑；王氏可能想控制把柄知情人"
+    },
+    {
+      "hookId": "hook-狗剩身份",
+      "startChapter": 23,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 23,
+      "expectedPayoff": "狗剩真实身份——吴大夫之子？村民？孤儿？",
+      "notes": "十一二岁，眉眼像吴大夫，父亲去年冬天去世没钱请大夫；碗里野菜糊糊；对苏晚清笑；翠竹塞干粮；寡妻看他时目光躲闪；狗剩跑向济世堂；寡妻目光复杂目送他离开。"
+    },
+    {
+      "hookId": "hook-吴家娘子真-实态度",
+      "startChapter": 23,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 23,
+      "expectedPayoff": "吴家娘子是否真心配合？还是在演戏？",
+      "notes": "吴家娘子经历否认→试探→心理挣扎→勉强答应的过程后接受任务，眼中闪过复杂神色，攥衣角手发白后又稳住。寡妻身份补充：原是太傅府粗使丫鬟，济世堂是太傅府产业。"
+    },
+    {
+      "hookId": "hook-管家嬷嬷监-视加强",
+      "startChapter": 23,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 23,
+      "expectedPayoff": "管家嬷嬷对密谈起疑后的下一步行动",
+      "notes": "冷哼\"姑娘好本事\"；目光在苏晚清和吴家娘子之间来回扫；提醒时辰不早"
+    },
+    {
+      "hookId": "hook-凤凰玉佩真-伪",
+      "startChapter": 23,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 23,
+      "expectedPayoff": "凤凰玉佩是苏晚清空间出品还是仿制太傅府信物？三日后会被认出吗？",
+      "notes": "苏晚清声称是仿济世堂旧物，但空间可拿出成色极好的玉佩。管家嬷嬷追问信息来源。"
+    },
+    {
+      "hookId": "hook-管家嬷嬷真-实态度",
+      "startChapter": 23,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 23,
+      "expectedPayoff": "管家嬷嬷追问苏晚清如何知道吴家娘子是太傅府出身——她在试探什么？",
+      "notes": "管家嬷嬷要求透露密谈内容才配合，被拦在门外后起疑；马车返程时追问信息来源；\"姑娘知道的比说的多\"；暗示她另有打算。"
+    },
+    {
+      "hookId": "hook-凤凰玉佩与济-世堂旧物关系",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 22,
+      "expectedPayoff": "苏晚清如何知道济世堂的旧物长什么样？",
+      "notes": "苏晚清声称玉佩是\"仿济世堂旧物\"，但管家嬷嬷似乎见过类似物件。管家嬷嬷对玉佩起疑"
+    },
+    {
+      "hookId": "hook-管家嬷嬷对苏晚清-信息源起疑",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 22,
+      "expectedPayoff": "管家嬷嬷追问信息来源后采取行动",
+      "notes": "管家嬷嬷在济世堂审视凤凰玉佩，对苏晚清信息来源起疑；狗剩出现后管家嬷嬷审视其眉眼似吴大夫，疑点增加"
+    },
+    {
+      "hookId": "threat-太傅追查信件-失败后加大反-击力度",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 81,
+      "expectedPayoff": "太傅追查信件失败后加大反击力度",
+      "notes": "太傅亲眼看到苏晚清亮出信件，脸色大变并下令追查"
+    }
+  ]
+}

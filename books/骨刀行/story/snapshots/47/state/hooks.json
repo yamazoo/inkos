@@ -1,0 +1,238 @@
+{
+  "hooks": [
+    {
+      "hookId": "SP001-陆家恩怨",
+      "startChapter": 1,
+      "type": "**主线**",
+      "status": "progressing",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**铜锣山/青石镇**",
+      "notes": "母亲之信揭露→陆焚第二封信揭示全部真相→传承机制/追杀真相/交易细节→SP001重大突破"
+    },
+    {
+      "hookId": "SP030-钱进的下一步",
+      "startChapter": 34,
+      "type": "**主线**",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**铜锣山/破庙**",
+      "notes": "追杀→对峙→合作→账已两清→钱进执行指令→揭露追杀真相→交易细节→苏青禾线推进"
+    },
+    {
+      "hookId": "SP034-铜锣山灵脉",
+      "startChapter": 36,
+      "type": "**主线**",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**铜锣山探索**",
+      "notes": "核心位置已知；脉晶机制揭露；传承机制揭露；待前往"
+    },
+    {
+      "hookId": "SP037-陆沉的娘",
+      "startChapter": 46,
+      "type": "**悬念**",
+      "status": "progressing",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**青石镇/远方**",
+      "notes": "母亲被送走（很远）；\"等不到也没关系\"；钱进冷笑暗示可能别有目的"
+    },
+    {
+      "hookId": "新钩-蛞蝓的来历",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "SP040-陆沉的抉择",
+      "startChapter": 47,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**下一章**",
+      "notes": "三个方向→决定先找灵脉核心→等处理完苏青禾再去铜锣山"
+    },
+    {
+      "hookId": "新钩-钱进与蛞蝓的关系",
+      "startChapter": 45,
+      "type": "**悬念**",
+      "status": "progressing",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**铜锣山/待展开**",
+      "notes": "钱进能与蛞蝓沟通/陆沉印记惊醒蛞蝓/追杀时蛞蝓不出来/\"钓鱼\"机制已揭示；关系深度仍存疑"
+    },
+    {
+      "hookId": "新钩-苏青禾的最后期限",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "新钩-陆沉的选择",
+      "startChapter": 48,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**下一章/铜锣山**",
+      "notes": "**三个方向：灵脉核心/苏青禾/青石镇；陆沉决定先找灵脉核心→等处理完苏青禾的事再去铜锣山；陆焚为何让他\"自己走到那一步\"→核心问题待解**"
+    },
+    {
+      "hookId": "新钩-陆焚的交易细节",
+      "startChapter": 48,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**铜锣山/待展开**",
+      "notes": "**钱进三年追杀工钱一千两；灵脉核心脉晶三七分成（陆七钱三）；陆焚不知此事→钱进瞒着陆焚多拿一份**"
+    },
+    {
+      "hookId": "新钩-脉晶",
+      "startChapter": 48,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**铜锣山/待展开**",
+      "notes": "**拇指大小深绿色结晶；握在手心能感到温热气息渗入血管；能稳住体内印记；只能吃一颗；剩余在灵脉核心**"
+    },
+    {
+      "hookId": "新钩-母亲的下落",
+      "startChapter": 46,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**后续章节**",
+      "notes": "母亲被送走→很远的地方→钱进的人找不到→\"你活着就去找她\"→钱进冷笑暗示可能别有目的（等的是守脉者不是儿子）→**认知前提补充：母亲知道有守脉者后人在找灵脉但不知道是儿子**→真假待辨"
+    },
+    {
+      "hookId": "新钩-守脉者传承机制",
+      "startChapter": 46,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "~~待展开~~",
+      "notes": "活祭引子机制已完全揭示：陆焚是引子/血亲死在灵脉面前才认新主人/钱进追杀是\"演给山里的东西看\"/母亲被送走（活祭需要纯净血脉）"
+    },
+    {
+      "hookId": "新钩-娘在山脚的镇子里等你",
+      "startChapter": 46,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**待展开**",
+      "notes": "重大伏笔！陆沉的娘可能还活着！但钱进暗示动机不纯"
+    },
+    {
+      "hookId": "新钩-守脉者之眼",
+      "startChapter": 46,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 46,
+      "expectedPayoff": "~~待展开~~",
+      "notes": "灵脉养出来的存在/非人非妖/陆焚养的看门的/等待守脉者归来/已确认陆焚死亡/已消失"
+    },
+    {
+      "hookId": "新钩-守脉者的路只能一个人走",
+      "startChapter": 46,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**后续章节**",
+      "notes": "陆焚遗言/与钱进合作形成矛盾/陆沉已选择先找核心暂缓寻母"
+    },
+    {
+      "hookId": "mystery-守脉者传承机制",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "新钩-陆焚的另一封信",
+      "startChapter": 0,
+      "type": "resolved",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "新钩-青石镇亮光",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "新钩-钱进与母亲的关系",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 23,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "SP001-陆家灭门真相",
+      "startChapter": 1,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**待展开**",
+      "notes": "十三年前陆家灭门/钱进是纵火主谋/钱通是幕后指使/陆焚夫妇被割喉埋乱葬岗"
+    },
+    {
+      "hookId": "SP030-钱进追杀动机",
+      "startChapter": 0,
+      "type": "resolved",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "SP034-蛞蝓与钱进的关系",
+      "startChapter": 0,
+      "type": "resolved",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "SP006-苏青禾的期限",
+      "startChapter": 37,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**下一章或数章后**",
+      "notes": "苏青禾三天期限/剩余一天半/被救出在破庙等待/钱进将带假消息\"守脉者还没死\"→钱进前往执行/重大转折即将发生"
+    },
+    {
+      "hookId": "新钩-钱进最终立场",
+      "startChapter": 48,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**后续章节**",
+      "notes": "账已两清/钱进执行指令前往破庙/冷笑暗示母亲动机/钱进目的不单纯/与苏青禾的新互动"
+    },
+    {
+      "hookId": "新钩-母亲等待动机",
+      "startChapter": 48,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 48,
+      "expectedPayoff": "**后续章节**",
+      "notes": "钱进口述：母亲知道有守脉者后人在找灵脉/一直在等但不知道是儿子/只问\"他走到哪了\"从不问儿子死活/真假待辨"
+    }
+  ]
+}

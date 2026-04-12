@@ -1,0 +1,120 @@
+{
+  "chapter": 38,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第37章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**入侵触发时间**：2024年某夜23:59:59，所有人同时听到同一句话：\"赛季开启，欢迎降临\""
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "核心冲突抛出"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "37: 继承者的重量 | 36: 同步率临界点 | 35: 营地会议·记忆的重量 | 34: 苏醒前的黎明 | 33: 光柱前的低语"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "37: 思索→决心→震惊→悬念→沉重→揭秘→思索→悬念→决心→震惊→坚定→高潮 / **核心冲突抛出+高潮章** | 36: 悬念→决心→震惊→思索→悬念加深 / 探索+揭示+新抉择 | 35: 沉重→悬念→暂缓→决心 / 信息揭示+抉择铺垫+团队会议 | 34: 思索→揭秘→沉重→悬念→决心→悬念→高潮 / **推进+高潮章** | 33: 悬念→思索→决心→震惊→沉重→悬念→决心 / **推进+高潮章**"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch35: **（本章完）** | ch36: 但他知道自己必须继续走下去。 | ch37: 而陈默站在那片光芒的中央，双手按在休眠舱上，面容平静，嘴角甚至带着一丝若有若无的笑意。"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | **核心冲突**：陈默必须在三分钟内做出选择；系统面临过载风险；融合协议代价未知；黑暗深处有未知存在正在苏醒"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **执行第三个选项：融合协议（继承+唤醒同时进行）**；**唤醒E-032（进行中，进度17%）**；**达到同步率临界值50%**；**救援李雨薇（进行中）**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 【系统绑定成功】【觉醒者Lv.1】【系统能量41%】【未绑定状态】【休眠舱阵列同步率47.8%】【中央机器同步率30.1%（唤醒协议部分执行，需40%）】【窗口期327天】【继承者身份确认请求已提交】【唤醒协议执行中】【融合协议启动中】【双手发光（淡青色）】"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 同步率临界值50%（当前47.8%，差2.2%）；融合协议代价未知"
+    },
+    {
+      "source": "story/chapter_summaries.md#35",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "营地会议·记忆的重量 | 营地会议召开→同步率34.1%+持续上涨→反向转化协议代价完全揭示→李思雨分析三种记忆可能性→李思雨点出陈默在找\"第三个选项\"→陈默身份确认为\"未绑定觉醒者\"→陈默决定暂缓选择→李思雨告诫不要独自扛→天花板上数据乱码继续存在 | 位置：B3→B2营地；同步率34.1%+持续上涨；四个污染先驱者退回休眠舱等待；反向转化代价完全已知；陈默暂缓决定；新增两个普通幸存者出场 | H079深化（未绑定觉醒者）；H080深化（反向转化代价已知）；H082推进（污染先驱者停战）；H084深化（测试等待回应）；**H085新埋（数据乱码）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#36",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "同步率临界点 | 同步率从34.7%涨至40.1%；发现墙壁符号能加速同步率；四个污染先驱者污染指数几乎归零；E-032已解锁；陈默触摸休眠舱时手发光；发现休眠舱阵列深处光柱；陈默推断阵列是完整系统（休眠舱是组件，光柱是核心）；先驱者协议第七条保护的是系统本身 | 同步率40.1%（突破40%阈值）；位置：B3层休眠舱阵列；E-032状态变为\"已解锁\"；发现身体能发出系统同色光；四个先驱者污染指数归零；新增两个伏笔（H086墙壁符号/H087光柱系统） | H078推进（E-032解锁）；H082深化（污染归零）；H086新埋（墙壁符号）；H087新埋（光柱系统）"
+    },
+    {
+      "source": "story/chapter_summaries.md#37",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "继承者的重量 | 光柱提出继承者身份确认；唤醒协议vs继承协议互斥；陈默发现\"第三个选项\"（融合协议）；E-032揭示末日真相（系统失控/观测者逃逸/清洗计划）；陈默双手按在休眠舱启动融合协议；同步率47.8%（临界值50%）；融合协议代价未知 | 同步率42.3%→47.8%；E-032唤醒进度3%→17%；陈默状态：思索→决心→震惊→坚定；融合协议已启动；双手发光蔓延至小臂；光柱震颤；整个B3层被照亮 | H084深化（融合协议提出并启动）；H085深化（末日真相揭示）；H086推进（墙壁符号同步加速）；H087深化（光柱核心）；H088深化（黑暗深处苏醒迹象）；H089推进（同步率差异）；H090深化（赵磊梦境呼应）；H091深化（三选一到融合）；H092推进（徽章共振）；H093推进（规则漏洞）；**H094新埋（融合代价）**；**H095新埋（历史碎片画面）**；**H096新埋（黑暗深处苏醒）**；**H097深化（系统失控真相）**；**H098深化（融合存在）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H094融合协议代价",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**新埋** | open | **5章内→3章** | **融合协议代价未知；这条路从来没有人走过**"
+    },
+    {
+      "source": "story/pending_hooks.md#H095历史碎片画面",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**新埋** | open | **待定** | **三段画面：天空裂开（光柱降临）/实验室（环形机器）/长发女人背影（悬崖边缘）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H096黑暗深处苏醒",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**新埋** | open | **5章内→3章** | **陈默感知到黑暗深处脉动加速，节奏变得急促紊乱，像是有东西正在苏醒**"
+    },
+    {
+      "source": "story/pending_hooks.md#H097系统失控真相",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**深化** | progressing | **卷末回收** | **末日不是入侵，是逃逸；观测者是系统失控碎片；系统核心保存设计理念（保护人类）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H098融合后的存在",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**深化** | progressing | **待定** | **既有人类意识又有系统能力的新存在；人机混合体**"
+    },
+    {
+      "source": "story/pending_hooks.md#H086墙壁符号",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "中伏笔（情节） | progressing | 10章内→7章 | mid-arc | 墙壁符号能加速同步率上涨；与休眠舱同系统"
+    },
+    {
+      "source": "story/pending_hooks.md#H004陆焚身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open | 15章内→12章 | mid-arc | 使徒/橙色光圈标记/猎杀普通玩家/主动撤离/对陈默产生兴趣"
+    },
+    {
+      "source": "story/pending_hooks.md#H030确认音差异",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open | 待定 | 陈默确认自己也是三十年前第一批先驱者之一，与光点女性同批次。'你愿意知道真相吗'是每个人觉醒时面对的选择。"
+    }
+  ]
+}

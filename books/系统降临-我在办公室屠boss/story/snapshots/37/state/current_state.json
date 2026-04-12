@@ -1,0 +1,53 @@
+{
+  "chapter": 37,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "B3层休眠舱阵列深处（光柱旁）",
+      "validFromChapter": 37,
+      "validUntilChapter": null,
+      "sourceChapter": 37
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "【系统绑定成功】【觉醒者Lv.1】【系统能量41%】【未绑定状态】【休眠舱阵列同步率47.8%】【中央机器同步率30.1%（唤醒协议部分执行，需40%）】【窗口期327天】【继承者身份确认请求已提交】【唤醒协议执行中】【融合协议启动中】【双手发光（淡青色）】",
+      "validFromChapter": 37,
+      "validUntilChapter": null,
+      "sourceChapter": 37
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "**执行第三个选项：融合协议（继承+唤醒同时进行）**；**唤醒E-032（进行中，进度17%）**；**达到同步率临界值50%**；**救援李雨薇（进行中）**",
+      "validFromChapter": 37,
+      "validUntilChapter": null,
+      "sourceChapter": 37
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "同步率临界值50%（当前47.8%，差2.2%）；融合协议代价未知",
+      "validFromChapter": 37,
+      "validUntilChapter": null,
+      "sourceChapter": 37
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "敌人：观测者（系统失控碎片）；队友：李思雨（记录者）",
+      "validFromChapter": 37,
+      "validUntilChapter": null,
+      "sourceChapter": 37
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "**核心冲突**：陈默必须在三分钟内做出选择；系统面临过载风险；融合协议代价未知；黑暗深处有未知存在正在苏醒",
+      "validFromChapter": 37,
+      "validUntilChapter": null,
+      "sourceChapter": 37
+    }
+  ]
+}

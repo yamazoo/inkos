@@ -1,0 +1,109 @@
+{
+  "chapter": 36,
+  "facts": [
+    {
+      "subject": "current_state",
+      "predicate": "项目",
+      "object": "状态",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "位置",
+      "object": "B2层营地",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "能量",
+      "object": "42%",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "队伍",
+      "object": "17人",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "H030状态",
+      "object": "待B3验证（笔记本已标注）；**新进展：确认入侵内容差异存在；王德发回忆\"一声响\"确认音**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "H035状态",
+      "object": "**重大推进：筛选机制可能是\"事件触发\"而非\"时间触发\"；休眠舱是最终选择容器；守护者老婆的选择可能是另一种完成**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "H049状态",
+      "object": "梦境重大推进——\"咯噔\"声和\"赛季开启\"首次被听到；暗示有东西在等他记起来，也有东西在阻止他记起来；**新线索：赵磊梦见B3-7-3坐标**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "关键物品",
+      "object": "休眠核心×1（已消耗）、同步稳定器×1、先驱者徽章×1、神秘纸条×2",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "明日计划",
+      "object": "B3层探索，寻找休眠舱控制终端，验证入侵差异（H030）和守护者职责判定机制（H035）；**老张加入探索队伍**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "人物关系",
+      "object": "老张-陈默：初步信任建立（陈默透露能看到规则漏洞，但未说明具体职业）；老张-妻子：妻子在休眠舱中（情感线索已埋）；**老张决定同行B3探索**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "E-032状态",
+      "object": "**唤醒中（已持续三天）；光柱变亮并与D区休眠舱共振**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "D区异常",
+      "object": "**四个污染先驱者休眠舱指示灯闪烁，与E-032光柱频率同步**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "赵磊状态",
+      "object": "**梦见数据流符号，已能识别部分含义；梦见B3-7-3坐标；伤口完全愈合只剩淡疤**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    }
+  ]
+}

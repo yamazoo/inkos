@@ -1,0 +1,769 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_001",
+      "startChapter": 0,
+      "type": "物资",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "持续使用",
+      "notes": "国库物资是核心金手指"
+    },
+    {
+      "hookId": "hook_004",
+      "startChapter": 0,
+      "type": "道具",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "持续使用",
+      "notes": "治愈身体的关键"
+    },
+    {
+      "hookId": "hook_024",
+      "startChapter": 0,
+      "type": "道具",
+      "status": "open",
+      "lastAdvancedChapter": 58,
+      "expectedPayoff": "持续使用",
+      "notes": "萧寒舟信物"
+    },
+    {
+      "hookId": "hook_193",
+      "startChapter": 49,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "苏父涉案真相（核心揭示）"
+    },
+    {
+      "hookId": "hook_197",
+      "startChapter": 51,
+      "type": "势力",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "苏父把柄（已揭示）"
+    },
+    {
+      "hookId": "hook_200",
+      "startChapter": 52,
+      "type": "势力",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "京城变局（已揭示）"
+    },
+    {
+      "hookId": "hook_205",
+      "startChapter": 53,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 58,
+      "expectedPayoff": "第76章+",
+      "notes": "王氏暗手"
+    },
+    {
+      "hookId": "hook_206",
+      "startChapter": 52,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "第78章：确认赵恒与\"暗主\"是复仇关系",
+      "notes": "赵恒身份（已揭示）"
+    },
+    {
+      "hookId": "hook_219",
+      "startChapter": 12,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "第12章激活，待回收",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_235",
+      "startChapter": 60,
+      "type": "势力",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "李贵狱卒眼线"
+    },
+    {
+      "hookId": "hook_244",
+      "startChapter": 63,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 70,
+      "expectedPayoff": "第76章+",
+      "notes": "刘安内奸身份"
+    },
+    {
+      "hookId": "hook_249",
+      "startChapter": 64,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 71,
+      "expectedPayoff": "第76章+",
+      "notes": "账本下落"
+    },
+    {
+      "hookId": "hook_251",
+      "startChapter": 64,
+      "type": "势力",
+      "status": "resolved",
+      "lastAdvancedChapter": 76,
+      "expectedPayoff": "第75-76章",
+      "notes": "萧寒舟协助"
+    },
+    {
+      "hookId": "hook_254",
+      "startChapter": 66,
+      "type": "道具",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章+",
+      "notes": "账本在手"
+    },
+    {
+      "hookId": "hook_256",
+      "startChapter": 66,
+      "type": "时间",
+      "status": "resolved",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "第80章",
+      "notes": "张嬷嬷灭口期限（已回收）"
+    },
+    {
+      "hookId": "hook_257",
+      "startChapter": 67,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 70,
+      "expectedPayoff": "第76章+",
+      "notes": "假位置伏笔"
+    },
+    {
+      "hookId": "hook_258",
+      "startChapter": 67,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 70,
+      "expectedPayoff": "第76章+",
+      "notes": "刘安追杀"
+    },
+    {
+      "hookId": "hook_259",
+      "startChapter": 67,
+      "type": "势力",
+      "status": "open",
+      "lastAdvancedChapter": 71,
+      "expectedPayoff": "第76章+",
+      "notes": "镇国公府追杀"
+    },
+    {
+      "hookId": "hook_260",
+      "startChapter": 67,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 70,
+      "expectedPayoff": "第76章+",
+      "notes": "刘安问责"
+    },
+    {
+      "hookId": "hook_262",
+      "startChapter": 68,
+      "type": "势力",
+      "status": "resolved",
+      "lastAdvancedChapter": 76,
+      "expectedPayoff": "第75-76章",
+      "notes": "萧寒舟暗助"
+    },
+    {
+      "hookId": "hook_265",
+      "startChapter": 69,
+      "type": "势力",
+      "status": "open",
+      "lastAdvancedChapter": 71,
+      "expectedPayoff": "第76章+",
+      "notes": "七杀暗中保护"
+    },
+    {
+      "hookId": "hook_269",
+      "startChapter": 70,
+      "type": "势力",
+      "status": "open",
+      "lastAdvancedChapter": 70,
+      "expectedPayoff": "第78章+",
+      "notes": "私通北狄证据"
+    },
+    {
+      "hookId": "hook_270",
+      "startChapter": 70,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 70,
+      "expectedPayoff": "第76章+",
+      "notes": "刘安背叛"
+    },
+    {
+      "hookId": "hook_271",
+      "startChapter": 70,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 72,
+      "expectedPayoff": "第76章",
+      "notes": "账本期限"
+    },
+    {
+      "hookId": "hook_272",
+      "startChapter": 70,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 70,
+      "expectedPayoff": "第76章+",
+      "notes": "账本后手"
+    },
+    {
+      "hookId": "hook_273",
+      "startChapter": 71,
+      "type": "势力",
+      "status": "open",
+      "lastAdvancedChapter": 71,
+      "expectedPayoff": "第76章+",
+      "notes": "七杀暗中保护"
+    },
+    {
+      "hookId": "hook_274",
+      "startChapter": 71,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 71,
+      "expectedPayoff": "第76章+",
+      "notes": "镇国公后手"
+    },
+    {
+      "hookId": "hook_275",
+      "startChapter": 71,
+      "type": "悬疑",
+      "status": "resolved",
+      "lastAdvancedChapter": 76,
+      "expectedPayoff": "第75章",
+      "notes": "苏子轩叛国"
+    },
+    {
+      "hookId": "hook_276",
+      "startChapter": 71,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "王氏阴谋（真相揭示）"
+    },
+    {
+      "hookId": "hook_278",
+      "startChapter": 73,
+      "type": "角色",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章+",
+      "notes": "福伯身份（暂时搁置）"
+    },
+    {
+      "hookId": "hook_279",
+      "startChapter": 72,
+      "type": "悬疑",
+      "status": "resolved",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "枯井秘密（核心证据确认）"
+    },
+    {
+      "hookId": "hook_280",
+      "startChapter": 72,
+      "type": "时间",
+      "status": "resolved",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "第80章",
+      "notes": "王氏保命信（已回收）"
+    },
+    {
+      "hookId": "hook_281",
+      "startChapter": 73,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 74,
+      "expectedPayoff": "第76章+",
+      "notes": "赵恒警告信"
+    },
+    {
+      "hookId": "hook_282",
+      "startChapter": 73,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 74,
+      "expectedPayoff": "第76章+",
+      "notes": "原主记忆碎片"
+    },
+    {
+      "hookId": "hook_283",
+      "startChapter": 73,
+      "type": "势力",
+      "status": "open",
+      "lastAdvancedChapter": 73,
+      "expectedPayoff": "第76章+",
+      "notes": "七杀暗号"
+    },
+    {
+      "hookId": "hook_284",
+      "startChapter": 74,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "第78章：核心冲突已转向太傅，福伯线暂时搁置",
+      "notes": "福伯时间线漏洞（暂时搁置）"
+    },
+    {
+      "hookId": "hook_285",
+      "startChapter": 74,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "赵恒意图（已揭示）"
+    },
+    {
+      "hookId": "hook_286",
+      "startChapter": 74,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "第78章：赵恒现身证实\"暗主\"是复仇目标",
+      "notes": "赵恒避见之谜（已解答）"
+    },
+    {
+      "hookId": "hook_287",
+      "startChapter": 75,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "王氏警告（已解答）"
+    },
+    {
+      "hookId": "hook_288",
+      "startChapter": 75,
+      "type": "悬疑",
+      "status": "progressing",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第80章：赵恒告知解药配方在太傅府吴大夫手中",
+      "notes": "保命信换解药（计划调整）"
+    },
+    {
+      "hookId": "hook_289",
+      "startChapter": 75,
+      "type": "势力",
+      "status": "open",
+      "lastAdvancedChapter": 75,
+      "expectedPayoff": "第76章+",
+      "notes": "萧寒舟早知枯井"
+    },
+    {
+      "hookId": "hook_290",
+      "startChapter": 75,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "赵恒身份之谜（完全揭示）"
+    },
+    {
+      "hookId": "hook_291",
+      "startChapter": 76,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "第78章：张掌柜安全（信送到了），官兵突袭的后续未交代",
+      "notes": "张记铁铺（部分悬念）"
+    },
+    {
+      "hookId": "hook_292",
+      "startChapter": 76,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "苏老爷被下毒（原因揭示）"
+    },
+    {
+      "hookId": "hook_293",
+      "startChapter": 76,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "解药在王氏手里（已更正）"
+    },
+    {
+      "hookId": "hook_294",
+      "startChapter": 76,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "\"吾兄\"身份之谜（完全揭示）"
+    },
+    {
+      "hookId": "hook_295",
+      "startChapter": 76,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章+",
+      "notes": "布防图需销毁（已升级）"
+    },
+    {
+      "hookId": "hook_296",
+      "startChapter": 76,
+      "type": "势力",
+      "status": "open",
+      "lastAdvancedChapter": 76,
+      "expectedPayoff": "第78章+",
+      "notes": "赵恒王氏关系（性质揭示）"
+    },
+    {
+      "hookId": "hook_297",
+      "startChapter": 76,
+      "type": "悬疑",
+      "status": "progressing",
+      "lastAdvancedChapter": 76,
+      "expectedPayoff": "第80章：假信换真信成功，张嬷嬷已救出",
+      "notes": "保命信未截获（已完成）"
+    },
+    {
+      "hookId": "hook_298",
+      "startChapter": 76,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 76,
+      "expectedPayoff": "第76章+",
+      "notes": "赵恒字迹"
+    },
+    {
+      "hookId": "hook_299",
+      "startChapter": 77,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "第78章：张掌柜收到\"枯井见\"三个字后笑了",
+      "notes": "赵恒母亲身份"
+    },
+    {
+      "hookId": "hook_300",
+      "startChapter": 77,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "第78章：未推进",
+      "notes": "暗巷通向（待揭示→第80章揭示：通城外）"
+    },
+    {
+      "hookId": "hook_301",
+      "startChapter": 77,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "第80章：黑衣人身份仍在悬念中",
+      "notes": "黑衣人身份（待揭示）"
+    },
+    {
+      "hookId": "hook_302",
+      "startChapter": 77,
+      "type": "势力",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "暗主组织（已揭示核心）"
+    },
+    {
+      "hookId": "hook_303",
+      "startChapter": 77,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "萧家灭门案（完全揭示）"
+    },
+    {
+      "hookId": "hook_304",
+      "startChapter": 77,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "解药真正掌权者（已揭示→第80章具体化）"
+    },
+    {
+      "hookId": "hook_305",
+      "startChapter": 77,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "第78章：未推进",
+      "notes": "青衫年轻人"
+    },
+    {
+      "hookId": "hook_306",
+      "startChapter": 78,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "萧寒舟赵恒兄弟关系"
+    },
+    {
+      "hookId": "hook_307",
+      "startChapter": 78,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章+",
+      "notes": "苏父给太傅的信（铁证）"
+    },
+    {
+      "hookId": "hook_308",
+      "startChapter": 78,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章+",
+      "notes": "赵恒父亲身世"
+    },
+    {
+      "hookId": "hook_309",
+      "startChapter": 78,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章+",
+      "notes": "\"暗主\"建立时间"
+    },
+    {
+      "hookId": "hook_310",
+      "startChapter": 78,
+      "type": "势力",
+      "status": "progressing",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第80章：假信换真信成功",
+      "notes": "假信计划（已完成）"
+    },
+    {
+      "hookId": "hook_311",
+      "startChapter": 78,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章+",
+      "notes": "苏父被抛弃"
+    },
+    {
+      "hookId": "hook_312",
+      "startChapter": 78,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "太傅身份"
+    },
+    {
+      "hookId": "hook_313",
+      "startChapter": 78,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章+",
+      "notes": "赵恒萧寒舟相认经过"
+    },
+    {
+      "hookId": "hook_314",
+      "startChapter": 12,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "第12章激活，待揭示",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_315",
+      "startChapter": 78,
+      "type": "悬疑",
+      "status": "progressing",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "第80章+",
+      "notes": "黑衣人武功判断"
+    },
+    {
+      "hookId": "hook_316",
+      "startChapter": 78,
+      "type": "势力",
+      "status": "progressing",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第80章：萧寒舟配合宴会+救张嬷嬷，赵恒端暗道，苏晚清赴宴",
+      "notes": "三方合作联盟（全面协同）"
+    },
+    {
+      "hookId": "hook_317",
+      "startChapter": 78,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章+",
+      "notes": "苏父角色定性"
+    },
+    {
+      "hookId": "hook_318",
+      "startChapter": 78,
+      "type": "悬疑",
+      "status": "progressing",
+      "lastAdvancedChapter": 79,
+      "expectedPayoff": "第80章：黑衣人身份持续悬念",
+      "notes": "黑衣人伏笔（持续）"
+    },
+    {
+      "hookId": "hook_319",
+      "startChapter": 78,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章+",
+      "notes": "萧寒舟知情程度"
+    },
+    {
+      "hookId": "hook_320",
+      "startChapter": 78,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "第78章",
+      "notes": "萧寒舟父仇"
+    },
+    {
+      "hookId": "hook_321",
+      "startChapter": 79,
+      "type": "悬疑",
+      "status": "resolved",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "第80章",
+      "notes": "王氏北上之谜（已解答）"
+    },
+    {
+      "hookId": "hook_322",
+      "startChapter": 79,
+      "type": "道具",
+      "status": "resolved",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "第80章",
+      "notes": "王氏真信到手（已回收→策略明确）"
+    },
+    {
+      "hookId": "hook_323",
+      "startChapter": 79,
+      "type": "悬疑",
+      "status": "resolved",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "第80章",
+      "notes": "真信新用途（已回收→计划成型）"
+    },
+    {
+      "hookId": "hook_324",
+      "startChapter": 79,
+      "type": "悬疑",
+      "status": "resolved",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "第80章",
+      "notes": "张嬷嬷处境（已回收）"
+    },
+    {
+      "hookId": "hook_325",
+      "startChapter": 79,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "第80章+",
+      "notes": "萧寒舟王氏旧怨"
+    },
+    {
+      "hookId": "hook_326",
+      "startChapter": 79,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "第80章+",
+      "notes": "萧赵兄弟情（持续）"
+    },
+    {
+      "hookId": "hook_327",
+      "startChapter": 79,
+      "type": "势力",
+      "status": "resolved",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "第80章",
+      "notes": "萧寒舟立场确认（已回收）"
+    },
+    {
+      "hookId": "hook_328",
+      "startChapter": 79,
+      "type": "悬疑",
+      "status": "resolved",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "第80章",
+      "notes": "小李子身份（灭口执行者已死）"
+    },
+    {
+      "hookId": "hook_329",
+      "startChapter": 20,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "延后揭示",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_330",
+      "startChapter": 20,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "延后揭示",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_331",
+      "startChapter": 20,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "延后揭示",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_332",
+      "startChapter": 20,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "第20章结尾发现，待揭示身份",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_333",
+      "startChapter": 20,
+      "type": "悬疑",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "第20章暗示镇国公府内部可能有裂痕",
+      "notes": ""
+    }
+  ]
+}

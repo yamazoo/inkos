@@ -1,0 +1,27 @@
+{
+  "chapter": 25,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0025.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0025.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#12",
+    "story/chapter_summaries.md#22",
+    "story/chapter_summaries.md#23",
+    "story/chapter_summaries.md#24",
+    "story/pending_hooks.md#hook-后日太傅设宴",
+    "story/pending_hooks.md#hook-太后与苏母旧识",
+    "story/pending_hooks.md#hook-太后私库令牌"
+  ],
+  "notes": []
+}

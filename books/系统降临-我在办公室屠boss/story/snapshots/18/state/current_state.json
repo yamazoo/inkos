@@ -1,0 +1,141 @@
+{
+  "chapter": 36,
+  "facts": [
+    {
+      "subject": "current_state",
+      "predicate": "note_1",
+      "object": "陈默：刚从B3层探索归来/获得关键线索（照片+机器认出陈默）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_2",
+      "object": "李思雨：随行/观察到B3层阵列异常",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_3",
+      "object": "赵磊：随行/守备状态",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_4",
+      "object": "李国强：随行/战斗准备",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_5",
+      "object": "王德发：情绪激动/发现妻子照片/妻子去向成谜",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_6",
+      "object": "同步率：未明确（第一次探索，未测量）",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_7",
+      "object": "心理状态：震惊→警觉/发现重大线索/准备第二次探索",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_8",
+      "object": "王德发之妻（王淑芬）：从B3层休眠舱区域消失/留下照片和字条\"不是遗忘，是拒绝\"",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_9",
+      "object": "第一关是什么",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_10",
+      "object": "\"不是遗忘，是拒绝\"的完整含义",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_11",
+      "object": "照片上的男人是谁",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_12",
+      "object": "\"第二枚钥匙\"在何处",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_13",
+      "object": "王德发妻子去向",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_14",
+      "object": "机器为何认识陈默",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_15",
+      "object": "H030: 第一天觉醒差异→陈默确认自己听不到确认音但觉醒了",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_16",
+      "object": "H045: 守护者职业→王德发是第一天觉醒者/老张质疑职责",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_17",
+      "object": "H049: 记忆缺失→梦境中出现确认音/\"不是遗忘，是拒绝\"",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    }
+  ]
+}

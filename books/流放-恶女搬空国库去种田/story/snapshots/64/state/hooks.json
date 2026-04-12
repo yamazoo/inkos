@@ -1,0 +1,114 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_周砚查封",
+      "startChapter": 63,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南（查封真相）",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章深化：周砚背后有一整张网+不是周砚能做到的是他背后的人出手了**"
+    },
+    {
+      "hookId": "hook_落梅村",
+      "startChapter": 63,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南→落梅村（苏家的根）",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章深化：老夫人说\"等了十五年\"+今夜必须离开岭南城**"
+    },
+    {
+      "hookId": "hook_凤凰涅槃",
+      "startChapter": 62,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南→落梅村",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章深化：母亲用命护了十五年的玉佩终于要派上用场了**"
+    },
+    {
+      "hookId": "hook_济世堂欠命",
+      "startChapter": 62,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南（待回收）",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章深化：老夫人布局保护苏晚清**"
+    },
+    {
+      "hookId": "hook_老夫人身份",
+      "startChapter": 62,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南→落梅村（再见老夫人）",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章深化：老夫人十五年的等待终于有了结果**"
+    },
+    {
+      "hookId": "hook_苏家灭门案",
+      "startChapter": 62,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南（待验证）",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章紧急：母亲名字泄露=有人泄密**"
+    },
+    {
+      "hookId": "hook_周砚",
+      "startChapter": 61,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南（控神毒药案）",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章深化：周砚不是一个人是整张网**"
+    },
+    {
+      "hookId": "hook_郑老卒",
+      "startChapter": 61,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章推进：周砚去城北是幌子+真正目标一直在药王街**"
+    },
+    {
+      "hookId": "hook_孙押役",
+      "startChapter": 54,
+      "type": "mystery",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南（揭露真相）",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章回收：监控十章的伏笔闭合**"
+    },
+    {
+      "hookId": "hook_城西可疑背影",
+      "startChapter": 59,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南（背影确认）",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章推进：流放营里有人盯着苏晚清**"
+    },
+    {
+      "hookId": "hook_流放营内鬼",
+      "startChapter": 64,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南（揭露内鬼）",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章新建立：流放营安全威胁**"
+    }
+  ]
+}

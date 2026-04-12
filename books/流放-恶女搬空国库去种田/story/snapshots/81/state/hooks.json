@@ -1,0 +1,102 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_墨香斋后墙根",
+      "startChapter": 79,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**81章深化：药草相同+都在角落+都用油纸包=苏远山在用济世堂的可能性大增**"
+    },
+    {
+      "hookId": "hook_清风巷主人",
+      "startChapter": 77,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**81章深化：济世堂踩点完成+新线索串联（药草同源+账册记录）+苏远山可信度降至新低**"
+    },
+    {
+      "hookId": "hook_劲装男人",
+      "startChapter": 74,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（身份待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**80章重大推进：城西茶摊劲装男人（定点观察+跑惯江湖+不同于之前两个）=可能是第三方势力**；81章未直接提及但威胁存在"
+    },
+    {
+      "hookId": "hook_左眉疤灰袍人",
+      "startChapter": 71,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（身份待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**80章推进：街角灰袍身影一闪而过（可能只是巧合/可能不是）=威胁仍在**；81章未直接出现但苏晚清回想中提到"
+    },
+    {
+      "hookId": "hook_苏家接应网运转",
+      "startChapter": 69,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（接应网运转中）",
+      "payoffTiming": "mid-arc",
+      "notes": "**81章重大发现：济世堂中间几个月空白+有人转移财产（二十两）+有人在用济世堂（药草）=苏家接应网被渗透且有内鬼**"
+    },
+    {
+      "hookId": "hook_两个周砚",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南→落梅村→青石镇→府城",
+      "payoffTiming": "mid-arc",
+      "notes": "**80-81章维持：济世堂被查封+周掌柜被灭口+京城来人查配方**"
+    },
+    {
+      "hookId": "hook_隔壁新住客",
+      "startChapter": 75,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（身份待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "75章新增+76章重大推进+77章深化+78章确认+79-81章未直接提及但威胁存在（81章结尾走廊脚步声）"
+    },
+    {
+      "hookId": "hook_控神毒药配方",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "落梅村（两天后取）",
+      "payoffTiming": "mid-arc",
+      "notes": "**81章推进：两天后去落梅村取配方+济世堂踩点完成获得关键情报（二月初三二十两+药草同源）**"
+    },
+    {
+      "hookId": "hook_济世堂中间空白",
+      "startChapter": 81,
+      "type": "**mystery**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**岭南府城（待揭露）**",
+      "notes": "**81章新增关键伏笔：济世堂中间几个月空白+不明使用者+可能与苏远山有关**"
+    },
+    {
+      "hookId": "hook_二月初三二十两",
+      "startChapter": 81,
+      "type": "**mystery**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**岭南府城（待揭露）**",
+      "notes": "**81章新增关键伏笔：苏家出事当天二十两支走+关联苏家灭门案**"
+    }
+  ]
+}

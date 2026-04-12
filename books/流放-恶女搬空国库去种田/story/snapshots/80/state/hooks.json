@@ -1,0 +1,84 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_墨香斋后墙根",
+      "startChapter": 79,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "待定",
+      "payoffTiming": "mid-arc",
+      "notes": "**80章维持：苏远山昨天见面时没药味vs三叔应该有药味vs墨香斋后墙根有药草味=矛盾线索（待验证）**"
+    },
+    {
+      "hookId": "hook_清风巷主人",
+      "startChapter": 77,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "岭南府城（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**80章深化：济世堂三年前换东家（新发现）+谁接手？苏远山当时在哪？+苏远山说法是否有漏洞+账本副本到手（待验证）**"
+    },
+    {
+      "hookId": "hook_苏家接应网运转",
+      "startChapter": 69,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "岭南府城（接应网运转中）",
+      "payoffTiming": "mid-arc",
+      "notes": "**80章维持：济世堂三年前换东家+接应网被渗透+苏远山守着另一条线**"
+    },
+    {
+      "hookId": "hook_两个周砚",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "岭南→落梅村→青石镇→府城",
+      "payoffTiming": "mid-arc",
+      "notes": "**80章维持：济世堂被查封+周掌柜被灭口+京城来人查配方**"
+    },
+    {
+      "hookId": "hook_控神毒药配方",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "落梅村（三天后取）",
+      "payoffTiming": "mid-arc",
+      "notes": "**80章推进：三天后去落梅村取配方+苏青认出广记药铺是济世堂前身+济世堂三年前换东家（关键信息）**"
+    },
+    {
+      "hookId": "hook_隔壁新住客",
+      "startChapter": 75,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "岭南府城（身份待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "75章新增+76章重大推进+77章深化+78章确认+79-80章未直接提及但威胁存在"
+    },
+    {
+      "hookId": "hook_劲装男人",
+      "startChapter": 74,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "岭南府城（身份待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**80章重大推进：城西茶摊劲装男人（定点观察+跑惯江湖+不同于安福巷那个+与城门口那个也不同）=可能是第三方势力？**"
+    },
+    {
+      "hookId": "hook_左眉疤灰袍人",
+      "startChapter": 71,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "岭南府城（身份待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**80章推进：街角灰袍身影一闪而过（可能只是巧合/可能不是）=威胁仍在**"
+    }
+  ]
+}

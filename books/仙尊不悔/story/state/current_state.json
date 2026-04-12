@@ -1,0 +1,53 @@
+{
+  "chapter": 106,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "后山山洞（深夜研究地点）",
+      "validFromChapter": 106,
+      "validUntilChapter": null,
+      "sourceChapter": 106
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "真元巅峰；持有月刃蛊+酒虫+《花酒遗策》+留影存声蛊+方正遗产字据+匕首+细绳+蛊囊（多个）+有蛊纹的铁片（已使用）+黑色珠子（已使用）+青竹酒3坛（给方正3坛）+兽核13颗+羊皮纸地图+木盒+老张账本+引魂珠+古月博纸条+古月寒纸条+元石约98块+光阴蛊残蜕（三转蛊虫，已获得）+10罐劣质酒",
+      "validFromChapter": 106,
+      "validUntilChapter": null,
+      "sourceChapter": 106
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "研究光阴蛊残蜕；三个月内决定是否炼化；保护方正；应对族长调查",
+      "validFromChapter": 106,
+      "validUntilChapter": null,
+      "sourceChapter": 106
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "光阴蛊残蜕使用代价是一半寿元；炼化需消耗真元九成以上；丙等资质炼化困难；古月阴封印裂痕三个月内可能冲破；族长调查守卫死亡事件；山寨气氛紧张",
+      "validFromChapter": 106,
+      "validUntilChapter": null,
+      "sourceChapter": 106
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "方正（决心变强，训练中）；阿虎（合作者）；古月寒（临时盟友，协议待验证）；古月阴（被封印但未死）；古月风（合作者）；古月琴（情报提供者）；族长（被古月阴影响，调查守卫死亡）",
+      "validFromChapter": 106,
+      "validUntilChapter": null,
+      "sourceChapter": 106
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "族长调查守卫死亡事件；三个月倒计时；光阴蛊残蜕使用抉择；山寨气氛紧张",
+      "validFromChapter": 106,
+      "validUntilChapter": null,
+      "sourceChapter": 106
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "hooks": [
+    {
+      "hookId": "H004",
+      "startChapter": 1,
+      "type": "设定",
+      "status": "progressing",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "125",
+      "payoffTiming": "endgame",
+      "notes": "本章重大深化：三老祖是三兄弟；天裂会自愈；青云门'修疤'维持裂缝；灵气稀薄是人为维持"
+    },
+    {
+      "hookId": "H011",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "80+",
+      "payoffTiming": "mid-arc",
+      "notes": "筑基真相：万年前筑基是起点，如今千分之一灵气"
+    },
+    {
+      "hookId": "H009",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "弄清顾长命与针的关系",
+      "payoffTiming": "near-term",
+      "notes": "小鱼=针？深化：针会落在灵气最浓郁处或与它最亲近之人身边；小鱼12年前开始做梦；青云门三年前印记被截走保护的可能就是针或针主"
+    },
+    {
+      "hookId": "H015",
+      "startChapter": 4,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "待定",
+      "payoffTiming": "mid-arc",
+      "notes": "老君庙老者→已出场；老庙主（常年闭关）≠老郎中（青云门棋子）；**三年前截走青云门印记**"
+    },
+    {
+      "hookId": "H016",
+      "startChapter": 4,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "待定",
+      "payoffTiming": "mid-arc",
+      "notes": "郑怀恩师父遗言→指向\"老庙主\"；\"老庙主欠我一个故事\"→\"那一年的火是怎么烧起来的\""
+    },
+    {
+      "hookId": "H017",
+      "startChapter": 4,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "待定",
+      "payoffTiming": "mid-arc",
+      "notes": "老君庙上古符文老者：小鱼梦中见面并获得石子"
+    },
+    {
+      "hookId": "H019",
+      "startChapter": 5,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 5,
+      "expectedPayoff": "31+",
+      "payoffTiming": "mid-arc",
+      "notes": "小鱼坠落之人：梦见有人从\"天破洞\"坠落"
+    },
+    {
+      "hookId": "H020",
+      "startChapter": 5,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 5,
+      "expectedPayoff": "31+",
+      "payoffTiming": "mid-arc",
+      "notes": "小鱼身世时间线：十二年前在镇外草丛捡到，浑身是血，奄奄一息"
+    },
+    {
+      "hookId": "H018",
+      "startChapter": 5,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "未知",
+      "payoffTiming": "immediate",
+      "notes": "玉简之谜：玉简第二次发热；**接石子后发烫**；老道士三次关键时刻出手"
+    },
+    {
+      "hookId": "H021",
+      "startChapter": 5,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "未知",
+      "payoffTiming": "immediate",
+      "notes": "圆环符号：\"圆环套圆环，中心是空\"；**手札最后一页符号**"
+    },
+    {
+      "hookId": "H024",
+      "startChapter": 5,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "125",
+      "payoffTiming": "endgame",
+      "notes": "青云门先祖之罪：\"天裂之因，非天之道，乃人之祸\""
+    },
+    {
+      "hookId": "H023",
+      "startChapter": 5,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "125",
+      "payoffTiming": "endgame",
+      "notes": "青云门找玄清阁要玉简目的明确：感应针位置；玄清阁先人遗言'针在青石镇，待其主现'"
+    },
+    {
+      "hookId": "H027",
+      "startChapter": 6,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "**未知**",
+      "notes": "**青云门灭门石板符号**：郑怀恩在灭门那夜见过与石子相同的针形符号"
+    },
+    {
+      "hookId": "H025",
+      "startChapter": 6,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "待定",
+      "payoffTiming": "immediate",
+      "notes": "三老祖第三个人传承不在青云门；老庙主三年前截走印记；老庙主可能在保护针或针的主人"
+    },
+    {
+      "hookId": "H026",
+      "startChapter": 6,
+      "type": "**悬念**",
+      "status": "resolved",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "**待定**",
+      "notes": "**老道士救郑怀恩**：用火比青云门更烈的火；丢进枯井；\"欠你师父的，今天还一点利息\""
+    }
+  ]
+}

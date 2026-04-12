@@ -1,0 +1,53 @@
+{
+  "chapter": 9,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "青石镇→老君庙→回春堂→枯井",
+      "validFromChapter": 9,
+      "validUntilChapter": null,
+      "sourceChapter": 9
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "警觉·沉重·内心震动·坚定·决断（已知续命线需要钥匙+引线；必须天亮前弄清法子）",
+      "validFromChapter": 9,
+      "validUntilChapter": null,
+      "sourceChapter": 9
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "保护小鱼不知真相·应对青云门明日一早\"喝茶\"·弄清续命线完整法子·去井底见门后的人",
+      "validFromChapter": 9,
+      "validUntilChapter": null,
+      "sourceChapter": 9
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "青云门设卡；周老爷子今夜断气；小鱼命线开始动（越来越强）；明日一早必须给周平答复",
+      "validFromChapter": 9,
+      "validUntilChapter": null,
+      "sourceChapter": 9
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "青云门（敌对·主动追踪·设卡·明早\"喝茶\"是押）；老郎中（青云门棋子）；老庙主师兄（给了绢帛+细绳）；郑怀恩（保护小鱼）；周老爷子（今夜断气）",
+      "validFromChapter": 9,
+      "validUntilChapter": null,
+      "sourceChapter": 9
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "续命线之法未完全弄清；青云门锁定小鱼是\"引线\"；周老爷子今夜断气；小鱼命线被拽回；必须天亮前见井底门后之人",
+      "validFromChapter": 9,
+      "validUntilChapter": null,
+      "sourceChapter": 9
+    }
+  ]
+}

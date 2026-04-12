@@ -1,0 +1,112 @@
+{
+  "hooks": [
+    {
+      "hookId": "\"别看它们的眼睛\"",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "**钱进死亡后仍是悬念→威胁具体化为滴答声/蠕动质感→具体机制未揭示（是视觉攻击？精神控制？）**"
+    },
+    {
+      "hookId": "\"不能不要\"",
+      "startChapter": 64,
+      "type": "剧情",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**已回收→规则完整**",
+      "notes": "**钱进遗言指灰白草茎/活物的关联→阿纱案例补充：收了两年/活着→说明\"不能不要\"不是立即致死/而是一种绑定关系**"
+    },
+    {
+      "hookId": "\"巢\"是什么",
+      "startChapter": 0,
+      "type": "**剧情**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待展开**",
+      "notes": "**三条线汇聚：苏青禾七年前/阿纱丈夫两年前/钱进口中→都指向黑松林深处的\"巢\"→阿纱丈夫在找什么？为何去那里？**"
+    },
+    {
+      "hookId": "\"有光之地\"",
+      "startChapter": 0,
+      "type": "**剧情**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待展开**",
+      "notes": "**重要战略目标→既是阿纱的退路/也是整个谜团的关键→\"它们\"怕光→有光之地是避难所还是巢穴对立面？**"
+    },
+    {
+      "hookId": "H010（阿纱的秘密）",
+      "startChapter": 1,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待展开**",
+      "notes": "**阿纱的秘密已部分揭开：她收过草茎且活着→但仍有未解之谜：为何她能活着？铁匣让她眼圈红的原因？与丈夫的关系？**"
+    },
+    {
+      "hookId": "H016（阿纱男人死因）",
+      "startChapter": 29,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待展开**",
+      "notes": "**阿纱丈夫死因基本揭示：被\"它们\"拖走→但方式与钱进不同→\"它们\"有不同的行动模式？**"
+    },
+    {
+      "hookId": "H101（苏青禾真实身份）",
+      "startChapter": 64,
+      "type": "**剧情**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待展开**",
+      "notes": "**苏青禾知道的比想象中更多→七年前就见过\"巢\"/铁匣子/巨大活物→时间线矛盾但指向同一地点→她的身份仍是谜**"
+    },
+    {
+      "hookId": "H106（青云宗追踪）",
+      "startChapter": 64,
+      "type": "**剧情**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**今晚/明早→倒计时**",
+      "notes": "**青云宗到达→陆沉必须在此之前离开或躲藏→苏青禾救援窗口极其有限**"
+    },
+    {
+      "hookId": "H107（洞穴外威胁）",
+      "startChapter": 64,
+      "type": "**剧情**",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待展开**",
+      "notes": "**威胁已从\"滴答声\"具体化为\"湿润蠕动的实体\"→它在等什么？→与铁匣/活物/巢的关系？**"
+    },
+    {
+      "hookId": "H109（灰白草茎来源）",
+      "startChapter": 64,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待展开**",
+      "notes": "**灰白草茎=某种产物/标记/可能与繁殖有关→褪色可能意味着效力减弱或时间流逝→阿纱存活两年→说明草茎不致命但有绑定效果**"
+    },
+    {
+      "hookId": "SP040（\"它们\"的身份）",
+      "startChapter": 61,
+      "type": "**悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待展开**",
+      "notes": "**\"它们\"可能是某种群居寄生生物→有繁殖标记（灰白草茎）→有巢穴（\"巢\"）→有体型从小到大的个体→惧怕光源**"
+    },
+    {
+      "hookId": "阿纱丈夫遗言",
+      "startChapter": 65,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待展开**",
+      "notes": "**阿纱丈夫的信息源是关键：他死前知道\"巢\"/知道\"有光之地\"/知道\"不要收那个东西\"→他从哪里知道的？自己的经历？别人告诉的？→是第二个知情人（第一个是苏青禾）**"
+    }
+  ]
+}

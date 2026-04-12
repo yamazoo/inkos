@@ -30,8 +30,13 @@ export async function loadTracker<T>(
   try {
     const raw = await readFile(path, "utf-8");
     return schema.parse(JSON.parse(raw)) as T;
-  } catch {
-    return null;
+  } catch (err: unknown) {
+    // ENOENT = file does not exist yet, return null (first-time bootstrap)
+    if (err instanceof Error && "code" in err && (err as { code: string }).code === "ENOENT") {
+      return null;
+    }
+    // Any other error (corrupted JSON, permission, etc.) — surface it so caller can decide
+    throw err;
   }
 }
 

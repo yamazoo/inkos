@@ -1,0 +1,27 @@
+{
+  "chapter": 38,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0038.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0038.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#31",
+    "story/chapter_summaries.md#33",
+    "story/chapter_summaries.md#36",
+    "story/chapter_summaries.md#37",
+    "story/pending_hooks.md#hook_城南驿馆",
+    "story/pending_hooks.md#hook_解毒丸效力",
+    "story/pending_hooks.md#hook_老李承诺兑现"
+  ],
+  "notes": []
+}

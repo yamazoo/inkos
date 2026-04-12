@@ -1,0 +1,45 @@
+{
+  "chapter": 19,
+  "facts": [
+    {
+      "subject": "current_state",
+      "predicate": "角色",
+      "object": "气血/修为",
+      "validFromChapter": 19,
+      "validUntilChapter": null,
+      "sourceChapter": 19
+    },
+    {
+      "subject": "current_state",
+      "predicate": "陆沉",
+      "object": "气血6.1/皮肉境巅峰",
+      "validFromChapter": 19,
+      "validUntilChapter": null,
+      "sourceChapter": 19
+    },
+    {
+      "subject": "current_state",
+      "predicate": "势力",
+      "object": "核心成员",
+      "validFromChapter": 19,
+      "validUntilChapter": null,
+      "sourceChapter": 19
+    },
+    {
+      "subject": "current_state",
+      "predicate": "黑虎帮",
+      "object": "周铁山（锻骨境中期）、钱通（大管家/鬼眼）、张猛（皮肉境巅峰/铁臂）",
+      "validFromChapter": 19,
+      "validUntilChapter": null,
+      "sourceChapter": 19
+    },
+    {
+      "subject": "current_state",
+      "predicate": "陆家",
+      "object": "陆沧海等被关押在货栈",
+      "validFromChapter": 19,
+      "validUntilChapter": null,
+      "sourceChapter": 19
+    }
+  ]
+}

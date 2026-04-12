@@ -1,0 +1,166 @@
+{
+  "hooks": [
+    {
+      "hookId": "H030",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**第一天入侵差异**——确认音\"咯噔\"只有第一天觉醒者能听到；陈默是未绑定觉醒者；**新确认：陈默是\"回来\"的，曾经是这个世界的人（三十年前的先驱者），离开后回来失去了记忆但灵魂还记得；王德发妻子看到的\"你愿意知道真相？\"是第一天觉醒时看到的真实消息，\"赛季开启，欢迎降临\"是系统过滤后的表象**",
+      "notes": ""
+    },
+    {
+      "hookId": "H036",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**系统绑定状态为空**；**新确认：守墓人终端确认\"主动放弃休眠327天\"机制；窗口期0天结束，陈默正式成为这个世界的一部分，不再是\"回来\"而是\"从未离开\"**",
+      "notes": ""
+    },
+    {
+      "hookId": "H049",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**第一天入侵记忆缺失**（陈默的觉醒方式与其他人不一致）；**待通过第七条协议揭示发生机制**",
+      "notes": ""
+    },
+    {
+      "hookId": "H002",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**黑盒子持续发烫+正在发信号**（与阵列共振）；与E-032唤醒状态可能存在关联",
+      "notes": ""
+    },
+    {
+      "hookId": "H003",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**脚步声接近23层**（外部干扰？威胁接近？）；陆焚追踪可能性",
+      "notes": ""
+    },
+    {
+      "hookId": "H004",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**陆焚身份与目的**",
+      "notes": ""
+    },
+    {
+      "hookId": "H005",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**观测者扫描定位风险**",
+      "notes": ""
+    },
+    {
+      "hookId": "H062",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**记忆碎片分布（7个节点）**；α-07守墓人已回收；α-12回溯中",
+      "notes": ""
+    },
+    {
+      "hookId": "H063",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**先驱者姓名线索**（姓陈）；已确认陈默即三十年前的先驱者本人",
+      "notes": ""
+    },
+    {
+      "hookId": "H065",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**守墓人身份**（消失→留下终端信息）",
+      "notes": ""
+    },
+    {
+      "hookId": "H074",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**\"三十年前的人\"**——第一批觉醒者；选择留下守护世界；等待继承者；身份已揭示（先驱者本人）；与王德发妻子关联",
+      "notes": ""
+    },
+    {
+      "hookId": "H078",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**先驱者协议第七条**——反向转化代价/休眠协议核心；**α-12记忆回溯目标**",
+      "notes": ""
+    },
+    {
+      "hookId": "H085",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**E-032唤醒进度（45.3%→唤醒中）**；首次主动对话已完成（\"终于\"）；与黑盒子共振可能性",
+      "notes": ""
+    },
+    {
+      "hookId": "H086",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**财务部门缝渗出的荧绿液体**",
+      "notes": ""
+    },
+    {
+      "hookId": "S078",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**E-032界面抉择**（首次发声已完成）；与第七条协议关联待揭示",
+      "notes": ""
+    },
+    {
+      "hookId": "S084",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**赵磊身体异常**（D-127纹路浮现）；梦里看到D-127数字",
+      "notes": ""
+    },
+    {
+      "hookId": "S085",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**光柱真相**",
+      "notes": ""
+    },
+    {
+      "hookId": "S086",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**末日降临机制**",
+      "notes": ""
+    }
+  ]
+}

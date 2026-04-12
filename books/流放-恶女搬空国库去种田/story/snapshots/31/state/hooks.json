@@ -1,0 +1,103 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_0029",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_0034",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "mystery-双生胎真相",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "mystery-情报来源揭示",
+      "startChapter": 29,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "苏晏清情报来源揭露",
+      "notes": "本章未直接涉及，维持29章推进状态"
+    },
+    {
+      "hookId": "mystery-济世堂脉案篡改",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "mystery-岭南瘴气陷阱-的具体内容-苏晏清想让苏",
+      "startChapter": 31,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 31,
+      "expectedPayoff": "苏晏清与城西赵家勾连的具体方式",
+      "notes": "苏晏清想让苏晚清'死在岭南瘴气'——岭南路上有什么安排？岭南目的地有什么等着她？这是新的悬念点。"
+    },
+    {
+      "hookId": "mystery-岭南瘴气陷阱",
+      "startChapter": 35,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 35,
+      "expectedPayoff": "待查",
+      "notes": "苏晏清想让苏晚清\"死在岭南瘴气\"——岭南路上有什么安排？岭南目的地有什么等着她？"
+    },
+    {
+      "hookId": "hook_0032",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "mystery-吴婆子背后主家",
+      "startChapter": 0,
+      "type": "resolved",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "mystery-太后与苏母关系",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "mystery-太傅夫人与母亲",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    }
+  ]
+}

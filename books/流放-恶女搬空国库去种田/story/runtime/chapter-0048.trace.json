@@ -1,0 +1,30 @@
+{
+  "chapter": 48,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0048.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0048.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#37",
+    "story/chapter_summaries.md#43",
+    "story/chapter_summaries.md#44",
+    "story/chapter_summaries.md#46",
+    "story/pending_hooks.md#hook_地道",
+    "story/pending_hooks.md#hook_老妪身份"
+  ],
+  "notes": []
+}

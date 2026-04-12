@@ -1,0 +1,211 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_城西神秘女人",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "戴斗笠、声音细、像女人；出一百两让铁头递公文→试图收买老李→被截胡→\"岭南城里见\"暗示；与镇国公府可能有关联",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_按察使司内应",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "周主簿（方德正同年进士，人正派，一百两请盯公文走向）+刘经历（方德正同年家管事升迁，一百两打听按察使行踪）",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_老李立场危机",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "城西女人一百两收买→苏晚清截胡谈判→解毒丸+承诺到岭南给一百两→老李承诺绕路；承诺待兑现",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_城西女人与镇国公府",
+      "startChapter": 39,
+      "type": "新关联",
+      "status": "open",
+      "lastAdvancedChapter": 39,
+      "expectedPayoff": "待定",
+      "notes": "城西女人透露\"镇国公府今天到\"，暗示两者有关联；待调查"
+    },
+    {
+      "hookId": "hook_前世记忆",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "苏晚清梦见前世超市货架、收银台、确诊数字；穿越设定确认；对\"重来一次\"和空间异能有深刻感悟",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_老李承诺兑现",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_解毒丸效力",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_济世堂岭南分号",
+      "startChapter": 33,
+      "type": "新伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 40,
+      "expectedPayoff": "岭南城西",
+      "notes": "城外五里破庙边；地窖情报；俘虏确认城西分号卖特制解药"
+    },
+    {
+      "hookId": "hook_苏氏遗孤身世",
+      "startChapter": 36,
+      "type": "谜团",
+      "status": "open",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "后续章节",
+      "notes": "凤凰玉佩+济世堂+生母身份；待完整揭露"
+    },
+    {
+      "hookId": "hook_凤凰玉佩秘密",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "俘虏确认凤凰玉佩=上古神器；济世堂找了二十三年；信息传递有遮掩（\"我也是听上面的人说的\"）",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_济世堂脉案篡改",
+      "startChapter": 37,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 37,
+      "expectedPayoff": "济世堂脉案真相揭露",
+      "notes": "俘虏提及脉案被篡改，但未详述"
+    },
+    {
+      "hookId": "hook_京城眼线",
+      "startChapter": 35,
+      "type": "情报伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待定",
+      "notes": "京城→岭南情报传递渠道确认；京城有人给岭南埋伏者通风报信"
+    },
+    {
+      "hookId": "hook_镇国公府提审",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "镇国公府世子私印提审公文；方德正折子称病+打点按察使司内应拖延；苏晏清在其中的角色待查",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_落花坡杀局",
+      "startChapter": 34,
+      "type": "危机",
+      "status": "open",
+      "lastAdvancedChapter": 40,
+      "expectedPayoff": "待定",
+      "notes": "第一轮→脱险；第二轮→脱险；**第三轮预警但老李承诺绕路**；需持续关注"
+    },
+    {
+      "hookId": "hook_苏晏清布局",
+      "startChapter": 31,
+      "type": "敌对",
+      "status": "open",
+      "lastAdvancedChapter": 39,
+      "expectedPayoff": "待定",
+      "notes": "让苏晚清死在岭南；落花坡陷阱→失败；镇国公府介入；待后续"
+    },
+    {
+      "hookId": "hook_苏氏遗孤",
+      "startChapter": 36,
+      "type": "身世伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 40,
+      "expectedPayoff": "苏氏遗孤身世完整揭露",
+      "notes": "俘虏确认：苏氏遗孤身份、非苏家血脉、济世堂与生母二十三年前的渊源、凤凰印记=手腕红痕"
+    },
+    {
+      "hookId": "hook_城南驿馆",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "-",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_铁头威胁",
+      "startChapter": 36,
+      "type": "威胁伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 37,
+      "expectedPayoff": "38-40",
+      "notes": "铁头消失→城南驿馆→消息渠道超范围→继续潜伏威胁"
+    },
+    {
+      "hookId": "hook_城西分号换人",
+      "startChapter": 37,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 37,
+      "expectedPayoff": "**38-40**",
+      "notes": "**城西分号三个月前被新势力收走；济世堂被架空；新势力身份未知**"
+    },
+    {
+      "hookId": "hook_苏母被毒死",
+      "startChapter": 37,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 37,
+      "expectedPayoff": "**38-40**",
+      "notes": "**苏母不是病死是被砒霜毒死；凶手在济世堂内部；周平亲眼见过真脉案**"
+    },
+    {
+      "hookId": "hook_周平身份",
+      "startChapter": 37,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 37,
+      "expectedPayoff": "**38-40**",
+      "notes": "**济世堂十五年老杀手；师父因放走苏母被灭口；周平想借苏晚清之手报仇**"
+    },
+    {
+      "hookId": "hook_城西女人情报网",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "hook_济世堂vs镇国公府",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    }
+  ]
+}

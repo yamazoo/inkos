@@ -1,0 +1,85 @@
+{
+  "chapter": 7,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "华榕生活超市→仓库",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "【系统绑定完成】【获得「???」】【能量92%→91%】【鉴定系统已解锁】【普通玩家身份】【首次击杀原住民×2】【获得成就「末日第一夜」】",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "救出李雨薇；返回一楼与李国强汇合；继续探索系统能力；调查使徒陆焚的身份；处理仓库异常情况",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "能量不足（91%）；武器损耗（文具剪刀钝化）；体力透支（后背伤口渗血）；",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "原住民怪物（击杀2只·剩余数量未知）；使徒陆焚（橙光·性质未知·\"下次见面\"钩子）；仓库深处检测到可疑红点",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "current_state",
+      "predicate": "核心认知",
+      "object": "系统界面有\"莫名熟悉感\"（H090伏笔）；橙色光圈可能是使徒标记；「???」盒子与陆焚的橙光有关联；系统定义\"非绑定单位\"暗示筛选机制；",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "current_state",
+      "predicate": "已回收伏笔",
+      "object": "H003已回收（H001/H002新埋）",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "current_state",
+      "predicate": "新增悬念",
+      "object": "H091（橙色信号源·使徒方向）；H092（李雨薇身上可能有特殊物品）；office_uncertainty（办公室同事命运·暗示已知但不可控）；H093（仓库深处红点·未确认威胁）",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "current_state",
+      "predicate": "关系变化",
+      "object": "李国强（信任建立·托付女儿）；李雨薇（待救援）；陆焚（使徒身份·威胁/好奇对象）；三个新救援幸存者（待观察）",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "current_state",
+      "predicate": "队伍人数",
+      "object": "原有幸存者4人（三女一孩）+ 救援3人（年轻女人/中年男人/少年）+ 陈默/李国强/李思雨 = 10人",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    }
+  ]
+}

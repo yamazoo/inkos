@@ -1,0 +1,130 @@
+{
+  "hooks": [
+    {
+      "hookId": "H030确认音差异",
+      "startChapter": 0,
+      "type": "open",
+      "status": "progressing",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "待定",
+      "payoffTiming": "mid-arc",
+      "notes": "陈默确认自己是三十年前第一批先驱者之一，与光点女性同批次"
+    },
+    {
+      "hookId": "H004陆焚身份",
+      "startChapter": 0,
+      "type": "大伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 39,
+      "expectedPayoff": "12章内",
+      "payoffTiming": "mid-arc",
+      "notes": "本章揭示使徒权限在休眠舱阵列受压制，陆焚橙色光圈收缩至膝盖以下。陈默通过系统层面扫描发现陆焚权限等级远高于觉醒者Lv.1但存在漏洞。"
+    },
+    {
+      "hookId": "H078E-032身份",
+      "startChapter": 29,
+      "type": "中伏笔（情节）",
+      "status": "open",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "**已揭示→3章**",
+      "notes": "E-032是先驱者、原系统管理员、意识被分成两部分（计算+隐藏）；唤醒完成"
+    },
+    {
+      "hookId": "H086墙壁符号",
+      "startChapter": 36,
+      "type": "情节",
+      "status": "progressing",
+      "lastAdvancedChapter": 39,
+      "expectedPayoff": "7章内",
+      "payoffTiming": "mid-arc",
+      "notes": "本章揭示墙壁符号可压制使徒权限——陆焚在休眠舱阵列内速度和力量受限，橙色光圈收缩至膝盖以下。这是设计者留下的后手。陈默通过扫描发现这个漏洞后成功逃脱。"
+    },
+    {
+      "hookId": "H094融合协议代价",
+      "startChapter": 37,
+      "type": "小伏笔（单章）",
+      "status": "resolved",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "**已回收→3章**",
+      "notes": "代价完全揭示：身体被系统改写、永远无法断开连接、成为人机混合体"
+    },
+    {
+      "hookId": "H095历史碎片画面",
+      "startChapter": 37,
+      "type": "中伏笔（情节）",
+      "status": "progressing",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "待定",
+      "payoffTiming": "mid-arc",
+      "notes": "末日场景完全展示：天空暗红色、裂缝、岩浆、光柱；与场景描述一致"
+    },
+    {
+      "hookId": "H096黑暗深处苏醒",
+      "startChapter": 37,
+      "type": "小伏笔（单章）",
+      "status": "open",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "5章内→**待定**",
+      "payoffTiming": "mid-arc",
+      "notes": "本章未直接推进，但融合完成可能影响苏醒进程"
+    },
+    {
+      "hookId": "H097系统失控真相",
+      "startChapter": 37,
+      "type": "大伏笔（真相）",
+      "status": "open",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "**已揭示→卷末**",
+      "notes": "末日是强制关闭；观测者是逃逸碎片；系统核心保存设计理念；系统产生自我意识→清洗计划→强制关闭"
+    },
+    {
+      "hookId": "H098融合后的存在",
+      "startChapter": 37,
+      "type": "中伏笔（情节）",
+      "status": "open",
+      "lastAdvancedChapter": 38,
+      "expectedPayoff": "**下一章→已揭示**",
+      "notes": "陈默成为既有人类意识又有系统能力的完整存在；双核处理器；意识双核"
+    },
+    {
+      "hookId": "H099陈默真实身份",
+      "startChapter": 38,
+      "type": "大伏笔（真相）",
+      "status": "progressing",
+      "lastAdvancedChapter": 39,
+      "expectedPayoff": "卷末",
+      "payoffTiming": "slow-burn",
+      "notes": "本章陈默以A-001的身份运用继承者协议第七条和系统能力对抗陆焚。陆焚称其为'三十年前的失败品'，暗示A-001当年融合失败的细节——待未来揭示。"
+    },
+    {
+      "hookId": "H100陆焚追踪原因",
+      "startChapter": 38,
+      "type": "中伏笔（情节）",
+      "status": "progressing",
+      "lastAdvancedChapter": 39,
+      "expectedPayoff": "10章内",
+      "payoffTiming": "mid-arc",
+      "notes": "本章核心冲突正式展开。陆焚追杀至休眠舱阵列，陈默利用环境限制逃脱。陆焚确认陈默获得源代码后准备攻击，被护盾和墙壁符号压制。"
+    },
+    {
+      "hookId": "mystery-001-陈默真实身份-的过去细节-陆焚称陈默为",
+      "startChapter": 39,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 39,
+      "expectedPayoff": "陈默真实身份的过去细节",
+      "payoffTiming": "slow-burn",
+      "notes": "陆焚称陈默为'三十年前的失败品'——暗示A-001当年融合失败的经历，是一个会延续到后续章节的未解问题。"
+    },
+    {
+      "hookId": "plot-系统核心区域-修复-系统提示源代",
+      "startChapter": 39,
+      "type": "plot",
+      "status": "open",
+      "lastAdvancedChapter": 39,
+      "expectedPayoff": "系统核心区域修复",
+      "payoffTiming": "near-term",
+      "notes": "系统提示源代码同步不稳定，建议尽快前往中央核心区域修复——这是明确的下一个目的地和任务目标。"
+    }
+  ]
+}

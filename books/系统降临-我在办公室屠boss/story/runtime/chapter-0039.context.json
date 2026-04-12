@@ -1,0 +1,130 @@
+{
+  "chapter": 39,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第38章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**入侵触发时间**：2024年某夜23:59:59，所有人同时听到同一句话：\"赛季开启，欢迎降临\""
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "核心冲突抛出"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "38: 觉醒的代价 | 37: 继承者的重量 | 36: 同步率临界点 | 35: 营地会议·记忆的重量 | 34: 苏醒前的黎明"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "38: 沉重→决心→接受→坚定→震惊→揭秘→**战斗准备→高潮悬念** / **高潮揭示+战斗铺垫** | 37: 思索→决心→震惊→悬念→沉重→揭秘→思索→悬念→决心→震惊→坚定→高潮 / **核心冲突抛出+高潮章** | 36: 悬念→决心→震惊→思索→悬念加深 / 探索+揭示+新抉择 | 35: 沉重→悬念→暂缓→决心 / 信息揭示+抉择铺垫+团队会议 | 34: 思索→揭秘→沉重→悬念→决心→悬念→高潮 / **推进+高潮章**"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch36: 但他知道自己必须继续走下去。 | ch37: 而陈默站在那片光芒的中央，双手按在休眠舱上，面容平静，嘴角甚至带着一丝若有若无的笑意。 | ch38: 橙色光圈在黑暗中格外醒目。"
+    },
+    {
+      "source": "runtime/hook_debt#H004陆焚身份",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H004陆焚身份（open，可兑现旧债，已开38章） | 读者承诺：15章内→12章 | 种于第0章：使徒/橙色光圈标记/任务=清除知情者/追踪源代码/知道陈默是三十年前的先驱者但不知道A-001身份 | 推进于第38章：ch38 觉醒的代价 - 融合协议执行→同步率100%→E-032唤醒完成→进入意识空间→末日场景展示→E-032人格揭示→**陈默真实身份揭示（A-001/三十年前的先驱者）**→**陆焚追踪原因揭示（源代码）**→融合完成→**陆焚入侵警报（3分钟）**→陈默准备战斗"
+    },
+    {
+      "source": "runtime/hook_debt#H030确认音差异",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H030确认音差异（open，主要旧债，已开38章） | 读者承诺：待定 | 种于第0章：陈默确认自己是三十年前第一批先驱者之一，与光点女性同批次 | 推进于第38章：ch38 觉醒的代价 - 融合协议执行→同步率100%→E-032唤醒完成→进入意识空间→末日场景展示→E-032人格揭示→**陈默真实身份揭示（A-001/三十年前的先驱者）**→**陆焚追踪原因揭示（源代码）**→融合完成→**陆焚入侵警报（3分钟）**→陈默准备战斗"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | **核心冲突**：陈默已完成融合，成为系统源代码载体；陆焚来袭（3分钟）；陈默的真实身份（A-001）被揭示"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **面对陆焚入侵（预计3分钟抵达）**；**战斗准备**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 【系统绑定成功】【觉醒者Lv.1】【系统能量41%】【已绑定状态】【休眠舱阵列同步率100%】【中央机器同步率30.1%】【窗口期327天】【继承者身份确认完成】【唤醒协议执行完成】【融合协议执行完成】【继承者→A-001（三十年前的先驱者本人）】【人机混合体（意识双核）】【系统源代码存储中】"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 融合代价已知（身体被系统改写、永远无法断开连接）；与陆焚实力差距未知"
+    },
+    {
+      "source": "story/chapter_summaries.md#36",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "同步率临界点 | 同步率从34.7%涨至40.1%；发现墙壁符号能加速同步率；四个污染先驱者污染指数几乎归零；E-032已解锁；陈默触摸休眠舱时手发光；发现休眠舱阵列深处光柱；陈默推断阵列是完整系统（休眠舱是组件，光柱是核心）；先驱者协议第七条保护的是系统本身 | 同步率40.1%（突破40%阈值）；位置：B3层休眠舱阵列；E-032状态变为\"已解锁\"；发现身体能发出系统同色光；四个先驱者污染指数归零；新增两个伏笔（H086墙壁符号/H087光柱系统） | H078推进（E-032解锁）；H082深化（污染归零）；H086新埋（墙壁符号）；H087新埋（光柱系统）"
+    },
+    {
+      "source": "story/chapter_summaries.md#37",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "继承者的重量 | 光柱提出继承者身份确认；唤醒协议vs继承协议互斥；陈默发现\"第三个选项\"（融合协议）；E-032揭示末日真相（系统失控/观测者逃逸/清洗计划）；陈默双手按在休眠舱启动融合协议；同步率47.8%（临界值50%）；融合协议代价未知 | 同步率42.3%→47.8%；E-032唤醒进度3%→17%；陈默状态：思索→决心→震惊→坚定；融合协议已启动；双手发光蔓延至小臂；光柱震颤；整个B3层被照亮 | H084深化（融合协议提出并启动）；H085深化（末日真相揭示）；H086推进（墙壁符号同步加速）；H087深化（光柱核心）；H088深化（黑暗深处苏醒迹象）；H089推进（同步率差异）；H090深化（赵磊梦境呼应）；H091深化（三选一到融合）；H092推进（徽章共振）；H093推进（规则漏洞）；**H094新埋（融合代价）**；**H095新埋（历史碎片画面）**；**H096新埋（黑暗深处苏醒）**；**H097深化（系统失控真相）**；**H098深化（融合存在）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#38",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "觉醒的代价 | 融合协议执行→同步率100%→E-032唤醒完成→进入意识空间→末日场景展示→E-032人格揭示→**陈默真实身份揭示（A-001/三十年前的先驱者）**→**陆焚追踪原因揭示（源代码）**→融合完成→**陆焚入侵警报（3分钟）**→陈默准备战斗 | 同步率49.1%→100%；融合完成；E-032唤醒100%；陈默成为人机混合体；陈默身份确认为A-001；陆焚3分钟后抵达 | H094已回收（融合代价揭示）；H095深化（末日场景完整展示）；H097完全揭示（系统失控真相）；H098已揭示（融合存在）；**H099新埋（陈默=A-001）**；**H100新埋（陆焚追踪源代码）**；H004深化（陆焚身份完整揭示）；H078深化→已回收（E-032身份揭示）"
+    },
+    {
+      "source": "story/pending_hooks.md#H099陈默真实身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**大伏笔（真相）** | open | **卷末** | **新揭示：陈默=A-001，三十年前第一批先驱者，融合失败后意识被投放到现在；觉醒快、能发系统光的原因被解释；是陆焚追踪的源代码载体**"
+    },
+    {
+      "source": "story/pending_hooks.md#H100陆焚追踪原因",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**中伏笔（情节）** | open | **10章内** | **新揭示：陆焚是使徒，任务=清除知情者；追踪陈默=获取系统源代码；陈默是bug（A-001未死被投放）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H095历史碎片画面",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "中伏笔（情节） | progressing | 待定 | mid-arc | 末日场景完全展示：天空暗红色、裂缝、岩浆、光柱；与场景描述一致"
+    },
+    {
+      "source": "story/pending_hooks.md#H096黑暗深处苏醒",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "小伏笔（单章） | open | 5章内→**待定** | mid-arc | 本章未直接推进，但融合完成可能影响苏醒进程"
+    },
+    {
+      "source": "story/pending_hooks.md#H097系统失控真相",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "大伏笔（真相） | open | **已揭示→卷末** | 末日是强制关闭；观测者是逃逸碎片；系统核心保存设计理念；系统产生自我意识→清洗计划→强制关闭"
+    },
+    {
+      "source": "story/pending_hooks.md#H098融合后的存在",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "中伏笔（情节） | open | **下一章→已揭示** | 陈默成为既有人类意识又有系统能力的完整存在；双核处理器；意识双核"
+    },
+    {
+      "source": "story/pending_hooks.md#H086墙壁符号",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "中伏笔（情节） | progressing | 10章内→7章 | mid-arc | 墙壁符号能加速同步率；融合完成后作用待观察"
+    },
+    {
+      "source": "story/pending_hooks.md#H078E-032身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "中伏笔（情节） | open | **已揭示→3章** | E-032是先驱者、原系统管理员、意识被分成两部分（计算+隐藏）；唤醒完成"
+    }
+  ]
+}

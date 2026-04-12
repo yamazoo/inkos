@@ -1,0 +1,27 @@
+{
+  "chapter": 20,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\骨刀行\\story\\runtime\\chapter-0020.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\骨刀行\\story\\runtime\\chapter-0020.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#17",
+    "story/chapter_summaries.md#18",
+    "story/chapter_summaries.md#19",
+    "story/pending_hooks.md#伏笔-它们怕光",
+    "story/pending_hooks.md#伏笔-它们是谁",
+    "story/pending_hooks.md#伏笔-山中异常安静",
+    "story/pending_hooks.md#H041"
+  ],
+  "notes": []
+}

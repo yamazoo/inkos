@@ -1,0 +1,46 @@
+{
+  "chapter": 40,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\author_intent.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\current_focus.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\story_bible.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\volume_outline.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\chapter_summaries.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\book_rules.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\current_state.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\pending_hooks.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\memory.db"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\runtime\\chapter-0040.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "runtime/hook_debt#H004陆焚身份",
+    "runtime/hook_debt#H030确认音差异",
+    "runtime/hook_debt#H078E-032身份",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#37",
+    "story/chapter_summaries.md#38",
+    "story/chapter_summaries.md#39",
+    "story/pending_hooks.md#mystery-001-陈默真实身份-的过去细节-陆焚称陈默为",
+    "story/pending_hooks.md#plot-系统核心区域-修复-系统提示源代",
+    "story/pending_hooks.md#H099陈默真实身份",
+    "story/pending_hooks.md#H100陆焚追踪原因",
+    "story/pending_hooks.md#H086墙壁符号",
+    "story/pending_hooks.md#H004陆焚身份",
+    "story/pending_hooks.md#H095历史碎片画面",
+    "story/pending_hooks.md#H096黑暗深处苏醒"
+  ],
+  "notes": []
+}

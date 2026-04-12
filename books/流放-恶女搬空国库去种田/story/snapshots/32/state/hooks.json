@@ -1,0 +1,67 @@
+{
+  "hooks": [
+    {
+      "hookId": "mystery-岭南瘴气陷阱",
+      "startChapter": 31,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 32,
+      "expectedPayoff": "待定",
+      "notes": "苏晏清想让苏晚清\"死在岭南瘴气\"——岭南路上有什么安排？岭南目的地有什么等着她？**本章重大推进：赵掌柜送来\"落花坡\"路线图，指向岭南某处**"
+    },
+    {
+      "hookId": "mystery-岭南瘴气陷阱-的具体内容-苏晏清想让苏",
+      "startChapter": 31,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 32,
+      "expectedPayoff": "待定",
+      "notes": "**新增：落花坡疑似岭南陷阱/惊喜所在地，赵掌柜主动送来路线图**"
+    },
+    {
+      "hookId": "mystery-济世堂脉案篡改",
+      "startChapter": 29,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待定",
+      "notes": "济世堂脉案篡改线索持续"
+    },
+    {
+      "hookId": "mystery-双生胎真相",
+      "startChapter": 31,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 31,
+      "expectedPayoff": "待定",
+      "notes": "双生胎真相持续"
+    },
+    {
+      "hookId": "hook_0029",
+      "startChapter": 29,
+      "type": "progress",
+      "status": "progressing",
+      "lastAdvancedChapter": 32,
+      "expectedPayoff": "待定",
+      "notes": "木芙蓉→济世堂→城西赵家链路坐实，**城西赵家岭南人脉确认**"
+    },
+    {
+      "hookId": "hook_0034",
+      "startChapter": 29,
+      "type": "progress",
+      "status": "progressing",
+      "lastAdvancedChapter": 32,
+      "expectedPayoff": "待定",
+      "notes": "城西赵家势力全貌：黑狗帮地盘+岭南人脉，本章吴账房现身确认"
+    },
+    {
+      "hookId": "hook_落花坡",
+      "startChapter": 32,
+      "type": "**新增伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 32,
+      "expectedPayoff": "**待定**",
+      "notes": "**新伏笔：赵掌柜送来的路线图指向\"落花坡\"，疑似岭南陷阱所在地**"
+    }
+  ]
+}

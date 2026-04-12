@@ -1,0 +1,85 @@
+{
+  "chapter": 40,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**清醒理智**：不被原书剧情和情感绑架，一切以生存和利益最大化为核心。"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "1. 穿越觉醒，利用空间物资收买押送官，改善生存环境。"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 良好→精神警觉→冷静掌控→执棋人姿态；谈判成功（解毒丸+承诺一百两稳住老李）；前世记忆觉醒（穿越设定确认）；深刻认知\"改写剧本\"；对生母有复杂情感"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 身世之谜重大突破（苏氏遗孤+凤凰玉佩+济济堂三方关联确认）；镇国公府vs济世堂双线追杀；苏晏清vs苏晚清；生存vs暗杀；京城→岭南情报传递；**镇国公府提审危机（今日到）**；**落花坡第三轮伏击危机（绕路可能改变）**；**城西女人与镇国公府关联（新冲突点）**；**城西分号换人（新冲突点）**；**苏母被毒死真相（新冲突点）**；**城西女人现身山道（新冲突点）**；**城西女人\"岭南城里见\"（新悬念）**"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 安全抵达岭南；追查济世堂脉案真相；获取济世堂特制瘴气解药；追查苏氏遗孤身世；追查京城眼线；应对镇国公府提审危机；**老李已彻底稳住**；**应对落花坡第三轮伏击（老李承诺绕路）**；**镇国公府今日到**；**追查城西分号新势力**；**追查城西神秘女人身份**"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 流放犯身份；太后明旨流放；城西赵家势力渗透岭南；济毒堂追杀（要凤凰玉佩不要命）；京城幕后操纵者；岭南还有六七天路程；**镇国公府提审危机（今日到）**；按察使司可能不干净；铁头继续潜伏（威胁仍在）；苏晏清敌对深化；城西女人目的与镇国公府关联（待查）；城西分号三个月前换人（新威胁）；**解毒丸仅剩最后一颗**"
+    },
+    {
+      "source": "story/chapter_summaries.md#31",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "流放路 | 苏晚清被押送流放，途中遇黑狗帮拦路追杀，以迷药配合押送官击退刺客，以一千两银票建立护送协议 | 苏晚清进入流放状态；与方大人建立暗中合作；凤凰玉佩空间首次展示给外人（部分） | hook_0029 advanced（木芙蓉→济世堂→二十三年链路坐实）；hook_0034 advanced（黑狗帮追杀坐实）；mystery-济世堂脉案篡改 mentioned；mystery-双生胎真相 mentioned"
+    },
+    {
+      "source": "story/chapter_summaries.md#33",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "暗棋 | **路线图分析+销毁**；**方德正二次善意提醒（济世堂药丸/岭南城西分号）**；**老李话多——队里有人起别的心思**；**明日提前启程（京城催促）**；**苏晏清想让苏晚清死在岭南确认**；**物资清点完成（驱蛇虫药粉/解毒丸/止血散/金创药/烟花）**；**烟花预警构想**；**棋盘分析完成** | 流放休整结束；**进入启程前夕**；**方德正合作深化（二次善意）**；**老李立场存疑**；**物资筹备完成**；**执棋人认知确立** | **hook_落花坡激活（路线图+预警构想）**；**hook_济世堂城西分号激活**；**hook_老李异常激活**；mystery-岭南瘴气陷阱深化；hook_0029/0034推进"
+    },
+    {
+      "source": "story/chapter_summaries.md#37",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "审问·遗孤 | 苏晚清审问俘虏获取济世堂关键情报（凤凰玉佩目标、苏氏遗孤身份、脉案被篡改），同时收买老李（辣酱+解毒丸）和方德正（太后赏赐锦盒），彻底稳固押送官阵营 | 苏晚清：良好→身世之谜正式激活；老李：已收买→承诺忠诚；方德正：深度合作→达成交易彻底稳固；俘虏：被俘→透露关键情报 | hook_苏氏遗孤 advanced; hook_济世堂脉案篡改 advanced; hook_凤凰玉佩秘密 advanced; hook_济世堂岭南分号 advanced; hook_京城眼线 advanced"
+    },
+    {
+      "source": "story/chapter_summaries.md#39",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "困局·暗渡 | **以退为进策略（折子称病拖延提审+两百两打点按察使司周主簿+刘经历）**；**落花坡第三轮伏击预警（老李+车队调整）**；**苏晏清对峙（利益绑定警告）**；**方德正收受百年老参（彻底稳固）+请求\"不要授人以柄\"**；**城西神秘女人收买老李（一百两）**；**苏晚清决定明早亲自与老李谈判（提价至一百两）** | **苏晚清：良好→应对提审危机→布局按察使司内应→发现老李被收买→决定明日谈判**；**方德正：深度合作→彻底稳固（收受老参+两百两银票）→被请求\"袖手旁观以免授人以柄\"**；**老李：立场动摇（面临一百两诱惑）**；**苏晏清：敌对→被警告利益绑定→脸色变** | **hook_镇国公府提审深化（拖延+内应策略）**；**hook_济世堂岭南分号补充（地窖情报）**；**hook_城西神秘女人深化（收买老李+明日动手）**；**hook_落花坡第三轮伏击激活**；**hook_老李立场危机激活**；**hook_按察使司内应激活**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_老李立场危机",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "危机 | open | **岭南（待兑现承诺）** | 城西女人一百两收买→苏晚清截胡谈判→解毒丸+承诺到岭南给一百两→**老李承诺绕路**；承诺待兑现"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_前世记忆",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "新线索 | progressing | 待定 | 苏晚清梦见前世超市货架、收银台、确诊数字；穿越设定确认；对\"重来一次\"和空间异能有深刻感悟"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_凤凰玉佩秘密",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | progressing | 济世堂内部等级和堂主/长老身份揭露 | 俘虏确认凤凰玉佩=上古神器；济世堂找了二十三年；信息传递有遮掩（\"我也是听上面的人说的\"）"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_城南驿馆",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "chapter": 15,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\runtime\\chapter-0015.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\runtime\\chapter-0015.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "story/current_state.md#h035状态",
+    "story/chapter_summaries.md#6",
+    "story/chapter_summaries.md#8",
+    "story/chapter_summaries.md#9",
+    "story/chapter_summaries.md#12",
+    "story/pending_hooks.md#H030",
+    "story/pending_hooks.md#H035",
+    "story/pending_hooks.md#H045",
+    "story/pending_hooks.md#H046",
+    "story/pending_hooks.md#H047",
+    "story/pending_hooks.md#H048",
+    "story/pending_hooks.md#H049",
+    "story/pending_hooks.md#H050"
+  ],
+  "notes": []
+}

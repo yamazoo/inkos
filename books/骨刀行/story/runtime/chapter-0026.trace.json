@@ -1,0 +1,26 @@
+{
+  "chapter": 26,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\骨刀行\\story\\runtime\\chapter-0026.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\骨刀行\\story\\runtime\\chapter-0026.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#23",
+    "story/chapter_summaries.md#24",
+    "story/chapter_summaries.md#25",
+    "story/pending_hooks.md#新伏笔",
+    "story/pending_hooks.md#H095",
+    "story/pending_hooks.md#父亲旧人网络",
+    "story/pending_hooks.md#H014（伏笔-钱进\"不能不要\"）"
+  ],
+  "notes": []
+}

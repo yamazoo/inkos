@@ -1,0 +1,77 @@
+{
+  "chapter": 52,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "**灵脉核心入口→核心溶洞→岩石台前**",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "左臂恢复知觉/双手擦伤/后背三道血痕/右肩刀伤撕裂/腰侧刀伤（已结痂）/肋下刀伤（渗血反复）/左手新刀伤（深/已包扎）/虎口裂开/体力透支→严重透支/守脉者印记激活→正在发热（灵脉蓝光回应）/铁盒子（已打开/内容物已取出）/铁匣子×2（怀中1只/岩石台上1只/均在发热）/脉晶（腰间/温热/印记回应中）/银袋（约14两+碎银）/钥匙串/干粮（部分留给苏青禾）/金疮药（小袋）/三十七号令牌（怀中）/三十八号令牌（手中/已合一）/\"焚\"字令牌（怀中/父亲遗物）/陆焚玉牌（怀中/父亲遗物）/地底走向图（怀中）/匕首×2/账本（怀中）",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "**进入灵脉核心/确认铁匣子来历/吃脉晶稳住印记/应对蛞蚀/确认母亲去向/带苏青禾安全离开**",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "**满身伤势+多处新伤/体力严重透支/青云宗五人暂退（外围等候）/苏青禾留在山脊待接应/蛞蚀痕迹已发现/两只铁匣同时出现**",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "**青云宗五人（暂退/外围等候/锻体境界/外门执事+弟子）/蛞蚀（正在接近中）**",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    },
+    {
+      "subject": "current_state",
+      "predicate": "苏青禾状态",
+      "object": "**留在山脊隐蔽处/脚踝扭伤/体力透支/等待陆沉/期限剩余不到一天**",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    },
+    {
+      "subject": "current_state",
+      "predicate": "守脉者状态",
+      "object": "**印记激活→发热/灵脉蓝光回应→已确认身份/血是钥匙（已确认）**",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    },
+    {
+      "subject": "current_state",
+      "predicate": "新增物品",
+      "object": "**第二只铁匣子（岩石台上/与第一只刻字相同\"别走\"）**",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    },
+    {
+      "subject": "current_state",
+      "predicate": "新增线索",
+      "object": "**两只铁匣同时刻\"别走\"/第二只更新更干净/同一刻法→同一人所刻？/溶洞深处铁匣不知如何出现在岩石台上**",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    }
+  ]
+}

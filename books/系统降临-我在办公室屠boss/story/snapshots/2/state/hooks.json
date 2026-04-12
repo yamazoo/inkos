@@ -1,0 +1,148 @@
+{
+  "hooks": [
+    {
+      "hookId": "H001",
+      "startChapter": 0,
+      "type": "15",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H002",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 20,
+      "expectedPayoff": "Ch.120",
+      "notes": "神秘掉落物品「???」无法鉴定 - 触发观测者扫描"
+    },
+    {
+      "hookId": "H003",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 20,
+      "expectedPayoff": "Ch.35+",
+      "notes": "脚步声接近23层 - 本章发现声音特征与三楼楼梯间脚步声相似"
+    },
+    {
+      "hookId": "H004",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.120",
+      "notes": "陆焚身份与目的 - 使徒，主动撤离，对陈默产生兴趣"
+    },
+    {
+      "hookId": "H005",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.120",
+      "notes": "观测者扫描定位风险 - 触发条件未知"
+    },
+    {
+      "hookId": "H030",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.20",
+      "notes": "确认音差异"
+    },
+    {
+      "hookId": "H049",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.20",
+      "notes": "第一天入侵记忆缺失"
+    },
+    {
+      "hookId": "H062",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.200",
+      "notes": "记忆碎片分布（7个节点，当前访问1/7）"
+    },
+    {
+      "hookId": "H063",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.100",
+      "notes": "先驱者姓名线索（姓陈）"
+    },
+    {
+      "hookId": "H065",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.100",
+      "notes": "守墓人身份"
+    },
+    {
+      "hookId": "H078",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.80",
+      "notes": "先驱者协议第七条（反向转化代价）"
+    },
+    {
+      "hookId": "H085",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.50",
+      "notes": "休眠舱阵列异常心跳（E-032唤醒中）"
+    },
+    {
+      "hookId": "S084",
+      "startChapter": 1,
+      "type": "状态变化",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.60",
+      "notes": "赵磊身体异常（D-127纹路浮现）"
+    },
+    {
+      "hookId": "E-032",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.50",
+      "notes": "E-032心跳声 - 创造系统的人正在苏醒"
+    },
+    {
+      "hookId": "H086",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "Ch.5",
+      "notes": "财务部门缝渗出荧绿液体 - 怪物体内发出的光与液体是否同源？"
+    },
+    {
+      "hookId": "E1·末日降临",
+      "startChapter": 1,
+      "type": "系统觉醒之夜",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "-",
+      "notes": "系统绑定完成，原住民出现，观测者扫描"
+    }
+  ]
+}

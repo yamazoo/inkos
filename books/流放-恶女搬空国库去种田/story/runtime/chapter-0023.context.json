@@ -1,0 +1,80 @@
+{
+  "chapter": 23,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**清醒理智**：不被原书剧情和情感绑架，一切以生存和利益最大化为核心。"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "1. 穿越觉醒，利用空间物资收买押送官，改善生存环境。"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 柳树屯探查（已完成初步接触）；太傅会见暗主时间窗口（三日）；王氏回京目的；管家嬷嬷对苏晚清信息源起疑；管家嬷嬷对狗剩身份起疑"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 近期：等待三日后太傅府行动结果；中期：回京赶在太傅会见暗主之前；终极：揭露王氏真实目的"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 精神坚定；身心良好（携带：匕首、凤凰玉佩已交付吴家娘子、暗格暗号\"鱼已入网\"已部署于济世堂）"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 王氏之约（三天期限）；太傅已知信件存在；管家嬷嬷监视（关系紧张升级）；柳树屯是太傅地界；三日后太傅会见暗主"
+    },
+    {
+      "source": "story/chapter_summaries.md#12",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "杀鸡儆猴 | 苏晚清击退黑狗帮铁头等5人；周管事透露黑狗帮内情和七杀情报；翠竹带回情报确认七杀目标是自己；苏晚清给小女孩馒头开始收拢人心；夜间黑狗帮13人来袭被周管事抓捕送官；寒潮将至 | 成功立威击退黑狗帮两次；与周管事建立初步合作；确认七杀追杀目标是自己；开始收拢人心 | H032推进（七杀接头地点确认）、H034推进（赵大势力削弱）、H035推进（周管事合作）、H036激活（五千两买命）、H037激活（寒潮）、H038激活（小女孩）"
+    },
+    {
+      "source": "story/chapter_summaries.md#20",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "知府问话 | 苏晚清与李知府见面，透露账册存在并建立交易关系；李知府答应送信给镇国公；回到营地后被陈管事带十多人围住；苏晚清带翠竹跟陈管事走，准备假账册位置作护身符 | 与李知府建立交易关系；被陈管事带走前往镇国公府宅院；翠竹跟随；小草留在营地 | H017推进、H033推进、H052推进、H054推进、H059推进、H060完成、H061推进、H062埋设、H063埋设、H064埋设"
+    },
+    {
+      "source": "story/chapter_summaries.md#21",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "龙潭虎穴 | 苏晚清被带到宅院与管家嬷嬷交锋，用假账册位置拖延时间，被识破后声称记错了，王氏来信要求明天回京，苏晚清同意配合 | 被软禁→假位置被识破→同意回京→留下墨点暗号 | H002推进、H017推进、H025推进、H054推进、H062推进、H065埋设"
+    },
+    {
+      "source": "story/chapter_summaries.md#22",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "暗棋初动 | 墨点暗号留给周管事；周管事纸条烧毁（吴大夫情报）；启程回京，8护卫+管家嬷嬷押送；更衣时留树枝暗号给周管事的人；途中分析王氏可能知道信件存在；与管家嬷嬷谈判达成柳树屯绕道交易；马车驶向柳树屯 | 被软禁→启程→谈判成功→准备进村 | H002推进（王氏阴谋）、H017推进（吴大夫家人任务）、H025推进（太傅会见暗主）、H054推进（管家嬷嬷关系变化：敌对→暂时合作）、新伏笔埋设（王氏真实目的）"
+    },
+    {
+      "source": "story/pending_hooks.md#threat-太傅追查信件-失败后加大反-击力度",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open | 太傅追查信件失败后加大反击力度 | 太傅亲眼看到苏晚清亮出信件，脸色大变并下令追查"
+    },
+    {
+      "source": "story/pending_hooks.md#hook-凤凰玉佩真-伪",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 凤凰玉佩是苏晚清空间出品还是仿制太傅府信物？三日后会被认出吗？ | 苏晚清声称是仿济世堂旧物，但空间可拿出成色极好的玉佩。管家嬷嬷追问信息来源。"
+    },
+    {
+      "source": "story/pending_hooks.md#hook-吴家娘子真-实态度",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 吴家娘子是否真心配合？还是在演戏？ | 吴家娘子经历否认→试探→心理挣扎→勉强答应的过程后接受任务，眼中闪过复杂神色，攥衣角手发白后又稳住。寡妻身份补充：原是太傅府粗使丫鬟，济世堂是太傅府产业。"
+    }
+  ]
+}

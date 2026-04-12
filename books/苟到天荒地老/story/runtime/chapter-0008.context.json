@@ -1,0 +1,130 @@
+{
+  "chapter": 8,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第7章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "灵气稀薄：仅为上古的千分之一"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "揭露大劫真相"
+    },
+    {
+      "source": "story/chapter_summaries.md#chapter_7_bridge",
+      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
+      "excerpt": "第7章《天道疤痕》 | 出场人物：顾长命,郑怀恩,小鱼,周府管事,周老爷子,周公子 | 本章事件：1. 上章周老爷子危急（第6章）→ 本章周府管事深夜敲门求救，顾长命出诊诊脉确认\"不是病，是有人下了重手\"，用三针护住心脉并直言毒解不了只能拖几天，委托周公子查老郎中与钱广的关联后返回。2. 顾长命已知天裂真相（青云门提前知情/可能参与）→ 本章郑怀恩展示枕头下发现的手写纸张，揭露青云门三老祖是三兄弟，万年前烧天49天撕裂天道；天裂会自愈但青云门\"修疤\"维持裂缝不让愈合；目的是让灵气永远只够炼气期、无人能筑基。3. 已知针会落在灵气最浓郁处或与它最亲近之人身边（第6章郑怀恩揭示）→ 本章顾长命结合纸张小字\"针不在器，在意\"和青石镇灵脉残脉，意识到小鱼12年前开始做梦=青云门三年前印记被截走那年；老庙主截走印记是在保护针或针的主人。4. 上章小鱼梦呓\"针\"→ 本章顾长命回忆12年前捡到小鱼时被划伤手指，旧痕三天前玉简发热时开始发痒——暗示顾长命自己可能也与针有关联。 | 状态变化：周老爷子被顾长命用三针暂时稳住（毒解不了，需追查老郎中）；青云门目的明确：从找针变成毁针——让天裂永远不能愈合；顾长命意识到留给他的时间不多了（周老爷子三天、小鱼身世、三天后玉简再热）；周老爷子病因\"人祸\"真相已揭露（老郎中所为），但背后青云门关联尚待追查。 | 悬念活动：H004/H010/H030/H025深化；H026回收（周老爷子病因揭示）；H031新增候选（顾长命旧痕与针的联系）"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "7: 天道疤痕 | 6: 天裂往事 | 5: 老道士的遗音 | 4: 甬道尽头 | 3: 枯井窥天"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "7: 警觉·沉思·震惊·坚定·倒计时压力 / 揭露章/推进章 | 6: 沉重·警觉·暗流涌动·信息密集·新的一天开始（周老爷子危急） / 揭露章/推进章 | 5: 沉重、警觉、压抑、新的一天开始 / **揭露章/推进章** | 4: 紧张逃亡→疲惫沉重 / 推进章/危机章 | 3: 紧张、危机 / 转折章"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch5: 小鱼没有再问。她把脸埋进他的肩窝里，不再说话。 | ch6: \"周老爷子不好了！\" | ch7: 它的眼睛，什么时候会睁开？"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 大劫真相揭露（青云门维持天裂）；小鱼可能是针；周老爷子命悬一线；三天后危机"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 警觉·沉思·坚定·内心震动（得知大劫真相与小鱼可能相关）"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 解周老爷子毒·查老郎中底·追钱广线·探老庙主·保护小鱼不知真相·应对三天后玉简再热"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 三天倒计时；青云门在外监视；必须保护小鱼不知自己是针"
+    },
+    {
+      "source": "story/chapter_summaries.md#3",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "枯井窥天 | 进入玄清阁；老道士揭露大劫真相；青云门追至；老道士消失 | 枯井之约完成；青云门威胁升级为追杀；玉简新能力显现 | H003/H004/H009/H010/H011/H013/H014/H015/H016/H017"
+    },
+    {
+      "source": "story/chapter_summaries.md#5",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "老道士的遗音 | 1.老道士玉简显灵，告知三天后联系；2.确认小鱼梦境（天破洞、线、被召唤）；3.揭露大劫核心真相：万年前天道被撕开一尺宽，抽走灵脉源头；4.告知撕裂手段如\"缝补\"，需用\"针\"；5.小鱼新梦：老君庙老者给石子（针形凹痕）；6.获得石子，玉简发烫；7.老道士遗音：可用三年前手段应对灵气印记；8.郑怀恩揭示青云门想要\"那根针\"；9.典籍记载\"天裂之因，非天之道，乃人之祸\" | 得知大劫核心真相（人祸非天灾）；获得关键道具石子；老道士玉简显灵后虚弱；顾长命决心永远不让小鱼知道自己是\"补天针\" | H004/H009/H011/H014/H015/H016/H017/H018/H019/H020/H021/H022/H023/H024活跃；H023/H024新开"
+    },
+    {
+      "source": "story/chapter_summaries.md#6",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "天裂往事 | 1.青云门火攻被老道士庇护挡住，撤退但在外扎营监视；2.玉简从温热变凉透，老道士更虚弱；3.郑怀恩揭示：针\"不在器，在意\"——与天道本源相关；针会落在灵气最浓郁处或与它最亲近的人身边；4.郑怀恩揭示：青云门用火系功法追击；老道士用更烈的火救他，丢进枯井；\"欠你师父的，今天还一点利息\"；5.手札最后几页被撕走，只剩\"圆环套圆环，中心是空\"符号和\"针在青石镇，待其主现\"；6.三年前青云门在青石镇留印记被截走，截走者是老庙主；7.石子针形凹痕与青云门灭门石板符号相同；8.青云门不敢硬闯（不确定针在谁手里）；9.顾长命决心弄清小鱼身世；10.小鱼梦呓\"针\"；11.青云门试探动静；12.周老爷子危急，敲门召诊 | 青云门不敢硬闯（暂时安全）；老道士更虚弱；玉简凉透（等待三天后）；石子与青云门灭门石板关联；顾长命决心弄清小鱼身世；周老爷子危急（新增紧急事件） | H004/H009/H011/H015/H016/H017/H018/H019/H020/H021/H023/H024推进；H025/H026/H027新开"
+    },
+    {
+      "source": "story/chapter_summaries.md#7",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "天道疤痕 | 1. 上章周老爷子危急（第6章）→ 本章周府管事深夜敲门求救，顾长命出诊诊脉确认\"不是病，是有人下了重手\"，用三针护住心脉并直言毒解不了只能拖几天，委托周公子查老郎中与钱广的关联后返回。2. 顾长命已知天裂真相（青云门提前知情/可能参与）→ 本章郑怀恩展示枕头下发现的手写纸张，揭露青云门三老祖是三兄弟，万年前烧天49天撕裂天道；天裂会自愈但青云门\"修疤\"维持裂缝不让愈合；目的是让灵气永远只够炼气期、无人能筑基。3. 已知针会落在灵气最浓郁处或与它最亲近之人身边（第6章郑怀恩揭示）→ 本章顾长命结合纸张小字\"针不在器，在意\"和青石镇灵脉残脉，意识到小鱼12年前开始做梦=青云门三年前印记被截走那年；老庙主截走印记是在保护针或针的主人。4. 上章小鱼梦呓\"针\"→ 本章顾长命回忆12年前捡到小鱼时被划伤手指，旧痕三天前玉简发热时开始发痒——暗示顾长命自己可能也与针有关联。 | 周老爷子被顾长命用三针暂时稳住（毒解不了，需追查老郎中）；青云门目的明确：从找针变成毁针——让天裂永远不能愈合；顾长命意识到留给他的时间不多了（周老爷子三天、小鱼身世、三天后玉简再热）；周老爷子病因\"人祸\"真相已揭露（老郎中所为），但背后青云门关联尚待追查。 | H004/H010/H030/H025深化；H026回收（周老爷子病因揭示）；H031新增候选（顾长命旧痕与针的联系）"
+    },
+    {
+      "source": "story/pending_hooks.md#H011",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 80+ | mid-arc | 筑基真相：万年前筑基是起点，如今千分之一灵气"
+    },
+    {
+      "source": "story/pending_hooks.md#H025",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | progressing | 待定 | immediate | 三老祖第三个人传承不在青云门；老庙主三年前截走印记；老庙主可能在保护针或针的主人"
+    },
+    {
+      "source": "story/pending_hooks.md#H023",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | progressing | 125 | endgame | 青云门找玄清阁要玉简目的明确：感应针位置；玄清阁先人遗言'针在青石镇，待其主现'"
+    },
+    {
+      "source": "story/pending_hooks.md#H009",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | progressing | 弄清顾长命与针的关系 | near-term | 小鱼=针？深化：针会落在灵气最浓郁处或与它最亲近之人身边；小鱼12年前开始做梦；青云门三年前印记被截走保护的可能就是针或针主"
+    },
+    {
+      "source": "story/pending_hooks.md#H004",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "设定 | progressing | 125 | endgame | 本章重大深化：三老祖是三兄弟；天裂会自愈；青云门'修疤'维持裂缝；灵气稀薄是人为维持"
+    },
+    {
+      "source": "story/pending_hooks.md#H027",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念** | open | **未知** | **青云门灭门石板符号**：郑怀恩在灭门那夜见过与石子相同的针形符号"
+    },
+    {
+      "source": "story/pending_hooks.md#H019",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 31+ | mid-arc | 小鱼坠落之人：梦见有人从\"天破洞\"坠落"
+    },
+    {
+      "source": "story/pending_hooks.md#H020",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 31+ | mid-arc | 小鱼身世时间线：十二年前在镇外草丛捡到，浑身是血，奄奄一息"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "chapter": 56,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**清醒理智**：不被原书剧情和情感绑架，一切以生存和利益最大化为核心。"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "：穿越开局，危机四伏。女主在流放路上醒来，浑身是伤，面临差役的鞭打和继母庶妹的假惺惺刁难。核心冲突：马上要被饿死/打死。"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "55: 药酒试人心 | 52: 暗渡 | 51: 筹码 | 50: 蛇蜕与火种 | 49: 蛇路突围"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "55: 警觉→深谋→蓄势→冷静掌控 / 推进章/人物试探章/伏笔深化章 | 52: 警觉→深谋→紧绷→冷静对峙 / 推进章/对峙章/身世深化章 | 51: 警觉→深谋→蓄势→坚定 / 推进章/策略回收章/情报深化章 | 50: 警觉→深谋→冷意→坚定蓄势 / 推进章/策略章/情报揭露章 | 49: 警觉→深谋→冷意→坚定→蓄势→曙光 / 推进章/情报深化章/穿越完成章"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch53: 苏晚清眯起眼睛，盯着前方的黑暗。 | ch54: 黎明的光，正在一点一点地靠近。 | ch55: 不管是姓孙的，还是沈蓉，还是这一路上可能冒出来的任何人——"
+    },
+    {
+      "source": "runtime/hook_debt#hook_济世堂岭南城西分号",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "hook_济世堂岭南城西分号（progressing，主要旧债，已开55章） | 读者承诺：俘虏供出城西坊分号\"见不得光的生意\"；**本章：苏晚清计划到岭南后去分号调查** | 种于第0章：俘虏供出城西坊分号\"见不得光的生意\"；**本章：苏晚清计划到岭南后去分号调查**"
+    },
+    {
+      "source": "runtime/hook_debt#hook_落花坡哨卡",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "hook_落花坡哨卡（progressing，主要旧债，已开55章） | 读者承诺：**本章：哨卡暗桩认出令牌记号而非通行令本身→沈蓉可能与哨卡打过招呼→岭南城西可能有接应** | 种于第0章：ch55 药酒试人心 - 苏晚清用药酒救治受伤的孙押役并建立试探关系；老李揭露孙押役曾与沈蓉的人搭过话；苏晚清观察孙押役岔路口选险道且攥紧瓷瓶暴露紧张；安排翠竹暗中监视孙押役动向；计划过了哨卡去济世堂岭南城西分号查药丸去向和'姓苏的遗孤'底细"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 凤凰玉佩作为筹码；镇国公府持续追杀（沈蓉撤退但威胁持续）；苏氏遗孤身世谜团；**哨卡暗桩认出令牌记号（异常）→岭南城西可能有接应**；孙押役与可疑村民有关联；岭南城西可能有埋伏"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 安全抵达岭南；接触陈掌柜验证情报；调查济世堂岭南城西分号；揭露苏氏遗孤身世真相；监视孙押役（已初步控制）；**警惕哨卡暗桩（令牌被做标记）**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 身体虚弱但稳定；凤凰玉佩在手（背面刻'苏氏'）；空间泉水恢复中；空间物资（压缩饼干/花生饼/干果/花生糖/药酒已消耗一瓶）；**孙押役已服用\"驱寒药\"（三五日内乏力）**"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 身体虚弱未完全恢复；**哨卡暗桩认出令牌记号（异常）**；镇国公府/济世堂持续追杀；孙押役嫌疑确认（与可疑村民有关联待查）；岭南城西可能有埋伏"
+    },
+    {
+      "source": "story/chapter_summaries.md#1",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "开局就是死局 | 穿越开局，女主在流放路上醒来，原主刚被鞭打致死；女主用智谋暂时说服赵押司不打死她；编造\"春桃私藏金银\"情报，偷听发现竟是真的；苏明珠假意示好被识破 | 穿越完成，灵魂融合；暂时保命但食物未解决；获得关键情报筹码 | hook_001激活（空间确认）；hook_006激活（春桃情报）；hook_007激活（今夜杀机）"
+    },
+    {
+      "source": "story/chapter_summaries.md#18",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "请君入瓮 | 苏晚清翻看账册确认内容；发粥时流放犯恐惧；张婶醒来愿意效劳；周管事报告铁头与林管事关联并正式效劳；夜间有人送碎银和警示；苏晚清进城用账册威胁林管事；得知苏明珠被带走往北边；刘二报告镇国公府派人监视营地 | 周管事正式效劳；张婶恢复中愿意照看灶台；用账册威胁镇国公府；得知苏明珠出事；营地有人暗中帮忙 | H052推进、H053推进、H054推进、H055埋设、H056埋设、H057埋设、H058埋设、H019推进、H026推进、H035推进、H038推进"
+    },
+    {
+      "source": "story/chapter_summaries.md#55",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "药酒试人心 | 苏晚清用药酒救治受伤的孙押役并建立试探关系；老李揭露孙押役曾与沈蓉的人搭过话；苏晚清观察孙押役岔路口选险道且攥紧瓷瓶暴露紧张；安排翠竹暗中监视孙押役动向；计划过了哨卡去济世堂岭南城西分号查药丸去向和'姓苏的遗孤'底细 | 药酒一瓶消耗给孙押役；孙押役从'可疑'升级为'施恩监视对象'；老李与苏晚清人情债务加深；苏晚清目标明确：哨卡→岭南城西分号→苏氏遗孤调查 | hook_姓孙的押送兵 advanced (老李揭露关键情报+药酒施恩+观察微表情); hook_落花坡暗桩 advanced (险道选择+攥紧瓷瓶); hook_落花坡哨卡 time-advance"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_镇国公府追杀",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "conflict | open | 岭南（彻底解决） | 沈蓉第二轮追击失败；凤凰玉佩作为筹码发挥作用；追杀升级但暂时退让；威胁持续"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_姓孙的押送兵",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "progressing | open | 待定 | 第33章老李首次提出；方德正多次警告（第46、51章）；孙押役选岔路口险道+主动问药油+攥紧瓷瓶+往队伍前头凑+偷偷与人传递消息——多重可疑信号持续积累；**本章：已服药控制，但与可疑村民关联待查**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_孙押役内鬼",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "event | open | 岭南（揭露真相） | 孙押役异常行为确认：与可疑村民接触、被施恩控制后三五日乏力、阻止通风报信；**本章：方德正持续监视，往队伍前头凑行为被记录**"
+    },
+    {
+      "source": "story/pending_hooks.md#mystery-岭南-完整揭露-苏晚清用指甲",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | progressing | 岭南（完整揭露） | 荧光液体渗入刻痕的具体作用待揭示；济世堂追玉佩原因待揭示"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_凤凰玉佩线索串联",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "情报 | progressing | 岭南（玉佩秘密完整揭露） | 玉佩背面刻\"苏氏\"二字；用指甲刮字迹观察荧光反应；沈蓉认出玉佩反应强烈；**本章：玉佩持续在手，作为筹码发挥关键作用**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_十五年前南疆案",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "progressing | open | 陈掌柜（岭南） | 控神毒药案；陈掌柜十五年前消失时间吻合；**本章：方德正提及城西分号见不得光的生意，线索持续**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_济世堂岭南城西分号",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "progressing | open | 俘虏供出城西坊分号\"见不得光的生意\"；**本章：苏晚清计划到岭南后去分号调查**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_落花坡哨卡",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "progressing | open | **本章：哨卡暗桩认出令牌记号而非通行令本身→沈蓉可能与哨卡打过招呼→岭南城西可能有接应**"
+    }
+  ]
+}

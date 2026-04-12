@@ -1,0 +1,140 @@
+{
+  "chapter": 14,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第13章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "灵气稀薄：仅为上古的千分之一"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "揭露大劫真相"
+    },
+    {
+      "source": "story/chapter_summaries.md#chapter_13_bridge",
+      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
+      "excerpt": "第13章《夜尽天明》 | 出场人物：顾长命、小鱼、馄饨摊老板娘、灰袍男（青云门）、黑衣（青云门） | 本章事件：1.顾长命发现身后有尾巴（青云门两人跟踪）；2.判断\"镇东三里约见\"是套话局，选择先去暗道找小鱼；3.小鱼醒着等，手心青紫印记蔓延小半个掌心（命线收紧）；4.顾长命告知周老爷子昨夜走了；5.小鱼说\"我去过周爷爷家，他给我吃过糖\"；6.顾长命把压命线瓷瓶交给小鱼（手心痒时再打开）；7.顾长命问小鱼\"十二年前有人说'接住我'？\"，小鱼没有立即回应；8.小鱼说又做梦了，梦见有人叫她回家；9.顾长命回忆十二年前在枯井里捡到小鱼；10.\"这里就是你的家\"；11.青云门追入暗道；12.顾长命带小鱼穿甬道到土地庙；13.清晨；14.馄饨摊短暂喘息：馄饨摊日常对话；小鱼问馄饨馅；顾长命说荠菜；小鱼没见过荠菜；亲子日常对话；15.馄饨摊角落发现灰袍男（青云门）；16.假装没事离开；17.灰袍男和另一黑衣人两面包抄；18.小鱼说\"你手心出汗了\"；19.引线发烫；瓷瓶发热；20.晨光中的追逐开始 | 状态变化：压命线瓷瓶已交给小鱼；青云门两面包抄；小鱼命线继续收紧（掌心青紫印记蔓延）；周老爷子确认死亡；追逐正式开始；日常喘息场景完成 | 悬念活动：H004/H010/H011/H042/H037推进；情绪降调（日常温情）"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "13: 夜尽天明 | 11: 井底问门 | 9: 线断之处 | 8: 困局与抉择 | 7: 天道疤痕"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "13: 沉重·警觉·紧迫·温情·决断·追逐开始 / 喘息章/推进章/温情章 | 11: 沉重·警觉·紧迫·决断·倒计时 / 核心揭露章/推进章/承上启下章 | 9: 沉重·震惊·警觉·坚定·紧迫·倒计时 / 核心揭露章/推进章 | 8: 沉重·警觉·抉择压力·内心震动·倒计时紧迫 / 核心揭露章/推进章 / (none) | 7: 警觉·沉思·震惊·坚定·倒计时压力 / 揭露章/推进章"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch11: 他朝镇东的方向跑去，脚步很轻，轻得像一阵风。 | ch12: 天边的那一丝灰白越来越亮，再过一个时辰，天就要亮了。 | ch13: **但路还长。**"
+    },
+    {
+      "source": "runtime/hook_debt#H004",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H004（设定，可兑现旧债，已开13章） | 读者承诺：125 | 种于第1章：ch2 枯井有约 - 青云门追捕郑怀恩；郑怀恩逃至回春堂门口 | 推进于第13章：ch13 夜尽天明 - 1.顾长命发现身后有尾巴（青云门两人跟踪）；2.判断\"镇东三里约见\"是套话局，选择先去暗道找小鱼；3.小鱼醒着等，手心青紫印记蔓延小半个掌心（命线收紧）；4.顾长命告知周老爷子昨夜走了；5.小鱼说\"我去过周爷爷家，他给我吃过糖\"；6.顾长命把压命线瓷瓶交给小鱼（手心痒时再打开）；7.顾长命问小鱼\"十二年前有人说'接住我'？\"，小鱼没有立即回应；8.小鱼说又做梦了，梦见有人叫她回家；9.顾长命回忆十二年前在枯井里捡到小鱼；10.\"这里就是你的家\"；11.青云门追入暗道；12.顾长命带小鱼穿甬道到土地庙；13.清晨；14.馄饨摊短暂喘息：馄饨摊日常对话；小鱼问馄饨馅；顾长命说荠菜；小鱼没见过荠菜；亲子日常对话；15.馄饨摊角落发现灰袍男（青云门）；16.假装没事离开；17.灰袍男和另一黑衣人两面包抄；18.小鱼说\"你手心出汗了\"；19.引线发烫；瓷瓶发热；20.晨光中的追逐开始"
+    },
+    {
+      "source": "runtime/hook_debt#H010",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H010（悬念，主要旧债，已开12章） | 读者承诺：60+ | 种于第2章：ch2 枯井有约 - 青云门追捕郑怀恩；郑怀恩逃至回春堂门口 | 推进于第13章：ch13 夜尽天明 - 1.顾长命发现身后有尾巴（青云门两人跟踪）；2.判断\"镇东三里约见\"是套话局，选择先去暗道找小鱼；3.小鱼醒着等，手心青紫印记蔓延小半个掌心（命线收紧）；4.顾长命告知周老爷子昨夜走了；5.小鱼说\"我去过周爷爷家，他给我吃过糖\"；6.顾长命把压命线瓷瓶交给小鱼（手心痒时再打开）；7.顾长命问小鱼\"十二年前有人说'接住我'？\"，小鱼没有立即回应；8.小鱼说又做梦了，梦见有人叫她回家；9.顾长命回忆十二年前在枯井里捡到小鱼；10.\"这里就是你的家\"；11.青云门追入暗道；12.顾长命带小鱼穿甬道到土地庙；13.清晨；14.馄饨摊短暂喘息：馄饨摊日常对话；小鱼问馄饨馅；顾长命说荠菜；小鱼没见过荠菜；亲子日常对话；15.馄饨摊角落发现灰袍男（青云门）；16.假装没事离开；17.灰袍男和另一黑衣人两面包抄；18.小鱼说\"你手心出汗了\"；19.引线发烫；瓷瓶发热；20.晨光中的追逐开始"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 青云门两面包抄；引线响应命线；小鱼命线收紧（掌心青紫印记蔓延）；天亮后动手"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 甩掉两面包抄的追兵；保护小鱼；压命线瓷瓶已交给小鱼"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 警觉·沉重·紧迫·决断·温情流露·行动中"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 青云门两面包抄（灰袍+黑衣）；距离十几丈；引线发烫；瓷瓶发热；天亮后动手倒计时"
+    },
+    {
+      "source": "story/chapter_summaries.md#3",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "枯井窥天 | 进入玄清阁；老道士揭露大劫真相；青云门追至；老道士消失 | 枯井之约完成；青云门威胁升级为追杀；玉简新能力显现 | H003/H004/H009/H010/H011/H013/H014/H015/H016/H017"
+    },
+    {
+      "source": "story/chapter_summaries.md#7",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "天道疤痕 | 1. 上章周老爷子危急（第6章）→ 本章周府管事深夜敲门求救，顾长命出诊诊脉确认\"不是病，是有人下了重手\"，用三针护住心脉并直言毒解不了只能拖几天，委托周公子查老郎中与钱广的关联后返回。2. 顾长命已知天裂真相（青云门提前知情/可能参与）→ 本章郑怀恩展示枕头下发现的手写纸张，揭露青云门三老祖是三兄弟，万年前烧天49天撕裂天道；天裂会自愈但青云门\"修疤\"维持裂缝不让愈合；目的是让灵气永远只够炼气期、无人能筑基。3. 已知针会落在灵气最浓郁处或与它最亲近之人身边（第6章郑怀恩揭示）→ 本章顾长命结合纸张小字\"针不在器，在意\"和青石镇灵脉残脉，意识到小鱼12年前开始做梦=青云门三年前印记被截走那年；老庙主截走印记是在保护针或针的主人。4. 上章小鱼梦呓\"针\"→ 本章顾长命回忆12年前捡到小鱼时被划伤手指，旧痕三天前玉简发热时开始发痒——暗示顾长命自己可能也与针有关联。 | 周老爷子被顾长命用三针暂时稳住（毒解不了，需追查老郎中）；青云门目的明确：从找针变成毁针——让天裂永远不能愈合；顾长命意识到留给他的时间不多了（周老爷子三天、小鱼身世、三天后玉简再热）；周老爷子病因\"人祸\"真相已揭露（老郎中所为），但背后青云门关联尚待追查。 | H004/H010/H030/H025深化；H026回收（周老爷子病因揭示）；H031新增候选（顾长命旧痕与针的联系）"
+    },
+    {
+      "source": "story/chapter_summaries.md#8",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "困局与抉择 | 1.青云门提前到达（不是明天，是今天），三人入镇往周府方向；2.顾长命决定不带小鱼，独自行动；3.老郎中在庙门口暗示\"有人不想让周老爷子活\"；4.顾长命见老庙主，核心揭露：老槐树是三十七年前栽的用来锁井；天裂根连灵脉源头；青云门一万年前亲手把针送进去；玉简是第一把钥匙；井底门后有同门；小鱼是十二年前从口子掉下来那人的\"一部分\"；老庙主给令牌；5.青云门三人在庙门外拦截顾长命，带他去周府；6.周老爷子临终托付：给顾长命石子（第二把钥匙）；告知\"她是回来找你的\"；让她问小鱼\"记不记得那根线\"；7.老郎中警告\"回春堂不安全了\"；8.结尾：老君庙僧人要见顾长命 | 顾长命获得两把钥匙（玉简+石子）；获得老庙主令牌；小鱼身世核心真相揭露（是一万年前那人的一部分）；青云门开始主动追踪；周老爷子临终托付 | H004/H025/H032/H023/H028/H029/H033/H034/H035推进；H009/H030/H031/H019/H020完成/回收；新增3条伏笔"
+    },
+    {
+      "source": "story/chapter_summaries.md#9",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "线断之处 | 1.顾长命去老君庙见老庙主师兄；2.老僧揭露命线图真相：十七道口子=十七只眼睛；天裂是药引子；3.小鱼命线十二年前断了，缠在顾长命身上；4.小鱼喊过\"接住我\"；5.续命线需要钥匙+引线；引线在顾长命手上（两道疤）；6.小鱼会被拽回去\"填进裂缝里\"；7.老僧给绢帛（命线图）+细绳（引线）；8.老僧说去井底见门后的人；9.青云门周平带8人来回春堂抓人；10.青云门锁定小鱼是\"引线\"；11.顾长命提前转移小鱼到夹壁暗道（昨夜已做）；12.青云门搜空后离开，说明早\"喝茶\"；13.周老爷子今夜断气；14.小鱼掌心疤泛青紫（命线在动）；15.顾长命决定天亮前去井底 | 获得绢帛+细绳；小鱼命线开始动；青云门锁定小鱼是引线；周老爷子今夜断气；顾长命决心天亮前见井底门后之人 | H033/H034/H032/H028回收；H036/H037/H038新开；H004/H029/H030/H031推进"
+    },
+    {
+      "source": "story/pending_hooks.md#H004",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "设定 | progressing | 125 | endgame | 大劫真相 - 本章深化：青云门两面包抄追击；追逐正式开始"
+    },
+    {
+      "source": "story/pending_hooks.md#H010",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | progressing | 60+ | mid-arc | 玄清阁灭门真相 - 本章关联：青云门灰袍男在馄饨摊监视；两面包抄"
+    },
+    {
+      "source": "story/pending_hooks.md#H011",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | progressing | 80+ | mid-arc | 筑基真相：万年前筑基是起点；引线发烫暗示与针的联系"
+    },
+    {
+      "source": "story/pending_hooks.md#H039",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 12 | near-term | 门后之人身份 - 本章无直接推进，但顾长命判断\"镇东三里约见\"是套话局"
+    },
+    {
+      "source": "story/pending_hooks.md#H040",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 12 | near-term | 老七命线转移机制 - 本章无直接推进"
+    },
+    {
+      "source": "story/pending_hooks.md#H041",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 立即 | immediate | 青云门要往裂缝里\"塞什么\" - 本章无直接推进；灰袍男提到\"长老要见你\""
+    },
+    {
+      "source": "story/pending_hooks.md#H042",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 12 | near-term | 顾长命\"不是普通人\" - 引线发烫；旧疤发红；等待顾长命发现与针的联系"
+    },
+    {
+      "source": "story/pending_hooks.md#H037",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | progressing | 13-14 | near-term | 小鱼被拽回去的时间 - 掌心青紫印记蔓延小半个掌心；瓷瓶发热；倒计时继续"
+    }
+  ]
+}

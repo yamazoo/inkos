@@ -1,0 +1,75 @@
+{
+  "chapter": 23,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**世界名称**：荒界"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "### 第一卷：县城风云（第1-60章）"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **躲藏→思索出城方案（联系\"↓7\"与\"巢=七寸\"）→待追兵远去→带苏青禾出城**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 左臂伤口裂开/双手有新伤（抠井沿）/后背刀伤/腰侧刀伤/脚踝扭伤（火辣辣疼）/体温偏高/**怀中铁牌×1（苏老实遗物/\"别走\"铁牌/温热不烫）/荒卫令牌（荒卫司/三十七号）/脉晶（怀中/微光凉意）**/银袋/杀猪刀（手中）/短刀×1/碎碗片（怀中）/账本（怀中）"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | **满身伤势/体力透支/水米未进/苏青禾脚崴伤无法行走**"
+    },
+    {
+      "source": "story/chapter_summaries.md#20",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "第20章 | ①老郎中提前来访（用暗号敲门） ②告知钱通改时间：今晚柳巷东（不是三天后） ③揭示老郎中动机：苏老实救过他一命 ④揭示苏老实与老郎中的关系：老郎中派苏老实去黑松林收账 ⑤揭示苏老实带回的东西来源：抵账品，\"不干净\" ⑥告知钱通今晚要灭口，不是谈判 ⑦告知黑虎帮也在找老郎中 ⑧老郎中给铜钱让找孙麻子出城 ⑨老郎中要留下撑住帮陆沉拖时间 ⑩苏青禾今晚会被用来钓苏老实 ⑪陆沉面临抉择：去=死局，不去=苏青禾死+自己迟早被抓 | 获得桂花糕×2；获得铜钱×1（找孙麻子）；糙米消耗；时间线提前（今晚=死局） | H073/H074/H075/H076回收（老郎中动机/柳巷东时间/苏父东西来源）；H078/H079/H080/H081新增（孙麻子/老郎中命运/苏青禾今晚）"
+    },
+    {
+      "source": "story/chapter_summaries.md#21",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "铜钱与退路 | ①找孙麻子谈出城方案②确认黑虎帮三门各布六七人③收费标准：2人150文+余款④今晚子时三刻城南门乱葬岗交接⑤得知钱通今晚柳巷东三层包围⑥苏青禾被关在柳巷东隔壁院子⑦孙麻子暗示\"从里面\"突破⑧陆沉决定找苏青禾或老郎中从内部进入⑨付定金二钱碎银⑩计划：子时三刻带两人出城 | 碎银约-0.2两（3→约2.8两）；铜钱已交给孙麻子；伤势持续愈合中 | H078/H079/H080/H082/H083/H084/H085新增（孙麻子方案/柳巷东内部缺口/苏青禾位置/策略确定）"
+    },
+    {
+      "source": "story/chapter_summaries.md#22",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "潜入与变数 | ①陆沉潜入柳巷东（通过角门→地道→天井）②发现老郎中在天井活动③窃听院子情报（子时动手/苏青禾被饿/三层包围/老郎中今晚一并收拾）④从屋顶翻入救出苏青禾⑤获得布包（抵账品）⑥给苏青禾桂花糕，安排她从屋顶逃走⑦退回找老郎中发现已死⑧油灯燃尽死亡超一个时辰⑨刚被人发现（正文未完） | 左臂伤裂开流血；桂花糕-1块；获得抵账品（布包）；老郎中死亡 | H078回收（老郎中死亡）；H079部分回收（苏青禾已救）；H083/H084回收（策略成功）；H086/H087/H088/H089新增（死因/抵账品/脱身/被察觉）"
+    },
+    {
+      "source": "story/pending_hooks.md#H089",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**剧情** | open | **24** | **井壁刻字\"↓7\"与钱进遗言\"巢=七寸\"关联→警告系统的新表达→陆沉已建立联想（本章修正新增）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H089（新）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**剧情** | open | **待揭示** | **井壁刻字\"↓7\"与钱进遗言\"巢=七寸\"关联→警告系统的新表达**"
+    },
+    {
+      "source": "story/pending_hooks.md#H090",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "剧情 | open | 待定 | 铜锣山地底连通假说→穴居人村落/黑松林裂隙/枯井彼此相通→荒卫令牌可能是通行证"
+    },
+    {
+      "source": "story/pending_hooks.md#\"别看它们的眼睛\"",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open | 65章已暗示 | 65章已暗示"
+    }
+  ]
+}

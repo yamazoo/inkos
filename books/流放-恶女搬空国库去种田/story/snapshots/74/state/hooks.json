@@ -1,0 +1,54 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_左眉疤灰袍人",
+      "startChapter": 71,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 74,
+      "expectedPayoff": "岭南府城（身份待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "71章新增伏笔：左眉疤灰袍人=济世堂相关？镇国公府探子？宫中来人？苏晚清判断至少两人跟踪；72章确认：换装甩掉成功；73章：周老伯警告城里不太平+有人在查苏家旧账（跟踪者可能与此有关）；**74章：苏晚清外出侦察未发现跟踪，但警惕性仍高**"
+    },
+    {
+      "hookId": "hook_苏家接应网运转",
+      "startChapter": 69,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 74,
+      "expectedPayoff": "岭南府城（接应网运转中）",
+      "payoffTiming": "mid-arc",
+      "notes": "69章推进：安福巷客栈→城西落星桥回春堂接应链运转中；71-72章：周掌柜纸条+抵达府城+甩掉跟踪；73章：**回春堂接头成功（暗号验证+周老伯接头+获得凤凰玉佩+获得老夫人信+获得包袱）**；**老夫人信揭露：城东福安巷济世堂/城南永和街布庄/城北清风巷书铺皆可联络**；**74章：苏晚清决定暂不联络其他接应点（等苏青能走再说）**"
+    },
+    {
+      "hookId": "hook_两个周砚",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 74,
+      "expectedPayoff": "岭南→落梅村→青石镇→府城（两股势力追人）",
+      "payoffTiming": "mid-arc",
+      "notes": "71章深化：府城门抓人+劲装汉子押送嫌犯+京城来人到府城查访；72章深化：客栈再次听到京城来人查苏家案子；73章深化：周老伯确认京城来人到处抓人+有人在查苏家旧账+冲着控神毒药配方；**74章深化：翠竹报告\"昨天城南抓了几个人今早砍了\"（京城来人行动）；客栈门口出现劲装男人（疑似与71章府城门劲装汉子有关联）**"
+    },
+    {
+      "hookId": "hook_控神毒药配方",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 74,
+      "expectedPayoff": "落梅村（风声过后回取）",
+      "payoffTiming": "mid-arc",
+      "notes": "71章新增：苏晚清获得周掌柜纸条（城西落星桥=回春堂接应点）；72章确认：明天去联络接应点；73章深化：周老伯转交凤凰玉佩+老夫人信确认\"两块合一方能打开苏家密库\"+另一块在苏青手中+周老伯警告配方牵涉太大最好别沾+但苏晚清决心迟早拿回来为苏家昭雪；**74章深化：苏青提及两块玉佩（\"念奴\"+ \"苏氏\"）+两块合璧开密库+配方重要性+苏晚清安抚\"等风过去了\"再取**"
+    },
+    {
+      "hookId": "hook_劲装男人",
+      "startChapter": 74,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 74,
+      "expectedPayoff": "岭南府城（身份待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**74章新增伏笔：客栈门口出现劲装男人（精瘦+下颌线硬+腰间挂刀+不像本地做派）+苏晚清联想到71章府城门劲装汉子+可能是同一伙人+威胁待确认**"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "chapter": 36,
+  "facts": [
+    {
+      "subject": "current_state",
+      "predicate": "note_1",
+      "object": "王德发：情绪弧线完成过渡（激动→稳定）；**妻子王淑芬在E-142休眠舱（已揭示）**；在E-142等待妻子；守护者职业已揭示（第一夜觉醒）；信息提供完整（末日降临机制+灵视者线索+白衣服女人）；**B2层入口见证妻子苏醒时刻**；**见证曾经的守护者同类（疑似刘建国）变成残骸**；**对守护者职业意义产生质疑**；**情绪稳定（专注于想见妻子而非悲痛）**；**进入\"别的地方\"后见到妻子的投影**；**得知妻子选择成为守护者**；见证陈默碎片触发",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_2",
+      "object": "李思雨：**观察者阶段**（灵视者弧线延后至第27-34章）；行为弧线完成过渡（隐瞒者→揭示者）；补充天空裂开观察；同行前往B3层；感知阵列嗡鸣异常；**以观察者身份感知而非灵视能力**；**在B3层感知\"观察者\"存在**；**见证E-032唤醒过程**；**感知到三十年前记忆碎片的存在**；见证陈默碎片触发；**第31章战斗现场指挥牵制任务**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_3",
+      "object": "赵磊：**身体异常（蓝光抵抗回收程序）；继承者协议信息转移中；手背疤痕残留蓝光痕迹；指尖发颤说\"痒\"**；发现血字下隐藏刮痕；发现返回时有新脚印跟随；**战斗中被68%影子攻击；蓝光已消失但仍有疤痕**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_4",
+      "object": "李国强：**B2层普通幸存者；女儿李雨薇（三楼失踪）**；见证陈默碎片触发",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_5",
+      "object": "**四个污染先驱者**：觉醒倒计时已过；污染指数15%/39%/50%/66%；退回休眠舱等待选择；**具有残余意识（能对话）**；**68%影子能力已展开（暗示与回收协议进程相关）**；**52%有残余意识并与陈默对话**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    }
+  ]
+}

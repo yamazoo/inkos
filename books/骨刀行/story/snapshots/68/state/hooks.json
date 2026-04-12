@@ -1,0 +1,113 @@
+{
+  "hooks": [
+    {
+      "hookId": "H110（\"她\"的符号）",
+      "startChapter": 66,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 68,
+      "expectedPayoff": "**基本揭示/待追问具体用法**",
+      "payoffTiming": "immediate",
+      "notes": "**66章：苏青禾在沙地上画符号→67章：苏青禾解释\"巢的入口\"→68章：苏青禾掏出自己的铁牌/牌面符号=圆圈弧线实心点/确认这就是\"巢的入口\"的标记→符号含义已明确：巢的入口标记→但具体如何使用（打开？进入？）仍待追问**"
+    },
+    {
+      "hookId": "H111（\"她\"的完整身份）",
+      "startChapter": 66,
+      "type": "**伏笔**",
+      "status": "resolved",
+      "lastAdvancedChapter": 67,
+      "expectedPayoff": "**67章基本揭示**",
+      "payoffTiming": "immediate",
+      "notes": "**66章：苏青禾短暂清醒/\"还是来了\"/\"哪个陆沉\"/时间线吻合→67章：身份完全确认（苏青禾/苏青荷妹妹/七年前见过母亲带铁匣子从巢里出来）→关键信息已获取→68章：身份无新推进→**基本回收**"
+    },
+    {
+      "hookId": "H112（陷阱的目的）",
+      "startChapter": 66,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 67,
+      "expectedPayoff": "待展开",
+      "payoffTiming": "mid-arc",
+      "notes": "**66章：发现太明显的陷阱（浮土+烂泥+弧形刮痕）→68章：无新推进**"
+    },
+    {
+      "hookId": "阿纱丈夫遗言",
+      "startChapter": 65,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 68,
+      "expectedPayoff": "待展开",
+      "payoffTiming": "mid-arc",
+      "notes": "**65章：阿纱丈夫遗言完整版/\"巢\"/不要找他/不要收/收了去有光的地方→67章：阿纱回忆丈夫/她全都做了→68章：**苏青禾透露更多信息（老六三年前从野猪肚子里发现铁牌→想回巢看看但不敢→青云宗找到他带路）→**联系阿纱丈夫：两人都知道\"巢\"/都收到/都去过/都死了？→阿纱丈夫信息来源仍未完全解释**"
+    },
+    {
+      "hookId": "H101（苏青禾真实身份）",
+      "startChapter": 64,
+      "type": "**剧情**",
+      "status": "resolved",
+      "lastAdvancedChapter": 67,
+      "expectedPayoff": "**67章回收**",
+      "payoffTiming": "immediate",
+      "notes": "**64章：苏青禾出现/\"她\"说\"还是来了\"/\"哪个陆沉\"→66章：身份基本确认→67章：身份完全确认（苏青禾/苏青荷妹妹）→68章：身份无新推进→**回收完成**"
+    },
+    {
+      "hookId": "H106（青云宗追踪）",
+      "startChapter": 64,
+      "type": "**剧情**",
+      "status": "progressing",
+      "lastAdvancedChapter": 68,
+      "expectedPayoff": "**紧急/持续**",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章：青云宗今晚或明早到达→66章：搜索队分成两路→67章：搜索失败/老六知道凹槽位置→68章：**青云宗三人出现在远处山脊（老六+沈师兄+疤脸）→正顺山脊往山下走→距离陆沉方向不远/时间紧迫→威胁等级提升为\"紧急\"**"
+    },
+    {
+      "hookId": "H113（\"别走\"刻字之谜）",
+      "startChapter": 67,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 68,
+      "expectedPayoff": "**重大揭示/基本回收**",
+      "notes": "**67章：阿纱摩挲铁匣\"别走\"刻字/自问含义→68章：苏青禾揭示\"别走\"是娘刻给姐姐的/让她别走→但姐姐还是走了→娘没留住她→陆沉揭示\"我爹也有一块\"/刻字一样→苏青禾揭示姐姐走之前把铁牌留给苏老实/让他\"别去找她\"→**关键发现：两块铁牌上的字不一样！铁匣子上是\"别走\"，苏老实的铁牌上是\"别找\"（让他别找她）→刻字真正含义部分揭示**"
+    },
+    {
+      "hookId": "H114（青云宗老六的身份）",
+      "startChapter": 67,
+      "type": "**新伏笔**",
+      "status": "progressing",
+      "lastAdvancedChapter": 68,
+      "expectedPayoff": "**持续深化**",
+      "payoffTiming": "mid-arc",
+      "notes": "**67章：苏青禾透露老六\"以前是猎户/这片山他走过\"→68章：**老六三年前在林子里挖陷阱/捉到一头野猪/野猪肚子里有铁牌（圆圈弧线实心点=巢的入口）→老六说这是从\"巢\"里出来的→他想回去看但不敢一个人→青云宗找到他/说能带他去→他带路了→老六在这片山打了十年猎/每一条路都走过→苏青禾评价\"好人/胆子太小/贪心\"→老六是向导/认识路/关键信息源**"
+    },
+    {
+      "hookId": "H115（\"别找\"vs\"别走\"的区别）",
+      "startChapter": 0,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 68,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**本章节新增：铁匣子上刻的是\"别走\"（娘让姐姐别走）；苏老实的铁牌上刻的是\"别找\"（姐姐让苏老实别找她）；两块铁牌上的字不一样！→含义不同→为什么要刻不同的字？→是不同的人刻的？→\"别走\"和\"别找\"背后有什么故事？**"
+    },
+    {
+      "hookId": "H116（\"有光之地\"详细信息）",
+      "startChapter": 68,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 68,
+      "expectedPayoff": "待展开",
+      "payoffTiming": "mid-arc",
+      "notes": "**本章节新增：苏青禾母亲知道\"有光之地\"/去过又回来了/\"它们\"不敢去→与阿纱信息一致→但苏青禾母亲为什么回来？→\"有光之地\"到底是什么地方？→为什么\"它们\"不敢去？→**与阿纱丈夫遗言中的\"有光之地\"相同**"
+    },
+    {
+      "hookId": "H117（苏老实临死前的真相）",
+      "startChapter": 68,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 68,
+      "expectedPayoff": "待展开",
+      "payoffTiming": "mid-arc",
+      "notes": "**本章节新增：陆沉想起苏老实临死前的样子/攥着铁牌/嘴里念着\"青荷\"→那块铁牌上刻的不是\"让她别走\"→是\"让他别找\"→**苏老实是被姐姐抛弃的？他临死前在念姐姐的名字？他对姐姐是什么感情？**"
+    }
+  ]
+}

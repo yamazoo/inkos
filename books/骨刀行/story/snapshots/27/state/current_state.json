@@ -1,0 +1,85 @@
+{
+  "chapter": 27,
+  "facts": [
+    {
+      "subject": "current_state",
+      "predicate": "当前故事线",
+      "object": "**青石镇逃亡线→确认苏青禾安全（已完成）→寻找孙麻子（紧急）→应对钱进追杀（进行中）**",
+      "validFromChapter": 27,
+      "validUntilChapter": null,
+      "sourceChapter": 27
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "**城东十五里/荒野破庙**",
+      "validFromChapter": 27,
+      "validUntilChapter": null,
+      "sourceChapter": 27
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "左臂麻木（恢复中）/右肩刀伤（钱进/已上金创药/恢复中）/右腰刀伤（钱进/已上金创药/恢复中）/双手伤口（恢复中）/双腿脱力（恢复中）/体温正常/**怀中：铁牌×1（苏老实遗物/\"别走\"铁牌/温热不烫）/荒卫令牌（荒卫司/三十七号/魏长归还/老头警告暂勿使用/父亲刻字\"别走\"）/脉晶（怀中/微光凉意）/碎碗片×1（孙麻子暗号/锅灰/城西方向）/短刀×1（孙麻子遗物/原钱进手下武器）/银袋（约17两）/剁骨刀（手中）**",
+      "validFromChapter": 27,
+      "validUntilChapter": null,
+      "sourceChapter": 27
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "**找地方躲藏养伤（进行中）→寻找孙麻子（紧急/马七派人带路）→查明令牌之谜（待推进）→追查父亲往事（待推进）→应对钱进追杀（进行中）**",
+      "validFromChapter": 27,
+      "validUntilChapter": null,
+      "sourceChapter": 27
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "**体力恢复中/钱进追杀令仍在生效/孙麻子失联（约两天）→可能被钱进的人截住或遇到灰白人/城北荒野有灰白人活动/被灰白人发现活动区域**",
+      "validFromChapter": 27,
+      "validUntilChapter": null,
+      "sourceChapter": 27
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "**黑虎帮（分散搜城中/往城北方向移动）/钱进手下仍有人手在活动/城中未知势力（杀老郎中者）/灰白人（城北树林/荒野活动）**",
+      "validFromChapter": 27,
+      "validUntilChapter": null,
+      "sourceChapter": 27
+    },
+    {
+      "subject": "current_state",
+      "predicate": "苏青禾状态",
+      "object": "**交给孙麻子出城（约两天前）→走城北方向（确认安全）→在山中等候（约两天）→与陆沉会合（完成）→被救出后前往破庙（孙麻子/马七的人）→脚伤恢复中/陆沉前往寻找孙麻子时留守**",
+      "validFromChapter": 27,
+      "validUntilChapter": null,
+      "sourceChapter": 27
+    },
+    {
+      "subject": "current_state",
+      "predicate": "孙麻子状态",
+      "object": "**送苏青禾出城（约两天前）→改走城北路线→探路未归（约两天）→可能出事（紧急/陆沉前往寻找）**",
+      "validFromChapter": 27,
+      "validUntilChapter": null,
+      "sourceChapter": 27
+    },
+    {
+      "subject": "current_state",
+      "predicate": "新增线索",
+      "object": "**城北树林有灰白人活动（折断树枝/踩碎落叶/能嗅到活人气味/走路姿势奇怪/皮肤灰白）/老头身份确认（父亲旧人/边军经历/替父亲挡过刀）/孟三与父亲关系（三十年前被父亲救过命/欠一条命）/父亲有五张关系网（孟三线/马七线已确认/另三条待查）/三十七人事件（火场三十七人/活下来不超过五个/都是被人一个一个找上门的）/令牌刻字\"别走\"确认是父亲字迹**",
+      "validFromChapter": 27,
+      "validUntilChapter": null,
+      "sourceChapter": 27
+    },
+    {
+      "subject": "current_state",
+      "predicate": "令牌信息",
+      "object": "**荒卫司三十七号/魏长归还（昏迷时保管）/老头警告暂勿使用/与边军有关/父亲当年因此惹祸/背面刻字\"别走\"（父亲字迹）**",
+      "validFromChapter": 27,
+      "validUntilChapter": null,
+      "sourceChapter": 27
+    }
+  ]
+}

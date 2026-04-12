@@ -1,0 +1,75 @@
+{
+  "chapter": 26,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**世界名称**：荒界"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "### 第一卷：县城风云（第1-60章）"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **找地方躲藏养伤（进行中）→确认孙麻子/苏青禾安全（紧急）→确认城西路线安全→继续往城西方向前进→查明令牌之谜（待推进）→追查父亲往事（待推进）**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 左臂恢复知觉（恢复中）/右肩刀伤（钱进）/右腰刀伤（钱进）/双手伤口（恢复中）/双腿脱力（恢复中）/体温正常/**怀中：铁牌×1（苏老实遗物/\"别走\"铁牌/温热不烫）/荒卫令牌（荒卫司/三十七号/魏长归还）/脉晶（怀中/微光凉意）/碎碗片×1（孙麻子暗号/锅灰/城西方向）**/银袋（约17两）/剁骨刀（手中）/金创药×1（老头所赠）"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | **体力恢复中/三天之限（约两日）→时间紧迫/孙麻子失联（约十一个时辰）→可能被钱进的人截住/城西树林有不明人员活动（折断树枝/踩碎落叶/快速移动）/被\"东西\"发现活动区域**"
+    },
+    {
+      "source": "story/chapter_summaries.md#23",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "第三十二章 残局 | ①击退两个黑虎帮小喽啰②得知老郎中死于戌时前后，见了一个\"个子不高、帽檐压得很低\"的人③背着脚踝扭伤的苏青禾到乱葬岗见孙麻子④孙麻子揭示：来人是钱进（钱通弟弟，黑虎帮二号人物）⑤苏青禾交给孙麻子出城⑥返回打开布包，发现是\"荒卫\"令牌⑦钱进带二十多人包围，揭露整个计划是圈套（从一开始就是钱进安排）⑧陆沉翻墙逃跑⑨掉入枯井躲避追兵⑩目前困在枯井中等待天亮 | 左臂伤彻底裂开；双手有新伤（抠井沿）；获得荒卫令牌；击退两个小喽啰；苏青禾已交给孙麻子出城；出城计划被打乱 | H086/H087/H088回收（老郎中死因/抵账品/苏青禾脱身）；H089/H090/H091/H092/H093新增（黑松林秘密/钱进动机/枯井困局/荒卫真相）"
+    },
+    {
+      "source": "story/chapter_summaries.md#24",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "井底沉星 | ①详细观察荒卫令牌（\"荒卫司\"+三十七编号+青铜材质+几十年包浆+边缘豁口）②两次追兵搜查枯井（未发现）③钱进确认：搜完乱葬岗没人、加派人手守城南门④陆沉推理：苏青禾是诱饵非棋子、钱进一石三鸟、孙麻子路线被泄露⑤决定从城东门出城（钱进重兵在城南门）⑥天亮后从枯井爬出 | 左臂彻底失去知觉（严重失血）；双手严重伤口（抠井沿）；**从枯井脱困**；荒卫令牌信息更新 | H091已回收（枯井困局脱困）；H092部分推进（令牌新细节）；H093/H094新增（钱进动机/苏青禾命运）"
+    },
+    {
+      "source": "story/chapter_summaries.md#25",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "城东危途 | ①陆沉从枯井爬出，找到水源②遭遇三个黑虎帮人，挤进人流逃脱③窄巷遇钱进，两人对峙④钱进承认杀老郎中、苏青禾路线是假消息⑤战斗：陆沉右肩和腰际受伤，用短刀当飞刀制造逃跑机会⑥翻墙逃脱⑦城门口伪装哑巴，混入人群出城⑧城外荒地跌倒脱力，陷入昏迷⑨老头（乱葬岗指路人）带人救走 | 左臂持续失血（无变化）；右肩新伤（钱进刀伤）；右侧腰际新伤（钱进刀伤）；双腿脱力（加重）；**短刀丢失**；**成功出城**；**昏迷** | H090部分回收（钱进令牌来源）；H093部分回收（钱进在城东门蹲守）；H094重大推进（被老头救走）；H095/H096/H097新增（城外骚动/老头身份/同伴）"
+    },
+    {
+      "source": "story/pending_hooks.md#新伏笔",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "剧情 | open | 待展开 | **父亲旧人网络**：老头+另一个声音，两人都是父亲旧识→父亲当年在边军有一张关系网？"
+    },
+    {
+      "source": "story/pending_hooks.md#H095",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "剧情 | open | 待定 | **部分推进**：城外骚动确认是\"另一个声音\"（父亲旧人）帮陆沉挡了追兵，与钱进的人发生冲突，有人被抬回；但具体是谁、与钱进冲突细节仍未明"
+    },
+    {
+      "source": "story/pending_hooks.md#父亲旧人网络",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "剧情 | progressing | 待定 | **老头+另一个声音，两人都是父亲旧识→父亲当年在边军有一张关系网？→老头透露：父亲惹过大事/烂账/还有人在**"
+    },
+    {
+      "source": "story/pending_hooks.md#H014（伏笔-钱进\"不能不要\"）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "伏笔 | open"
+    }
+  ]
+}

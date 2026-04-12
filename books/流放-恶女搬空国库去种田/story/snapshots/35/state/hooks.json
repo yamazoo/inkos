@@ -1,0 +1,112 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_落花坡",
+      "startChapter": 34,
+      "type": "危机伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待定",
+      "notes": "苏晏清布局→铁头执行→瘴气陷阱触发→脱险→落花坡蒙面人伏击→脱险；落花坡杀局首轮+二轮均已触发并脱险"
+    },
+    {
+      "hookId": "hook_铁头收买",
+      "startChapter": 34,
+      "type": "敌对伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待定",
+      "notes": "铁头被收买→执行瘴气陷阱→趁乱消失→下落不明；与城南驿馆有来往；铁头说\"落花坡好戏才开场\""
+    },
+    {
+      "hookId": "hook_暗处观察者",
+      "startChapter": 34,
+      "type": "悬念伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待定",
+      "notes": "盯着苏晚清房间→消失京城方向→瘴气林子闪现→夜间再次出现→脚印往北消失→密林方向"
+    },
+    {
+      "hookId": "hook_京城眼线",
+      "startChapter": 35,
+      "type": "情报伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待定",
+      "notes": "京城→岭南情报传递渠道确认；京城有人给岭南埋伏者通风报信"
+    },
+    {
+      "hookId": "hook_济世堂岭南分号",
+      "startChapter": 33,
+      "type": "情报伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "岭南",
+      "notes": "特制瘴气解药需求紧迫；岭南城西分号情报双确认"
+    },
+    {
+      "hookId": "hook_苏氏遗孤",
+      "startChapter": 36,
+      "type": "**身世伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待定",
+      "notes": "凤凰印记出现在蒙面人信上；\"苏氏遗孤，果然不凡\"；济世堂+凤凰印记+苏氏遗孤三者关联；身世之谜浮现"
+    },
+    {
+      "hookId": "hook_济世堂脉案篡改",
+      "startChapter": 29,
+      "type": "真相伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待定",
+      "notes": "二十三年前脉案篡改→济世堂岭南分号→济世堂岭南势力接触"
+    },
+    {
+      "hookId": "hook_双生胎真相",
+      "startChapter": 31,
+      "type": "身世伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待定",
+      "notes": "双生胎真相待揭露；苏氏遗孤可能与之相关"
+    },
+    {
+      "hookId": "hook_城西赵家阴谋",
+      "startChapter": 32,
+      "type": "阴谋伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 34,
+      "expectedPayoff": "待定",
+      "notes": "赵掌柜与济世堂岭南分号同城；关系待查"
+    },
+    {
+      "hookId": "hook_凤凰玉佩秘密",
+      "startChapter": 1,
+      "type": "身世伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待定",
+      "notes": "凤凰玉佩是母亲遗物→凤凰印记出现在济世堂信上→关联浮现"
+    },
+    {
+      "hookId": "hook_黑衣人身份",
+      "startChapter": 33,
+      "type": "悬念伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待定",
+      "notes": "瘴气林子闪现→身手不弱→与铁头或济世堂关系待定"
+    },
+    {
+      "hookId": "hook_城南驿馆",
+      "startChapter": 36,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待定",
+      "notes": "铁头与城南驿馆掌柜儿子称兄道弟；驿馆是官府办，往来公文必经；铁头消息渠道可能超出押送官范围"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "chapter": 19,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\runtime\\chapter-0019.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\runtime\\chapter-0019.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "story/chapter_summaries.md#12",
+    "story/chapter_summaries.md#16",
+    "story/chapter_summaries.md#17",
+    "story/chapter_summaries.md#18",
+    "story/pending_hooks.md#H030: 确认音\"咯噔\"",
+    "story/pending_hooks.md#H030",
+    "story/pending_hooks.md#H045",
+    "story/pending_hooks.md#H049",
+    "story/pending_hooks.md#H065: 守墓人身份",
+    "story/pending_hooks.md#H078: 先驱者协议第七条",
+    "story/pending_hooks.md#E1·末日降临",
+    "story/pending_hooks.md#H001"
+  ],
+  "notes": []
+}

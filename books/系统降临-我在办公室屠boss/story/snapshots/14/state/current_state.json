@@ -1,0 +1,37 @@
+{
+  "chapter": 36,
+  "facts": [
+    {
+      "subject": "current_state",
+      "predicate": "note_1",
+      "object": "王德发：情绪弧线完成过渡（激动→稳定）；**妻子王淑芬在E-142休眠舱（已揭示）**；在E-142等待妻子；守护者职业已揭示（第一夜觉醒）；信息提供完整（末日降临机制+灵视者线索+白衣服女人）；**B2层入口见证妻子苏醒时刻**；**见证曾经的守护者同类（疑似刘建国）变成残骸**；**对守护者职业意义产生质疑**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_2",
+      "object": "李思雨：**观察者阶段**（灵视者弧线延后至第27-34章）；行为弧线完成过渡（隐瞒者→揭示者）；补充天空裂开观察；同行前往B3层；感知阵列嗡鸣异常；**以观察者身份感知而非灵视能力**；**在B3层感知\"观察者\"存在**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_3",
+      "object": "赵磊：**身体异常（蓝光抵抗回收程序）；继承者协议信息转移中；手背疤痕残留蓝光痕迹**；发现血字下隐藏刮痕；发现返回时有新脚印跟随",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_4",
+      "object": "李国强：**B2层普通幸存者；女儿李雨薇（三楼失踪）**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "chapter": 2,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0002.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0002.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#chapter_1_bridge",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/current_state.md#当前限制",
+    "story/current_state.md#读者悬念锚点",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/chapter_summaries.md#1"
+  ],
+  "notes": []
+}

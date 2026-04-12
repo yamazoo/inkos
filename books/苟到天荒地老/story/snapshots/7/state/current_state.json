@@ -1,0 +1,61 @@
+{
+  "chapter": 7,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "大劫真相揭露（青云门维持天裂）；小鱼可能是针；周老爷子命悬一线；三天后危机",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "郑怀恩（信息提供者）；周公子（委托人）；老庙主（立场不明，可能保护者）",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "解周老爷子毒·查老郎中底·追钱广线·探老庙主·保护小鱼不知真相·应对三天后玉简再热",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "回春堂",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "三天倒计时；青云门在外监视；必须保护小鱼不知自己是针",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    },
+    {
+      "subject": "current_state",
+      "predicate": "新增状态项",
+      "object": "老道士庇护生效（挡住青云门火攻）；青云门不敢硬闯（不确定针在谁手里）；郑怀恩揭示关键信息（针的特质、三年前老庙主截印记、老道士救郑怀恩）；石子上针形凹痕与青云门灭门石板符号关联；周老爷子危急（顾长命必须出诊）；小鱼梦呓\"针\"（确认与针有联系）",
+      "validFromChapter": 6,
+      "validUntilChapter": null,
+      "sourceChapter": 6
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "警觉·沉思·坚定·内心震动（得知大劫真相与小鱼可能相关）",
+      "validFromChapter": 7,
+      "validUntilChapter": null,
+      "sourceChapter": 7
+    }
+  ]
+}

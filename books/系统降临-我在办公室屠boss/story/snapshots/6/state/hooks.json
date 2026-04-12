@@ -1,0 +1,436 @@
+{
+  "hooks": [
+    {
+      "hookId": "H086",
+      "startChapter": 0,
+      "type": "mid-arc",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H087",
+      "startChapter": 0,
+      "type": "-",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H085",
+      "startChapter": 0,
+      "type": "-",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H090",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "Ch.5-8",
+      "notes": "系统界面给陈默\"莫名熟悉感\"——暗示系统创造者身份"
+    },
+    {
+      "hookId": "H091",
+      "startChapter": 5,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "Ch.5-8",
+      "notes": "**检测到橙色信号源（使徒方向）——第3章钩子**"
+    },
+    {
+      "hookId": "H088",
+      "startChapter": 6,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "15章内",
+      "notes": "赵磊伤口异常愈合→做梦梦见数据流→**陈默记录此异常→李思雨提及赵磊做梦**"
+    },
+    {
+      "hookId": "H089",
+      "startChapter": 6,
+      "type": "情节",
+      "status": "progressing",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "20章内",
+      "notes": "王德发情绪压力→坚持要唤醒妻子→老张劝他在E-142边等→情绪暂时稳定"
+    },
+    {
+      "hookId": "H084",
+      "startChapter": 0,
+      "type": "情节",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "\"保护他们/保护自己\"测试→陈默质疑非此即彼→光柱揭示\"代价是选择\"→第三个选项可能性深化",
+      "notes": ""
+    },
+    {
+      "hookId": "E1·末日降临",
+      "startChapter": 2,
+      "type": "情节",
+      "status": "progressing",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "10章内",
+      "notes": "末日降临正式开启"
+    },
+    {
+      "hookId": "H001",
+      "startChapter": 0,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "待定",
+      "notes": "待定"
+    },
+    {
+      "hookId": "H002",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "待定",
+      "notes": "神秘掉落物品「???」无法鉴定 - 第2章「???」对财务室方向产生微弱反应"
+    },
+    {
+      "hookId": "H003",
+      "startChapter": 0,
+      "type": "-",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H007",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "待定",
+      "notes": "污染体\"核心能量核\"弱点与污染核心掉落物的关联"
+    },
+    {
+      "hookId": "H008",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "待定",
+      "notes": "系统能量机制（100%→92%，基础鉴定消耗5%）"
+    },
+    {
+      "hookId": "H090（新）",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "Ch.5-8",
+      "notes": "**系统界面给陈默\"莫名熟悉感\"——暗示三十年前创造者身份**"
+    },
+    {
+      "hookId": "H091（新）",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "Ch.5-8",
+      "notes": "**检测到橙色信号源（使徒方向）——第3章钩子**"
+    },
+    {
+      "hookId": "H092（新）",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "Ch.5-8",
+      "notes": "**李雨薇手中订书机的特殊含义——第3章可回收**"
+    },
+    {
+      "hookId": "H004",
+      "startChapter": 0,
+      "type": "-",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H005",
+      "startChapter": 0,
+      "type": "-",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H006",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "office_uncertainty",
+      "startChapter": 0,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "待定",
+      "notes": "办公室同事的命运（暗示已知但不可控）"
+    },
+    {
+      "hookId": "H090（新）",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.5-8",
+      "notes": "系统界面给陈默\"莫名熟悉感\""
+    },
+    {
+      "hookId": "H091（新）",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.5-8",
+      "notes": "检测到橙色信号源（使徒方向）"
+    },
+    {
+      "hookId": "H092（新）",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "Ch.5-8",
+      "notes": "观测者扫描威胁"
+    },
+    {
+      "hookId": "H092",
+      "startChapter": 5,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "Ch.5-8",
+      "notes": "**李雨薇手中订书机的特殊含义——第3章可回收**"
+    },
+    {
+      "hookId": "H093（新增）",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "橙圈女人\"下次见面\"——暗示陆焚会在某处等待",
+      "notes": ""
+    },
+    {
+      "hookId": "H094（新增）",
+      "startChapter": 2,
+      "type": "情节",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "李雨薇在财务部虚掩门内——章尾悬念",
+      "notes": ""
+    },
+    {
+      "hookId": "H095（新增）",
+      "startChapter": 2,
+      "type": "情节",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "走廊那双红色眼睛去向——章尾悬念",
+      "notes": ""
+    },
+    {
+      "hookId": "H009",
+      "startChapter": 3,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "污染体追踪机制——速度略快于汽车但不进窄巷",
+      "notes": ""
+    },
+    {
+      "hookId": "H010",
+      "startChapter": 3,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "笔记本预言者——李思雨父亲三天前去世，留下\"末日快来了\"警告",
+      "notes": ""
+    },
+    {
+      "hookId": "H093",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "20章内",
+      "notes": "**仓库深处检测到可疑红点——未知威胁**"
+    },
+    {
+      "hookId": "H094",
+      "startChapter": 3,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 3,
+      "expectedPayoff": "Ch.6-10",
+      "notes": "**李父提到的\"陆姓同事\"——橙色信号源可能相关**"
+    },
+    {
+      "hookId": "H095",
+      "startChapter": 0,
+      "type": "**待推进**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H025",
+      "startChapter": 6,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "20章内",
+      "notes": "非绑定单位——系统定义新来的三人为\"非绑定单位\"，暗示筛选机制存在"
+    },
+    {
+      "hookId": "H026",
+      "startChapter": 6,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "20章内",
+      "notes": "李父意识独立存在——附身时声音是李父，但上次灵视中\"看不清脸\"的人不是李父"
+    },
+    {
+      "hookId": "H031",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "李远山是先驱者/先觉者身份确认；遗物在仓库发现",
+      "notes": ""
+    },
+    {
+      "hookId": "H034",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "赵磊身份——无系统；老板参与先驱者计划已揭示",
+      "notes": ""
+    },
+    {
+      "hookId": "H040",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "先驱者与先觉者联盟——二十年前已开始传承；\"那个人\"身份模糊",
+      "notes": ""
+    },
+    {
+      "hookId": "H096",
+      "startChapter": 0,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "B2层深处存在与「???」共振的未知源",
+      "notes": ""
+    },
+    {
+      "hookId": "H097",
+      "startChapter": 0,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "李雨薇三楼财务室位置确认；通讯器无信号",
+      "notes": ""
+    },
+    {
+      "hookId": "H098",
+      "startChapter": 0,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "赵磊末日降临时看到天空数据流裂缝；无系统但获得觉醒者级感知能力",
+      "notes": ""
+    },
+    {
+      "hookId": "H036",
+      "startChapter": 0,
+      "type": "0",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H037",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "\"第一亿三千七百万赛季\"含义待揭示",
+      "notes": ""
+    },
+    {
+      "hookId": "H023",
+      "startChapter": 5,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "20章内",
+      "notes": "\"确认同步\"——系统术语，与李父警告\"这是筛选\"关联浮现"
+    },
+    {
+      "hookId": "H030",
+      "startChapter": 0,
+      "type": "27",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H064",
+      "startChapter": 0,
+      "type": "22",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H076",
+      "startChapter": 0,
+      "type": "27",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H077",
+      "startChapter": 0,
+      "type": "27",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    }
+  ]
+}

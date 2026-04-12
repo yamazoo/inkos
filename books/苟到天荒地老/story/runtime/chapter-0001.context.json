@@ -1,0 +1,50 @@
+{
+  "chapter": 1,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第17章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "(状态卡未更新)"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "灵气稀薄：仅为上古的千分之一"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "揭露大劫真相"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 末法灵气稀薄；不能暴露筑基实力；周天成觊觎回春堂"
+    },
+    {
+      "source": "story/current_state.md#读者悬念锚点",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "读者悬念锚点 | 1. 主角如何化解青云门盘查？→ 第1-3章<br>2. 主角的筑基实力何时展现？→ 第8-10章<br>3. 周天成最终下场？→ 第16-18章<br>4. 小鱼身世之谜 → 第31章开始铺垫<br>5. 大劫真相 → 第125章揭露"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 青云门弟子盘查 → 主角如何应对而不暴露？"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 活下去，继续苟，不暴露身份"
+    }
+  ]
+}

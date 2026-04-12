@@ -1,0 +1,53 @@
+{
+  "chapter": 13,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "黑松林（距骨庙约两里）",
+      "validFromChapter": 13,
+      "validUntilChapter": null,
+      "sourceChapter": 13
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "气血6.2/剁骨刀法25/伤势好转可走路/怀揣短刀+剁骨刀/获得兽皮地图/已完成第一件事/陆家一半人获释",
+      "validFromChapter": 13,
+      "validUntilChapter": null,
+      "sourceChapter": 13
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "**完成三件事→获取黑虎锻骨功→变强→救陆沧海→黑松林取东西（骨庙）→苏青禾三天后同行→调查苏父失踪",
+      "validFromChapter": 13,
+      "validUntilChapter": null,
+      "sourceChapter": 13
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "黑虎帮全城搜捕（已通过谈判暂时缓和）/三天期限/陆沧海作人质",
+      "validFromChapter": 13,
+      "validUntilChapter": null,
+      "sourceChapter": 13
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "周铁山（锻骨境中期/黑虎帮当家/要他去骨庙取东西）；钱通（鬼眼/情报未明）；苏青禾（安全/药铺/三天后同行黑松林）；黑松林活死人（危险/后颈有洞/空眼眶）",
+      "validFromChapter": 13,
+      "validUntilChapter": null,
+      "sourceChapter": 13
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "三天内完成交易（三件事）→获取黑虎锻骨功→救陆沧海→黑松林两件事（苏父+周铁山东西）",
+      "validFromChapter": 13,
+      "validUntilChapter": null,
+      "sourceChapter": 13
+    }
+  ]
+}

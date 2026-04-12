@@ -1,0 +1,135 @@
+{
+  "chapter": 44,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第43章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**入侵触发时间**：2024年某夜23:59:59，所有人同时听到同一句话：\"赛季开启，欢迎降临\""
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "核心冲突抛出"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "43: 抉择之前 | 42: 零点协议 | 41: 末日第一夜 | 40: 回响 | 39: 橙色降临"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "43: **紧张→揭秘→坚定→思索→决心→悬念→释然→温情→坚定** / **揭秘+决策转折章** | 42: **震惊→紧张→揭秘→坚定→战斗准备→揭秘→思索→震惊→揭秘→战斗准备→高潮→悬念** / **高潮揭示+悬念章** | 41: 震惊→思索→揭秘→沉重→决心→坚定→高潮→揭秘→坚定→思索→揭秘→坚定→悬念 / **高潮揭示+悬念章** | 40: 思索→紧张→希望→决心→悬念→紧迫→坚定 / **推进+情报收集章** | 39: 紧绷→机智逃脱→暂时喘息 / 推进章"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch41: 仿佛有什么东西在等待。 | ch42: \"你觉得你还有第三个选择吗？\" | ch43: 还有三百二十五天。"
+    },
+    {
+      "source": "runtime/hook_debt#H099陈默真实身份",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H099陈默真实身份（大伏笔（真相），可兑现旧债，已开6章） | 读者承诺：卷末 | 种于第38章：ch38 觉醒的代价 - 融合协议执行→同步率100%→E-032唤醒完成→进入意识空间→末日场景展示→E-032人格揭示→**陈默真实身份揭示（A-001/三十年前的先驱者）**→**陆焚追踪原因揭示（源代码）**→融合完成→**陆焚入侵警报（3分钟）**→陈默准备战斗 | 推进于第43章：ch43 抉择之前 - **引导者提出三个选择（意识接管/交出源代码/被困死）**；陈默拒绝三选一，提出找第四个选项；**揭示源代码326天后反噬（不稳定率246.9%）**；增长率可变理论提出；**E-032评价\"你在赌\"/\"你和他不一样\"**；陆焚主动切断通讯；**E-017身份存疑**；陈默与李思雨汇合安全区；陈默向李思雨解释真相；安全区内短暂休息"
+    },
+    {
+      "source": "runtime/hook_debt#mystery-001陈默真实身份过去",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "mystery-001陈默真实身份过去（mystery，主要旧债，已开5章） | 读者承诺：卷末 | 种于第39章：ch39 橙色降临 - 陆焚追杀至B3层休眠舱阵列，陈默利用继承者协议第七条和墙壁符号压制使徒权限的漏洞成功逃脱至中央机器底层，系统能量消耗至11%。 | 推进于第43章：ch43 抉择之前 - **引导者提出三个选择（意识接管/交出源代码/被困死）**；陈默拒绝三选一，提出找第四个选项；**揭示源代码326天后反噬（不稳定率246.9%）**；增长率可变理论提出；**E-032评价\"你在赌\"/\"你和他不一样\"**；陆焚主动切断通讯；**E-017身份存疑**；陈默与李思雨汇合安全区；陈默向李思雨解释真相；安全区内短暂休息"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 源代码同步不稳定率持续上涨（326天倒计时）；引导者三个选择悬而未决；陆焚位置不明威胁；寻找第四个选项；E-017身份之谜；需要在剩余时间内找到稳定源代码的方法"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **压低源代码同步不稳定率增长率**→寻找第四个选项→修复源代码同步→阻止末日协议最终阶段"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 【系统绑定成功】【觉醒者Lv.1】【系统能量10.8%】【已绑定状态】【休眠舱阵列同步率100%】【中央机器同步率47.3%】【窗口期325天】【继承者身份确认完成】【唤醒协议执行完成】【融合协议执行完成】【继承者→A-001（三十年前的先驱者本人）】【人机混合体（意识双核）】【系统源代码存储中】【源代码同步不稳定】【源代码同步不稳定率8.1%（每小时+0.3%）】【眉心纹路激活（融合痕迹）】【E-032意识共振/从意识深处传来声音】"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 系统能量极低（10.8%）；陆焚主动切断通讯/位置不明；源代码同步不稳定率持续上涨（8.1%/小时+0.3%）；326天后源代码反噬（不稳定率达246.9%）；引导者程序在场（三个选择悬而未决）；陆焚通过继承者标记永久通讯连接（可单方面切断）；E-017身份存疑"
+    },
+    {
+      "source": "story/chapter_summaries.md#37",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "继承者的重量 | 光柱提出继承者身份确认；唤醒协议vs继承协议互斥；陈默发现\"第三个选项\"（融合协议）；E-032揭示末日真相（系统失控/观测者逃逸/清洗计划）；陈默双手按在休眠舱启动融合协议；同步率47.8%（临界值50%）；融合协议代价未知 | 同步率42.3%→47.8%；E-032唤醒进度3%→17%；陈默状态：思索→决心→震惊→坚定；融合协议已启动；双手发光蔓延至小臂；光柱震颤；整个B3层被照亮 | H084深化（融合协议提出并启动）；H085深化（末日真相揭示）；H086推进（墙壁符号同步加速）；H087深化（光柱核心）；H088深化（黑暗深处苏醒迹象）；H089推进（同步率差异）；H090深化（赵磊梦境呼应）；H091深化（三选一到融合）；H092推进（徽章共振）；H093推进（规则漏洞）；**H094新埋（融合代价）**；**H095新埋（历史碎片画面）**；**H096新埋（黑暗深处苏醒）**；**H097深化（系统失控真相）**；**H098深化（融合存在）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#41",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "末日第一夜 | 墙壁符号传递A-001融合失败记忆；陆焚揭示真相（A-001反抗导致系统失控/末日是烂摊子）；继承者协议第七条触发压制陆焚；同步率30.1%→47.3%；成功与队友汇合；S-001身份揭示（第一个继承者/E-017是后门）；核心区域激活/末日协议最终阶段启动 | 位置：维护序列尽头→汇合点；中央机器同步率30.1%→47.3%；眉心纹路激活；E-032与核心区域共振；陆焚被暂时阻止于门外 | H096回收（黑暗深处苏醒/核心区域激活）；H101深化（S-001=第一个继承者）；H102深化（融合体共振）；H103深化（E-017=后门）；H104深化（陆焚嘲讽）；H099深化（A-001融合失败真相）；S093推进（陆焚对峙）；S089回收"
+    },
+    {
+      "source": "story/chapter_summaries.md#42",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "零点协议 | 继承者协议第七条压制衰减（27秒）；陆焚揭示末日真相（清洗/A-001打开通道）；陈默利用A-001权限临时强化压制陆焚；成功进入核心区域；源代码同步失败（需要创造者权限）；权限让渡协议激活；**引导者程序现身（与陈默一模一样的轮廓）**；**揭示引导者=观测者最后一步棋=三十年的收割陷阱**；**E-032从意识深处传来声音**；**陆焚通过继承者标记永久连接**；**三个困境选择** | 位置：通道尽头→核心区域圆形空间；继承者协议第七条临时强化触发；源代码同步失败（47.3%/需要创造者权限）；继承路径异常；未授权意识残留检测；E-032意识共振 | **H105新埋（引导者程序/三十年的收割陷阱）**；H004深化（陆焚永久通讯连接）；H086深化（墙壁符号强化压制）；H099深化（A-001打开通道导致末日）；H100深化（末日是清洗）；H102深化（E-032意识深处声音）；H103深化（E-017发现第三者信号）；H104深化（完整嘲讽内容）；plot-核心区域深化（同步失败/权限问题）；mystery-001深化（A-001融合失败真相补充）"
+    },
+    {
+      "source": "story/chapter_summaries.md#43",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "抉择之前 | **引导者提出三个选择（意识接管/交出源代码/被困死）**；陈默拒绝三选一，提出找第四个选项；**揭示源代码326天后反噬（不稳定率246.9%）**；增长率可变理论提出；**E-032评价\"你在赌\"/\"你和他不一样\"**；陆焚主动切断通讯；**E-017身份存疑**；陈默与李思雨汇合安全区；陈默向李思雨解释真相；安全区内短暂休息 | 位置：核心区域圆形空间→安全区；窗口期326天→325天；源代码同步不稳定率8.1%（持续上涨）；陆焚状态：被压制→主动切断通讯/位置不明 | **H105深化**（引导者三选择/源代码反噬/第四个选项）；**H103深化**（E-017身份存疑）；H106新埋（增长率可变）；H107新埋（第四个选项）；H102深化（E-032持续共振）；H104深化（陆焚主动断开）；H101深化（S-001等待三十年）；mystery-001深化（A-001中断融合真相）"
+    },
+    {
+      "source": "story/pending_hooks.md#H106增长率可变",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**情节** | open | **近期** | **新埋**：源代码同步不稳定率增长率8.1%/小时+0.3%；这个增长率可以被改变吗？如果能压低增长率，时间窗口可能更长"
+    },
+    {
+      "source": "story/pending_hooks.md#H107第四个选项",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**情节** | open | **10章内** | **新埋**：陈默拒绝三选一；目标是在源代码稳定情况下找到第四个选项；引导者质疑\"增长率能被改变吗？\"；E-032评价\"你在赌\"；陈默\"那就找个新的下法\""
+    },
+    {
+      "source": "story/pending_hooks.md#H105引导者程序",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "大伏笔（真相） | open | **卷末** | **重大深化**：引导者揭示三个选择（意识接管/交出源代码/被困死）；揭示源代码326天后反噬（不稳定率达246.9%）；陈默拒绝三选一，提出寻找第四个选项；增长率可变（可压低？）；引导者消失但悬而未决"
+    },
+    {
+      "source": "story/pending_hooks.md#H101S-001身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "中伏笔（情节） | progressing | **10章内** | mid-arc | **深化**：E-017是S-001留下的后门；S-001是第一个继承者候选人；S-001发现引导者存在后选择另一条路；创造E-017等待另一个继承者；引导者说S-001等了三十年"
+    },
+    {
+      "source": "story/pending_hooks.md#H102融合体共振",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "情节 | progressing | 待观察 | mid-arc | **持续深化**：E-032从意识深处传来声音（更清晰）；陈默与E-032高速双核运转；E-032提示\"增长率可变\"；墙壁符号在黑暗中持续发光"
+    },
+    {
+      "source": "story/pending_hooks.md#H103E-017独立节点",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "情节 | open | **近期** | **重大深化+悬念**：E-017帮陈默进入核心区域、建立通讯、发建筑结构图；但S-001创造它的目的是\"帮继承者绕过收割程序\"→E-017到底是S-001的后手、引导者的后手、还是有自己的想法？"
+    },
+    {
+      "source": "story/pending_hooks.md#H104陆焚嘲讽",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "情节 | progressing | 10章内 | slow-burn | **持续深化**：陆焚主动切断通讯；压制结束后恢复行动能力；选择断开不想被追踪；可能在等待另一个时机"
+    },
+    {
+      "source": "story/pending_hooks.md#mystery-001陈默真实身份过去",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | progressing | 卷末 | slow-burn | **持续深化**：A-001在同步率50%时发现引导者存在；发现后主动中断融合导致源代码不稳定；打开通道让观测者离开导致末日（但末日是必然）"
+    }
+  ]
+}

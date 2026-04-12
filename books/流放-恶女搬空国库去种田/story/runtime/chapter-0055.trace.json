@@ -1,0 +1,28 @@
+{
+  "chapter": 55,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0055.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0055.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#33",
+    "story/chapter_summaries.md#37",
+    "story/chapter_summaries.md#43",
+    "story/chapter_summaries.md#44",
+    "story/pending_hooks.md#hook_镇国公府追杀",
+    "story/pending_hooks.md#hook_姓孙的押送兵",
+    "story/pending_hooks.md#hook_孙押役内鬼",
+    "story/pending_hooks.md#hook_济世堂岭南城西分号"
+  ],
+  "notes": []
+}

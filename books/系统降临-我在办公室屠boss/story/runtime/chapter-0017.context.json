@@ -1,0 +1,115 @@
+{
+  "chapter": 17,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第34章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "**主角状态** | 【系统绑定成功】【觉醒者Lv.1】【系统能量41%】【未绑定状态】"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**入侵触发时间**：2024年某夜23:59:59，所有人同时听到同一句话：\"赛季开启，欢迎降临\""
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "**卷名**：觉醒——末日降临的第一天"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "16: 末日第二天·守护者的代价 | 15: 营地·信息风暴 | 14: 末日第二天·B3层的回响 | 13: 末日第二天·守护者的重量 | 12: 地下停车场·B2层的发现"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "16: 沉重→震惊→冷静分析→沉重思索→警觉 / 信息揭示+关系深化+悬疑铺垫 | 15: 紧张→对峙→信息整合→沉重思索→计划行动 / 信息揭示+关系协调+悬疑深化 | 14: 紧张探索→震惊发现→信息整合→沉重思索→团队决策 / 探索+悬疑揭示+情感深化 | 13: 沉重→信息整合→思索→使命确认→希望浮现→计划行动 / 休整章+信息整合+关系深化+计划章 | 12: 探索→紧张→震惊→信息整合→使命思索→希望感→信任深化 / 探索+悬疑揭示+关系深化"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch14: 而B3层深处那个休眠舱的秘密，还在等待着被揭开。 | ch15: 未出场但被提及：李远山、神秘灵视者 | ch16: 也许，早就不是人了。"
+    },
+    {
+      "source": "story/current_state.md#note-5",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "note_5 | 李雨薇：待救援/财务部实习生/第一天上班/长发偏瘦"
+    },
+    {
+      "source": "story/current_state.md#note-3",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "note_3 | 赵磊：觉醒者/协助者/身体出现D-127纹路/梦里看到D-127数字"
+    },
+    {
+      "source": "story/current_state.md#note-4",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "note_4 | 李国强：觉醒者/B2层幸存者/财务部老员工（17年）/女儿李雨薇在3楼财务室/等待救援结果"
+    },
+    {
+      "source": "story/chapter_summaries.md#8",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "末日第二天·仓库深眠 | 仓库探索→铁箱子开启→发现纸条/休眠核心/历史照片→李远山身份揭示→赵磊对话→确认第一天有人听到不同内容→赵磊加入队伍 | 位置：超市+仓库（探索完成）；获得休眠核心（稀有）；获得符文锁芯损坏（稀有）；赵磊正式加入队伍；能量92%；新发现：李远山是\"第一个发现真相的人\" | H027已回收；H024/H031推进（观测者计划+李远山真相）；H028/H030/H035新埋/推进（筛选机制）；H034新埋（赵磊身份）；E1末日第二天进行中"
+    },
+    {
+      "source": "story/chapter_summaries.md#9",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "末日第二天·休眠核心 | 赵磊揭示第一天入侵差异（听到不同内容对应不同结果）；确认\"筛选机制\"存在且与职业相关；李思雨灵视看到休眠核心里有女人；污染体围攻超市；制作同步稳定器；撤退到仓库区；战斗开始 | 位置：超市→仓库区；能量92%→42%（-50%制作）；休眠核心消耗；获得同步稳定器×1；污染核心×3消耗；赵磊正式加入战斗 | H036新埋（休眠核心里有女人）；H037新埋（第一亿三千七百万赛季）；H038/H039新埋（同步稳定器功能）；H028/H030/H031/H034/H035推进（筛选机制）；E1末日第二天战斗高潮"
+    },
+    {
+      "source": "story/chapter_summaries.md#12",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "地下停车场·B2层的发现 | 探索B2层→发现被困保安王德发→揭示第一天觉醒信息+守护者职业→揭示筛选机制核心机制（答案不重要，选择原因才重要）→揭示神秘灵视者造访并留下物品→获得先驱者徽章+纸条（\"先驱者继承者欢迎回来+寻找第二枚钥匙\"）→救援王德发回营地→李思雨分析三重信息 | 位置：B1→B2设备间→营地；新幸存者+1（王德发）；获得物品：先驱者徽章×1、神秘纸条2；**队伍扩充至17人** | H042/H043/H044/H045/H046/H047/H048新埋；H030/H035/H041推进；**圆环符号关联（白衣女人光圈vs灵视者纹身）深化**；**神秘灵视者线索增加**；E1末日第二天继续"
+    },
+    {
+      "source": "story/chapter_summaries.md#16",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "末日第二天·守护者的代价 | **老张质问守护者职责→李思雨冷静判定\"第一夜结束，职责定义上完成\"→王德发揭示妻子自愿进入休眠舱（带着微笑）→推测妻子听到了不同版本的问题→陈默想不起第一天听到了什么→王德发透露\"答案没办法告诉别人\"→明天计划去B3寻找答案→\"欢迎回来\"引发新疑问→所有人可能被某个人引导着** | 位置未变（B2层营地）；老张情绪：愤怒→被说服→沉默消化；王德发情绪脆弱→需要休息；李思雨展现冷静判定能力；**新增伏笔5个（H046-H050）** | H045/H030/H035重大推进；H046-H050新埋；情感弧线深化（老张、王德发）；关系变化（陈默-老张建立信任）"
+    },
+    {
+      "source": "story/pending_hooks.md#H002",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | Ch.120 | 神秘掉落物品「???」无法鉴定 - 触发观测者扫描"
+    },
+    {
+      "source": "story/pending_hooks.md#H003",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | Ch.35+ | 脚步声接近23层 - 本章发现声音特征与三楼楼梯间脚步声相似"
+    },
+    {
+      "source": "story/pending_hooks.md#H049",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | Ch.20 | 第一天入侵记忆缺失"
+    },
+    {
+      "source": "story/pending_hooks.md#E1·末日降临",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "系统觉醒之夜 | open | - | 系统绑定完成，原住民出现，观测者扫描"
+    },
+    {
+      "source": "story/pending_hooks.md#H001",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "15 | open"
+    },
+    {
+      "source": "story/pending_hooks.md#E-032",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | Ch.50 | E-032心跳声 - 创造系统的人正在苏醒"
+    },
+    {
+      "source": "story/pending_hooks.md#H004",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | Ch.120 | 陆焚身份与目的 - 使徒，主动撤离，对陈默产生兴趣"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "chapter": 47,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\runtime\\chapter-0047.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\runtime\\chapter-0047.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#37",
+    "story/chapter_summaries.md#44",
+    "story/chapter_summaries.md#45",
+    "story/chapter_summaries.md#46",
+    "story/pending_hooks.md#H112L-00X身世真相",
+    "story/pending_hooks.md#H113L-00X父亲之谜",
+    "story/pending_hooks.md#H114S-001真正目的",
+    "story/pending_hooks.md#H106增长率可变",
+    "story/pending_hooks.md#H107第四个选项",
+    "story/pending_hooks.md#H105引导者程序",
+    "story/pending_hooks.md#H104陆焚嘲讽",
+    "story/pending_hooks.md#H101S-001身份"
+  ],
+  "notes": []
+}

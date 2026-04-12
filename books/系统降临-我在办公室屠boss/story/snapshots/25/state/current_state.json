@@ -1,0 +1,53 @@
+{
+  "chapter": 36,
+  "facts": [
+    {
+      "subject": "current_state",
+      "predicate": "note_1",
+      "object": "陆焚：使徒/橙色光圈标记/猎杀普通玩家/主动撤离/对陈默产生兴趣",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_2",
+      "object": "王德发：守护者/B2层保安/妻子王淑芬在E-142休眠舱/职业恢复/**已知妻子自愿休眠守护原因**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_3",
+      "object": "赵磊：觉醒者/协助者/身体出现D-127纹路/梦里看到D-127数字",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_4",
+      "object": "李国强：觉醒者/B2层幸存者/财务部老员工（17年）/女儿李雨薇在3楼财务室/等待救援结果",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_5",
+      "object": "李雨薇：待救援/财务部实习生/第一天上班/长发偏瘦",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    },
+    {
+      "subject": "current_state",
+      "predicate": "note_6",
+      "object": "**E-032：创造系统的人/正在苏醒/首次发声/\"终于\"**",
+      "validFromChapter": 36,
+      "validUntilChapter": null,
+      "sourceChapter": 36
+    }
+  ]
+}

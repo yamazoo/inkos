@@ -1,0 +1,84 @@
+{
+  "hooks": [
+    {
+      "hookId": "H004",
+      "startChapter": 1,
+      "type": "设定",
+      "status": "progressing",
+      "lastAdvancedChapter": 13,
+      "expectedPayoff": "125",
+      "payoffTiming": "endgame",
+      "notes": "大劫真相 - 本章深化：青云门两面包抄追击；追逐正式开始"
+    },
+    {
+      "hookId": "H010",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 13,
+      "expectedPayoff": "60+",
+      "payoffTiming": "mid-arc",
+      "notes": "玄清阁灭门真相 - 本章关联：青云门灰袍男在馄饨摊监视；两面包抄"
+    },
+    {
+      "hookId": "H011",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 13,
+      "expectedPayoff": "80+",
+      "payoffTiming": "mid-arc",
+      "notes": "筑基真相：万年前筑基是起点；引线发烫暗示与针的联系"
+    },
+    {
+      "hookId": "H039",
+      "startChapter": 11,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 13,
+      "expectedPayoff": "12",
+      "payoffTiming": "near-term",
+      "notes": "门后之人身份 - 本章无直接推进，但顾长命判断\"镇东三里约见\"是套话局"
+    },
+    {
+      "hookId": "H040",
+      "startChapter": 11,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 13,
+      "expectedPayoff": "12",
+      "payoffTiming": "near-term",
+      "notes": "老七命线转移机制 - 本章无直接推进"
+    },
+    {
+      "hookId": "H041",
+      "startChapter": 11,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 13,
+      "expectedPayoff": "立即",
+      "payoffTiming": "immediate",
+      "notes": "青云门要往裂缝里\"塞什么\" - 本章无直接推进；灰袍男提到\"长老要见你\""
+    },
+    {
+      "hookId": "H042",
+      "startChapter": 11,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 13,
+      "expectedPayoff": "12",
+      "payoffTiming": "near-term",
+      "notes": "顾长命\"不是普通人\" - 引线发烫；旧疤发红；等待顾长命发现与针的联系"
+    },
+    {
+      "hookId": "H037",
+      "startChapter": 9,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 13,
+      "expectedPayoff": "13-14",
+      "payoffTiming": "near-term",
+      "notes": "小鱼被拽回去的时间 - 掌心青紫印记蔓延小半个掌心；瓷瓶发热；倒计时继续"
+    }
+  ]
+}

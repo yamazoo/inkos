@@ -1,0 +1,80 @@
+{
+  "chapter": 17,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**世界名称**：荒界"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "### 第一卷：县城风云（第1-60章）"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 今晚柳巷东行动→苏青禾已救出→老郎中死亡→铁牌到手→撤离→子时三刻出城"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **今晚：带苏青禾撤离→子时三刻城南门乱葬岗出城→安顿苏青禾→追查铁牌真相**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 气血7.0/剁骨刀法42/左前臂旧伤裂开+右肩撕裂+后背三道血痕+左肋抓伤（愈合中）/怀揣短刀+剁骨刀+狼骨+兽皮地图+铜牌+铜钱+交易条款羊皮+玉佩（真）+钱通地址纸条+约2.8两碎银/六十余文+止血散1包+活血散1包+应急药粉1小包"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 黑虎帮全城搜捕（已通过谈判暂时缓和）/今晚期限/陆沧海作人质/钱通改时间为灭口（同时针对陆沉和老郎中）/身份已被暴露/柳巷东只有一个出口/黑虎帮今晚会在巷中段门内设伏/苏青禾待带出/孙麻子与黑虎帮有旧怨/铁牌来源不明（与黑松林/穴居人/青云宗可能相关）"
+    },
+    {
+      "source": "story/chapter_summaries.md#14",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "祠堂夜行 | ①夜间潜入陆家祠堂发现暗室 ②玉佩已被神秘人取走 ③杀死两个黑虎帮成员 ④获得碎银和身份牌 ⑤苏青禾被黑虎帮带走问话 | 剁骨刀法35→42，碎银+3块，获得黑虎帮身份牌，苏青禾被带走 | H003/H009推进（玉佩被取走），H041-H045新增，H002/H031/H032推进"
+    },
+    {
+      "source": "story/chapter_summaries.md#15",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "黑松林搏命 | ①三狼围猎野猪，陆沉主动出击 ②激烈搏斗受伤（肋部撕裂、虎口震裂、多处抓伤） ③屠夫心法首次觉醒，吞噬狼血 ④突破后身体强化（力气+轻盈+反应） ⑤杀死三狼，开膛无妖核 ⑥吞三颗狼心补身体 ⑦处理三狼获得大量材料 ⑧出林子，烤食补充气血 ⑨准备进村出售材料 | 屠夫心法觉醒/突破（力气增长/皮肉变韧/肌肉弹性增强/骨骼发热），伤势多处（左前臂见骨/右肩撕裂/后背三道血痕/虎口震裂/左肋裂口），获得材料（狼肉7斤/狼皮2张/狼筋3条/碎骨1堆） | H002/H015/H021/H024/H030/H031/H032/H033/H034/H035/H036/H037/H038/H039/H040新增，H013/H014推进"
+    },
+    {
+      "source": "story/chapter_summaries.md#16",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "入城 | ①从水门成功进城 ②发现镇内气氛紧张，黑虎帮在搜人 ③找到西边穷人区歪斜土屋地窖藏身 ④敷药疗伤（全部金疮药用尽）⑤夜半听到搜人队经过，未被发现 ⑥次日找陈老刀获取情报 ⑦得知周铁山已死，钱通掌权 ⑧得知苏青禾被关在黑虎帮后院柴房 ⑨得知苏父从黑松林回归，带回贵重东西 ⑩获得钱通给的见面地址纸条 | 伤势已止血但未痊愈（金疮药已用尽），气血仍消耗过半，狼肉剩余约5斤，获得钱通地址纸条，获得陈老刀情报（周铁山死/苏青禾位置/苏父回归） | H062回收（入城），H061/H002/H006/H010推进（钱通示好/黑虎帮权力交接），H064/H065/H066/H067/H068新增"
+    },
+    {
+      "source": "story/pending_hooks.md#伏笔-SU40\"它们\"的身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "伏笔 | open | 待展开 | 钱进临死透露：\"它们给的\"/\"别看它们的眼睛\"/\"巢\"/结合洞穴深处阴影/滴答声/灰白草茎/尸体薄膜"
+    },
+    {
+      "source": "story/pending_hooks.md#伏笔-两年前女人",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**伏笔** | open | 待展开 | **两年前进山/收到灰白草茎/\"走了没再回来\"→是否是苏青禾？→时间线矛盾（七年前vs两年前）→**64章推进：阿纱确认女人\"还了会死/没还会走\"**"
+    },
+    {
+      "source": "story/pending_hooks.md#伏笔-它们怕光",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "伏笔 | open | 待展开 | **64章新发现：活物怕光但不完全怕/在阴影中静止/火光照到时动/可利用阴影控制**"
+    },
+    {
+      "source": "story/pending_hooks.md#H052",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "伏笔 | open | - | 铁骨狼群。→ 延续"
+    }
+  ]
+}

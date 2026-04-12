@@ -1,0 +1,67 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook-1",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "H002 | 悬念 | open | Ch.17 | 黑盒子持续发烫+正在发信号（与阵列共振）"
+    },
+    {
+      "hookId": "hook-2",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "H003 | 悬念 | open | Ch.17 | 脚步声接近23层（外部干扰？威胁接近？）"
+    },
+    {
+      "hookId": "hook-3",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "H030 | 悬念 | open | Ch.17 | 阵列重复播放确认音（咯噔声→警报→稳定心跳）"
+    },
+    {
+      "hookId": "hook-4",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "H049 | 悬念 | open | Ch.17 | 第一天入侵记忆缺失（陈默的觉醒方式与其他人不一致）"
+    },
+    {
+      "hookId": "hook-5",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "H050 | 悬念 | open | Ch.17 | 第三个选项在陈默身上（E-032亲口揭示）"
+    },
+    {
+      "hookId": "hook-6",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "E-032 | 悬念 | open | Ch.17 | 首次主动对话（唤醒中/外部干扰/有人在阻止苏醒）"
+    },
+    {
+      "hookId": "hook-7",
+      "startChapter": 0,
+      "type": "unspecified",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "H004 | 悬念 | open | Ch.120 | 陆焚身份与目的"
+    }
+  ]
+}

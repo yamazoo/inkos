@@ -1,0 +1,76 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_济世堂岭南城西分号",
+      "startChapter": 32,
+      "type": "情报",
+      "status": "open",
+      "lastAdvancedChapter": 54,
+      "expectedPayoff": "岭南（接触陈掌柜验证）",
+      "notes": "俘虏供出城西坊分号\"见不得光的生意\"；**本章：苏晚清对途中\"村民\"保持警惕（手指无茧）**"
+    },
+    {
+      "hookId": "hook_苏氏遗孤身世",
+      "startChapter": 36,
+      "type": "情报",
+      "status": "progressing",
+      "lastAdvancedChapter": 54,
+      "expectedPayoff": "岭南（完整揭露）",
+      "notes": "凤凰玉佩=济世堂至宝；苏氏遗孤身份确认；**本章：持续推进（未直接涉及）**"
+    },
+    {
+      "hookId": "hook_凤凰玉佩线索串联",
+      "startChapter": 49,
+      "type": "情报",
+      "status": "progressing",
+      "lastAdvancedChapter": 54,
+      "expectedPayoff": "岭南（玉佩秘密完整揭露）",
+      "notes": "苏晚清亮出玉佩→沈蓉反应强烈→谈判筹码成功；**本章：玉佩未直接使用，苏晚清继续攒着泉水保持警惕**"
+    },
+    {
+      "hookId": "hook_十五年前南疆案",
+      "startChapter": 49,
+      "type": "情报",
+      "status": "progressing",
+      "lastAdvancedChapter": 54,
+      "expectedPayoff": "岭南（接触陈掌柜验证）",
+      "notes": "陈掌柜十五年前消失时间吻合；控神毒药案；**本章：持续推进（未直接涉及）**"
+    },
+    {
+      "hookId": "hook_镇国公府追杀",
+      "startChapter": 52,
+      "type": "conflict",
+      "status": "open",
+      "lastAdvancedChapter": 54,
+      "expectedPayoff": "岭南（彻底解决）",
+      "notes": "沈蓉第二轮追击被凤凰玉佩逼退；达成暂时协议（通行令）；沈蓉警告\"还会有别人来\"→追杀升级；**本章：苏晚清保持警惕，通行令时间窗口持续，姓孙的押送兵可疑**"
+    },
+    {
+      "hookId": "hook_落花坡哨卡",
+      "startChapter": 53,
+      "type": "event",
+      "status": "open",
+      "lastAdvancedChapter": 55,
+      "expectedPayoff": "55（时间窗口内通过）",
+      "notes": "55章时间推进：月亮躲进云层，接近哨卡方向，不足一个时辰到达，时间窗口持续"
+    },
+    {
+      "hookId": "hook_落花坡暗桩",
+      "startChapter": 54,
+      "type": "relationship",
+      "status": "progressing",
+      "lastAdvancedChapter": 55,
+      "expectedPayoff": "待定（哨卡前/通过后）",
+      "notes": "55章深化：岔路口选左道（老李选，方德正往右道皱眉），孙押役说选左道是'为了赶时间'但左手攥紧瓷瓶暴露紧张——险道选择背后的真实原因待揭示"
+    },
+    {
+      "hookId": "hook_姓孙的押送兵",
+      "startChapter": 54,
+      "type": "relationship",
+      "status": "progressing",
+      "lastAdvancedChapter": 55,
+      "expectedPayoff": "待定（孙押役上钩与否决定他是被收编还是被清除）",
+      "notes": "55章实质性推进：老李揭露'之前跟沈蓉的人搭过话，虽然只是远远说了几句'——这是关键信息升级；苏晚清用药酒施恩建立试探关系；孙押役选岔路口险道+主动问药油+左手攥紧瓷瓶暴露紧张——多重可疑信号持续积累"
+    }
+  ]
+}

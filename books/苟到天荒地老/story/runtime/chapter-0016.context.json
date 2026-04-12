@@ -1,0 +1,140 @@
+{
+  "chapter": 16,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第15章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "当前资源: 玉简、石子、令牌、绢帛、细绳、老郎中银针-1（剩余待确认）、青云门灵气印记、压命线瓷瓶（小鱼持有）"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "灵气稀薄：仅为上古的千分之一"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "揭露大劫真相"
+    },
+    {
+      "source": "story/chapter_summaries.md#chapter_15_bridge",
+      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
+      "excerpt": "第15章《林中脱困》 | 出场人物：顾长命、灰袍男（青云门）、黑衣追兵2人 | 本章事件：1. 上章顾长命独自引敌被三人围堵（第14章）→ 本章顾长命主动摊牌：展示掌心疤痕揭示自己是引线宿主，讲述三年前枯井边接住小鱼、十二年前捡到小鱼的事实，以信息换提问权。2. 上章灰袍男揭示天裂需东西填、钥匙需引线牵（第14章）→ 本章灰袍男完整揭露大劫真相：万年前三愚者烧天49天撕裂天道→先塞17个活人→后换成针线钥匙三样→青云门烧断线只留钥匙在外→针线钥匙都在青石镇都在顾长命手里。3. 上章青云门追了三万年（第9章老僧提及）→ 本章追捕者承认：是万年前烧天的三个人，追了小鱼三万年，确认顾长命三年前接住了她。4. 上章青云门围堵对峙（第14章）→ 本章三人听完真相后主动离开，没有动手。5. 上章小瓷瓶交给小鱼带走（第13章）→ 本章顾长命确认瓷瓶仍温热，说明小鱼还活着，正在三十里外逃亡。 | 状态变化：顾长命从林间深处移至林边，追捕者离开后威胁暂时解除；大劫真相（天裂、针线钥匙、烧天者身份）在本章完整揭示，信息量巨大但追捕者主动退场形成情绪降调；小鱼仍在外逃亡（方向未知），瓷瓶温热是唯一存活信号；青云门追捕从「围堵」转入「信息掌握后放手」的不确定状态。 | 悬念活动：H004 advanced（终局伏笔大劫真相完整揭露）；H041 resolved（青云门往裂缝塞什么完全揭示）；H042 resolved（引线宿主身份确认）；H043 resolved（小鱼逃脱成功）；H044 resolved（诱敌计划成功）；H010/H011顺带推进"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "15: 林中脱困 | 14: 林间分岔 | 13: 夜尽天明 | 11: 井底问门 | 9: 线断之处"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "15: 沉稳·释然·紧绷解除·坚定·倒计时压力仍在 / 揭露章/降调章 | 14: 警觉·紧迫·决断·保护·紧张对峙·诱敌决心 / 追逐章/推进章 | 13: 沉重·警觉·紧迫·温情·决断·追逐开始 / 喘息章/推进章/温情章 | 11: 沉重·警觉·紧迫·决断·倒计时 / 核心揭露章/推进章/承上启下章 | 9: 沉重·震惊·警觉·坚定·紧迫·倒计时 / 核心揭露章/推进章"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch13: 追逐才刚刚开始。 | ch14: \"来得好。\" | ch15: 风吹过来，带着草木的清香。"
+    },
+    {
+      "source": "runtime/hook_debt#H004",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H004（设定，可兑现旧债，已开15章） | 读者承诺：125 | 种于第1章：ch2 枯井有约 - 青云门追捕郑怀恩；郑怀恩逃至回春堂门口 | 推进于第15章：ch15 林中脱困 - 1. 上章顾长命独自引敌被三人围堵（第14章）→ 本章顾长命主动摊牌：展示掌心疤痕揭示自己是引线宿主，讲述三年前枯井边接住小鱼、十二年前捡到小鱼的事实，以信息换提问权。2. 上章灰袍男揭示天裂需东西填、钥匙需引线牵（第14章）→ 本章灰袍男完整揭露大劫真相：万年前三愚者烧天49天撕裂天道→先塞17个活人→后换成针线钥匙三样→青云门烧断线只留钥匙在外→针线钥匙都在青石镇都在顾长命手里。3. 上章青云门追了三万年（第9章老僧提及）→ 本章追捕者承认：是万年前烧天的三个人，追了小鱼三万年，确认顾长命三年前接住了她。4. 上章青云门围堵对峙（第14章）→ 本章三人听完真相后主动离开，没有动手。5. 上章小瓷瓶交给小鱼带走（第13章）→ 本章顾长命确认瓷瓶仍温热，说明小鱼还活着，正在三十里外逃亡。"
+    },
+    {
+      "source": "runtime/hook_debt#H037",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H037（悬念，主要旧债，已开7章） | 读者承诺：14-15 | 种于第9章：ch9 线断之处 - 1.顾长命去老君庙见老庙主师兄；2.老僧揭露命线图真相：十七道口子=十七只眼睛；天裂是药引子；3.小鱼命线十二年前断了，缠在顾长命身上；4.小鱼喊过\"接住我\"；5.续命线需要钥匙+引线；引线在顾长命手上（两道疤）；6.小鱼会被拽回去\"填进裂缝里\"；7.老僧给绢帛（命线图）+细绳（引线）；8.老僧说去井底见门后的人；9.青云门周平带8人来回春堂抓人；10.青云门锁定小鱼是\"引线\"；11.顾长命提前转移小鱼到夹壁暗道（昨夜已做）；12.青云门搜空后离开，说明早\"喝茶\"；13.周老爷子今夜断气；14.小鱼掌心疤泛青紫（命线在动）；15.顾长命决定天亮前去井底 | 推进于第14章：ch14 林间分岔 - 1.清晨巷道逃亡；小鱼听力感知引导方向（躲过两人追兵）；2.三岔路口遭遇灰袍男正面拦截；3.灰袍男揭示核心信息：天裂需东西填、钥匙需引线牵、手上疤是\"现成的引子\"；4.灰袍男试探：青云门找针快一万年、没人被引线认主过、你身上气息和针有关；5.灰袍男提出交易：交出针就不追究小鱼；6.小鱼发现右边墙洞；7.顾长命用旧布袋挡剑鞘制造机会；8.小鱼钻洞逃跑；9.顾长命独自对峙灰袍男（银针）；10.灰袍男绕过顾长命派人追小鱼；11.顾长命决定反向引开追兵；12.三人围堵（左右夹击）；13.顾长命往左迎敌"
+    },
+    {
+      "source": "runtime/hook_debt#H039",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H039（悬念，主要旧债，已开5章） | 读者承诺：近期 | 种于第11章：ch11 井底问门 - 1.顾长命走夹壁暗道去井底；2.用令牌开启归元门进入石室；3.门后之人揭露续命线完整之法：钥匙（玉简+石子）+引线（手指两道疤）+命线（老七转移）；4.揭露小鱼是锁芯；青云门要拔锁芯换别的东西；5.揭露老七用命封井三十七年；榻上只剩灰烬和划痕；6.揭露针封在裂缝一半、另一半在玉简里（细纹泛银白）；7.揭露十二年前命线缠在顾长命身上；青云门在找引线宿主；8.揭露门只认引线不认钥匙；老七的命线有一半系在顾长命身上；9.门后之人说完石门合拢；10.青云门追到井口；顾长命从裂缝离开；11.绕行镇外荒野；12.发现周平在巷口监视（不是明早，是现在）；青云门今夜没走；13.用干泥引开两个追兵；14.决定两个时辰内把瓷瓶交给小鱼"
+    },
+    {
+      "source": "story/current_state.md#当前资源",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前资源 | 玉简、石子、令牌、绢帛、细绳、老郎中银针-1（剩余待确认）、青云门灵气印记、压命线瓷瓶（小鱼持有）"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 青云门追捕（暂时解除）→ 新的不确定性：小鱼去向；大劫真相完整揭示后新的抉择"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 找到小鱼"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 沉稳·释然·坚定·行动中"
+    },
+    {
+      "source": "story/chapter_summaries.md#3",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "枯井窥天 | 进入玄清阁；老道士揭露大劫真相；青云门追至；老道士消失 | 枯井之约完成；青云门威胁升级为追杀；玉简新能力显现 | H003/H004/H009/H010/H011/H013/H014/H015/H016/H017"
+    },
+    {
+      "source": "story/chapter_summaries.md#8",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "困局与抉择 | 1.青云门提前到达（不是明天，是今天），三人入镇往周府方向；2.顾长命决定不带小鱼，独自行动；3.老郎中在庙门口暗示\"有人不想让周老爷子活\"；4.顾长命见老庙主，核心揭露：老槐树是三十七年前栽的用来锁井；天裂根连灵脉源头；青云门一万年前亲手把针送进去；玉简是第一把钥匙；井底门后有同门；小鱼是十二年前从口子掉下来那人的\"一部分\"；老庙主给令牌；5.青云门三人在庙门外拦截顾长命，带他去周府；6.周老爷子临终托付：给顾长命石子（第二把钥匙）；告知\"她是回来找你的\"；让她问小鱼\"记不记得那根线\"；7.老郎中警告\"回春堂不安全了\"；8.结尾：老君庙僧人要见顾长命 | 顾长命获得两把钥匙（玉简+石子）；获得老庙主令牌；小鱼身世核心真相揭露（是一万年前那人的一部分）；青云门开始主动追踪；周老爷子临终托付 | H004/H025/H032/H023/H028/H029/H033/H034/H035推进；H009/H030/H031/H019/H020完成/回收；新增3条伏笔"
+    },
+    {
+      "source": "story/chapter_summaries.md#9",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "线断之处 | 1.顾长命去老君庙见老庙主师兄；2.老僧揭露命线图真相：十七道口子=十七只眼睛；天裂是药引子；3.小鱼命线十二年前断了，缠在顾长命身上；4.小鱼喊过\"接住我\"；5.续命线需要钥匙+引线；引线在顾长命手上（两道疤）；6.小鱼会被拽回去\"填进裂缝里\"；7.老僧给绢帛（命线图）+细绳（引线）；8.老僧说去井底见门后的人；9.青云门周平带8人来回春堂抓人；10.青云门锁定小鱼是\"引线\"；11.顾长命提前转移小鱼到夹壁暗道（昨夜已做）；12.青云门搜空后离开，说明早\"喝茶\"；13.周老爷子今夜断气；14.小鱼掌心疤泛青紫（命线在动）；15.顾长命决定天亮前去井底 | 获得绢帛+细绳；小鱼命线开始动；青云门锁定小鱼是引线；周老爷子今夜断气；顾长命决心天亮前见井底门后之人 | H033/H034/H032/H028回收；H036/H037/H038新开；H004/H029/H030/H031推进"
+    },
+    {
+      "source": "story/chapter_summaries.md#15",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "林中脱困 | 1. 上章顾长命独自引敌被三人围堵（第14章）→ 本章顾长命主动摊牌：展示掌心疤痕揭示自己是引线宿主，讲述三年前枯井边接住小鱼、十二年前捡到小鱼的事实，以信息换提问权。2. 上章灰袍男揭示天裂需东西填、钥匙需引线牵（第14章）→ 本章灰袍男完整揭露大劫真相：万年前三愚者烧天49天撕裂天道→先塞17个活人→后换成针线钥匙三样→青云门烧断线只留钥匙在外→针线钥匙都在青石镇都在顾长命手里。3. 上章青云门追了三万年（第9章老僧提及）→ 本章追捕者承认：是万年前烧天的三个人，追了小鱼三万年，确认顾长命三年前接住了她。4. 上章青云门围堵对峙（第14章）→ 本章三人听完真相后主动离开，没有动手。5. 上章小瓷瓶交给小鱼带走（第13章）→ 本章顾长命确认瓷瓶仍温热，说明小鱼还活着，正在三十里外逃亡。 | 顾长命从林间深处移至林边，追捕者离开后威胁暂时解除；大劫真相（天裂、针线钥匙、烧天者身份）在本章完整揭示，信息量巨大但追捕者主动退场形成情绪降调；小鱼仍在外逃亡（方向未知），瓷瓶温热是唯一存活信号；青云门追捕从「围堵」转入「信息掌握后放手」的不确定状态。 | H004 advanced（终局伏笔大劫真相完整揭露）；H041 resolved（青云门往裂缝塞什么完全揭示）；H042 resolved（引线宿主身份确认）；H043 resolved（小鱼逃脱成功）；H044 resolved（诱敌计划成功）；H010/H011顺带推进"
+    },
+    {
+      "source": "story/pending_hooks.md#H004",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "设定 | progressing | 125 | endgame | 本章完整揭露大劫真相：万年前三愚者烧天49天撕裂天道→天裂本可自愈但青云门修疤维持→天裂需针线钥匙三样东西凑齐才能彻底合上→青云门烧断两根线只留钥匙在外→针和线都在青石镇都在顾长命手里→三个追捕者是万年前那三人（他们承认了）"
+    },
+    {
+      "source": "story/pending_hooks.md#H010",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | progressing | 60+ | mid-arc | 玄清阁灭门真相——本章推进：青云门万年追踪大劫相关者（郑怀恩、玄清阁、小鱼、顾长命）；三个追捕者承认烧天烧线是他们做的"
+    },
+    {
+      "source": "story/pending_hooks.md#H011",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | progressing | 80+ | mid-arc | 筑基真相——本章推进：引线宿主身份确认（从未有人被引线认主过，顾长命是第一个）；青云门万年找不到引线宿主的原因揭晓"
+    },
+    {
+      "source": "story/pending_hooks.md#H041",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | progressing | 立即 | immediate | 青云门要往裂缝里塞什么——本章完全揭示：先塞了17个活人（让裂缝更大灵气更薄）；后换成一根针（引气）、一根线（续命）、一把钥匙（开门）；三样凑齐天裂可合；青云门烧断线只留钥匙是为了阻止天裂愈合"
+    },
+    {
+      "source": "story/pending_hooks.md#H039",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 近期 | near-term | 门后之人身份 - 本章无直接推进"
+    },
+    {
+      "source": "story/pending_hooks.md#H040",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | open | 近期 | near-term | 老七命线转移机制 - 本章无直接推进"
+    },
+    {
+      "source": "story/pending_hooks.md#H037",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念 | progressing | 14-15 | near-term | 小鱼被拽回去的时间 - 瓷瓶发热；小鱼掌心青紫印记蔓延；分头逃亡"
+    }
+  ]
+}

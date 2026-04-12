@@ -1,0 +1,67 @@
+{
+  "hooks": [
+    {
+      "hookId": "H078",
+      "startChapter": 29,
+      "type": "大伏笔（真相）",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "卷末",
+      "notes": "同步协议启动；机器说\"我等你很久了\""
+    },
+    {
+      "hookId": "H079",
+      "startChapter": 29,
+      "type": "大伏笔（真相）",
+      "status": "open",
+      "lastAdvancedChapter": 35,
+      "expectedPayoff": "卷末",
+      "notes": "未绑定觉醒者；陈默身份确认"
+    },
+    {
+      "hookId": "H080",
+      "startChapter": 29,
+      "type": "大伏笔（真相）",
+      "status": "open",
+      "lastAdvancedChapter": 35,
+      "expectedPayoff": "卷末",
+      "notes": "反向转化协议代价揭示；等待抉择"
+    },
+    {
+      "hookId": "H082",
+      "startChapter": 30,
+      "type": "中伏笔（情节）",
+      "status": "open",
+      "lastAdvancedChapter": 35,
+      "expectedPayoff": "20章内",
+      "notes": "污染指数降低；四个污染先驱者退回休眠舱"
+    },
+    {
+      "hookId": "H083",
+      "startChapter": 31,
+      "type": "中伏笔（情节）",
+      "status": "open",
+      "lastAdvancedChapter": 31,
+      "expectedPayoff": "20章内",
+      "notes": "回收协议揭示"
+    },
+    {
+      "hookId": "H084",
+      "startChapter": 31,
+      "type": "中伏笔（情节）",
+      "status": "open",
+      "lastAdvancedChapter": 35,
+      "expectedPayoff": "20章内",
+      "notes": "\"保护他们/保护自己\"测试；等待陈默回应"
+    },
+    {
+      "hookId": "H085",
+      "startChapter": 35,
+      "type": "观测者线",
+      "status": "open",
+      "lastAdvancedChapter": 35,
+      "expectedPayoff": "待定",
+      "notes": "天花板数据乱码（断断续续闪烁）"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_枯井神秘脚印",
+      "startChapter": 85,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城/落梅村（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**85章新增：井的东北角沙土地上有浅浅刮痕+模糊宽鞋底轮廓（外八字）+不是苏远山（步子大而稳）不是左眉疤灰袍人（步子压着）=第三方人物；86章：翠竹北边发现另一组脚印（往西北山坡方向+步子宽+一歪一歪+鞋底比普通人宽）=第三方势力；87章：落梅村篝火灰烬（半个时辰前有人歇脚+近路比她们更快）+竹林边缘血迹+布料碎片=一歪一歪脚印主人可能受伤+两套脚印两个方向=至少两个人**"
+    },
+    {
+      "hookId": "hook_神秘女人",
+      "startChapter": 84,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城/落梅村（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**84章新增：神秘女人从树丛走出+说她从苏晚清进城那天就在盯着+比灰袍人还早+替一个死了三年的人传话+留下纸（济世堂三年前换东家+苏远山当时就在府城）+说她和苏晚清爹有旧+最后还人情；86章重大推进：三件事对不上=神秘女人的话得到侧面印证；87章推进：一歪一歪脚印+血迹+布料碎片**"
+    },
+    {
+      "hookId": "hook_左眉疤灰袍人",
+      "startChapter": 83,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**83章新增：左眉上方一道旧疤+身形瘦削+蒙面+声音沙哑+送苏远山字条+知道她们今天出发+步态与济世堂跟踪者不同；85章推进：排除他是枯井脚印的主人（步子压着 vs 枯井脚印外八字宽步）；86章未直接推进；87章比较步态差异**"
+    },
+    {
+      "hookId": "hook_苏青身体亏空",
+      "startChapter": 83,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**83章新增：济世堂三个月被灌药治咳嗽+身体亏空；84-86章持续恶化；87章明显好转但需继续休养**"
+    },
+    {
+      "hookId": "hook_二月初三二十两",
+      "startChapter": 81,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**81章新增：苏家出事当天二十两支走；86章苏青娘说\"进货\"+苏远山说\"三年前在府城\"=两句话对不上；87章账本发现藏红花等药材线索**"
+    },
+    {
+      "hookId": "hook_济世堂中间空白",
+      "startChapter": 81,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城/落梅村（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**81章新增：济世堂中间几个月空白+不明使用者+可能与苏远山有关；84章\"济世堂三年前换了东家。苏远山当时就在府城\"；87章藏红花线索串联**"
+    },
+    {
+      "hookId": "hook_墨香斋后墙根",
+      "startChapter": 79,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城/落梅村（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**79章新增：墨香斋后墙根有药草味；86章苏青确认\"我也闻见过同一种药味\"；87章账本藏红花线索+苏青解释药性+两人确认共同记忆**"
+    },
+    {
+      "hookId": "hook_一歪一歪脚印",
+      "startChapter": 87,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南府城/落梅村（待揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**87章新增：步子宽+一歪一歪+鞋底比普通人宽+往西北山坡方向（落梅村）+新鲜血迹+深灰色粗布碎片+竹林深处人声+比她们更快的近路+城西茶摊劲装男人可能是同一人？**"
+    }
+  ]
+}

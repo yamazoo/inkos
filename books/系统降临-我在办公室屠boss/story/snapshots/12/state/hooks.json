@@ -1,0 +1,193 @@
+{
+  "hooks": [
+    {
+      "hookId": "story/pending_hooks.md#hook-3",
+      "startChapter": 0,
+      "type": "小伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "5章内",
+      "notes": "守护者职业——延后至妻子唤醒后揭示"
+    },
+    {
+      "hookId": "story/pending_hooks.md#E1·末日降临",
+      "startChapter": 0,
+      "type": "核心事件",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "-",
+      "notes": "同步性确认；入侵时间已记录"
+    },
+    {
+      "hookId": "story/pending_hooks.md#hook-2",
+      "startChapter": 0,
+      "type": "中伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "20章内",
+      "notes": "\"有些东西正在苏醒\"——代价线索已揭示：反向转化=失去末日之前记忆"
+    },
+    {
+      "hookId": "story/pending_hooks.md#H078",
+      "startChapter": 29,
+      "type": "中伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "30+",
+      "notes": "先驱者协议第七条——净化条件已执行（同步率激活）"
+    },
+    {
+      "hookId": "story/pending_hooks.md#H079",
+      "startChapter": 29,
+      "type": "大伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "30+",
+      "notes": "同步率任务——**徽章温度与意识共振，同步率激活至30%**"
+    },
+    {
+      "hookId": "story/pending_hooks.md#H080",
+      "startChapter": 29,
+      "type": "关键物品",
+      "status": "progressing",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "30+",
+      "notes": "132个唤醒名额——**已执行，战斗爆发**"
+    },
+    {
+      "hookId": "story/pending_hooks.md#H002",
+      "startChapter": 0,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "Ch.120",
+      "notes": "神秘掉落物品「???」无法鉴定"
+    },
+    {
+      "hookId": "story/pending_hooks.md#H001",
+      "startChapter": 0,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "Ch.155",
+      "notes": "橙色光圈使徒标记"
+    },
+    {
+      "hookId": "H030",
+      "startChapter": 8,
+      "type": "中伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "20章内",
+      "notes": "第一天入侵差异——有人听到不同内容对应不同结果；筛选机制与职业相关"
+    },
+    {
+      "hookId": "H035",
+      "startChapter": 8,
+      "type": "中伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "20章内",
+      "notes": "筛选机制——第一天入侵进行筛选；17%淘汰率（预期3%）；职业类型与同步基准值相关"
+    },
+    {
+      "hookId": "H041",
+      "startChapter": 11,
+      "type": "中伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "待定",
+      "notes": "白衣女人认识李父——李思雨感知\"她看我的眼神像看晚辈\"；知道李思雨名字和父亲意识在其体内"
+    },
+    {
+      "hookId": "E1·末日降临",
+      "startChapter": 0,
+      "type": "表层",
+      "status": "progressing",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "持续",
+      "notes": "末日第二天；B1层救援王德发；新发现：守护者职业；先驱者徽章到手"
+    },
+    {
+      "hookId": "H078",
+      "startChapter": 0,
+      "type": "中伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "30+",
+      "notes": "先驱者协议第七条——净化条件已执行（同步率激活）"
+    },
+    {
+      "hookId": "H079",
+      "startChapter": 0,
+      "type": "大伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "30+",
+      "notes": "同步率任务——**徽章温度与意识共振，同步率激活至30%**"
+    },
+    {
+      "hookId": "H080",
+      "startChapter": 0,
+      "type": "关键物品",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "30+",
+      "notes": "132个唤醒名额——**已执行，战斗爆发**"
+    },
+    {
+      "hookId": "H001",
+      "startChapter": 0,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "Ch.155",
+      "notes": "橙色光圈使徒标记"
+    },
+    {
+      "hookId": "H002",
+      "startChapter": 0,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "Ch.120",
+      "notes": "神秘掉落物品「???」无法鉴定"
+    },
+    {
+      "hookId": "hook-2",
+      "startChapter": 10,
+      "type": "中伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 10,
+      "expectedPayoff": "20章内",
+      "notes": "\"有些东西正在苏醒\"——代价线索已揭示：反向转化=失去末日之前记忆"
+    },
+    {
+      "hookId": "hook-3",
+      "startChapter": 12,
+      "type": "小伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "5章内",
+      "notes": "守护者职业——王德发第一夜觉醒揭示；**妻子王淑芬在E-142等待（已揭示）**"
+    },
+    {
+      "hookId": "H034",
+      "startChapter": 8,
+      "type": "中伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "待定",
+      "notes": "赵磊身份——**蓝光疤痕残留；梦中数据流；监控记录吻合**"
+    },
+    {
+      "hookId": "H042",
+      "startChapter": 11,
+      "type": "中伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "待定",
+      "notes": "先驱者继承者身份——徽章在手；王德发确认\"先驱者继承者\"称谓；白衣服女人线索关联H041"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "chapter": 60,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**世界名称**：荒界"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "**章节范围**：1-60"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "59: 血痕问答 | 58: 山道遗痕 | 57: 权衡 | 56: 山路疑痕 | 53: 灵脉深处·铁匣与蛞蚀"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "59: **警觉→冷静→确认→悬念→探索→发现→震惊→带走→悬念** / **探索/情报/发现章** | 58: **警觉→观察→谨慎→发现→冷静→对峙→悬念** / **探索/发现/对峙章** | 57: 沉凝决断 / 探索/决断章 | 56: **警觉→观察→谨慎→发现→紧张→确认→喂水→倾听→冷静→悬念** / **探索/发现/悬念章** | 53: **冷静观察→谨慎决策→遭遇紧张→冷静判断→安置→悬念** / **探索/发现/悬念章**"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch57: 她抬起头，看向穴居人村洞的方向。洞口是黑的，什么都看不见。但她能感觉到里面有人。 | ch58: *苏青禾还在那里。* | ch59: 然后他睡着了。"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **苏青禾在荆棘丛等待→青云宗往山上走→钱进断续清醒→巢铁牌→铁匣真相（分散藏匿/四只活物）→找阿纱问\"另一种办法\"→母亲遗物处理→打开铁匣→揭示真相**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 左臂知觉完全恢复（大臂麻木已退/肩头轻微滞涩/能活动）；肋下伤口渗血（已处理/略有恢复）；后背撞伤（已处理）；后背肩胛到腰侧三道抓伤（已处理/愈合中）；**左肩蛟鳞印记持续发烫（对灵脉/守脉者眼睛产生反应/触发力量托举/对铁匣子絮状物产生反应/对蓝光产生强烈反应）**；**右手虎口裂伤（已凝血/被水浸泡发白）**；**右肩刀伤（已麻木/无知觉/整条手臂无法使用）**；**肺部灼痛（呛水后遗/呼吸刺痛）**；**能战斗但非满状态**；手中：剔骨刀（腰间/沾血）；腰间：杀猪刀（赵三爷遗物）/铁钎；怀中：铁牌×1（苏老实遗物/\"别走\"/温度退至微暖）/荒卫令牌（三十七号）/脉晶×2/碎碗片×1（孙麻子暗号/城西方向）/银袋（约20两）/城北宅子草图×1/地底走向图/**父亲玉牌（陆焚）**/铁匣子（剧烈震动/内有活物蠕动/被蛟鳞印记压制）/**巢铁牌×1（青云宗标记/从钱进口袋翻出/暂不知含义）**"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | **体力消耗（需休整/右臂完全无法使用/肺部灼痛）苏青禾体力差（脚踝扭伤/膝盖流血/已恢复一些）钱进重伤断续清醒（需安置/不能死在路上）青云宗往山上走（沈师兄+老六/疤脸三人组往山下）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#57",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "权衡 | 陆沉从钱进处获得关键信息（穴居人村落/蛞蚀/铁匣有东西在动），重新解读符号指向村落方向，告别钱进朝山深处走去，远处传来不明威胁移动的震动 | 钱进重伤无法移动（左肩撕裂/疼得脸色发青）；陆沉手指被石头刮伤；篝火彻底熄灭；陆沉改向村落探索 | SP050深化：铁匣有东西；SP055推进：村落探索启动；SP006延后：苏青禾3章未提及"
+    },
+    {
+      "source": "story/chapter_summaries.md#58",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "山道遗痕 | ①沿岔路发现人工凿洞穴口；②发现符号两套系统（三横一箭=方向/圆圈=洞穴入口）；③追踪痕迹发现开垦坡地+晒肉架+竹笼；④穴居人不在村落（空）；⑤从树杈获得布条+石刀；⑥远处山林传来尖细叫喊；⑦穴居人女从灌木丛出现；⑧陆沉与穴居人女对峙；⑨女人主动问\"你是不是来找人的\" | **位置：岔路→陡坡→水沟→穴居人洞口→开垦坡地；陆沉：体力三成/精神警觉/获得布条+石刀；穴居人村落：空无一人（只有女的刚返回）；穴居人女：灰布衣/赤足/脚趾分开/脚上干涸血迹/戒备恐惧/主动开口** | **SP055推进：到达穴居人洞口→探索村落→遭遇穴居人女；新伏笔：女人脚上血迹/村落为何空；威胁推进：远处尖细叫喊再次出现**"
+    },
+    {
+      "source": "story/chapter_summaries.md#59",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "血痕问答 | ①陆沉与阿纱对峙→阿纱主动提供情报；②阿纱透露：前两天救了钱进（受伤男人）→让他自己走了；③阿纱透露：村里十几人（老小）在洞里藏着；男人不敢出来，外面有东西；④阿纱描述山中尸体：脸被割/脚趾分开比穴居人还开/攥铁匣子；⑤阿纱透露：三个穴居人上山（阿纱/男人/小孩）→阿纱和小孩跑了；⑥阿纱指明尸体位置；⑦陆沉独自前往深沟；⑧找到悬挂的尸体；⑨取下铁匣子→里面有东西在动；⑩查看尸体脸部→不是骨头肌肉，是灰白色薄膜有裂缝 | **位置：穴居人村落附近→深沟→沟顶返回途中；陆沉：体力三成/精神警觉/获得铁匣子/准备找地方生火；穴居人女\"阿纱\"：正式获得名字/从戒备→主动提供情报/恐惧但确认陆沉目的；钱进：被穴居人救过→信息补完** | **SP034推进：铁匣到手→里面有活物；SP055深化：穴居人村落真相（村民躲藏/知道有东西在外面）；SP037新线索：阿纱问\"你是不是来找人的\"→穴居人等待机制？；新威胁：尸体之谜（脸=薄膜/脚趾极度分开/被悬挂捆绑）；新物品：铁匣子（到手/里面有东西动）**"
+    },
+    {
+      "source": "story/pending_hooks.md#\"别看它们的眼睛\"",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open"
+    },
+    {
+      "source": "story/pending_hooks.md#\"不能不要\"",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "剧情 | open | 65已完整解释 | 已回收：钱进遗言指灰白草茎/活物的关联"
+    },
+    {
+      "source": "story/pending_hooks.md#H101（苏青禾真实身份）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**剧情** | open | **待展开** | **苏青禾七年前见过灰白絮状物/见过铁匣子/见过巨大活物/知道部分真相**"
+    },
+    {
+      "source": "story/pending_hooks.md#H106（青云宗追踪）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**剧情** | open | **今晚/明早** | **两人从县城方向来/灰衣/步子不像衙门/今晚或明早到达**"
+    },
+    {
+      "source": "story/pending_hooks.md#H107（洞穴外威胁）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**剧情** | open | **待展开** | **苏青禾看见有东西往洞穴方向移动/多人/非人声音/滴答声逼近**"
+    },
+    {
+      "source": "story/pending_hooks.md#H109（灰白草茎来源）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**伏笔** | open | **待展开** | **苏青禾七年前蹭掉絮状物在黑松林/第二年长出灰白草/草茎是它们下蛋的方式**"
+    },
+    {
+      "source": "story/pending_hooks.md#H016（伏笔-阿纱男人死因）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "伏笔 | open"
+    },
+    {
+      "source": "story/pending_hooks.md#H017（剧情-洞穴门口异常）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "剧情 | open"
+    }
+  ]
+}

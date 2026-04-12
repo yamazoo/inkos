@@ -1,0 +1,110 @@
+{
+  "chapter": 71,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第71章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**世界名称**：荒界"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "面临黑虎帮收保护费并威胁生命的困境。"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "70: 夜尽：天明 | 69: 归途：天色 | 67: 高烧呓语 | 66: 后山夜路 | 65: 喘息之间"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "70: **夜间守夜/沉重/回忆/等待→天亮/疲惫/问答/沉默/继续守夜/沉重/揭示/等待** / **过渡章/守夜章/情感沉淀章/揭示章** | 69: **紧张（抵达）→确认（铁牌信息）→沉重（回忆死亡）→追问（高烧呓语）→疲惫（入睡）→守夜（阿纱）→揭示（苏青瑶）** / **信息章/揭示章/过渡章/情感沉淀章** | 67: **紧张（守夜）→警惕（苏青禾清醒）→紧张（追问）→确认→紧张（青云宗逼近）→紧张（躲避）→逃脱→紧张（背人下山）→悲伤/茫然/等待（阿纱部分）** / **信息章/危机章/过渡章/双线章** | 66: **紧张（出发）→警觉（暗道）→警觉（河滩/脚印）→紧张（陷阱）→紧张→震惊（发现\"她\"）→紧张→确认→谨慎→紧张（背人下山）→警惕→警戒等待** / **行动章/救援章/过渡章** | 65: **紧张→沉默→追问→回忆→信息交换→推理→发现→沉默→决定→紧张对峙→冷静等待** / **信息章/喘息章/过渡章/决策章**"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch68: 但脚步声，快了。 | ch69: 但陆沉睡着了。 | ch70: 滴答声没有。"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **带苏青禾返回穴居人村洞穴（已抵达）→追问巢相关信息→阿纱留守→铁匣留阿纱保管→两天内返回否则带铁匣往\"有光之地\"走→解读苏青禾画的符号→苏青禾高烧持续→**本章节：救治优先（让烧退下去）→脉晶少量使用→给苏青禾喂水→苏青禾病情略好转→阿纱休息→陆沉守夜→等苏青禾醒或青云宗来→**下一步：阿纱想看铁匣子（等苏青禾醒来问清楚）**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 左臂知觉完全恢复（大臂麻木已退/肩头轻微滞涩/能活动）；肋下伤口渗血（已处理/略有恢复）；后背撞伤（已处理）；后背肩胛到腰侧三道抓伤（已处理/愈合中）；左肩蛟鳞印记持续发烫（对苏青禾产生反应）；右手虎口裂伤（已凝血/被水浸泡发白）；**右肩刀伤（已麻木无知觉/整条手臂无法使用）→本章节仍无法使用**；**肺部灼痛（呛水后遗/呼吸刺痛）→本章节未提及变化**；右手腕灰白液体结膜（擦不掉/无不适/不知名物质）；**膝盖旧伤（活动时咔嚓作响/疼痛）→本章节未提及**；**体力消耗→本章节：夜间睡觉后有所恢复（之前极度疲惫）/吃了一小块黑面饼/休息后能守夜；手中：无；腰间：剔骨刀/铁钎；怀中：铁牌×1（苏老实遗物/刻\"别找\"/微暖）/**荒卫令牌（三十七号）**/脉晶×少量（够用三四天/本章节用了一些）；碎碗片×1（孙麻子暗号/城西方向）；银袋（约20两）；城北宅子草图×1；地底走向图；父亲玉牌（陆焚）；巢铁牌×1（青云宗标记/刻\"巢\"字）；巢铁牌×1（苏青禾的/小一些）；**铁匣子（留阿纱保管/本章节阿纱提到想看）**；携带：肉脯/水囊（新水/阿纱找到泉眼补充）"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | **体力消耗→本章节：夜间睡觉有所恢复/吃了一小块黑面饼/能守夜；苏青禾极度虚弱（十天无进食/高烧不退）→本章节：脉晶抹多次无效/但体温略降（好转迹象）/嘴唇颜色好一些/呼吸平稳一点/仍在危险状态；洞穴外威胁暂时停止（风声里没有滴答声/暂时安全）；两天期限仍在计时（已抵达/阿纱找到新水源）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#69",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "归途：天色 | ①天色暗下来→穴居人村落出现在远方；②陆沉背着苏青禾抵达；③阿纱在洞口等待/已烧好水；④进洞安置苏青禾；⑤脉晶喂不进去（牙关紧闭）/改成抹嘴唇；⑥阿纱问\"他一直这样？\"（为别人忙）；⑦陆沉拿出苏老实铁牌确认刻\"别找\"；⑧对比铁匣子上\"别走\"→两个字一样大小深浅锈迹/但意思完全相反；⑨陆沉回忆苏老实临死前/攥着铁牌念着\"青荷\"；⑩阿纱也回忆丈夫/\"不要找他\"/\"不要收那个东西\"/\"我全都做了\"/\"但他还是死了\"；11苏青禾高烧呓语/\"青荷\"/\"别找\"/\"回来了\"/\"我不该\"；12苏青禾说出\"有光的地方\"/\"它们不敢去\"；13陆沉想事情/眼皮越来越沉/睡着；14阿纱守夜/摩挲铁匣\"别走\"刻字/贴在胸口；15苏青禾又翻身/喊\"青瑶\"；16阿纱认出是第三个姐妹的名字；17得知苏青荷/苏青禾/苏青瑶三姐妹/苏老实是最小的弟弟 | **位置：后山山道→穴居人村阿纱洞穴（已安全抵达）；苏青禾：极度虚弱/高烧持续加剧/呼吸浅而急/嘴唇干裂/眼窝深陷/颧骨凸出/高烧呓语揭示新信息；陆沉：极度疲惫/入睡；阿纱：守夜/情绪沉重/得知苏青瑶存在；青云宗：暂时未出现/威胁降低但仍在区域内；资源：脉晶少量消耗（水抹嘴唇）/肉脯少量消耗/水囊少量消耗** | **H113\"别走\"vs\"别找\"→重大揭示（两块铁牌意思相反/娘让姐姐别走/姐姐让苏老实别找）；H117苏老实临死前→深化（他在念姐姐的名字/攥着铁牌不放）；H116\"有光之地\"→深化（苏青禾再次说出\"有光的地方\"/\"它们不敢去\"）；H106青云宗追踪→延续（暂时未出现）；新伏笔H118苏青瑶（第三姐妹）；新伏笔H119\"我不该\"（苏青禾的愧疚）；支线SP001陆家恩怨→重大推进/\"别走\"vs\"别找\"揭示；SP037陆沉的娘→深化（苏青荷/苏青禾/苏青瑶三姐妹）；SP042阿纱的秘密→深化（阿纱和苏青禾母亲处境相似？）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#70",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "夜尽：天明 | ①夜间：阿纱守夜/摩挲铁匣/回忆丈夫/苏青禾梦话/\"青瑶\"→②天亮：阿纱醒来/洞里透进灰白光/③陆沉已醒/在火堆边添柴/④阿纱问青云宗/⑤苏青禾脉晶抹三次仍高烧不退→⑥阿纱问陆沉打算怎么办→⑦陆沉拿出铁牌看/说\"先让她退烧\"→⑧苏青禾梦话/\"回来了\"→⑨陆沉走到洞口/阿纱问\"你娘是什么样的人\"→⑩陆沉说\"不知道/我没见过\"→11苏青禾梦话/\"别找\"→12阿纱继续听/\"青瑶/别去\"→13阿纱想：苏家人留下的全是\"别\"（别找/别走/别去）→14阿纱站在洞口/等 | **位置：穴居人村阿纱洞穴（夜间到天明）；苏青禾：高烧持续/脉晶抹三次无效/呼吸浅而急/嘴唇干裂/眼窝深陷/颧骨凸出/断续梦话；陆沉：夜间睡着/天亮后醒来/添柴/问打算怎么办/先让她退烧/回答\"没见过娘\"；阿纱：整夜守夜/膝盖酸疼/站起腿软/问青云宗/回忆老六/问陆沉娘是什么样的人/继续守夜/等；青云宗：暂时未出现/威胁仍在；资源：脉晶抹三次/肉脯少量/水囊少量** | **H118苏青瑶→深化（苏青禾再次喊\"青瑶别去\"/阿纱第三次听到/苏青瑶下落仍未知）；H113\"别走\"vs\"别找\"→深化（阿纱思考两个男人的命运/都是死在想见的人来不了的地方）；H117苏老实临死前→延续（阿纱对比两个男人）；H106青云宗追踪→延续（暂时未出现/威胁仍在）；H114老六→补充描述；H112陷阱→无推进（已4章）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H120（新）阿纱的过去（野路子郎中）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**新伏笔** | open | 待展开 | **71章新增：陆沉问阿纱以前干什么/阿纱说\"以前是个郎中/不是正经的郎中/是野路子/跟人学了点皮毛/就出来混/后来嫁了男人就不干了/再后来男人死了又开始到处跑/没家/哪里都一样\"→为什么是野路子？师从何人？为什么嫁人后不干？为什么后来又跑？这与她的解毒药草储备是否有关系？待展开**"
+    },
+    {
+      "source": "story/pending_hooks.md#H121（新）阿纱的解毒药",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**新伏笔** | open | 待展开 | **71章新增：阿纱从破烂里翻出石罐/里面有解毒药（草根树皮混合物/有毒/用不好会死人）→阿纱是野路子郎中/会炮制解毒药→为什么有这种药？以前遇到过什么毒？这种药能否在未来派上用场（对付\"它们\"？）→待展开**"
+    },
+    {
+      "source": "story/pending_hooks.md#H113（\"别走\"vs\"别找\"之谜）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "伏笔 | open | 待展开 | mid-arc | **69章：陆沉拿出苏老实铁牌确认刻\"别找\"/与铁匣\"别走\"对比/意思完全相反→70章：阿纱思考两个男人都是死在想见的人来不了的地方→**71章：陆沉拿出铁牌再看/\"别找\"两字清晰/联系阿纱丈夫也让人\"别找\"/两块铁牌/两个男人/两个女人都收到\"别走\"的匣子/阿纱说苏家人留下的全是\"别\"（别找/别走/别去）→情感深化/家族诅咒模式确立**"
+    },
+    {
+      "source": "story/pending_hooks.md#H118（苏青瑶：第三姐妹）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "新伏笔 | open | 待展开 | mid-arc | **69章新增：苏青禾高烧呓语中喊出\"青瑶\"→阿纱认出第三姐妹的名字/三姐妹+一弟→**71章：苏青禾再次梦话\"青瑶别去\"/阿纱第三次听到\"青瑶\"→阿纱想\"苏家人留下的全是别\"/苏青瑶的下落仍是谜/苏青禾在担心苏青瑶？**"
+    },
+    {
+      "source": "story/pending_hooks.md#H119（\"我不该\"：苏青禾的愧疚）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "新伏笔 | open | 待展开 | mid-arc | **69章：苏青禾高烧呓语\"我不该\"→**71章：陆沉想起苏青禾在山坡上说\"我不该\"但没说清不该什么/可能是把他们带进来/可能是让她娘留下/悬念保留**"
+    },
+    {
+      "source": "story/pending_hooks.md#H117（苏老实临死前的真相）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "伏笔 | open | 待展开 | mid-arc | **68章：苏老实攥着铁牌念\"青荷\"→69章：阿纱对比两个男人/都死于\"找\"→**71章：陆沉再看铁牌/\"别找\"两字清楚/苏老实临死前念着青荷/他死在外面/苏青荷让他别找→情感深化**"
+    },
+    {
+      "source": "story/pending_hooks.md#H112（陷阱的目的）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "伏笔 | open | 待展开 | mid-arc | **66章：发现太明显的陷阱（浮土+烂泥+弧形刮痕）→**71章无新推进（已5章未推进）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H114（青云宗老六的身份）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "伏笔 | progressing | 待展开 | mid-arc | **67章：苏青禾透露老六\"以前是猎户/这片山他走过\"→68章：老六三年前野猪肚子发现铁牌/想去巢但不敢/青云宗找他带路/打了十年猎/每条路都走过→**71章：阿纱补充老六完整故事（当了三十年猎户/老婆死后蹲坟前哭/儿子欠债/借青云宗的钱/被迫带路/\"好人/胆子太小/又贪心\"）→人物弧线完整补全/动机明确**"
+    }
+  ]
+}

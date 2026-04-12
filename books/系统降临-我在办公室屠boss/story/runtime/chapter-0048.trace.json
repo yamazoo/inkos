@@ -1,0 +1,46 @@
+{
+  "chapter": 48,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\author_intent.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\current_focus.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\story_bible.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\volume_outline.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\chapter_summaries.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\book_rules.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\current_state.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\pending_hooks.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\memory.db"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\runtime\\chapter-0048.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "runtime/hook_debt#H101S-001身份",
+    "runtime/hook_debt#H105引导者程序",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#37",
+    "story/chapter_summaries.md#45",
+    "story/chapter_summaries.md#46",
+    "story/chapter_summaries.md#47",
+    "story/pending_hooks.md#H115赛季入侵",
+    "story/pending_hooks.md#H116入侵者降临方式",
+    "story/pending_hooks.md#H117E-017追踪入侵",
+    "story/pending_hooks.md#H114S-001真正目的",
+    "story/pending_hooks.md#H107第四个选项",
+    "story/pending_hooks.md#H112L-00X身世真相",
+    "story/pending_hooks.md#H113L-00X父亲之谜",
+    "story/pending_hooks.md#H106增长率可变"
+  ],
+  "notes": []
+}

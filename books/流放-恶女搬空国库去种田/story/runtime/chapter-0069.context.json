@@ -1,0 +1,105 @@
+{
+  "chapter": 69,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第68章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**清醒理智**：不被原书剧情和情感绑架，一切以生存和利益最大化为核心。"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "：穿越开局，危机四伏。女主在流放路上醒来，浑身是伤，面临差役的鞭打和继母庶妹的假惺惺刁难。核心冲突：马上要被饿死/打死。"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "68: 密道：风前人定 | 67: 落梅：故人归处 | 66: 夜奔：火光与泥泞 | 65: 暗渡：药王街尾 | 64: 暗棋：弃子与落子"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "68: **释然→警觉→坚定→紧张→坚定→释然→紧张→感动→坚定** / **推进章/撤离章/温情章/转折章** | 67: **紧张→震动→坚定→释然→警觉→震动→坚定→释然→坚定→紧张→坚定** / **推进章/关键揭示章/转折章** | 66: **紧张→希望→震动→坚定→释然** / **推进章/转折章/关键揭示章** | 65: **警觉→紧张→震动→冷静→坚定→撤离→希望** / **推进章/撤离章/关键转折章** | 64: **警觉→震动→震惊→冷静→坚定→紧急→撤离** / **推进章/关键转折章/紧急章**"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch66: 苏晚清看向窗外。是啊，天亮了。 | ch67: 而在此之前，她要好好想想，这张即将展开的棋盘，她该怎么落子。 | ch68: 老头站在岔路口，久久没有动。"
+    },
+    {
+      "source": "runtime/hook_debt#hook_郑老卒身份",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "hook_郑老卒身份（mystery，主要旧债，已开8章） | 读者承诺：**岭南（身份已揭露→引开追兵）** | 种于第61章：ch65 暗渡：药王街尾 - 撤离岭南城流放营→铜牌莲花符号验证成功→郑老卒身份揭露（欠苏念奴一条命+十五年前）→地道撤离→郑老卒封堵身后路+引开追兵→破庙老妪接应→往东十里落梅村→苏青伤口又裂但能撑住→城中火光向城东蔓延 | 推进于第1章：ch68 密道：风前人定 - 白天休整→查看密道→老头揭示苏家旁支身份→午后走遍密道确认密库门→晚饭炒鸡蛋→老头问苏家旧事→天黑出发→老头给包袱（干粮+旧衣裳）→告知福顺客栈接应→岔路口告别→苏晚清赠铜牌给老头→老头留守岔路口止步→苏晚清三人进入密道深处"
+    },
+    {
+      "source": "runtime/hook_debt#hook_流放营内鬼",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "hook_流放营内鬼（mystery，主要旧债，已开5章） | 读者承诺：岭南（追查中） | 种于第64章：ch64 暗棋：弃子与落子 - 孙押役被发现死在屋中（胸口插匕首+一刀致命+手中攥\"周砚是狼\"纸条）；陈掌柜带来坏消息（海捕文书通缉苏念奴）；济世堂总号被封是故意的（为苏晚清争取时间）；三日倒计时（周砚三日后搜人）；老夫人纸笺（路线+哨卡+落梅村方向+铁匠铺是假的+真正接应在城东药王街尾）；老夫人转话（\"念奴那块玉佩是打开苏家的钥匙\"+\"我等了十五年\"）；有人院子外转悠盯着苏晚清；苏晚清决定今夜离开岭南城 | 推进于第1章：ch68 密道：风前人定 - 白天休整→查看密道→老头揭示苏家旁支身份→午后走遍密道确认密库门→晚饭炒鸡蛋→老头问苏家旧事→天黑出发→老头给包袱（干粮+旧衣裳）→告知福顺客栈接应→岔路口告别→苏晚清赠铜牌给老头→老头留守岔路口止步→苏晚清三人进入密道深处"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | **孙押役被灭口（流放营里有人杀了他）**；**\"周砚是狼\"纸条（孙押役死前留下）**；**海捕文书通缉苏念奴（母亲名字泄露+有人泄密）**；**周砚最多一天搜到落梅村（紧急威胁）**；**流放营里有内鬼（盯着苏晚清）**；**济世堂总号被封（紧急危机）**；**控神毒药案真相揭露（苏家是南疆医族+朝廷灭口+只有老夫人和苏青母亲活下来）**；凤凰玉佩两块（\"念奴\"+ \"苏氏\"+合璧是打开苏家密库的钥匙）；控神毒药配方藏在苏家密库里；**铜牌验证成功（接应点确认+莲花符号吻合）**；**郑老卒身份揭露（欠苏念奴一条命+十五年前）**；**地道撤离成功（郑老卒封堵身后路）**；**\"苏家的根\"在落梅村（地道已发现）**；**暗号系统揭露（半莲=分支/全莲=主）**；**苏家逃生地道（逃生通道+百年前挖的）**；**苏念奴画像（母亲+当年路过落梅村住三天）**；**老头身份揭露（苏家旁支+守了十五年）**；**两个周砚身份揭露（镇国公府的周砚vs宫里的周砚+两股势力+宫中周砚是灭门幕后黑手）**；**控神毒药配方在苏家密库里（玉佩是钥匙）**；**苏家密道通往村外后山（可绕到三十里外青石镇）**；**官府暗哨已在村外山道留下标记（最多一天追到）**；**周砚追人不只是灭口是为了控神毒药配方**；**镇国公府和宫中互不对付（都想抢控神毒药配方）**；**暂时没有后援**；**今晚走密道撤离（决定已做出+正在执行）**；**福顺客栈（青石镇接应点+周掌柜）**"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 保管好铜牌和两块玉佩（两块合璧是打开苏家密库的钥匙）；等待与老夫人会合（青石镇找福顺客栈周掌柜）；**今晚走密道撤离到青石镇**；**密道岔路往前走直到后山**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 身体虚弱但稳定；凤凰玉佩在手（刻\"念奴\"+两块合璧是打开苏家密库的钥匙）；\"苏氏\"玉佩在苏青手中；空间泉水恢复中；空间物资（压缩饼干/花生饼/干果/花生糖/药酒/消炎药粉）；**已成功撤离岭南城流放营**；**已抵达落梅村**；**已发现苏念奴画像（母亲）**；**已发现苏家逃生地道（苏家的根）**；**已确认落梅村接应老头身份（苏家旁支+守了十五年）**；**苏青伤势已处理（老头上药完成+三五日内不能走动）**；获得铜牌（落梅村信物+背面刻莲花符号）；**铜牌已赠予老头（作为苏家信物留给他）**；获得老夫人纸笺（出城路线）；获得老妪包袱（干粮+水）；获得老头包袱（杂粮饼+炒米+水+旧衣裳）；**已确认暗号系统（半莲=分支/全莲=主）**；**决定今晚走密道撤离**；**今晚走密道撤离**"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 身体虚弱未完全恢复；苏青三五日内不能走动但决定今晚撤离（冒险）；**周砚的人最多一天会搜到落梅村（紧急）**；**流放营里有内鬼（盯着苏晚清）**；**海捕文书通缉苏念奴（母亲名字泄露）**；**城中火光搜索威胁已解除（远离岭南城）**；岭南城方向仍有追兵（已脱离岭南城范围）；**暂时没有后援（老李方德正在流放营外+济世堂被封）**；**老头已送至岔路口止步（村里只有老头一人）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#1",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "开局就是死局 | 穿越开局，女主在流放路上醒来，原主刚被鞭打致死；女主用智谋暂时说服赵押司不打死她；编造\"春桃私藏金银\"情报，偷听发现竟是真的；苏明珠假意示好被识破 | 穿越完成，灵魂融合；暂时保命但食物未解决；获得关键情报筹码 | hook_001激活（空间确认）；hook_006激活（春桃情报）；hook_007激活（今夜杀机）"
+    },
+    {
+      "source": "story/chapter_summaries.md#66",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "夜奔：火光与泥泞 | 撤离岭南城后穿过甘蔗林越过官道→抵达落梅村→发现半莲暗号→翠竹用\"葱多姜少\"验证→暗号对上→老头说\"等了十五年\"→铜牌验证→带进茅屋→发现苏念奴画像（母亲）→发现苏家逃生地道→老头身份揭露（苏家远亲+守了十五年）→老妪是另一条线（分支暗号）→老头说老夫人话\"苏家不会亡\"→老头准备给苏青治伤 | **苏晚清抵达落梅村**；**发现苏念奴画像（母亲）**；**发现苏家逃生地道**；**老头身份揭露**；**暗号系统揭露**；**苏青伤可治（老头在处理）**；**脱离岭南城追兵范围** | **hook_地道 推进（逃生通道用途揭示）**；**hook_老妪身份 RESOLVED（分支接应人确认）**；**hook_苏念奴画像 NEW**；**hook_落梅村接应网 NEW**；**hook_苏家逃生地道 NEW**；**hook_老头身份 NEW**；**hook_苏家不会亡 NEW**"
+    },
+    {
+      "source": "story/chapter_summaries.md#67",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "落梅：故人归处 | 抵达落梅村→铜牌验证成功→老头身份揭露（苏家远亲+守了十五年）→苏青伤口处理（已上药+三五日内不能走动）→老夫人画作（山水画归去来兮）→南疆医族揭露（苏家是南疆医族+控神毒药不传之秘）→苏家灭门真相（朝廷怕势大）→两个周砚身份揭露（镇国公府的vs宫里的+宫中是灭门幕后黑手）→苏家密道揭露（通往村外后山+百年前挖的）→苏家密库揭露（控神毒药配方在里面+两块玉佩是钥匙）→官府暗哨确认（村外山道有标记+最多一天追到）→苏晚清决定今晚走密道撤离青石镇 | **苏晚清成功抵达落梅村**；**苏青伤势已处理（三五日内不能走动）**；**老头身份完整揭露**；**两个周砚身份揭露**；**苏家密库存在揭露**；**控神毒药配方位置揭露**；**周砚追兵威胁确立（最多一天）**；**苏晚清决定今晚走密道撤离** | **hook_两个周砚 NEW（两股势力+宫中是灭门黑手）**；**hook_控神毒药配方 NEW（密库里）**；**hook_苏家密库 NEW**；**hook_老夫人画作 NEW**；**hook_南疆医族 NEW**；**hook_周砚追到落梅村 NEW**；**hook_苏家密道撤离 NEW**；**hook_暂时没有后援 NEW**；**hook_郑老卒身份 深化（引开追兵）**；**hook_地道 深化（用途揭露）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#68",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "密道：风前人定 | 白天休整→查看密道→老头揭示苏家旁支身份→午后走遍密道确认密库门→晚饭炒鸡蛋→老头问苏家旧事→天黑出发→老头给包袱（干粮+旧衣裳）→告知福顺客栈接应→岔路口告别→苏晚清赠铜牌给老头→老头留守岔路口止步→苏晚清三人进入密道深处 | **苏晚清三人进入密道撤离**；**老头留守岔路口**；**铜牌赠予老头（苏家信物）**；**福顺客栈接应点揭露**；**苏青伤势稳定（三五日内不能走动但能撑）** | **hook_福顺客栈 NEW**；**hook_流放营内鬼 深化**；**hook_郑老卒身份 深化（引开追兵）**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_福顺客栈",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 青石镇（待接应） | mid-arc | **68章NEW：老头告知青石镇福顺客栈周掌柜是接应人**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_两个周砚",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 岭南→落梅村（两股势力追人） | mid-arc | **67章揭露：两股势力都想抢控神毒药配方+镇国公府和宫中互不对付**"
+    }
+  ]
+}

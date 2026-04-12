@@ -1,0 +1,46 @@
+{
+  "chapter": 44,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\author_intent.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\current_focus.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\story_bible.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\volume_outline.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\chapter_summaries.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\book_rules.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\current_state.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\pending_hooks.md",
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\memory.db"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\系统降临-我在办公室屠boss\\story\\runtime\\chapter-0044.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "runtime/hook_debt#H099陈默真实身份",
+    "runtime/hook_debt#mystery-001陈默真实身份过去",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#37",
+    "story/chapter_summaries.md#41",
+    "story/chapter_summaries.md#42",
+    "story/chapter_summaries.md#43",
+    "story/pending_hooks.md#H106增长率可变",
+    "story/pending_hooks.md#H107第四个选项",
+    "story/pending_hooks.md#H105引导者程序",
+    "story/pending_hooks.md#H101S-001身份",
+    "story/pending_hooks.md#H102融合体共振",
+    "story/pending_hooks.md#H103E-017独立节点",
+    "story/pending_hooks.md#H104陆焚嘲讽",
+    "story/pending_hooks.md#mystery-001陈默真实身份过去"
+  ],
+  "notes": []
+}

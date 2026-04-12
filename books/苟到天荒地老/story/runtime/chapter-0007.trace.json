@@ -1,0 +1,37 @@
+{
+  "chapter": 7,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0007.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0007.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#chapter_6_bridge",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#3",
+    "story/chapter_summaries.md#4",
+    "story/chapter_summaries.md#5",
+    "story/chapter_summaries.md#6",
+    "story/pending_hooks.md#H011",
+    "story/pending_hooks.md#H025",
+    "story/pending_hooks.md#H023",
+    "story/pending_hooks.md#H009",
+    "story/pending_hooks.md#H004",
+    "story/pending_hooks.md#H027",
+    "story/pending_hooks.md#H019",
+    "story/pending_hooks.md#H020"
+  ],
+  "notes": []
+}

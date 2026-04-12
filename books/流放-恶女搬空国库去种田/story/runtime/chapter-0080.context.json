@@ -1,0 +1,140 @@
+{
+  "chapter": 80,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第79章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**清醒理智**：不被原书剧情和情感绑架，一切以生存和利益最大化为核心。"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "：穿越开局，危机四伏。女主在流放路上醒来，浑身是伤，面临差役的鞭打和继母庶妹的假惺惺刁难。核心冲突：马上要被饿死/打死。"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "79: 暗流：窗缝 | 77: 翠竹 | 76: 安福巷：夜色与脚步声 | 75: 午后 | 74: 安福巷：晨光与粥香"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "79: **警觉→凝重→质疑→坚定→警觉→凝重→坚定→警觉→坚定→凝重→坚定** / **推进章/验证章（苏远山验证+关键线索获取+矛盾发现+三人后落梅村行待定）** | 77: 警觉→凝重→坚定→沉重→坚定→紧张→凝重→坚定 / 推进章/转折章/危机升级章 | 76: **警觉→紧张→凝重→坚定→警觉→担忧→坚定→沉重→坚定→坚定→沉重→坚定** / **推进章/紧张章/危机升级章（深夜偷听+关键情报获取+威胁等级升级+等待与坚守）** | 75: **平静→警觉→担忧→警觉→紧张→坚定→警觉→担忧→坚定→平静→沉重→坚定** / **推进章/紧张章/日常章（午后日常+威胁信号升级+危机意识强化+等待与坚守）** | 74: **平静→警觉→释然→警觉→释然→平静** / **推进章/喘息章/日常章（养伤+侦察+温情+新威胁信号）**"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch77: 清风巷就在前面了。 | ch78: 但她的手，始终握着匕首。 | ch79: 但她的眼睛始终没有离开过窗外。平静撑不了太久。"
+    },
+    {
+      "source": "runtime/hook_debt#hook_控神毒药配方",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "hook_控神毒药配方（mystery，可兑现旧债，已开13章） | 读者承诺：落梅村（三天后取） | 种于第67章：ch67 落梅：故人归处 - 抵达落梅村→铜牌验证成功→老头身份揭露（苏家远亲+守了十五年）→苏青伤口处理（已上药+三五日内不能走动）→老夫人画作（山水画归去来兮）→南疆医族揭露（苏家是南疆医族+控神毒药不传之秘）→苏家灭门真相（朝廷怕势大）→两个周砚身份揭露（镇国公府的vs宫里的+宫中是灭门幕后黑手）→苏家密道揭露（通往村外后山+百年前挖的）→苏家密库揭露（控神毒药配方在里面+两块玉佩是钥匙）→官府暗哨确认（村外山道有标记+最多一天追到）→苏晚清决定今晚走密道撤离青石镇 | 推进于第79章：ch79 暗流：窗缝 - 苏晚清清晨出发去清风巷摸底→苏青给铜哨（老夫人所赠）→翠竹去城南永和街布庄打听→苏晚清在墨香斋对面茶摊观察→钱顺绕后巷进墨香斋（敲三停二暗号）→一盏茶后拿包袱离开→发现墨香斋后墙根有药草味→翠竹汇报（周掌柜三个月前没+布庄两个月前封+出事前几天有灰袍四十来岁人找他）→苏青回忆三叔（瘦+花白头发+斯文+手上有药味+跟老爷学过医）→苏晚清判断三叔可能是苏远山但昨天没闻见药味（矛盾）→午后去墨香斋追问三个问题（三年前在哪+另一条线证据+为什么翻窗户）→苏远山展示莲花花心一点红木牌（苏家接应网暗记）→苏远山说翻窗户是习惯（后门人多不方便）→追问账本→苏远山从桂花树下暗格取出账本副本给她→苏晚清拿走账本副本→问三天后落梅村取配方跟不跟→苏远山愣了→苏晚清说\"没信但需要你\"→苏晚清说\"至少没说谎但没说不代表没做\"→苏远山说\"像你爹\"→回安顺客栈给苏青翠竹看账本副本→计划三天后去落梅村时找人验证账本"
+    },
+    {
+      "source": "runtime/hook_debt#hook_左眉疤灰袍人",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "hook_左眉疤灰袍人（mystery，主要旧债，已开9章） | 读者承诺：岭南府城（身份待揭露） | 种于第71章：ch71 福顺：官道与马车 - 卯时出发→官道行半日→槐树下休息→苏青脸色发白但精神还好→老李建议以一家子身份进城→苏晚清规划先进安福巷落脚→府城门看到抓人（劲装汉子押五花大绑嫌犯+议论\"苏家的事\"）→苏晚清判断局势→老李递铜板通过城门盘查→进入岭南府城→老李送到安福巷→周掌柜纸条（城西落星桥）→老李完成任务离开→发现左眉疤灰袍人跟踪→判断至少两人跟踪→苏晚清决定先甩掉跟踪再联络接应点 | 推进于第77章：ch76 安福巷：夜色与脚步声 - 天黑隔壁没声响→翠竹借针线探查（没人应门+门缝有光+鞋底有血迹）→苏晚清从窗户翻出去→后巷偷听隔壁对话→**听到关键情报**：\"济世堂那边封了这条线断了\"+\"姓苏的丫头跑得快没在落梅村抓到\"+\"周掌柜的线也断了\"+\"城南砍了两个还没吐出来\"+\"上头急得很再拿不到东西咱们都得滚蛋\"→苏晚清判断：隔壁是京城来人撒出来的网专门摸苏家接应网底→暂不换房等他自己露出破绽→分配任务（翠竹明天打听赵姓客人）→夜深隔壁灯熄→苏晚清守夜做噩梦→天亮翠竹报告隔壁已退房（天没亮结账+多给两天房钱）→苏晚清分析：他会回来带着更多人更多手段→新的一天开始了+平静撑不了太久"
+    },
+    {
+      "source": "runtime/hook_debt#hook_劲装男人",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "hook_劲装男人（mystery，主要旧债，已开6章） | 读者承诺：岭南府城（身份待揭露） | 种于第74章：ch74 安福巷：晨光与粥香 - 清晨醒来（无追兵）→早饭（稀粥+卤肉干）→苏青脸色好转（能坐起来+结痂）→苏青提及玉佩（\"念奴\"+ \"苏氏\"+两块合璧开密库）→苏青担忧配方→苏晚清安抚（等风过去了再取）→翠竹报告（城南抓人今早砍了+苏家相关）→掌柜送肉包子→苏青换药→苏青午睡→苏晚清外出侦察（绕巷一圈+广场看糖人）→回客栈见劲装男人（精瘦+挂刀+不像本地）→苏晚清联想71章府城门劲装汉子→劲装男人已离开→苏晚清把玩凤凰玉佩\"念奴\"+感慨\"新的一天还没出事\" | 推进于第77章：ch76 安福巷：夜色与脚步声 - 天黑隔壁没声响→翠竹借针线探查（没人应门+门缝有光+鞋底有血迹）→苏晚清从窗户翻出去→后巷偷听隔壁对话→**听到关键情报**：\"济世堂那边封了这条线断了\"+\"姓苏的丫头跑得快没在落梅村抓到\"+\"周掌柜的线也断了\"+\"城南砍了两个还没吐出来\"+\"上头急得很再拿不到东西咱们都得滚蛋\"→苏晚清判断：隔壁是京城来人撒出来的网专门摸苏家接应网底→暂不换房等他自己露出破绽→分配任务（翠竹明天打听赵姓客人）→夜深隔壁灯熄→苏晚清守夜做噩梦→天亮翠竹报告隔壁已退房（天没亮结账+多给两天房钱）→苏晚清分析：他会回来带着更多人更多手段→新的一天开始了+平静撑不了太久"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | **苏远山可信度（昨天见面没闻到药味+墨香斋后墙根有药草味=矛盾？）**；**苏青的三叔记忆（瘦+花白头发+药味）vs 苏远山昨天没药味**；**钱顺可能是找周掌柜的灰袍人**；**两块凤凰玉佩合璧能开苏家密库（催命符）**；京城来人查控神毒药配方（府城斩首行动）；苏家接应网被渗透；安顺客栈房间可疑痕迹（有人经常从窗户翻入？）；三天后落梅村之行（苏远山跟不跟？）"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **验证苏远山真假**；**保管好铜哨和账本副本**；**三天后去落梅村取配方**；**保全苏青**；**继续观察苏远山言行**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | **两块凤凰玉佩在手**；**二十两银子**；**铜哨一枚（新获得）**；**账本副本（新获得）**；匕首随身；暂时安全（住进安顺客栈）；**高度警觉（验证苏远山中）**；苏青伤势持续好转"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | **府城在抓人审讯苏家（城南连续斩首）**；京城来人到处查控神毒药配方；**苏家接应网已被渗透**；周掌柜已被灭口；**回春堂被人盯着**；隔壁新住客和赵掌柜是京城来人（会回来）；劲装男人持续打探；左眉疤灰袍人可能在附近；**安顺客栈房间有可疑痕迹（窗框泥印+门槛擦拭痕迹）**；**苏远山自称堂叔但有可疑之处（昨天见面没药味）**；**墨香斋后墙根有药草味**；**翠竹打听到周掌柜出事前几天有灰袍人（四十来岁）找他**"
+    },
+    {
+      "source": "story/chapter_summaries.md#1",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "开局就是死局 | 穿越开局，女主在流放路上醒来，原主刚被鞭打致死；女主用智谋暂时说服赵押司不打死她；编造\"春桃私藏金银\"情报，偷听发现竟是真的；苏明珠假意示好被识破 | 穿越完成，灵魂融合；暂时保命但食物未解决；获得关键情报筹码 | hook_001激活（空间确认）；hook_006激活（春桃情报）；hook_007激活（今夜杀机）"
+    },
+    {
+      "source": "story/chapter_summaries.md#74",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "安福巷：晨光与粥香 | 清晨醒来（无追兵）→早饭（稀粥+卤肉干）→苏青脸色好转（能坐起来+结痂）→苏青提及玉佩（\"念奴\"+ \"苏氏\"+两块合璧开密库）→苏青担忧配方→苏晚清安抚（等风过去了再取）→翠竹报告（城南抓人今早砍了+苏家相关）→掌柜送肉包子→苏青换药→苏青午睡→苏晚清外出侦察（绕巷一圈+广场看糖人）→回客栈见劲装男人（精瘦+挂刀+不像本地）→苏晚清联想71章府城门劲装汉子→劲装男人已离开→苏晚清把玩凤凰玉佩\"念奴\"+感慨\"新的一天还没出事\" | **苏青伤势持续好转（结痂+淤青褪去+能坐起+明天可下地走动预告）**；**获得掌柜赠送肉包子**；**使用周老伯包袱中药膏给苏青换药**；**凤凰玉佩\"念奴\"确认是母亲遗物+两块合璧开密库（苏青补充信息）**；**劲装男人出现（新增威胁信号）**；**苏晚清外出侦察一圈未发现跟踪** | **hook_两个周砚 深化（翠竹报告斩首+劲装男人出现）**；**hook_控神毒药配方 深化（苏青提及+等待时机）**；**hook_左眉疤灰袍人 状态确认（苏晚清警惕但未发现）**；**hook_苏家接应网运转 维持（暂缓联络其他接应点）**；**hook_劲装男人 NEW（客栈门口+关联71章府城门劲装汉子）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#77",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "翠竹 | 翠竹打听赵掌柜（确认威胁）→苏青提议扔玉佩被拒→换客栈躲赵掌柜→灰衣汉子拦截→苏晚清决定赴约清风巷 | 赵姓客人身份逆转（京城来人）；苏晚清决定换客栈；灰衣汉子出现；清风巷书铺曝光 | hook_清风巷主人 NEW；hook_隔壁新住客深化"
+    },
+    {
+      "source": "story/chapter_summaries.md#79",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "暗流：窗缝 | 苏晚清清晨出发去清风巷摸底→苏青给铜哨（老夫人所赠）→翠竹去城南永和街布庄打听→苏晚清在墨香斋对面茶摊观察→钱顺绕后巷进墨香斋（敲三停二暗号）→一盏茶后拿包袱离开→发现墨香斋后墙根有药草味→翠竹汇报（周掌柜三个月前没+布庄两个月前封+出事前几天有灰袍四十来岁人找他）→苏青回忆三叔（瘦+花白头发+斯文+手上有药味+跟老爷学过医）→苏晚清判断三叔可能是苏远山但昨天没闻见药味（矛盾）→午后去墨香斋追问三个问题（三年前在哪+另一条线证据+为什么翻窗户）→苏远山展示莲花花心一点红木牌（苏家接应网暗记）→苏远山说翻窗户是习惯（后门人多不方便）→追问账本→苏远山从桂花树下暗格取出账本副本给她→苏晚清拿走账本副本→问三天后落梅村取配方跟不跟→苏远山愣了→苏晚清说\"没信但需要你\"→苏晚清说\"至少没说谎但没说不代表没做\"→苏远山说\"像你爹\"→回安顺客栈给苏青翠竹看账本副本→计划三天后去落梅村时找人验证账本 | **获得铜哨（老夫人给的）**；**获得账本副本（桂花树下暗格）**；**验证行动开始（三个问题追问）**；**关键矛盾发现（苏远山昨天没药味但三叔应该有药味）**；**关键线索（墨香斋后墙根有药草味）**；**关键线索（钱顺可能是找周掌柜的灰袍人）**；**苏青持续恢复** | **hook_清风巷主人 重大推进（苏远山身份复杂化+追问三问题+莲花木牌+账本副本）**；**hook_墨香斋后墙根 NEW（药草味线索）**；**hook_控神毒药配方 推进（三天后落梅村取配方）**；**hook_苏家接应网运转 推进（莲花木牌确认+账本副本）**；**hook_两个周砚 维持（周掌柜被灭口得到验证）**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_墨香斋后墙根",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 待定 | **79章新增：墨香斋后墙根有淡淡药草味（不像书铺该有的味道）+苏青说三叔\"手上有股药味\"+苏远山昨天见面时没药味=矛盾线索**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_清风巷主人",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 岭南府城（待揭露） | mid-arc | **79章重大推进：苏远山直接对话+三个问题追问+苏远山展示莲花木牌+给了账本副本+墨香斋后墙根有药草味（线索）+苏青三叔记忆（瘦+花白+药味）vs苏远山昨天没药味（矛盾）+钱顺可能是找周掌柜的灰袍人（线索）+三天后落梅村之行待定**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_苏家接应网运转",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 岭南府城（接应网运转中） | mid-arc | **79章重大推进：苏远山展示莲花花心一点红木牌（苏家接应网暗记）+确认另一条线他守着+给了账本副本**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_两个周砚",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 岭南→落梅村→青石镇→府城 | mid-arc | **79章维持：周掌柜被灭口（翠竹核实）+苏远山说法得到部分验证**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_控神毒药配方",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 落梅村（三天后取） | mid-arc | **79章推进：三天后去落梅村取配方+苏远山问跟不跟（待定）+账本副本到手（可验证配方真假）**"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_隔壁新住客",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 岭南府城（身份待揭露） | mid-arc | 75章新增+76章重大推进+77章深化+78章确认：隔壁是京城来人撒网摸底+已退房但会回来；79章未直接提及但苏晚清保持警觉"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_劲装男人",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 岭南府城（身份待揭露） | mid-arc | 74章新增+76章深化+77章提及；79章未直接提及"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_左眉疤灰袍人",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 岭南府城（身份待揭露） | mid-arc | 71章新增+72章确认甩掉+73章警告+74-77章警惕；79章未直接提及但可能在附近"
+    }
+  ]
+}

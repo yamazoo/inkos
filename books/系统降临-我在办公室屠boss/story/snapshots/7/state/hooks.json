@@ -1,0 +1,103 @@
+{
+  "hooks": [
+    {
+      "hookId": "H025",
+      "startChapter": 6,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "20章内",
+      "notes": "非绑定单位——筛选机制——**第7章新推进：系统对部分人类连\"非绑定单位\"都不标记，暗示存在\"完全无资格\"分类；陈默推断筛选可能提前预知觉醒资格**"
+    },
+    {
+      "hookId": "H026",
+      "startChapter": 6,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "20章内",
+      "notes": "李父意识独立存在——**关联：白衣女人通过李思雨传话的机制待解；\"筛选\"警告与系统绑定状态的关系**"
+    },
+    {
+      "hookId": "H023",
+      "startChapter": 5,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "20章内",
+      "notes": "\"确认同步\"——**关联：系统绑定状态的\"三层分类\"可能与同步机制有关**"
+    },
+    {
+      "hookId": "H024",
+      "startChapter": 6,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "20章内",
+      "notes": "\"确认同步\"与李父警告——**关联：白衣女人信息传递路径待解**"
+    },
+    {
+      "hookId": "H001",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "Ch.155",
+      "notes": "系统神秘标记（橙色光圈）"
+    },
+    {
+      "hookId": "H002",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "Ch.120",
+      "notes": "神秘掉落物品「???」"
+    },
+    {
+      "hookId": "H003",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 4,
+      "expectedPayoff": "已回收",
+      "notes": "先觉者联盟"
+    },
+    {
+      "hookId": "H009",
+      "startChapter": 1,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "已回收",
+      "notes": "末日降临机制"
+    },
+    {
+      "hookId": "H010",
+      "startChapter": 4,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "已回收",
+      "notes": "李父遗言"
+    },
+    {
+      "hookId": "H019",
+      "startChapter": 4,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "已回收",
+      "notes": "「???」吸引机制"
+    },
+    {
+      "hookId": "H070",
+      "startChapter": 7,
+      "type": "**新埋**",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "**待定**",
+      "notes": "**仓库异常——红点带有荧光特征，与休眠舱阵列颜色相似；可能与\"觉醒者消失\"有关，不是普通污染体**"
+    }
+  ]
+}

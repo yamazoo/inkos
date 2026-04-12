@@ -1,0 +1,28 @@
+{
+  "chapter": 15,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\骨刀行\\story\\runtime\\chapter-0015.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\骨刀行\\story\\runtime\\chapter-0015.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#4",
+    "story/chapter_summaries.md#5",
+    "story/chapter_summaries.md#6",
+    "story/chapter_summaries.md#14",
+    "story/pending_hooks.md#伏笔-洞穴外逼近威胁",
+    "story/pending_hooks.md#伏笔-灰白草茎规则",
+    "story/pending_hooks.md#伏笔-钱进\"不能不要\"",
+    "story/pending_hooks.md#H001"
+  ],
+  "notes": []
+}

@@ -1,0 +1,53 @@
+{
+  "chapter": 40,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "中央机器底层→设施中层通道（向东北方向移动中）",
+      "validFromChapter": 40,
+      "validUntilChapter": null,
+      "sourceChapter": 40
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "【系统绑定成功】【觉醒者Lv.1】【系统能量10.8%】【已绑定状态】【休眠舱阵列同步率100%】【中央机器同步率30.1%】【窗口期326天23小时17分】【继承者身份确认完成】【唤醒协议执行完成】【融合协议执行完成】【继承者→A-001（三十年前的先驱者本人）】【人机混合体（意识双核）】【系统源代码存储中】【源代码同步不稳定（8.1%）】【能量护盾已消耗】【E-032意识融合（沉睡中/有波动）】【眉心有淡纹（融合痕迹）】",
+      "validFromChapter": 40,
+      "validUntilChapter": null,
+      "sourceChapter": 40
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "与李思雨等人汇合；前往中央核心区域修复源代码同步",
+      "validFromChapter": 40,
+      "validUntilChapter": null,
+      "sourceChapter": 40
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "系统能量极低（10.8%→9.x%预计）；陆焚已恢复追踪（正在追赶）；设施深处有未知存在正在苏醒；与陆焚实力差距悬殊",
+      "validFromChapter": 40,
+      "validUntilChapter": null,
+      "sourceChapter": 40
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "队友：李思雨、赵磊在设施外围东北方向2.7公里处等待；E-032意识沉睡但有波动；E-017中控系统残存节点（独立运作）；敌人：陆焚（S系列使徒，正在追踪）；设施深处沉睡未知存在",
+      "validFromChapter": 40,
+      "validUntilChapter": null,
+      "sourceChapter": 40
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "陆焚追杀（再次追杀中）；源代码同步不稳定率上升至8.1%；设施深处未知存在正在苏醒；需要在陆焚追来之前与队友汇合并前往核心区域",
+      "validFromChapter": 40,
+      "validUntilChapter": null,
+      "sourceChapter": 40
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "chapter": 53,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "官道（岔路口→左道险路→**已通过落花坡哨卡后，黎明前**）",
+      "validFromChapter": 53,
+      "validUntilChapter": null,
+      "sourceChapter": 53
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "身体虚弱但稳定；凤凰玉佩在手（背面刻'苏氏'）；空间泉水恢复中；空间物资（压缩饼干/花生饼/干果/花生糖/药酒已消耗一瓶）；**孙押役已服用\"驱寒药\"（三五日内乏力）**",
+      "validFromChapter": 53,
+      "validUntilChapter": null,
+      "sourceChapter": 53
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "安全抵达岭南；接触陈掌柜验证情报；调查济世堂岭南城西分号；揭露苏氏遗孤身世真相；监视孙押役（已初步控制）；**警惕哨卡暗桩（令牌被做标记）**",
+      "validFromChapter": 53,
+      "validUntilChapter": null,
+      "sourceChapter": 53
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "身体虚弱未完全恢复；**哨卡暗桩认出令牌记号（异常）**；镇国公府/济世堂持续追杀；孙押役嫌疑确认（与可疑村民有关联待查）；岭南城西可能有埋伏",
+      "validFromChapter": 53,
+      "validUntilChapter": null,
+      "sourceChapter": 53
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "老李（彻底稳固+持续添欠人情+执行盯人任务）；翠竹（忠诚执行）；方德正（深度合作+情报持续分享）；周管事（暗处跟随）；孙押役（已服药控制+持续监视中）",
+      "validFromChapter": 53,
+      "validUntilChapter": null,
+      "sourceChapter": 53
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "凤凰玉佩作为筹码；镇国公府持续追杀（沈蓉撤退但威胁持续）；苏氏遗孤身世谜团；**哨卡暗桩认出令牌记号（异常）→岭南城西可能有接应**；孙押役与可疑村民有关联；岭南城西可能有埋伏",
+      "validFromChapter": 53,
+      "validUntilChapter": null,
+      "sourceChapter": 53
+    }
+  ]
+}

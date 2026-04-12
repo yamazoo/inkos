@@ -1,0 +1,499 @@
+{
+  "hooks": [
+    {
+      "hookId": "伏笔-洞穴深处阴影",
+      "startChapter": 63,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 63,
+      "expectedPayoff": "待展开",
+      "notes": "从深处拐角渗出/比匣内活物大得多/悬在七八步远/多嘴呼吸→呼吸约二十息后消失→与后山\"东西\"是否是同一种？"
+    },
+    {
+      "hookId": "伏笔-滴答声",
+      "startChapter": 63,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "**64章：滴答声从洞穴外传来/节奏慢/越来越密越来越近/与洞穴深处听到的一模一样**→新发现：威胁从洞外逼近"
+    },
+    {
+      "hookId": "伏笔-阿纱的秘密",
+      "startChapter": 63,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "**64章：确认两年前村里有人收到灰白草茎/收了就不能还/还了会死/阿纱看铁匣时眼圈红了一下/阿纱不回答自己是否也收过**→新线索：阿纱对铁匣有特殊反应"
+    },
+    {
+      "hookId": "伏笔-铁匣刻字\"别走\"",
+      "startChapter": 60,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 63,
+      "expectedPayoff": "待展开",
+      "notes": "**63章确认为\"别走\"二字**→含义仍待解读"
+    },
+    {
+      "hookId": "伏笔-它们怕光",
+      "startChapter": 61,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "**64章新发现：活物怕光但不完全怕/在阴影中静止/火光照到时动/可利用阴影控制**"
+    },
+    {
+      "hookId": "伏笔-两年前的女人",
+      "startChapter": 62,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 63,
+      "expectedPayoff": "待展开",
+      "notes": "女人收到灰白草茎后失踪/\"走了就没再回来\"/钱进两年前见过"
+    },
+    {
+      "hookId": "伏笔-别看它们的眼睛",
+      "startChapter": 62,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "**64章：钱进清醒时说出的警告/临死遗言/比梦呓更可信**→眼睛有什么问题？"
+    },
+    {
+      "hookId": "伏笔-灰白草茎规则",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "伏笔-钱进的遗言\"巢\"",
+      "startChapter": 64,
+      "type": "**伏笔（新增）**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "**64章新增：钱进临死前最后两个字/只有一个\"巢\"字**→巢是什么？在哪里？与\"它们\"的关系？"
+    },
+    {
+      "hookId": "伏笔-洞穴外逼近威胁",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "伏笔-阿纱的眼圈红",
+      "startChapter": 64,
+      "type": "**伏笔（新增）**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "**64章新增：阿纱看到铁匣时眼圈突然红了一下/很快就恢复正常**→她与铁匣/活物有什么关系？"
+    },
+    {
+      "hookId": "伏笔-钱进\"不能不要\"",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "伏笔-SU40\"它们\"的身份",
+      "startChapter": 61,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "钱进临死透露：\"它们给的\"/\"别看它们的眼睛\"/\"巢\"/结合洞穴深处阴影/滴答声/灰白草茎/尸体薄膜"
+    },
+    {
+      "hookId": "伏笔-断手活物下落",
+      "startChapter": 61,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 61,
+      "expectedPayoff": "待展开",
+      "notes": "**60章切断的手腕→陆沉认为算第四只→但它去哪了？活着还是死了？**"
+    },
+    {
+      "hookId": "伏笔-SU006苏青禾",
+      "startChapter": 4,
+      "type": "支线",
+      "status": "open",
+      "lastAdvancedChapter": 53,
+      "expectedPayoff": "**连续11章未提及**",
+      "notes": "**必须下一章（65章）处理/已超临界点**"
+    },
+    {
+      "hookId": "伏笔-活物怕光",
+      "startChapter": 60,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "**待展开**",
+      "notes": "**64章确认：三只活物见火光收缩/怕光特性→可利用阴影控制**"
+    },
+    {
+      "hookId": "伏笔-铁匣刻字",
+      "startChapter": 60,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "**待展开**",
+      "notes": "**63章确认为\"别走\"→64章未解释含义→仍是悬案**"
+    },
+    {
+      "hookId": "伏笔-灰白絮状物",
+      "startChapter": 60,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "**待展开**",
+      "notes": "**64章确认：絮状物被从内拱开/是巢穴或保护层**"
+    },
+    {
+      "hookId": "伏笔-断手活物（SP039）",
+      "startChapter": 60,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "**64章仍未处理→超过5章→警告**",
+      "notes": "**60章切断的手腕下落不明→63章确认匣内\"三只一起动\"→64章确认匣内三只→第四只（断手）状态未交代→按2-3章回收ETA已逾期→需65章明确交代**"
+    },
+    {
+      "hookId": "伏笔-SP006苏青禾安全",
+      "startChapter": 53,
+      "type": "**主线支线**",
+      "status": "open",
+      "lastAdvancedChapter": 53,
+      "expectedPayoff": "**64章仍只有\"想起\"→极度警告→65章必须处理**",
+      "notes": "**53章安置灌木丛→64章仅想起（十天）→连续11章未实际推进→读者期待积压超临界点→65章必须：确认安全/出现危险/明确线索→不能以\"想起\"一笔带过**"
+    },
+    {
+      "hookId": "伏笔-它们是谁",
+      "startChapter": 61,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "**钱进口中\"它们给我的\"东西（布包/肉干/粗盐）→给东西的是谁？穴居人？匣内活物？还是别的存在？→**64章推进：穴居人暗示铁匣也是\"它们\"给的**"
+    },
+    {
+      "hookId": "伏笔-山中异常安静",
+      "startChapter": 61,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "**鸟叫声没有/虫鸣没有/风吹树叶声被压住/安静得不正常→什么东西造成？→**64章推进：暗示与\"它们\"的存在有关（\"它们在这座山里\"）**"
+    },
+    {
+      "hookId": "伏笔-铁匣刻字\"别——\"",
+      "startChapter": 60,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "**60章发现刻字→63章确认为\"别走\"→**64章新解读：也可能是\"别留在手里\"/别送回去？→与草茎规则矛盾**"
+    },
+    {
+      "hookId": "伏笔-两年前女人",
+      "startChapter": 61,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "**两年前进山/收到灰白草茎/\"走了没再回来\"→是否是苏青禾？→时间线矛盾（七年前vs两年前）→**64章推进：阿纱确认女人\"还了会死/没还会走\"**"
+    },
+    {
+      "hookId": "H002",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "H006",
+      "startChapter": 0,
+      "type": "11",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H012",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 4,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "H016",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "H018",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H021",
+      "startChapter": 0,
+      "type": "12",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H024",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H025",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H026",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H027",
+      "startChapter": 0,
+      "type": "11",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H011",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待后续章节确认状态",
+      "notes": "需后续章节确认状态"
+    },
+    {
+      "hookId": "H013",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "H029",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "后续章节",
+      "notes": "三叔透露父亲死因被拦截"
+    },
+    {
+      "hookId": "H030",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "后续章节",
+      "notes": "陆鸢对陆沉的怨恨"
+    },
+    {
+      "hookId": "H031",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "后续章节",
+      "notes": "铁算盘知道内情"
+    },
+    {
+      "hookId": "H032",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "无需后续",
+      "notes": "令牌功能已确认"
+    },
+    {
+      "hookId": "H033",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "13章",
+      "notes": "黑松林任务"
+    },
+    {
+      "hookId": "H003",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "H008",
+      "startChapter": 0,
+      "type": "13",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H014",
+      "startChapter": 0,
+      "type": "11",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H015",
+      "startChapter": 0,
+      "type": "11",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H020",
+      "startChapter": 0,
+      "type": "13",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H034",
+      "startChapter": 0,
+      "type": "13",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H035",
+      "startChapter": 0,
+      "type": "13",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H036",
+      "startChapter": 0,
+      "type": "13",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H037",
+      "startChapter": 0,
+      "type": "13",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H001",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 13,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "H038",
+      "startChapter": 0,
+      "type": "13",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H039",
+      "startChapter": 0,
+      "type": "13",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H040",
+      "startChapter": 0,
+      "type": "13",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H009",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    }
+  ]
+}

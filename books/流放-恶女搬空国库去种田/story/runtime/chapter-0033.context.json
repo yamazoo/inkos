@@ -1,0 +1,75 @@
+{
+  "chapter": 33,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**清醒理智**：不被原书剧情和情感绑架，一切以生存和利益最大化为核心。"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "1. 穿越觉醒，利用空间物资收买押送官，改善生存环境。"
+    },
+    {
+      "source": "story/current_state.md#当前资源",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前资源 | 一千两银票已付押送官方大人、太后赏赐（空间内）、苏父三千两银票（空间）、太傅夫人资源待开发、**解毒丸已给方大人一瓶**"
+    },
+    {
+      "source": "story/current_state.md#押送官",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "押送官 | 方大人（已被收买，一路护送至岭南，**善意提醒岭南路途危险**）"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 安全抵达岭南；追查济世堂脉案真相；**追查落花坡真相**；追查城西赵掌柜妻子"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 良好（精神紧绷但冷静，执棋人姿态）"
+    },
+    {
+      "source": "story/chapter_summaries.md#12",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "杀鸡儆猴 | 苏晚清击退黑狗帮铁头等5人；周管事透露黑狗帮内情和七杀情报；翠竹带回情报确认七杀目标是自己；苏晚清给小女孩馒头开始收拢人心；夜间黑狗帮13人来袭被周管事抓捕送官；寒潮将至 | 成功立威击退黑狗帮两次；与周管事建立初步合作；确认七杀追杀目标是自己；开始收拢人心 | H032推进（七杀接头地点确认）、H034推进（赵大势力削弱）、H035推进（周管事合作）、H036激活（五千两买命）、H037激活（寒潮）、H038激活（小女孩）"
+    },
+    {
+      "source": "story/chapter_summaries.md#31",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "流放路 | 苏晚清被押送流放，途中遇黑狗帮拦路追杀，以迷药配合押送官击退刺客，以一千两银票建立护送协议 | 苏晚清进入流放状态；与方大人建立暗中合作；凤凰玉佩空间首次展示给外人（部分） | hook_0029 advanced（木芙蓉→济世堂→二十三年链路坐实）；hook_0034 advanced（黑狗帮追杀坐实）；mystery-济世堂脉案篡改 mentioned；mystery-双生胎真相 mentioned"
+    },
+    {
+      "source": "story/chapter_summaries.md#32",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "驿站 | **收买方大人完成**（糕点卤味+解毒丸）；方大人善意提醒\"岭南有些地方不好走\"；**城西赵掌柜派吴账房接触**，送来\"落花坡\"路线图；苏晚清将信图收入空间 | **流放进入休整阶段**；**方大人合作稳固**；**城西赵家岭南势力渗透确认**；**落花坡线索出现** | **mystery-岭南瘴气陷阱重大推进**（落花坡）；hook_0034推进（城西赵家岭南人脉）；hook_落花坡激活"
+    },
+    {
+      "source": "story/pending_hooks.md#hook_落花坡",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**新增伏笔** | open | **待定** | **新伏笔：赵掌柜送来的路线图指向\"落花坡\"，疑似岭南陷阱所在地**"
+    },
+    {
+      "source": "story/pending_hooks.md#mystery-岭南瘴气陷阱",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | open | 待定 | 苏晏清想让苏晚清\"死在岭南瘴气\"——岭南路上有什么安排？岭南目的地有什么等着她？**本章重大推进：赵掌柜送来\"落花坡\"路线图，指向岭南某处**"
+    },
+    {
+      "source": "story/pending_hooks.md#mystery-岭南瘴气陷阱-的具体内容-苏晏清想让苏",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "mystery | progressing | 待定 | **新增：落花坡疑似岭南陷阱/惊喜所在地，赵掌柜主动送来路线图**"
+    }
+  ]
+}

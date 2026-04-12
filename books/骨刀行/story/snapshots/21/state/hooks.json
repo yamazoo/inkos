@@ -1,0 +1,1102 @@
+{
+  "hooks": [
+    {
+      "hookId": "伏笔-洞穴深处阴影",
+      "startChapter": 63,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 63,
+      "expectedPayoff": "待展开",
+      "notes": "从深处拐角渗出/比匣内活物大得多/悬在七八步远/多嘴呼吸→呼吸约二十息后消失→与后山\"东西\"是否是同一种？"
+    },
+    {
+      "hookId": "伏笔-滴答声",
+      "startChapter": 64,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "新发现：威胁从洞外逼近"
+    },
+    {
+      "hookId": "伏笔-阿纱的秘密",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "两年前村里有人收到灰白草茎/收了就不能还/还了会死/阿纱看铁匣时眼圈红了一下"
+    },
+    {
+      "hookId": "伏笔-铁匣刻字\"别走\"",
+      "startChapter": 60,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 63,
+      "expectedPayoff": "待展开",
+      "notes": "**63章确认为\"别走\"二字**→含义仍待解读"
+    },
+    {
+      "hookId": "伏笔-它们怕光",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "活物怕光但不完全怕/在阴影中静止/火光照到时动/可利用阴影控制"
+    },
+    {
+      "hookId": "伏笔-两年前的女人",
+      "startChapter": 62,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 63,
+      "expectedPayoff": "待展开",
+      "notes": "女人收到灰白草茎后失踪/\"走了就没再回来\"/钱进两年前见过"
+    },
+    {
+      "hookId": "伏笔-别看它们的眼睛",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "钱进临死警告/临死遗言/比梦呓更可信"
+    },
+    {
+      "hookId": "伏笔-灰白草茎规则",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "伏笔-钱进的遗言\"巢\"",
+      "startChapter": 64,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "巢是什么？在哪里？与\"它们\"的关系？"
+    },
+    {
+      "hookId": "伏笔-洞穴外逼近威胁",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "伏笔-阿纱的眼圈红",
+      "startChapter": 64,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "她与铁匣/活物有什么关系？"
+    },
+    {
+      "hookId": "伏笔-钱进\"不能不要\"",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "伏笔-SU40\"它们\"的身份",
+      "startChapter": 56,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "钱进临死透露：\"它们给的\"/\"别看它们的眼睛\"/\"巢\"/结合洞穴深处阴影/滴答声/灰白草茎/尸体薄膜"
+    },
+    {
+      "hookId": "伏笔-断手活物下落",
+      "startChapter": 61,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 61,
+      "expectedPayoff": "待展开",
+      "notes": "**60章切断的手腕→陆沉认为算第四只→但它去哪了？活着还是死了？**"
+    },
+    {
+      "hookId": "伏笔-SU006苏青禾",
+      "startChapter": 4,
+      "type": "支线",
+      "status": "open",
+      "lastAdvancedChapter": 53,
+      "expectedPayoff": "**连续11章未提及**",
+      "notes": "**必须下一章（65章）处理/已超临界点**"
+    },
+    {
+      "hookId": "伏笔-活物怕光",
+      "startChapter": 60,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "**待展开**",
+      "notes": "**64章确认：三只活物见火光收缩/怕光特性→可利用阴影控制**"
+    },
+    {
+      "hookId": "伏笔-铁匣刻字",
+      "startChapter": 60,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "**待展开**",
+      "notes": "**63章确认为\"别走\"→64章未解释含义→仍是悬案**"
+    },
+    {
+      "hookId": "伏笔-灰白絮状物",
+      "startChapter": 60,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "**待展开**",
+      "notes": "**64章确认：絮状物被从内拱开/是巢穴或保护层**"
+    },
+    {
+      "hookId": "伏笔-断手活物（SP039）",
+      "startChapter": 60,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "**64章仍未处理→超过5章→警告**",
+      "notes": "**60章切断的手腕下落不明→63章确认匣内\"三只一起动\"→64章确认匣内三只→第四只（断手）状态未交代→按2-3章回收ETA已逾期→需65章明确交代**"
+    },
+    {
+      "hookId": "伏笔-SP006苏青禾安全",
+      "startChapter": 53,
+      "type": "**主线支线**",
+      "status": "open",
+      "lastAdvancedChapter": 53,
+      "expectedPayoff": "**64章仍只有\"想起\"→极度警告→65章必须处理**",
+      "notes": "**53章安置灌木丛→64章仅想起（十天）→连续11章未实际推进→读者期待积压超临界点→65章必须：确认安全/出现危险/明确线索→不能以\"想起\"一笔带过**"
+    },
+    {
+      "hookId": "伏笔-它们是谁",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "钱进口中\"它们给我的\"东西/穴居人暗示铁匣也是\"它们\"给的"
+    },
+    {
+      "hookId": "伏笔-山中异常安静",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "鸟叫声没有/虫鸣没有/风吹树叶声被压住/安静得不正常/与\"它们\"的存在有关"
+    },
+    {
+      "hookId": "伏笔-铁匣刻字\"别——\"",
+      "startChapter": 60,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "**60章发现刻字→63章确认为\"别走\"→**64章新解读：也可能是\"别留在手里\"/别送回去？→与草茎规则矛盾**"
+    },
+    {
+      "hookId": "伏笔-两年前女人",
+      "startChapter": 51,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "**待展开**",
+      "notes": "**两年前进山/收到灰白草茎/\"走了没再回来\"→是否是苏青禾？→时间线矛盾（七年前vs两年前）→**64章推进：阿纱确认女人\"还了会死/没还会走\"**"
+    },
+    {
+      "hookId": "H002",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "待展开",
+      "notes": "钱家与陆家恩怨：钱进/钱通与陆沉父亲之死关联"
+    },
+    {
+      "hookId": "H006",
+      "startChapter": 11,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待回收",
+      "notes": "五年前苏父为治眼去黑松林"
+    },
+    {
+      "hookId": "H012",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "黑松林地图交换",
+      "notes": ""
+    },
+    {
+      "hookId": "H016",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 6,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "H018",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H021",
+      "startChapter": 13,
+      "type": "剧情",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "前两天刚从林子出来/伤了元气"
+    },
+    {
+      "hookId": "H024",
+      "startChapter": 13,
+      "type": "情报",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": ""
+    },
+    {
+      "hookId": "H025",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H026",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H027",
+      "startChapter": 13,
+      "type": "剧情",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "标注骨庙位置"
+    },
+    {
+      "hookId": "H011",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待后续章节确认状态",
+      "notes": "需后续章节确认状态"
+    },
+    {
+      "hookId": "H013",
+      "startChapter": 13,
+      "type": "剧情",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "需进入黑松林"
+    },
+    {
+      "hookId": "H029",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "后续章节",
+      "notes": "三叔透露父亲死因被拦截"
+    },
+    {
+      "hookId": "H030",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "后续章节",
+      "notes": "陆鸢对陆沉的怨恨"
+    },
+    {
+      "hookId": "H031",
+      "startChapter": 13,
+      "type": "剧情",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": ""
+    },
+    {
+      "hookId": "H032",
+      "startChapter": 13,
+      "type": "剧情",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": ""
+    },
+    {
+      "hookId": "H033",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "13章",
+      "notes": "黑松林任务"
+    },
+    {
+      "hookId": "H003",
+      "startChapter": 3,
+      "type": "剧情",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待回收",
+      "notes": "暗室玉佩被取走"
+    },
+    {
+      "hookId": "H008",
+      "startChapter": 0,
+      "type": "13",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H014",
+      "startChapter": 13,
+      "type": "情报",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "与断脊刀持有者身份关联"
+    },
+    {
+      "hookId": "H015",
+      "startChapter": 13,
+      "type": "情报",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": ""
+    },
+    {
+      "hookId": "H020",
+      "startChapter": 0,
+      "type": "13",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H034",
+      "startChapter": 13,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": ""
+    },
+    {
+      "hookId": "H035",
+      "startChapter": 13,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": ""
+    },
+    {
+      "hookId": "H036",
+      "startChapter": 13,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": ""
+    },
+    {
+      "hookId": "H037",
+      "startChapter": 13,
+      "type": "剧情",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "青云宗敌人"
+    },
+    {
+      "hookId": "H001",
+      "startChapter": 27,
+      "type": "**剧情**",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "**待展开**",
+      "notes": "**马七师兄同名悬念**：马七师兄名为\"陆沉\"/与主角同名/马七亲眼见过其尸体/十三年前死于火灾/主角父亲叫陆渊（渊与沉同音）/巧合但仍存疑"
+    },
+    {
+      "hookId": "H038",
+      "startChapter": 13,
+      "type": "情报",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": ""
+    },
+    {
+      "hookId": "H039",
+      "startChapter": 13,
+      "type": "情报",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": ""
+    },
+    {
+      "hookId": "H040",
+      "startChapter": 13,
+      "type": "情报",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "黑虎帮觊觎"
+    },
+    {
+      "hookId": "H009",
+      "startChapter": 0,
+      "type": "待展开",
+      "status": "open",
+      "lastAdvancedChapter": 14,
+      "expectedPayoff": "待推进",
+      "notes": ""
+    },
+    {
+      "hookId": "H010",
+      "startChapter": 13,
+      "type": "剧情",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "钱通欲换取断脊刀"
+    },
+    {
+      "hookId": "H041",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待定",
+      "notes": "待展开"
+    },
+    {
+      "hookId": "H042",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": ""
+    },
+    {
+      "hookId": "H043",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本章提及需跟进",
+      "notes": ""
+    },
+    {
+      "hookId": "H044",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "断手活物/第四只手状态"
+    },
+    {
+      "hookId": "H045",
+      "startChapter": 0,
+      "type": "**伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "状态卡中标注，待查原始文档"
+    },
+    {
+      "hookId": "H061",
+      "startChapter": 16,
+      "type": "剧情",
+      "status": "progressing",
+      "lastAdvancedChapter": 16,
+      "expectedPayoff": "待回收",
+      "notes": "铁牌来历不明。→ 本章确认：苏父从黑松林带回/与老郎中有关联"
+    },
+    {
+      "hookId": "H062",
+      "startChapter": 16,
+      "type": "剧情",
+      "status": "resolved",
+      "lastAdvancedChapter": 16,
+      "expectedPayoff": "-",
+      "notes": "入城成功。→ 延续到本章"
+    },
+    {
+      "hookId": "H056",
+      "startChapter": 16,
+      "type": "剧情",
+      "status": "progressing",
+      "lastAdvancedChapter": 17,
+      "expectedPayoff": "待回收",
+      "notes": "钱通掌权。→ 本章确认：周铁山已死/钱通今晚柳巷东清场"
+    },
+    {
+      "hookId": "阶段",
+      "startChapter": 0,
+      "type": "章节",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "苏青禾被救出",
+      "startChapter": 0,
+      "type": "11",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "同行前往陆家村",
+      "startChapter": 0,
+      "type": "12",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "被留在山脊躲避",
+      "startChapter": 0,
+      "type": "12",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "山道等待",
+      "startChapter": 0,
+      "type": "12",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "被安置灌木丛躲避",
+      "startChapter": 0,
+      "type": "12",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "被黑虎帮找到并关押",
+      "startChapter": 0,
+      "type": "**16**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "营救苏青禾",
+      "startChapter": 0,
+      "type": "-",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H055",
+      "startChapter": 16,
+      "type": "剧情",
+      "status": "progressing",
+      "lastAdvancedChapter": 17,
+      "expectedPayoff": "待回收",
+      "notes": "苏父重伤归来，从黑松林带回东西。→ 本章皮货老头补充：半死不活躺三天"
+    },
+    {
+      "hookId": "H057",
+      "startChapter": 16,
+      "type": "剧情",
+      "status": "progressing",
+      "lastAdvancedChapter": 17,
+      "expectedPayoff": "待回收",
+      "notes": "钱通找\"使刀的皮肉境小子\"。→ 本章：陆沉身份暴露被盯梢"
+    },
+    {
+      "hookId": "H068",
+      "startChapter": 17,
+      "type": "剧情",
+      "status": "open",
+      "lastAdvancedChapter": 17,
+      "expectedPayoff": "待回收",
+      "notes": "主角身份已暴露/被确认还活着/黑虎帮正在穷人区搜索"
+    },
+    {
+      "hookId": "H069",
+      "startChapter": 17,
+      "type": "剧情",
+      "status": "open",
+      "lastAdvancedChapter": 17,
+      "expectedPayoff": "待回收",
+      "notes": "皮货老头身份存疑（可能是黑虎帮线人或内部人）"
+    },
+    {
+      "hookId": "H070",
+      "startChapter": 17,
+      "type": "剧情",
+      "status": "open",
+      "lastAdvancedChapter": 17,
+      "expectedPayoff": "待回收",
+      "notes": "苏父带回的\"贵重东西\"——价值极高，比苏青禾重要得多"
+    },
+    {
+      "hookId": "H071",
+      "startChapter": 17,
+      "type": "剧情",
+      "status": "open",
+      "lastAdvancedChapter": 17,
+      "expectedPayoff": "待回收",
+      "notes": "钱通意图分析——不是交易，是吞掉"
+    },
+    {
+      "hookId": "H072",
+      "startChapter": 17,
+      "type": "剧情",
+      "status": "open",
+      "lastAdvancedChapter": 17,
+      "expectedPayoff": "待回收",
+      "notes": "老郎中遗言纸条（\"林中有巢/入者无归/别走\"）与骨庙刻字一致"
+    },
+    {
+      "hookId": "H073",
+      "startChapter": 0,
+      "type": "resolved",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "老郎中动机（苏老实救命恩）→**第21章回收**",
+      "notes": ""
+    },
+    {
+      "hookId": "H052",
+      "startChapter": 16,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 19,
+      "expectedPayoff": "-",
+      "notes": "铁骨狼群。延续"
+    },
+    {
+      "hookId": "H074",
+      "startChapter": 0,
+      "type": "resolved",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "柳巷东时间（今晚/死局）→**第21章回收**",
+      "notes": ""
+    },
+    {
+      "hookId": "H075",
+      "startChapter": 0,
+      "type": "resolved",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "苏父东西来源（抵账品/不干净）→**第21章回收**",
+      "notes": ""
+    },
+    {
+      "hookId": "H073续",
+      "startChapter": 19,
+      "type": "剧情",
+      "status": "open",
+      "lastAdvancedChapter": 19,
+      "expectedPayoff": "待回收",
+      "notes": "**新增推理：老郎中可能是在挑人——观察陆沉是否值得帮/可能是第三方势力需要的人/三天后柳巷东可能有三方博弈**"
+    },
+    {
+      "hookId": "H076",
+      "startChapter": 19,
+      "type": "**剧情**",
+      "status": "open",
+      "lastAdvancedChapter": 19,
+      "expectedPayoff": "**待回收**",
+      "notes": "**黑虎帮包围圈收缩——\"那小子伤了，跑不远，就在附近\"/时间比三天更紧迫**"
+    },
+    {
+      "hookId": "H077",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 20,
+      "expectedPayoff": "已回收",
+      "notes": "舵把子称呼已确认"
+    },
+    {
+      "hookId": "SU40\"它们\"的身份",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "钱进：\"它们给的\"/\"别看它们的眼睛\"/\"巢\"/结合洞穴深处阴影/灰白草茎/尸体薄膜"
+    },
+    {
+      "hookId": "H078",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**孙麻子身份明确：城中蛇头/二十年城门经验/老苏救命恩人**",
+      "notes": ""
+    },
+    {
+      "hookId": "H079",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**老郎中命运确认：下午被黑虎帮带走/生死不明/在柳巷东撑时间**",
+      "notes": ""
+    },
+    {
+      "hookId": "H080",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**老郎中与黑虎帮恩怨确认：派苏老实去黑松林收账/苏老实带回不干净的东西**",
+      "notes": ""
+    },
+    {
+      "hookId": "H081",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**苏青禾位置确认：柳巷东第三条巷子尽头/枯井边/脚踝断/被当饵**",
+      "notes": ""
+    },
+    {
+      "hookId": "H082",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 21,
+      "expectedPayoff": "待回收",
+      "notes": "柳巷东巡逻规律发现（约一刻钟间隔）"
+    },
+    {
+      "hookId": "H083",
+      "startChapter": 0,
+      "type": "resolved",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "22",
+      "notes": "已解决"
+    },
+    {
+      "hookId": "H084",
+      "startChapter": 0,
+      "type": "resolved",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "22",
+      "notes": "已解决"
+    },
+    {
+      "hookId": "H085",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "22-23",
+      "notes": "**新增钩子：铁牌正面闭眼图案/背面\"别走\"/土腥味+腐甜味/与黑松林/穴居人/青云宗可能相关**"
+    },
+    {
+      "hookId": "H086",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 23,
+      "expectedPayoff": "老郎中死因之谜——戌时有人来访/个子不高/帽檐压低/是老郎中见此人后死亡——是灭口还是自杀待定",
+      "notes": ""
+    },
+    {
+      "hookId": "H087",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 22,
+      "expectedPayoff": "抵账品真相——入手比预想的沉/确认为荒卫令牌——已确认是荒卫令牌，钱通要灭口的东西",
+      "notes": ""
+    },
+    {
+      "hookId": "H088",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 23,
+      "expectedPayoff": "苏青禾能否脱身——已救出但脚踝重伤/被孙麻子接手/下落待确认——孙麻子立场存疑",
+      "notes": ""
+    },
+    {
+      "hookId": "H054",
+      "startChapter": 17,
+      "type": "剧情",
+      "status": "progressing",
+      "lastAdvancedChapter": 17,
+      "expectedPayoff": "待回收",
+      "notes": "苏父重伤归来。"
+    },
+    {
+      "hookId": "H059",
+      "startChapter": 16,
+      "type": "剧情",
+      "status": "open",
+      "lastAdvancedChapter": 17,
+      "expectedPayoff": "待回收",
+      "notes": "苏青禾被扣。→ 本章确认：今晚柳巷东当筹码"
+    },
+    {
+      "hookId": "SU40",
+      "startChapter": 11,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "\"它们\"的身份/巢/灰白草茎/活物"
+    },
+    {
+      "hookId": "两年前女人",
+      "startChapter": 51,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "两年前女人/灰白草茎/\"走了没再回来\"→时间线矛盾待解"
+    },
+    {
+      "hookId": "它们怕光",
+      "startChapter": 56,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 64,
+      "expectedPayoff": "待展开",
+      "notes": "活物怕光但不完全怕/可利用阴影控制"
+    },
+    {
+      "hookId": "H058",
+      "startChapter": 17,
+      "type": "剧情",
+      "status": "progressing",
+      "lastAdvancedChapter": 17,
+      "expectedPayoff": "待回收",
+      "notes": "老郎中失踪。→ 本章皮货老头透露：老郎中看完苏父后当晚就跑"
+    },
+    {
+      "hookId": "H060",
+      "startChapter": 17,
+      "type": "剧情",
+      "status": "open",
+      "lastAdvancedChapter": 17,
+      "expectedPayoff": "待回收",
+      "notes": "柳巷东只有一个出口。→ 本章皮货老头警告"
+    },
+    {
+      "hookId": "H089",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "老郎中遗言/死因",
+      "notes": ""
+    },
+    {
+      "hookId": "SP039",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 65,
+      "expectedPayoff": "断手活物去向（逾期警告）",
+      "notes": ""
+    },
+    {
+      "hookId": "活物怕光",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "三只活物怕光特性/可利用阴影控制",
+      "notes": ""
+    },
+    {
+      "hookId": "灰白絮状物",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "絮状物被从内拱开/是巢穴或保护层",
+      "notes": ""
+    },
+    {
+      "hookId": "H090",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待展开",
+      "notes": "钱进令牌来源"
+    },
+    {
+      "hookId": "H091",
+      "startChapter": 0,
+      "type": "resolved",
+      "status": "open",
+      "lastAdvancedChapter": 24,
+      "expectedPayoff": "已回收",
+      "notes": "枯井困局脱困"
+    },
+    {
+      "hookId": "H092",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "待展开",
+      "notes": "令牌新细节（三十七编号确认）"
+    },
+    {
+      "hookId": "SP006（苏青禾线）",
+      "startChapter": 0,
+      "type": "**open→关键推进**",
+      "status": "open",
+      "lastAdvancedChapter": 21,
+      "expectedPayoff": "**待回收**",
+      "notes": "**孙麻子确认苏青禾位置：柳巷东第三条巷子尽头枯井旁/脚踝断/今晚用于钓鱼→下一章需推进营救**"
+    },
+    {
+      "hookId": "SP006",
+      "startChapter": 27,
+      "type": "**剧情**",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "**待推进**",
+      "notes": "**苏青禾营救支线：三天期限已用一天半/主角重伤养伤/暂时滞速/需后续推进**"
+    },
+    {
+      "hookId": "H095",
+      "startChapter": 0,
+      "type": "**open**",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "**待定**",
+      "notes": "**部分推进：城外骚动是马七的人帮陆沉挡了追兵，与钱进的人冲突；马七身份确认（陆沉父亲旧火头军）**"
+    },
+    {
+      "hookId": "H096",
+      "startChapter": 0,
+      "type": "**open**",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "**待定**",
+      "notes": "**重大推进：老头身份揭晓——魏长，陆沉父亲的旧跑腿，有救命之恩；马七是火头军，同样有救命之恩**"
+    },
+    {
+      "hookId": "H097",
+      "startChapter": 0,
+      "type": "**open**",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "**待定**",
+      "notes": "**部分推进：城外另一个声音是马七；帮陆沉挡追兵；拒绝透露与老东家的关系；马七立场明确（还债）**"
+    },
+    {
+      "hookId": "H098",
+      "startChapter": 27,
+      "type": "**剧情**",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "**待展开**",
+      "notes": "**孟三的令牌认知**：孟三认出荒卫令牌，反应异常；马七确认孟三在荒卫司待过；孟三往北出城/可能去乱葬岗"
+    },
+    {
+      "hookId": "H099",
+      "startChapter": 27,
+      "type": "**剧情**",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "**待展开**",
+      "notes": "**孟三背后的人**：马七说\"你暂时碰不起\"；马七与其有\"旧账\"；是更高层人物；与十三年前的事直接相关；身份完全未知"
+    },
+    {
+      "hookId": "H093",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "待展开",
+      "notes": "钱进动机（两块牌子凑齐）"
+    },
+    {
+      "hookId": "H094",
+      "startChapter": 0,
+      "type": "resolved",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "已回收",
+      "notes": "被马七救走"
+    },
+    {
+      "hookId": "H100",
+      "startChapter": 27,
+      "type": "**剧情**",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "**待展开**",
+      "notes": "**令牌来源疑问**：陆沉父亲的令牌为何在钱进手上？两块凑齐的目的仍未揭示（悬念保留）；钱进令牌从何而来？是杀父夺来的还是其他途径？"
+    }
+  ]
+}

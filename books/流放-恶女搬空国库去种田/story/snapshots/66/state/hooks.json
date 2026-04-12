@@ -1,0 +1,94 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_郑老卒身份",
+      "startChapter": 61,
+      "type": "mystery",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**岭南（引开追兵中）**",
+      "payoffTiming": "mid-arc",
+      "notes": "**65章RESOLVED：身份揭露+封堵地道；66章深化：引开追兵中**"
+    },
+    {
+      "hookId": "hook_地道",
+      "startChapter": 65,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**落梅村（已揭示）**",
+      "payoffTiming": "mid-arc",
+      "notes": "**65章NEW+66章推进：地道用途揭露（逃生通道）**"
+    },
+    {
+      "hookId": "hook_老妪身份",
+      "startChapter": 65,
+      "type": "mystery",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**落梅村（已揭示）**",
+      "payoffTiming": "mid-arc",
+      "notes": "**65章NEW+66章RESOLVED：老妪是分支接应人（老头解释）**"
+    },
+    {
+      "hookId": "hook_老妪身份",
+      "startChapter": 65,
+      "type": "mystery",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**落梅村（已揭示）**",
+      "payoffTiming": "mid-arc",
+      "notes": "**老妪=分支接应人（已确认）**"
+    },
+    {
+      "hookId": "hook_苏念奴画像",
+      "startChapter": 66,
+      "type": "**NEW**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待揭示（画像来历+更多信息）**",
+      "payoffTiming": "mid-arc",
+      "notes": "**苏念奴=苏晚清母亲（确认）+画像在老头茅屋**"
+    },
+    {
+      "hookId": "hook_落梅村接应网",
+      "startChapter": 66,
+      "type": "**NEW**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待揭示（更多接应点？）**",
+      "payoffTiming": "mid-arc",
+      "notes": "**落梅村接应网=老夫人布局十五年**"
+    },
+    {
+      "hookId": "hook_苏家逃生地道",
+      "startChapter": 66,
+      "type": "**NEW**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待揭示（地道通往哪里？）**",
+      "payoffTiming": "mid-arc",
+      "notes": "**地道=苏家的根（逃生退路）**"
+    },
+    {
+      "hookId": "hook_老头身份",
+      "startChapter": 66,
+      "type": "**NEW**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待揭示（更多背景？）**",
+      "payoffTiming": "mid-arc",
+      "notes": "**老头=苏家远亲+主接应人**"
+    },
+    {
+      "hookId": "hook_苏家不会亡",
+      "startChapter": 66,
+      "type": "**NEW**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**待揭示（苏家如何翻身？）**",
+      "payoffTiming": "slow-burn",
+      "notes": "**老夫人信念=布局十五年**"
+    }
+  ]
+}

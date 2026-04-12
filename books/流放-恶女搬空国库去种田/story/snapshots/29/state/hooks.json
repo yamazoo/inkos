@@ -1,0 +1,121 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_0025",
+      "startChapter": 26,
+      "type": "核心谜团",
+      "status": "progressing",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待定",
+      "notes": "太后知道苏母；太后看见苏晚清说\"像\"母亲；双生胎真相待揭"
+    },
+    {
+      "hookId": "mystery-情报来源揭示-苏晏清如何得-知太后赏赐苏",
+      "startChapter": 29,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "情报来源揭示",
+      "notes": "苏晏清如何得知太后赏赐苏晚清的具体内容（正文未交代来源，形成信息缺口）"
+    },
+    {
+      "hookId": "network-trace-城西赵家势力-全貌-御史大夫家老",
+      "startChapter": 29,
+      "type": "network-trace",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "城西赵家势力全貌",
+      "notes": "御史大夫家老夫人提及城西赵家也用木芙蓉香，与济世堂并列，暗示存在另一个木芙蓉香使用网络"
+    },
+    {
+      "hookId": "hook_0030",
+      "startChapter": 31,
+      "type": "势力博弈",
+      "status": "open",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待定",
+      "notes": "太傅夫人与母亲关联加深"
+    },
+    {
+      "hookId": "hook_0029",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待查",
+      "notes": "木芙蓉线索全链路；帕子背面木芙蓉；苏晏清丫鬟与济世堂用同一种香；城西赵家也用这种香"
+    },
+    {
+      "hookId": "hook_0031",
+      "startChapter": 32,
+      "type": "角色关系",
+      "status": "progressing",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待定",
+      "notes": "两人对木芙蓉有相同反应（关联加深）"
+    },
+    {
+      "hookId": "hook_0032",
+      "startChapter": 32,
+      "type": "威胁监测",
+      "status": "open",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待查",
+      "notes": "吴婆子身份成谜"
+    },
+    {
+      "hookId": "hook_0033",
+      "startChapter": 33,
+      "type": "关键事件",
+      "status": "resolved",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "已回收",
+      "notes": "太后觐见已完成"
+    },
+    {
+      "hookId": "hook_0035",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待查",
+      "notes": "苏晏清送的帕子，来源成谜"
+    },
+    {
+      "hookId": "hook_0036",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待查",
+      "notes": "王氏装病（假风寒）→吃了好些药身子稍好"
+    },
+    {
+      "hookId": "hook_0034",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待查",
+      "notes": "吴婆子身份谜团揭示；城西赵家=黑狗帮地盘；吴婆子来偏院前在城西待过"
+    },
+    {
+      "hookId": "hook_0037",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待查",
+      "notes": "苏晏清真实立场揭示；送帕子试探苏晚清是否查到济世堂线索"
+    },
+    {
+      "hookId": "hook_0039",
+      "startChapter": 0,
+      "type": "**new**",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待查",
+      "notes": "御史大夫家老夫人为何帮苏晚清？她与太傅夫人有何关系？"
+    }
+  ]
+}

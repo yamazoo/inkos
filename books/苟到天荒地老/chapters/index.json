@@ -1,0 +1,70 @@
+[
+  {
+    "number": 1,
+    "title": "青石镇·回春堂",
+    "status": "drafted",
+    "wordCount": 2868,
+    "createdAt": "2026-04-12T04:00:37.333Z",
+    "updatedAt": "2026-04-12T04:00:37.333Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2868,
+      "postWriterNormalizeCount": 2868,
+      "postReviseCount": 0,
+      "finalCount": 2868,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 17190,
+      "completionTokens": 7679,
+      "totalTokens": 24869
+    }
+  },
+  {
+    "number": 2,
+    "title": "故人遗音",
+    "status": "ready-for-review",
+    "wordCount": 2848,
+    "createdAt": "2026-04-12T04:19:09.558Z",
+    "updatedAt": "2026-04-12T04:19:09.558Z",
+    "auditIssues": [
+      "[warning] 本章开头存在叙述断层：第1章结尾是顾长命决定\"天黑前出镇\"并往镇外走，第2章开头却直接\"发现不对，镇口有眼睛\"，中间的计划转变缺乏过渡。建议补充一句过渡描写，如\"走到巷口时\"的观察或犹豫过程。",
+      "[warning] 本章节奏较为平铺，以\"信息接收\"为主线，缺乏实质性的危机落地。H001（青云门盘查）预期在第3章回收，但本章只是延续威胁，尚未形成压倒性的危机节点。从情绪弧线看，主角经历了\"警觉→回忆往事→被点破→平静\"，其中\"被点破\"段落（中年男子的话）本应是最强张力段落，但被叙述交代冲淡。",
+      "[warning] H006（中年男子身份异常）在本章得到推进（他回来追问老道士画像），但H008（镇上可疑行商）完全未提及，上章种下后应给予一次回应或交代，否则读者会认为线索断裂。",
+      "[warning] 王屠户这条支线在上章提供情报后完全消失，未有任何后续交代；周天成的支线（H007）在第1章闹事后同样静默，属于沉寂到接近被遗忘的支线。",
+      "[warning] 第1章明确设定主角为\"炼气三层\"并刻意隐藏身份，本章主角对小鱼的内心独白中出现了\"他当时没当回事，直到照着残卷修炼，三月筑基\"——这是主角自身的秘密信息，不应出现在纯第三人称叙述中。此类内心暴露与\"绝不暴露身份\"的行为约束形成悖论。",
+      "[info] 高频词\"若是\"出现2次；\"目光\"出现频率偏高；整体AI标记词密度控制在合理范围内（每3000字约0.5次\"猛地\"，1次\"忽然\"），未触发warning阈值。",
+      "[info] 本章新增\"中年男子→顾长命\"的交互：中年男子亮出老道士画像、揭示大劫真相、留下\"此间有故人\"的悬念。这是重要信息节点，但两人之间的对话以\"对话推进剧情\"为主，缺乏肢体语言和氛围描写。",
+      "[warning] 92个段落里有39个不足35字，段落被切得过碎。",
+      "[warning] 连续出现22个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3475,
+      "postWriterNormalizeCount": 2615,
+      "postReviseCount": 2848,
+      "finalCount": 2848,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 59556,
+      "completionTokens": 33396,
+      "totalTokens": 92952
+    }
+  }
+]

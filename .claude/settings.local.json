@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm --filter @actalk/inkos-core test -- post-write-validator)",
+      "Bash(pnpm --filter @actalk/inkos run write rewrite \"系统降临-我在办公室屠boss\" 1 --force)",
+      "Bash(node packages/cli/dist/index.js write rewrite \"系统降临-我在办公室屠boss\" 1 --force)",
+      "Bash(pnpm --filter @actalk/inkos-core test)",
+      "Bash(pnpm --filter @actalk/inkos-core typecheck)",
+      "Bash(pnpm run:*)",
+      "Bash(rm:*)",
+      "Bash(node:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm --filter @actalk/inkos-core test -- --filter=hook)",
+      "Bash(ls:*)",
+      "Bash(pnpm --filter @actalk/inkos-core test -- hook-governance)",
+      "Bash(pnpm --filter @actalk/inkos-core test -- --exclude=\"**/pipeline-agent.test.ts\")",
+      "Bash(pnpm --filter @actalk/inkos-core test -- --exclude src/__tests__/pipeline-agent.test.ts)",
+      "Bash(pnpm --filter @actalk/inkos-core test -- src/__tests__/context-filter.test.ts src/__tests__/writer.test.ts src/__tests__/pipeline-runner.test.ts src/__tests__/state-reducer.test.ts src/__tests__/state-manager.test.ts)",
+      "Bash(npx vitest:*)",
+      "Bash(pnpm typecheck:*)",
+      "Bash(git stash:*)",
+      "Bash(grep -E \"\\\\.md$\")",
+      "Bash(find books/骨刀行 -name *18* -o -name *求医*)",
+      "Bash(pnpm:*)",
+      "Bash(git checkout:*)",
+      "Bash(cd:*)",
+      "Bash(dir \"books\\\\系统降临-我在办公室屠boss\\\\\")",
+      "Bash(pnpm --filter @actalk/inkos-core test -- \"src/__tests__/pipeline-runner.test.ts -t ''''recalculates aiTellCount''''\")",
+      "Bash(pnpm --filter @actalk/inkos-core test -- \"src/__tests__/pipeline-runner.test.ts -t ''''recalculates''''\")",
+      "Bash(python:*)",
+      "Bash(dir \"E:\\\\workspace\\\\inkos\\\\books\\\\骨刀行\" /b)",
+      "Bash(dir \"E:\\\\workspace\\\\inkos\\\\books\\\\骨刀行\")",
+      "Bash(npx tsx:*)",
+      "Bash(find E:/workspace/inkos/books -name 22* -type f)",
+      "Bash(node --input-type=module --eval \":*)",
+      "Bash(inkos revise:*)",
+      "Bash(/e/workspace/inkos/packages/studio/node_modules/.bin/tsx packages/studio/src/api/index.ts /e/workspace/inkos)",
+      "Bash(python3:*)"
+    ]
+  }
+}

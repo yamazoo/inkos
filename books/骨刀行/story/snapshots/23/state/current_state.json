@@ -1,0 +1,69 @@
+{
+  "chapter": 24,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "**青石镇城西枯井（井壁裂缝内）**",
+      "validFromChapter": 24,
+      "validUntilChapter": null,
+      "sourceChapter": 24
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "左臂伤口裂开/双手有新伤（抠井沿）/后背刀伤/腰侧刀伤/脚踝扭伤（火辣辣疼）/体温偏高/**怀中铁牌×1（苏老实遗物/\"别走\"铁牌/温热不烫）/荒卫令牌（荒卫司/三十七号）/脉晶（怀中/微光凉意）**/银袋/杀猪刀（手中）/短刀×1/碎碗片（怀中）/账本（怀中）",
+      "validFromChapter": 24,
+      "validUntilChapter": null,
+      "sourceChapter": 24
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "**躲藏→思索出城方案（联系\"↓7\"与\"巢=七寸\"）→待追兵远去→带苏青禾出城**",
+      "validFromChapter": 24,
+      "validUntilChapter": null,
+      "sourceChapter": 24
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "**满身伤势/体力透支/水米未进/苏青禾脚崴伤无法行走**",
+      "validFromChapter": 24,
+      "validUntilChapter": null,
+      "sourceChapter": 24
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "**黑虎帮（分散搜城中/往城北方向移动）/孙麻子接应未能完成**",
+      "validFromChapter": 24,
+      "validUntilChapter": null,
+      "sourceChapter": 24
+    },
+    {
+      "subject": "current_state",
+      "predicate": "苏青禾状态",
+      "object": "**被困城中/脚崴伤（无法行走）/与陆沉躲于城西枯井井壁裂缝/尚未脱险**",
+      "validFromChapter": 24,
+      "validUntilChapter": null,
+      "sourceChapter": 24
+    },
+    {
+      "subject": "current_state",
+      "predicate": "新增线索",
+      "object": "**荒卫令牌（荒卫司/三十七号）/井壁刻字\"↓7\"与钱进遗言\"巢=七寸\"关联（陆沉已联想）/井底滴答声=井壁渗水（非洞穴威胁）**",
+      "validFromChapter": 24,
+      "validUntilChapter": null,
+      "sourceChapter": 24
+    },
+    {
+      "subject": "current_state",
+      "predicate": "铁匣子状态",
+      "object": "**仍在乱葬岗灌木丛下/被碎石掩盖/陆沉未取回**",
+      "validFromChapter": 24,
+      "validUntilChapter": null,
+      "sourceChapter": 24
+    }
+  ]
+}

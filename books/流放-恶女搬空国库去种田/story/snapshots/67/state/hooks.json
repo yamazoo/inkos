@@ -1,0 +1,134 @@
+{
+  "hooks": [
+    {
+      "hookId": "hook_郑老卒身份",
+      "startChapter": 61,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**岭南（身份已揭露→引开追兵）**",
+      "payoffTiming": "mid-arc",
+      "notes": "**65章RESOLVED：郑老卒身份揭露（苏念奴救命恩人+十五年前欠命+杀铁匠铺的人引开敌人+封堵地道引开追兵）**"
+    },
+    {
+      "hookId": "hook_地道",
+      "startChapter": 65,
+      "type": "mystery",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南（地道尽头）",
+      "payoffTiming": "mid-arc",
+      "notes": "**65章NEW：地道（城东药王街尾→城外三里破庙）+郑老卒封堵**"
+    },
+    {
+      "hookId": "hook_两个周砚",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "岭南→落梅村（两股势力追人）",
+      "payoffTiming": "mid-arc",
+      "notes": "**67章揭露：两股势力都想抢控神毒药配方+镇国公府和宫中互不对付**"
+    },
+    {
+      "hookId": "hook_控神毒药配方",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "落梅村→青石镇（苏家密库）",
+      "payoffTiming": "mid-arc",
+      "notes": "**67章揭露：周砚追人不只是灭口是为了配方+配方藏在苏家密库里**"
+    },
+    {
+      "hookId": "hook_苏家密库",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "落梅村→青石镇",
+      "payoffTiming": "mid-arc",
+      "notes": "**67章揭露：两块玉佩合璧是钥匙+配方藏在密库里**"
+    },
+    {
+      "hookId": "hook_老夫人画作",
+      "startChapter": 66,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "落梅村（老夫人会合）",
+      "payoffTiming": "mid-arc",
+      "notes": "**66章NEW：老夫人年轻时画的山水画（归去来兮）+出嫁前最后一幅**"
+    },
+    {
+      "hookId": "hook_南疆医族",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "落梅村→岭南（真相揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**67章揭露：苏家灭门根源（朝廷怕势大）**"
+    },
+    {
+      "hookId": "hook_周砚追到落梅村",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "落梅村（今夜撤离）",
+      "payoffTiming": "mid-arc",
+      "notes": "**67章确立：紧迫威胁+官府暗哨已留下标记+最多一天**"
+    },
+    {
+      "hookId": "hook_苏家密道撤离",
+      "startChapter": 66,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "落梅村→青石镇（今夜撤离）",
+      "payoffTiming": "mid-arc",
+      "notes": "**67章确立：今晚走密道+两难抉择（养伤vs撤离）+密道通往青石镇**"
+    },
+    {
+      "hookId": "hook_暂时没有后援",
+      "startChapter": 67,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "落梅村（今夜撤离）",
+      "payoffTiming": "mid-arc",
+      "notes": "**67章确立：后援断绝+老李方德正无法联系+济世堂被封**"
+    },
+    {
+      "hookId": "hook_流放营内鬼",
+      "startChapter": 64,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "岭南（追查中）",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章NEW：流放营里有人盯着苏晚清+杀孙押役灭口**"
+    },
+    {
+      "hookId": "hook_周砚",
+      "startChapter": 64,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "岭南→落梅村",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章深化：背后有整张网；67章深化：两股势力+宫中周砚是灭门幕后黑手**"
+    },
+    {
+      "hookId": "hook_苏家灭门案",
+      "startChapter": 64,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "岭南（真相揭露）",
+      "payoffTiming": "mid-arc",
+      "notes": "**64章深化：母亲名字泄露；67章深化：南疆医族+朝廷灭口**"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "chapter": 67,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0067.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0067.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#1",
+    "story/chapter_summaries.md#57",
+    "story/chapter_summaries.md#65",
+    "story/chapter_summaries.md#66",
+    "story/pending_hooks.md#hook_两个周砚",
+    "story/pending_hooks.md#hook_南疆医族",
+    "story/pending_hooks.md#hook_周砚追到落梅村",
+    "story/pending_hooks.md#hook_控神毒药配方",
+    "story/pending_hooks.md#hook_暂时没有后援",
+    "story/pending_hooks.md#hook_老夫人画作",
+    "story/pending_hooks.md#hook_苏家密库",
+    "story/pending_hooks.md#hook_苏家密道撤离"
+  ],
+  "notes": []
+}

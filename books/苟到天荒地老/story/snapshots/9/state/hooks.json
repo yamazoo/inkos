@@ -1,0 +1,140 @@
+{
+  "hooks": [
+    {
+      "hookId": "H004",
+      "startChapter": 1,
+      "type": "设定",
+      "status": "progressing",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "125",
+      "payoffTiming": "endgame",
+      "notes": "大劫真相 - 本章深化：天裂是\"药引子\"；十七处天裂=十七只眼睛；天裂是锁上的口子；有人要开锁"
+    },
+    {
+      "hookId": "H010",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "60+",
+      "payoffTiming": "mid-arc",
+      "notes": "玄清阁灭门真相 - 本章关联：青云门找钥匙灭口，玉简+石子=两把钥匙"
+    },
+    {
+      "hookId": "H011",
+      "startChapter": 2,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "80+",
+      "payoffTiming": "mid-arc",
+      "notes": "筑基真相：万年前筑基是起点"
+    },
+    {
+      "hookId": "H033",
+      "startChapter": 8,
+      "type": "悬念",
+      "status": "resolved",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "-",
+      "notes": "**\"那根线\"之谜已揭：命线图；续命线；小鱼命线断后缠在顾长命身上；续命线需要钥匙+引线**"
+    },
+    {
+      "hookId": "H034",
+      "startChapter": 8,
+      "type": "悬念",
+      "status": "resolved",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "-",
+      "notes": "**顾长命与针的联系已揭：旧痕是命线缠上的痕迹；她喊\"接住我\"**"
+    },
+    {
+      "hookId": "H035",
+      "startChapter": 8,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "未知",
+      "payoffTiming": "immediate",
+      "notes": "青云门两把钥匙 - 本章深化：青云门今夜锁定小鱼是\"引线\"；老郎中情报"
+    },
+    {
+      "hookId": "H028",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "resolved",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "-",
+      "notes": "**井底封印体身份已揭：门后是当年同门之一；老庙主师兄说\"门后的人比我知道得多\"**"
+    },
+    {
+      "hookId": "H029",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "未知",
+      "payoffTiming": "immediate",
+      "notes": "井底\"压着的东西\" - 本章深化：十七只眼睛；命线断裂处卡在天道裂缝一尺里"
+    },
+    {
+      "hookId": "H030",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "未知",
+      "payoffTiming": "slow-burn",
+      "notes": "小鱼见过天裂口子 - 本章深化：小鱼掌心疤泛青紫（命线在动）；小鱼是\"果熟蒂落\""
+    },
+    {
+      "hookId": "H031",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "未知",
+      "payoffTiming": "immediate",
+      "notes": "顾长命旧痕与针的联系 - 本章深化：两道疤相对，都发痒；引线在手上"
+    },
+    {
+      "hookId": "H032",
+      "startChapter": 7,
+      "type": "悬念",
+      "status": "resolved",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "-",
+      "notes": "**三十七年前真相已揭：同门四人封井；一人守井口一人守门后；有人用命封住下面东西的眼睛**"
+    },
+    {
+      "hookId": "H036",
+      "startChapter": 9,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "未知",
+      "payoffTiming": "immediate",
+      "notes": "**续命线完整之法** - 老庙主师兄说去井底问门后的人；需要钥匙+引线"
+    },
+    {
+      "hookId": "H037",
+      "startChapter": 9,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "未知",
+      "payoffTiming": "immediate",
+      "notes": "**小鱼被拽回去的时间** - 命线开始动；周老爷子说\"今夜问\"而没问；青云门今夜动手"
+    },
+    {
+      "hookId": "H038",
+      "startChapter": 9,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "未知",
+      "payoffTiming": "immediate",
+      "notes": "**周老爷子今夜的命运** - 青云门对周府下重手；\"最多还有一天\"已是昨夜说法"
+    }
+  ]
+}

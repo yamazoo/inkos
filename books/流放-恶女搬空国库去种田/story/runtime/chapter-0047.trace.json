@@ -1,0 +1,35 @@
+{
+  "chapter": 47,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\author_intent.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\current_focus.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\story_bible.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\volume_outline.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\book_rules.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\current_state.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\pending_hooks.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\chapter_summaries.md",
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\memory.db"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0047.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#37",
+    "story/chapter_summaries.md#43",
+    "story/chapter_summaries.md#44",
+    "story/chapter_summaries.md#46",
+    "story/pending_hooks.md#hook_岭南/瘴气环境",
+    "story/pending_hooks.md#hook-17: 岭南/瘴气环境",
+    "story/pending_hooks.md#hook_济世堂与镇国公府岭南勾连"
+  ],
+  "notes": []
+}

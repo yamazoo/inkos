@@ -1,0 +1,319 @@
+{
+  "hooks": [
+    {
+      "hookId": "story/pending_hooks.md#hook-3",
+      "startChapter": 0,
+      "type": "小伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "5章内",
+      "notes": "守护者职业——延后至妻子唤醒后揭示"
+    },
+    {
+      "hookId": "story/pending_hooks.md#E1·末日降临",
+      "startChapter": 0,
+      "type": "核心事件",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "-",
+      "notes": "同步性确认；入侵时间已记录"
+    },
+    {
+      "hookId": "story/pending_hooks.md#hook-2",
+      "startChapter": 0,
+      "type": "中伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "20章内",
+      "notes": "\"有些东西正在苏醒\"——代价线索已揭示：反向转化=失去末日之前记忆"
+    },
+    {
+      "hookId": "story/pending_hooks.md#H078",
+      "startChapter": 29,
+      "type": "中伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "30+",
+      "notes": "先驱者协议第七条——净化条件已执行（同步率激活）"
+    },
+    {
+      "hookId": "story/pending_hooks.md#H079",
+      "startChapter": 29,
+      "type": "大伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "30+",
+      "notes": "同步率任务——**徽章温度与意识共振，同步率激活至30%**"
+    },
+    {
+      "hookId": "story/pending_hooks.md#H080",
+      "startChapter": 29,
+      "type": "关键物品",
+      "status": "progressing",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "30+",
+      "notes": "132个唤醒名额——**已执行，战斗爆发**"
+    },
+    {
+      "hookId": "story/pending_hooks.md#H002",
+      "startChapter": 0,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "Ch.120",
+      "notes": "神秘掉落物品「???」无法鉴定"
+    },
+    {
+      "hookId": "story/pending_hooks.md#H001",
+      "startChapter": 0,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "Ch.155",
+      "notes": "橙色光圈使徒标记"
+    },
+    {
+      "hookId": "H030",
+      "startChapter": 8,
+      "type": "中伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 21,
+      "expectedPayoff": "20章内",
+      "notes": "第一天入侵差异——确认音\"咯噔\"只有第一天觉醒者能听到；陈默是未绑定觉醒者，没有听到确认音但觉醒了；**第21章开头呼应：陈默意识到自己没听到确认音但确实觉醒了**"
+    },
+    {
+      "hookId": "H035",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 24,
+      "expectedPayoff": "5章内",
+      "notes": "筛选机制——**李思雨感知到\"观察者存在\"**；守护者透露\"保护选择本身\""
+    },
+    {
+      "hookId": "H041",
+      "startChapter": 11,
+      "type": "中伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "待定",
+      "notes": "白衣女人认识李父——李思雨感知\"她看我的眼神像看晚辈\"；知道李思雨名字和父亲意识在其体内"
+    },
+    {
+      "hookId": "E1·末日降临",
+      "startChapter": 0,
+      "type": "表层",
+      "status": "progressing",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "持续",
+      "notes": "末日第二天；B1层救援王德发；新发现：守护者职业；先驱者徽章到手"
+    },
+    {
+      "hookId": "H078",
+      "startChapter": 20,
+      "type": "中伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 21,
+      "expectedPayoff": "30+",
+      "notes": "先驱者协议第七条——净化条件已执行（同步率激活）"
+    },
+    {
+      "hookId": "H079",
+      "startChapter": 20,
+      "type": "大伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 21,
+      "expectedPayoff": "30+",
+      "notes": "同步率任务——**徽章温度与意识共振，同步率激活至30%**"
+    },
+    {
+      "hookId": "H080",
+      "startChapter": 29,
+      "type": "关键物品",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "30+",
+      "notes": "132个休眠舱=132个唤醒名额；唤醒协议部分执行（4/7）；四个污染先驱者暂时停战"
+    },
+    {
+      "hookId": "H001",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 24,
+      "expectedPayoff": "5章内",
+      "notes": "橙色光圈使徒标记——**王德发疑似认出刘建国**；**梦到橙色光圈使徒与休眠舱阵列**"
+    },
+    {
+      "hookId": "H002",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 24,
+      "expectedPayoff": "5章内",
+      "notes": "神秘掉落物品「???」无法鉴定"
+    },
+    {
+      "hookId": "hook-2",
+      "startChapter": 10,
+      "type": "中伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 10,
+      "expectedPayoff": "20章内",
+      "notes": "\"有些东西正在苏醒\"——代价线索已揭示：反向转化=失去末日之前记忆"
+    },
+    {
+      "hookId": "hook-3",
+      "startChapter": 12,
+      "type": "小伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "5章内",
+      "notes": "守护者职业——王德发第一夜觉醒揭示；**妻子王淑芬在E-142等待（已揭示）**"
+    },
+    {
+      "hookId": "H034",
+      "startChapter": 8,
+      "type": "中伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "待定",
+      "notes": "赵磊身份——**蓝光疤痕残留；梦中数据流；监控记录吻合**"
+    },
+    {
+      "hookId": "H042",
+      "startChapter": 11,
+      "type": "中伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "待定",
+      "notes": "先驱者继承者身份——徽章在手；王德发确认\"先驱者继承者\"称谓；白衣服女人线索关联H041"
+    },
+    {
+      "hookId": "H045",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H046",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H047",
+      "startChapter": 0,
+      "type": "new",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**守护者刘建国——疑似变成残骸的三十年前同事**",
+      "notes": ""
+    },
+    {
+      "hookId": "H048",
+      "startChapter": 0,
+      "type": "new",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**返回时出现新脚印——\"它跟着我们\"**",
+      "notes": ""
+    },
+    {
+      "hookId": "H049",
+      "startChapter": 0,
+      "type": "new",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**血字下隐藏信息（未刮开）——可能为误导或第三层真相**",
+      "notes": ""
+    },
+    {
+      "hookId": "H036",
+      "startChapter": 0,
+      "type": "小伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 21,
+      "expectedPayoff": "待定",
+      "notes": "**第21章末尾系统运行状态已铺垫选择系统即将推送**"
+    },
+    {
+      "hookId": "H065",
+      "startChapter": 23,
+      "type": "小伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 24,
+      "expectedPayoff": "5章内",
+      "notes": "守墓人身份——观测者系统本地终端，代号\"守墓人\"，主要职责维护休眠舱阵列、执行先驱者协议、等待先驱者回来"
+    },
+    {
+      "hookId": "H069",
+      "startChapter": 23,
+      "type": "小伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 24,
+      "expectedPayoff": "5章内",
+      "notes": "α-12碎片位置——第二片记忆碎片在观测者核心区第一层（\"别的地方\"）"
+    },
+    {
+      "hookId": "H082",
+      "startChapter": 20,
+      "type": "紧迫威胁",
+      "status": "open",
+      "lastAdvancedChapter": 21,
+      "expectedPayoff": "30+",
+      "notes": "四个被污染先驱者污染指数降低至15%/39%/50%/66%；退回休眠舱等待选择；**68%影子能力展开，暗示进程关联**"
+    },
+    {
+      "hookId": "H083",
+      "startChapter": 20,
+      "type": "小伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 21,
+      "expectedPayoff": "32+",
+      "notes": "**新增：橙色光圈、守护者、回收协议三者可能存在关联（陈默触发规则漏洞时看到的画面）**"
+    },
+    {
+      "hookId": "H084",
+      "startChapter": 20,
+      "type": "小伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 21,
+      "expectedPayoff": "32+",
+      "notes": "**新增：赵磊蓝光消失但仍有疤痕，脑子里多了数据（待后续观察）**"
+    },
+    {
+      "hookId": "H062",
+      "startChapter": 0,
+      "type": "21",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H063",
+      "startChapter": 0,
+      "type": "21",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H081",
+      "startChapter": 20,
+      "type": "关键抉择",
+      "status": "open",
+      "lastAdvancedChapter": 21,
+      "expectedPayoff": "30+",
+      "notes": "反向转化协议代价已揭示（失去末日之前记忆）；陈默决定与队友商议后再做决定"
+    }
+  ]
+}

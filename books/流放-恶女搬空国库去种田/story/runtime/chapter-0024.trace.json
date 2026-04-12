@@ -1,0 +1,28 @@
+{
+  "chapter": 24,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0024.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\流放-恶女搬空国库去种田\\story\\runtime\\chapter-0024.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#12",
+    "story/chapter_summaries.md#21",
+    "story/chapter_summaries.md#22",
+    "story/chapter_summaries.md#23",
+    "story/pending_hooks.md#mission-吴大夫家人成功营救后正式获得太傅府内应",
+    "story/pending_hooks.md#hook-王氏真实目-的-不只是替身",
+    "story/pending_hooks.md#threat-太傅追查信件-失败后加大反-击力度",
+    "story/pending_hooks.md#hook-凤凰玉佩真伪"
+  ],
+  "notes": []
+}

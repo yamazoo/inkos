@@ -1,0 +1,85 @@
+{
+  "chapter": 15,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**世界名称**：荒界"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "### 第一卷：县城风云（第1-60章）"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 三天内完成交易→黑松林两件事（苏父+周铁山东西）→救陆沧海→查明陆明死因"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **完成三件事→获取黑虎锻骨功→救陆沧海→黑松林取东西（骨庙）+查苏父→苏青禾随行→调查陆明之死"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 气血6.3/剁骨刀法35/伤势痊愈可行动/怀揣短刀+剁骨刀+兽皮地图+铜牌+铜钱+交易条款羊皮/玉佩（真）已取/准备前往黑松林"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 黑虎帮全城搜捕（已通过谈判暂时缓和）/三天期限/陆沧海作人质/周铁山起疑"
+    },
+    {
+      "source": "story/chapter_summaries.md#4",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "入林 | ①购买虎骨膏和活血散 ②盲女透露黑松林情报和父亲失踪 ③进入野狼岭 ④击杀铁鬃猪救狼崽 ⑤食用猪心提升气血 ⑥黑衣人暗中观察 | 气血5.0→5.3，熟练度15→16，获得野猪尸体，脚伤用药缓解 | H012-H014埋设，H001验证"
+    },
+    {
+      "source": "story/chapter_summaries.md#5",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "诱饵 | ①割取野猪腱子肉，以残骸为诱饵引狼 ②断崖石缝藏身，遇蒙面黑衣人 ③黑虎帮三人追踪而至，陆沉主动出击 ④黑衣人出手杀一人，两人逃跑 ⑤陆沉被狼群包围，击杀三头铁骨狼 | 熟练度16→18，气血5.3→5.4，伤势加重，获得短刀和碎银，消耗包子1个和腱子肉1条 | H002/H011推进，H014/H015新增"
+    },
+    {
+      "source": "story/chapter_summaries.md#6",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "夜猎 | ①断崖凹陷休息处理伤口 ②晨光时分击杀一头受伤的铁骨狼 ③黑虎帮四人追来，要抓活的 ④突袭杀死一人后跳崖逃生 ⑤误入黑松林，发现狼王踪迹逃跑 | 气血5.4→5.6，熟练度18→20，伤势加重，虎骨膏消耗一半，获得狼心狼肉 | H011推进，H013推进，H016新增"
+    },
+    {
+      "source": "story/chapter_summaries.md#14",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "祠堂夜行 | ①夜间潜入陆家祠堂发现暗室 ②玉佩已被神秘人取走 ③杀死两个黑虎帮成员 ④获得碎银和身份牌 ⑤苏青禾被黑虎帮带走问话 | 剁骨刀法35→42，碎银+3块，获得黑虎帮身份牌，苏青禾被带走 | H003/H009推进（玉佩被取走），H041-H045新增，H002/H031/H032推进"
+    },
+    {
+      "source": "story/pending_hooks.md#伏笔-洞穴外逼近威胁",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**伏笔** | open | 待展开 | **64章新增：滴答声从洞外传来/湿润蠕动质感/节奏慢但越来越密/与洞穴深处听到的声音一致**→是穴居人？还是\"它们\"？→**极度危险**"
+    },
+    {
+      "source": "story/pending_hooks.md#伏笔-灰白草茎规则",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**伏笔** | open | 待展开 | **64章新增：阿纱透露/\"它们\"给的/收了就不能还/还了会死/但两年前女人\"走了\"没还→为何钱进能拿着？规则例外？→阿纱暗示还回去可能有用（\"如果是——\"未说完）**"
+    },
+    {
+      "source": "story/pending_hooks.md#伏笔-钱进\"不能不要\"",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**伏笔** | open | 待展开 | **64章新增：钱进临死前说\"不能……不要……\"→不能不要什么？与\"收了就不能还\"矛盾？→可能指不能把铁匣/草茎\"还回去\"**"
+    },
+    {
+      "source": "story/pending_hooks.md#H001",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "13 | open"
+    }
+  ]
+}

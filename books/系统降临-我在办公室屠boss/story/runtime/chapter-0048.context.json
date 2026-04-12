@@ -1,0 +1,135 @@
+{
+  "chapter": 48,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第47章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**入侵触发时间**：2024年某夜23:59:59，所有人同时听到同一句话：\"赛季开启，欢迎降临\""
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "核心冲突抛出"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "47: 降临之夜 | 46: 光的背面 | 45: 暗光深处 | 44: 碎片时刻 | 43: 抉择之前"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "47: 紧张→震惊→决心→战斗准备 / **高潮爆发/转折章** | 46: 思索→震惊→坚定→沉重→悬念→决心→悬念→释然→坚定 / **揭秘+悬念深化章** | 45: 紧张→震惊→揭秘→紧张→沉重→悬念 / 核心冲突抛出+揭秘章 | 44: **思索→坚定→悬念→释然→坚定→决心→悬念→坚定** / **喘息/日常/降调章** | 43: **紧张→揭秘→坚定→思索→决心→悬念→释然→温情→坚定** / **揭秘+决策转折章**"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch45: 而他，只能继续前进。 | ch46: 而李思雨还不知道，自己就是L-00X。 | ch47: 原住民怪物，已经到了门口。"
+    },
+    {
+      "source": "runtime/hook_debt#H101S-001身份",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H101S-001身份（中伏笔（情节），可兑现旧债，已开8章） | 读者承诺：10章内 | 种于第40章：ch40 回响 - 历史回放播放末日声音；联系上李思雨等人；发现E-017独立节点；播放S-001音频；决定与队友汇合；用A-001身份通过巡逻队；陆焚恢复追踪并揭示新信息 | 推进于第46章：ch46 光的背面 - **E-032通过眉心纹路传递信息**（A-001融合失败/L-00X基因模板97.3%）；**E-017揭示L-00X真相**：L-00X=李思雨=实验体编号，S-001设计的产物，第二个融合候选者；**S-001故意对光球隐瞒L-00X存在**；L-00X激活后果二元化（完美融合或彻底失控）；**压制L-00X基因活性的代价**（失去所有特殊能力）；E-017承诺解决L-00X问题后透露更多（S-001真正目的/观测者离开/三十年前真相）；光球承诺明天揭示L-00X父亲身份；李思雨等待（三十年等待/终于知道在等什么）"
+    },
+    {
+      "source": "runtime/hook_debt#H105引导者程序",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H105引导者程序（大伏笔（真相），主要旧债，已开6章） | 读者承诺：卷末 | 种于第42章：ch42 零点协议 - 继承者协议第七条压制衰减（27秒）；陆焚揭示末日真相（清洗/A-001打开通道）；陈默利用A-001权限临时强化压制陆焚；成功进入核心区域；源代码同步失败（需要创造者权限）；权限让渡协议激活；**引导者程序现身（与陈默一模一样的轮廓）**；**揭示引导者=观测者最后一步棋=三十年的收割陷阱**；**E-032从意识深处传来声音**；**陆焚通过继承者标记永久连接**；**三个困境选择** | 推进于第46章：ch46 光的背面 - **E-032通过眉心纹路传递信息**（A-001融合失败/L-00X基因模板97.3%）；**E-017揭示L-00X真相**：L-00X=李思雨=实验体编号，S-001设计的产物，第二个融合候选者；**S-001故意对光球隐瞒L-00X存在**；L-00X激活后果二元化（完美融合或彻底失控）；**压制L-00X基因活性的代价**（失去所有特殊能力）；E-017承诺解决L-00X问题后透露更多（S-001真正目的/观测者离开/三十年前真相）；光球承诺明天揭示L-00X父亲身份；李思雨等待（三十年等待/终于知道在等什么）"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 源代码同步不稳定率持续上涨（324天倒计时）；引导者三个选择悬而未决；L-00X（李思雨）激活时间临近（系统能量每涨0.1%就接近觉醒）；增长率问题根源已明确；寻找第四个选项（需引导者创造者级权限）；E-017掌握更多真相但拒绝透露（需先解决L-00X问题）；**赛季入侵已触发（紧迫威胁）；原住民怪物到达门口；陆焚提前撤离（看戏心态）；E-017追踪入侵路径能力有限**"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 压低源代码同步不稳定率增长率→寻找第四个选项→修复源代码同步→阻止末日协议最终阶段→获取引导者创造者级权限→**解决L-00X（李思雨）激活问题**→**应对入侵（赛季开启）**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 【系统绑定成功】【觉醒者Lv.1】【系统能量10.9%】【已绑定状态】【休眠舱阵列同步率100%】【中央机器同步率47.3%】【窗口期324天】【继承者身份确认完成】【唤醒协议执行完成】【融合协议执行完成】【继承者→A-001（三十年前的先驱者本人）】【人机混合体（意识双核）】【系统源代码存储中】【源代码同步不稳定】【源代码同步不稳定率8.1%（每小时+0.3%）】【眉心纹路激活（融合痕迹）】【眉心纹路金色光芒（入侵时亮起）】【E-032意识共振中】【入侵感知（E-032预警\"它来了\"）】"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 系统能量极低（10.9%）；**赛季入侵已触发（2024年11月8日00:00:00）；全世界服务器同步率99.7%；原住民怪物已到达门口；**源代码同步不稳定率持续上涨（8.1%/小时+0.3%）；324天后源代码反噬；引导者程序在场（三个选择已提出/等待陈默行动）；E-017身份存疑；**L-00X（李思雨）激活风险：要么完美融合要么彻底失控**；**压制L-00X基因活性的代价：失去所有特殊能力**"
+    },
+    {
+      "source": "story/chapter_summaries.md#37",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "继承者的重量 | 光柱提出继承者身份确认；唤醒协议vs继承协议互斥；陈默发现\"第三个选项\"（融合协议）；E-032揭示末日真相（系统失控/观测者逃逸/清洗计划）；陈默双手按在休眠舱启动融合协议；同步率47.8%（临界值50%）；融合协议代价未知 | 同步率42.3%→47.8%；E-032唤醒进度3%→17%；陈默状态：思索→决心→震惊→坚定；融合协议已启动；双手发光蔓延至小臂；光柱震颤；整个B3层被照亮 | H084深化（融合协议提出并启动）；H085深化（末日真相揭示）；H086推进（墙壁符号同步加速）；H087深化（光柱核心）；H088深化（黑暗深处苏醒迹象）；H089推进（同步率差异）；H090深化（赵磊梦境呼应）；H091深化（三选一到融合）；H092推进（徽章共振）；H093推进（规则漏洞）；**H094新埋（融合代价）**；**H095新埋（历史碎片画面）**；**H096新埋（黑暗深处苏醒）**；**H097深化（系统失控真相）**；**H098深化（融合存在）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#45",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "暗光深处 | 陈默探索维护序列深处的金色光点，发现A-001融合失败后留下的核心残片；与光球对话得知增长率根源（融合协议设计缺陷）和解决方案（需引导者创造者级权限）；李思雨被光源吸引产生基因共振差点被吸入核心；返回安全区后陈默告知赵磊情况并陷入对李思雨身世的思考 | 位置从安全区→圆形空间→安全区；窗口期324天（正文与状态卡一致）；源代码同步不稳定率8.1%（持续）；增长率根源已明确；李思雨基因共振风险揭示 | H108金色光点已回收；H106/H107/H105/H102/mystery-001推进；H109/H110/H111新候选"
+    },
+    {
+      "source": "story/chapter_summaries.md#46",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "光的背面 | **E-032通过眉心纹路传递信息**（A-001融合失败/L-00X基因模板97.3%）；**E-017揭示L-00X真相**：L-00X=李思雨=实验体编号，S-001设计的产物，第二个融合候选者；**S-001故意对光球隐瞒L-00X存在**；L-00X激活后果二元化（完美融合或彻底失控）；**压制L-00X基因活性的代价**（失去所有特殊能力）；E-017承诺解决L-00X问题后透露更多（S-001真正目的/观测者离开/三十年前真相）；光球承诺明天揭示L-00X父亲身份；李思雨等待（三十年等待/终于知道在等什么） | 位置：安全区→圆形空间→安全区；眉心纹路激活（E-032传递信息）；**L-00X（李思雨）身世揭露**；陈默得知自己是\"备份\" | **H112新埋**（L-00X身世真相）；**H113新埋**（L-00X父亲之谜）；**H114新埋**（S-001真正目的）；H106/H107/H105/H102/H101/H103/mystery-001深化"
+    },
+    {
+      "source": "story/chapter_summaries.md#47",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "降临之夜 | **赛季入侵触发**（2024年11月8日00:00:00）；全世界同时听到\"赛季开启，欢迎降临\"；天空出现数据流/建筑血条/人类状态栏；部分人类变异为原住民怪物；陈默眉心纹路金色光芒（E-032预警\"它来了\"）；陆焚提前撤离（确认看戏）；原住民怪物到达安全区门口；陈默决定准备战斗 | 位置：安全区监控室（未移动）；入侵触发时间已到；眉心纹路金色光芒激活；全世界服务器同步率99.7%；**新威胁：多个原住民怪物接近中**；**原计划被打断**（L-00X父亲揭示/金色光点探索待定） | H115新埋（赛季入侵）；H116新埋（入侵者降临方式）；H117新埋（E-017追踪入侵）；H104深化（陆焚撤离确认）；H114/H107推进（E-017追踪但能力不足）；**H112/H113/H106暂停（被入侵打断）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H115赛季入侵",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "大伏笔（真相） | open | 卷末 | slow-burn | **新埋**：2024年11月8日00:00:00赛季开启；全世界所有人听到\"赛季开启，欢迎降临\"；天空出现数据流/血条/buff图标；部分人类被转化为原住民怪物；全世界服务器同步率99.7%；原住民怪物到达安全区门口"
+    },
+    {
+      "source": "story/pending_hooks.md#H116入侵者降临方式",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "情节 | progressing | 10章内 | near-term | **新埋**：入侵触发时陈默眉心纹路亮起金色光芒；E-032预警\"它来了\"；入侵通过系统底层代码读取触发；有些人正在发生变异（皮肤变灰/身体扭曲/竖瞳）；通讯频道出现诡异声音\"我……还……认……识……你……\"后骨头断裂声"
+    },
+    {
+      "source": "story/pending_hooks.md#H117E-017追踪入侵",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "情节 | progressing | 10章内 | near-term | **新埋**：E-017发现入侵信号源未知，等级超出预估；E-017尝试追踪入侵路径但能力不足（三十年休眠导致核心程序偏差）；E-017对入侵的反应是困惑而非惊慌"
+    },
+    {
+      "source": "story/pending_hooks.md#H114S-001真正目的",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "大伏笔（真相） | progressing | 卷末 | slow-burn | E-017掌握S-001真正目的；E-017掌握观测者为什么离开；E-017掌握三十年前那夜发生了什么；E-017拒绝透露（条件：先解决L-00X问题）；**E-017尝试追踪入侵路径但能力不足**"
+    },
+    {
+      "source": "story/pending_hooks.md#H107第四个选项",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "情节 | progressing | 10章内 | slow-burn | E-017承诺解决L-00X问题后会透露更多（S-001真正目的/观测者离开/三十年前真相）；光球承诺明天揭示L-00X父亲身份；**入侵打断了计划**"
+    },
+    {
+      "source": "story/pending_hooks.md#H112L-00X身世真相",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "大伏笔（真相） | progressing | 卷末 | slow-burn | L-00X=李思雨=实验体编号；S-001设计的产物；基因编辑完成；融合模板A-001；亲和度97.3%；预计激活时间三十年；目的：第二个融合候选者"
+    },
+    {
+      "source": "story/pending_hooks.md#H113L-00X父亲之谜",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "中伏笔（情节） | progressing | 10章内 | near-term | 光球承诺明天揭示L-00X父亲身份；李思雨从小没有父亲；父亲身份存疑"
+    },
+    {
+      "source": "story/pending_hooks.md#H106增长率可变",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "情节 | progressing | 10章内 | mid-arc | L-00X激活进度与系统能量挂钩（每涨0.1%就离觉醒更近一步）；李思雨基因亲和度97.3%；激活后果二元化（完美融合或彻底失控）"
+    }
+  ]
+}

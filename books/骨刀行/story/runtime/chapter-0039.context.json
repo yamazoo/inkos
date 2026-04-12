@@ -1,0 +1,110 @@
+{
+  "chapter": 39,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "**世界名称**：荒界"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "**章节范围**：1-60"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "38: 铜锣山夜行 | 37: 第三十七章 旧账与新账 | 36: 破庙孤灯 | 35: 第三十五章 乱葬岗的冷夜 | 34: 第三十四章 城墙豁口"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "38: 紧张→冷静→警觉→决断 / 探索/战斗章 | 37: 震惊→压抑→沉默→冷静→决断 / 真相揭露/决断章 | 36: 警觉→冷静→震惊→压抑→追问→沉默 / 真相揭露/情报章 | 35: 警觉→审问→分析→紧张→逃亡→冷静 / 逃亡/情报/悬念章 | 34: 紧张逃亡→谨慎分析→冷静等待 / 逃亡/休整章"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch36: 他翻过墙头，冲进外面的枯草丛里，一直跑，一直跑，直到那声音彻底消失在风里。 | ch37: 不是走，是扑。 | ch38: 铁匣子的银光又暗了一分。"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **苏青禾已救出（阿纱照顾中）→令牌成对（三十七号+三十八号）→前往灵脉→寻找母亲刻字→封印灵脉→青云宗追踪（H106今晚/明早到达/暂脱）→**处理行尸危机（铁匣活物特性测试中）**→**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 左臂知觉完全恢复（大臂麻木已退/肩头轻微滞涩）；肋下伤口渗血（已用老人金创药处理）；后背撞伤（行尸撞击洞壁）；能战斗非满状态/**手中：剔骨刀（插在死去的行尸身上）；石刀（阿纱递来）；腰后：铁钎；腰间：杀猪刀（赵三爷遗物）/短刀已给苏青禾；怀中：铁牌×1（苏老实遗物/\"别走\"/温热不烫）/荒卫令牌（荒卫司/三十七号/父亲线索）/脉晶×2/碎碗片×1（孙麻子暗号/城西方向）/银袋（约20两）/城北宅子草图×1/铁匣子（发银光/内有活物/怕光/与行尸有某种关系）/**新获：三十八号令牌（封门）**"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | **体力消耗大（肋下渗血/后背撞伤/已处理）孙麻子失联（约三天前被救/下落不明）三天期限→已过**"
+    },
+    {
+      "source": "story/chapter_summaries.md#36",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "破庙孤灯 | ①抵达破庙；②老人第五次出现（在地上划痕迹）；③老人揭露身份：陆家二十年账房；④令牌真相：两块合一是铜锣山灵脉的钥匙；⑤十三年前火灾真相：有人纵火杀人；⑥父母死因：被割喉（非烧死）；⑦尸首下落：埋城外乱葬岗；⑧凶手之一：钱进（城东钱家）；⑨钱进追杀动机：要灵脉；⑩陆沉被埋时还活着（老人目击） | 位置：树林→破庙（已到达）；肋下伤口仍渗血；左臂知觉继续爬升；苏青禾脚伤/虚弱 | **H001/SP001重大突破**：十三年前真相揭露；钱进是纵火杀人主谋；令牌是灵脉钥匙；父母被割喉埋乱葬岗；陆沉被活埋时未断气（老人目击）；**SP032突破**：老人身份确认为陆家账房；**SP033突破**：埋尸真相老人证言；**SP034新增**：铜锣山灵脉；**SP035新增**：老人取令牌目的；**SP036新增**：钱进追杀动机"
+    },
+    {
+      "source": "story/chapter_summaries.md#37",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "第三十七章 旧账与新账 | ①老人揭露令牌秘密（两块合一才是钥匙）；②父母死因详细揭露（父亲喉结被割一半/母亲脸上全是血）；③老人证言：亲眼看着放火/亲眼刨出陆沉/亲眼看见陆沉从土里伸手；④老人揭露：父亲提前将令牌下半截交给他；⑤令牌合并（金属碰撞/热意窜上手臂）；⑥灵脉信息：深处有活泉能洗筋伐髓；⑦陆沉决定前往铜锣山；⑧苏青禾留下等待（三天期限）；⑨陆沉与老人出发（夜行） | 位置：破庙→出发前往铜锣山（夜行）；左臂知觉继续爬升（**痒意蔓延至肩头**）；肋下伤口钝痛（未恶化）；武器增加铁钎；苏青禾留下等待 | **SP035突破**：老人取令牌原因解答（父亲托付保管）；**SP034突破**：灵脉具体信息（活泉/洗筋伐髓）；**SP033突破**：老人证言细节（父母死状/刨出陆沉）；**SP036升级**：钱进威胁升级（钥匙已合一）；**新悬念**：苏青禾三天后选择；**新悬念**：铜锣山内部情况"
+    },
+    {
+      "source": "story/chapter_summaries.md#38",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "铜锣山夜行 | 到达灵脉石室；发现活泉；战斗击杀2人；石壁门打开 | 到达灵脉石室；获物资；右手新伤；战斗击杀2人 | SP034/SP036/SP021/SP001 advanced"
+    },
+    {
+      "source": "story/pending_hooks.md#\"别看它们的眼睛\"",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "open | open"
+    },
+    {
+      "source": "story/pending_hooks.md#\"不能不要\"",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "剧情 | open | 65已完整解释 | 已回收：钱进遗言指灰白草茎/活物的关联"
+    },
+    {
+      "source": "story/pending_hooks.md#H101（苏青禾真实身份）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**剧情** | open | **待展开** | **苏青禾七年前见过灰白絮状物/见过铁匣子/见过巨大活物/知道部分真相**"
+    },
+    {
+      "source": "story/pending_hooks.md#H106（青云宗追踪）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**剧情** | open | **今晚/明早** | **两人从县城方向来/灰衣/步子不像衙门/今晚或明早到达**"
+    },
+    {
+      "source": "story/pending_hooks.md#H107（洞穴外威胁）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**剧情** | open | **待展开** | **苏青禾看见有东西往洞穴方向移动/多人/非人声音/滴答声逼近**"
+    },
+    {
+      "source": "story/pending_hooks.md#H109（灰白草茎来源）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**伏笔** | open | **待展开** | **苏青禾七年前蹭掉絮状物在黑松林/第二年长出灰白草/草茎是它们下蛋的方式**"
+    },
+    {
+      "source": "story/pending_hooks.md#H016（伏笔-阿纱男人死因）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "伏笔 | open"
+    },
+    {
+      "source": "story/pending_hooks.md#H017（剧情-洞穴门口异常）",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "剧情 | open"
+    }
+  ]
+}
