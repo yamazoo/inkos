@@ -65,6 +65,16 @@ export class PlannerAgent extends BaseAgent {
       this.readFileOrDefault(sourcePaths.currentState),
     ]);
 
+    // Load trackers (non-blocking — if missing, fields stay undefined)
+    const { loadTracker } = await import("../state/tracker-store.js");
+    const { ArcTrackerSchema, FactionLedgerSchema, MoodArcSchema } = await import("../models/runtime-state.js");
+
+    const [arcTrackerRaw, factionLedgerRaw, moodArcRaw] = await Promise.all([
+      loadTracker(input.bookDir, "arc-tracker", ArcTrackerSchema).catch(() => null),
+      loadTracker(input.bookDir, "faction-ledger", FactionLedgerSchema).catch(() => null),
+      loadTracker(input.bookDir, "mood-arc", MoodArcSchema).catch(() => null),
+    ]);
+
     const outlineNode = this.findOutlineNode(volumeOutline, input.chapterNumber);
     const matchedOutlineAnchor = this.hasMatchedOutlineAnchor(volumeOutline, input.chapterNumber);
     const goal = this.deriveGoal(input.externalContext, currentFocus, authorIntent, outlineNode, input.chapterNumber);
@@ -99,17 +109,67 @@ export class PlannerAgent extends BaseAgent {
       chapterSummaries,
     });
 
+    // Build tracker-driven V2 fields
+    const activeNode = arcTrackerRaw?.outlineNodes?.find((n) => n.status === "active");
+    const arcPosition = arcTrackerRaw ? {
+      volumeId: arcTrackerRaw.volumeId ?? "vol-1",
+      currentNodeId: activeNode?.nodeId ?? "",
+      nodeProgress: activeNode?.progress ?? 0,
+      overallProgress: arcTrackerRaw.outlineNodes
+        ? Math.round(
+            arcTrackerRaw.outlineNodes.reduce(
+              (sum, n) => sum + (n.completedChapter != null ? 100 : (n.progress ?? 0)), 0,
+            ) / arcTrackerRaw.outlineNodes.length,
+          )
+        : 0,
+      nextNodeId: arcTrackerRaw.outlineNodes?.find((n) => n.status === "pending")?.nodeId ?? null,
+    } : undefined;
+
+    const factionContext = factionLedgerRaw ? {
+      currentThreatLevel: 50, // derived from faction Ledger hostile stances if needed
+      protagonistExposureRisk: factionLedgerRaw.protagonist.exposureRisk ?? 0,
+      keyRelationshipChanges: Object.entries(factionLedgerRaw.factions).map(([, f]) => ({
+        faction: f.factionName ?? f.factionId,
+        change: `态度: ${f.stance ?? "neutral"}`,
+      })),
+    } : undefined;
+
+    const v2MoodDirective = moodArcRaw?.nextChapterMoodTarget ? {
+      tensionDirection: (moodArcRaw.nextChapterMoodTarget.tension ?? "same") as "up" | "down" | "same",
+      excitementDirection: (moodArcRaw.nextChapterMoodTarget.excitement ?? "same") as "up" | "down" | "same",
+      warmthDirection: (moodArcRaw.nextChapterMoodTarget.warmth ?? "same") as "up" | "down" | "same",
+      reason: moodArcRaw.nextChapterMoodTarget.reason ?? "",
+      toneDescription: "",
+    } : undefined;
+
+    const chapterType = this.detectChapterType(goal, conflicts, outlineNode);
+
+    // ChapterIntentSchemaV2 redefines hookAgenda with HookPressure arrays, making it
+    // incompatible with the base ChapterIntent type needed by renderIntentMarkdown.
+    // Build with ChapterIntentSchema.parse (accepts all V2 fields) then narrow to ChapterIntent
+    // so renderIntentMarkdown / PlanChapterOutput.intent: ChapterIntent is satisfied.
+    // The V2 enrichments (arcPosition, factionContext, moodDirective, chapterType) are
+    // attached as plain properties — they're .optional() in the schema so this is safe.
     const intent = ChapterIntentSchema.parse({
       chapter: input.chapterNumber,
       goal,
       outlineNode,
-      ...directives,
+      arcDirective: directives.arcDirective,
+      sceneDirective: directives.sceneDirective,
+      titleDirective: directives.titleDirective,
+      conflictDirective: directives.conflictDirective,
       mustKeep,
       mustAvoid,
       styleEmphasis,
       conflicts,
       hookAgenda,
-    });
+    }) as ChapterIntent & {
+      schemaVersion: 2;
+      arcPosition: typeof arcPosition;
+      factionContext: typeof factionContext;
+      moodDirective: typeof v2MoodDirective;
+      chapterType: typeof chapterType;
+    };
 
     const runtimePath = join(runtimeDir, `chapter-${String(input.chapterNumber).padStart(4, "0")}.intent.md`);
     const intentMarkdown = this.renderIntentMarkdown(
@@ -752,5 +812,20 @@ export class PlannerAgent extends BaseAgent {
     } catch {
       return "(文件尚未创建)";
     }
+  }
+
+  private detectChapterType(
+    goal: string,
+    conflicts: ChapterConflict[],
+    outlineNode?: string,
+  ): "combat" | "upgrade" | "scheme" | "payoff" | "transition" | "tribulation" | "enlightenment" {
+    const text = [goal, ...conflicts.map((c) => c.type), outlineNode ?? ""].join(" ");
+    if (/渡劫|天劫|雷劫/.test(text)) return "tribulation";
+    if (/悟|领悟|心境|突破/.test(text)) return "enlightenment";
+    if (/战斗|杀|打|争/.test(text)) return "combat";
+    if (/伏笔|揭露|揭秘|真相/.test(text)) return "payoff";
+    if (/阴谋|布局|计策/.test(text)) return "scheme";
+    if (/修炼|提升|境界|机缘/.test(text)) return "upgrade";
+    return "transition";
   }
 }
