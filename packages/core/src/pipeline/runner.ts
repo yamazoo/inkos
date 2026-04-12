@@ -38,6 +38,7 @@ import type { ContextPackage, RuleStack } from "../models/input-governance.js";
 import { buildLengthSpec, countChapterLength, formatLengthCount, isOutsideHardRange, isOutsideSoftRange, resolveLengthCountingMode, type LengthLanguage } from "../utils/length-metrics.js";
 import { analyzeLongSpanFatigue } from "../utils/long-span-fatigue.js";
 import { loadNarrativeMemorySeed, loadSnapshotCurrentStateFacts } from "../state/runtime-state-store.js";
+import { parsePendingHooksMarkdown } from "../utils/story-markdown.js";
 import { rewriteStructuredStateFromMarkdown } from "../state/state-bootstrap.js";
 import { readFile, readdir, writeFile, mkdir, rename, rm, stat } from "node:fs/promises";
 import { join } from "node:path";
@@ -2811,6 +2812,13 @@ ${matrix}`,
     const emotionalArcsRaw = await readFile(join(storyDir, "emotional_arcs.md"), "utf-8").catch(() => "");
 
     const { profile: gp } = await this.loadGenreProfile(book.genre);
+    const pendingHooks = parsePendingHooksMarkdown(pendingHooksRaw).map((h) => ({
+      hookId: h.hookId,
+      type: h.type,
+      status: h.status,
+      expectedPayoff: h.expectedPayoff ?? "",
+      notes: h.notes ?? "",
+    }));
     const beatPlannerInput = {
       bookId: book.id,
       chapterNumber,
@@ -2818,10 +2826,14 @@ ${matrix}`,
       lastChapterEnding,
       recentEndings,
       currentState: currentStateRaw,
-      pendingHooks: [],  // BeatPlanner will use pendingHooksRaw text
+      pendingHooks,
       emotionalArcs: emotionalArcsRaw,
       chapterTypeHint: null,
-      wordCount: { min: 2000, target: book.chapterWordCount, max: 4000 },
+      wordCount: {
+        min: Math.floor(book.chapterWordCount * 0.8),
+        target: book.chapterWordCount,
+        max: Math.ceil(book.chapterWordCount * 1.3),
+      },
       genreChapterTypes: gp?.chapterTypes ?? [],
       language: book.language ?? "zh",
     };
