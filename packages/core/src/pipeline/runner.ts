@@ -677,18 +677,18 @@ export class PipelineRunner {
       await writeFile(filePath, `${heading}\n\n${draftOutput.content}`, "utf-8");
 
       // ── ArcUpdater: validate completion report and update trackers ───────
-      const chapterContent = await readFile(filePath, "utf-8");
-      const reportMatch = chapterContent.match(/<!-- COMPLETION_REPORT\n([\s\S]*?)\n-->/);
-      if (reportMatch) {
+      // Use completionReport directly from draftOutput (COMPLETION_REPORT block
+      // was stripped by normalizer before file save — never look in saved file)
+      const report = draftOutput.completionReport as import("../models/runtime-state.js").ChapterCompletionReport | undefined;
+      if (report) {
         try {
-          const completionReport = JSON.parse(reportMatch[1]) as import("../models/runtime-state.js").ChapterCompletionReport;
           const arcUpdater = new ArcUpdaterAgent(this.agentCtxFor("arc-updater", book.id));
           const result = await arcUpdater.updateTrackers({
             bookId: book.id,
             bookDir,
             chapter: chapterNumber,
-            completionReport,
-            chapterContent,
+            completionReport: report,
+            chapterContent: draftOutput.content,
             language: book.language ?? "zh",
           });
           if (result.errors.length > 0) {

@@ -186,7 +186,7 @@ function defaultHooksPlaceholder(countingMode: LengthCountingMode): string {
  * Returns the parsed JSON object, or undefined if not found or unparseable.
  */
 function extractCompletionReport(content: string): ChapterCompletionReport | undefined {
-  const match = content.match(/<!-- COMPLETION_REPORT\n([\s\S]*?)\n-->/);
+  const match = content.match(/<!-- COMPLETION_REPORT\n([\s\S]*?)-->/);
   if (!match) return undefined;
   try {
     const parsed = JSON.parse(match[1]!);
