@@ -198,6 +198,12 @@ export interface BeatPlannerInput {
   readonly genreChapterTypes: readonly string[];
   /** Language */
   readonly language: "zh" | "en";
+  /** Faction ledger context for beat planning */
+  readonly factionLedgerContext?: {
+    readonly exposureRisk: number;
+    readonly socialCapital: number;
+    readonly keyFactions: readonly string[];
+  };
 }
 
 /** Output from BeatPlannerAgent.planBeats() */
@@ -206,6 +212,7 @@ export interface BeatPlannerOutput {
   readonly chapterType: ChapterType;
   readonly hookToAdvance: string | null;
   readonly beatCount: number;
+  readonly beatSheetV2?: BeatSheetOutputV2;
 }
 
 // ── SceneSchema（Layer 3）─────────────────────────────────────────────

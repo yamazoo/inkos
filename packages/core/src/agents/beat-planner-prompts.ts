@@ -5,62 +5,62 @@ import type { BeatPlannerInput } from "../models/input-governance.js";
 // Helpers
 // ---------------------------------------------------------------------------
 
-const COMBAT_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 要求 |
-|---|---|---|---|---|
-| 悬念引入 | 10% | — | — | 自然引出悬念 |
-| 局势升级 | 15% | — | — | 冲突预兆 |
-| 冲突爆发 | 35%+ | — | — | 战斗展开，主视角清晰 |
-| 小高潮 | 15% | 势均力敌→轻伤；险胜→心境波动；碾压局→暴露底牌 | 战胜方获战利品/情报 | — |
-| 章末悬念 | 10% | 代价显现 | 额外收获/新目标浮现 | 代价+收获构成转折 |
-| 回收伏笔 | 可选 | — | 伏笔回收 | — |`;
+const COMBAT_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 势力影响 | 要求 |
+|---|---|---|---|---|---|
+| 悬念引入 | 10% | — | — | 主角暗处观察 | 自然引出悬念 |
+| 局势升级 | 15% | — | — | 主角行踪暴露 | 冲突预兆 |
+| 冲突爆发 | 35%+ | — | — | 主角主动出击 | 战斗展开，主视角清晰 |
+| 小高潮 | 15% | 势均力敌→轻伤；险胜→心境波动；碾压局→暴露底牌 | 战胜方获战利品/情报 | 势力格局变化 | — |
+| 章末悬念 | 10% | 代价显现 | 额外收获/新目标浮现 | 新势力入场 | 代价+收获构成转折 |
+| 回收伏笔 | 可选 | — | 伏笔回收 | — | — |`;
 
-const UPGRADE_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 要求 |
-|---|---|---|---|---|
-| 悬念引入 | 10% | — | 困境/瓶颈呈现 | — |
-| 局势升级 | 20% | 寻找契机暴露需求 | 发现突破方向/机缘 | — |
-| 冲突爆发 | 25% | 心魔/外界干扰 | — | — |
-| 小高潮 | 30%+ | 突破有隐患（根基不稳/心魔残留） | 境界提升/新能力解锁 | 感官细节≥3维 |
-| 章末悬念 | 15% | 新困境（代价） | 新机遇（收获） | 代价+收获构成转折 |`;
+const UPGRADE_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 势力影响 | 要求 |
+|---|---|---|---|---|---|
+| 悬念引入 | 10% | — | 困境/瓶颈呈现 | 主角资源匮乏 | — |
+| 局势升级 | 20% | 寻找契机暴露需求 | 发现突破方向/机缘 | 主角行动引发关注 | — |
+| 冲突爆发 | 25% | 心魔/外界干扰 | — | 突破动静惊动敌友 | — |
+| 小高潮 | 30%+ | 突破有隐患（根基不稳/心魔残留） | 境界提升/新能力解锁 | 势力格局因主角突破而松动 | 感官细节≥3维 |
+| 章末悬念 | 15% | 新困境（代价） | 新机遇（收获） | 新势力介入或旧敌趁虚 | 代价+收获构成转折 |`;
 
-const SCHEME_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 要求 |
-|---|---|---|---|---|
-| 悬念引入 | 15% | — | 阴谋/阴谋者入场 | — |
-| 局势升级 | 35%+ | 触怒潜在盟友 | 情报获取/识破敌人 | — |
-| 冲突爆发 | 20% | 阴谋部分暴露/陷入被动 | 主角做出关键决定 | — |
-| 小高潮 | 10% | 决定带来风险 | 掌握主动权/获得信任 | — |
-| 章末悬念 | 15%+ | 新困境 | 新盟友/新线索 | 代价+收获构成转折 |`;
+const SCHEME_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 势力影响 | 要求 |
+|---|---|---|---|---|---|
+| 悬念引入 | 15% | — | 阴谋/阴谋者入场 | 幕后势力浮出水面 | — |
+| 局势升级 | 35%+ | 触怒潜在盟友 | 情报获取/识破敌人 | 主角行动触动多方利益 | — |
+| 冲突爆发 | 20% | 阴谋部分暴露/陷入被动 | 主角做出关键决定 | 局势因主角决定而倾斜 | — |
+| 小高潮 | 10% | 决定带来风险 | 掌握主动权/获得信任 | 关键盟友/势力倒向主角 | — |
+| 章末悬念 | 15%+ | 新困境 | 新盟友/新线索 | 势力格局因新变量而变 | 代价+收获构成转折 |`;
 
-const PAYOFF_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 要求 |
-|---|---|---|---|---|
-| 悬念引入 | 10% | — | 上章钩子入场 | — |
-| 局势升级 | 15% | — | 伏笔相关人物/场景入场 | — |
-| 冲突爆发 | 35% | 回收触发连锁反应 | — | — |
-| 小高潮 | 25%+ | 复仇引新敌/真相带来牺牲 | 复仇成功/真相大白/宝物到手 | — |
-| 章末悬念 | 15% | 新困境 | 新目标/新机遇 | 代价+收获构成转折 |`;
+const PAYOFF_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 势力影响 | 要求 |
+|---|---|---|---|---|---|
+| 悬念引入 | 10% | — | 上章钩子入场 | 旧势力再现 | — |
+| 局势升级 | 15% | — | 伏笔相关人物/场景入场 | 新势力介入伏笔线 | — |
+| 冲突爆发 | 35% | 回收触发连锁反应 | — | 势力关系网因回收而断裂/重塑 | — |
+| 小高潮 | 25%+ | 复仇引新敌/真相带来牺牲 | 复仇成功/真相大白/宝物到手 | 主角或盟友付出代价，格局重置 | — |
+| 章末悬念 | 15% | 新困境 | 新目标/新机遇 | 代价触发新势力入场 | 代价+收获构成转折 |`;
 
-const TRANSITION_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 要求 |
-|---|---|---|---|---|
-| 悬念引入 | 15% | — | 承接上章余波 | — |
-| 局势升级 | 25% | 暴露弱点 | 关系网铺设/关键信息 | — |
-| 冲突爆发 | 20% | 日常冲突 | 误会解开/关系深化 | — |
-| 小高潮 | 15% | 和好/误会加深 | 情感升温/意外帮助 | — |
-| 章末悬念 | 20%+ | 意外事件打断平静 | 下章大事件预告 | 代价+收获构成转折 |`;
+const TRANSITION_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 势力影响 | 要求 |
+|---|---|---|---|---|---|
+| 悬念引入 | 15% | — | 承接上章余波 | 平静中暗流涌动 | — |
+| 局势升级 | 25% | 暴露弱点 | 关系网铺设/关键信息 | 弱点暴露引发势力关注 | — |
+| 冲突爆发 | 20% | 日常冲突 | 误会解开/关系深化 | 势力关系微妙变化 | — |
+| 小高潮 | 15% | 和好/误会加深 | 情感升温/意外帮助 | 意外介入的第三方势力 | — |
+| 章末悬念 | 20%+ | 意外事件打断平静 | 下章大事件预告 | 意外势力打断平静 | 代价+收获构成转折 |`;
 
-const TRIBULATION_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 要求 |
-|---|---|---|---|---|
-| 悬念引入 | 15% | — | 劫云聚集/天象异变 | — |
-| 局势升级 | 20% | 道心动摇 | 埋因果伏笔/坚定道心 | — |
-| 冲突爆发 | 30% | 天雷/心魔/外魔三劫连发 | — | — |
-| 小高潮 | 25%+ | 渡劫后极度虚弱 | 道心稳固/天雷淬体/天道认可 | 感官细节≥4维 |
-| 章末悬念 | 15% | 虚弱期被旧敌/天罚追击 | 护道之物/新机缘显现 | 代价+收获构成转折 |`;
+const TRIBULATION_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 势力影响 | 要求 |
+|---|---|---|---|---|---|
+| 悬念引入 | 15% | — | 劫云聚集/天象异变 | 天象异变引发各方关注 | — |
+| 局势升级 | 20% | 道心动摇 | 埋因果伏笔/坚定道心 | 渡劫动静惊动远近势力 | — |
+| 冲突爆发 | 30% | 天雷/心魔/外魔三劫连发 | — | 渡劫期主角极度虚弱，势力格局出现真空 | — |
+| 小高潮 | 25%+ | 渡劫后极度虚弱 | 道心稳固/天雷淬体/天道认可 | 旧敌趁虚而入，护道势力出手 | 感官细节≥4维 |
+| 章末悬念 | 15% | 虚弱期被旧敌/天罚追击 | 护道之物/新机缘显现 | 新势力借机入场 | 代价+收获构成转折 |`;
 
-const ENLIGHTENMENT_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 要求 |
-|---|---|---|---|---|
-| 悬念引入 | 15% | — | 修行瓶颈/心境动摇 | — |
-| 局势升级 | 20% | 外出寻机缘暴露行踪 | 偶遇古修遗迹/前辈遗泽 | — |
-| 冲突爆发 | 25% | 悟道中心魔/幻境试炼 | — | — |
-| 小高潮 | 30%+ | 感悟引动旧因果反噬 | 道心提升/新法则感悟/与天道共鸣 | 感官细节≥4维 |
-| 章末悬念 | 15% | 新道引动天地异象/旧因果纠缠 | 新能力解锁 | 代价+收获构成转折 |`;
+const ENLIGHTENMENT_BEATS = `| 节拍名称 | 默认占比 | 代价 | 收获 | 势力影响 | 要求 |
+|---|---|---|---|---|---|
+| 悬念引入 | 15% | — | 修行瓶颈/心境动摇 | 主角修炼状态引发势力关注 | — |
+| 局势升级 | 20% | 外出寻机缘暴露行踪 | 偶遇古修遗迹/前辈遗泽 | 主角失踪引发各方搜寻 | — |
+| 冲突爆发 | 25% | 悟道中心魔/幻境试炼 | — | 悟道动静引发势力觊觎 | — |
+| 小高潮 | 30%+ | 感悟引动旧因果反噬 | 道心提升/新法则感悟/与天道共鸣 | 因果反噬牵动多方势力 | 感官细节≥4维 |
+| 章末悬念 | 15% | 新道引动天地异象/旧因果纠缠 | 新能力解锁 | 天地异象引发势力格局震荡 | 代价+收获构成转折 |`;
 
 const BEAT_TABLES: Record<ChapterType, string> = {
   combat: COMBAT_BEATS,
@@ -76,62 +76,62 @@ const BEAT_TABLES: Record<ChapterType, string> = {
 // English beat tables
 // ---------------------------------------------------------------------------
 
-const EN_COMBAT_BEATS = `| Beat | Default % | Cost | Gain | Requirement |
-|---|---|---|---|---|
-| Hook Intro | 10% | — | — | Naturally introduce the hook |
-| Escalation | 15% | — | — | Conflict brewing |
-| Conflict Explosion | 35%+ | — | — | Battle unfolds, clear POV |
-| Mini Climax | 15% | Even match→minor injury; close win→mood swing; stomp→reveals trump card | Victor gains spoils/info | — |
-| Chapter Cliffhanger | 10% | Cost manifests | Extra gain / new goal emerges | Cost + Gain form the turning point |
-| Payoff (optional) | — | — | Hook payoff | — |`;
+const EN_COMBAT_BEATS = `| Beat | Default % | Cost | Gain | Faction Impact | Requirement |
+|---|---|---|---|---|---|
+| Hook Intro | 10% | — | — | Protagonist observes from shadows | Naturally introduce the hook |
+| Escalation | 15% | — | — | Protagonist's location exposed | Conflict brewing |
+| Conflict Explosion | 35%+ | — | — | Protagonist takes initiative | Battle unfolds, clear POV |
+| Mini Climax | 15% | Even match→minor injury; close win→mood swing; stomp→reveals trump card | Victor gains spoils/info | Faction landscape shifts | — |
+| Chapter Cliffhanger | 10% | Cost manifests | Extra gain / new goal emerges | New faction enters | Cost + Gain form the turning point |
+| Payoff (optional) | — | — | Hook payoff | — | — |`;
 
-const EN_UPGRADE_BEATS = `| Beat | Default % | Cost | Gain | Requirement |
-|---|---|---|---|---|
-| Hook Intro | 10% | — | Dilemma/bottleneck presented | — |
-| Escalation | 20% | Search exposes need | Breakthrough direction/discovery found | — |
-| Conflict Explosion | 25% | Inner demon / external interference | — | — |
-| Mini Climax | 30%+ | Breakthrough carries hidden cost (unstable foundation / residual demon) | Cultivation level up / new ability unlocked | Sensory details ≥3 dimensions |
-| Chapter Cliffhanger | 15% | New dilemma (cost) | New opportunity (gain) | Cost + Gain form the turning point |`;
+const EN_UPGRADE_BEATS = `| Beat | Default % | Cost | Gain | Faction Impact | Requirement |
+|---|---|---|---|---|---|
+| Hook Intro | 10% | — | Dilemma/bottleneck presented | Protagonist's resources depleted | — |
+| Escalation | 20% | Search exposes need | Breakthrough direction/discovery found | Protagonist's actions draw attention | — |
+| Conflict Explosion | 25% | Inner demon / external interference | — | Breakthrough stirs enemies and allies | — |
+| Mini Climax | 30%+ | Breakthrough carries hidden cost (unstable foundation / residual demon) | Cultivation level up / new ability unlocked | Breakthrough destabilizes faction balance | Sensory details ≥3 dimensions |
+| Chapter Cliffhanger | 15% | New dilemma (cost) | New opportunity (gain) | New faction moves in / old rival seizes chance | Cost + Gain form the turning point |`;
 
-const EN_SCHEME_BEATS = `| Beat | Default % | Cost | Gain | Requirement |
-|---|---|---|---|---|
-| Hook Intro | 15% | — | Conspiracy/conspirator enters | — |
-| Escalation | 35%+ | Offends potential ally | Intel gathered / enemy identified | — |
-| Conflict Explosion | 20% | Partial exposure / caught off-guard | Protagonist makes key decision | — |
-| Mini Climax | 10% | Decision brings risk | Gains initiative / earns trust | — |
-| Chapter Cliffhanger | 15%+ | New dilemma | New ally / new clue | Cost + Gain form the turning point |`;
+const EN_SCHEME_BEATS = `| Beat | Default % | Cost | Gain | Faction Impact | Requirement |
+|---|---|---|---|---|---|
+| Hook Intro | 15% | — | Conspiracy/conspirator enters | Hidden factions surface | — |
+| Escalation | 35%+ | Offends potential ally | Intel gathered / enemy identified | Protagonist's moves affect multiple interests | — |
+| Conflict Explosion | 20% | Partial exposure / caught off-guard | Protagonist makes key decision | Situation tilts from protagonist's decision | — |
+| Mini Climax | 10% | Decision brings risk | Gains initiative / earns trust | Key ally/faction aligns with protagonist | — |
+| Chapter Cliffhanger | 15%+ | New dilemma | New ally / new clue | New variable shifts faction balance | Cost + Gain form the turning point |`;
 
-const EN_PAYOFF_BEATS = `| Beat | Default % | Cost | Gain | Requirement |
-|---|---|---|---|---|
-| Hook Intro | 10% | — | Previous chapter hook enters | — |
-| Escalation | 15% | — | Hook-related character/scene enters | — |
-| Conflict Explosion | 35% | Payoff triggers chain reaction | — | — |
-| Mini Climax | 25%+ | Revenge creates new enemy / truth requires sacrifice | Revenge success / truth revealed / treasure obtained | — |
-| Chapter Cliffhanger | 15% | New dilemma | New goal / new opportunity | Cost + Gain form the turning point |`;
+const EN_PAYOFF_BEATS = `| Beat | Default % | Cost | Gain | Faction Impact | Requirement |
+|---|---|---|---|---|---|
+| Hook Intro | 10% | — | Previous chapter hook enters | Old faction resurfaces | — |
+| Escalation | 15% | — | Hook-related character/scene enters | New faction intervenes in payoff thread | — |
+| Conflict Explosion | 35% | Payoff triggers chain reaction | — | Faction network reshapes from payoff | — |
+| Mini Climax | 25%+ | Revenge creates new enemy / truth requires sacrifice | Revenge success / truth revealed / treasure obtained | Protagonist or allies pay cost; balance resets | — |
+| Chapter Cliffhanger | 15% | New dilemma | New goal / new opportunity | Cost draws new faction in | Cost + Gain form the turning point |`;
 
-const EN_TRANSITION_BEATS = `| Beat | Default % | Cost | Gain | Requirement |
-|---|---|---|---|---|
-| Hook Intro | 15% | — | Pick up previous chapter's aftermath | — |
-| Escalation | 25% | Weakness exposed | Relationship network laid out / key intel | — |
-| Conflict Explosion | 20% | Daily conflict | Misunderstanding cleared / bond deepens | — |
-| Mini Climax | 15% | Reconciliation / misunderstanding deepens | Emotional warmth / unexpected help | — |
-| Chapter Cliffhanger | 20%+ | Unexpected event disrupts peace | Next chapter's big event teased | Cost + Gain form the turning point |`;
+const EN_TRANSITION_BEATS = `| Beat | Default % | Cost | Gain | Faction Impact | Requirement |
+|---|---|---|---|---|---|
+| Hook Intro | 15% | — | Pick up previous chapter's aftermath | Undercurrents beneath the calm | — |
+| Escalation | 25% | Weakness exposed | Relationship network laid out / key intel | Weakness draws faction attention | — |
+| Conflict Explosion | 20% | Daily conflict | Misunderstanding cleared / bond deepens | Faction relationships subtly shift | — |
+| Mini Climax | 15% | Reconciliation / misunderstanding deepens | Emotional warmth / unexpected help | Unexpected third-party intervenes | — |
+| Chapter Cliffhanger | 20%+ | Unexpected event disrupts peace | Next chapter's big event teased | Unexpected faction disrupts peace | Cost + Gain form the turning point |`;
 
-const EN_TRIBULATION_BEATS = `| Beat | Default % | Cost | Gain | Requirement |
-|---|---|---|---|---|
-| Hook Intro | 15% | — | Tribulation clouds gather / celestial signs | — |
-| Escalation | 20% | Dao heart wavers | Plant causal hook / solidify Dao heart | — |
-| Conflict Explosion | 30% | Heavenly thunder / inner demon / outer demon triple strike | — | — |
-| Mini Climax | 25%+ | Extremely weakened post-tribulation | Dao heart stabilized / heavenly thunder tempered body / heavenly认可 | Sensory details ≥4 dimensions |
-| Chapter Cliffhanger | 15% | Old enemies / heavenly punishment pursue in weakened state | Guardian artifact / new opportunity emerges | Cost + Gain form the turning point |`;
+const EN_TRIBULATION_BEATS = `| Beat | Default % | Cost | Gain | Faction Impact | Requirement |
+|---|---|---|---|---|---|
+| Hook Intro | 15% | — | Tribulation clouds gather / celestial signs | Celestial signs alert nearby factions | — |
+| Escalation | 20% | Dao heart wavers | Plant causal hook / solidify Dao heart | Tribulation draws faction attention | — |
+| Conflict Explosion | 30% | Heavenly thunder / inner demon / outer demon triple strike | — | Weak state creates power vacuum | — |
+| Mini Climax | 25%+ | Extremely weakened post-tribulation | Dao heart stabilized / heavenly thunder tempered body / heavenly认可 | Old enemies strike; guardian faction intervenes | Sensory details ≥4 dimensions |
+| Chapter Cliffhanger | 15% | Old enemies / heavenly punishment pursue in weakened state | Guardian artifact / new opportunity emerges | New faction seizes the moment | Cost + Gain form the turning point |`;
 
-const EN_ENLIGHTENMENT_BEATS = `| Beat | Default % | Cost | Gain | Requirement |
-|---|---|---|---|---|
-| Hook Intro | 15% | — | Cultivation bottleneck / mood unstable | — |
-| Escalation | 20% | Journey reveals location | Encounter ancient cultivator ruin / predecessor's legacy | — |
-| Conflict Explosion | 25% | Inner demon / illusion trial during enlightenment | — | — |
-| Mini Climax | 30%+ | Enlightenment triggers old karma backlash | Dao heart elevated / new law comprehension / resonates with heaven | Sensory details ≥4 dimensions |
-| Chapter Cliffhanger | 15% | New path triggers celestial phenomenon / old karma entangles | New ability unlocked | Cost + Gain form the turning point |`;
+const EN_ENLIGHTENMENT_BEATS = `| Beat | Default % | Cost | Gain | Faction Impact | Requirement |
+|---|---|---|---|---|---|
+| Hook Intro | 15% | — | Cultivation bottleneck / mood unstable | Protagonist's cultivation state draws faction interest | — |
+| Escalation | 20% | Journey reveals location | Encounter ancient cultivator ruin / predecessor's legacy | Protagonist's disappearance triggers faction search | — |
+| Conflict Explosion | 25% | Inner demon / illusion trial during enlightenment | — | Enlightenment stirs faction covetousness | — |
+| Mini Climax | 30%+ | Enlightenment triggers old karma backlash | Dao heart elevated / new law comprehension / resonates with heaven | Karma backlash implicates multiple factions | Sensory details ≥4 dimensions |
+| Chapter Cliffhanger | 15% | New path triggers celestial phenomenon / old karma entangles | New ability unlocked | Celestial phenomenon shifts faction landscape | Cost + Gain form the turning point |`;
 
 const EN_BEAT_TABLES: Record<ChapterType, string> = {
   combat: EN_COMBAT_BEATS,
@@ -414,6 +414,14 @@ function buildUserPromptZh(input: BeatPlannerInput): string {
     lines.push("");
   }
 
+  if (input.factionLedgerContext) {
+    lines.push("## 当前势力状态（来自 FactionLedger）");
+    lines.push(`主角当前暴露风险: ${input.factionLedgerContext.exposureRisk}/100`);
+    lines.push(`主角人脉/声望: ${input.factionLedgerContext.socialCapital}/100`);
+    lines.push(`主要势力: ${input.factionLedgerContext.keyFactions.join("、")}`);
+    lines.push("");
+  }
+
   lines.push(`## 目标字数\n- 最低: ${input.wordCount.min}\n- 目标: ${input.wordCount.target}\n- 最高: ${input.wordCount.max}`);
   lines.push("");
 
@@ -490,6 +498,14 @@ function buildUserPromptEn(input: BeatPlannerInput): string {
   if (input.genreChapterTypes.length > 0) {
     lines.push("## Genre Chapter Types (genreChapterTypes)");
     lines.push(input.genreChapterTypes.join(" / "));
+    lines.push("");
+  }
+
+  if (input.factionLedgerContext) {
+    lines.push("## Current Faction Status (from FactionLedger)");
+    lines.push(`Protagonist exposure risk: ${input.factionLedgerContext.exposureRisk}/100`);
+    lines.push(`Protagonist social capital: ${input.factionLedgerContext.socialCapital}/100`);
+    lines.push(`Key factions: ${input.factionLedgerContext.keyFactions.join(", ")}`);
     lines.push("");
   }
 
