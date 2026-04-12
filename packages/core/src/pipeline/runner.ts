@@ -9,6 +9,7 @@ import { ArchitectAgent, type ArchitectOutput } from "../agents/architect.js";
 import { FoundationReviewerAgent } from "../agents/foundation-reviewer.js";
 import { PlannerAgent, type PlanChapterOutput } from "../agents/planner.js";
 import { ComposerAgent } from "../agents/composer.js";
+import { BeatPlannerAgent } from "../agents/beat-planner.js";
 import {
   WriterAgent,
   DEFAULT_REVISE_MODE,
@@ -2089,12 +2090,12 @@ ${matrix}`,
     bookDir: string,
     chapterNumber: number,
     externalContext?: string,
-  ): Promise<Pick<WriteChapterInput, "externalContext" | "chapterIntent" | "contextPackage" | "ruleStack" | "trace">> {
+  ): Promise<Pick<WriteChapterInput, "externalContext" | "chapterIntent" | "contextPackage" | "ruleStack" | "trace" | "beatSheet">> {
     if ((this.config.inputGovernanceMode ?? "v2") === "legacy") {
       return { externalContext };
     }
 
-    const { plan, composed } = await this.createGovernedArtifacts(
+    const { plan, composed, beatPlannerOutput } = await this.createGovernedArtifacts(
       book,
       bookDir,
       chapterNumber,
@@ -2107,6 +2108,7 @@ ${matrix}`,
       contextPackage: composed.contextPackage,
       ruleStack: composed.ruleStack,
       trace: composed.trace,
+      beatSheet: beatPlannerOutput?.beatSheet,
     };
   }
 
@@ -2776,6 +2778,7 @@ ${matrix}`,
   ): Promise<{
     plan: PlanChapterOutput;
     composed: Awaited<ReturnType<ComposerAgent["composeChapter"]>>;
+    beatPlannerOutput: import("../models/input-governance.js").BeatPlannerOutput | null;
   }> {
     const plan = await this.resolveGovernedPlan(book, bookDir, chapterNumber, externalContext, options);
 
@@ -2787,7 +2790,51 @@ ${matrix}`,
       plan,
     });
 
-    return { plan, composed };
+    const storyDir = join(bookDir, "story");
+    const runtimeDir = join(storyDir, "runtime");
+
+    // Derive lastChapterEnding from composed contextPackage
+    const recentEndingEntry = composed.contextPackage.selectedContext.find(
+      (entry) => entry.source === "story/chapters#recent_endings",
+    );
+    const lastChapterEnding = recentEndingEntry?.excerpt
+      ? recentEndingEntry.excerpt.split(" | ").pop()?.replace(/^ch\d+:\s*/, "").trim()
+      : undefined;
+    const recentEndings = recentEndingEntry?.excerpt
+      ? recentEndingEntry.excerpt.split(" | ")
+      : [];
+
+    // Read truth files for BeatPlanner context
+    const { readFile } = await import("node:fs/promises");
+    const currentStateRaw = await readFile(join(storyDir, "current_state.md"), "utf-8").catch(() => "");
+    const pendingHooksRaw = await readFile(join(storyDir, "pending_hooks.md"), "utf-8").catch(() => "");
+    const emotionalArcsRaw = await readFile(join(storyDir, "emotional_arcs.md"), "utf-8").catch(() => "");
+
+    const { profile: gp } = await this.loadGenreProfile(book.genre);
+    const beatPlannerInput = {
+      bookId: book.id,
+      chapterNumber,
+      intent: plan.intent,
+      lastChapterEnding,
+      recentEndings,
+      currentState: currentStateRaw,
+      pendingHooks: [],  // BeatPlanner will use pendingHooksRaw text
+      emotionalArcs: emotionalArcsRaw,
+      chapterTypeHint: null,
+      wordCount: { min: 2000, target: book.chapterWordCount, max: 4000 },
+      genreChapterTypes: gp?.chapterTypes ?? [],
+      language: book.language ?? "zh",
+    };
+
+    const beatPlanner = new BeatPlannerAgent(this.agentCtxFor("beat-planner", book.id));
+    let beatPlannerOutput = null;
+    try {
+      beatPlannerOutput = await beatPlanner.planBeats(beatPlannerInput, runtimeDir);
+    } catch (err) {
+      this.config.logger?.warn(`BeatPlanner failed for chapter ${chapterNumber}: ${err}`);
+    }
+
+    return { plan, composed, beatPlannerOutput };
   }
 
   private async resolveGovernedPlan(
