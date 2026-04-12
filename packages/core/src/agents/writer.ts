@@ -3,6 +3,7 @@ import type { LLMResponse } from "../llm/provider.js";
 import type { BookConfig } from "../models/book.js";
 import type { GenreProfile } from "../models/genre-profile.js";
 import type { BookRules } from "../models/book-rules.js";
+import type { Scene } from "../models/input-governance.js";
 import { buildWriterSystemPrompt, type FanficContext } from "./writer-prompts.js";
 import {
   repairChapterWithWriter,
@@ -54,6 +55,12 @@ export interface WriteChapterInput {
   readonly ruleStack?: RuleStack;
   readonly trace?: ChapterTrace;
   readonly beatSheet?: string;
+  readonly scenePlan?: {
+    readonly scenePlan: string;
+    readonly scenes: readonly Scene[];
+    readonly totalScenes: number;
+    readonly totalTargetWords: number;
+  };
   readonly lengthSpec?: LengthSpec;
   readonly wordCountOverride?: number;
   readonly temperatureOverride?: number;
