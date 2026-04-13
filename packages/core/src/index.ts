@@ -230,6 +230,7 @@ export { extractPOVFromOutline, filterMatrixByPOV, filterHooksByPOV } from "./ut
 export { ConsolidatorAgent } from "./agents/consolidator.js";
 export { MemoryDB, type Fact, type StoredSummary } from "./state/memory-db.js";
 export { StateValidatorAgent } from "./agents/state-validator.js";
+export { repairChapterWithWriter, type WriterRepairInput, type WriterRepairRuntime } from "./agents/writer-repair.js";
 export { loadRuntimeStateSnapshot, buildRuntimeStateArtifacts, saveRuntimeStateSnapshot, loadNarrativeMemorySeed, loadSnapshotCurrentStateFacts, type RuntimeStateArtifacts, type NarrativeMemorySeed } from "./state/runtime-state-store.js";
 export { splitChapters, type SplitChapter } from "./utils/chapter-splitter.js";
 export { countChapterLength, resolveLengthCountingMode, formatLengthCount, buildLengthSpec, isOutsideSoftRange, isOutsideHardRange, chooseNormalizeMode, type LengthLanguage } from "./utils/length-metrics.js";
@@ -245,18 +246,10 @@ export {
   type HookDisposition,
 } from "./utils/hook-governance.js";
 export { arbitrateRuntimeStateDeltaHooks, type HookArbiterDecision } from "./utils/hook-arbiter.js";
-export {
-  optimizePrompts,
-  splitChaptersForOptimization,
-  readHistory,
-  getOptimizationTrajectory,
-  applyOptimizedRun,
-  createBackup,
-} from "./prompt-tuning/index.js";
 export { analyzeHookHealth } from "./utils/hook-health.js";
 
 // Pipeline
-export { PipelineRunner, type PipelineConfig, type ChapterPipelineResult, type DraftResult, type PlanChapterResult, type ComposeChapterResult, type ReviseResult, type TruthFiles, type BookStatusInfo, type ImportChaptersInput, type ImportChaptersResult, type TokenUsageSummary } from "./pipeline/runner.js";
+export { PipelineRunner, type PipelineConfig, type ChapterPipelineResult, type DraftResult, type PlanChapterResult, type ComposeChapterResult, type ReviseResult, type GepaEvalScores, type TruthFiles, type BookStatusInfo, type ImportChaptersInput, type ImportChaptersResult, type TokenUsageSummary } from "./pipeline/runner.js";
 export { Scheduler, type SchedulerConfig } from "./pipeline/scheduler.js";
 export { runAgentLoop, AGENT_TOOLS as AGENT_TOOLS, type AgentLoopOptions } from "./pipeline/agent.js";
 export { detectChapter, detectAndRewrite, loadDetectionHistory, type DetectChapterResult, type DetectAndRewriteResult } from "./pipeline/detection-runner.js";
@@ -274,3 +267,31 @@ export { sendTelegram, type TelegramConfig } from "./notify/telegram.js";
 export { sendFeishu, type FeishuConfig } from "./notify/feishu.js";
 export { sendWechatWork, type WechatWorkConfig } from "./notify/wechat-work.js";
 export { sendWebhook, type WebhookConfig, type WebhookEvent, type WebhookPayload } from "./notify/webhook.js";
+
+// Prompt tuning (GEPA integration)
+export {
+  optimizePrompts,
+  OptimizePrompts,
+  splitChaptersForOptimization,
+  computeAITellDensity,
+  computeWordCountAccuracy,
+  aggregateChapterScores,
+  evaluateChapter,
+  readHistory,
+  getLatestRun,
+  getOptimizationTrajectory,
+  applyOptimizedRun,
+  createBackup,
+  type ChapterEvaluationResult,
+  type MultiObjectiveScore,
+  type OptimizationCandidate,
+  type OptimizationRun,
+  type WriterParams,
+  type ContinuityParams,
+  type SettlerParams,
+  type AllParams,
+  DEFAULT_WRITER_PARAMS,
+  DEFAULT_CONTINUITY_PARAMS,
+  DEFAULT_SETTLER_PARAMS,
+  DEFAULT_ALL_PARAMS,
+} from "./prompt-tuning/index.js";

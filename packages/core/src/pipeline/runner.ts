@@ -35,7 +35,7 @@ import type { WebhookEvent } from "../notify/webhook.js";
 import type { AgentContext } from "../agents/base.js";
 import type { AuditResult, AuditIssue } from "../agents/continuity.js";
 import type { RadarResult } from "../agents/radar.js";
-import type { LengthSpec, LengthTelemetry } from "../models/length-governance.js";
+import type { LengthSpec, LengthTelemetry, LengthCountingMode } from "../models/length-governance.js";
 import type { ContextPackage, RuleStack } from "../models/input-governance.js";
 import { buildLengthSpec, countChapterLength, formatLengthCount, isOutsideHardRange, isOutsideSoftRange, resolveLengthCountingMode, type LengthLanguage } from "../utils/length-metrics.js";
 import { analyzeLongSpanFatigue } from "../utils/long-span-fatigue.js";
@@ -79,6 +79,8 @@ export interface PipelineConfig {
   readonly inputGovernanceMode?: InputGovernanceMode;
   readonly logger?: Logger;
   readonly onStreamProgress?: OnStreamProgress;
+  /** Writer parameter overrides from GEPA evaluation (e.g. temperature, max_hedge_words). */
+  readonly writerParamsOverride?: Record<string, number | boolean>;
 }
 
 export interface TokenUsageSummary {
@@ -124,6 +126,19 @@ export interface ComposeChapterResult extends PlanChapterResult {
   readonly tracePath: string;
 }
 
+export interface GepaEvalScores {
+  /** Whether the post-revision merged audit passed (no blocking issues). */
+  readonly auditPass: boolean;
+  /** Audit score: 1 if no blocking/critical issues, else 0. */
+  readonly auditScore: number;
+  /** AIGC resistance: 1 if no AI-tell issues, else 0. */
+  readonly aigcResistance: number;
+  /** Word count deviation from target as a fraction (e.g. 0.05 = 5% over). */
+  readonly wordcountDeviationPct: number;
+  /** AI-tell density: fraction of paragraphs flagged as AI-tell. */
+  readonly aiTellDensity: number;
+}
+
 export interface ReviseResult {
   readonly chapterNumber: number;
   readonly wordCount: number;
@@ -133,6 +148,8 @@ export interface ReviseResult {
   readonly skippedReason?: string;
   readonly lengthWarnings?: ReadonlyArray<string>;
   readonly lengthTelemetry?: LengthTelemetry;
+  /** Scores computed for GEPA evaluation (populated when --gepa-eval is used). */
+  readonly gepaEvalScores?: GepaEvalScores;
 }
 
 export interface TruthFiles {
@@ -186,6 +203,41 @@ export interface InitBookOptions {
   readonly authorIntent?: string;
   readonly currentFocus?: string;
 }
+
+// ---------------------------------------------------------------------------
+// GEPA evaluation scoring helper
+// ---------------------------------------------------------------------------
+
+function computeGepaScores(
+  wordCount: number,
+  audit: { readonly aiTellCount: number; readonly blockingCount: number; readonly criticalCount: number; readonly auditResult: { readonly passed: boolean } },
+  countingMode: LengthCountingMode,
+  targetWordCount: number,
+): GepaEvalScores {
+  // Estimate paragraph count for AI-tell density (rough heuristic)
+  const estimatedParagraphs = Math.max(1, Math.round(wordCount / (countingMode === "en_words" ? 120 : 200)));
+  const aiTellDensity = audit.aiTellCount > 0
+    ? Math.min(1, audit.aiTellCount / estimatedParagraphs)
+    : 0;
+
+  const auditPassed = audit.blockingCount === 0;
+  const auditScore = auditPassed ? 1.0 : 0.0;
+  const aigcResistance = audit.aiTellCount === 0 ? 1.0 : Math.max(0, 1 - aiTellDensity);
+  const wcTarget = countingMode === "en_words" ? targetWordCount : targetWordCount;
+  const wordcountDeviationPct = wcTarget > 0 ? (wordCount - wcTarget) / wcTarget : 0;
+
+  return {
+    auditPass: auditPassed,
+    auditScore,
+    aigcResistance,
+    wordcountDeviationPct,
+    aiTellDensity,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// PipelineRunner
+// ---------------------------------------------------------------------------
 
 export class PipelineRunner {
   private readonly state: StateManager;
@@ -472,6 +524,7 @@ export class PipelineRunner {
       bookId,
       logger: this.config.logger?.child(agent),
       onStreamProgress: this.config.onStreamProgress,
+      writerParamsOverride: agent === "writer" ? this.config.writerParamsOverride : undefined,
     };
   }
 
@@ -918,8 +971,9 @@ export class PipelineRunner {
     return { ...result, chapterNumber: targetChapter };
   }
 
-  /** Revise the latest (or specified) chapter based on audit issues. */
-  async reviseDraft(bookId: string, chapterNumber?: number, mode: ReviseMode = DEFAULT_REVISE_MODE): Promise<ReviseResult> {
+  /** Revise the latest (or specified) chapter based on audit issues.
+   * @param gepaEvalMode - if true, compute GEPA evaluation scores and include in result */
+  async reviseDraft(bookId: string, chapterNumber?: number, mode: ReviseMode = DEFAULT_REVISE_MODE, gepaEvalMode?: boolean): Promise<ReviseResult> {
     const releaseLock = await this.state.acquireBookLock(bookId);
     try {
       const book = await this.state.loadBookConfig(bookId);
@@ -973,13 +1027,15 @@ export class PipelineRunner {
       });
 
       if (preRevision.blockingCount === 0 && preRevision.aiTellCount === 0) {
+        const wc = countChapterLength(content, countingMode);
         return {
           chapterNumber: targetChapter,
-          wordCount: countChapterLength(content, countingMode),
+          wordCount: wc,
           fixedIssues: [],
           applied: false,
           status: "unchanged",
           skippedReason: "No warning, critical, or AI-tell issues to fix.",
+          gepaEvalScores: gepaEvalMode ? computeGepaScores(wc, preRevision, countingMode, chapterMeta.lengthTelemetry?.target ?? book.chapterWordCount) : undefined,
         };
       }
 
@@ -990,6 +1046,7 @@ export class PipelineRunner {
       const lengthSpec = buildLengthSpec(
         chapterLengthTarget,
         lengthLanguage,
+        mode,
       );
 
       const writer = new WriterAgent(this.agentCtxFor("writer", bookId));
@@ -1011,12 +1068,17 @@ export class PipelineRunner {
       });
 
       if (reviseOutput.revisedContent.length === 0) {
-        throw new Error("Reviser returned empty content");
+        if (reviseOutput.rawResponse?.length) {
+          this.logWarn(language, { zh: "Reviser 返回空结构化内容 — 使用原始回复", en: "Reviser returned empty structured content — using raw response" });
+        } else {
+          throw new Error("Reviser returned empty content");
+        }
       }
+      const revisedContent = reviseOutput.revisedContent || reviseOutput.rawResponse || "";
       const normalizedRevision = await this.normalizeDraftLengthIfNeeded({
         bookId,
         chapterNumber: targetChapter,
-        chapterContent: reviseOutput.revisedContent,
+        chapterContent: revisedContent,
         lengthSpec,
       });
       const postRevision = await this.evaluateMergedAudit({
@@ -1085,6 +1147,7 @@ export class PipelineRunner {
           applied: false,
           status: "unchanged",
           skippedReason: "Manual revision did not improve merged audit or AI-tell metrics; kept original chapter.",
+          gepaEvalScores: gepaEvalMode ? computeGepaScores(revisionBaseCount, preRevision, countingMode, chapterLengthTarget) : undefined,
         };
       }
       this.logLengthWarnings(lengthWarnings);
@@ -1173,6 +1236,7 @@ export class PipelineRunner {
         status: effectivePostRevision.auditResult.passed ? "ready-for-review" : "audit-failed",
         lengthWarnings,
         lengthTelemetry,
+        gepaEvalScores: gepaEvalMode ? computeGepaScores(normalizedRevision.wordCount, effectivePostRevision, countingMode, chapterLengthTarget) : undefined,
       };
     } finally {
       await releaseLock();
