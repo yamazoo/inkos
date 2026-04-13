@@ -832,7 +832,12 @@ export class WriterAgent extends BaseAgent {
       : `第${output.chapterNumber}章 ${output.title}`;
     const titleLine = rawTitle.replace(/\*\*(.+?)\*\*/g, "$1").replace(/\*(.+?)\*/g, "$1").replace(/__(.+?)__/g, "$1").replace(/_(.+?)_/g, "$1");
     // 硬性禁令：替换中文破折号，输出前拦截，不走LLM
-    const plainContent = stripMarkdown(output.content.replace(/——/g, "，"));
+    // 对白引号：中文书名号「」改为双引号（正统对白格式）
+    const QD = "\u201C"; // "
+    const QDC = "\u201D"; // "
+    const plainContent = stripMarkdown(
+      output.content.replace(/——/g, "，").replace(/「/g, QD).replace(/」/g, QDC),
+    );
     const chapterContent = `${titleLine}\n\n${plainContent}`;
     const runtimeStateArtifacts = await this.resolveRuntimeStateArtifactsForOutput(
       bookDir,
