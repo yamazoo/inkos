@@ -325,16 +325,20 @@ export class PipelineRunner {
       });
 
       const feedback = this.buildFoundationReviewFeedback(review, params.language);
-
+      // Always include format reminder after first rejection to prevent section-marker drops
+      const formatReminder = params.language === "en"
+        ? "\n\n## FORMAT REMINDER\nYou MUST use these exact section headers in your response:\n=== SECTION: story_bible ===\n...\n=== SECTION: volume_outline ===\n...\n=== SECTION: book_rules ===\n...\n=== SECTION: current_state ===\n...\n=== SECTION: pending_hooks ===\n..."
+        : "\n\n## 格式提醒\n你必须在回复中包含以下精确的 section 标记：\n=== SECTION: story_bible ===\n...\n=== SECTION: volume_outline ===\n...\n=== SECTION: book_rules ===\n...\n=== SECTION: current_state ===\n...\n=== SECTION: pending_hooks ===\n...";
       try {
-        foundation = await params.generate(feedback);
+        foundation = await params.generate(feedback + formatReminder);
       } catch (err) {
         if (err instanceof Error && err.message.includes("missing required section")) {
-          const formatReminder = params.language === "en"
-            ? "\n\n## FORMAT REMINDER\nYou MUST use these exact section headers in your response:\n=== SECTION: story_bible ===\n...\n=== SECTION: volume_outline ===\n...\n=== SECTION: book_rules ===\n...\n=== SECTION: current_state ===\n...\n=== SECTION: pending_hooks ===\n..."
-            : "\n\n## 格式提醒\n你必须在回复中包含以下精确的 section 标记：\n=== SECTION: story_bible ===\n...\n=== SECTION: volume_outline ===\n...\n=== SECTION: book_rules ===\n...\n=== SECTION: current_state ===\n...\n=== SECTION: pending_hooks ===\n...";
+          // One more retry with stronger reminder
+          const strongReminder = params.language === "en"
+            ? "\n\n## CRITICAL FORMAT INSTRUCTION\nYour previous response was missing required section markers. You MUST include ALL of the following in your response, with EXACT spelling:\n=== SECTION: story_bible ===\n[your story_bible content here]\n=== SECTION: volume_outline ===\n[your volume_outline content here]\n=== SECTION: book_rules ===\n[your book_rules content here]\n=== SECTION: current_state ===\n[your current_state content here]\n=== SECTION: pending_hooks ===\n[your pending_hooks content here]\nDo NOT skip any section."
+            : "\n\n## 关键格式要求\n你的上一次回复缺少必需的 section 标记。你必须在回复中包含以下所有部分，使用精确的标记格式：\n=== SECTION: story_bible ===\n[你的 story_bible 内容]\n=== SECTION: volume_outline ===\n[你的 volume_outline 内容]\n=== SECTION: book_rules ===\n[你的 book_rules 内容]\n=== SECTION: current_state ===\n[你的 current_state 内容]\n=== SECTION: pending_hooks ===\n[你的 pending_hooks 内容]\n不要省略任何 section。";
           try {
-            foundation = await params.generate(feedback + formatReminder);
+            foundation = await params.generate(feedback + strongReminder);
           } catch (err2) {
             throw initialParseError ?? err2;
           }
