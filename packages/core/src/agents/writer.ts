@@ -831,7 +831,8 @@ export class WriterAgent extends BaseAgent {
       ? `Chapter ${output.chapterNumber}: ${output.title}`
       : `第${output.chapterNumber}章 ${output.title}`;
     const titleLine = rawTitle.replace(/\*\*(.+?)\*\*/g, "$1").replace(/\*(.+?)\*/g, "$1").replace(/__(.+?)__/g, "$1").replace(/_(.+?)_/g, "$1");
-    const plainContent = stripMarkdown(output.content);
+    // 硬性禁令：替换中文破折号，输出前拦截，不走LLM
+    const plainContent = stripMarkdown(output.content.replace(/——/g, "，"));
     const chapterContent = `${titleLine}\n\n${plainContent}`;
     const runtimeStateArtifacts = await this.resolveRuntimeStateArtifactsForOutput(
       bookDir,
