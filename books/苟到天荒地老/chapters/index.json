@@ -1,13 +1,24 @@
 [
   {
     "number": 1,
-    "title": "青石镇·回春堂",
-    "status": "drafted",
-    "wordCount": 2868,
-    "createdAt": "2026-04-12T04:00:37.333Z",
-    "updatedAt": "2026-04-12T04:00:37.333Z",
-    "auditIssues": [],
-    "lengthWarnings": [],
+    "title": "镇口初遇",
+    "status": "approved",
+    "wordCount": 5204,
+    "createdAt": "2026-04-13T01:46:18.853Z",
+    "updatedAt": "2026-04-13T03:24:01.667Z",
+    "auditIssues": [
+      "[info] 小鱼在本章中完全是被动受害者（昏迷状态），缺乏自主行动和台词，没有展现任何个人性格或情绪反应。",
+      "[info] 本章末尾获得\"末法天象图\"线索（残缺星图+被抹去的一页），这是一个很好的爽点伏笔，但主角\"瞳孔骤缩\"的反应略显平淡。",
+      "[warning] 本章信息密度极高：赵青山登场→药铺→老道士死亡→玉简→小鱼遇袭→救人。连续四个大事件几乎平铺直叙，没有给读者喘息空间，也没有给\"苟道\"主题充分铺垫。",
+      "[info] 当前支线进度板为空白（未建立），伏笔池虽有记录但没有任何伏笔在本章推进。伏笔H004（小鱼身世）和H006（赵青山威胁）已经通过\"上古遗族气息\"和\"调查\"暗示了，但未正式激活。",
+      "[info] 初始状态卡写\"末法时代无人能筑基\"，但赵青山是筑基中期。这个矛盾可以通过\"宗门有上古传承/特殊资源\"来解释，但文中没有交代。",
+      "[warning] 转折词重复使用：\"然而\"×3。同一转折模式≥3次暴露AI生成痕迹",
+      "[warning] 章节标题\"镇口初遇\n\n===\"已自动调整为\"镇口初遇\"。",
+      "[warning] 连续出现7个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [
+      "第1章经过一次字数归一化后仍超出硬区间（2182-3818，实际 5204）。"
+    ],
     "lengthTelemetry": {
       "target": 3000,
       "softMin": 2591,
@@ -15,36 +26,32 @@
       "hardMin": 2182,
       "hardMax": 3818,
       "countingMode": "zh_chars",
-      "writerCount": 2868,
-      "postWriterNormalizeCount": 2868,
-      "postReviseCount": 0,
-      "finalCount": 2868,
-      "normalizeApplied": false,
-      "lengthWarning": false
+      "writerCount": 2474,
+      "postWriterNormalizeCount": 5336,
+      "postReviseCount": 5204,
+      "finalCount": 5204,
+      "normalizeApplied": true,
+      "lengthWarning": true
     },
     "tokenUsage": {
-      "promptTokens": 17190,
-      "completionTokens": 7679,
-      "totalTokens": 24869
+      "promptTokens": 41144,
+      "completionTokens": 26801,
+      "totalTokens": 67945
     }
   },
   {
     "number": 2,
-    "title": "故人遗音",
-    "status": "ready-for-review",
-    "wordCount": 2848,
-    "createdAt": "2026-04-12T04:19:09.558Z",
-    "updatedAt": "2026-04-12T04:19:09.558Z",
+    "title": "暗格惊变",
+    "status": "approved",
+    "wordCount": 3090,
+    "createdAt": "2026-04-13T02:27:21.726Z",
+    "updatedAt": "2026-04-13T03:24:03.591Z",
     "auditIssues": [
-      "[warning] 本章开头存在叙述断层：第1章结尾是顾长命决定\"天黑前出镇\"并往镇外走，第2章开头却直接\"发现不对，镇口有眼睛\"，中间的计划转变缺乏过渡。建议补充一句过渡描写，如\"走到巷口时\"的观察或犹豫过程。",
-      "[warning] 本章节奏较为平铺，以\"信息接收\"为主线，缺乏实质性的危机落地。H001（青云门盘查）预期在第3章回收，但本章只是延续威胁，尚未形成压倒性的危机节点。从情绪弧线看，主角经历了\"警觉→回忆往事→被点破→平静\"，其中\"被点破\"段落（中年男子的话）本应是最强张力段落，但被叙述交代冲淡。",
-      "[warning] H006（中年男子身份异常）在本章得到推进（他回来追问老道士画像），但H008（镇上可疑行商）完全未提及，上章种下后应给予一次回应或交代，否则读者会认为线索断裂。",
-      "[warning] 王屠户这条支线在上章提供情报后完全消失，未有任何后续交代；周天成的支线（H007）在第1章闹事后同样静默，属于沉寂到接近被遗忘的支线。",
-      "[warning] 第1章明确设定主角为\"炼气三层\"并刻意隐藏身份，本章主角对小鱼的内心独白中出现了\"他当时没当回事，直到照着残卷修炼，三月筑基\"——这是主角自身的秘密信息，不应出现在纯第三人称叙述中。此类内心暴露与\"绝不暴露身份\"的行为约束形成悖论。",
-      "[info] 高频词\"若是\"出现2次；\"目光\"出现频率偏高；整体AI标记词密度控制在合理范围内（每3000字约0.5次\"猛地\"，1次\"忽然\"），未触发warning阈值。",
-      "[info] 本章新增\"中年男子→顾长命\"的交互：中年男子亮出老道士画像、揭示大劫真相、留下\"此间有故人\"的悬念。这是重要信息节点，但两人之间的对话以\"对话推进剧情\"为主，缺乏肢体语言和氛围描写。",
-      "[warning] 92个段落里有39个不足35字，段落被切得过碎。",
-      "[warning] 连续出现22个不足35字的短段，容易形成短句堆砌。"
+      "[warning] 检测到AI标记词\"忽然\"出现1次。虽然未超过每3000字1次的阈值，但应保持警惕。",
+      "[warning] 主角说\"筑基……你是筑基期？！\"后又称自己\"老人家\"岔气，暴露了筑基期修为。但主角真实修为不明（万年前被封印的存在），此处的\"筑基期\"可能是保守说法（主角一贯的示弱策略），但未明确交代可能导致读者混淆。",
+      "[info] 小鱼在本章全程昏迷（被黑衣人袭击后昏迷→主角施法安抚→赵青山对峙时仍在昏迷→阿黎出场时仍是\"昏迷的小鱼\"），完全沦为\"被保护物\"。虽然符合\"被神秘势力追查的少女\"的定位，但可考虑在下一章苏醒以增加互动。",
+      "[info] 阿黎出场自称\"奉命来接那位姐姐\"，称小鱼是\"我族的人\"，呼应了小鱼的上古遗族身份。但阿黎的\"奉命\"——奉谁的命？是遗族组织？遗族长辈？——未作交代，可能需要在后续章节中明确。",
+      "[warning] 连续出现7个不足35字的短段，容易形成短句堆砌。"
     ],
     "lengthWarnings": [],
     "lengthTelemetry": {
@@ -54,17 +61,41 @@
       "hardMin": 2182,
       "hardMax": 3818,
       "countingMode": "zh_chars",
-      "writerCount": 3475,
-      "postWriterNormalizeCount": 2615,
-      "postReviseCount": 2848,
-      "finalCount": 2848,
+      "writerCount": 3717,
+      "postWriterNormalizeCount": 2965,
+      "postReviseCount": 3090,
+      "finalCount": 3090,
       "normalizeApplied": true,
       "lengthWarning": false
     },
     "tokenUsage": {
-      "promptTokens": 59556,
-      "completionTokens": 33396,
-      "totalTokens": 92952
+      "promptTokens": 49079,
+      "completionTokens": 81475,
+      "totalTokens": 130554
     }
+  },
+  {
+    "number": 3,
+    "title": "坟地风云",
+    "status": "approved",
+    "wordCount": 2164,
+    "createdAt": "2026-04-13T03:52:57.963Z",
+    "updatedAt": "2026-04-13T03:54:17.320Z",
+    "auditIssues": [
+      "[info] 章节从小鱼视角观察主角的苟道作风，有别于前两章完全跟随主角视角，这是有益的视角变化。",
+      "[warning] 字数偏低（2164字），可能需要扩充至3000字左右。"
+    ]
+  },
+  {
+    "number": 4,
+    "title": "月下对峙",
+    "status": "approved",
+    "wordCount": 2815,
+    "createdAt": "2026-04-13T03:52:57.964Z",
+    "updatedAt": "2026-04-13T03:54:20.172Z",
+    "auditIssues": [
+      "[info] 章节以赵青山派人试探为结尾，为后续冲突埋下伏笔。",
+      "[warning] 字数偏低（2815字），可能需要扩充。"
+    ]
   }
 ]
