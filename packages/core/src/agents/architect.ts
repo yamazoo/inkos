@@ -410,20 +410,29 @@ ${finalRequirementsPrompt}`;
     const reviewFeedbackBlock = this.buildReviewFeedbackBlock(reviewFeedback, resolvedLanguage);
 
     const contextBlock = externalContext
-      ? `\n\n## 外部指令\n${externalContext}\n`
+      ? (resolvedLanguage === "en"
+          ? `\n\n## External Instructions\n${externalContext}\n`
+          : `\n\n## 外部指令\n${externalContext}\n`)
       : "";
 
     const numericalBlock = gp.numericalSystem
-      ? `- 有明确的数值/资源体系可追踪
-- 在 book_rules 中定义 numericalSystemOverrides（hardCap、resourceTypes）`
-      : "- 本题材无数值系统，不需要资源账本";
+      ? (resolvedLanguage === "en"
+          ? `- The story uses a trackable numerical/resource system
+- Define numericalSystemOverrides in book_rules (hardCap, resourceTypes)`
+          : `- 有明确的数值/资源体系可追踪
+- 在 book_rules 中定义 numericalSystemOverrides（hardCap、resourceTypes）`)
+      : (resolvedLanguage === "en"
+          ? "- This genre has no explicit numerical system and does not need a resource ledger"
+          : "- 本题材无数值系统，不需要资源账本");
 
     const powerBlock = gp.powerScaling
-      ? "- 有明确的战力等级体系"
+      ? (resolvedLanguage === "en" ? "- The story has an explicit power-scaling ladder" : "- 有明确的战力等级体系")
       : "";
 
     const eraBlock = gp.eraResearch
-      ? "- 需要年代考据支撑（在 book_rules 中设置 eraConstraints）"
+      ? (resolvedLanguage === "en"
+          ? "- The story needs era/historical grounding (set eraConstraints in book_rules)"
+          : "- 需要年代考据支撑（在 book_rules 中设置 eraConstraints）")
       : "";
 
     const storyBiblePrompt = resolvedLanguage === "en"
@@ -708,16 +717,12 @@ ${currentStatePrompt}
 ${pendingHooksPrompt}
 
 ${keyPrinciplesPrompt}`;
-
-    const langPrefix = resolvedLanguage === "en"
-      ? `【LANGUAGE OVERRIDE】ALL output (story_bible, volume_outline, book_rules, current_state, pending_hooks) MUST be written in English. Character names, place names, and all prose must be in English. The === SECTION: === tags remain unchanged.\n\n`
-      : "";
     const userMessage = resolvedLanguage === "en"
       ? `Generate the complete foundation for an imported ${gp.name} novel titled "${book.title}". Write everything in English.\n\n${chaptersText}`
       : `以下是《${book.title}》的全部已有正文，请从中反向推导完整基础设定：\n\n${chaptersText}`;
 
     const response = await this.chat([
-      { role: "system", content: langPrefix + systemPrompt },
+      { role: "system", content: systemPrompt },
       {
         role: "user",
         content: userMessage,

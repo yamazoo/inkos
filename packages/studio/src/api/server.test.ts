@@ -6,10 +6,22 @@ import { tmpdir } from "node:os";
 const schedulerStartMock = vi.fn<() => Promise<void>>();
 const initBookMock = vi.fn();
 const runRadarMock = vi.fn();
+const reviseDraftMock = vi.fn();
+const resyncChapterArtifactsMock = vi.fn();
+const writeNextChapterMock = vi.fn();
+const rollbackToChapterMock = vi.fn();
+const saveChapterIndexMock = vi.fn();
+const loadChapterIndexMock = vi.fn();
+const loadBookConfigMock = vi.fn();
 const createLLMClientMock = vi.fn(() => ({}));
 const chatCompletionMock = vi.fn();
 const loadProjectConfigMock = vi.fn();
 const pipelineConfigs: unknown[] = [];
+const processProjectInteractionInputMock = vi.fn();
+const processProjectInteractionRequestMock = vi.fn();
+const createInteractionToolsFromDepsMock = vi.fn(() => ({}));
+const loadProjectSessionMock = vi.fn();
+const resolveSessionActiveBookMock = vi.fn();
 
 const logger = {
   child: () => logger,
@@ -27,15 +39,27 @@ vi.mock("@actalk/inkos-core", () => {
     }
 
     async loadBookConfig(): Promise<never> {
-      throw new Error("not implemented");
+      return await loadBookConfigMock() as never;
     }
 
-    async loadChapterIndex(): Promise<[]> {
-      return [];
+    async loadChapterIndex(bookId: string): Promise<[]> {
+      return (await loadChapterIndexMock(bookId)) as [];
+    }
+
+    async saveChapterIndex(bookId: string, index: unknown): Promise<void> {
+      await saveChapterIndexMock(bookId, index);
+    }
+
+    async rollbackToChapter(bookId: string, chapterNumber: number): Promise<number[]> {
+      return (await rollbackToChapterMock(bookId, chapterNumber)) as number[];
     }
 
     async getNextChapterNumber(): Promise<number> {
       return 1;
+    }
+
+    async ensureControlDocuments(): Promise<void> {
+      // no-op in tests
     }
 
     bookDir(id: string): string {
@@ -50,6 +74,9 @@ vi.mock("@actalk/inkos-core", () => {
 
     initBook = initBookMock;
     runRadar = runRadarMock;
+    reviseDraft = reviseDraftMock;
+    resyncChapterArtifacts = resyncChapterArtifactsMock;
+    writeNextChapter = writeNextChapterMock;
   }
 
   class MockScheduler {
@@ -80,6 +107,11 @@ vi.mock("@actalk/inkos-core", () => {
     computeAnalytics: vi.fn(() => ({})),
     chatCompletion: chatCompletionMock,
     loadProjectConfig: loadProjectConfigMock,
+    processProjectInteractionInput: processProjectInteractionInputMock,
+    processProjectInteractionRequest: processProjectInteractionRequestMock,
+    createInteractionToolsFromDeps: createInteractionToolsFromDepsMock,
+    loadProjectSession: loadProjectSessionMock,
+    resolveSessionActiveBook: resolveSessionActiveBookMock,
     GLOBAL_ENV_PATH: join(tmpdir(), "inkos-global.env"),
   };
 });
@@ -125,9 +157,41 @@ describe("createStudioServer daemon lifecycle", () => {
     schedulerStartMock.mockReset();
     initBookMock.mockReset();
     runRadarMock.mockReset();
+    reviseDraftMock.mockReset();
+    resyncChapterArtifactsMock.mockReset();
+    writeNextChapterMock.mockReset();
+    rollbackToChapterMock.mockReset();
+    saveChapterIndexMock.mockReset();
+    loadChapterIndexMock.mockReset();
+    loadBookConfigMock.mockReset();
+    await mkdir(join(root, "books", "demo-book", "chapters"), { recursive: true });
+    await writeFile(join(root, "books", "demo-book", "chapters", "0003_Demo.md"), "# Demo\n\nBody", "utf-8");
     runRadarMock.mockResolvedValue({
       marketSummary: "Fresh market summary",
       recommendations: [],
+    });
+    reviseDraftMock.mockResolvedValue({
+      chapterNumber: 3,
+      wordCount: 1800,
+      fixedIssues: ["focus restored"],
+      applied: true,
+      status: "ready-for-review",
+    });
+    resyncChapterArtifactsMock.mockResolvedValue({
+      chapterNumber: 3,
+      title: "Synced Chapter",
+      wordCount: 1800,
+      revised: false,
+      status: "ready-for-review",
+      auditResult: { passed: true, issues: [], summary: "synced" },
+    });
+    writeNextChapterMock.mockResolvedValue({
+      chapterNumber: 3,
+      title: "Rewritten Chapter",
+      wordCount: 1800,
+      revised: false,
+      status: "ready-for-review",
+      auditResult: { passed: true, issues: [], summary: "rewritten" },
     });
     createLLMClientMock.mockReset();
     createLLMClientMock.mockReturnValue({});
@@ -137,6 +201,35 @@ describe("createStudioServer daemon lifecycle", () => {
       usage: { promptTokens: 1, completionTokens: 1, totalTokens: 2 },
     });
     loadProjectConfigMock.mockReset();
+    processProjectInteractionInputMock.mockReset();
+    processProjectInteractionRequestMock.mockReset();
+    createInteractionToolsFromDepsMock.mockReset();
+    loadProjectSessionMock.mockReset();
+    resolveSessionActiveBookMock.mockReset();
+    createInteractionToolsFromDepsMock.mockReturnValue({});
+    processProjectInteractionRequestMock.mockResolvedValue({
+      request: { intent: "create_book" },
+      session: {
+        sessionId: "session-structured",
+        projectRoot: root,
+        activeBookId: "new-book",
+        automationMode: "semi",
+        messages: [],
+        events: [],
+      },
+      details: {
+        bookId: "new-book",
+        outputPath: join(root, "books", "demo-book", "demo-book.txt"),
+        chaptersExported: 2,
+      },
+    });
+    loadProjectSessionMock.mockResolvedValue({
+      sessionId: "session-1",
+      projectRoot: root,
+      automationMode: "semi",
+      messages: [],
+    });
+    resolveSessionActiveBookMock.mockResolvedValue(undefined);
     loadProjectConfigMock.mockImplementation(async () => {
       const raw = JSON.parse(await readFile(join(root, "inkos.json"), "utf-8")) as Record<string, unknown>;
       return {
@@ -154,6 +247,20 @@ describe("createStudioServer daemon lifecycle", () => {
         notify: (raw.notify ?? []) as unknown[],
       };
     });
+    loadChapterIndexMock.mockResolvedValue([]);
+    loadBookConfigMock.mockResolvedValue({
+      id: "demo-book",
+      title: "Demo Book",
+      platform: "qidian",
+      genre: "xuanhuan",
+      status: "active",
+      targetChapters: 100,
+      chapterWordCount: 3000,
+      createdAt: "2026-04-12T00:00:00.000Z",
+      updatedAt: "2026-04-12T00:00:00.000Z",
+    });
+    saveChapterIndexMock.mockResolvedValue(undefined);
+    rollbackToChapterMock.mockResolvedValue([]);
     pipelineConfigs.length = 0;
   });
 
@@ -351,12 +458,12 @@ describe("createStudioServer daemon lifecycle", () => {
     await expect(response.json()).resolves.toMatchObject({
       error: expect.stringContaining('Book "existing-book" already exists'),
     });
-    expect(initBookMock).not.toHaveBeenCalled();
+    expect(processProjectInteractionRequestMock).not.toHaveBeenCalled();
     await expect(access(join(root, "books", "existing-book", "story", "story_bible.md"))).resolves.toBeUndefined();
   });
 
   it("reports async create failures through the create-status endpoint", async () => {
-    initBookMock.mockRejectedValueOnce(new Error("INKOS_LLM_API_KEY not set"));
+    processProjectInteractionRequestMock.mockRejectedValueOnce(new Error("INKOS_LLM_API_KEY not set"));
 
     const { createStudioServer } = await import("./server.js");
     const app = createStudioServer(cloneProjectConfig() as never, root);
@@ -380,6 +487,261 @@ describe("createStudioServer daemon lifecycle", () => {
     await expect(status.json()).resolves.toMatchObject({
       status: "error",
       error: "INKOS_LLM_API_KEY not set",
+    });
+  });
+
+  it("uses rollback semantics for chapter rejection instead of only flipping status", async () => {
+    loadChapterIndexMock.mockResolvedValue([
+      {
+        number: 3,
+        title: "Broken Chapter",
+        status: "ready-for-review",
+        wordCount: 1800,
+        createdAt: "2026-04-07T00:00:00.000Z",
+        updatedAt: "2026-04-07T00:00:00.000Z",
+        auditIssues: ["continuity"],
+        lengthWarnings: [],
+      },
+      {
+        number: 4,
+        title: "Downstream Chapter",
+        status: "ready-for-review",
+        wordCount: 1900,
+        createdAt: "2026-04-07T00:00:00.000Z",
+        updatedAt: "2026-04-07T00:00:00.000Z",
+        auditIssues: [],
+        lengthWarnings: [],
+      },
+    ]);
+    rollbackToChapterMock.mockResolvedValue([3, 4]);
+
+    const { createStudioServer } = await import("./server.js");
+    const app = createStudioServer(cloneProjectConfig() as never, root);
+
+    const response = await app.request("http://localhost/api/books/demo-book/chapters/3/reject", {
+      method: "POST",
+    });
+
+    expect(response.status).toBe(200);
+    await expect(response.json()).resolves.toEqual({
+      ok: true,
+      chapterNumber: 3,
+      status: "rejected",
+      rolledBackTo: 2,
+      discarded: [3, 4],
+    });
+    expect(rollbackToChapterMock).toHaveBeenCalledWith("demo-book", 2);
+    expect(saveChapterIndexMock).not.toHaveBeenCalled();
+  });
+
+  it("routes create requests through the shared structured interaction runtime", async () => {
+    const { createStudioServer } = await import("./server.js");
+    const app = createStudioServer(cloneProjectConfig() as never, root);
+
+    const response = await app.request("http://localhost/api/books/create", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: "New Book",
+        genre: "urban",
+        platform: "qidian",
+        language: "zh",
+        chapterWordCount: 2600,
+        targetChapters: 88,
+      }),
+    });
+
+    expect(response.status).toBe(200);
+    expect(createInteractionToolsFromDepsMock).toHaveBeenCalledTimes(1);
+    expect(processProjectInteractionRequestMock).toHaveBeenCalledWith(expect.objectContaining({
+      projectRoot: root,
+      request: {
+        intent: "create_book",
+        title: "New Book",
+        genre: "urban",
+        language: "zh",
+        platform: "qidian",
+        chapterWordCount: 2600,
+        targetChapters: 88,
+      },
+    }));
+  });
+
+  it("passes one-off brief into revise requests through pipeline config", async () => {
+    const { createStudioServer } = await import("./server.js");
+    const app = createStudioServer(cloneProjectConfig() as never, root);
+
+    const response = await app.request("http://localhost/api/books/demo-book/revise/3", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mode: "rewrite", brief: "把注意力拉回师债主线。" }),
+    });
+
+    expect(response.status).toBe(200);
+    expect(pipelineConfigs.at(-1)).toMatchObject({ externalContext: "把注意力拉回师债主线。" });
+    expect(reviseDraftMock).toHaveBeenCalledWith("demo-book", 3, "rewrite");
+  });
+
+  it("exposes a resync endpoint for rebuilding latest chapter truth artifacts", async () => {
+    const { createStudioServer } = await import("./server.js");
+    const app = createStudioServer(cloneProjectConfig() as never, root);
+
+    const response = await app.request("http://localhost/api/books/demo-book/resync/3", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ brief: "以师债线为准同步状态。" }),
+    });
+
+    expect(response.status).toBe(200);
+    expect(pipelineConfigs.at(-1)).toMatchObject({ externalContext: "以师债线为准同步状态。" });
+    expect(resyncChapterArtifactsMock).toHaveBeenCalledWith("demo-book", 3);
+  });
+
+  it("routes export-save through the shared structured interaction runtime", async () => {
+    const { createStudioServer } = await import("./server.js");
+    const app = createStudioServer(cloneProjectConfig() as never, root);
+
+    const response = await app.request("http://localhost/api/books/demo-book/export-save", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ format: "md", approvedOnly: true }),
+    });
+
+    expect(response.status).toBe(200);
+    expect(processProjectInteractionRequestMock).toHaveBeenCalledWith(expect.objectContaining({
+      projectRoot: root,
+      activeBookId: "demo-book",
+      request: expect.objectContaining({
+        intent: "export_book",
+        bookId: "demo-book",
+        format: "md",
+        approvedOnly: true,
+      }),
+    }));
+    await expect(response.json()).resolves.toMatchObject({
+      ok: true,
+      chapters: 2,
+    });
+  });
+
+  it("routes /api/agent through the shared interaction control layer", async () => {
+    processProjectInteractionInputMock.mockResolvedValue({
+      request: { intent: "write_next", bookId: "demo-book" },
+      responseText: "Completed write_next for demo-book.",
+      session: {
+        sessionId: "session-1",
+        projectRoot: root,
+        activeBookId: "demo-book",
+        automationMode: "semi",
+        messages: [
+          { role: "user", content: "continue", timestamp: 1 },
+          { role: "assistant", content: "Completed write_next for demo-book.", timestamp: 2 },
+        ],
+      },
+    });
+
+    const { createStudioServer } = await import("./server.js");
+    const app = createStudioServer(cloneProjectConfig() as never, root);
+
+    const response = await app.request("http://localhost/api/agent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ instruction: "continue", activeBookId: "demo-book" }),
+    });
+
+    expect(response.status).toBe(200);
+    await expect(response.json()).resolves.toMatchObject({
+      response: "Completed write_next for demo-book.",
+      request: { intent: "write_next", bookId: "demo-book" },
+      session: expect.objectContaining({
+        activeBookId: "demo-book",
+      }),
+    });
+    expect(createInteractionToolsFromDepsMock).toHaveBeenCalledTimes(1);
+    expect(processProjectInteractionInputMock).toHaveBeenCalledWith(expect.objectContaining({
+      projectRoot: root,
+      input: "continue",
+      activeBookId: "demo-book",
+    }));
+  });
+
+  it("returns 500 with an error payload when the shared agent execution fails", async () => {
+    processProjectInteractionInputMock.mockRejectedValueOnce(new Error("boom"));
+
+    const { createStudioServer } = await import("./server.js");
+    const app = createStudioServer(cloneProjectConfig() as never, root);
+
+    const response = await app.request("http://localhost/api/agent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ instruction: "continue", activeBookId: "demo-book" }),
+    });
+
+    expect(response.status).toBe(500);
+    await expect(response.json()).resolves.toEqual({
+      error: {
+        code: "INTERACTION_ERROR",
+        message: "boom",
+      },
+    });
+  });
+
+  it("returns the shared interaction session state", async () => {
+    loadProjectSessionMock.mockResolvedValue({
+      sessionId: "session-2",
+      projectRoot: root,
+      activeBookId: "demo-book",
+      automationMode: "auto",
+      messages: [
+        { role: "user", content: "continue", timestamp: 1 },
+      ],
+    });
+    resolveSessionActiveBookMock.mockResolvedValue("demo-book");
+
+    const { createStudioServer } = await import("./server.js");
+    const app = createStudioServer(cloneProjectConfig() as never, root);
+
+    const response = await app.request("http://localhost/api/interaction/session");
+
+    expect(response.status).toBe(200);
+    await expect(response.json()).resolves.toMatchObject({
+      session: expect.objectContaining({
+        activeBookId: "demo-book",
+        automationMode: "auto",
+      }),
+      activeBookId: "demo-book",
+    });
+  });
+
+  it("returns creation-draft state through the shared interaction session endpoint", async () => {
+    loadProjectSessionMock.mockResolvedValue({
+      sessionId: "session-3",
+      projectRoot: root,
+      automationMode: "semi",
+      creationDraft: {
+        concept: "港风商战悬疑，主角从灰产洗白。",
+        title: "夜港账本",
+        nextQuestion: "你更想写长篇连载，还是十来章能收住？",
+        missingFields: ["targetChapters"],
+        readyToCreate: false,
+      },
+      messages: [],
+    });
+    resolveSessionActiveBookMock.mockResolvedValue(undefined);
+
+    const { createStudioServer } = await import("./server.js");
+    const app = createStudioServer(cloneProjectConfig() as never, root);
+
+    const response = await app.request("http://localhost/api/interaction/session");
+
+    expect(response.status).toBe(200);
+    await expect(response.json()).resolves.toMatchObject({
+      session: expect.objectContaining({
+        creationDraft: expect.objectContaining({
+          title: "夜港账本",
+          nextQuestion: "你更想写长篇连载，还是十来章能收住？",
+        }),
+      }),
     });
   });
 });
