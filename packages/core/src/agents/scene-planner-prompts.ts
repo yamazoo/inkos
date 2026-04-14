@@ -9,7 +9,7 @@ export function buildScenePlannerSystemPrompt(_language: "zh" | "en" = "zh"): st
 - 每个节拍至少 1 个场景；冲突爆发节拍通常 2-4 个场景
 - 场景类型：action / dialogue / revelation / reflection / transition
 - 每个场景必须包含：地点、事件、主角反应、节奏指示
-- 关键对白须直接引用原文格式「」
+- 关键对白须直接引用原文格式"……"
 
 ## 输出格式（JSON）
 输出以下结构的 JSON：
@@ -22,7 +22,7 @@ export function buildScenePlannerSystemPrompt(_language: "zh" | "en" = "zh"): st
       "sceneType": "action",
       "event": "青云门弟子B认出主角，盘问来历",
       "protagonistReaction": "主角心跳如擂鼓但目光平静",
-      "keyDialogue": { "speaker": "青云门弟子B", "line": "「你是哪里人？」", "protagonistResponse": "「回春堂的。」", "dramaticMeaning": "试探与伪装" },
+      "keyDialogue": { "speaker": "青云门弟子B", "line": "\"你是哪里人？\"", "protagonistResponse": "\"回春堂的。\"", "dramaticMeaning": "试探与伪装" },
       "povCharacter": "主角",
       "pacing": { "speed": "urgent", "technique": ["short-sentences", "action-verbs"], "mood": "警觉·压迫", "wordCountTarget": 350 },
       "factionActivity": [{ "faction": "青云门", "action": "弟子盘问主角", "powerDelta": 0 }],

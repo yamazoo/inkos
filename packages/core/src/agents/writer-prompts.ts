@@ -5,6 +5,13 @@ import type { LengthSpec } from "../models/length-governance.js";
 import { buildFanficCanonSection, buildCharacterVoiceProfiles, buildFanficModeInstructions } from "./fanfic-prompt-sections.js";
 import { buildEnglishCoreRules, buildEnglishAntiAIRules, buildEnglishCharacterMethod, buildEnglishPreWriteChecklist, buildEnglishGenreIntro } from "./en-prompt-sections.js";
 import { buildLengthSpec } from "../utils/length-metrics.js";
+import {
+  DEFAULT_MAX_TRANSITION_MARKERS_PER_3K,
+  DEFAULT_PARAGRAPH_CV_THRESHOLD,
+  buildTransitionMarkerRule,
+  buildParagraphUniformityRule,
+  buildPacingRule,
+} from "../prompt-tuning/defaults.js";
 
 export interface FanficContext {
   readonly fanficCanon: string;
@@ -193,15 +200,19 @@ function buildCoreRules(lengthSpec: LengthSpec): string {
 
 - 【铁律】叙述者永远不得替读者下结论。读者能从行为推断的意图，叙述者不得直接说出。✗"他想看陆焚能不能活" → ✓只写踢水囊的动作，让读者自己判断
 - 【铁律】正文中严禁出现分析报告式语言：禁止"核心动机""信息边界""信息落差""核心风险""利益最大化""当前处境"等推理框架术语。人物内心独白必须口语化、直觉化。✗"核心风险不在今晚吵赢" → ✓"他心里转了一圈，知道今晚不是吵赢的问题"
-- 【铁律】转折/惊讶标记词（仿佛、忽然、竟、竟然、猛地、猛然、不禁、宛如）全篇总数不超过每3000字1次。超出时改用具体动作或感官描写传递突然性
+- 【铁律】转折/惊讶标记词（仿佛、忽然、竟、竟然、猛地、猛然、不禁、宛如）全篇总数不超过每3000字${DEFAULT_MAX_TRANSITION_MARKERS_PER_3K}次。超出时改用具体动作或感官描写传递突然性
 - 【铁律】同一体感/意象禁止连续渲染超过两轮。第三次出现相同意象域（如"火在体内流动"）时必须切换到新信息或新动作，避免原地打转
 - 【铁律】六步走心理分析是写作推导工具，其中的术语（"当前处境""核心动机""信息边界""性格过滤"等）只用于PRE_WRITE_CHECK内部推理，绝不可出现在正文叙事中
+
+## 节奏控制
+
+${buildPacingRule()}
 
 ## 硬性禁令
 
 - 【硬性禁令】全文严禁出现"不是……而是……""不是……，是……""不是A，是B"句式，出现即判定违规。改用直述句
 - 【硬性禁令】全文严禁出现破折号"——"，用逗号或句号断句
-- 【硬性禁令】对白必须使用双引号「"……」」，严禁使用中文书名号「……」
+- 【硬性禁令】对白必须使用直引号"……"，严禁使用中文书名号「……」
   - ✓ "你到底是谁？"他问道。
   - ✗ 他问道：「你到底是谁？」
 - 正文中禁止出现hook_id/账本式数据（如"余量由X%降到Y%"），数值结算只放POST_SETTLEMENT`;
