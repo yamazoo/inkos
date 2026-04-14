@@ -6,6 +6,7 @@ import type { ChapterMeta } from "../models/chapter.js";
 import type { NotifyChannel, LLMConfig, AgentLLMOverride, InputGovernanceMode } from "../models/project.js";
 import type { GenreProfile } from "../models/genre-profile.js";
 import { ArchitectAgent, type ArchitectOutput } from "../agents/architect.js";
+import { DetailedOutlineAgent } from "../agents/detailed-outline.js";
 import { FoundationReviewerAgent } from "../agents/foundation-reviewer.js";
 import { PlannerAgent, type PlanChapterOutput } from "../agents/planner.js";
 import { ComposerAgent } from "../agents/composer.js";
@@ -589,6 +590,25 @@ export class PipelineRunner {
         book.targetChapters,
         undefined, // protagonistName — BookConfig has no protagonist field; defaults to "主角" in bootstrapFactionLedger
       );
+
+      // Generate chapter outlines (DetailedOutlineAgent)
+      this.logStage(stageLanguage, { zh: "生成章节细纲", en: "generating chapter outlines" });
+      const [storyBible, volumeOutline, bookRules, characterMatrix] = await Promise.all([
+        readFile(join(stagingBookDir, "story", "story_bible.md"), "utf-8").catch(() => ""),
+        readFile(join(stagingBookDir, "story", "volume_outline.md"), "utf-8").catch(() => ""),
+        readFile(join(stagingBookDir, "story", "book_rules.md"), "utf-8").catch(() => ""),
+        readFile(join(stagingBookDir, "story", "character_matrix.md"), "utf-8").catch(() => ""),
+      ]);
+      const detailedOutlineAgent = new DetailedOutlineAgent(this.agentCtxFor("detailed-outline", book.id));
+      const chapterOutlinesContent = await detailedOutlineAgent.generateAll({
+        storyBible,
+        volumeOutline,
+        bookRules,
+        characterMatrix,
+        targetChapters: book.targetChapters,
+        language: resolvedLanguage,
+      });
+      await writeFile(join(stagingBookDir, "story", "chapter_outlines.md"), chapterOutlinesContent, "utf-8");
 
       this.logStage(stageLanguage, { zh: "初始化控制文档", en: "initializing control documents" });
       await this.state.ensureControlDocumentsAt(
