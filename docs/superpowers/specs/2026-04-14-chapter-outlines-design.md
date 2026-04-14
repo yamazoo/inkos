@@ -78,6 +78,48 @@ inkos write next
 
 生成失败时抛出错误，阻止 `inkos book create` 完成。细纲是必须生成的构件。
 
+### 分批生成策略（已修复 maxTokens 截断问题）
+
+`generateAll()` 一次性生成 200 章会超出单次 LLM 输出的 token 上限（`maxTokens: 8192` 实测在第 23 章处截断）。采用分批生成：
+
+| 参数 | 值 | 依据 |
+|------|----|------|
+| 每批章节数 | 20 章 | 20章 × ~530字符 ≈ 10,600 字符 ≈ 7,500 tokens，留安全余量 |
+| maxTokens | 15000 | 含 prompt 开销，安全覆盖 20 章输出 |
+
+**流程：**
+```
+1. 计算批次数：ceil(targetChapters / 20)
+2. 循环调用 this.chat() N 次，每次生成一批
+3. 每批附带"接续上文"的 system prompt，说明已有前 N 章
+4. 合并 N 次输出为单个 markdown 文件
+```
+
+**接续 prompt 片段（每批调用时附加）：**
+
+中文书籍：
+```
+【全书规划】前 Y 章已生成（见下方）。请继续生成第 (Y+1) 至第 (Y+20) 章。
+确保情节连贯、风格一致。
+
+【前 Y 章摘要】
+<前批输出的前2-3章摘要，供连贯性参考>
+```
+
+英文书籍：
+```
+[Book plan] Chapters 1–Y have been generated (see below). Continue with chapters (Y+1)–(Y+20).
+Ensure narrative continuity and consistent style.
+
+[Summary of previous chapters]
+<2-3 chapter summaries from previous batch for continuity reference>
+```
+
+**合并策略：**
+- 每批输出直接 append 到结果字符串
+- 以 `# 章节细纲` 开头，后续批次的标题行自动形成 `## 第 X 章` 锚点
+- 最终文件交给 `extractChapterOutline()` 统一解析
+
 ## PlannerAgent 修改
 
 ### 读取新增源文件
@@ -167,6 +209,7 @@ if (!chapterOutline || isEmptyOutline(chapterOutline)) {
 
 ## 待确认（设计时未决策，留待实现时决定）
 
-- [ ] DetailedOutlineAgent 的 prompt 模板放在哪个文件？
-- [ ] 增量补生成时，是否需要通知用户（log 或 output）？
-- [ ] `chapter_outlines.md` 是否需要纳入 state version tracking（manifest.json）？
+- [x] ~~DetailedOutlineAgent 的 prompt 模板放在哪个文件？~~ → `detailed-outline-prompts.ts`
+- [x] ~~增量补生成时，是否需要通知用户？~~ → log warn level，intent.md 显示 `[待生成 / Pending]`
+- [x] ~~chapter_outlines.md 是否需要纳入 manifest？~~ → 不需要，按需读取
+- [x] ~~generateAll() 截断问题~~ → 分批生成，每批 20 章，maxTokens 15000
