@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { extractChapterOutline } from "../agents/detailed-outline.js";
+import { extractChapterOutline, extractLastNChaptersSummary } from "../agents/detailed-outline.js";
+import { buildBatchContinuationPrompt } from "../agents/detailed-outline-prompts.js";
 
 describe("extractChapterOutline", () => {
   const content = `# 章节细纲
@@ -53,5 +54,67 @@ describe("extractChapterOutline", () => {
     const result = extractChapterOutline(doc, 2);
     expect(result).toContain("Event");
     expect(result).not.toContain("##");
+  });
+});
+
+describe("buildBatchContinuationPrompt", () => {
+  it("generates Chinese continuation prompt", () => {
+    const prompt = buildBatchContinuationPrompt({
+      previousChaptersCount: 20,
+      nextBatchStart: 21,
+      nextBatchEnd: 40,
+      previousSummary: "第19章摘要\n第20章摘要",
+      language: "zh",
+    });
+    expect(prompt).toContain("前 20 章已生成");
+    expect(prompt).toContain("第 21 至第 40 章");
+    expect(prompt).toContain("第19章摘要");
+  });
+
+  it("generates English continuation prompt", () => {
+    const prompt = buildBatchContinuationPrompt({
+      previousChaptersCount: 20,
+      nextBatchStart: 21,
+      nextBatchEnd: 40,
+      previousSummary: "Chapter 19 summary\nChapter 20 summary",
+      language: "en",
+    });
+    expect(prompt).toContain("Chapters 1\u201320 have been generated");
+    expect(prompt).toContain("chapters 21\u201340");
+  });
+
+  it("falls back to zh for unknown language", () => {
+    const prompt = buildBatchContinuationPrompt({
+      previousChaptersCount: 0,
+      nextBatchStart: 1,
+      nextBatchEnd: 20,
+      previousSummary: "",
+      language: "french",
+    });
+    expect(prompt).toContain("前 "); // zh fallback
+  });
+});
+
+describe("extractLastNChaptersSummary", () => {
+  const zhContent = `# 章节细纲
+
+## 第1章 杂役
+青云宗外门，杂役院破旧木屋中，十七岁的林岁安在昏暗油灯下擦拭着永远擦不完的地板。
+
+## 第2章 窥寿
+林岁安的脚步顿住，世界在这一刻变得不同。
+
+## 第3章 代价
+代价随之而来，他感到一阵剧烈的眩晕。`;
+
+  it("extracts last N chapters from content", () => {
+    const result = extractLastNChaptersSummary(zhContent, 2, "zh");
+    expect(result).toContain("代价");
+    expect(result).toContain("窥寿");
+  });
+
+  it("returns placeholder for empty content", () => {
+    const result = extractLastNChaptersSummary("", 2, "zh");
+    expect(result).toBe("(无前章内容)");
   });
 });
