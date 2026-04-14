@@ -77,3 +77,43 @@ ${input.characterMatrix}
 
 遵循黄金三章法则：第1章立即抛出核心冲突，第2章展示主角金手指/优势，第3章确立具体短期目标。`;
 }
+
+export interface BatchContinuationInput {
+  readonly previousChaptersCount: number;
+  readonly nextBatchStart: number;
+  readonly nextBatchEnd: number;
+  readonly previousSummary: string;
+  readonly language?: string;
+}
+
+export function buildBatchContinuationPrompt(input: BatchContinuationInput): string {
+  const isZh = (input.language ?? "zh") !== "en";
+
+  if (isZh) {
+    return `【全书规划】前 ${input.previousChaptersCount} 章已生成（见下方）。请继续生成第 ${input.nextBatchStart} 至第 ${input.nextBatchEnd} 章。
+确保情节连贯、风格一致。
+
+【前 ${input.previousChaptersCount} 章摘要】
+${input.previousSummary}
+
+【输出格式】
+## 第${input.nextBatchStart}章
+1. [场景/事件标题] 描述内容，50-150字...
+...
+## 第${input.nextBatchEnd}章
+...`;
+  }
+
+  return `[Book plan] Chapters 1–${input.previousChaptersCount} have been generated (see below). Continue with chapters ${input.nextBatchStart}–${input.nextBatchEnd}.
+Ensure narrative continuity and consistent style.
+
+[Summary of previous chapters]
+${input.previousSummary}
+
+[Output format]
+## Chapter ${input.nextBatchStart}
+1. [Scene/Event Title] Description (50-150 chars)...
+...
+## Chapter ${input.nextBatchEnd}
+...`;
+}
