@@ -45,4 +45,13 @@ describe("extractChapterOutline", () => {
     expect(extractChapterOutline("", 1)).toBeUndefined();
     expect(extractChapterOutline("  ", 1)).toBeUndefined();
   });
+
+  it("extracts the last chapter without trailing separator", () => {
+    const doc = `## 第 2 章
+1. Event.
+2. Event.`;
+    const result = extractChapterOutline(doc, 2);
+    expect(result).toContain("Event");
+    expect(result).not.toContain("##");
+  });
 });

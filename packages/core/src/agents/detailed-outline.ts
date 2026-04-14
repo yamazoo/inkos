@@ -3,6 +3,12 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { buildDetailedOutlineSystemPrompt, buildDetailedOutlineUserPrompt, type DetailedOutlineInput } from "./detailed-outline-prompts.js";
 
+export interface GenerateSingleOptions {
+  readonly bookDir: string;
+  readonly chapterNumber: number;
+  readonly language?: string;
+}
+
 export class DetailedOutlineAgent extends BaseAgent {
   get name(): string {
     return "detailed-outline";
@@ -41,15 +47,16 @@ export class DetailedOutlineAgent extends BaseAgent {
     const prevOutline = prevChapter >= 1 ? extractChapterOutline(chapterOutlines, prevChapter) : "(无前章细纲)";
 
     const lang = input.language === "en" ? "en" : "zh";
+    const isZh = lang === "zh";
 
-    const userPrompt = `## 背景：卷纲（本章部分）
-${extractChapterFromVolumeOutline(volumeOutline, input.chapterNumber) || "(本章在卷纲中无具体内容，请根据前后章推断)"}
+    const userPrompt = `${isZh ? "## 背景：卷纲（本章部分）" : "## Background: Volume Outline (current chapter)"}
+${extractChapterOutline(volumeOutline, input.chapterNumber) || (isZh ? "(本章在卷纲中无具体内容，请根据前后章推断)" : "(No specific content for this chapter in the volume outline; infer from surrounding chapters)")}
 
-## 前一章细纲
+${isZh ? "## 前一章细纲" : "## Previous Chapter Outline"}
 ${prevOutline}
 
-## 当前 state
-${currentState || "(无)"}`;
+${isZh ? "## 当前 state" : "## Current State"}
+${currentState || "(none)"}`;
 
     const systemPrompt = buildDetailedOutlineSystemPrompt(lang);
 
@@ -63,16 +70,6 @@ ${currentState || "(无)"}`;
 
     return response.content.trim();
   }
-}
-
-export interface GenerateSingleOptions {
-  readonly bookDir: string;
-  readonly chapterNumber: number;
-  readonly language?: string;
-}
-
-function extractChapterFromVolumeOutline(volumeOutline: string, chapterNumber: number): string | undefined {
-  return extractChapterOutline(volumeOutline, chapterNumber);
 }
 
 /**
@@ -90,17 +87,16 @@ export function extractChapterOutline(content: string, chapterNumber: number): s
   for (const part of parts) {
     const trimmed = part.trim();
     // Match chapter N header: ## 第 N 章, ## 第N章, or ## Chapter N
-    const headerMatch = trimmed.match(/^##\s*(?:第\s*(\d+)\s*章|第(\d+)\s*章|Chapter\s*(\d+)\b)/i);
+    const headerMatch = trimmed.match(/^##\s*(?:第\s*(\d+)\s*章|Chapter\s*(\d+)\b)/i);
     if (headerMatch) {
-      const num = headerMatch[1] ?? headerMatch[2] ?? headerMatch[3];
+      const num = headerMatch[1] ?? headerMatch[2];
       if (String(num) === String(chapterNumber)) {
         // Found the right chapter: remove the header line
         const firstNewline = part.indexOf('\n');
         if (firstNewline === -1) continue;
         const afterHeader = part.slice(firstNewline + 1);
-        // Strip trailing blank lines then trim
-        const result = afterHeader.replace(/\n[ \t]*\n+[ \t]*$/, '\n').replace(/[ \t]*\n+$/, '').trim();
-        return result || undefined;
+        // Strip trailing whitespace then trim
+        return afterHeader.trim() || undefined;
       }
     }
   }
