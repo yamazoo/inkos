@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, stat } from "node:fs/promises";
 import { join } from "node:path";
 import { BaseAgent } from "./base.js";
 import type { BookConfig } from "../models/book.js";
@@ -45,6 +45,7 @@ export class PlannerAgent extends BaseAgent {
       chapterSummaries: join(storyDir, "chapter_summaries.md"),
       bookRules: join(storyDir, "book_rules.md"),
       currentState: join(storyDir, "current_state.md"),
+      chapterOutlines: join(storyDir, "chapter_outlines.md"),
     } as const;
 
     const [
@@ -64,6 +65,48 @@ export class PlannerAgent extends BaseAgent {
       this.readFileOrDefault(sourcePaths.bookRules),
       this.readFileOrDefault(sourcePaths.currentState),
     ]);
+
+    // Extract this chapter's outline (context-window safe: only the single chapter, not the full file)
+    // Use stat to distinguish "file does not exist" (→ generate) from "file is empty or no match" (→ skip)
+    let chapterOutlineForIntent: string | undefined;
+    const outlinesPath = join(storyDir, "chapter_outlines.md");
+    let outlineFileExists = false;
+    try {
+      const fileStat = await stat(outlinesPath);
+      outlineFileExists = true;
+      if (fileStat.size > 0) {
+        const raw = await readFile(outlinesPath, "utf-8");
+        if (raw && raw !== "(文件尚未创建)") {
+          chapterOutlineForIntent = this.extractChapterOutline(raw, input.chapterNumber) ?? undefined;
+        }
+      }
+      // size === 0: empty file — skip generation, leave chapterOutlineForIntent as undefined
+    } catch {
+      // File does not exist — trigger incremental generation below
+      outlineFileExists = false;
+    }
+
+    // Incremental generation: only when the file genuinely does not exist
+    if (chapterOutlineForIntent === undefined && !outlineFileExists) {
+      this.log?.info(`[planner] Chapter ${input.chapterNumber} outline missing, generating incrementally...`);
+      const { DetailedOutlineAgent } = await import("./detailed-outline.js");
+      const agent = new DetailedOutlineAgent(this.ctx);
+      const singleOutline = await agent.generateSingle({
+        bookDir: input.bookDir,
+        chapterNumber: input.chapterNumber,
+        language: input.book.language ?? "zh",
+      });
+
+      // Patch chapter_outlines.md
+      const existing = await readFile(outlinesPath, "utf-8").catch(() => "");
+      const patched = this.patchChapterOutline(existing, input.chapterNumber, singleOutline);
+      await writeFile(outlinesPath, patched, "utf-8");
+      this.log?.info(`[planner] Incremental outline for chapter ${input.chapterNumber} written`);
+
+      chapterOutlineForIntent = singleOutline;
+    }
+
+    const chapterOutlineText = chapterOutlineForIntent ?? "[待生成 / Pending]";
 
     // Load trackers (non-blocking — if missing, fields stay undefined)
     const { loadTracker } = await import("../state/tracker-store.js");
@@ -178,6 +221,7 @@ export class PlannerAgent extends BaseAgent {
       renderHookSnapshot(memorySelection.hooks, input.book.language ?? "zh"),
       renderSummarySnapshot(memorySelection.summaries, input.book.language ?? "zh"),
       activeHookCount,
+      chapterOutlineText,
     );
     await writeFile(runtimePath, intentMarkdown, "utf-8");
 
@@ -715,6 +759,7 @@ export class PlannerAgent extends BaseAgent {
     pendingHooks: string,
     chapterSummaries: string,
     activeHookCount: number,
+    chapterOutline: string,
   ): string {
     const conflictLines = intent.conflicts.length > 0
       ? intent.conflicts.map((conflict) => `- ${conflict.type}: ${conflict.resolution}`).join("\n")
@@ -767,6 +812,9 @@ export class PlannerAgent extends BaseAgent {
       "",
       "## Goal",
       intent.goal,
+      "",
+      "## 本章细纲",
+      chapterOutline,
       "",
       "## Outline Node",
       intent.outlineNode ?? "(not found)",
@@ -827,5 +875,58 @@ export class PlannerAgent extends BaseAgent {
     if (/阴谋|布局|计策/.test(text)) return "scheme";
     if (/修炼|提升|境界|机缘/.test(text)) return "upgrade";
     return "transition";
+  }
+
+  private extractChapterOutline(content: string, chapterNumber: number): string | undefined {
+    if (!content || content === "(文件尚未创建)") return undefined;
+    // Split-based approach: robust against JS \Z regex bug
+    const sections = content.split(/(?:^|\n)(?=##)/);
+    for (const section of sections) {
+      const trimmed = section.trim();
+      if (!trimmed) continue;
+      const headerMatch = trimmed.match(/^##\s*(?:第\s*(\d+)\s*章|Chapter\s*(\d+)\b)/i);
+      if (!headerMatch) continue;
+      const num = headerMatch[1] ?? headerMatch[2];
+      if (String(chapterNumber) === num) {
+        const afterHeader = trimmed.substring(trimmed.indexOf("\n") + 1);
+        return afterHeader.trim() || undefined;
+      }
+    }
+    return undefined;
+  }
+
+  private patchChapterOutline(existing: string, chapterNumber: number, newContent: string): string {
+    const headerPattern = /^##\s*第\s*(\d+)\s*章|^##\s*Chapter\s*(\d+)\b/i;
+    for (let i = 0; i < existing.length; i++) {
+      const lineEnd = existing.indexOf("\n", i);
+      if (lineEnd === -1) break;
+      const line = existing.slice(i, lineEnd);
+      const match = line.match(headerPattern);
+      if (!match) {
+        i = lineEnd;
+        continue;
+      }
+      const num = match[1] ?? match[2];
+      if (String(chapterNumber) === num) {
+        // Chapter exists — find the end of this section
+        let end = lineEnd + 1;
+        while (end < existing.length) {
+          const nextLineStart = end;
+          const nextLineEnd = existing.indexOf("\n", nextLineStart);
+          if (nextLineEnd === -1) break;
+          const nextLine = existing.slice(nextLineStart, nextLineEnd);
+          if (nextLine.match(headerPattern)) break;
+          end = nextLineEnd + 1;
+        }
+        const before = existing.slice(0, i);
+        const after = end < existing.length ? "\n" + existing.slice(end) : "";
+        return (before ? before + (before.endsWith("\n") ? "" : "\n") : "") +
+          line + "\n" + newContent + after;
+      }
+      i = lineEnd;
+    }
+    // Chapter doesn't exist — append
+    const newChapter = `## 第 ${chapterNumber} 章\n${newContent}`;
+    return existing.trimEnd() + (existing.endsWith("\n") ? "" : "\n\n") + newChapter + "\n";
   }
 }
