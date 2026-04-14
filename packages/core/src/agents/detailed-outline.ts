@@ -1,7 +1,7 @@
 import { BaseAgent } from "./base.js";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { buildDetailedOutlineSystemPrompt, buildDetailedOutlineUserPrompt, type DetailedOutlineInput } from "./detailed-outline-prompts.js";
+import { buildDetailedOutlineSystemPrompt, buildDetailedOutlineUserPrompt, buildBatchContinuationPrompt, type DetailedOutlineInput, type BatchContinuationInput } from "./detailed-outline-prompts.js";
 
 export interface GenerateSingleOptions {
   readonly bookDir: string;
@@ -16,22 +16,64 @@ export class DetailedOutlineAgent extends BaseAgent {
 
   async generateAll(input: DetailedOutlineInput): Promise<string> {
     const lang = input.language === "en" ? "en" : "zh";
+    const BATCH_SIZE = 20;
+    const MAX_TOKENS = 15000;
+
+    this.log?.info(`[detailed-outline] Batch generating ${input.targetChapters} chapters (batch size: ${BATCH_SIZE})`);
+
+    // First batch: generate initial outline
+    const firstBatchEnd = Math.min(BATCH_SIZE, input.targetChapters);
+    this.log?.info(`[detailed-outline] Batch 1: chapters 1–${firstBatchEnd}`);
+
+    const firstUserPrompt = buildDetailedOutlineUserPrompt(input);
     const systemPrompt = buildDetailedOutlineSystemPrompt(lang);
-    const userPrompt = buildDetailedOutlineUserPrompt(input);
 
-    this.log?.info(`[detailed-outline] Generating outlines for ${input.targetChapters} chapters`);
-
-    const response = await this.chat(
+    const firstResponse = await this.chat(
       [
         { role: "system", content: systemPrompt },
-        { role: "user", content: userPrompt },
+        { role: "user", content: firstUserPrompt },
       ],
-      { temperature: 0.3, maxTokens: 8192 },
+      { temperature: 0.3, maxTokens: MAX_TOKENS },
     );
 
-    const content = response.content.trim();
-    this.log?.info(`[detailed-outline] Generated ${content.length} chars`);
-    return content;
+    let result = firstResponse.content.trim();
+    this.log?.info(`[detailed-outline] Batch 1 done, ${result.length} chars`);
+
+    // Subsequent batches
+    let completedChapters = firstBatchEnd;
+
+    while (completedChapters < input.targetChapters) {
+      const batchStart = completedChapters + 1;
+      const batchEnd = Math.min(completedChapters + BATCH_SIZE, input.targetChapters);
+
+      this.log?.info(`[detailed-outline] Batch ${Math.ceil(batchStart / BATCH_SIZE)}: chapters ${batchStart}–${batchEnd}`);
+
+      const lastTwoChapters = extractLastNChaptersSummary(result, 2, lang);
+      const continuationPrompt = buildBatchContinuationPrompt({
+        previousChaptersCount: completedChapters,
+        nextBatchStart: batchStart,
+        nextBatchEnd: batchEnd,
+        previousSummary: lastTwoChapters,
+        language: lang,
+      });
+
+      const continuationResponse = await this.chat(
+        [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: continuationPrompt },
+        ],
+        { temperature: 0.3, maxTokens: MAX_TOKENS },
+      );
+
+      const batchContent = continuationResponse.content.trim();
+      this.log?.info(`[detailed-outline] Batch ${Math.ceil(batchStart / BATCH_SIZE)} done, ${batchContent.length} chars`);
+
+      result += "\n\n" + batchContent;
+      completedChapters = batchEnd;
+    }
+
+    this.log?.info(`[detailed-outline] All ${completedChapters} chapters generated, total ${result.length} chars`);
+    return result;
   }
 
   async generateSingle(input: GenerateSingleOptions): Promise<string> {
@@ -70,6 +112,30 @@ ${currentState || "(none)"}`;
 
     return response.content.trim();
   }
+}
+
+/**
+ * Extract a brief summary of the last N chapters from existing outline content.
+ * Used for continuity when generating subsequent batches.
+ */
+function extractLastNChaptersSummary(content: string, n: number, _lang: "zh" | "en"): string {
+  const sections = content.split(/(?:^|\n)(?=##)/);
+  if (sections.length <= 1) return "(无前章内容)";
+
+  const chapterPattern = /^##\s*(?:第\s*(\d+)\s*章|Chapter\s*(\d+)\b)/i;
+  const chapters = sections.filter((s) => {
+    const t = s.trim();
+    if (!t) return false;
+    return chapterPattern.test(t);
+  });
+
+  const lastN = chapters.slice(-n);
+  return lastN
+    .map((s) => {
+      const trimmed = s.trim();
+      return trimmed.length > 200 ? trimmed.slice(0, 200) + "..." : trimmed;
+    })
+    .join("\n\n");
 }
 
 /**
