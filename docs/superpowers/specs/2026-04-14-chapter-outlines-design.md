@@ -88,23 +88,44 @@ inkos write next
 chapterOutlines: join(storyDir, "chapter_outlines.md"),
 ```
 
-### 注入 intent.md
+### 注入 intent.md（上下文防膨胀）
+
+**`PlannerAgent` 按需截取，不将全文加载进 LLM prompt。**
 
 在 `intent.md` 的 `## Goal` 之前（或之后）新增区块：
 
 ```
 ## 本章细纲
-<从 chapter_outlines.md 截取的该章内容>
+<从 chapter_outlines.md 截取的该章内容，如无内容则标记"[待生成]">
 ```
 
-如果该章锚点不存在或内容为空，显示：
+`extractChapterOutline()` 用正则精确提取该章内容（见下方实现）。单章 200-500 字，100 章全书文件也不会撑爆上下文。
 
-```
-## 本章细纲
-[待生成]
+**`extractChapterOutline()` 实现：**
+
+```ts
+private extractChapterOutline(content: string, chapterNumber: number): string | undefined {
+  const patterns = [
+    // 中文：## 第 X 章 ... 开头，截取到下一章之前
+    new RegExp(
+      `(?:^|\\n)##\\s*第\\s*${chapterNumber}\\s*章[^\\n]*\\n([\\s\\S]*?)(?=\\n##\\s*第\\s*\\d+\\s*章|\\Z)`,
+      "i",
+    ),
+    // 英文：## Chapter X ...
+    new RegExp(
+      `(?:^|\\n)##\\s*Chapter\\s*${chapterNumber}\\b[\\s\\S]*?\\n([\\s\\S]*?)(?=\\n##\\s*Chapter\\s*\\d+\\b|\\Z)`,
+      "i",
+    ),
+  ];
+  for (const pattern of patterns) {
+    const match = content.match(pattern);
+    if (match?.[1]?.trim()) return match[1].trim();
+  }
+  return undefined;
+}
 ```
 
-并在 `planChapter()` 返回前触发增量补生成。
+如果该章锚点不存在或内容为空，显示 `[待生成]`，并在 `planChapter()` 返回前触发增量补生成。
 
 ### 增量补生成逻辑
 
