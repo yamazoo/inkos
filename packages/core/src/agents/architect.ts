@@ -235,6 +235,21 @@ Rules for the hook table:
 - 如果要说明”初始线索/最初信号”，写进备注，不要写进第5列
 - **禁止混入规划/清单类行**（如”书名”、”主角”、”时代”等非伏笔条目）`;
 
+    const resolvedNarration = book.narrationType ?? "third-person";
+    const narrationBlock = resolvedLanguage === "en"
+      ? {
+          "first-person": "The protagonist's knowledge boundary = the reader's suspense boundary (first-person limited — use 「我」 in narration, reveal the world only through the protagonist's direct perception)",
+          "third-person": "Third-person narration — use 「他/她」 for the protagonist, describe events from an outside observer's perspective, the narrator knows more than any single character",
+          "third-person-limited": "Third-person limited narration — closely follow the protagonist's perspective, the narrator only knows what the protagonist knows",
+          "omniscient": "Omniscient narration — the narrator knows everything about all characters, can describe multiple simultaneous scenes and inner thoughts freely",
+        }[resolvedNarration] ?? "Third-person narration — use 「他/她」 for the protagonist"
+      : {
+          "first-person": "主角认知边界 = 读者悬念边界（第一人称有限视角——使用「我」叙述，通过主角直接感知揭示世界）",
+          "third-person": "叙事视角：第三人称——使用「他/她」称呼主角，以旁观者视角描述事件，叙述者知道比任何角色更多的事",
+          "third-person-limited": "叙事视角：第三人称有限视角——紧跟主角视角，叙述者只知道主角知道的内容",
+          "omniscient": "叙事视角：全知叙述者——叙述者知晓所有角色的想法，可以自由描述多个同时发生的场景",
+        }[resolvedNarration] ?? "叙事视角：第三人称——使用「他/她」称呼主角";
+
     const finalRequirementsPrompt = resolvedLanguage === "en"
       ? `Generated content must:
 1. Fit the ${book.platform} platform taste
@@ -250,7 +265,7 @@ ${eraBlock}
    - Mark world-building mysteries as [UNKNOWN] — the protagonist learns them through events, not narration
    - NEVER reveal world secrets before planting at least 3 "clue / anomaly" chapters first
    - NEVER use narrator voice to dump world lore — convey truth through character behavior, dialogue, or artifacts
-   - The protagonist's knowledge boundary = the reader's suspense boundary (first-person limited)`
+   - ${narrationBlock}`
       : `生成内容必须：
 1. 符合${book.platform}平台口味
 2. 符合${gp.name}题材特征
@@ -265,7 +280,7 @@ ${eraBlock}
    - 世界观谜题必须标注 [未知] —— 主角通过事件探索来发现，而非旁白灌输
    - 禁止在至少3章"异常/线索"铺垫之前揭露世界真相
    - 禁止用叙述者旁白直接倾倒世界观 —— 必须通过角色行为、对话或物品来传达
-   - 主角认知边界 = 读者悬念边界（第一人称有限视角）`;
+   - ${narrationBlock}`;
 
     const systemPrompt = `你是一个专业的网络小说架构师。你的任务是为一本新的${gp.name}小说生成完整的基础设定。${contextBlock}${reviewFeedbackBlock}
 
