@@ -269,7 +269,7 @@
       "normalizeApplied": true,
       "lengthWarning": false
     },
-"tokenUsage": {
+    "tokenUsage": {
       "promptTokens": 47683,
       "completionTokens": 33445,
       "totalTokens": 81128
@@ -358,7 +358,37 @@
     },
     "tokenUsage": {
       "promptTokens": 0,
-      "completionTokens": 0,      "totalTokens": 0
+      "completionTokens": 0,
+      "totalTokens": 0
+    }
+  },
+  {
+    "number": 12,
+    "title": "地窖深渊",
+    "status": "drafted",
+    "wordCount": 10032,
+    "createdAt": "2026-04-15T07:03:35.289Z",
+    "updatedAt": "2026-04-15T07:03:35.293Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 10032,
+      "postWriterNormalizeCount": 10032,
+      "postReviseCount": 0,
+      "finalCount": 10032,
+      "normalizeApplied": false,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 0,
+      "totalTokens": 0
     }
   }
 ]
