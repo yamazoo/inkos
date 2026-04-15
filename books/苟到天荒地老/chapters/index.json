@@ -709,5 +709,42 @@
       "completionTokens": 0,
       "totalTokens": 0
     }
+  },
+  {
+    "number": 24,
+    "title": "幽眼深窖",
+    "status": "audit-failed",
+    "wordCount": 2863,
+    "createdAt": "2026-04-15T10:28:17.489Z",
+    "updatedAt": "2026-04-15T10:28:17.489Z",
+    "auditIssues": [
+      "[warning] 最近4章持续高压（冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临 -> 压抑→剧变→灵力枯竭→危机四伏 -> 紧绷→逃脱→危机暂缓→新威胁降临），缺少明显的情绪释放。",
+      "[warning] 最近4章持续高压（冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临 -> 压抑→剧变→灵力枯竭→危机四伏 -> 紧绷→逃脱→危机暂缓→新威胁降临），缺少明显的情绪释放。",
+      "[warning] 当前有 14 个活跃伏笔，已经高于建议上限 12 个。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H009_陈老身份（中程，已逾期）、H010_林师兄（中程，已逾期）、H012_四方角帽第四势力（立即，已逾期），另有 6 条。",
+      "[warning] 本章新开了 2 个伏笔，但没有回收任何旧债。",
+      "[warning] 88个段落里有43个不足35字，段落被切得过碎。",
+      "[warning] 连续出现12个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 1890,
+      "postWriterNormalizeCount": 3855,
+      "postReviseCount": 2863,
+      "finalCount": 2863,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 159421,
+      "completionTokens": 80662,
+      "totalTokens": 240083
+    }
   }
 ]

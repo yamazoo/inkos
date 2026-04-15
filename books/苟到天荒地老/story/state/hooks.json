@@ -1,14 +1,14 @@
 {
   "hooks": [
     {
-      "hookId": "H012_四方角帽第四势力",
-      "startChapter": 7,
-      "type": "新钩",
-      "status": "open",
-      "lastAdvancedChapter": 8,
-      "expectedPayoff": "第四势力身份/目的",
-      "payoffTiming": "immediate",
-      "notes": "本章正式登场；战力压制周平手下+林师兄传话者；选择放行陈守一，眼神只有\"确认\"；周平手下察觉异常"
+      "hookId": "H008_赵海之死",
+      "startChapter": 5,
+      "type": "事件伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "孙三/周平关联/林师兄",
+      "payoffTiming": "mid-arc",
+      "notes": "本章未直接推进"
     },
     {
       "hookId": "H013_残纸历史画面",
@@ -18,106 +18,52 @@
       "lastAdvancedChapter": 0,
       "expectedPayoff": "天机簿完整功能/灵气历史",
       "payoffTiming": "immediate",
-      "notes": "本章残纸短暂力量涌动，与金丝缠产生共振"
+      "notes": "本章未推进，残纸温热沉默"
     },
     {
-      "hookId": "H014_金丝缠与残纸关联",
-      "startChapter": 7,
-      "type": "新钩",
-      "status": "open",
-      "lastAdvancedChapter": 8,
-      "expectedPayoff": "幽冥隐脉体/林师兄当年实验",
-      "payoffTiming": "near-term",
-      "notes": "**重大推进**：黑铁令牌纹路与金丝缠几乎一模一样；残纸与金丝缠产生共振"
-    },
-    {
-      "hookId": "H015_幽冥气息开始外渗",
-      "startChapter": 7,
-      "type": "新钩",
-      "status": "open",
-      "lastAdvancedChapter": 8,
-      "expectedPayoff": "幽冥危机爆发/主角处境",
-      "payoffTiming": "immediate",
-      "notes": "地窖深处出现大量眼睛（幽冥生物？）；腥甜气息更浓更急"
-    },
-    {
-      "hookId": "H008_赵海之死",
-      "startChapter": 5,
-      "type": "事件伏笔",
-      "status": "progressing",
-      "lastAdvancedChapter": 7,
-      "expectedPayoff": "孙三/周平关联/林师兄",
-      "payoffTiming": "mid-arc",
-      "notes": "本章未直接推进"
-    },
-    {
-      "hookId": "H009_陈老身份",
-      "startChapter": 5,
-      "type": "人物悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 7,
-      "expectedPayoff": "陈老与陈守一的'三天后见分晓'赌注",
-      "payoffTiming": "mid-arc",
-      "notes": "本章未出场"
-    },
-    {
-      "hookId": "H010_林师兄",
-      "startChapter": 5,
-      "type": "人物悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 8,
-      "expectedPayoff": "林师兄身份/赵海求救对象/三十年前实验",
-      "payoffTiming": "mid-arc",
-      "notes": "**重大推进**：地窖物品指向\"林记\"；小册子内容涉及实验；令牌纹路与金丝缠一样"
-    },
-    {
-      "hookId": "mystery-苏婉儿看到-金丝缠-伤疤时的复杂",
-      "startChapter": 4,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 7,
-      "expectedPayoff": "金丝缠真相/林师兄当年经历",
-      "payoffTiming": "near-term",
-      "notes": "本章未出场"
-    },
-    {
-      "hookId": "H016_地窖秘密",
-      "startChapter": 8,
+      "hookId": "H024_孙师兄交易",
+      "startChapter": 24,
       "type": "**新钩**",
       "status": "open",
-      "lastAdvancedChapter": 8,
-      "expectedPayoff": "地窖建造者身份/暗格来源",
-      "notes": "地窖非天然坍塌，而是人工建造；暗格为刻意藏匿"
+      "lastAdvancedChapter": 24,
+      "expectedPayoff": "**大比期间或之后**",
+      "notes": "**孙师兄提出条件：暴露金丝缠引蛇出洞，换取筑基丹+推荐名额+部分真相**"
     },
     {
-      "hookId": "H017_黑铁令牌",
-      "startChapter": 8,
-      "type": "**新钩**",
-      "status": "open",
-      "lastAdvancedChapter": 8,
-      "expectedPayoff": "金丝缠来源/林师兄实验",
-      "payoffTiming": "near-term",
-      "notes": "令牌纹路与金丝缠几乎一样；林记相关"
+      "hookId": "H025_令牌金丝缠同源",
+      "startChapter": 24,
+      "type": "**悬念钩**",
+      "status": "progressing",
+      "lastAdvancedChapter": 24,
+      "expectedPayoff": "**待揭示**",
+      "notes": "**孙师兄和苏婉儿都确认令牌与金丝缠纹路同源，来自三十年前实验**"
     },
     {
-      "hookId": "H018_幽冥接引实验",
-      "startChapter": 8,
+      "hookId": "H026_苏婉儿左臂",
+      "startChapter": 24,
       "type": "**新钩**",
       "status": "open",
-      "lastAdvancedChapter": 8,
-      "expectedPayoff": "林师兄当年实验/幽冥隐脉体",
-      "payoffTiming": "near-term",
-      "notes": "小册子内容：\"经脉走向与幽冥接引\"\"第七次实验\"\"纹路转移成功\""
+      "lastAdvancedChapter": 24,
+      "expectedPayoff": "**待揭示**",
+      "notes": "**苏婉儿下意识触碰左臂内侧，暗示她也有类似伤疤？**"
     },
     {
-      "hookId": "H019_地窖深处未知存在",
-      "startChapter": 8,
+      "hookId": "H027_神秘监视者",
+      "startChapter": 24,
       "type": "**新钩**",
       "status": "open",
-      "lastAdvancedChapter": 8,
-      "expectedPayoff": "幽冥生物/地窖秘密",
-      "payoffTiming": "immediate",
-      "notes": "地窖深处亮起很多双眼睛，幽暗的、泛着微光，正对着陈守一藏身方向"
+      "lastAdvancedChapter": 24,
+      "expectedPayoff": "**待揭示**",
+      "notes": "**深夜窥视陈守一的瘦小身影，四方角帽或周平的人？行踪已被盯上**"
+    },
+    {
+      "hookId": "H028_三十年前实验",
+      "startChapter": 24,
+      "type": "**新钩**",
+      "status": "progressing",
+      "lastAdvancedChapter": 24,
+      "expectedPayoff": "**第8-20章**",
+      "notes": "**孙师兄、苏婉儿都提到三十年前实验与灵气衰减有关，有人想找出路失败了**"
     }
   ]
 }

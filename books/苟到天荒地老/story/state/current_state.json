@@ -1,53 +1,53 @@
 {
-  "chapter": 23,
+  "chapter": 24,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "灵泉废墟西侧地窖（隐藏中）",
-      "validFromChapter": 8,
+      "object": "杂役区住处（短暂归来），修炼地点为灵泉废墟西侧山缝中的隐藏灵泉",
+      "validFromChapter": 24,
       "validUntilChapter": null,
-      "sourceChapter": 8
+      "sourceChapter": 24
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "炼气三层，左臂'金丝缠'伤疤；灵力枯竭（丹田空空）；残纸短暂力量涌动后恢复平静；金丝缠纹路发烫（残留印记）；膝盖发软（体力消耗）",
-      "validFromChapter": 8,
+      "object": "炼气三层；丹田恢复七八成（已脱离枯竭状态）；左臂\"金丝缠\"伤疤（与令牌纹路比对一致）；残纸温热沉默",
+      "validFromChapter": 24,
       "validUntilChapter": null,
-      "sourceChapter": 8
+      "sourceChapter": 24
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "躲避追兵——暂时藏身地窖；确认地窖深处未知威胁",
-      "validFromChapter": 8,
+      "object": "1. 大比前（7天）做出抉择——是否接受孙师兄条件；2. 去见陈老问清真相；3. 查清三十年前实验真相",
+      "validFromChapter": 24,
       "validUntilChapter": null,
-      "sourceChapter": 8
+      "sourceChapter": 24
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "灵力枯竭无法战斗；身份已被四方角帽确认；周平手下发现异常",
-      "validFromChapter": 8,
+      "object": "行踪已被神秘监视者盯上；金丝缠在特定情况下会发光发热暴露位置",
+      "validFromChapter": 24,
       "validUntilChapter": null,
-      "sourceChapter": 8
+      "sourceChapter": 24
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "周平（试探→确认威胁）→周平手下（执行者，已察觉异常）；林师兄（间接布局）→林师兄传话者（执行者）；第四势力/四方角帽（确认意图不明，放行但观察）；地窖深处未知存在（幽冥生物？）",
-      "validFromChapter": 8,
+      "object": "孙师兄（潜在合作者/借刀杀人者）；周平势力（威胁仍存）；四方角帽（意图不明，放行但观察）；苏婉儿（秘密协助者，但可能也有金丝缠）；地窖深处幽冥存在（蛰伏观望）",
+      "validFromChapter": 24,
       "validUntilChapter": null,
-      "sourceChapter": 8
+      "sourceChapter": 24
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "表面：三方围堵→逃脱→藏身地窖；深层：第四势力选择放行的真实意图；暗线：林师兄三十年前的实验与金丝缠的关联；威胁升级：地窖深处出现大量未知眼睛（幽冥生物？）",
-      "validFromChapter": 8,
+      "object": "表层：是否接受孙师兄交易在大比引蛇出洞；深层：三十年前实验真相与金丝缠的关联；暗线：苏婉儿可能也有类似伤疤；威胁：行踪被神秘人盯上",
+      "validFromChapter": 24,
       "validUntilChapter": null,
-      "sourceChapter": 8
+      "sourceChapter": 24
     }
   ]
 }
