@@ -1102,10 +1102,10 @@
   {
     "number": 35,
     "title": "印记觉醒",
-    "status": "audit-failed",
+    "status": "approved",
     "wordCount": 3396,
     "createdAt": "2026-04-15T16:56:32.386Z",
-    "updatedAt": "2026-04-15T16:56:32.386Z",
+    "updatedAt": "2026-04-15T16:57:19.083Z",
     "auditIssues": [
       "[critical] 本章细纲与实际内容严重偏离。章纲要求：1.复赛开始→2.十六进八（炼气五层对手）→3.暴露边缘（衣袖撕裂/黑纹若隐若现）→4.关键决策→5.八强诞生。但实际内容是：四方角帽直接动手→铜环爆炸→印记觉醒→同源者身份暴露→苏婉儿出场→直接跳到十六进八。章纲中的核心冲突（展露vs隐藏的矛盾抉择）被完全跳过，取而代之的是激进的战斗升级。",
       "[critical] 主角人设严重偏离。陈守一的约束是'绝不主动招惹麻烦，麻烦来了绝不坐以待毙'、'只展露刚好够脱困的部分，永远留有后手，从不把自己置于必死的绝境'。但本章中：1.铜环脱手（主动暴露底牌）→2.印记觉醒且透出衣领（主动暴露同源者身份）→3.后颈发光（主动成为全场焦点）→4.选择带伤参赛而非逃跑（将自己置于必死绝境）。这些行为与'谨慎多疑'、'绝不把自己置于必死绝境'的人设完全矛盾。",
@@ -1144,6 +1144,39 @@
       "promptTokens": 99316,
       "completionTokens": 32186,
       "totalTokens": 131502
+    }
+  },
+  {
+    "number": 36,
+    "title": "同源相残",
+    "status": "ready-for-review",
+    "wordCount": 3159,
+    "createdAt": "2026-04-15T17:18:23.086Z",
+    "updatedAt": "2026-04-15T17:18:23.086Z",
+    "auditIssues": [
+      "[warning] 最近4章持续高压（警觉→压制→危机→逃脱→展望 -> 高压→紧张→盘算→压制→展望 -> 压抑→紧绷→盘算→危机→抉择临近 -> 压抑→紧绷→危机→抉择→坚定），缺少明显的情绪释放。",
+      "[warning] 最近4章持续高压（警觉→压制→危机→逃脱→展望 -> 高压→紧张→盘算→压制→展望 -> 压抑→紧绷→盘算→危机→抉择临近 -> 压抑→紧绷→危机→抉择→坚定），缺少明显的情绪释放。",
+      "[warning] 连续出现3个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2497,
+      "postWriterNormalizeCount": 3128,
+      "postReviseCount": 4448,
+      "finalCount": 3159,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 174395,
+      "completionTokens": 44914,
+      "totalTokens": 219309
     }
   }
 ]
