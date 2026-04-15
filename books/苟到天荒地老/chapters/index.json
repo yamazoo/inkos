@@ -1178,5 +1178,34 @@
       "completionTokens": 44914,
       "totalTokens": 219309
     }
+  },
+  {
+    "number": 37,
+    "title": "令牌惊堂",
+    "status": "drafted",
+    "wordCount": 11617,
+    "createdAt": "2026-04-15T18:07:20.292Z",
+    "updatedAt": "2026-04-15T18:07:20.292Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 0,
+      "postWriterNormalizeCount": 0,
+      "postReviseCount": 0,
+      "finalCount": 0,
+      "normalizeApplied": false,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 0,
+      "totalTokens": 0
+    }
   }
 ]
