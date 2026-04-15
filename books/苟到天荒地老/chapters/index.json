@@ -593,5 +593,34 @@
       "completionTokens": 0,
       "totalTokens": 0
     }
+  },
+  {
+    "number": 20,
+    "title": "幽窖沉眸",
+    "status": "drafted",
+    "wordCount": 8343,
+    "createdAt": "2026-04-15T09:10:03.699Z",
+    "updatedAt": "2026-04-15T09:10:03.700Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 4757,
+      "postWriterNormalizeCount": 4757,
+      "postReviseCount": 2674,
+      "finalCount": 8343,
+      "normalizeApplied": false,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 0,
+      "totalTokens": 0
+    }
   }
 ]
