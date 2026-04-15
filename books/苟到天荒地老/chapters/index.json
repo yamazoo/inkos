@@ -1,23 +1,52 @@
 [
   {
     "number": 1,
-    "title": "镇口初遇",
-    "status": "approved",
-    "wordCount": 5204,
-    "createdAt": "2026-04-13T01:46:18.853Z",
-    "updatedAt": "2026-04-13T03:24:01.667Z",
+    "title": "灵草园中逢绝路",
+    "status": "drafted",
+    "wordCount": 3801,
+    "createdAt": "2026-04-14T16:03:07.434Z",
+    "updatedAt": "2026-04-14T16:03:07.434Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 4743,
+      "postWriterNormalizeCount": 3801,
+      "postReviseCount": 0,
+      "finalCount": 3801,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 24635,
+      "completionTokens": 10554,
+      "totalTokens": 35189
+    }
+  },
+  {
+    "number": 2,
+    "title": "晨露与暗痕",
+    "status": "ready-for-review",
+    "wordCount": 4258,
+    "createdAt": "2026-04-14T16:54:14.778Z",
+    "updatedAt": "2026-04-14T16:54:14.778Z",
     "auditIssues": [
-      "[info] 小鱼在本章中完全是被动受害者（昏迷状态），缺乏自主行动和台词，没有展现任何个人性格或情绪反应。",
-      "[info] 本章末尾获得\"末法天象图\"线索（残缺星图+被抹去的一页），这是一个很好的爽点伏笔，但主角\"瞳孔骤缩\"的反应略显平淡。",
-      "[warning] 本章信息密度极高：赵青山登场→药铺→老道士死亡→玉简→小鱼遇袭→救人。连续四个大事件几乎平铺直叙，没有给读者喘息空间，也没有给\"苟道\"主题充分铺垫。",
-      "[info] 当前支线进度板为空白（未建立），伏笔池虽有记录但没有任何伏笔在本章推进。伏笔H004（小鱼身世）和H006（赵青山威胁）已经通过\"上古遗族气息\"和\"调查\"暗示了，但未正式激活。",
-      "[info] 初始状态卡写\"末法时代无人能筑基\"，但赵青山是筑基中期。这个矛盾可以通过\"宗门有上古传承/特殊资源\"来解释，但文中没有交代。",
-      "[warning] 转折词重复使用：\"然而\"×3。同一转折模式≥3次暴露AI生成痕迹",
-      "[warning] 章节标题\"镇口初遇\n\n===\"已自动调整为\"镇口初遇\"。",
-      "[warning] 连续出现7个不足35字的短段，容易形成短句堆砌。"
+      "[warning] 小路的台词\"看他吃瘪我心里痛快\"是主角视角的内心活动，不应由配角说出。小路的帮助（替主角说话、主动提醒周管事问题）过于主动殷勤，与主角\"不欠人情\"的原则相悖，但主角对此毫无警觉和疑虑。",
+      "[warning] 虫卵危机是精心设计的陷阱，但主角\"折中处理\"的解决方式显得平淡，缺乏紧张感和信息揭示的层次感。读者无法感受到\"识破阴谋\"的快感。",
+      "[warning] 小路仅服务于传递信息（提醒周管事问题、替主角说话），执法弟子也只用于推进剧情。配角缺乏独立动机和人物弧线。",
+      "[warning] 虫卵栽赃与举报赵海之间的因果链不清晰。读者难以理解虫卵事件与赵海被带走之间的必然联系，爽点（借宗门之手解决麻烦）被削弱。",
+      "[warning] 执法弟子与周管事的对话场景在第1章和第2章各出现一次，节奏模式重复。虫卵事件虽有冲突节拍，但缺乏\"压力积累→高潮→释放\"的起伏。",
+      "[warning] 本章新开了 3 个伏笔，但没有回收任何旧债。",
+      "[warning] 149个段落里有95个不足35字，段落被切得过碎。",
+      "[warning] 连续出现14个不足35字的短段，容易形成短句堆砌。"
     ],
     "lengthWarnings": [
-      "第1章经过一次字数归一化后仍超出硬区间（2182-3818，实际 5204）。"
+      "第2章经过一次字数归一化后仍超出硬区间（2182-3818，实际 4258）。"
     ],
     "lengthTelemetry": {
       "target": 3000,
@@ -26,31 +55,166 @@
       "hardMin": 2182,
       "hardMax": 3818,
       "countingMode": "zh_chars",
-      "writerCount": 2474,
-      "postWriterNormalizeCount": 5336,
-      "postReviseCount": 5204,
-      "finalCount": 5204,
+      "writerCount": 3137,
+      "postWriterNormalizeCount": 3137,
+      "postReviseCount": 4258,
+      "finalCount": 4258,
       "normalizeApplied": true,
       "lengthWarning": true
     },
     "tokenUsage": {
-      "promptTokens": 41144,
-      "completionTokens": 26801,
-      "totalTokens": 67945
+      "promptTokens": 125195,
+      "completionTokens": 86375,
+      "totalTokens": 211570
     }
   },
   {
-    "number": 2,
-    "title": "暗格惊变",
-    "status": "approved",
-    "wordCount": 3090,
-    "createdAt": "2026-04-13T02:27:21.726Z",
-    "updatedAt": "2026-04-13T03:24:03.591Z",
+    "number": 3,
+    "title": "夜林惊锋",
+    "status": "ready-for-review",
+    "wordCount": 3215,
+    "createdAt": "2026-04-14T17:49:31.189Z",
+    "updatedAt": "2026-04-14T17:54:43.945Z",
     "auditIssues": [
-      "[warning] 检测到AI标记词\"忽然\"出现1次。虽然未超过每3000字1次的阈值，但应保持警惕。",
-      "[warning] 主角说\"筑基……你是筑基期？！\"后又称自己\"老人家\"岔气，暴露了筑基期修为。但主角真实修为不明（万年前被封印的存在），此处的\"筑基期\"可能是保守说法（主角一贯的示弱策略），但未明确交代可能导致读者混淆。",
-      "[info] 小鱼在本章全程昏迷（被黑衣人袭击后昏迷→主角施法安抚→赵青山对峙时仍在昏迷→阿黎出场时仍是\"昏迷的小鱼\"），完全沦为\"被保护物\"。虽然符合\"被神秘势力追查的少女\"的定位，但可考虑在下一章苏醒以增加互动。",
-      "[info] 阿黎出场自称\"奉命来接那位姐姐\"，称小鱼是\"我族的人\"，呼应了小鱼的上古遗族身份。但阿黎的\"奉命\"——奉谁的命？是遗族组织？遗族长辈？——未作交代，可能需要在后续章节中明确。",
+      "[info] 原始细纲规划的'灵泉谷探索'五场景（灵泉谷异常、隐藏灵泉、幽冥气息、危险警告、古修士洞府痕迹）与实际正文存在偏差。但实际正文与章节控制输入、钩子安排（Hook Agenda）完全吻合，中年男子现身、H002/H003/H004/H005伏笔均按预期推进。推断为细纲制定时未充分参照钩子安排，或作者在写作过程中根据章节控制输入调整了方向。",
+      "[info] 第1章末尾钩子'灵泉信号闪烁，某种气息在呼唤他……'在第3章正文未被正面回收（未描写陈守一主动探索灵泉），而是被'中年男子现身'替代。但第2章末尾钩子'现在，他已经没有退路'得到完整回收。",
+      "[info] H006_灵气衰减（世界观伏笔）本轮未推进，但这符合预期回收节奏（80-100章），非问题。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3200,
+      "softMin": 2764,
+      "softMax": 3636,
+      "hardMin": 2328,
+      "hardMax": 4072,
+      "countingMode": "zh_chars",
+      "writerCount": 3217,
+      "postWriterNormalizeCount": 0,
+      "postReviseCount": 3215,
+      "finalCount": 3215,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 21169,
+      "completionTokens": 7101,
+      "totalTokens": 28270
+    }
+  },
+  {
+    "number": 4,
+    "title": "堂前问",
+    "status": "drafted",
+    "wordCount": 3139,
+    "createdAt": "2026-04-14T18:17:14.002Z",
+    "updatedAt": "2026-04-14T18:17:14.002Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3200,
+      "softMin": 2764,
+      "softMax": 3636,
+      "hardMin": 2328,
+      "hardMax": 4072,
+      "countingMode": "zh_chars",
+      "writerCount": 3139,
+      "postWriterNormalizeCount": 3139,
+      "postReviseCount": 0,
+      "finalCount": 3139,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 31039,
+      "completionTokens": 7138,
+      "totalTokens": 38177
+    }
+  },
+  {
+    "number": 5,
+    "title": "第5章 灵泉噬影",
+    "status": "ready-for-review",
+    "wordCount": 3599,
+    "createdAt": "2026-04-14T18:39:04.959Z",
+    "updatedAt": "2026-04-14T18:39:04.959Z",
+    "auditIssues": [
+      "[info] 主角目睹赵海被吞噬时的内心挣扎描写过于直白。'心底某处传来一丝不属于\"苟道\"的冲动'这句话直接暴露了主角的内心波动，与陈守一\"冷静务实、谨慎多疑\"的人设略有冲突——他更可能是沉默地看着，手在动但心里没有任何动摇。",
+      "[info] 陈老的角色功能过于单一。他目前只承担了\"被主角识破身份\"和\"给予警告\"两个工具性任务，缺乏作为\"执法堂暗子\"应有的复杂性和动机暗示。",
+      "[info] 章节末尾的灵泉轰鸣描写与第4章末尾的描写在形态上较为相似（'低沉的轰鸣'、'大地微微震颤'），连续两章用类似方式预告灵泉变故，可能造成读者审美疲劳。",
+      "[warning] 最近3章持续高压（压抑→紧张→危机将至 -> 紧张压抑→危机降临→悬念重重 -> 紧张压抑→审问对峙→暗流涌动→悬念重重），缺少明显的情绪释放。",
+      "[warning] 章节标题\"第5章\"已自动调整为\"第5章 灵泉噬影\"。",
+      "[warning] 最近3章持续高压（压抑→紧张→危机将至 -> 紧张压抑→危机降临→悬念重重 -> 紧张压抑→审问对峙→暗流涌动→悬念重重），缺少明显的情绪释放。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H002_中年男子（近期，可回收）、mystery-苏婉儿看到-金丝缠-伤疤时的复杂（近期，可回收）、plot-灵泉异变的正-式爆发-与陈守一体内（近期，可回收）。",
+      "[warning] 123个段落里有70个不足35字，段落被切得过碎。",
+      "[warning] 连续出现6个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3317,
+      "postWriterNormalizeCount": 3317,
+      "postReviseCount": 3599,
+      "finalCount": 3599,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 91227,
+      "completionTokens": 32601,
+      "totalTokens": 123828
+    }
+  },
+  {
+    "number": 6,
+    "title": "暗流交汇",
+    "status": "drafted",
+    "wordCount": 3096,
+    "createdAt": "2026-04-15T02:56:46.999Z",
+    "updatedAt": "2026-04-15T02:56:46.999Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3200,
+      "softMin": 2764,
+      "softMax": 3636,
+      "hardMin": 2328,
+      "hardMax": 4072,
+      "countingMode": "zh_chars",
+      "writerCount": 3096,
+      "postWriterNormalizeCount": 3096,
+      "postReviseCount": 0,
+      "finalCount": 3096,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 36636,
+      "completionTokens": 8103,
+      "totalTokens": 44739
+    }
+  },
+  {
+    "number": 7,
+    "title": "灵潮将逆",
+    "status": "ready-for-review",
+    "wordCount": 3452,
+    "createdAt": "2026-04-15T03:19:28.779Z",
+    "updatedAt": "2026-04-15T03:19:28.779Z",
+    "auditIssues": [
+      "[warning] 灵泉异变'提前爆发'与第6章周平/苏婉儿明确承诺的'三天后见分晓'形成时间承诺冲突。原文仅以'时间被某种力量强行压缩'一笔带过，缺乏具体的触发机制或外部事件说明。",
+      "[warning] 苏婉儿的情感弧线出现起伏断层：第6章末尾她因目睹'金丝缠'伤疤而情绪失控（震惊/疑惑/痛楚交织，猛然后退，呼吸急促，沉默数息后离开），但第7章她再次出现时直接传达林师兄的话并主动提及伤疤内容。期间缺少她私下消化/处理这份冲击的必要描写，使情绪高点（第6章）显得孤立，缺乏释放-转折-重估的完整弧线。",
+      "[warning] 连续三章（ch5-ch7）均为'转折/危机'类型章，且三章章尾均为'危机骤临/外部威胁逼近'型悬念：ch5'暴风雨前的平静从来不会持续太久'→ch6'这是暴风雨本身'→ch7'新势力入场/主角决定转移'。节奏模式重复，缺乏回收-释放-高潮的节奏变化。",
+      "[info] 新势力（'四方角帽，黑袍束腰，袖口处绣着一枚陈守一看不懂的徽记'）在章节末尾以'身影一闪而过'的形式入场，制造悬念。但此前伏笔板中未见此势力的铺垫信息（伏笔板中'周平/陈老/林师兄/苏婉儿/中年男子'均无此描述），读者可能缺乏足够的锚点来期待此势力的出现。",
+      "[info] 章节开头'闷响从地底深处传来'与第6章末尾'灵泉方向传来沉闷轰鸣'在表述上高度相似（均为'闷响/沉闷轰鸣+灵泉方向'），容易让读者混淆为同一事件的重复描写而非事件的连续发展。",
+      "[warning] 最近4章持续高压（紧张压抑→危机降临→悬念重重 -> 紧张压抑→审问对峙→暗流涌动→悬念重重 -> 冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临），缺少明显的情绪释放。",
+      "[warning] 最近4章持续高压（紧张压抑→危机降临→悬念重重 -> 紧张压抑→审问对峙→暗流涌动→悬念重重 -> 冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临），缺少明显的情绪释放。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H003_灵泉异常（近期，已逾期）、H004_执法堂调查（近期，已逾期）、mystery-揭示灵泉变故-真相-中年男子警告（近期，可回收），另有 3 条。",
+      "[warning] 99个段落里有56个不足35字，段落被切得过碎。",
       "[warning] 连续出现7个不足35字的短段，容易形成短句堆砌。"
     ],
     "lengthWarnings": [],
@@ -61,41 +225,140 @@
       "hardMin": 2182,
       "hardMax": 3818,
       "countingMode": "zh_chars",
-      "writerCount": 3717,
-      "postWriterNormalizeCount": 2965,
-      "postReviseCount": 3090,
-      "finalCount": 3090,
+      "writerCount": 3394,
+      "postWriterNormalizeCount": 3394,
+      "postReviseCount": 3452,
+      "finalCount": 3452,
       "normalizeApplied": true,
       "lengthWarning": false
     },
     "tokenUsage": {
-      "promptTokens": 49079,
-      "completionTokens": 81475,
-      "totalTokens": 130554
+      "promptTokens": 83204,
+      "completionTokens": 24019,
+      "totalTokens": 107223
     }
   },
   {
-    "number": 3,
-    "title": "坟地风云",
-    "status": "approved",
-    "wordCount": 2164,
-    "createdAt": "2026-04-13T03:52:57.963Z",
-    "updatedAt": "2026-04-13T03:54:17.320Z",
+    "number": 8,
+    "title": "暗潮围猎",
+    "status": "ready-for-review",
+    "wordCount": 2844,
+    "createdAt": "2026-04-15T03:42:17.101Z",
+    "updatedAt": "2026-04-15T03:42:17.101Z",
     "auditIssues": [
-      "[info] 章节从小鱼视角观察主角的苟道作风，有别于前两章完全跟随主角视角，这是有益的视角变化。",
-      "[warning] 字数偏低（2164字），可能需要扩充至3000字左右。"
-    ]
+      "[warning] 待审第8章内容与控制输入中的原始细纲存在重大偏差。原始细纲要求'与苏婉儿分别后日常修炼→天机推演警示→周执事身份确认→分析与对策→主动暴露'，但待审内容直接承接第7章结尾的紧急转移决定，呈现'三方势力围堵→四方角帽出手→逃入灵泉废墟→地窖探索→发现林记实验证据→幽暗眼睛'的截然不同情节走向。",
+      "[info] 待审内容未直接推进H006灵气衰减主题（卷纲Must Advance要求）。第7章已通过残纸灌注画面建立了'灵泉自然衰竭→裂隙→幽冥气息'的因果链，第8章待审内容通过地窖幽暗眼睛间接关联（H015幽冥气息外渗），但未进一步深化灵气衰减机制本身（如：为什么灵泉会衰竭？衰减周期与幽冥的关系？）。",
+      "[info] 待审内容节奏紧凑：势力围堵(约30%)→四方角帽出手→逃亡(约25%)→地窖探索/证据收集(约30%)→新危机(约15%)。章尾'地窖深处亮起多双幽暗眼睛'设置悬念，符合'external conflict'结构指令要求。但地窖探索段的信息密度较高（暗格→布帛→小册子→令牌），约400字连续揭示，节奏略赶。",
+      "[warning] 最近4章持续高压（紧张压抑→审问对峙→暗流涌动→悬念重重 -> 冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临 -> 压抑→剧变→灵力枯竭→危机四伏），缺少明显的情绪释放。",
+      "[warning] 最近4章持续高压（紧张压抑→审问对峙→暗流涌动→悬念重重 -> 冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临 -> 压抑→剧变→灵力枯竭→危机四伏），缺少明显的情绪释放。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H006_灵气衰减（中程，可回收）、mystery-揭示灵泉变故-真相-中年男子警告（近期，已逾期）、plot-灵泉异变的正式爆发-与陈守一体内（近期，可回收），另有 3 条。",
+      "[warning] 连续出现3个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2656,
+      "postWriterNormalizeCount": 2656,
+      "postReviseCount": 2844,
+      "finalCount": 2844,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+"tokenUsage": {
+      "promptTokens": 47683,
+      "completionTokens": 33445,
+      "totalTokens": 81128
+    }
   },
   {
-    "number": 4,
-    "title": "月下对峙",
-    "status": "approved",
-    "wordCount": 2815,
-    "createdAt": "2026-04-13T03:52:57.964Z",
-    "updatedAt": "2026-04-13T03:54:20.172Z",
-    "auditIssues": [
-      "[info] 章节以赵青山派人试探为结尾，为后续冲突埋下伏笔。",
-      "[warning] 字数偏低（2815字），可能需要扩充。"
-    ]
+    "number": 9,
+    "title": "幽冥裂眼",
+    "status": "drafted",
+    "wordCount": 8845,
+    "createdAt": "2026-04-15T11:48:00.000Z",
+    "updatedAt": "2026-04-15T11:48:00.000Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 8845,
+      "postWriterNormalizeCount": 8845,
+      "postReviseCount": 0,
+      "finalCount": 8845,
+      "normalizeApplied": false,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 0,
+      "totalTokens": 0
+    }
+  },
+  {
+    "number": 10,
+    "title": "暗窟惊魂",
+    "status": "drafted",
+    "wordCount": 8153,
+    "createdAt": "2026-04-15T12:11:00.000Z",
+    "updatedAt": "2026-04-15T12:11:00.000Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 8153,
+      "postWriterNormalizeCount": 8153,
+      "postReviseCount": 0,
+      "finalCount": 8153,
+      "normalizeApplied": false,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 0,
+      "totalTokens": 0
+    }
+  },
+  {
+    "number": 11,
+    "title": "寒霜令",
+    "status": "drafted",
+    "wordCount": 9624,
+    "createdAt": "2026-04-15T12:38:00.000Z",
+    "updatedAt": "2026-04-15T12:38:00.000Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 9624,
+      "postWriterNormalizeCount": 9624,
+      "postReviseCount": 0,
+      "finalCount": 9624,
+      "normalizeApplied": false,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 0,      "totalTokens": 0
+    }
   }
 ]

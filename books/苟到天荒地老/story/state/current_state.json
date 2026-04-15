@@ -1,53 +1,53 @@
 {
-  "chapter": 2,
+  "chapter": 11,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "青石镇回春堂",
-      "validFromChapter": 2,
+      "object": "灵泉废墟西侧地窖（隐藏中）",
+      "validFromChapter": 8,
       "validUntilChapter": null,
-      "sourceChapter": 2
+      "sourceChapter": 8
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "警觉升级；准备探查镇北地道作为退路",
-      "validFromChapter": 2,
+      "object": "炼气三层，左臂'金丝缠'伤疤；灵力枯竭（丹田空空）；残纸短暂力量涌动后恢复平静；金丝缠纹路发烫（残留印记）；膝盖发软（体力消耗）",
+      "validFromChapter": 8,
       "validUntilChapter": null,
-      "sourceChapter": 2
+      "sourceChapter": 8
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "甩掉青云门追踪；找机会带小鱼离镇",
-      "validFromChapter": 2,
+      "object": "躲避追兵——暂时藏身地窖；确认地窖深处未知威胁",
+      "validFromChapter": 8,
       "validUntilChapter": null,
-      "sourceChapter": 2
+      "sourceChapter": 8
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "末法灵气稀薄；不能暴露筑基实力；周天成觊觎回春堂；青云门监视网",
-      "validFromChapter": 2,
+      "object": "灵力枯竭无法战斗；身份已被四方角帽确认；周平手下发现异常",
+      "validFromChapter": 8,
       "validUntilChapter": null,
-      "sourceChapter": 2
+      "sourceChapter": 8
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "青云门（中年男子为主谋）：威胁升级；周天成：潜在威胁；街对面茶摊眼线：监视中",
-      "validFromChapter": 2,
+      "object": "周平（试探→确认威胁）→周平手下（执行者，已察觉异常）；林师兄（间接布局）→林师兄传话者（执行者）；第四势力/四方角帽（确认意图不明，放行但观察）；地窖深处未知存在（幽冥生物？）",
+      "validFromChapter": 8,
       "validUntilChapter": null,
-      "sourceChapter": 2
+      "sourceChapter": 8
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "青云门已锁定\"故人\"线索；主角需在下次被找上门前找到应对之策",
-      "validFromChapter": 2,
+      "object": "表面：三方围堵→逃脱→藏身地窖；深层：第四势力选择放行的真实意图；暗线：林师兄三十年前的实验与金丝缠的关联；威胁升级：地窖深处出现大量未知眼睛（幽冥生物？）",
+      "validFromChapter": 8,
       "validUntilChapter": null,
-      "sourceChapter": 2
+      "sourceChapter": 8
     }
   ]
 }
