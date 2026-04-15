@@ -1060,5 +1060,43 @@
       "completionTokens": 0,
       "totalTokens": 0
     }
+  },
+  {
+    "number": 34,
+    "title": "风起演武场",
+    "status": "ready-for-review",
+    "wordCount": 3002,
+    "createdAt": "2026-04-15T16:37:54.397Z",
+    "updatedAt": "2026-04-15T16:37:54.397Z",
+    "auditIssues": [
+      "[warning] AI标记词'仿佛'出现1次，'忽然'出现2次，密度接近临界值（每3000字1次为warning阈值）。",
+      "[info] 近两章情绪类型序列相似度较高：32章'高压→紧张→盘算→压制→展望'，本章'警觉→盘算→压制→危机→决断'。均为'被动应对→信息获取→决策'的线性结构。",
+      "[info] 本章存在斗法碾压（陈守一险胜周铁柱），但被周执事阴谋、同源者身份暴露的危机感冲淡。主角虽赢了一场，但'代价不大，但暴露了'的叙述使爽感被压制。",
+      "[warning] 最近3章持续高压（警觉→盘算→压力升级→震惊→危机→逃脱 -> 警觉→压制→危机→逃脱→展望 -> 高压→紧张→盘算→压制→展望），缺少明显的情绪释放。",
+      "[warning] 最近3章持续高压（警觉→盘算→压力升级→震惊→危机→逃脱 -> 警觉→压制→危机→逃脱→展望 -> 高压→紧张→盘算→压制→展望），缺少明显的情绪释放。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H033_周执事拉拢（近期，已逾期）、H043_苏婉儿处境（近期，已逾期）、H040_执法堂监视（中程，可回收），另有 1 条。",
+      "[warning] 115个段落里有71个不足35字，段落被切得过碎。",
+      "[warning] 连续出现8个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2893,
+      "postWriterNormalizeCount": 2893,
+      "postReviseCount": 3002,
+      "finalCount": 3002,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 283865,
+      "completionTokens": 92195,
+      "totalTokens": 376060
+    }
   }
 ]
