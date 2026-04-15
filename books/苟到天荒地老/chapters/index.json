@@ -995,5 +995,41 @@
       "completionTokens": 0,
       "totalTokens": 0
     }
+  },
+  {
+    "number": 32,
+    "title": "破晓抉择",
+    "status": "ready-for-review",
+    "wordCount": 2875,
+    "createdAt": "2026-04-15T15:41:59.357Z",
+    "updatedAt": "2026-04-15T15:41:59.357Z",
+    "auditIssues": [
+      "[warning] 左臂温度数值不一致：状态卡和正文描述均为'温度高于右臂三寸'，但第31章结尾处却写成'温度高于右臂五寸'。同一章内出现两种数值。",
+      "[warning] 第31章结尾'那么，就让这黑夜，见证他的刀'气势磅礴、情绪饱满，但第32章开头以'晨曦从灌木枝叶缝隙间漏下'平铺直叙地开始，情绪断崖式下跌，节奏衔接略显生硬。",
+      "[info] 本章属于'铺垫准备章'，以心理活动和情报收集为主。章节类型分布显示近期连续多章为信息揭示/转折章，读者可能需要更多外部冲突节拍（如战斗、抉择时刻、谈判交锋）。",
+      "[info] SP10_大比抉择线在本章继续推进（周执事谈判+小路警告），但主角的身体恶化（金丝缠至手指）和外部威胁（大比前夜动手）属于'威胁描述'而非'威胁应对'，支线进度条未实际跨越节点。",
+      "[warning] 90个段落里有51个不足35字，段落被切得过碎。",
+      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2684,
+      "postWriterNormalizeCount": 2684,
+      "postReviseCount": 2875,
+      "finalCount": 2875,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 80479,
+      "completionTokens": 47946,
+      "totalTokens": 128425
+    }
   }
 ]
