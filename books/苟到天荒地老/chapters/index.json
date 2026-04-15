@@ -684,10 +684,10 @@
   {
     "number": 23,
     "title": "槐下授机",
-    "status": "drafted",
+    "status": "approved",
     "wordCount": 6236,
     "createdAt": "2026-04-15T09:49:48.542Z",
-    "updatedAt": "2026-04-15T09:49:48.543Z",
+    "updatedAt": "2026-04-15T10:30:26.575Z",
     "auditIssues": [],
     "lengthWarnings": [],
     "lengthTelemetry": {
@@ -713,10 +713,10 @@
   {
     "number": 24,
     "title": "幽眼深窖",
-    "status": "audit-failed",
+    "status": "approved",
     "wordCount": 2863,
     "createdAt": "2026-04-15T10:28:17.489Z",
-    "updatedAt": "2026-04-15T10:28:17.489Z",
+    "updatedAt": "2026-04-15T10:31:29.548Z",
     "auditIssues": [
       "[warning] 最近4章持续高压（冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临 -> 压抑→剧变→灵力枯竭→危机四伏 -> 紧绷→逃脱→危机暂缓→新威胁降临），缺少明显的情绪释放。",
       "[warning] 最近4章持续高压（冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临 -> 压抑→剧变→灵力枯竭→危机四伏 -> 紧绷→逃脱→危机暂缓→新威胁降临），缺少明显的情绪释放。",
@@ -745,6 +745,42 @@
       "promptTokens": 159421,
       "completionTokens": 80662,
       "totalTokens": 240083
+    }
+  },
+  {
+    "number": 25,
+    "title": "槐根问旧",
+    "status": "ready-for-review",
+    "wordCount": 3036,
+    "createdAt": "2026-04-15T10:50:41.431Z",
+    "updatedAt": "2026-04-15T10:50:41.431Z",
+    "auditIssues": [
+      "[warning] SP03（执法堂调查线）的核心推动者苏婉儿选择'暂时收敛锋芒，不再公开调查'，并将线索转交给陈守一。虽然她仍是信息提供者，但她从主动调查者变为被动信息源，这条支线的推动力从执法堂内部转移到了陈守一个人身上，需要后续有足够的外部事件或新角色介入来激活执法堂线，否则该支线可能滑向'接近被遗忘'状态。",
+      "[info] 本章引入了三个新悬念（子时城东旧药铺的约定/苏婉儿左臂秘密的深化/执法堂内部警告者身份），加上原有的孙师兄交易和大比抉择，悬念存量较高。若下一章不能有效推进其中1-2个，可能导致读者期待疲劳。",
+      "[info] 本章'arc'指令要求'推进到新的弧线节点或地点变化'。本章确实发生了地点变化（从藏身处→陈老住处→返回）和弧线节点推进（苏婉儿将调查接力棒交给陈守一），但'被迫展露'的外部压力尚未真正降临。大比作为核心节点还有7天缓冲期，当前章节属于蓄压期，节奏匹配度为中等。",
+      "[info] 苏婉儿收到'再查下去你会死'的警告后，选择将线索转交并退出公开调查。这个决定是理性的（她知道自己处境危险），但作为执法堂成员、追查林师兄旧案多年的人，完全收敛行动可能显得过于保守。不过这也可以解读为她选择了更隐蔽的方式继续关注——将风险转移给陈守一同时保持自身观察者地位。",
+      "[warning] 119个段落里有69个不足35字，段落被切得过碎。",
+      "[warning] 连续出现11个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3589,
+      "postWriterNormalizeCount": 2730,
+      "postReviseCount": 3036,
+      "finalCount": 3036,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 75555,
+      "completionTokens": 26739,
+      "totalTokens": 102294
     }
   }
 ]

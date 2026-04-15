@@ -5,65 +5,107 @@
       "startChapter": 5,
       "type": "事件伏笔",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "孙三/周平关联/林师兄",
+      "lastAdvancedChapter": 25,
+      "expectedPayoff": "第8-20章",
       "payoffTiming": "mid-arc",
-      "notes": "本章未直接推进"
+      "notes": "**重大推进**：残纸画面中身影倒下姿势与赵海死前完全一致；赵海死因可能与三十年前实验死者相同"
     },
     {
       "hookId": "H013_残纸历史画面",
       "startChapter": 7,
       "type": "新钩",
-      "status": "open",
-      "lastAdvancedChapter": 0,
+      "status": "progressing",
+      "lastAdvancedChapter": 25,
       "expectedPayoff": "天机簿完整功能/灵气历史",
       "payoffTiming": "immediate",
-      "notes": "本章未推进，残纸温热沉默"
+      "notes": "**重大推进**：残纸苏醒，显示灵泉边月光下身影被黑色潮水吞没的画面；陈老说\"它醒了\"；与三十年前实验关联"
     },
     {
       "hookId": "H024_孙师兄交易",
       "startChapter": 24,
-      "type": "**新钩**",
+      "type": "新钩",
       "status": "open",
       "lastAdvancedChapter": 24,
-      "expectedPayoff": "**大比期间或之后**",
-      "notes": "**孙师兄提出条件：暴露金丝缠引蛇出洞，换取筑基丹+推荐名额+部分真相**"
+      "expectedPayoff": "大比期间或之后",
+      "payoffTiming": "mid-arc",
+      "notes": "7天倒计时；待陈守一抉择"
     },
     {
       "hookId": "H025_令牌金丝缠同源",
       "startChapter": 24,
-      "type": "**悬念钩**",
+      "type": "悬念钩",
       "status": "progressing",
-      "lastAdvancedChapter": 24,
-      "expectedPayoff": "**待揭示**",
-      "notes": "**孙师兄和苏婉儿都确认令牌与金丝缠纹路同源，来自三十年前实验**"
+      "lastAdvancedChapter": 25,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：陈老确认令牌是实验身份证明，金丝缠是\"灌注\"印记，用活人丹田做容器强行灌灵气"
     },
     {
       "hookId": "H026_苏婉儿左臂",
       "startChapter": 24,
-      "type": "**新钩**",
-      "status": "open",
-      "lastAdvancedChapter": 24,
-      "expectedPayoff": "**待揭示**",
-      "notes": "**苏婉儿下意识触碰左臂内侧，暗示她也有类似伤疤？**"
+      "type": "新钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 25,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：苏婉儿离开时下意识触碰左臂内侧，动作隐蔽但被陈守一看见"
     },
     {
       "hookId": "H027_神秘监视者",
       "startChapter": 24,
-      "type": "**新钩**",
-      "status": "open",
-      "lastAdvancedChapter": 24,
-      "expectedPayoff": "**待揭示**",
-      "notes": "**深夜窥视陈守一的瘦小身影，四方角帽或周平的人？行踪已被盯上**"
+      "type": "新钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 25,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：四方角帽黑扣子确认为执法堂制式；执法堂内部有人盯着陈守一和苏婉儿"
     },
     {
       "hookId": "H028_三十年前实验",
       "startChapter": 24,
-      "type": "**新钩**",
+      "type": "新钩",
       "status": "progressing",
-      "lastAdvancedChapter": 24,
-      "expectedPayoff": "**第8-20章**",
-      "notes": "**孙师兄、苏婉儿都提到三十年前实验与灵气衰减有关，有人想找出路失败了**"
+      "lastAdvancedChapter": 25,
+      "expectedPayoff": "第8-20章",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进**：陈老揭示大量细节——七十三人、活下来不到五个、金丝缠是\"灌注\"印记、一半死在灵泉边上、被什么杀死仍是谜"
+    },
+    {
+      "hookId": "H029_陈老身份",
+      "startChapter": 25,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 25,
+      "expectedPayoff": "待揭示",
+      "notes": "陈老知道大量三十年前实验细节但选择分步透露；他是否也是当年实验参与者？"
+    },
+    {
+      "hookId": "H030_执法堂内部对立",
+      "startChapter": 25,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 25,
+      "expectedPayoff": "待揭示",
+      "notes": "有人打招呼让苏婉儿停下，有人送黑扣子威胁；执法堂内部存在不同势力"
+    },
+    {
+      "hookId": "H031_子时钟药铺",
+      "startChapter": 25,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 25,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "陈老纸条约定；可能是获取更多信息或交换的地方"
+    },
+    {
+      "hookId": "H032_金丝缠破壁",
+      "startChapter": 25,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 25,
+      "expectedPayoff": "待揭示",
+      "notes": "金丝缠剧烈震颤像要破壁而出；封印可能松动；与残纸苏醒呼应"
     }
   ]
 }
