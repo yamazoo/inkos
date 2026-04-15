@@ -890,5 +890,43 @@
       "completionTokens": 33086,
       "totalTokens": 141755
     }
+  },
+  {
+    "number": 29,
+    "title": "金丝缠真相",
+    "status": "ready-for-review",
+    "wordCount": 3179,
+    "createdAt": "2026-04-15T13:35:56.194Z",
+    "updatedAt": "2026-04-15T13:35:56.194Z",
+    "auditIssues": [
+      "[info] 本章节奏类型较为单一：危机→逃脱→发现→新危机。连续两章（28-29）均以逃脱/脱困为核心动作，读者可能产生疲劳感。",
+      "[info] 铜环被天机簿推演为\"钥匙\"，但\"能开启什么\"仅以\"还需要更多线索\"悬置。若连续多章仅抛出新物证而不回收其功能，可能导致悬念疲劳。",
+      "[info] 苏婉儿线（SP11）在第29章获得重要推进（卫长老揭露、父亲身份揭示），但当前仅停留于\"信息获取\"阶段，尚未有实际救援行动或危机解决。",
+      "[warning] 本章\"猛地\"出现1次，密度在安全范围内。但\"微微\"出现3次，\"悄然\"出现2次，\"缓缓\"出现1次——连续章节出现高频相似副词。",
+      "[info] 本章获得铜环作为\"身份证明+钥匙\"，符合中期线索铺垫节奏。但铜环的实际功能未展开，读者暂时无法获得\"破解谜题\"的成就感。",
+      "[warning] 当前有 14 个活跃伏笔，已经高于建议上限 12 个。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H024_孙师兄交易（近期，已逾期）、H029_陈老身份（中程，可回收）、H030_执法堂内部对立（中程，可回收），另有 4 条。",
+      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2834,
+      "postWriterNormalizeCount": 2834,
+      "postReviseCount": 3093,
+      "finalCount": 3179,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 198767,
+      "completionTokens": 65578,
+      "totalTokens": 264345
+    }
   }
 ]
