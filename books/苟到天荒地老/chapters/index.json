@@ -419,5 +419,34 @@
       "completionTokens": 0,
       "totalTokens": 0
     }
+  },
+  {
+    "number": 14,
+    "title": "残纸惊鸣",
+    "status": "drafted",
+    "wordCount": 13916,
+    "createdAt": "2026-04-15T07:40:12.145Z",
+    "updatedAt": "2026-04-15T07:40:12.146Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 13916,
+      "postWriterNormalizeCount": 13916,
+      "postReviseCount": 0,
+      "finalCount": 13916,
+      "normalizeApplied": false,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 0,
+      "totalTokens": 0
+    }
   }
 ]
