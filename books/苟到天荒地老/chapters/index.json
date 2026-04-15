@@ -506,5 +506,34 @@
       "completionTokens": 0,
       "totalTokens": 0
     }
+  },
+  {
+    "number": 17,
+    "title": "裂隙将至",
+    "status": "drafted",
+    "wordCount": 6020,
+    "createdAt": "2026-04-15T08:19:17.543Z",
+    "updatedAt": "2026-04-15T08:19:17.543Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2087,
+      "postWriterNormalizeCount": 2087,
+      "postReviseCount": 0,
+      "finalCount": 6020,
+      "normalizeApplied": false,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 0,
+      "totalTokens": 0
+    }
   }
 ]
