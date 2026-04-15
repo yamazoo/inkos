@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 27,
+  "lastAppliedChapter": 28,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -74,6 +74,12 @@
     "H026_苏婉儿左臂:status normalized from \"**重大突破**\" to \"open\"",
     "H027_神秘监视者:status normalized from \"**深化**\" to \"open\"",
     "H030_执法堂内部对立:status normalized from \"**深化**\" to \"open\"",
-    "H031_子时钟药铺:status normalized from \"**重大进展**\" to \"open\""
+    "H031_子时钟药铺:status normalized from \"**重大进展**\" to \"open\"",
+    "H033_周执事拉拢:status normalized from \"**部分揭示**\" to \"open\"",
+    "H034_铜片令牌拼合:status normalized from \"**部分揭示**\" to \"open\"",
+    "H025_令牌金丝缠同源:status normalized from \"**重大揭示**\" to \"open\"",
+    "H029_陈老身份:status normalized from \"**重大揭示**\" to \"open\"",
+    "H008_赵海之死:status normalized from \"**深化**\" to \"open\"",
+    "H013_灵泉实验:status normalized from \"**深化**\" to \"open\""
   ]
 }

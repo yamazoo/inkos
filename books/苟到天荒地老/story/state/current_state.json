@@ -1,61 +1,61 @@
 {
-  "chapter": 27,
+  "chapter": 28,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "藏身处（夜间）",
-      "validFromChapter": 27,
+      "object": "荒芜野地（干涸小溪旁，破败磨坊附近）；藏身处已暴露风险",
+      "validFromChapter": 28,
       "validUntilChapter": null,
-      "sourceChapter": 27
+      "sourceChapter": 28
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "炼气三层；丹田恢复七八成；左臂\"金丝缠\"微微发热；天机簿残纸沉默（无画面）；持有陈老纸条（子时，城东旧药铺）；持有周执事地址纸条；持有参赛木牌（三天后，辰时，演武场东侧）；令牌与铜片可拼合确认；苏婉儿承认左臂有伤疤（从小就有/\"灌注\"产物）",
-      "validFromChapter": 27,
+      "object": "炼气三层；丹田恢复七八成；左臂\"金丝缠\"纹路蔓延至肘部，夜间微光浮动，温度高于右臂三寸；金丝缠已被迫暴露；天机簿残纸已苏醒（推演能力增强）；持有完整铜牌（令牌+铜片融合）；持有灰袍人纸条（柳叶标记+三日后演武场）；持有大比参赛木牌（三天后，辰时，演武场东侧）；持有小册子；持有竹简（部分内容）；暗道已使用（第一次）",
+      "validFromChapter": 28,
       "validUntilChapter": null,
-      "sourceChapter": 27
+      "sourceChapter": 28
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "1. 决定今晚是否赴子时钟药铺之约；2. 三天后参加大比选拔赛；3. 应对孙师兄/周执事两方拉拢；4. 查清三十年前实验与自身关联",
-      "validFromChapter": 27,
+      "object": "1. 三天后参加大比选拔赛（策略：前胜后让）；2. 三日后演武场赴约（灰袍人纸条）；3. 挖取歪脖子柳树下物品（待执行）；4. 查清三十年前实验与自身关联；5. 应对金丝缠暴露后的风险",
+      "validFromChapter": 28,
       "validUntilChapter": null,
-      "sourceChapter": 27
+      "sourceChapter": 28
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "子时钟药铺被警告不安全；执法堂内部多方势力盯梢；金丝缠可能暴露位置；七天变一晚，时间压缩",
-      "validFromChapter": 27,
+      "object": "金丝缠已暴露（夜间微光+温度差异）；执法堂追兵仍在搜索；暗道已暴露（第一次使用）；执法堂内部多方势力盯梢；金丝缠展露策略需要调整",
+      "validFromChapter": 28,
       "validUntilChapter": null,
-      "sourceChapter": 27
+      "sourceChapter": 28
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "孙师兄（突然改变计划，今晚约见，意图不明）；周执事（拉拢，提供庇护但不可信）；苏婉儿（同源疑似者/信息共享者，已确认有伤疤）；执法堂内部对立势力（威胁）；神秘警告纸条来源（不明）；陈老（信息提供者）",
-      "validFromChapter": 27,
+      "object": "孙师兄（设局者/试探者，但立场暂时一致）；周执事（对手/威胁，已暴露阴谋）；苏婉儿（同源者/潜在协助者，柳叶标记关联）；陈老（参与者/欠债者，第七个活下来的）；灰袍人（陈老代理人）；执法堂追兵（威胁）；执法堂内部对立势力（仍在暗中）",
+      "validFromChapter": 28,
       "validUntilChapter": null,
-      "sourceChapter": 27
+      "sourceChapter": 28
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "表层：今晚子时钟药铺——苏婉儿警告不去 vs 孙师兄说\"是个机会\"；深层：孙师兄为何突然改主意（从7天变1晚）？周执事为何同时拉拢？；核心：执法堂内部对立势力正在收网？",
-      "validFromChapter": 27,
+      "object": "表层：金丝缠暴露后如何在两天内大比中隐藏；深层：周执事与孙师兄的对立格局；核心：三十年前实验幸存者的身份暴露风险",
+      "validFromChapter": 28,
       "validUntilChapter": null,
-      "sourceChapter": 27
+      "sourceChapter": 28
     },
     {
       "subject": "current_state",
       "predicate": "当前悬念",
-      "object": "孙师兄改主意的真正原因？周执事的真实目的？铜片与令牌为何能拼合（完整物件？）；执法堂内部两股势力谁在警告？谁在布局？",
-      "validFromChapter": 27,
+      "object": "完整铜牌的意义？柳叶标记与苏婉儿的关系？陈老欠的\"债\"如何还？歪脖子柳树下是什么？陈老是否还有其他幸存者？苏婉儿是否就是三日后演武场的人？",
+      "validFromChapter": 28,
       "validUntilChapter": null,
-      "sourceChapter": 27
+      "sourceChapter": 28
     }
   ]
 }
