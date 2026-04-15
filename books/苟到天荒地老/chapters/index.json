@@ -966,5 +966,34 @@
       "completionTokens": 149828,
       "totalTokens": 527796
     }
+  },
+  {
+    "number": 31,
+    "title": "无处可退",
+    "status": "drafted",
+    "wordCount": 12601,
+    "createdAt": "2026-04-15T15:13:00.382Z",
+    "updatedAt": "2026-04-15T15:13:00.383Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 0,
+      "postWriterNormalizeCount": 0,
+      "postReviseCount": 0,
+      "finalCount": 0,
+      "normalizeApplied": false,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 0,
+      "totalTokens": 0
+    }
   }
 ]
