@@ -163,6 +163,9 @@ export class WriterAgent extends BaseAgent {
     return repairChapterWithWriter(
       {
         projectRoot: this.ctx.projectRoot,
+        temperature: typeof this.ctx.writerParamsOverride?.writer_temperature_settlement === "number"
+          ? this.ctx.writerParamsOverride.writer_temperature_settlement
+          : undefined,
         chat: (messages, options) => this.chat(messages, options),
       },
       input,

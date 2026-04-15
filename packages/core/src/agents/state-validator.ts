@@ -104,7 +104,7 @@ ${chapterContent.slice(0, 6000)}`;
           { role: "system", content: systemPrompt },
           { role: "user", content: userPrompt },
         ],
-        { temperature: 0.1, maxTokens: 2048 },
+        { temperature: 0.1 },
       );
       const retryParsed = this.parseResult(retry.content);
       if (!retryParsed.ok) {
