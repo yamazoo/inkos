@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 34,
+  "lastAppliedChapter": 35,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -82,6 +82,8 @@
     "H008_赵海之死:status normalized from \"**深化**\" to \"open\"",
     "H013_灵泉实验:status normalized from \"**深化**\" to \"open\"",
     "H044_同源者关系:lastAdvancedChapter normalized from \"30-32\" to 0",
-    "H045_三件钥匙:lastAdvancedChapter normalized from \"30-32\" to 0"
+    "H045_三件钥匙:lastAdvancedChapter normalized from \"30-32\" to 0",
+    "H040_执法堂监视:status normalized from \"**紧急恶化**\" to \"open\"",
+    "H045_三件钥匙:status normalized from \"**重大突破**\" to \"open\""
   ]
 }
