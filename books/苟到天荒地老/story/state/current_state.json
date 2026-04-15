@@ -1,53 +1,61 @@
 {
-  "chapter": 26,
+  "chapter": 27,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "杂役区→陈老住处→返回藏身处途中",
-      "validFromChapter": 25,
+      "object": "藏身处（夜间）",
+      "validFromChapter": 27,
       "validUntilChapter": null,
-      "sourceChapter": 25
+      "sourceChapter": 27
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "炼气三层；丹田恢复七八成；左臂\"金丝缠\"剧烈震颤后归于沉默；天机簿残纸短暂苏醒后沉默；持有陈老纸条（子时，城东旧药铺）；苏婉儿留下的布袋（未查看）",
-      "validFromChapter": 25,
+      "object": "炼气三层；丹田恢复七八成；左臂\"金丝缠\"微微发热；天机簿残纸沉默（无画面）；持有陈老纸条（子时，城东旧药铺）；持有周执事地址纸条；持有参赛木牌（三天后，辰时，演武场东侧）；令牌与铜片可拼合确认；苏婉儿承认左臂有伤疤（从小就有/\"灌注\"产物）",
+      "validFromChapter": 27,
       "validUntilChapter": null,
-      "sourceChapter": 25
+      "sourceChapter": 27
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "1. 查看苏婉儿留下的布袋内容；2. 理清三十年前实验真相；3. 大比前（7天）决定是否接受孙师兄条件；4. 赴子时钟药铺之约",
-      "validFromChapter": 25,
+      "object": "1. 决定今晚是否赴子时钟药铺之约；2. 三天后参加大比选拔赛；3. 应对孙师兄/周执事两方拉拢；4. 查清三十年前实验与自身关联",
+      "validFromChapter": 27,
       "validUntilChapter": null,
-      "sourceChapter": 25
+      "sourceChapter": 27
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "行踪被执法堂内部多方势力盯上；金丝缠在特定情况下会震颤/发热暴露位置；残纸苏醒可能被更多人察觉",
-      "validFromChapter": 25,
+      "object": "子时钟药铺被警告不安全；执法堂内部多方势力盯梢；金丝缠可能暴露位置；七天变一晚，时间压缩",
+      "validFromChapter": 27,
       "validUntilChapter": null,
-      "sourceChapter": 25
+      "sourceChapter": 27
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "孙师兄（待定合作者/借刀者）；周平势力（威胁）；执法堂内部对立势力（威胁）；陈老（信息提供者但有所保留）；苏婉儿（信息共享者/疑似同源者）；四方角帽/神秘监视者（威胁）",
-      "validFromChapter": 25,
+      "object": "孙师兄（突然改变计划，今晚约见，意图不明）；周执事（拉拢，提供庇护但不可信）；苏婉儿（同源疑似者/信息共享者，已确认有伤疤）；执法堂内部对立势力（威胁）；神秘警告纸条来源（不明）；陈老（信息提供者）",
+      "validFromChapter": 27,
       "validUntilChapter": null,
-      "sourceChapter": 25
+      "sourceChapter": 27
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "表层：孙师兄交易（7天抉择）vs 子时钟药铺约定；深层：三十年前实验真相与金丝缠的关联；核心威胁：死在灵泉边的那批人是被什么杀死的？；暗线：苏婉儿也有金丝缠/伤疤？",
-      "validFromChapter": 25,
+      "object": "表层：今晚子时钟药铺——苏婉儿警告不去 vs 孙师兄说\"是个机会\"；深层：孙师兄为何突然改主意（从7天变1晚）？周执事为何同时拉拢？；核心：执法堂内部对立势力正在收网？",
+      "validFromChapter": 27,
       "validUntilChapter": null,
-      "sourceChapter": 25
+      "sourceChapter": 27
+    },
+    {
+      "subject": "current_state",
+      "predicate": "当前悬念",
+      "object": "孙师兄改主意的真正原因？周执事的真实目的？铜片与令牌为何能拼合（完整物件？）；执法堂内部两股势力谁在警告？谁在布局？",
+      "validFromChapter": 27,
+      "validUntilChapter": null,
+      "sourceChapter": 27
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 26,
+  "lastAppliedChapter": 27,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -68,6 +68,12 @@
     "H013_残纸历史画面:status normalized from \"**new**\" to \"open\"",
     "H014_金丝缠与残纸关联:status normalized from \"**new**\" to \"open\"",
     "H015_幽冥气息开始外渗:status normalized from \"**new**\" to \"open\"",
-    "H013_残纸历史画面:lastAdvancedChapter normalized from \"7-8\" to 0"
+    "H013_残纸历史画面:lastAdvancedChapter normalized from \"7-8\" to 0",
+    "H024_孙师兄交易:status normalized from \"**重大进展**\" to \"open\"",
+    "H025_令牌金丝缠同源:status normalized from \"**深化**\" to \"open\"",
+    "H026_苏婉儿左臂:status normalized from \"**重大突破**\" to \"open\"",
+    "H027_神秘监视者:status normalized from \"**深化**\" to \"open\"",
+    "H030_执法堂内部对立:status normalized from \"**深化**\" to \"open\"",
+    "H031_子时钟药铺:status normalized from \"**重大进展**\" to \"open\""
   ]
 }
