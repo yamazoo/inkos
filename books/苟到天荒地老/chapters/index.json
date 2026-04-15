@@ -448,5 +448,34 @@
       "completionTokens": 0,
       "totalTokens": 0
     }
+  },
+  {
+    "number": 15,
+    "title": "演武困局",
+    "status": "drafted",
+    "wordCount": 10096,
+    "createdAt": "2026-04-15T07:50:29.504Z",
+    "updatedAt": "2026-04-15T07:50:29.505Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 10096,
+      "postWriterNormalizeCount": 10096,
+      "postReviseCount": 0,
+      "finalCount": 10096,
+      "normalizeApplied": false,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 0,
+      "totalTokens": 0
+    }
   }
 ]
