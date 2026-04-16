@@ -2012,5 +2012,80 @@
   {
     "number": 72,
     "title": "真相大白"
+  },
+  {
+    "number": 73,
+    "title": "彼岸大劫",
+    "status": "approved",
+    "wordCount": 3841,
+    "createdAt": "2026-04-16T15:44:35.713Z",
+    "updatedAt": "2026-04-16T15:44:52.749Z",
+    "auditIssues": [
+      "[warning] 守护者提到母亲寿元时出现时间线矛盾：\"十年寿元在三年内耗尽\"——但根据当前状态卡，母亲是被金痕耗尽生机而亡，并未提及具体时限是三年。此处数字\"三年\"与已建立设定冲突。",
+      "[info] 第72章结尾出现的中年男子（守夜者师弟）在第73章直接消失，角色去向未交代。可能造成读者疑惑：他是被留在洞中还是另有机缘？",
+      "[info] 青鸾在第72章末尾受重伤放入灵泉，第73章仅用\"几个时辰后她就能恢复\"一笔带过。青鸾作为守夜者联络人和聚居点边缘巡查的角色，她的去向和状态未被关注。",
+      "[warning] 本章内容量极大：力量传承、冥将真相、内鬼身份、弟弟真相、母亲经历、守夜者身份，三重幻境密集叠加。多重重大信息在同一章节内集中揭示，可能导致读者信息过载。",
+      "[info] 守夜者与守护者\"一体两面\"的关系揭示较为仓促，守夜者\"将全部力量融入封印，以灵魂守护彼岸\"的具体方式未详细展开。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H098_幽冥界痕迹（中程，已逾期）、H102_守夜者与母亲的关系（中程，已逾期）、H103_幽冥界裂缝（中程，已逾期），另有 2 条。",
+      "[warning] 连续出现4个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [
+      "第73章经过一次字数归一化后仍超出硬区间（2182-3818，实际 3841）。"
+    ],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2391,
+      "postWriterNormalizeCount": 3729,
+      "postReviseCount": 3841,
+      "finalCount": 3841,
+      "normalizeApplied": true,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 334773,
+      "completionTokens": 79745,
+      "totalTokens": 414518
+    }
+  },
+  {
+    "number": 74,
+    "title": "天锁",
+    "status": "approved",
+    "wordCount": 3636,
+    "createdAt": "2026-04-16T16:07:51.166Z",
+    "updatedAt": "2026-04-16T16:08:31.648Z",
+    "auditIssues": [
+      "[warning] 最近3章持续高压（虚弱→震惊→接受→坚定→紧张→希望→震撼→警惕→决心→平静→坚定 -> 平静修炼→紧张对峙→真相揭示→接纳→紧急→凝重→决然→危机 -> 紧张→真相揭露→沉重→悲痛→坚定→危机），缺少明显的情绪释放。",
+      "[warning] 章节标题\"**天锁**\"已自动调整为\"天锁\"。",
+      "[warning] 最近3章持续高压（虚弱→震惊→接受→坚定→紧张→希望→震撼→警惕→决心→平静→坚定 -> 平静修炼→紧张对峙→真相揭示→接纳→紧急→凝重→决然→危机 -> 紧张→真相揭露→沉重→悲痛→坚定→危机），缺少明显的情绪释放。",
+      "[warning] 状态校验不可用：Error: LLM returned empty response",
+      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "reviewNote": "{\"kind\":\"state-degraded\",\"baseStatus\":\"ready-for-review\",\"injectedIssues\":[\"[warning] 状态校验不可用：Error: LLM returned empty response\"]}",
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3930,
+      "postWriterNormalizeCount": 2289,
+      "postReviseCount": 3636,
+      "finalCount": 3636,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 127759,
+      "completionTokens": 38748,
+      "totalTokens": 166507
+    }
   }
 ]

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 72,
+  "lastAppliedChapter": 74,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -156,6 +156,9 @@
     "H093_神秘生物的身份:status normalized from \"new\" to \"open\"",
     "H094_眉心金痕的意义:status normalized from \"new\" to \"open\"",
     "H095_岩石印记与母亲:status normalized from \"new\" to \"open\"",
-    "H096_接引者的身份:status normalized from \"new\" to \"open\""
+    "H096_接引者的身份:status normalized from \"new\" to \"open\"",
+    "H093_神秘生物的身份:startChapter normalized from \"54→73\" to 0",
+    "H097_守夜者:startChapter normalized from \"55→73\" to 0",
+    "H107_三天之期:startChapter normalized from \"59→73\" to 0"
   ]
 }

@@ -1,103 +1,103 @@
 {
   "hooks": [
     {
-      "hookId": "H104_玄清宗内鬼",
-      "startChapter": 58,
+      "hookId": "H100_赵猛弟弟之死",
+      "startChapter": 56,
       "type": "悬念钩",
-      "status": "open",
-      "lastAdvancedChapter": 59,
-      "expectedPayoff": "待揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "**深化**：陈守一向赵猛揭示虚境中看到玄清宗弟子道袍向裂缝注入力量；守夜者确认\"他们等不及了\"/内鬼在加速破坏；黑雾扩散验证了内鬼行动"
+      "status": "resolved",
+      "lastAdvancedChapter": 73,
+      "expectedPayoff": "**73章已回收**",
+      "notes": "**重大推进→回收**：赵猛看到弟弟死前画面（不是被黑雾害死/是用生命点燃封印的英雄）；守护者证实\"他是英雄\"；赵猛从悲痛转为坚定；陈守一说\"都是替母亲还债\"；赵猛说\"不会拦了\""
     },
     {
       "hookId": "H105_虚境幽冥兽",
       "startChapter": 58,
       "type": "悬念钩",
-      "status": "open",
-      "lastAdvancedChapter": 58,
-      "expectedPayoff": "待揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "山中守护者在虚境中以幽冥兽形态出现；不是敌意是某种期待；需要找到它才能通过试炼；虚境尽头"
+      "status": "resolved",
+      "lastAdvancedChapter": 73,
+      "expectedPayoff": "**73章已回收**",
+      "notes": "**重大推进→回收**：山中守护者真实身份揭露（上古大劫后留下的守护意识/形体近乎消散/只余金色竖瞳燃烧执念）；等了三源合一血脉三百年；力量传承完成；形体正在消散；最终消散（遗迹崩塌时）"
     },
     {
       "hookId": "H106_母亲当年也有金痕",
       "startChapter": 58,
       "type": "悬念钩",
-      "status": "open",
-      "lastAdvancedChapter": 58,
-      "expectedPayoff": "待揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "守夜者揭示母亲当年也有类似情况；不是寿数到了而是被金痕耗尽生机；三源合一时激活了金痕的保护和消耗双重属性"
+      "status": "resolved",
+      "lastAdvancedChapter": 73,
+      "expectedPayoff": "**73章已回收**",
+      "notes": "**重大推进→回收**：金痕代价完整揭露（生机消耗加速一年）；守护者揭示母亲当年没有九幽寒莲/十年寿元三年耗尽；陈守一有九幽寒莲减缓但代价仍存在；传承后寿元从五年变为四年"
     },
     {
-      "hookId": "H102_守夜者与母亲的关系",
-      "startChapter": 56,
+      "hookId": "H098_玄清宗内鬼",
+      "startChapter": 58,
       "type": "悬念钩",
-      "status": "open",
-      "lastAdvancedChapter": 58,
-      "expectedPayoff": "待揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "母亲当年也坐在这张石凳上；守夜者教母亲养气功法；母亲说\"欠债必还\"但一辈子没还清；守夜者三百年前救了母亲"
-    },
-    {
-      "hookId": "H103_幽冥界裂缝",
-      "startChapter": 56,
-      "type": "悬念钩",
-      "status": "open",
-      "lastAdvancedChapter": 59,
-      "expectedPayoff": "待揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "**重大推进**：黑雾扩散验证裂缝扩张；守夜者确认\"他们等不及了\"；陈守一眉心金痕与裂缝中的存在产生感应；即将前往验证"
-    },
-    {
-      "hookId": "H097_守夜者",
-      "startChapter": 55,
-      "type": "悬念钩",
-      "status": "open",
-      "lastAdvancedChapter": 58,
-      "expectedPayoff": "待揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "讲述母亲故事；三百年救母亲；教母亲养气功法；带陈守一进入秘境；等待陈守一归来；**本章首次露出凝重神色**"
-    },
-    {
-      "hookId": "H100_赵猛弟弟之死",
-      "startChapter": 56,
-      "type": "悬念钩",
-      "status": "open",
-      "lastAdvancedChapter": 59,
-      "expectedPayoff": "待揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "**重大推进**：赵猛详细描述弟弟死状（躺岩石后/手握剑/指甲断三根/浑身伤口/脸上黑色纹路被侵蚀）；赵猛从敌意转为同行；即将前往东面山谷查明真相"
-    },
-    {
-      "hookId": "H098_幽冥界痕迹",
-      "startChapter": 55,
-      "type": "悬念钩",
-      "status": "open",
-      "lastAdvancedChapter": 59,
-      "expectedPayoff": "待揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "**深化**：黑雾扩散；空气弥漫腥甜气息；远处传来低沉咆哮；眉心金痕灼烫；陈守一判断\"有东西在等着我们/不止是黑雾\""
-    },
-    {
-      "hookId": "H107_眉心金痕与裂缝的关联",
-      "startChapter": 59,
-      "type": "**悬念钩**",
-      "status": "open",
-      "lastAdvancedChapter": 59,
-      "expectedPayoff": "**待揭示**",
-      "notes": "**新伏笔**：陈守一眉心金痕在东面山谷方向跳动/灼烫；守夜者说\"那道裂缝里的东西，和我眉心的金痕有关\"；暗示金痕与裂缝中的存在有某种联系"
+      "status": "resolved",
+      "lastAdvancedChapter": 73,
+      "expectedPayoff": "**73章已回收**",
+      "notes": "**重大推进→回收**：内鬼完整情报揭露（\"正本清源\"组织/三百年前分支/认为冥族是回归者而非入侵/封印是错误的）；周执事只是外围；核心人物是执法堂某位长老"
     },
     {
       "hookId": "H093_神秘生物的身份",
-      "startChapter": 54,
+      "startChapter": 0,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 73,
+      "expectedPayoff": "**73章已回收**",
+      "notes": "**重大推进→回收**：山中守护者完整身份揭露（上古大劫守护意识/形体近乎消散/与守夜者一体两面）；三百年前母亲两个同伴之一"
+    },
+    {
+      "hookId": "H097_守夜者",
+      "startChapter": 0,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 73,
+      "expectedPayoff": "**73章已回收**",
+      "notes": "**重大推进→回收**：守夜者真实身份揭露（三百年前第一批发现三源合一秘密的修士之一/与母亲同源/选择不同道路/将全部力量融入封印/与守护者一体两面/\"她选择了燃烧，我选择了守护\"）"
+    },
+    {
+      "hookId": "H107_三天之期",
+      "startChapter": 0,
       "type": "悬念钩",
       "status": "open",
-      "lastAdvancedChapter": 58,
-      "expectedPayoff": "待揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "神秘生物认可并刻入金痕；山中守护者身份部分揭示；虚境中以幽冥兽形态出现"
+      "lastAdvancedChapter": 73,
+      "expectedPayoff": "**75-76章**",
+      "notes": "**新揭示**：封印松动速度加快；只剩两天半；内鬼在加速完成最后仪式；遗迹入口已崩塌；需要赶回聚居点应对"
+    },
+    {
+      "hookId": "H108_\"正本清源\"组织",
+      "startChapter": 73,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 73,
+      "expectedPayoff": "**80-100章**",
+      "notes": "**新伏笔**：三百年前分支；认为冥族是回归者；认为封印是错误的；灵洲大陆建立血脉传承；玄清宗是据点之一；执法堂长老是核心"
+    },
+    {
+      "hookId": "H109_守夜者的遗言",
+      "startChapter": 73,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 73,
+      "expectedPayoff": "**75-80章**",
+      "notes": "**新伏笔**：遗迹残念消散前的遗言\"替我告诉她，我女儿没白养\"——\"她\"是谁？守夜者的女儿？还是另有所指？"
+    },
+    {
+      "hookId": "H110_冥将的试探",
+      "startChapter": 73,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 73,
+      "expectedPayoff": "**80-100章**",
+      "notes": "**新伏笔**：冥将意识在传承时试图侵蚀陈守一神魂；\"三源……终于来了……\"；裂缝深处传来低语；暗示冥将能感知三源合一者"
+    },
+    {
+      "hookId": "H111_母亲的最终画面",
+      "startChapter": 73,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 73,
+      "expectedPayoff": "**75-80章**",
+      "notes": "**新伏笔**：幻境中母亲在彼岸的修炼历程（被守夜者救下/在石屋恢复/遇见守护者/等待孩子长大）；\"若他不愿继承呢？\"/\"那道印记会找到他/它是钥匙也是代价\""
     }
   ]
 }
