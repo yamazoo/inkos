@@ -1209,16 +1209,6 @@
     }
   },
   {
-    "chapter": 38,
-    "title": "地底沉冤",
-    "status": "approved"
-  },
-  {
-    "chapter": 39,
-    "title": "暗流涌动",
-    "status": "approved"
-  },
-  {
     "number": 40,
     "title": "暗室困局",
     "status": "approved",
@@ -1893,11 +1883,6 @@
     }
   },
   {
-    "chapter": 57,
-    "title": "流言",
-    "status": "approved"
-  },
-  {
     "number": 58,
     "title": "秘境试炼",
     "status": "approved",
@@ -1975,5 +1960,57 @@
       "completionTokens": 20693,
       "totalTokens": 113813
     }
+  },
+  {
+    "number": 60,
+    "title": "山中守护者"
+  },
+  {
+    "number": 61,
+    "title": "三源问心"
+  },
+  {
+    "number": 62,
+    "title": "金痕之危"
+  },
+  {
+    "number": 63,
+    "title": "暗夜伏影"
+  },
+  {
+    "number": 64,
+    "title": "裂痕追踪"
+  },
+  {
+    "number": 65,
+    "title": "幽谷裂痕"
+  },
+  {
+    "number": 66,
+    "title": "联席议事"
+  },
+  {
+    "number": 67,
+    "title": "裂隙回响"
+  },
+  {
+    "number": 68,
+    "title": "深渊之眼"
+  },
+  {
+    "number": 69,
+    "title": "困兽之斗"
+  },
+  {
+    "number": 70,
+    "title": "风起云涌"
+  },
+  {
+    "number": 71,
+    "title": "设网以待"
+  },
+  {
+    "number": 72,
+    "title": "真相大白"
   }
 ]
