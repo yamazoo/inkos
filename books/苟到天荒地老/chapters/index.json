@@ -1209,6 +1209,16 @@
     }
   },
   {
+    "number": 38,
+    "title": "(pending)",
+    "status": "drafted"
+  },
+  {
+    "number": 39,
+    "title": "(pending)",
+    "status": "drafted"
+  },
+  {
     "number": 40,
     "title": "暗室困局",
     "status": "approved",
@@ -1883,6 +1893,11 @@
     }
   },
   {
+    "number": 57,
+    "title": "(pending)",
+    "status": "drafted"
+  },
+  {
     "number": 58,
     "title": "秘境试炼",
     "status": "approved",
@@ -2348,20 +2363,5 @@
       "completionTokens": 31137,
       "totalTokens": 207015
     }
-  },
-  {
-    "number": 38,
-    "title": "(pending)",
-    "status": "drafted"
-  },
-  {
-    "number": 39,
-    "title": "(pending)",
-    "status": "drafted"
-  },
-  {
-    "number": 57,
-    "title": "(pending)",
-    "status": "drafted"
   }
 ]
