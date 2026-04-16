@@ -1,0 +1,140 @@
+{
+  "chapter": 28,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第27章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "天地灵气的衰减周期：每经一个大时代，有效利用率衰减至上一代的70%"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "炼气杂役在宗门夹缝中求生存，在\"不冒头\"与\"被迫展露\"的矛盾中艰难前行"
+    },
+    {
+      "source": "story/chapter_summaries.md#chapter_27_bridge",
+      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
+      "excerpt": "第27章《阴影之间》 | 出场人物：陈守一、苏婉儿、孙师兄的人（传话）、周执事的人（传话）、文书弟子 | 本章事件：1.大比报名开始；陈守一报名获参赛木牌（三天后选拔赛）；2.周执事派人拉拢（提供庇护换效力）；3.发现有人从门缝塞纸条警告\"子时钟药铺不安全\"（四方角帽/执法堂制式）；4.发现苏婉儿留下的铜片与令牌可拼合；5.苏婉儿来访：确认孙师兄改主意（今晚子时城东药铺）；确认自己有伤疤（从小就有/\"灌注\"产物）；6.苏婉儿警告别去旧药铺后从后门离开；7.孙师兄的人也来传话：今晚子时城东药铺，\"是个机会\"；8.天机簿残页无反应；9.夜色降临，陈守一面临抉择 | 状态变化：获得参赛木牌；获得周执事地址纸条；确认铜片与令牌可拼合；确认苏婉儿也是\"灌注\"产物；时间从7天压缩到今晚 | 悬念活动：H024/H025/H026/H027/H031/H033/H034推进/深化；H030深化"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "27: 阴影之间 | 25: 槐根问旧 | 24: 幽眼深窖 | 8: 暗潮围猎 | 7: 灵潮将逆"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "27: 警觉→盘算→压力升级→抉择临近 / 冲突升级章/抉择铺垫章 | 25: 警觉→盘算→震惊→压抑→警觉升级 / 信息揭示章/真相揭开章/威胁升级章 | 24: 紧绷→盘算→警觉 / 信息揭示章/抉择铺垫章 | 8: 紧绷→逃脱→危机暂缓→新威胁降临 / **转折章/逃脱章/危机升级章** | 7: 压抑→剧变→灵力枯竭→危机四伏 / **转折章/危机爆发章/转移节点**"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch25: 晨光越来越亮。他加快了脚步，往藏身处走去。 | ch26: 再往前一步，就是光。 | ch27: 远处，城东的方向，有什么东西正在等待着他。"
+    },
+    {
+      "source": "runtime/hook_debt#H024_孙师兄交易",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H024_孙师兄交易（新钩，可兑现旧债，已开4章） | 读者承诺：大比期间或今晚 | 种于第24章：ch24 幽眼深窖 - 1.陈守一在隐藏灵泉修炼半月，丹田恢复七八成；2.孙师兄正式出场，揭示知道陈守一追查之事，提出交易（暴露金丝缠换筑基丹+名额+部分真相）；3.陈守一返回地窖验证令牌与金丝缠纹路——确认同源；4.苏婉儿告知令牌与林师兄当年一模一样，伤疤是实验痕迹；5.苏婉儿疑似也有左臂伤疤（下意识触碰动作）；6.苏婉儿透露三十年前实验与灵气衰减有关，有人想找出路失败；7.深夜神秘瘦小身影窥视陈守一，金丝缠发热发光暴露位置；8.陈守一决定先见陈老 | 推进于第27章：ch27 阴影之间 - 1.大比报名开始；陈守一报名获参赛木牌（三天后选拔赛）；2.周执事派人拉拢（提供庇护换效力）；3.发现有人从门缝塞纸条警告\"子时钟药铺不安全\"（四方角帽/执法堂制式）；4.发现苏婉儿留下的铜片与令牌可拼合；5.苏婉儿来访：确认孙师兄改主意（今晚子时城东药铺）；确认自己有伤疤（从小就有/\"灌注\"产物）；6.苏婉儿警告别去旧药铺后从后门离开；7.孙师兄的人也来传话：今晚子时城东药铺，\"是个机会\"；8.天机簿残页无反应；9.夜色降临，陈守一面临抉择"
+    },
+    {
+      "source": "runtime/hook_debt#H008_赵海之死",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H008_赵海之死（悬念钩，主要旧债，已开23章） | 读者承诺：待揭示 | 种于第5章：ch5 灵泉噬影 - 1.（第4章苏婉儿指引三日后灵泉观察）→ 本章监视松动后陈守一潜入灵泉谷；2.（第3-4章三日之期倒计时）→ 本章确认灵泉变故信号——地底轰鸣；3.亲眼目睹赵海被幽冥气息吞噬全过程，选择不施救，遵循\"苟道\"；4.取走赵海遗留的储物袋和布鞋；5.用天机簿推演确认暂无牵连；6.离开时被陈老目击盘问，收到\"胆子太大不是好事\"警告；7.比对布料碎片确认陈老就是之前的窥视者；8.（第4章虫卵栽赃调查）→ 本章小路揭露执法堂内部有人打招呼捂盖子，苏婉儿追查受阻；9.执法堂定性赵海死因为\"误入禁地\"，案件结案；10.灵泉地底轰鸣加剧，天机簿残页震颤，\"三日之期\"进入倒计时 | 推进于第25章：ch25 槐根问旧 - 1.陈守一前往陈老住处，用令牌验证身份；2.陈老揭示三十年前实验真相：七十三人、\"灌注\"、金丝缠印记、一半死在灵泉边；3.金丝缠剧烈震颤，残纸苏醒显示灵泉边被黑色潮水吞没的画面；4.赵海死前姿势与画面中身影完全一致；5.苏婉儿收到匿名警告信\"再查下去会死\"和四方角帽黑扣子；6.苏婉儿离开时触碰左臂内侧；7.陈老警告\"有人在暗处盯着，不止一方\"；8.陈老给出纸条\"子时，城东旧药铺\"；9.陈守一返回藏身处待查苏婉儿留下的布袋"
+    },
+    {
+      "source": "runtime/hook_debt#H029_陈老身份",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H029_陈老身份（新钩，主要旧债，已开3章） | 读者承诺：待揭示 | 种于第25章：ch25 槐根问旧 - 1.陈守一前往陈老住处，用令牌验证身份；2.陈老揭示三十年前实验真相：七十三人、\"灌注\"、金丝缠印记、一半死在灵泉边；3.金丝缠剧烈震颤，残纸苏醒显示灵泉边被黑色潮水吞没的画面；4.赵海死前姿势与画面中身影完全一致；5.苏婉儿收到匿名警告信\"再查下去会死\"和四方角帽黑扣子；6.苏婉儿离开时触碰左臂内侧；7.陈老警告\"有人在暗处盯着，不止一方\"；8.陈老给出纸条\"子时，城东旧药铺\"；9.陈守一返回藏身处待查苏婉儿留下的布袋"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 表层：今晚子时钟药铺——苏婉儿警告不去 vs 孙师兄说\"是个机会\"；深层：孙师兄为何突然改主意（从7天变1晚）？周执事为何同时拉拢？；核心：执法堂内部对立势力正在收网？"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 1. 决定今晚是否赴子时钟药铺之约；2. 三天后参加大比选拔赛；3. 应对孙师兄/周执事两方拉拢；4. 查清三十年前实验与自身关联"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 炼气三层；丹田恢复七八成；左臂\"金丝缠\"微微发热；天机簿残纸沉默（无画面）；持有陈老纸条（子时，城东旧药铺）；持有周执事地址纸条；持有参赛木牌（三天后，辰时，演武场东侧）；令牌与铜片可拼合确认；苏婉儿承认左臂有伤疤（从小就有/\"灌注\"产物）"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 子时钟药铺被警告不安全；执法堂内部多方势力盯梢；金丝缠可能暴露位置；七天变一晚，时间压缩"
+    },
+    {
+      "source": "story/chapter_summaries.md#3",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "夜林惊锋 | 1.（上章推演确认今夜是三日之期最后期限）→ 本章灵泉方向三道气息向杂役区逼近，陈守一躲避不及被筑基修为的中年男子发现并短暂对峙；2.（中年男子原为推演画面中的人物悬念）→ 本章确认身份为执法堂成员，揭示三天前陈守一躲在灵田沟渠时远处树影下的人就是他；3.（虫卵栽赃判定为人为，第2章执法弟子提及灵禾异常增三成）→ 本章中年男子揭露真相：虫卵栽赃的真正目标不是赵海也不是陈守一，而是引出灵泉附近的所有关联者；4.（执法堂调查灵禾异常，第2章执法弟子开始关注陈守一）→ 本章确认执法堂已掌握陈守一三日前行踪和感知能力，指出他能感知执法堂隐蔽阵法很不寻常；5.陈守一左臂被灵气割伤，中年男子主动放走并给出秘密指引：三日后灵泉变故，去后山老槐树下等着；6.中年男子离开后，陈守一发现屋内陈设被未知监视者翻动，手法比执法堂更老练；7.章节末尾小路急促赶来报信\"出大事了\" | 陈守一失去'不冒头'资格——执法堂已掌握其行踪和感知能力，多方势力开始注意这个本不该出现在灵泉线索上的炼气三层杂役；天机簿残页灵力正在缓慢恢复；左臂灵气入体麻痹；中年男子立场复杂——虽来自执法堂但主动放人并给出秘密指引，似乎在布局 | H001_三日之期 resolved; H002_中年男子 progressed; H003_灵泉异常 progressed; H004_执法堂调查 progressed; H005_破屋监视者 progressed; H007_枯叶螟栽赃 resolved"
+    },
+    {
+      "source": "story/chapter_summaries.md#25",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "槐根问旧 | 1.陈守一前往陈老住处，用令牌验证身份；2.陈老揭示三十年前实验真相：七十三人、\"灌注\"、金丝缠印记、一半死在灵泉边；3.金丝缠剧烈震颤，残纸苏醒显示灵泉边被黑色潮水吞没的画面；4.赵海死前姿势与画面中身影完全一致；5.苏婉儿收到匿名警告信\"再查下去会死\"和四方角帽黑扣子；6.苏婉儿离开时触碰左臂内侧；7.陈老警告\"有人在暗处盯着，不止一方\"；8.陈老给出纸条\"子时，城东旧药铺\"；9.陈守一返回藏身处待查苏婉儿留下的布袋 | 金丝缠从发热→剧烈震颤→微微发热；天机簿残纸短暂苏醒后沉默；获得陈老纸条、苏婉儿布袋；赵海死因与三十年前实验死者关联 | H008/H013/H025/H026/H027/H028六条钩推进；H029-H032四条新钩"
+    },
+    {
+      "source": "story/chapter_summaries.md#27",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "阴影之间 | 1.大比报名开始；陈守一报名获参赛木牌（三天后选拔赛）；2.周执事派人拉拢（提供庇护换效力）；3.发现有人从门缝塞纸条警告\"子时钟药铺不安全\"（四方角帽/执法堂制式）；4.发现苏婉儿留下的铜片与令牌可拼合；5.苏婉儿来访：确认孙师兄改主意（今晚子时城东药铺）；确认自己有伤疤（从小就有/\"灌注\"产物）；6.苏婉儿警告别去旧药铺后从后门离开；7.孙师兄的人也来传话：今晚子时城东药铺，\"是个机会\"；8.天机簿残页无反应；9.夜色降临，陈守一面临抉择 | 获得参赛木牌；获得周执事地址纸条；确认铜片与令牌可拼合；确认苏婉儿也是\"灌注\"产物；时间从7天压缩到今晚 | H024/H025/H026/H027/H031/H033/H034推进/深化；H030深化"
+    },
+    {
+      "source": "story/pending_hooks.md#H033_周执事拉拢",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**新钩** | open | **近期** | near-term | **新激活**：周执事派人传话，提供庇护换取效力；与孙师兄形成竞争"
+    },
+    {
+      "source": "story/pending_hooks.md#H034_铜片令牌拼合",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**新钩** | open | **待揭示** | mid-arc | **新激活**：铜片与令牌原为一体？完整物件为何分成两份？"
+    },
+    {
+      "source": "story/pending_hooks.md#H030_执法堂内部对立",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "新钩 | open | 待揭示 | mid-arc | **证据链**：警告苏婉儿+四方角帽纸条+周执事/孙师兄同时拉拢=两股势力收网"
+    },
+    {
+      "source": "story/pending_hooks.md#H031_子时钟药铺",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "新钩 | open | **今晚** | **双重信息**：苏婉儿警告\"不安全\"；孙师兄说\"是个机会\"；执法堂有人在盯着"
+    },
+    {
+      "source": "story/pending_hooks.md#H024_孙师兄交易",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "新钩 | open | 大比期间或今晚 | near-term | **时间压缩**：原定7天变今晚子时；为何改主意？"
+    },
+    {
+      "source": "story/pending_hooks.md#H025_令牌金丝缠同源",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | **铜片确认**：铜片与令牌可拼合，材质/纹路/断裂弧度均吻合"
+    },
+    {
+      "source": "story/pending_hooks.md#H029_陈老身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "新钩 | open | 待揭示 | mid-arc | 陈老知道大量细节但分步透露；是否参与者存疑"
+    },
+    {
+      "source": "story/pending_hooks.md#H032_金丝缠破壁",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "新钩 | open | 待揭示 | mid-arc | 金丝缠震颤后归于沉默；封印松动迹象"
+    }
+  ]
+}

@@ -9,7 +9,7 @@
     {
       "source": "story/audit_drift.md",
       "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
-      "excerpt": "> 第2章审计发现以下问题，下一章写作时必须避免："
+      "excerpt": "> 第3章审计发现以下问题，下一章写作时必须避免："
     },
     {
       "source": "story/current_state.md",
@@ -19,102 +19,102 @@
     {
       "source": "story/story_bible.md",
       "reason": "Preserve canon constraints referenced by mustKeep.",
-      "excerpt": "灵气稀薄：仅为上古的千分之一"
+      "excerpt": "天地灵气的衰减周期：每经一个大时代，有效利用率衰减至上一代的70%"
     },
     {
       "source": "story/volume_outline.md",
       "reason": "Anchor the default planning node for this chapter.",
-      "excerpt": "揭露大劫真相"
+      "excerpt": "炼气杂役在宗门夹缝中求生存，在\"不冒头\"与\"被迫展露\"的矛盾中艰难前行"
     },
     {
       "source": "story/chapter_summaries.md#chapter_2_bridge",
       "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
-      "excerpt": "第2章《故人遗音》 | 出场人物：顾长命、小鱼、中年男子（青云门）、张婶（提及） | 本章事件：1.镇口修士神识监视，出镇计划搁置；2.疯道士传言→三年前老道士关联；3.中年男子换装追问老道士下落；4.揭露\"大劫\"真相：百年前大劫毁天道断灵根；5.老道士遗言\"此间有故人，他日必相逢\"；6.确认镇北土地庙地道作为退路 | 状态变化：青云门威胁升级为身份暴露危机；确认玉简/功法残卷/门槛退路仍在；镇北地道进入视野 | 悬念活动：H001升级（故人线索锁定）；H002推进（叛逃散修身份）；H003新增（地道退路）；H004推进（大劫真相框架）；H006升级（青云门主谋登场）；H009新增（东海姜姓线索）"
+      "excerpt": "第2章《晨露与暗痕》 | 出场人物：陈守一、老吴、小路、周管事、赵海（被带走）、执法弟子、中年男子（推演中） | 本章事件：1.发现枯叶螟虫卵，判定为人栽赃；2.折中处理虫卵，被小路和周管事注意；3.偷听执法弟子与小路对话，得知赵海背后有人，灵禾异常增三成；4.发现破屋被监视，留有脚印和布料证物；5.深夜启用天机簿推演，确认今夜是三日之期最后期限，画面指向灵泉；6.凌晨投递匿名举报信；7.傍晚得知赵海被执法堂带走；8.再次偷听到执法弟子调查陈守一；9.灵泉方向出现信号，危机即将降临 | 状态变化：主角从被动应对转向主动布局（举报赵海）；推演能力耗尽；感知到新的威胁方向（灵泉）；执法堂开始关注主角 | 悬念活动：三日之期即将回收；中年男子伏笔活跃；灵泉伏笔推进；执法堂调查活跃；破屋监视者伏笔新设；灵气衰减世界观首次正面呈现"
     },
     {
       "source": "story/chapter_summaries.md#recent_titles",
       "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
-      "excerpt": "2: 故人遗音 | 1: 回春堂前"
+      "excerpt": "2: 晨露与暗痕"
     },
     {
       "source": "story/chapter_summaries.md#recent_mood_type_trail",
       "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
-      "excerpt": "2: 暗流涌动、压迫感升级、回忆与现实交织 / 推进章/揭露章 | 1: 平静、暗流涌动 / 建制章"
+      "excerpt": "2: 压抑→紧张→危机将至 / 转折章，危机蓄积"
     },
     {
       "source": "story/chapters#recent_endings",
       "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
-      "excerpt": "ch1: 他没有回头。 | ch2: 他走回桌边，端起已经凉透的粥碗，喝了一口。"
+      "excerpt": "ch1: 那是灵泉的方向。 | ch2: 现在，他已经没有退路。"
     },
     {
-      "source": "story/current_state.md#当前限制",
-      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "当前限制 | 末法灵气稀薄；不能暴露筑基实力；周天成觊觎回春堂；青云门监视网"
+      "source": "runtime/hook_debt#H006_灵气衰减",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H006_灵气衰减（世界观伏笔，主要旧债，已开1章） | 读者承诺：80-100章 | 种于第2章：ch2 晨露与暗痕 - 1.发现枯叶螟虫卵，判定为人栽赃；2.折中处理虫卵，被小路和周管事注意；3.偷听执法弟子与小路对话，得知赵海背后有人，灵禾异常增三成；4.发现破屋被监视，留有脚印和布料证物；5.深夜启用天机簿推演，确认今夜是三日之期最后期限，画面指向灵泉；6.凌晨投递匿名举报信；7.傍晚得知赵海被执法堂带走；8.再次偷听到执法弟子调查陈守一；9.灵泉方向出现信号，危机即将降临"
+    },
+    {
+      "source": "runtime/hook_debt#H002_中年男子",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H002_中年男子（人物悬念，主要旧债，已开2章） | 读者承诺：第3章中年男子现身并给出秘密指引 | 种于第1章：ch3 夜林惊锋 - 1.（上章推演确认今夜是三日之期最后期限）→ 本章灵泉方向三道气息向杂役区逼近，陈守一躲避不及被筑基修为的中年男子发现并短暂对峙；2.（中年男子原为推演画面中的人物悬念）→ 本章确认身份为执法堂成员，揭示三天前陈守一躲在灵田沟渠时远处树影下的人就是他；3.（虫卵栽赃判定为人为，第2章执法弟子提及灵禾异常增三成）→ 本章中年男子揭露真相：虫卵栽赃的真正目标不是赵海也不是陈守一，而是引出灵泉附近的所有关联者；4.（执法堂调查灵禾异常，第2章执法弟子开始关注陈守一）→ 本章确认执法堂已掌握陈守一三日前行踪和感知能力，指出他能感知执法堂隐蔽阵法很不寻常；5.陈守一左臂被灵气割伤，中年男子主动放走并给出秘密指引：三日后灵泉变故，去后山老槐树下等着；6.中年男子离开后，陈守一发现屋内陈设被未知监视者翻动，手法比执法堂更老练；7.章节末尾小路急促赶来报信\"出大事了\""
     },
     {
       "source": "story/current_state.md#当前冲突",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "当前冲突 | 青云门已锁定\"故人\"线索；主角需在下次被找上门前找到应对之策"
+      "excerpt": "当前冲突 | 表面：虫卵栽赃真相揭露；深层：三日后灵泉变故将至；威胁：未知监视者、暗中窥视者、执法堂关注"
     },
     {
       "source": "story/current_state.md#当前目标",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "当前目标 | 甩掉青云门追踪；找机会带小鱼离镇"
+      "excerpt": "当前目标 | 决定是否赴后山老槐树之约"
     },
     {
       "source": "story/current_state.md#主角状态",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "主角状态 | 警觉升级；准备探查镇北地道作为退路"
+      "excerpt": "主角状态 | 炼气三层，左臂外侧灵气割伤（灵气入体麻痹），天机簿残页灵力缓慢恢复中"
     },
     {
-      "source": "story/chapter_summaries.md#1",
-      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
-      "excerpt": "回春堂前 | 青云门盘查；周公子上门闹事；小鱼出场 | 青云门监视网确认；小鱼能感知修士 | H001/H002/H005/H006/H007/H008种下"
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 身份暴露风险升级——执法堂已掌握其行踪和感知能力；左臂受伤影响战斗力"
     },
     {
       "source": "story/chapter_summaries.md#2",
       "reason": "Relevant episodic memory retrieved for the current chapter goal.",
-      "excerpt": "故人遗音 | 1.镇口修士神识监视，出镇计划搁置；2.疯道士传言→三年前老道士关联；3.中年男子换装追问老道士下落；4.揭露\"大劫\"真相：百年前大劫毁天道断灵根；5.老道士遗言\"此间有故人，他日必相逢\"；6.确认镇北土地庙地道作为退路 | 青云门威胁升级为身份暴露危机；确认玉简/功法残卷/门槛退路仍在；镇北地道进入视野 | H001升级（故人线索锁定）；H002推进（叛逃散修身份）；H003新增（地道退路）；H004推进（大劫真相框架）；H006升级（青云门主谋登场）；H009新增（东海姜姓线索）"
+      "excerpt": "晨露与暗痕 | 1.发现枯叶螟虫卵，判定为人栽赃；2.折中处理虫卵，被小路和周管事注意；3.偷听执法弟子与小路对话，得知赵海背后有人，灵禾异常增三成；4.发现破屋被监视，留有脚印和布料证物；5.深夜启用天机簿推演，确认今夜是三日之期最后期限，画面指向灵泉；6.凌晨投递匿名举报信；7.傍晚得知赵海被执法堂带走；8.再次偷听到执法弟子调查陈守一；9.灵泉方向出现信号，危机即将降临 | 主角从被动应对转向主动布局（举报赵海）；推演能力耗尽；感知到新的威胁方向（灵泉）；执法堂开始关注主角 | 三日之期即将回收；中年男子伏笔活跃；灵泉伏笔推进；执法堂调查活跃；破屋监视者伏笔新设；灵气衰减世界观首次正面呈现"
     },
     {
-      "source": "story/pending_hooks.md#H009",
+      "source": "story/pending_hooks.md#mystery-揭示灵泉变故-真相-中年男子警告",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "悬念 | open | 50+ | slow-burn | 东海之滨姜姓老头→老道士指引的去处（大劫真相线索）"
+      "excerpt": "mystery | progressing | 揭示后山老槐树之约的真相和邀请者身份 | near-term | 陈守一与中年男子对峙期间，远处有一道若有若无的气息在窥视；中年男子的目光多次扫向那个方向并眉头微皱——此人是谁？与执法堂、监视者、灵泉变故有何关联？"
     },
     {
-      "source": "story/pending_hooks.md#H004",
+      "source": "story/pending_hooks.md#threat-揭示执法堂与-陈守一的关系-走向",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "设定 | open | 125 | endgame | 大劫真相→百年前大劫毁了天道、断了灵根（青云门揭露）"
+      "excerpt": "threat | open | 揭示执法堂与陈守一的关系走向 | near-term | 中年男子（执法堂成员）指出虫卵栽赃目标是引出灵泉关联者，陈守一已被标记为'不寻常'的存在；执法堂已掌握其行踪和感知能力；从今夜起主角彻底失去了'不冒头'的资格——多股势力的角逐已经开始"
     },
     {
-      "source": "story/pending_hooks.md#H003",
+      "source": "story/pending_hooks.md#H004_执法堂调查",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "悬念 | open | 15-20 | mid-arc | 镇北土地庙地道→废弃庙宇下的逃生通道"
+      "excerpt": "外部冲突 | progressing | 持续2-5章 | near-term | 本章推进：中年男子（来自执法堂）确认掌握陈守一三日前独自前往灵泉谷外围的行踪；确认掌握其感知到灵泉异常波动的情况；推断他会推演；执法堂已开始摸查灵泉关联者"
     },
     {
-      "source": "story/pending_hooks.md#H001",
+      "source": "story/pending_hooks.md#H002_中年男子",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "悬念 | open | 3 | immediate | 青云门盘查→升级为身份暴露危机（\"故人\"线索锁定）"
+      "excerpt": "人物悬念 | progressing | 第3章中年男子现身并给出秘密指引 | near-term | 本章推进：中年男子确认是三天前灵田远处树影下的人；揭示虫卵栽赃真正目标是引出灵泉关联者；指出陈守一的感知能力不寻常；透露三日后灵泉变故；给出后山老槐树指引；承诺不上报今夜之事"
     },
     {
-      "source": "story/pending_hooks.md#H002",
+      "source": "story/pending_hooks.md#H003_灵泉异常",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "悬念 | open | 140 | endgame | 老道士身份→青云门追查\"三年前叛逃散修\"；遗言\"此间有故人\""
+      "excerpt": "世界观伏笔 | progressing | 第3章/10-20章 | near-term | 本章推进：中年男子透露三日后灵泉会有变故；章节末尾灵泉方向传来低沉闷响（地底深处有东西苏醒）；与陈守一体内的天机簿可能产生共鸣"
     },
     {
-      "source": "story/pending_hooks.md#H006",
+      "source": "story/pending_hooks.md#H005_破屋监视者",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "悬念 | open | 3 | immediate | 中年男子异常→青云门真正负责人（换装登场）；威胁性质升级"
+      "excerpt": "威胁线索 | progressing | 第3-5章 | near-term | 本章推进：发现未知监视者在中年男子离开前的空白期潜入破屋翻动陈设（被褥、柴刀位置、窗台碎石被动过）；手法比执法堂更老练；身份仍未明；与第2章的监视者可能相关"
     },
     {
-      "source": "story/pending_hooks.md#H005",
+      "source": "story/pending_hooks.md#H006_灵气衰减",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "悬念 | open | 31+ | mid-arc | 小鱼身世之谜"
-    },
-    {
-      "source": "story/pending_hooks.md#H007",
-      "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "悬念 | open | 16-18 | mid-arc | 周天成觊觎回春堂"
+      "excerpt": "世界观伏笔 | open | 80-100章 | 与末法时代呼应"
     }
   ]
 }

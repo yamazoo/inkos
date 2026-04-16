@@ -1,152 +1,120 @@
 {
   "hooks": [
     {
-      "hookId": "H004",
-      "startChapter": 1,
-      "type": "设定",
+      "hookId": "H008_赵海之死",
+      "startChapter": 5,
+      "type": "事件伏笔",
       "status": "progressing",
       "lastAdvancedChapter": 7,
-      "expectedPayoff": "125",
-      "payoffTiming": "endgame",
-      "notes": "本章重大深化：三老祖是三兄弟；天裂会自愈；青云门'修疤'维持裂缝；灵气稀薄是人为维持"
-    },
-    {
-      "hookId": "H011",
-      "startChapter": 2,
-      "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 6,
-      "expectedPayoff": "80+",
+      "expectedPayoff": "孙三/周平关联/林师兄",
       "payoffTiming": "mid-arc",
-      "notes": "筑基真相：万年前筑基是起点，如今千分之一灵气"
+      "notes": "本章实质推进：王二确认赵海出事前在灵泉谷转悠，暗示\"要发大财了\"；执法堂定性\"误入禁地\"结案；捂盖子vs追查两派公开对立"
     },
     {
-      "hookId": "H009",
-      "startChapter": 2,
-      "type": "悬念",
+      "hookId": "H009_陈老身份",
+      "startChapter": 5,
+      "type": "人物悬念",
       "status": "progressing",
       "lastAdvancedChapter": 7,
-      "expectedPayoff": "弄清顾长命与针的关系",
+      "expectedPayoff": "陈老与陈守一的'三天后见分晓'赌注",
+      "payoffTiming": "mid-arc",
+      "notes": "本章实质推进：陈老主动留暗号警告\"时间不多了，灵泉有变，速离\"——确认陈老在多方监视中仍试图控制节奏"
+    },
+    {
+      "hookId": "mystery-苏婉儿看到-金丝缠-伤疤时的复杂",
+      "startChapter": 4,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "金丝缠真相/林师兄当年经历",
       "payoffTiming": "near-term",
-      "notes": "小鱼=针？深化：针会落在灵气最浓郁处或与它最亲近之人身边；小鱼12年前开始做梦；青云门三年前印记被截走保护的可能就是针或针主"
+      "notes": "本章实质推进：苏婉儿传达林师兄话——\"伤疤里藏着他当年留下的东西\"，但纹路与描述不符，需要确认。金丝缠=林师兄当年参与的事物"
     },
     {
-      "hookId": "H015",
+      "hookId": "plot-灵泉异变的正式爆发-与陈守一体内",
       "startChapter": 4,
-      "type": "悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 6,
-      "expectedPayoff": "待定",
-      "payoffTiming": "mid-arc",
-      "notes": "老君庙老者→已出场；老庙主（常年闭关）≠老郎中（青云门棋子）；**三年前截走青云门印记**"
-    },
-    {
-      "hookId": "H016",
-      "startChapter": 4,
-      "type": "悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 6,
-      "expectedPayoff": "待定",
-      "payoffTiming": "mid-arc",
-      "notes": "郑怀恩师父遗言→指向\"老庙主\"；\"老庙主欠我一个故事\"→\"那一年的火是怎么烧起来的\""
-    },
-    {
-      "hookId": "H017",
-      "startChapter": 4,
-      "type": "悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 6,
-      "expectedPayoff": "待定",
-      "payoffTiming": "mid-arc",
-      "notes": "老君庙上古符文老者：小鱼梦中见面并获得石子"
-    },
-    {
-      "hookId": "H019",
-      "startChapter": 5,
-      "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 5,
-      "expectedPayoff": "31+",
-      "payoffTiming": "mid-arc",
-      "notes": "小鱼坠落之人：梦见有人从\"天破洞\"坠落"
-    },
-    {
-      "hookId": "H020",
-      "startChapter": 5,
-      "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 5,
-      "expectedPayoff": "31+",
-      "payoffTiming": "mid-arc",
-      "notes": "小鱼身世时间线：十二年前在镇外草丛捡到，浑身是血，奄奄一息"
-    },
-    {
-      "hookId": "H018",
-      "startChapter": 5,
-      "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 6,
-      "expectedPayoff": "未知",
-      "payoffTiming": "immediate",
-      "notes": "玉简之谜：玉简第二次发热；**接石子后发烫**；老道士三次关键时刻出手"
-    },
-    {
-      "hookId": "H021",
-      "startChapter": 5,
-      "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 6,
-      "expectedPayoff": "未知",
-      "payoffTiming": "immediate",
-      "notes": "圆环符号：\"圆环套圆环，中心是空\"；**手札最后一页符号**"
-    },
-    {
-      "hookId": "H024",
-      "startChapter": 5,
-      "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 6,
-      "expectedPayoff": "125",
-      "payoffTiming": "endgame",
-      "notes": "青云门先祖之罪：\"天裂之因，非天之道，乃人之祸\""
-    },
-    {
-      "hookId": "H023",
-      "startChapter": 5,
-      "type": "悬念",
+      "type": "plot",
       "status": "progressing",
       "lastAdvancedChapter": 7,
-      "expectedPayoff": "125",
-      "payoffTiming": "endgame",
-      "notes": "青云门找玄清阁要玉简目的明确：感应针位置；玄清阁先人遗言'针在青石镇，待其主现'"
+      "expectedPayoff": "灵泉真相揭晓/天机簿完整记录",
+      "payoffTiming": "near-term",
+      "notes": "本章核心推进：1.灵泉不是枯竭而是在\"死去\"；2.天机簿残页灌入灵气历史画面（古泉水→衰竭→裂隙→幽冥气息）；3.确认灵气衰减与幽冥裂隙的关联"
     },
     {
-      "hookId": "H027",
-      "startChapter": 6,
-      "type": "**悬念**",
-      "status": "open",
-      "lastAdvancedChapter": 6,
-      "expectedPayoff": "**未知**",
-      "notes": "**青云门灭门石板符号**：郑怀恩在灭门那夜见过与石子相同的针形符号"
-    },
-    {
-      "hookId": "H025",
-      "startChapter": 6,
-      "type": "悬念",
+      "hookId": "H002_中年男子/林师兄",
+      "startChapter": 3,
+      "type": "人物悬念",
       "status": "progressing",
       "lastAdvancedChapter": 7,
-      "expectedPayoff": "待定",
-      "payoffTiming": "immediate",
-      "notes": "三老祖第三个人传承不在青云门；老庙主三年前截走印记；老庙主可能在保护针或针的主人"
+      "expectedPayoff": "林师兄身份/当年经历",
+      "payoffTiming": "near-term",
+      "notes": "本章实质推进：苏婉儿确认中年男子=林师兄；林师兄当年在金丝缠纹路上\"下过功夫\"——与灵泉/伤疤有直接历史关联"
     },
     {
-      "hookId": "H026",
-      "startChapter": 6,
-      "type": "**悬念**",
-      "status": "resolved",
+      "hookId": "H010_林师兄",
+      "startChapter": 5,
+      "type": "人物悬念",
+      "status": "progressing",
       "lastAdvancedChapter": 7,
-      "expectedPayoff": "**待定**",
-      "notes": "**老道士救郑怀恩**：用火比青云门更烈的火；丢进枯井；\"欠你师父的，今天还一点利息\""
+      "expectedPayoff": "林师兄身份/赵海求救对象",
+      "payoffTiming": "mid-arc",
+      "notes": "本章深化：林师兄布局已久，通过苏婉儿传话、伤疤标记、警告等多渠道介入"
+    },
+    {
+      "hookId": "H006_灵气衰减",
+      "startChapter": 0,
+      "type": "open",
+      "status": "progressing",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "灵气衰减真相/大劫关联",
+      "payoffTiming": "mid-arc",
+      "notes": "**本章重大推进**：天机簿画面揭示——灵泉在漫长岁月中自然衰竭（缓慢衰竭→土地龟裂→灵气稀薄→干涸→裂隙→幽冥气息）。灵气衰减是历史规律，与幽冥裂隙形成因果链"
+    },
+    {
+      "hookId": "mystery-揭示灵泉变故-真相-中年男子警告",
+      "startChapter": 3,
+      "type": "progressing",
+      "status": "progressing",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "灵泉真相/天机簿来源",
+      "payoffTiming": "near-term",
+      "notes": "本章核心揭示：天机簿记录灵气历史，灵泉之死是长期过程"
+    },
+    {
+      "hookId": "H012_四方角帽第四势力",
+      "startChapter": 7,
+      "type": "**新钩**",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "第四势力身份/目的",
+      "notes": "本章新增：院门外出现黑袍束腰、四方角帽、袖口绣有未知徽记的身影——不属于周平/陈老/林师兄体系的第四方势力"
+    },
+    {
+      "hookId": "H013_残纸历史画面",
+      "startChapter": 7,
+      "type": "**新钩**",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "天机簿完整功能/灵气历史",
+      "notes": "本章新增：残纸主动向陈守一灌注画面——古灵泉→衰竭过程→裂隙→幽冥气息。天机簿不只是预言工具，而是历史记录载体"
+    },
+    {
+      "hookId": "H014_金丝缠与残纸关联",
+      "startChapter": 7,
+      "type": "**新钩**",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "幽冥隐脉体/林师兄当年实验",
+      "notes": "本章新增：1.金丝缠伤疤纹路与残纸痕迹相似；2.苏婉儿说\"这是标记也是警示\"；3.林师兄当年在类似纹路上\"下过功夫\"。三者存在深层关联"
+    },
+    {
+      "hookId": "H015_幽冥气息开始外渗",
+      "startChapter": 7,
+      "type": "**新钩**",
+      "status": "open",
+      "lastAdvancedChapter": 7,
+      "expectedPayoff": "幽冥危机爆发/主角处境",
+      "notes": "本章新增：苏婉儿警告裂隙开始向外界渗透幽冥气息；夜风带来若有若无的腥气。陈守一正好处在\"这只手的边缘\""
     }
   ]
 }

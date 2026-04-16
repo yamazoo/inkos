@@ -1,0 +1,132 @@
+{
+  "hooks": [
+    {
+      "hookId": "H045_三件钥匙",
+      "startChapter": 30,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "近期",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：三件钥匙（令牌碎片+铜牌+后颈印记）同时共鸣指向陈老；令牌碎片被长老收走但仍是三件钥匙之一；铜环出现恢复迹象（稳定脉动）；孙师兄揭示三件钥匙合一能打开灵泉核心"
+    },
+    {
+      "hookId": "H046_铜环裂纹",
+      "startChapter": 30,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "裂纹蛛网状碎裂→裂纹深处出现稳定脉动（光芒变亮）；铜矿本源未死；通过山缝后脉动变强"
+    },
+    {
+      "hookId": "H047_陈老与陈守一同姓",
+      "startChapter": 30,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "近期",
+      "payoffTiming": "mid-arc",
+      "notes": "**确认**：陈老也有弯月印记（老槐树方向升起淡金色光芒）；陈老与陈守一同为弯月形印记持有者；陈老在老槐树下等待"
+    },
+    {
+      "hookId": "H035_陈老欠债",
+      "startChapter": 28,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "近期",
+      "notes": "陈老现身老槐树下；\"你比我预想的晚了半个时辰\"；欠债即将揭露"
+    },
+    {
+      "hookId": "H040_执法堂监视",
+      "startChapter": 29,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化→转折**：长老介入保护；周执事栽赃失败；执法堂内部裂痕公开化（长老派vs周执事派）；周执事灭口仍在进行（后山布控）"
+    },
+    {
+      "hookId": "H048_纸团来源",
+      "startChapter": 36,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**揭示**：纸团内容为\"长老已知。后山有人接应。周执事的人被拦住了。子时三刻，老槐树下。\"；来源仍是谜（长老派？灰袍人？）"
+    },
+    {
+      "hookId": "H049_执法堂内部裂痕",
+      "startChapter": 40,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "near-term",
+      "notes": "**深化**：长老与周执事对立公开化；长老收走令牌碎片作为日后证据；周执事不能入内门提审；长老倾向保护陈守一"
+    },
+    {
+      "hookId": "H050_暗处敲门人",
+      "startChapter": 40,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "near-term",
+      "notes": "**推进**：敲门节奏三下/停顿/三下与纸团内容吻合（\"长老已知\"）；可能与长老派系/灰袍人相关"
+    },
+    {
+      "hookId": "H051_后山老槐树",
+      "startChapter": 40,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "近期",
+      "notes": "陈守一抵达老槐树；陈老现身；\"你比我预想的晚了半个时辰\""
+    },
+    {
+      "hookId": "H052_孙师兄交易",
+      "startChapter": 41,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新发现**：孙师兄提供隐匿符换取铜牌位置；欠孙师兄一个人情；孙师兄与卫长老是上下级但不是一路人；孙师兄要铜牌位置是为了不让某些人如愿"
+    },
+    {
+      "hookId": "H053_三件钥匙与灵泉核心",
+      "startChapter": 41,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新发现**：三件钥匙合一能打开老槐树下密室和灵泉核心；铜矿本源是三十年前实验副产品；灌注之物与灵泉有关"
+    },
+    {
+      "hookId": "H054_三十七人vs三十六人",
+      "startChapter": 41,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新发现**：长老说三十年前死了三十七人；竹简记载死三十六人；有一人被抬出时还有气息，撑了三日才断气"
+    },
+    {
+      "hookId": "H055_七十三人之谜",
+      "startChapter": 41,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 41,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新发现**：长老说七十三人参与实验，死了六十一个；活下来的要么疯了要么藏得很深"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "chapter": 56,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "彼岸·聚居点（守夜者小院→聚居点）",
+      "validFromChapter": 56,
+      "validUntilChapter": null,
+      "sourceChapter": 56
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "生命力近乎耗尽（身体更虚弱）；经脉堵塞已疏通；铜戒与银戒合二为一（淡金纹路+银芒）；后颈弯月印记/胸口金丝缠印记仍存；眉心金痕（再次闪现）；幽冥隐脉体觉醒状态；三源已完成合一；修为近乎全废；获得母亲玉佩（彼岸全部积蓄）；已知两界通道真相",
+      "validFromChapter": 56,
+      "validUntilChapter": null,
+      "sourceChapter": 56
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "1. 活着（彼岸聚居点生存）2. 恢复伤势（进行中/先养好身体）3. 了解彼岸世界 4. 了解两界通道/回去的方法 5. 变得足够强 6. 封印幽冥界裂缝（长期目标）",
+      "validFromChapter": 56,
+      "validUntilChapter": null,
+      "sourceChapter": 56
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "生命力近乎耗尽（更虚弱）；身处异界（彼岸）；无法回去（除非足够强大的力量）；修为近乎全废；苏婉儿/大长老/周长老等灵洲大陆情况不明；幽冥界裂缝扩大中；东面山谷黑雾中有东西（已伤人）",
+      "validFromChapter": 56,
+      "validUntilChapter": null,
+      "sourceChapter": 56
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "神秘生物（山中守护者/认可态度）；苏婉儿等盟友（灵洲大陆情况不明）；聚居点居民（部分质疑）；赵猛（敌意/弟弟死于黑雾）；冥将（彼岸裂缝/灵洲大陆局势不明）；守夜者（信任/引导）",
+      "validFromChapter": 56,
+      "validUntilChapter": null,
+      "sourceChapter": 56
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "三源合一/被传送到彼岸/被接引到聚居点；被守夜者召见；两界通道真相揭示（母亲亲手切断）；无法回去但可能有别的路；聚居点有人质疑身份；东面山谷发现幽冥界痕迹（赵猛弟弟死于黑雾）；幽冥界裂缝扩大中",
+      "validFromChapter": 56,
+      "validUntilChapter": null,
+      "sourceChapter": 56
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "chapter": 52,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "彼岸（陌生山坡），未知之地",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "生命力近乎耗尽；左肩深可见骨伤痕（待愈合）；铜戒与银戒合二为一（淡金纹路+银芒）；后颈弯月印记/胸口金丝缠印记仍存；幽冥隐脉体觉醒状态；三源已完成合一",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "1. 活着（彼岸陌生环境下生存）2. 了解彼岸世界 3. 寻找回去的方法（\"除非有足够强大的力量撕开两界壁垒\"）4. 理解三源合一的全部代价",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "生命力近乎耗尽；身处异界（彼岸）；无法回去（除非足够强大的力量）；苏婉儿重伤/大长老灵力枯竭/石室情况未知；冥将挣脱封印后动向不明",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "冥将（挣脱封印中/石室情况不明）",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "三源合一完成/被传送到彼岸；冥将挣脱封印后石室局势不明；无法回去",
+      "validFromChapter": 52,
+      "validUntilChapter": null,
+      "sourceChapter": 52
+    }
+  ]
+}

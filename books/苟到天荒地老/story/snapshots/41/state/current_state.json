@@ -1,0 +1,53 @@
+{
+  "chapter": 41,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "后山老槐树下（陈老面前）",
+      "validFromChapter": 41,
+      "validUntilChapter": null,
+      "sourceChapter": 41
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "炼气三层；丹田灵力枯竭；左臂金丝缠蔓延至小臂中段（彻底废掉）；后颈印记觉醒（弯月形淡金光芒/剧烈发热/持续震动）；右肩铁爪伤口（流血/服用回春丹后眩晕未完全消退/两个时辰内不宜剧烈动作）；铜环能量近乎枯竭但出现稳定脉动（裂纹深处光芒变亮）；令牌碎片被长老收走；三件钥匙同时指向陈老",
+      "validFromChapter": 41,
+      "validUntilChapter": null,
+      "sourceChapter": 41
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "1. **活着**：从执法堂脱身→已达成（长老介入）；2. **身份确认**：外门正式弟子→已达成；3. **到达后山老槐树**：已抵达→与陈老对峙；4. **查清三十年前实验真相**；5. **三件钥匙合一**：打开灵泉核心；6. **应对孙师兄交易**（欠一个人情）；7. **保护苏婉儿**",
+      "validFromChapter": 41,
+      "validUntilChapter": null,
+      "sourceChapter": 41
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "金丝缠彻底暴露（\"三十年前禁术\"）；后颈印记觉醒暴露；右肩伤口流血；铜环能量近乎枯竭（出现微弱恢复迹象）；天机簿灵力耗尽无法推演；令牌碎片被长老收走；孙师兄交易（欠人情）；两个时辰内不宜剧烈动作；隐匿符有效期两个时辰",
+      "validFromChapter": 41,
+      "validUntilChapter": null,
+      "sourceChapter": 41
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "周执事（敌对/栽赃失败/灭口主使）；苏婉儿（同源者/协助者/被追杀）；陈老（同源者/欠债者/幸存者/持有第三件钥匙/老槐树下等待）；孙师兄（复杂/提供帮助但有所图/欠人情）；卫长老（敌对/灭口执行者/孙师兄靠山）；长老（倾向保护/收走令牌碎片）；执法堂（内部裂痕：长老派vs周执事派）；四方角帽（敌对/灭口执行者/周执事手下）",
+      "validFromChapter": 41,
+      "validUntilChapter": null,
+      "sourceChapter": 41
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "表层：长老介入保护→外门正式弟子身份获得→抵达后山老槐树→与陈老对峙；深层：孙师兄交易（欠人情/铜牌位置）；周执事灭口未停止（后山布控）；三件钥匙合一（打开灵泉核心）；陈老身份揭露（弯月印记同源者）；核心：与陈老对峙→查清三十年前实验→三件钥匙合一→打开灵泉核心",
+      "validFromChapter": 41,
+      "validUntilChapter": null,
+      "sourceChapter": 41
+    }
+  ]
+}

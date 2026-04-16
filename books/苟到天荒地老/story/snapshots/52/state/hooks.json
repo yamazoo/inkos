@@ -1,0 +1,122 @@
+{
+  "hooks": [
+    {
+      "hookId": "H080_同源共振机制",
+      "startChapter": 50,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "-",
+      "notes": "三件钥匙同源机制完整揭示；三源合一完成"
+    },
+    {
+      "hookId": "H081_母亲身份之谜",
+      "startChapter": 50,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "-",
+      "notes": "母亲身份完整揭示；三源合一代价完整揭示"
+    },
+    {
+      "hookId": "H074_被逐出弟子身份",
+      "startChapter": 49,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "-",
+      "notes": "被逐出弟子身份完整揭示；与母亲关系完整揭示；执念释然"
+    },
+    {
+      "hookId": "H075_被逐出弟子与父亲旧约",
+      "startChapter": 49,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "-",
+      "notes": "旧约完整揭示；被逐出弟子牺牲；因果了结"
+    },
+    {
+      "hookId": "H076_暗金环",
+      "startChapter": 49,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "-",
+      "notes": "暗金环完整揭示；无法操控原因揭示；消散"
+    },
+    {
+      "hookId": "H070_父亲在灵泉核心留的东西",
+      "startChapter": 48,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "-",
+      "notes": "父亲遗愿完整揭示；遗物完整揭示；三源合一完成；父亲神魂消散"
+    },
+    {
+      "hookId": "H079_父亲遗愿",
+      "startChapter": 49,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "-",
+      "notes": "父亲遗愿完整揭示；父亲神魂消散；\"好好活着\"遗愿"
+    },
+    {
+      "hookId": "H087_陈守一能否回来",
+      "startChapter": 52,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "后期（彼岸冒险后）",
+      "notes": "三源合一代价；无法回来的条件；需要足够强大的力量才能回去"
+    },
+    {
+      "hookId": "H088_彼岸世界",
+      "startChapter": 52,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中期",
+      "payoffTiming": "mid-arc",
+      "notes": "彼岸世界初揭示；环境陌生；灵气更浓郁"
+    },
+    {
+      "hookId": "H089_陈守一在彼岸的身份",
+      "startChapter": 52,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待揭示",
+      "notes": "彼岸如何对待三源合一者；他在彼岸的身份定位"
+    },
+    {
+      "hookId": "H090_苏婉儿安危",
+      "startChapter": 52,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待揭示",
+      "notes": "苏婉儿重伤后的命运；石室局势如何"
+    },
+    {
+      "hookId": "H091_冥将挣脱后的情况",
+      "startChapter": 52,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待揭示",
+      "notes": "冥将挣脱后石室局势；周长老能否压制冥将"
+    },
+    {
+      "hookId": "H092_周执事审判",
+      "startChapter": 52,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待揭示",
+      "notes": "周执事被审判的结果；三十年前的真相是否会公开"
+    }
+  ]
+}

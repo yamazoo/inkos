@@ -1,0 +1,53 @@
+{
+  "chapter": 25,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "杂役区→陈老住处→返回藏身处途中",
+      "validFromChapter": 25,
+      "validUntilChapter": null,
+      "sourceChapter": 25
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "炼气三层；丹田恢复七八成；左臂\"金丝缠\"剧烈震颤后归于沉默；天机簿残纸短暂苏醒后沉默；持有陈老纸条（子时，城东旧药铺）；苏婉儿留下的布袋（未查看）",
+      "validFromChapter": 25,
+      "validUntilChapter": null,
+      "sourceChapter": 25
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "1. 查看苏婉儿留下的布袋内容；2. 理清三十年前实验真相；3. 大比前（7天）决定是否接受孙师兄条件；4. 赴子时钟药铺之约",
+      "validFromChapter": 25,
+      "validUntilChapter": null,
+      "sourceChapter": 25
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "行踪被执法堂内部多方势力盯上；金丝缠在特定情况下会震颤/发热暴露位置；残纸苏醒可能被更多人察觉",
+      "validFromChapter": 25,
+      "validUntilChapter": null,
+      "sourceChapter": 25
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "孙师兄（待定合作者/借刀者）；周平势力（威胁）；执法堂内部对立势力（威胁）；陈老（信息提供者但有所保留）；苏婉儿（信息共享者/疑似同源者）；四方角帽/神秘监视者（威胁）",
+      "validFromChapter": 25,
+      "validUntilChapter": null,
+      "sourceChapter": 25
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "表层：孙师兄交易（7天抉择）vs 子时钟药铺约定；深层：三十年前实验真相与金丝缠的关联；核心威胁：死在灵泉边的那批人是被什么杀死的？；暗线：苏婉儿也有金丝缠/伤疤？",
+      "validFromChapter": 25,
+      "validUntilChapter": null,
+      "sourceChapter": 25
+    }
+  ]
+}

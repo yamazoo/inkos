@@ -1,0 +1,61 @@
+{
+  "chapter": 29,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "城外荒地（宗门围墙外，岩石旁）；城墙上有执法堂监视者",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "炼气三层；丹田恢复七八成；左臂\"金丝缠\"纹路已蔓延过手腕，正在向手掌延伸；夜间微光浮动，温度高于右臂三寸；天机簿残纸已苏醒（推演能力增强）；持有完整铜牌（令牌+铜片融合）；持有铜环（陈旧，上古遗存，钥匙）；持有灰袍人纸条（柳叶标记+三日后演武场）；持有大比参赛木牌（三天后，辰时，演武场东侧）；持有小册子；持有竹简（部分内容）；暗道已使用",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "1. 两天后参加大比选拔赛（策略\"前胜后让\"因金丝缠蔓延失效，需重新制定）；2. 三日后演武场赴约（灰袍人纸条）；3. 查清三十年前实验与自身关联；4. 应对金丝缠暴露后的风险；5. 应对执法堂监视",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "金丝缠蔓延中（已过手腕，向手掌延伸）；执法堂追兵仍在搜索；执法堂在暗道出口设监视点；暗道已使用；执法堂计划在大比时动手（推测）",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "孙师兄（暂时盟友，但\"投资\"意图存疑）；周执事（对手/威胁，阴谋败露）；苏婉儿（同源者/协助者，追查三十年前真相）；陈老（欠债者/幸存者，通过灰袍人联络）；灰袍人（陈老代理人）；卫长老（内门长老，孙师兄靠山，筑基后期）；执法堂追兵（威胁）；执法堂监视者（监视不追捕）",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "表层：金丝缠蔓延+执法堂监视+大比策略失效；深层：周执事与孙师兄的对立格局；核心：三十年前实验幸存者身份暴露风险",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    },
+    {
+      "subject": "current_state",
+      "predicate": "当前悬念",
+      "object": "完整铜牌的意义？铜环能开启什么？卫长老的完整意图？执法堂监视的目的是什么？大比时会发生什么？",
+      "validFromChapter": 29,
+      "validUntilChapter": null,
+      "sourceChapter": 29
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "hooks": [
+    {
+      "hookId": "H040_执法堂监视",
+      "startChapter": 29,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**推进**：监视延伸至城墙/城外；四方角帽影子持续；不追只盯"
+    },
+    {
+      "hookId": "H041_铜环钥匙",
+      "startChapter": 29,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进**：铜环阵纹与铜牌同源；三件合一可开启；新增裂纹"
+    },
+    {
+      "hookId": "H042_卫长老",
+      "startChapter": 29,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进**：确认是灭口执行者；苏婉儿父亲被其所杀；与三十年前实验直接相关"
+    },
+    {
+      "hookId": "H043_苏婉儿处境",
+      "startChapter": 29,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "near-term",
+      "notes": "**推进**：被黑衣人追杀（资料被翻/藏身处被找到/三重陷阱用完）；约定三日后同行"
+    },
+    {
+      "hookId": "H035_陈老欠债",
+      "startChapter": 28,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**推进**：陈老欠债说；铜环刻\"陈旧\"；苏婉儿提及\"你姓陈\""
+    },
+    {
+      "hookId": "H037_柳叶标记",
+      "startChapter": 28,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进**：苏婉儿伤疤与纸条标记完全相同；三日后演武场有人等"
+    },
+    {
+      "hookId": "H038_竹简涂抹内容",
+      "startChapter": 28,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**推进**：苏婉儿纸片背面也有涂抹字迹；关键信息被遮盖"
+    },
+    {
+      "hookId": "H033_周执事拉拢",
+      "startChapter": 27,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "**维持**：阴谋败露状态"
+    },
+    {
+      "hookId": "H044_同源者关系",
+      "startChapter": 30,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新钩**：同源者共生关系确认；一人死另一人被反噬；七十三人皆有同源印记"
+    },
+    {
+      "hookId": "H045_三件钥匙",
+      "startChapter": 30,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新钩**：令牌/铜牌/铜环三者合一可开启某地；三件钥匙分别主开启/阵眼/媒介；目的为上古灵气源泉"
+    },
+    {
+      "hookId": "H046_铜环裂纹",
+      "startChapter": 30,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 30,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新钩**：铜环新增裂纹；意义不明；与铜环使用有关？"
+    }
+  ]
+}

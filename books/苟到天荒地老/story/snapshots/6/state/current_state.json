@@ -3,32 +3,8 @@
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "回春堂",
-      "validFromChapter": 6,
-      "validUntilChapter": null,
-      "sourceChapter": 6
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "疲惫·受伤（左肩浅伤）·被标记（灵气印记）·灵力受限·冷静分析·沉重·坚定（决心弄清小鱼身世）",
-      "validFromChapter": 6,
-      "validUntilChapter": null,
-      "sourceChapter": 6
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "安全·养伤·应对灵气印记（可用三年前手段）·弄清小鱼身世·不被青云门追踪·周老爷子危急（新增紧急目标）",
-      "validFromChapter": 6,
-      "validUntilChapter": null,
-      "sourceChapter": 6
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "炼气三层修为·暂时不能动用灵力（会暴露位置）·正面遭遇绝无胜算·青云门在外扎营监视",
+      "predicate": "当前冲突",
+      "object": "表面：虫卵栽赃真相（执法堂内部捂盖子vs追查）；深层：三股势力（周平/陈老/林师兄）同时盯上陈守一；威胁：灵泉异变提前爆发",
       "validFromChapter": 6,
       "validUntilChapter": null,
       "sourceChapter": 6
@@ -36,23 +12,39 @@
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "青云门为敌（彻夜监视，不敢硬闯，等待时机）；老道士为暗中保护者（更虚弱，玉简凉透）；小鱼身份核心（可能是\"补天针\"）；郑怀恩为信息提供者；老君庙老庙主（暗中协助者，三年前截走印记）；周老爷子危急（新增）",
+      "object": "苏婉儿（复杂——追查方暗中协助但情感异常）；中年男子/林师兄（立场不明，持续关注）；小路（友善）",
       "validFromChapter": 6,
       "validUntilChapter": null,
       "sourceChapter": 6
     },
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "青云门追杀升级（彻夜监视）·身上被留灵气印记·小鱼可能是\"补天针\"·被迫入局进一步加深·大劫真相揭露（人祸非天灾）·周老爷子危急·弄清小鱼身世（紧急）",
+      "predicate": "当前目标",
+      "object": "应对三股势力同时盯上——周平试探、陈老监视、林师兄关注；灵泉异变提前爆发，原'三天后'期限失效",
       "validFromChapter": 6,
       "validUntilChapter": null,
       "sourceChapter": 6
     },
     {
-      "subject": "current_state",
-      "predicate": "新增状态项",
-      "object": "老道士庇护生效（挡住青云门火攻）；青云门不敢硬闯（不确定针在谁手里）；郑怀恩揭示关键信息（针的特质、三年前老庙主截印记、老道士救郑怀恩）；石子上针形凹痕与青云门灭门石板符号关联；周老爷子危急（顾长命必须出诊）；小鱼梦呓\"针\"（确认与针有联系）",
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "破屋内",
+      "validFromChapter": 6,
+      "validUntilChapter": null,
+      "sourceChapter": 6
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "身份暴露风险升级：周平已知两日前行踪；陈老当面点破灵泉行踪；苏婉儿看到伤疤后情绪失控暴露深层秘密",
+      "validFromChapter": 6,
+      "validUntilChapter": null,
+      "sourceChapter": 6
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "炼气三层，左臂'金丝缠'伤疤；天机簿残页震颤加剧（灵泉共鸣临界）；赵海储物袋（内含信纸）已确认收入怀中",
       "validFromChapter": 6,
       "validUntilChapter": null,
       "sourceChapter": 6

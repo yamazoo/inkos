@@ -1,0 +1,36 @@
+{
+  "chapter": 55,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0055.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0055.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#chapter_54_bridge",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#3",
+    "story/chapter_summaries.md#52",
+    "story/chapter_summaries.md#54",
+    "story/pending_hooks.md#H093_神秘生物的身份",
+    "story/pending_hooks.md#H094_眉心金痕的意义",
+    "story/pending_hooks.md#H095_岩石印记与母亲",
+    "story/pending_hooks.md#H096_接引者的身份",
+    "story/pending_hooks.md#H087_陈守一能否回来",
+    "story/pending_hooks.md#H088_彼岸世界",
+    "story/pending_hooks.md#H089_陈守一在彼岸的身份",
+    "story/pending_hooks.md#H090_苏婉儿安危"
+  ],
+  "notes": []
+}

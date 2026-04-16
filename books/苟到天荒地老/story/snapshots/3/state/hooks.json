@@ -1,143 +1,86 @@
 {
   "hooks": [
     {
-      "hookId": "H004",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 125,
-      "expectedPayoff": "大劫真相——本章统一为\"天道自身崩解，三人接骨匠被误认为罪人\"",
-      "notes": ""
-    },
-    {
-      "hookId": "H010",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "玄清阁灭门真相——郑怀恩追查千年死在真相面前",
-      "notes": ""
-    },
-    {
-      "hookId": "H011",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "青云门的虚伪——封锁消息三十年",
-      "notes": ""
-    },
-    {
-      "hookId": "H039",
-      "startChapter": 11,
+      "hookId": "H001_三日之期",
+      "startChapter": 1,
       "type": "悬念",
       "status": "resolved",
-      "lastAdvancedChapter": 17,
-      "expectedPayoff": "近期",
-      "payoffTiming": "near-term",
-      "notes": "**本章揭示：门后之人是那根针（持针者）；万年前把针封在这里自己也留下；针不能离天道太远否则会钝；针尖在天裂里，针尾在玉简中**"
-    },
-    {
-      "hookId": "H040",
-      "startChapter": 11,
-      "type": "悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 17,
-      "expectedPayoff": "近期",
-      "payoffTiming": "near-term",
-      "notes": "**本章深化：续命完整机制揭露——锁芯为引，命线为缝，引线为针；三样凑齐才能把天裂缝起来；天裂召回命线（小鱼被拽回去填裂缝）；顾长命捡的是天道的东西（命线）**"
-    },
-    {
-      "hookId": "H045",
-      "startChapter": 16,
-      "type": "悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 17,
-      "expectedPayoff": "近期",
-      "payoffTiming": "near-term",
-      "notes": "本章推进：成功绕过三道警戒线（镇东歪脖子老槐树/镇北竹林边缘/通往枯井小路）；顾长命记得位置成功绕行；青云门警戒网未撤仍是潜在威胁"
-    },
-    {
-      "hookId": "H046",
-      "startChapter": 16,
-      "type": "悬念",
-      "status": "resolved",
-      "lastAdvancedChapter": 17,
-      "expectedPayoff": "近期",
-      "payoffTiming": "near-term",
-      "notes": "**原问题部分解决：针在玉简里（持针者确认），针是持针者一截（针尾），针尖在天裂里；新问题：续命具体步骤仍待揭示（\"你想好了？\"/墙上灯变亮）**"
-    },
-    {
-      "hookId": "H047",
-      "startChapter": 17,
-      "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 17,
-      "expectedPayoff": "近期",
-      "payoffTiming": "near-term",
-      "notes": "**续命具体步骤——本章揭示三样凑齐机制，但\"续命怎么做\"被持针者反问\"你想好了？\"；具体操作步骤尚未揭示；小鱼问\"我是不是不是你的孩子\"/顾长命坚定回应\"你是我的孩子\"**"
-    },
-    {
-      "hookId": "H009",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 125,
-      "expectedPayoff": "天裂之处的秘密——郑怀恩手札记载十七道裂缝",
-      "notes": ""
-    },
-    {
-      "hookId": "H012",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 125,
-      "expectedPayoff": "玄清阁与青石镇的关联——大劫源头在附近",
-      "notes": ""
-    },
-    {
-      "hookId": "H013",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 60,
-      "expectedPayoff": "玉简的感应能力——本次发热响应未知",
-      "notes": ""
-    },
-    {
-      "hookId": "H003",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 125,
-      "expectedPayoff": "大劫具体原因——天道崩解内衰外促三重叠加",
-      "notes": ""
-    },
-    {
-      "hookId": "H007",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "周天成觊觎回春堂——威胁暂缓",
-      "notes": ""
-    },
-    {
-      "hookId": "H002",
-      "startChapter": 0,
-      "type": "progressing",
-      "status": "open",
       "lastAdvancedChapter": 3,
-      "expectedPayoff": "老道士身份——本章深化（筑基期以上/三十年追查/欠郑怀恩命债）",
-      "notes": ""
+      "expectedPayoff": "第3章",
+      "payoffTiming": "mid-arc",
+      "notes": "三天前推演首次出现；第2章再次推演确认"
     },
     {
-      "hookId": "H005",
+      "hookId": "H002_中年男子",
       "startChapter": 0,
       "type": "progressing",
       "status": "open",
-      "lastAdvancedChapter": 60,
-      "expectedPayoff": "小鱼身世——待续（王婶代为照看/老道士暗中保护）",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本章推进：中年男子确认是三天前灵田远处树影下的人；揭示虫卵栽赃真正目标是引出灵泉关联者；指出陈守一的感知能力不寻常；透露三日后灵泉变故；给出后山老槐树指引；承诺不上报今夜之事",
+      "notes": ""
+    },
+    {
+      "hookId": "H003_灵泉异常",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本章推进：中年男子透露三日后灵泉会有变故；章节末尾灵泉方向传来低沉闷响（地底深处有东西苏醒）；与陈守一体内的天机簿可能产生共鸣",
+      "notes": ""
+    },
+    {
+      "hookId": "H006_灵气衰减",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "第2章首次正面呈现",
+      "notes": ""
+    },
+    {
+      "hookId": "H004_执法堂调查",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本章推进：中年男子（来自执法堂）确认掌握陈守一三日前独自前往灵泉谷外围的行踪；确认掌握其感知到灵泉异常波动的情况；推断他会推演；执法堂已开始摸查灵泉关联者",
+      "notes": ""
+    },
+    {
+      "hookId": "H005_破屋监视者",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本章推进：发现未知监视者在中年男子离开前的空白期潜入破屋翻动陈设（被褥、柴刀位置、窗台碎石被动过）；手法比执法堂更老练；身份仍未明；与第2章的监视者可能相关",
+      "notes": ""
+    },
+    {
+      "hookId": "H007_枯叶螟栽赃",
+      "startChapter": 2,
+      "type": "阴谋线索",
+      "status": "resolved",
+      "lastAdvancedChapter": 3,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "与灵禾异常三成数据吻合"
+    },
+    {
+      "hookId": "mystery-揭示灵泉变故-真相-中年男子警告",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "陈守一与中年男子对峙期间，远处有一道若有若无的气息在窥视；中年男子的目光多次扫向那个方向并眉头微皱——此人是谁？与执法堂、监视者、灵泉变故有何关联？",
+      "notes": ""
+    },
+    {
+      "hookId": "threat-揭示执法堂与-陈守一的关系-走向",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中年男子（执法堂成员）指出虫卵栽赃目标是引出灵泉关联者，陈守一已被标记为'不寻常'的存在；执法堂已掌握其行踪和感知能力；从今夜起主角彻底失去了'不冒头'的资格——多股势力的角逐已经开始",
       "notes": ""
     }
   ]

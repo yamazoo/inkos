@@ -1,0 +1,130 @@
+{
+  "chapter": 32,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第30章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "天地灵气的衰减周期：每经一个大时代，有效利用率衰减至上一代的70%"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "炼气杂役在宗门夹缝中求生存，在\"不冒头\"与\"被迫展露\"的矛盾中艰难前行"
+    },
+    {
+      "source": "story/chapter_summaries.md#chapter_29_bridge",
+      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
+      "excerpt": "第29章《城墙暗影》 | 出场人物：陈守一、苏婉儿、执法堂追兵 | 本章事件：1.陈守一决定挖铜环；2.执法堂两派追兵出现（周执事派vs孙师兄派）；3.陈守一往东埋伏；4.苏婉儿被追杀出现；5.陈守一用金丝缠吸引注意力；6.铜环挖出（刻\"陈旧\"）；7.苏婉儿揭露父亲身份和卫长老；8.陈守一引走追兵；9.执法堂监视者发现陈守一逃出城外；10.四方角帽监视者不追只盯 | 状态变化：金丝缠从手腕蔓延至肘部；获得铜环；执法堂监视发现 | 悬念活动：H040/H041/H042/H043/H035/H037/H038深化；H033维持"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "29: 城墙暗影 | 28: 旧药铺迷局 | 27: 阴影之间 | 25: 槐根问旧 | 24: 幽眼深窖"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "29: 警觉→压制→危机→逃脱→展望 / 转折章/危机升级章 | 28: 警觉→盘算→压力升级→震惊→危机→逃脱 / 重大揭露章/转折章 | 27: 警觉→盘算→压力升级→抉择临近 / 冲突升级章/抉择铺垫章 | 25: 警觉→盘算→震惊→压抑→警觉升级 / 信息揭示章/真相揭开章/威胁升级章 | 24: 紧绷→盘算→警觉 / 信息揭示章/抉择铺垫章"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch29: 但真正的黑夜，或许才刚刚开始。 | ch30: 真正的黑夜，或许才刚刚开始。 | ch31: 那么，就让这黑夜，见证他的刀。"
+    },
+    {
+      "source": "runtime/hook_debt#H035_陈老欠债",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H035_陈老欠债（新钩，可兑现旧债，已开4章） | 读者承诺：待揭示 | 种于第28章：ch28 旧药铺迷局 - 1.陈守一分析三张纸条，意识到时间被压缩；从暗道出发前往药铺；2.天机簿推演大比对手，制定\"前胜后让\"策略；3.进入药铺，孙师兄揭示今晚设局真相；4.周执事阴谋暴露；5.灰袍人交付竹简；6.令牌铜片融合，金丝缠共鸣暴走；7.完整铜牌获得；8.灰袍人离开，留话\"陈老欠死者一条命\"；9.执法堂追兵包围药铺；10.陈守一从密道逃脱"
+    },
+    {
+      "source": "runtime/hook_debt#H033_周执事拉拢",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H033_周执事拉拢（新钩，主要旧债，已开5章） | 读者承诺：近期 | 种于第27章：ch27 阴影之间 - 1.大比报名开始；陈守一报名获参赛木牌（三天后选拔赛）；2.周执事派人拉拢（提供庇护换效力）；3.发现有人从门缝塞纸条警告\"子时钟药铺不安全\"（四方角帽/执法堂制式）；4.发现苏婉儿留下的铜片与令牌可拼合；5.苏婉儿来访：确认孙师兄改主意（今晚子时城东药铺）；确认自己有伤疤（从小就有/\"灌注\"产物）；6.苏婉儿警告别去旧药铺后从后门离开；7.孙师兄的人也来传话：今晚子时城东药铺，\"是个机会\"；8.天机簿残页无反应；9.夜色降临，陈守一面临抉择 | 推进于第29章：ch29 城墙暗影 - 1.陈守一决定挖铜环；2.执法堂两派追兵出现（周执事派vs孙师兄派）；3.陈守一往东埋伏；4.苏婉儿被追杀出现；5.陈守一用金丝缠吸引注意力；6.铜环挖出（刻\"陈旧\"）；7.苏婉儿揭露父亲身份和卫长老；8.陈守一引走追兵；9.执法堂监视者发现陈守一逃出城外；10.四方角帽监视者不追只盯"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 表层：金丝缠蔓延失控+执法堂监视+大比策略失效+天机簿灵力耗尽；深层：同源者共生关系暴露+卫长青灭口行动升级；核心：两日大比与三日后演武场的双重时间压力"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 1. **两天后**参加大比选拔赛（策略失效，需重新制定）；2. **三日后**演武场赴约（灰袍人纸条）；3. 查清三十年前实验与自身关联；4. 应对金丝缠暴露风险；5. 应对执法堂监视；6. **查明铜环裂纹含义**；7. **保护苏婉儿（三日后同行）**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 炼气三层；丹田恢复**七八成（消耗后）**；左臂\"金丝缠\"**已蔓延至手掌根部**；夜间微光浮动，温度高于右臂三寸；天机簿残纸**灵力耗尽/需要恢复**；持有完整铜牌（令牌+铜片融合）；持有铜环（**新增裂纹**）；持有铜环内侧刻\"陈旧\"；持有灰袍人纸条（柳叶标记+三日后演武场）；持有大比参赛木牌（**两天后**，辰时，演武场东侧）；持有**苏婉儿纸片**（铜牌部分记载+三件钥匙）；持有小册子；持有竹简（部分内容）；暗道已使用"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 金丝缠蔓延中（**已至手掌根部**，每刻钟前进一寸）；执法堂监视延伸至城墙；执法堂计划大比时动手（推测）；天机簿残纸灵力耗尽需恢复；暗道已使用"
+    },
+    {
+      "source": "story/chapter_summaries.md#3",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "夜林惊锋 | 1.（上章推演确认今夜是三日之期最后期限）→ 本章灵泉方向三道气息向杂役区逼近，陈守一躲避不及被筑基修为的中年男子发现并短暂对峙；2.（中年男子原为推演画面中的人物悬念）→ 本章确认身份为执法堂成员，揭示三天前陈守一躲在灵田沟渠时远处树影下的人就是他；3.（虫卵栽赃判定为人为，第2章执法弟子提及灵禾异常增三成）→ 本章中年男子揭露真相：虫卵栽赃的真正目标不是赵海也不是陈守一，而是引出灵泉附近的所有关联者；4.（执法堂调查灵禾异常，第2章执法弟子开始关注陈守一）→ 本章确认执法堂已掌握陈守一三日前行踪和感知能力，指出他能感知执法堂隐蔽阵法很不寻常；5.陈守一左臂被灵气割伤，中年男子主动放走并给出秘密指引：三日后灵泉变故，去后山老槐树下等着；6.中年男子离开后，陈守一发现屋内陈设被未知监视者翻动，手法比执法堂更老练；7.章节末尾小路急促赶来报信\"出大事了\" | 陈守一失去'不冒头'资格——执法堂已掌握其行踪和感知能力，多方势力开始注意这个本不该出现在灵泉线索上的炼气三层杂役；天机簿残页灵力正在缓慢恢复；左臂灵气入体麻痹；中年男子立场复杂——虽来自执法堂但主动放人并给出秘密指引，似乎在布局 | H001_三日之期 resolved; H002_中年男子 progressed; H003_灵泉异常 progressed; H004_执法堂调查 progressed; H005_破屋监视者 progressed; H007_枯叶螟栽赃 resolved"
+    },
+    {
+      "source": "story/chapter_summaries.md#29",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "城墙暗影 | 1.陈守一决定挖铜环；2.执法堂两派追兵出现（周执事派vs孙师兄派）；3.陈守一往东埋伏；4.苏婉儿被追杀出现；5.陈守一用金丝缠吸引注意力；6.铜环挖出（刻\"陈旧\"）；7.苏婉儿揭露父亲身份和卫长老；8.陈守一引走追兵；9.执法堂监视者发现陈守一逃出城外；10.四方角帽监视者不追只盯 | 金丝缠从手腕蔓延至肘部；获得铜环；执法堂监视发现 | H040/H041/H042/H043/H035/H037/H038深化；H033维持"
+    },
+    {
+      "source": "story/pending_hooks.md#H044_同源者关系",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | 待揭示 | mid-arc | **新钩**：同源者共生关系确认；一人死另一人被反噬；七十三人皆有同源印记"
+    },
+    {
+      "source": "story/pending_hooks.md#H045_三件钥匙",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | 待揭示 | mid-arc | **新钩**：令牌/铜牌/铜环三者合一可开启某地；三件钥匙分别主开启/阵眼/媒介；目的为上古灵气源泉"
+    },
+    {
+      "source": "story/pending_hooks.md#H046_铜环裂纹",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | 待揭示 | mid-arc | **新钩**：铜环新增裂纹；意义不明；与铜环使用有关？"
+    },
+    {
+      "source": "story/pending_hooks.md#H040_执法堂监视",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | **推进**：监视延伸至城墙/城外；四方角帽影子持续；不追只盯"
+    },
+    {
+      "source": "story/pending_hooks.md#H041_铜环钥匙",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | **重大推进**：铜环阵纹与铜牌同源；三件合一可开启；新增裂纹"
+    },
+    {
+      "source": "story/pending_hooks.md#H042_卫长老",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | **重大推进**：确认是灭口执行者；苏婉儿父亲被其所杀；与三十年前实验直接相关"
+    },
+    {
+      "source": "story/pending_hooks.md#H033_周执事拉拢",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "新钩 | open | 近期 | near-term | **维持**：阴谋败露状态"
+    },
+    {
+      "source": "story/pending_hooks.md#H043_苏婉儿处境",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | near-term | **推进**：被黑衣人追杀（资料被翻/藏身处被找到/三重陷阱用完）；约定三日后同行"
+    }
+  ]
+}

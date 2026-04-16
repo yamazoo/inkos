@@ -1,0 +1,130 @@
+{
+  "chapter": 39,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第36章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "天地灵气的衰减周期：每经一个大时代，有效利用率衰减至上一代的70%"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "炼气杂役在宗门夹缝中求生存，在\"不冒头\"与\"被迫展露\"的矛盾中艰难前行"
+    },
+    {
+      "source": "story/chapter_summaries.md#chapter_36_bridge",
+      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
+      "excerpt": "第36章《同源相残》 | 出场人物：陈守一、炼气五层外门弟子、周执事、四方角帽、苏婉儿、执法弟子 | 本章事件：1.陈守一对战外门排名第十一弟子（炼气五层）；2.三件钥匙共鸣感知到对手示弱；3.陈守一反击，金丝缠缠住对手；4.擂台下认出\"禁术金丝缠\"；5.铜环与金丝缠共鸣爆发；6.**令牌碎片从对手身上卷回**；7.**周执事下令以\"使用禁术\"押走陈守一**；8.四方角帽出手灭口（对手被带走去灭口）；9.陈守一获得令牌碎片但被押往执法堂；10.**苏婉儿担忧目送**；11.**陈守一被拖下擂台穿人群** | 状态变化：**十六进八险胜**；金丝缠彻底暴露（禁术）；后颈印记觉醒暴露；铜环能量近乎枯竭（裂纹蛛网状碎裂）；灵力枯竭；**获得令牌碎片** | 悬念活动：H040执法堂监视**紧急恶化**；H045三件钥匙**重大突破**；H046铜环裂纹**紧急恶化**；H047陈老同姓深化；H041铜环钥匙深化；H042卫长老推进；H035陈老欠债深化；**H048纸团来源（新）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "36: 同源相残 | 35: 印记觉醒 | 34: 风起演武场 | 32: 破晓抉择 | 29: 城墙暗影"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "36: 绝境→盘算→坚定→险胜→震惊→无奈→坚定 / **高潮转折章/危机爆发章** | 35: 压抑→紧绷→危机→抉择→坚定 / **高潮转折章/印记觉醒章** | 34: 压抑→紧绷→盘算→危机→抉择临近 / 冲突升级章/危机转折章 | 32: 高压→紧张→盘算→压制→展望 / 转折铺垫章/策略重制章 | 29: 警觉→压制→危机→逃脱→展望 / 转折章/危机升级章"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch36: 只要活着，就有希望。 | ch37: 因为身后已经没有退路，只能一路向前。 | ch38: \"一扇通往幽冥的门。\""
+    },
+    {
+      "source": "runtime/hook_debt#H035_陈老欠债",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H035_陈老欠债（悬念钩，主要旧债，已开11章） | 读者承诺：待揭示 | 种于第28章：ch28 旧药铺迷局 - 1.陈守一分析三张纸条，意识到时间被压缩；从暗道出发前往药铺；2.天机簿推演大比对手，制定\"前胜后让\"策略；3.进入药铺，孙师兄揭示今晚设局真相；4.周执事阴谋暴露；5.灰袍人交付竹简；6.令牌铜片融合，金丝缠共鸣暴走；7.完整铜牌获得；8.灰袍人离开，留话\"陈老欠死者一条命\"；9.执法堂追兵包围药铺；10.陈守一从密道逃脱 | 推进于第36章：ch36 同源相残 - 1.陈守一对战外门排名第十一弟子（炼气五层）；2.三件钥匙共鸣感知到对手示弱；3.陈守一反击，金丝缠缠住对手；4.擂台下认出\"禁术金丝缠\"；5.铜环与金丝缠共鸣爆发；6.**令牌碎片从对手身上卷回**；7.**周执事下令以\"使用禁术\"押走陈守一**；8.四方角帽出手灭口（对手被带走去灭口）；9.陈守一获得令牌碎片但被押往执法堂；10.**苏婉儿担忧目送**；11.**陈守一被拖下擂台穿人群**"
+    },
+    {
+      "source": "runtime/hook_debt#H040_执法堂监视",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H040_执法堂监视（悬念钩，主要旧债，已开10章） | 读者承诺：待揭示 | 种于第29章：ch29 城墙暗影 - 1.陈守一决定挖铜环；2.执法堂两派追兵出现（周执事派vs孙师兄派）；3.陈守一往东埋伏；4.苏婉儿被追杀出现；5.陈守一用金丝缠吸引注意力；6.铜环挖出（刻\"陈旧\"）；7.苏婉儿揭露父亲身份和卫长老；8.陈守一引走追兵；9.执法堂监视者发现陈守一逃出城外；10.四方角帽监视者不追只盯 | 推进于第36章：ch36 同源相残 - 1.陈守一对战外门排名第十一弟子（炼气五层）；2.三件钥匙共鸣感知到对手示弱；3.陈守一反击，金丝缠缠住对手；4.擂台下认出\"禁术金丝缠\"；5.铜环与金丝缠共鸣爆发；6.**令牌碎片从对手身上卷回**；7.**周执事下令以\"使用禁术\"押走陈守一**；8.四方角帽出手灭口（对手被带走去灭口）；9.陈守一获得令牌碎片但被押往执法堂；10.**苏婉儿担忧目送**；11.**陈守一被拖下擂台穿人群**"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 表层：金丝缠禁术暴露+后颈印记觉醒+右肩伤口流血+铜环近乎枯竭+被执法堂押走；深层：周执事栽赃计划曝光+令牌碎片反制+三件钥匙共鸣指向陈老+四方角帽灭口进行中；核心：十六进八险胜→被押往执法堂→今晚行动无法进行→后天后山老槐树（灰袍人）"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 1. **十六进八比赛**：险胜，但被执法堂押走；2. **今晚**东侧暗巷行动：无法进行（已被押往执法堂）；3. **后天**后山老槐树（灰袍人/陈老）；4. **活着**：从执法堂脱身；5. 查清三十年前实验与自身关联；6. 应对金丝缠暴露风险；7. 保护苏婉儿"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 炼气三层；丹田灵力枯竭；左臂金丝缠蔓延至小臂中段（彻底废掉）；后颈印记觉醒（弯月形淡金光芒）；右肩铁爪伤口（流血）；铜环能量近乎枯竭（裂纹蛛网状碎裂/暂时无法动用）；**获得令牌碎片**（半个\"令\"字/栽赃道具/指向陈老方向）"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 金丝缠彻底暴露（\"三十年前禁术\"）；后颈印记觉醒暴露；右肩伤口流血；铜环能量近乎枯竭（短时间内无法动用）；天机簿灵力耗尽无法推演；被执法堂以\"使用禁术\"名义押走；苏婉儿藏身处被执法堂发现；今晚行动无法进行"
+    },
+    {
+      "source": "story/chapter_summaries.md#3",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "夜林惊锋 | 1.（上章推演确认今夜是三日之期最后期限）→ 本章灵泉方向三道气息向杂役区逼近，陈守一躲避不及被筑基修为的中年男子发现并短暂对峙；2.（中年男子原为推演画面中的人物悬念）→ 本章确认身份为执法堂成员，揭示三天前陈守一躲在灵田沟渠时远处树影下的人就是他；3.（虫卵栽赃判定为人为，第2章执法弟子提及灵禾异常增三成）→ 本章中年男子揭露真相：虫卵栽赃的真正目标不是赵海也不是陈守一，而是引出灵泉附近的所有关联者；4.（执法堂调查灵禾异常，第2章执法弟子开始关注陈守一）→ 本章确认执法堂已掌握陈守一三日前行踪和感知能力，指出他能感知执法堂隐蔽阵法很不寻常；5.陈守一左臂被灵气割伤，中年男子主动放走并给出秘密指引：三日后灵泉变故，去后山老槐树下等着；6.中年男子离开后，陈守一发现屋内陈设被未知监视者翻动，手法比执法堂更老练；7.章节末尾小路急促赶来报信\"出大事了\" | 陈守一失去'不冒头'资格——执法堂已掌握其行踪和感知能力，多方势力开始注意这个本不该出现在灵泉线索上的炼气三层杂役；天机簿残页灵力正在缓慢恢复；左臂灵气入体麻痹；中年男子立场复杂——虽来自执法堂但主动放人并给出秘密指引，似乎在布局 | H001_三日之期 resolved; H002_中年男子 progressed; H003_灵泉异常 progressed; H004_执法堂调查 progressed; H005_破屋监视者 progressed; H007_枯叶螟栽赃 resolved"
+    },
+    {
+      "source": "story/chapter_summaries.md#36",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "同源相残 | 1.陈守一对战外门排名第十一弟子（炼气五层）；2.三件钥匙共鸣感知到对手示弱；3.陈守一反击，金丝缠缠住对手；4.擂台下认出\"禁术金丝缠\"；5.铜环与金丝缠共鸣爆发；6.**令牌碎片从对手身上卷回**；7.**周执事下令以\"使用禁术\"押走陈守一**；8.四方角帽出手灭口（对手被带走去灭口）；9.陈守一获得令牌碎片但被押往执法堂；10.**苏婉儿担忧目送**；11.**陈守一被拖下擂台穿人群** | **十六进八险胜**；金丝缠彻底暴露（禁术）；后颈印记觉醒暴露；铜环能量近乎枯竭（裂纹蛛网状碎裂）；灵力枯竭；**获得令牌碎片** | H040执法堂监视**紧急恶化**；H045三件钥匙**重大突破**；H046铜环裂纹**紧急恶化**；H047陈老同姓深化；H041铜环钥匙深化；H042卫长老推进；H035陈老欠债深化；**H048纸团来源（新）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H048_纸团来源",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩/new** | open | 待揭示 | **陈守一在擂台上获得未知来源的纸团**；踩住但未查看；苏婉儿递的？还是其他人？"
+    },
+    {
+      "source": "story/pending_hooks.md#H045_三件钥匙",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 近期 | mid-arc | **三件钥匙共鸣确认**：铜牌、铜环、后颈印记产生共鸣；感知到令牌碎片存在；指向陈老方向"
+    },
+    {
+      "source": "story/pending_hooks.md#H046_铜环裂纹",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | progressing | 待揭示 | mid-arc | **裂纹蛛网状碎裂**：铜环能量近乎枯竭；裂纹从细丝变成蛛网状碎裂；短时间内无法再次动用"
+    },
+    {
+      "source": "story/pending_hooks.md#H047_陈老与陈守一同姓",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | progressing | 待揭示 | mid-arc | **令牌碎片指向陈老**：三件钥匙共鸣感知到令牌碎片指向陈老所在方向"
+    },
+    {
+      "source": "story/pending_hooks.md#H040_执法堂监视",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | **周执事正式出手**：以\"使用禁术\"名义押走陈守一；四方角帽执行灭口；炼气五层对手被带走去灭口"
+    },
+    {
+      "source": "story/pending_hooks.md#H041_铜环钥匙",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | progressing | 待揭示 | mid-arc | **三件钥匙体系确认**：令牌碎片（从对手身上获得）、铜牌、铜环；周执事的栽赃道具成为反制筹码"
+    },
+    {
+      "source": "story/pending_hooks.md#H042_卫长老",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | progressing | 待揭示 | mid-arc | **四方角帽执行灭口**：周执事和卫长老联合行动确认；灭口进行中"
+    },
+    {
+      "source": "story/pending_hooks.md#H035_陈老欠债",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | progressing | 待揭示 | mid-arc | **三件钥匙共鸣指向陈老**：令牌碎片指向陈老方向；陈老欠债涉及七十三人同源印记"
+    }
+  ]
+}

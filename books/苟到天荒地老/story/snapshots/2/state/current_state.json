@@ -4,7 +4,7 @@
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "青石镇回春堂",
+      "object": "破屋外/灵泉方向",
       "validFromChapter": 2,
       "validUntilChapter": null,
       "sourceChapter": 2
@@ -12,7 +12,7 @@
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "警觉升级；准备探查镇北地道作为退路",
+      "object": "炼气三层，外门杂役，苟道生存策略面临考验；感知到灵泉方向有威胁接近",
       "validFromChapter": 2,
       "validUntilChapter": null,
       "sourceChapter": 2
@@ -20,7 +20,7 @@
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "甩掉青云门追踪；找机会带小鱼离镇",
+      "object": "应对今夜即将到来的危机（推演显示被围堵/中年男子现身）",
       "validFromChapter": 2,
       "validUntilChapter": null,
       "sourceChapter": 2
@@ -28,7 +28,7 @@
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "末法灵气稀薄；不能暴露筑基实力；周天成觊觎回春堂；青云门监视网",
+      "object": "身份低微、不能展露实力、资源匮乏；执法堂已开始关注他",
       "validFromChapter": 2,
       "validUntilChapter": null,
       "sourceChapter": 2
@@ -36,7 +36,7 @@
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "青云门（中年男子为主谋）：威胁升级；周天成：潜在威胁；街对面茶摊眼线：监视中",
+      "object": "敌：赵海背后势力（中年男子，指向灵泉）；暗中监视者；执法堂在调查但立场未明。友：小路",
       "validFromChapter": 2,
       "validUntilChapter": null,
       "sourceChapter": 2
@@ -44,7 +44,7 @@
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "青云门已锁定\"故人\"线索；主角需在下次被找上门前找到应对之策",
+      "object": "表层：灵禾异常调查可能被牵连；深层：三日之期危机今夜降临，推演中的中年男子即将现身",
       "validFromChapter": 2,
       "validUntilChapter": null,
       "sourceChapter": 2

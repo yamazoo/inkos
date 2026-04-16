@@ -1,0 +1,144 @@
+{
+  "hooks": [
+    {
+      "hookId": "H033_周执事拉拢",
+      "startChapter": 27,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "**重大揭露**：周执事安排陷阱企图剪除孙师兄人脉并收编陈守一；阴谋败露"
+    },
+    {
+      "hookId": "H034_铜片令牌拼合",
+      "startChapter": 27,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大揭露**：铜片与令牌融合成完整铜牌；融合触发金丝缠暴走；融合意义待揭示"
+    },
+    {
+      "hookId": "H030_执法堂内部对立",
+      "startChapter": 25,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**证据链完整**：周执事（一方）vs 孙师兄/陈老（另一方）布局；苏婉儿纸条警告来源仍不明"
+    },
+    {
+      "hookId": "H031_子时钟药铺",
+      "startChapter": 25,
+      "type": "新钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "**今晚（已执行）**",
+      "payoffTiming": "mid-arc",
+      "notes": "**剧情完成**：药铺设局真相揭露；陈老/孙师兄vs周执事；陈守一脱险"
+    },
+    {
+      "hookId": "H024_孙师兄交易",
+      "startChapter": 24,
+      "type": "新钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "大比期间",
+      "payoffTiming": "near-term",
+      "notes": "**重大揭露**：孙师兄设局试探周执事；动机是\"看看陈守一值不值得投资\"；交易意图仍存"
+    },
+    {
+      "hookId": "H025_令牌金丝缠同源",
+      "startChapter": 24,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大揭露**：令牌铜片融合触发金丝缠共鸣；金丝缠被迫展露至肘部；同源确认"
+    },
+    {
+      "hookId": "H029_陈老身份",
+      "startChapter": 25,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大揭露**：陈老是当年第七个活下来的；欠死者一条命；欠债说"
+    },
+    {
+      "hookId": "H032_金丝缠破壁",
+      "startChapter": 25,
+      "type": "新钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大揭露**：金丝缠因铜牌融合暴走；纹路蔓延至肘部；夜间微光浮动；封印彻底松动"
+    },
+    {
+      "hookId": "H035_陈老欠债",
+      "startChapter": 28,
+      "type": "**新钩**",
+      "status": "open",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新激活**：陈老欠死者一条命；\"债要还\"；陈老身份深化"
+    },
+    {
+      "hookId": "H036_歪脖子柳树",
+      "startChapter": 28,
+      "type": "**新钩**",
+      "status": "open",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "**新激活**：灰袍人留话；柳树下埋有物品；待挖取"
+    },
+    {
+      "hookId": "H037_柳叶标记",
+      "startChapter": 28,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新激活**：灰袍人纸条上标记与苏婉儿伤疤形状完全相同；三日后演武场有人找"
+    },
+    {
+      "hookId": "H038_竹简涂抹内容",
+      "startChapter": 28,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新激活**：竹简中关键内容被涂抹；\"灌注成功\"后发生了什么？"
+    },
+    {
+      "hookId": "H008_赵海之死",
+      "startChapter": 5,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：竹简揭示七十三人死一半；赵海死因与实验关联进一步确认"
+    },
+    {
+      "hookId": "H013_灵泉实验",
+      "startChapter": 5,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 28,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大揭露**：七十三人，灌注成功，灵泉根基受损，死三十六人"
+    }
+  ]
+}

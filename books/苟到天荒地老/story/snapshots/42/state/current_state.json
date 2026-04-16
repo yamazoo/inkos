@@ -1,0 +1,53 @@
+{
+  "chapter": 42,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "**灵泉核心内部（灰雾空间/石板路/淡金色光芒）**",
+      "validFromChapter": 42,
+      "validUntilChapter": null,
+      "sourceChapter": 42
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "炼气三层；丹田灵力枯竭（盘息后恢复中）；左臂金丝缠**部分消退**（仍存在但纹路变淡）；后颈印记觉醒（弯月形淡金光芒/剧烈发热）；右肩伤口**结痂**（已不影响行动）；铜环**能量持续恢复**（裂纹光芒更亮/温润暖意）；禁制期限：**三天**",
+      "validFromChapter": 42,
+      "validUntilChapter": null,
+      "sourceChapter": 42
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "1. **活着**：从执法堂脱身→已达成；外门正式弟子→已达成；2. **查清三十年前实验真相**→父亲献祭真相已知；3. **三件钥匙合一**：打开灵泉核心→**已进入**；4. **应对孙师兄交易**（欠一个人情）；5. **保护苏婉儿**→已确认安全；6. **三天内从灵泉出来**",
+      "validFromChapter": 42,
+      "validUntilChapter": null,
+      "sourceChapter": 42
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "金丝缠不完全消退（跟着一辈子/灵泉核心暂时蛰伏）；铜环能量未完全恢复；天机簿灵力耗尽；令牌碎片被长老收走；孙师兄交易（欠人情）；**三天期限（禁制解除后周执事的人会进入）**；灵泉内**实验失败者残魂**（活人见了会发疯）；铜环需进入灵泉核心灵力源头才能彻底修复；天机簿残纸在灵泉里能否使用未知",
+      "validFromChapter": 42,
+      "validUntilChapter": null,
+      "sourceChapter": 42
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "周执事（敌对/灭口主使/被禁制挡在外面）；苏婉儿（盟友/同源者/**确认安全**）；陈老（同源者/欠债者/幸存者/**三日后交接**）；孙师兄（复杂/**旧识之子**/欠人情）；卫长老（敌对/灭口执行者）；长老（保护者/收走令牌碎片）；陈守一之父（献祭者/神魂在印记中）；陈守一之母（遗留天机簿/与印记同源之物）",
+      "validFromChapter": 42,
+      "validUntilChapter": null,
+      "sourceChapter": 42
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "表层：抵达灵泉核心→进入灰雾空间→石板路探索→**脚步声接近**；深层：三天期限→实验残魂威胁→铜环未完全恢复→天机簿耗尽→退路很窄；核心：探索灵泉核心→寻找父亲最后看到的东西→三天内找到退路出来",
+      "validFromChapter": 42,
+      "validUntilChapter": null,
+      "sourceChapter": 42
+    }
+  ]
+}

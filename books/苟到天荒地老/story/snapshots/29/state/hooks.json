@@ -1,0 +1,123 @@
+{
+  "hooks": [
+    {
+      "hookId": "H025_令牌金丝缠同源",
+      "startChapter": 24,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "令牌铜片融合触发金丝缠共鸣；金丝缠已蔓延过手腕；铜环与铜牌纹路如出一辙"
+    },
+    {
+      "hookId": "H035_陈老欠债",
+      "startChapter": 28,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进**：铜环内侧刻\"陈旧\"；陈老把\"旧年\"的信物埋在此处；铜环埋藏时间极长（数年或数十年）"
+    },
+    {
+      "hookId": "H036_歪脖子柳树",
+      "startChapter": 28,
+      "type": "新钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "—",
+      "payoffTiming": "near-term",
+      "notes": "**已回收**：挖出铜环；铜环是\"钥匙\"；但铜环能开启什么仍待揭示"
+    },
+    {
+      "hookId": "H037_柳叶标记",
+      "startChapter": 28,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "灰袍人纸条标记与苏婉儿伤疤完全相同；三日后演武场有人找"
+    },
+    {
+      "hookId": "H038_竹简涂抹内容",
+      "startChapter": 28,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "竹简关键内容被涂抹；\"灌注成功\"后发生了什么？"
+    },
+    {
+      "hookId": "H033_周执事拉拢",
+      "startChapter": 27,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "周执事阴谋败露；周执事的人与孙师兄的人在搜索中对立"
+    },
+    {
+      "hookId": "H034_铜片令牌拼合",
+      "startChapter": 27,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "铜片与令牌融合成完整铜牌；铜环与铜牌纹路如出一辙（更大/更古朴）"
+    },
+    {
+      "hookId": "H029_陈老身份",
+      "startChapter": 25,
+      "type": "新钩",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "陈老是第七个活下来的幸存者；欠死者一条命；铜环埋藏暗示更深布局"
+    },
+    {
+      "hookId": "H040_执法堂监视",
+      "startChapter": 29,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待揭示",
+      "notes": "**新钩**：执法堂在暗道出口监视；不追只盯；计划大比时动手（推测）；四方角帽制式"
+    },
+    {
+      "hookId": "H041_铜环钥匙",
+      "startChapter": 29,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新钩**：铜环内有阵纹（封印/激活）；不是普通身份凭证；能开启什么待揭示"
+    },
+    {
+      "hookId": "H042_卫长老",
+      "startChapter": 29,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新钩**：内门长老；深居简出；筑基后期修为；孙师兄靠山；苏婉儿线索指向他"
+    },
+    {
+      "hookId": "H043_苏婉儿处境",
+      "startChapter": 29,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 29,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "near-term",
+      "notes": "**新钩**：苏婉儿存放资料处被翻查；被警告停止追查；被追杀；左臂有伤疤/血迹"
+    }
+  ]
+}

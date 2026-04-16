@@ -1,0 +1,140 @@
+{
+  "chapter": 44,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第43章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "天地灵气的衰减周期：每经一个大时代，有效利用率衰减至上一代的70%"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "炼气杂役在宗门夹缝中求生存，在\"不冒头\"与\"被迫展露\"的矛盾中艰难前行"
+    },
+    {
+      "source": "story/chapter_summaries.md#chapter_42_bridge",
+      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
+      "excerpt": "第42章《老槐树下》 | 出场人物：陈守一、陈老 | 本章事件：陈老揭示三件钥匙/父亲献祭/孙师兄旧识；禁制三天期限；陈守一进入灵泉核心；灰雾空间/脚步声 | 状态变化：左臂金丝缠部分消退；铜环持续恢复；禁制三天开始计时 | 悬念活动：H035/H051回收；H056-H061新开"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "42: 老槐树下 | 41: 山道逢敌 | 40: 暗室困局 | 36: 同源相残 | 35: 印记觉醒"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "42: 紧张→揭秘→震撼→坚定→希望→警觉 / 揭秘章/关键转折章/灵泉探索起点章 | 41: 困局→希望→警觉→紧张→对峙 / **高潮转折章/关键会面章** | 40: 绝境→盘算→坚定→对峙→揭露→坚定→希望 / **危机深化章/困局章/转折前夕章** | 36: 绝境→盘算→坚定→险胜→震惊→无奈→坚定 / **高潮转折章/危机爆发章** | 35: 压抑→紧绷→危机→抉择→坚定 / **高潮转折章/印记觉醒章**"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch42: 然后，一切都陷入了黑暗。 | ch43: 退路很窄，但他没有退路。 | ch43: \"dialogueCheck\": [\"残魂试探\", \"精神攻击呢喃\"]"
+    },
+    {
+      "source": "runtime/hook_debt#H040_执法堂监视",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H040_执法堂监视（悬念钩，可兑现旧债，已开15章） | 读者承诺：待揭示 | 种于第29章：ch29 城墙暗影 - 1.陈守一决定挖铜环；2.执法堂两派追兵出现（周执事派vs孙师兄派）；3.陈守一往东埋伏；4.苏婉儿被追杀出现；5.陈守一用金丝缠吸引注意力；6.铜环挖出（刻\"陈旧\"）；7.苏婉儿揭露父亲身份和卫长老；8.陈守一引走追兵；9.执法堂监视者发现陈守一逃出城外；10.四方角帽监视者不追只盯 | 推进于第42章：ch42 老槐树下 - 陈老揭示三件钥匙/父亲献祭/孙师兄旧识；禁制三天期限；陈守一进入灵泉核心；灰雾空间/脚步声"
+    },
+    {
+      "source": "runtime/hook_debt#H049_执法堂内部裂痕",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H049_执法堂内部裂痕（悬念钩，主要旧债，已开4章） | 读者承诺：待揭示 | 种于第40章：ch40 暗室困局 - 1.陈守一被四方角帽押送至执法堂后院暗室（行刑室）；2.发现执法堂巡逻密度翻倍，听到\"灭口\"\"禁术\"低声交谈；3.确认执法堂内部有裂痕；4.发现脚边纸团（擂台上获得，尚未查看）；5.周执事出现，揭露栽赃计划：令牌碎片是他亲手放的道具，明日公告\"畏罪自尽\"；6.陈守一反问证人，指出擂台下有几百双眼睛；7.周执事离开；8.**三件钥匙同时共鸣**（令牌碎片+铜牌+后颈印记），指向后山老槐树；9.感知到暗处有人观察；10.铁门外传来三下敲门节奏（与擂台上感知到的节奏相同）；11.陈守一发现四方角帽没有搜身，锁链是老式锁扣"
+    },
+    {
+      "source": "runtime/hook_debt#H056_父亲献祭真相",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H056_父亲献祭真相（悬念钩，主要旧债，已开2章） | 读者承诺：**第43章** | 种于第42章：ch42 老槐树下 - 陈老揭示三件钥匙/父亲献祭/孙师兄旧识；禁制三天期限；陈守一进入灵泉核心；灰雾空间/脚步声"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 表层：进入灰雾空间→跟上父亲脚印→残魂攻击→铜环保护→父亲记忆碎片→抵达窄门；深层：三天期限→残魂精神攻击→铜环能量耗尽→灵力枯竭→天机簿失灵→禁制被外力冲击→时间不足；核心：**侧身进入窄门（退路很窄但没有退路）**→父亲遗言完整含义已知→禁制外执法堂裂痕扩大→门外敌人破禁中"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 1. **活着**：从执法堂脱身→已达成；外门正式弟子→已达成；2. **查清三十年前实验真相**→父亲献祭真相已知；3. **三件钥匙合一**：打开灵泉核心→**已完成探索**；4. **应对孙师兄交易**（欠一个人情）；5. **保护苏婉儿**→已确认安全；6. **三天内从灵泉出来**→时间不足/正在侧身进入窄门"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 炼气三层；丹田灵力**彻底枯竭**（共鸣后耗尽/连抬手指都费力）；左臂金丝缠**激活跳动**（与残魂同源共鸣）；后颈印记觉醒（弯月形/剧烈发热/光芒响应铜环）；右肩伤口**结痂**（不影响行动）；铜环**能量近乎耗尽**（裂纹光芒微弱闪烁/三息强光后枯竭/仍有一丝温热）；**禁制期限：三天（加速消耗中/不足三天）**"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 金丝缠不完全消退（跟着一辈子/灵泉核心暂时蛰伏）；铜环能量近乎耗尽（三息强光后枯竭）；天机簿灵力耗尽/灵泉内无法激活；令牌碎片被长老收走；孙师兄交易（欠人情）；**三天期限（时间不足/禁制正在被冲击）**；灵泉内**实验失败者残魂**（活人见了会发疯）；铜环需进入灵泉核心灵力源头才能彻底修复（尚未完成）；退路很窄（侧身通过）；门外有敌人正在破禁"
+    },
+    {
+      "source": "story/chapter_summaries.md#3",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "夜林惊锋 | 1.（上章推演确认今夜是三日之期最后期限）→ 本章灵泉方向三道气息向杂役区逼近，陈守一躲避不及被筑基修为的中年男子发现并短暂对峙；2.（中年男子原为推演画面中的人物悬念）→ 本章确认身份为执法堂成员，揭示三天前陈守一躲在灵田沟渠时远处树影下的人就是他；3.（虫卵栽赃判定为人为，第2章执法弟子提及灵禾异常增三成）→ 本章中年男子揭露真相：虫卵栽赃的真正目标不是赵海也不是陈守一，而是引出灵泉附近的所有关联者；4.（执法堂调查灵禾异常，第2章执法弟子开始关注陈守一）→ 本章确认执法堂已掌握陈守一三日前行踪和感知能力，指出他能感知执法堂隐蔽阵法很不寻常；5.陈守一左臂被灵气割伤，中年男子主动放走并给出秘密指引：三日后灵泉变故，去后山老槐树下等着；6.中年男子离开后，陈守一发现屋内陈设被未知监视者翻动，手法比执法堂更老练；7.章节末尾小路急促赶来报信\"出大事了\" | 陈守一失去'不冒头'资格——执法堂已掌握其行踪和感知能力，多方势力开始注意这个本不该出现在灵泉线索上的炼气三层杂役；天机簿残页灵力正在缓慢恢复；左臂灵气入体麻痹；中年男子立场复杂——虽来自执法堂但主动放人并给出秘密指引，似乎在布局 | H001_三日之期 resolved; H002_中年男子 progressed; H003_灵泉异常 progressed; H004_执法堂调查 progressed; H005_破屋监视者 progressed; H007_枯叶螟栽赃 resolved"
+    },
+    {
+      "source": "story/chapter_summaries.md#41",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "山道逢敌 | 1.陈守一被押送至执事堂；2.长老召见，详细询问三十年前事件；3.长老揭露：七十三人参与实验，死六十一人，活下来的要么疯了要么藏得很深；4.长老确认陈守一体内痕迹但不等于关联；5.长老登记金丝缠和后颈印记，嘱咐\"不要外传\"；6.陈守一获得外门正式弟子身份（玉牌）和住所（后山清溪涧）；7.令牌碎片被长老收走；8.孙师兄拦截，提供隐匿符换取铜牌位置；9.孙师兄揭示三件钥匙合一能打开灵泉核心；10.陈守一欠孙师兄一个人情；11.激活隐匿符，躲避周执事的人；12.服用回春丹，右肩伤口仍需时日调养；13.穿过山缝抵达老槐树；14.老槐树方向升起淡金色光芒（弯月形）；15.陈老现身 | 身份：杂役弟子→外门正式弟子；获得玉牌和住所（后山清溪涧）；令牌碎片被长老收走；获得隐匿符；服用回春丹1枚；铜环出现稳定脉动（铜矿本源未死）；抵达后山老槐树；与陈老对峙 | H045三件钥匙重大突破；H046铜环裂纹变化；H047陈老同源确认；H035陈老欠债可回收；H040执法堂监视转折；H048纸团来源揭示；H049执法堂内部裂痕深化；H050暗处敲门人推进；H051后山老槐树可回收；H052孙师兄交易（新）；H053三件钥匙与灵泉核心（新）；H054三十七人vs三十六人（新）；H055七十三人之谜（新）"
+    },
+    {
+      "source": "story/chapter_summaries.md#42",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "老槐树下 | 陈老揭示三件钥匙/父亲献祭/孙师兄旧识；禁制三天期限；陈守一进入灵泉核心；灰雾空间/脚步声 | 左臂金丝缠部分消退；铜环持续恢复；禁制三天开始计时 | H035/H051回收；H056-H061新开"
+    },
+    {
+      "source": "story/pending_hooks.md#H059_铜环彻底修复",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | **新信息**：铜环三息强光耗尽父亲能量（近乎归零）；需灵泉核心灵力源头才能彻底修复；陈守一灵力枯竭无法主动引导修复"
+    },
+    {
+      "source": "story/pending_hooks.md#H053_三件钥匙与灵泉核心",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | progressing | 第43章 | 三件钥匙合一；陈守一体内有一份；父亲献祭成为引子；**已完成进入灵泉核心**"
+    },
+    {
+      "source": "story/pending_hooks.md#H046_铜环裂纹变化",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | progressing | 待揭示 | mid-arc | 铜环能量近乎耗尽；三息强光后几乎归零；需灵泉核心灵力源头修复"
+    },
+    {
+      "source": "story/pending_hooks.md#H058_体内神秘能力",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | 陈守一体内有能推演、感知阵法的东西；与弯月印记同源但不是同一个；陈老不知道来源；陈守一母亲留给他的；灵泉核心灵力压制下天机簿无法激活"
+    },
+    {
+      "source": "story/pending_hooks.md#H052_孙师兄交易",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | 孙师兄和陈守一父亲是旧识；孙师兄要铜牌位置是\"还债\""
+    },
+    {
+      "source": "story/pending_hooks.md#H050_暗处敲门人",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | 纸团来源与敲门节奏吻合；长老派系相关（推测）"
+    },
+    {
+      "source": "story/pending_hooks.md#H056_父亲献祭真相",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | progressing | **第43章** | **已揭示**：父亲找到退路（窄门）但选择不走→把自己留在门后→成为灵泉核心引子→三件钥匙合一的最后一道关卡；父亲遗言\"不要像我一样\"完整含义→父亲希望陈守一活着走出去；记忆碎片传递完成"
+    },
+    {
+      "source": "story/pending_hooks.md#H057_灵泉核心探索",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | progressing | **第43章** | **已推进**：抵达石板路尽头/窄门前；残魂攻击（两波）；铜环三息强光保护；铜环能量近乎耗尽；窄门出现；门外有活人正在破禁；**陈守一决定侧身进入窄门**"
+    }
+  ]
+}

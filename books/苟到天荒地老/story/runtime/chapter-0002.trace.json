@@ -1,7 +1,15 @@
 {
   "chapter": 2,
   "plannerInputs": [
-    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0002.intent.md"
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\author_intent.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_focus.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\story_bible.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\volume_outline.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\chapter_summaries.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\book_rules.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_state.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\pending_hooks.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\memory.db"
   ],
   "composerInputs": [
     "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0002.intent.md"
@@ -12,14 +20,10 @@
     "story/current_state.md",
     "story/story_bible.md",
     "story/volume_outline.md",
-    "story/chapter_summaries.md#chapter_1_bridge",
-    "story/chapter_summaries.md#recent_titles",
-    "story/chapter_summaries.md#recent_mood_type_trail",
     "story/current_state.md#当前限制",
-    "story/current_state.md#读者悬念锚点",
     "story/current_state.md#当前冲突",
     "story/current_state.md#当前目标",
-    "story/chapter_summaries.md#1"
+    "story/current_state.md#主角状态"
   ],
   "notes": []
 }

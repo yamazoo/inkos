@@ -1,0 +1,135 @@
+{
+  "chapter": 56,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第55章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "天地灵气的衰减周期：每经一个大时代，有效利用率衰减至上一代的70%"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "炼气杂役在宗门夹缝中求生存，在\"不冒头\"与\"被迫展露\"的矛盾中艰难前行"
+    },
+    {
+      "source": "story/chapter_summaries.md#chapter_55_bridge",
+      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
+      "excerpt": "第55章《彼岸栖身》 | 出场人物：陈守一、青鸾、年轻男子、神秘生物、守夜者（提及） | 本章事件：1.陈守一在石屋醒来（被青鸾接引）；2.青鸾讲述三源合一是彼岸古老传承；3.青鸾带陈守一参观聚居点；4.聚居点环境（银白植物/圆顶房屋/店铺/修炼场所）；5.年轻男子质疑陈守一是幽冥界探子；6.东面山谷发现幽冥界痕迹（黑雾残留）；7.众人怀疑陈守一；8.神秘生物再次出现并向陈守一行礼；9.陈守一身份被认可；10.青鸾向守夜者禀报；11.守夜者明日召见陈守一 | 状态变化：陈守一：位置（被带到聚居点石屋）；伤势（服药后略稳定/经脉疏通）；修为（近乎全废）；眉心金痕（再次闪现）；青鸾：成为陈守一在彼岸第一个熟人；守夜者：明日将召见陈守一 | 悬念活动：H087/H088/H089深化；H093/H094深化；H097/H098/H099 new"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "55: 彼岸栖身 | 54: 雾中来客 | 52: 三源归一 | 51: 同源之争 | 50: 石室困局"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "55: 茫然→警觉→紧张→思念→坚定→希望→危机→释然→期待 / 彼岸融入章/过渡章/新NPC登场 | 54: 茫然→警觉→震惊→接受→思念→希望→昏迷 / 彼岸探索开启章/过渡章 | 52: 震撼→悲痛→决然→释然→悲伤→决然 / **高潮终章/真相完结章/命运转折章** | 51: 紧张→震撼→悲痛→希望→绝望→紧绷 / 高潮对峙章/真相揭示章/转折章 | 50: **震惊→紧张→危机→决然→希望→紧迫→凝重→抉择** / **高潮对峙章/困局章/同源共振变数章**"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch53: 他们对视了。 | ch54: 在这个陌生的世界里，他找到了第一丝希望。 | ch55: 明天，守夜者将给他答案。"
+    },
+    {
+      "source": "runtime/hook_debt#H087_陈守一能否回来",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H087_陈守一能否回来（悬念钩，可兑现旧债，已开4章） | 读者承诺：后期（彼岸冒险后） | 种于第52章：ch52 三源归一 - 1.母亲虚影揭示三源合一完整真相（来自彼岸/两界通道崩塌/三件钥匙同源彼岸之物/三源合一代价无法回来）；2.被逐出弟子看见母亲虚影后执念崩塌（师妹/十二岁入山/共赴大道誓言）；3.被逐出弟子主动牺牲（\"我欠他的今夜还清\"/暗金环认的是父亲血脉不是他）；4.陈守一二话不说完成三源合一（铜环+银戒融合）；5.父亲神魂最后一次显现（\"你做出了你的选择\"/\"好好活着\"/神魂消散）；6.陈守一被传送到彼岸（陌生星空/紫色月亮/连绵山脉/浓郁灵气）；7.石室内周长老抹血看着空石台；8.周长老带走周执事（\"三十年的债今夜该还了\"）；9.苏婉儿重伤（脸色苍白/胸口缠布条） | 推进于第55章：ch55 彼岸栖身 - 1.陈守一在石屋醒来（被青鸾接引）；2.青鸾讲述三源合一是彼岸古老传承；3.青鸾带陈守一参观聚居点；4.聚居点环境（银白植物/圆顶房屋/店铺/修炼场所）；5.年轻男子质疑陈守一是幽冥界探子；6.东面山谷发现幽冥界痕迹（黑雾残留）；7.众人怀疑陈守一；8.神秘生物再次出现并向陈守一行礼；9.陈守一身份被认可；10.青鸾向守夜者禀报；11.守夜者明日召见陈守一"
+    },
+    {
+      "source": "runtime/hook_debt#H096_接引者的身份",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H096_接引者的身份（悬念钩，主要旧债，已开2章） | 读者承诺：待揭示 | 种于第54章：ch54 雾中来客 - 1.陈守一在彼岸醒来（陌生星空/紫色月亮）；2.环境描述（银白叶片植物/黑色巨木/银白雾气）；3.身体虚弱（左肩伤口/生命流失）；4.感知灵气（浓郁但夹杂异质）；5.遭遇神秘生物（蓝鳞片/金芒竖瞳/远超炼气期灵压）；6.神秘生物认可并刻入金痕；7.灵识短暂萌发后消失；8.发现岩石上与玉令相同的印记；9.向建筑群前进；10.体力耗尽倒下；11.被人类身影发现并接引"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 1. 活着（彼岸聚居点生存）2. 恢复伤势（进行中）3. 了解彼岸世界 4. 明日见守夜者 5. 寻找回去的方法 6. 理解三源合一的全部代价"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 三源合一/被传送到彼岸/被接引到聚居点；被神秘生物再次认可；被守夜者召见；两界通道崩塌确认；无法回去；聚居点有人质疑身份；东面山谷发现幽冥界痕迹"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 生命力近乎耗尽（服药后略稳定）；经脉堵塞已疏通；铜戒与银戒合二为一（淡金纹路+银芒）；后颈弯月印记/胸口金丝缠印记仍存；眉心金痕（再次闪现）；幽冥隐脉体觉醒状态；三源已完成合一；修为近乎全废"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 生命力近乎耗尽；身处异界（彼岸）；无法回去（除非足够强大的力量）；修为近乎全废；苏婉儿/大长老/周长老等灵洲大陆情况不明；冥将挣脱封印后动向不明"
+    },
+    {
+      "source": "story/chapter_summaries.md#3",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "夜林惊锋 | 1.（上章推演确认今夜是三日之期最后期限）→ 本章灵泉方向三道气息向杂役区逼近，陈守一躲避不及被筑基修为的中年男子发现并短暂对峙；2.（中年男子原为推演画面中的人物悬念）→ 本章确认身份为执法堂成员，揭示三天前陈守一躲在灵田沟渠时远处树影下的人就是他；3.（虫卵栽赃判定为人为，第2章执法弟子提及灵禾异常增三成）→ 本章中年男子揭露真相：虫卵栽赃的真正目标不是赵海也不是陈守一，而是引出灵泉附近的所有关联者；4.（执法堂调查灵禾异常，第2章执法弟子开始关注陈守一）→ 本章确认执法堂已掌握陈守一三日前行踪和感知能力，指出他能感知执法堂隐蔽阵法很不寻常；5.陈守一左臂被灵气割伤，中年男子主动放走并给出秘密指引：三日后灵泉变故，去后山老槐树下等着；6.中年男子离开后，陈守一发现屋内陈设被未知监视者翻动，手法比执法堂更老练；7.章节末尾小路急促赶来报信\"出大事了\" | 陈守一失去'不冒头'资格——执法堂已掌握其行踪和感知能力，多方势力开始注意这个本不该出现在灵泉线索上的炼气三层杂役；天机簿残页灵力正在缓慢恢复；左臂灵气入体麻痹；中年男子立场复杂——虽来自执法堂但主动放人并给出秘密指引，似乎在布局 | H001_三日之期 resolved; H002_中年男子 progressed; H003_灵泉异常 progressed; H004_执法堂调查 progressed; H005_破屋监视者 progressed; H007_枯叶螟栽赃 resolved"
+    },
+    {
+      "source": "story/chapter_summaries.md#54",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "雾中来客 | 1.陈守一在彼岸醒来（陌生星空/紫色月亮）；2.环境描述（银白叶片植物/黑色巨木/银白雾气）；3.身体虚弱（左肩伤口/生命流失）；4.感知灵气（浓郁但夹杂异质）；5.遭遇神秘生物（蓝鳞片/金芒竖瞳/远超炼气期灵压）；6.神秘生物认可并刻入金痕；7.灵识短暂萌发后消失；8.发现岩石上与玉令相同的印记；9.向建筑群前进；10.体力耗尽倒下；11.被人类身影发现并接引 | 陈守一：位置（彼岸陌生山坡→山脉脚下山路旁昏迷）；眉心新增金痕（转瞬即逝）；灵识感知短暂增强；发现母亲岩石印记；被接引 | H087/H088/H089深化；H090/H091/H092悬而未决；H093/H094/H095/H096 new"
+    },
+    {
+      "source": "story/chapter_summaries.md#55",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "彼岸栖身 | 1.陈守一在石屋醒来（被青鸾接引）；2.青鸾讲述三源合一是彼岸古老传承；3.青鸾带陈守一参观聚居点；4.聚居点环境（银白植物/圆顶房屋/店铺/修炼场所）；5.年轻男子质疑陈守一是幽冥界探子；6.东面山谷发现幽冥界痕迹（黑雾残留）；7.众人怀疑陈守一；8.神秘生物再次出现并向陈守一行礼；9.陈守一身份被认可；10.青鸾向守夜者禀报；11.守夜者明日召见陈守一 | 陈守一：位置（被带到聚居点石屋）；伤势（服药后略稳定/经脉疏通）；修为（近乎全废）；眉心金痕（再次闪现）；青鸾：成为陈守一在彼岸第一个熟人；守夜者：明日将召见陈守一 | H087/H088/H089深化；H093/H094深化；H097/H098/H099 new"
+    },
+    {
+      "source": "story/pending_hooks.md#H097_守夜者",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | 新伏笔：聚居点最高决策者；已活三百余年；连幽冥将都忌惮她三分；明日将召见陈守一；知道两界通道崩塌的真相；知道很多关于彼岸和幽冥界的秘密"
+    },
+    {
+      "source": "story/pending_hooks.md#H098_幽冥界痕迹",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | 新伏笔：东面山谷发现黑雾残留；是幽冥界生物的活动痕迹；聚居点人心惶惶"
+    },
+    {
+      "source": "story/pending_hooks.md#H099_青鸾的身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | 新伏笔：聚居点边缘巡查；发现陈守一；懂灵洲大陆官话；知道三源合一的传说；向守夜者禀报；担保陈守一"
+    },
+    {
+      "source": "story/pending_hooks.md#H093_神秘生物的身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | 再次出现并认可陈守一；被称为\"山中守护者\"；对三源合一者表示近乎虔诚的敬意；额鳞触碰眉心刻入金痕；古老鸣叫声；灵压远超炼气期"
+    },
+    {
+      "source": "story/pending_hooks.md#H094_眉心金痕的意义",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | 神秘生物刻入金痕后转瞬即逝；再次触碰后闪现；与三源合一眉心印记相关；神秘生物表示敬意"
+    },
+    {
+      "source": "story/pending_hooks.md#H095_岩石印记与母亲",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | 岩石上印记与母亲玉令图案相同；母亲曾在彼岸生活并留下痕迹（无新推进）"
+    },
+    {
+      "source": "story/pending_hooks.md#H096_接引者的身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | 青鸾（聚居点边缘巡查）成功接引陈守一到聚居点"
+    },
+    {
+      "source": "story/pending_hooks.md#H087_陈守一能否回来",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 后期（彼岸冒险后） | mid-arc | 三源合一代价；无法回来的条件；需要足够强大的力量；母亲遗言确认两界通道崩塌；青鸾确认两界通道彻底崩塌；守夜者知道两界通道崩塌的真相"
+    }
+  ]
+}

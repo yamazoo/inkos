@@ -1,0 +1,123 @@
+{
+  "hooks": [
+    {
+      "hookId": "H062_石台传送门",
+      "startChapter": 44,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 51,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**本章推进**：石台成为争夺焦点；石台上的弯月光芒正在微微闪烁，与铜环遥相呼应；被逐出弟子朝石台方向移动；大长老喊\"守一，不能让他得到那东西\""
+    },
+    {
+      "hookId": "H070_父亲在灵泉核心留的东西",
+      "startChapter": 48,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 51,
+      "expectedPayoff": "父亲遗愿的完整揭示",
+      "payoffTiming": "near-term",
+      "notes": "本章推进：石台开启；遗物显现（玉令）；母亲虚影出现；\"通往母亲故乡的路\""
+    },
+    {
+      "hookId": "H079_父亲遗愿",
+      "startChapter": 49,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 50,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**本章深化**：被逐出弟子揭示真实目的——\"你以为我触发封印是为了杀你？不。我要亲眼看着他儿子亲手打开那扇门。看看他留下的到底是什么。\"；陈守一领悟\"父亲留下的，不只是一枚铜环。他留下的是一个选择。\""
+    },
+    {
+      "hookId": "H074_被逐出弟子身份",
+      "startChapter": 49,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 51,
+      "expectedPayoff": "被逐出弟子与母亲的关系揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "本章推进：看见母亲虚影后浑身僵硬、眼角泛红（情绪剧变）；与母亲之间存在未知关联（待揭示）"
+    },
+    {
+      "hookId": "H075_被逐出弟子与父亲旧约",
+      "startChapter": 49,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 51,
+      "expectedPayoff": "旧约的完整内容和被逐出弟子的真实动机",
+      "payoffTiming": "mid-arc",
+      "notes": "本章推进：被逐出弟子与母亲之间存在未知关联；\"三十年前的事该有个了结\"（执法堂介入）"
+    },
+    {
+      "hookId": "H076_暗金环",
+      "startChapter": 49,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 51,
+      "expectedPayoff": "暗金环的完整功能和用法",
+      "payoffTiming": "mid-arc",
+      "notes": "本章推进：被铜环同源共振极致压制；被逐出弟子无法完全操控；暗金环与铜环、玉令同源一体"
+    },
+    {
+      "hookId": "H077_周执事眼线被替换",
+      "startChapter": 49,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 51,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "本章未推进"
+    },
+    {
+      "hookId": "H078_封印裂痕持续扩大",
+      "startChapter": 49,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 51,
+      "expectedPayoff": "待揭示",
+      "notes": "**本章重大推进**：封印裂痕骤然扩大；冥将发出兴奋咆哮；黑雾喷涌而出；\"又有裂缝了。你们打吧，你们闹吧。封印已经撑不住了。\"；冥将攻击目标转向封印裂痕，疯狂撕裂最后的束缚"
+    },
+    {
+      "hookId": "H080_同源共振机制",
+      "startChapter": 50,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 51,
+      "expectedPayoff": "三件钥匙同源合一",
+      "payoffTiming": "near-term",
+      "notes": "本章推进：铜环与暗金环极致碰撞；铜环压制暗金环；玉令白光使铜环裂纹愈合；三件钥匙同源同根本是一体（玉令遗言揭示）"
+    },
+    {
+      "hookId": "H081_母亲身份之谜",
+      "startChapter": 50,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 51,
+      "expectedPayoff": "母亲异界身份的完整揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "本章重大推进：母亲虚影显现；遗言\"我不是这个世界的人\"（异界身份）；陈守一得知自己有母亲；被逐出弟子看见母亲虚影后情绪剧变"
+    },
+    {
+      "hookId": "H082_三方被迫重新站队",
+      "startChapter": 50,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 51,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "near-term",
+      "notes": "**新伏笔**：被逐出弟子转向石台；冥将攻击目标转向封印裂痕；陈守一需做出选择"
+    },
+    {
+      "hookId": "H083_陈守一的抉择",
+      "startChapter": 50,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 51,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "near-term",
+      "notes": "**新伏笔**：\"父亲留下的，不只是一枚铜环。他留下的是一个选择。\"陈守一需要做出决定"
+    }
+  ]
+}

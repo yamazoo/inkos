@@ -1,0 +1,82 @@
+{
+  "hooks": [
+    {
+      "hookId": "H040_执法堂监视",
+      "startChapter": 29,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待揭示",
+      "notes": "**周执事正式出手**：以\"使用禁术\"名义押走陈守一；四方角帽执行灭口；炼气五层对手被带走去灭口"
+    },
+    {
+      "hookId": "H045_三件钥匙",
+      "startChapter": 30,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "近期",
+      "payoffTiming": "mid-arc",
+      "notes": "**三件钥匙共鸣确认**：铜牌、铜环、后颈印记产生共鸣；感知到令牌碎片存在；指向陈老方向"
+    },
+    {
+      "hookId": "H046_铜环裂纹",
+      "startChapter": 30,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**裂纹蛛网状碎裂**：铜环能量近乎枯竭；裂纹从细丝变成蛛网状碎裂；短时间内无法再次动用"
+    },
+    {
+      "hookId": "H047_陈老与陈守一同姓",
+      "startChapter": 30,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**令牌碎片指向陈老**：三件钥匙共鸣感知到令牌碎片指向陈老所在方向"
+    },
+    {
+      "hookId": "H041_铜环钥匙",
+      "startChapter": 29,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**三件钥匙体系确认**：令牌碎片（从对手身上获得）、铜牌、铜环；周执事的栽赃道具成为反制筹码"
+    },
+    {
+      "hookId": "H042_卫长老",
+      "startChapter": 29,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**四方角帽执行灭口**：周执事和卫长老联合行动确认；灭口进行中"
+    },
+    {
+      "hookId": "H035_陈老欠债",
+      "startChapter": 28,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**三件钥匙共鸣指向陈老**：令牌碎片指向陈老方向；陈老欠债涉及七十三人同源印记"
+    },
+    {
+      "hookId": "H048_纸团来源",
+      "startChapter": 36,
+      "type": "**悬念钩/new**",
+      "status": "open",
+      "lastAdvancedChapter": 36,
+      "expectedPayoff": "待揭示",
+      "notes": "**陈守一在擂台上获得未知来源的纸团**；踩住但未查看；苏婉儿递的？还是其他人？"
+    }
+  ]
+}

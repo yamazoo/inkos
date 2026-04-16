@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "volumeId": "vol-1",
+  "volumeTitle": "苟到天荒地老",
+  "chapterRange": [
+    1,
+    200
+  ],
+  "currentChapter": 0,
+  "outlineNodes": [],
+  "mainSuspense": {
+    "hookId": "H001",
+    "description": "主悬念",
+    "plantedAt": 1,
+    "currentProgress": 0,
+    "expectedPayoff": null
+  },
+  "nextChapterDirection": {
+    "targetNodeId": null,
+    "targetProgress": 30,
+    "tone": "intensify"
+  }
+}

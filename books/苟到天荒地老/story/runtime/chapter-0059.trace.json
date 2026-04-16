@@ -1,0 +1,46 @@
+{
+  "chapter": 59,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\author_intent.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_focus.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\story_bible.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\volume_outline.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\chapter_summaries.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\book_rules.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_state.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\pending_hooks.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\memory.db"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0059.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#chapter_58_bridge",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "runtime/hook_debt#H093_神秘生物的身份",
+    "runtime/hook_debt#H100_赵猛弟弟之死",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#3",
+    "story/chapter_summaries.md#56",
+    "story/chapter_summaries.md#58",
+    "story/pending_hooks.md#H104_玄清宗内鬼",
+    "story/pending_hooks.md#H105_虚境幽冥兽",
+    "story/pending_hooks.md#H106_母亲当年也有金痕",
+    "story/pending_hooks.md#H102_守夜者与母亲的关系",
+    "story/pending_hooks.md#H103_幽冥界裂缝",
+    "story/pending_hooks.md#H097_守夜者",
+    "story/pending_hooks.md#H100_赵猛弟弟之死",
+    "story/pending_hooks.md#H098_幽冥界痕迹"
+  ],
+  "notes": []
+}

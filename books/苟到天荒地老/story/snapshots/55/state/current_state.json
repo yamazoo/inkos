@@ -1,0 +1,53 @@
+{
+  "chapter": 55,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "彼岸·聚居点（石屋内休养）",
+      "validFromChapter": 55,
+      "validUntilChapter": null,
+      "sourceChapter": 55
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "生命力近乎耗尽（服药后略稳定）；经脉堵塞已疏通；铜戒与银戒合二为一（淡金纹路+银芒）；后颈弯月印记/胸口金丝缠印记仍存；眉心金痕（再次闪现）；幽冥隐脉体觉醒状态；三源已完成合一；修为近乎全废",
+      "validFromChapter": 55,
+      "validUntilChapter": null,
+      "sourceChapter": 55
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "1. 活着（彼岸聚居点生存）2. 恢复伤势（进行中）3. 了解彼岸世界 4. 明日见守夜者 5. 寻找回去的方法 6. 理解三源合一的全部代价",
+      "validFromChapter": 55,
+      "validUntilChapter": null,
+      "sourceChapter": 55
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "生命力近乎耗尽；身处异界（彼岸）；无法回去（除非足够强大的力量）；修为近乎全废；苏婉儿/大长老/周长老等灵洲大陆情况不明；冥将挣脱封印后动向不明",
+      "validFromChapter": 55,
+      "validUntilChapter": null,
+      "sourceChapter": 55
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "神秘生物（非敌对/认可态度）；冥将（灵洲大陆/石室局势不明）；苏婉儿等盟友（灵洲大陆情况不明）；聚居点居民（暂时因神秘生物认可而噤声）",
+      "validFromChapter": 55,
+      "validUntilChapter": null,
+      "sourceChapter": 55
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "三源合一/被传送到彼岸/被接引到聚居点；被神秘生物再次认可；被守夜者召见；两界通道崩塌确认；无法回去；聚居点有人质疑身份；东面山谷发现幽冥界痕迹",
+      "validFromChapter": 55,
+      "validUntilChapter": null,
+      "sourceChapter": 55
+    }
+  ]
+}

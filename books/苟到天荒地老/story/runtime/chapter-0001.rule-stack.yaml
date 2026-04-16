@@ -41,4 +41,8 @@ overrideEdges:
     to: L1
     allowed: false
     scope: current_chapter
-activeOverrides: []
+activeOverrides:
+  - from: L4
+    to: L3
+    target: 炼气杂役在宗门夹缝中求生存，在"不冒头"与"被迫展露"的矛盾中艰难前行
+    reason: allow local outline deferral

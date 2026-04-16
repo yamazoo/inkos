@@ -1,0 +1,120 @@
+{
+  "chapter": 54,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "天地灵气的衰减周期：每经一个大时代，有效利用率衰减至上一代的70%"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "炼气杂役在宗门夹缝中求生存，在\"不冒头\"与\"被迫展露\"的矛盾中艰难前行"
+    },
+    {
+      "source": "story/chapter_summaries.md#chapter_52_bridge",
+      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
+      "excerpt": "第52章《三源归一》 | 出场人物：陈守一、母亲虚影、被逐出弟子、冥将、周长老、周执事、苏婉儿、执法堂弟子、父亲神魂 | 本章事件：1.母亲虚影揭示三源合一完整真相（来自彼岸/两界通道崩塌/三件钥匙同源彼岸之物/三源合一代价无法回来）；2.被逐出弟子看见母亲虚影后执念崩塌（师妹/十二岁入山/共赴大道誓言）；3.被逐出弟子主动牺牲（\"我欠他的今夜还清\"/暗金环认的是父亲血脉不是他）；4.陈守一二话不说完成三源合一（铜环+银戒融合）；5.父亲神魂最后一次显现（\"你做出了你的选择\"/\"好好活着\"/神魂消散）；6.陈守一被传送到彼岸（陌生星空/紫色月亮/连绵山脉/浓郁灵气）；7.石室内周长老抹血看着空石台；8.周长老带走周执事（\"三十年的债今夜该还了\"）；9.苏婉儿重伤（脸色苍白/胸口缠布条） | 状态变化：陈守一：位置（灵泉核心石室→彼岸陌生山坡）/铜戒与银戒合二为一/生命力近乎耗尽/被传送到彼岸；被逐出弟子：彻底消散/三十年执念释然/主动牺牲还债；冥将：从封印裂痕挤出大半/黑雾席卷/周长老交战；执法堂：周长老带人涌入金室/押走周执事；苏婉儿：重伤/脸色苍白/被执法堂弟子搀扶；周执事：被押跪/不甘与怨毒 | 悬念活动：H080/H081/H074/H075/H076/H070/H079 resolved; H087/H088/H089/H090/H091/H092 new"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "52: 三源归一 | 51: 同源之争 | 50: 石室困局 | 49: 灵泉惊变 | 44: 石台博弈"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "52: 震撼→悲痛→决然→释然→悲伤→决然 / **高潮终章/真相完结章/命运转折章** | 51: 紧张→震撼→悲痛→希望→绝望→紧绷 / 高潮对峙章/真相揭示章/转折章 | 50: **震惊→紧张→危机→决然→希望→紧迫→凝重→抉择** / **高潮对峙章/困局章/同源共振变数章** | 49: **震惊→悲痛→坚定→紧迫→决然→震撼→危机→希望→凝滞** / **高潮转折章/真相再揭章/新敌人登场章** | 44: 震撼→坚定→危机→紧迫→抉择→逃脱→活下来 / 高潮转折章/关键节点章/灵泉探索完成章"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch51: 封印，彻底崩溃了。 | ch52: 身后，那片星空依然璀璨，仿佛在无声地注视着他的背影。 | ch53: 他们对视了。"
+    },
+    {
+      "source": "runtime/hook_debt#H087_陈守一能否回来",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H087_陈守一能否回来（悬念钩，主要旧债，已开2章） | 读者承诺：后期（彼岸冒险后） | 种于第52章：ch52 三源归一 - 1.母亲虚影揭示三源合一完整真相（来自彼岸/两界通道崩塌/三件钥匙同源彼岸之物/三源合一代价无法回来）；2.被逐出弟子看见母亲虚影后执念崩塌（师妹/十二岁入山/共赴大道誓言）；3.被逐出弟子主动牺牲（\"我欠他的今夜还清\"/暗金环认的是父亲血脉不是他）；4.陈守一二话不说完成三源合一（铜环+银戒融合）；5.父亲神魂最后一次显现（\"你做出了你的选择\"/\"好好活着\"/神魂消散）；6.陈守一被传送到彼岸（陌生星空/紫色月亮/连绵山脉/浓郁灵气）；7.石室内周长老抹血看着空石台；8.周长老带走周执事（\"三十年的债今夜该还了\"）；9.苏婉儿重伤（脸色苍白/胸口缠布条）"
+    },
+    {
+      "source": "runtime/hook_debt#H088_彼岸世界",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H088_彼岸世界（悬念钩，主要旧债，已开2章） | 读者承诺：中期 | 种于第52章：ch52 三源归一 - 1.母亲虚影揭示三源合一完整真相（来自彼岸/两界通道崩塌/三件钥匙同源彼岸之物/三源合一代价无法回来）；2.被逐出弟子看见母亲虚影后执念崩塌（师妹/十二岁入山/共赴大道誓言）；3.被逐出弟子主动牺牲（\"我欠他的今夜还清\"/暗金环认的是父亲血脉不是他）；4.陈守一二话不说完成三源合一（铜环+银戒融合）；5.父亲神魂最后一次显现（\"你做出了你的选择\"/\"好好活着\"/神魂消散）；6.陈守一被传送到彼岸（陌生星空/紫色月亮/连绵山脉/浓郁灵气）；7.石室内周长老抹血看着空石台；8.周长老带走周执事（\"三十年的债今夜该还了\"）；9.苏婉儿重伤（脸色苍白/胸口缠布条）"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 1. 活着（彼岸陌生环境下生存）2. 了解彼岸世界 3. 寻找回去的方法（\"除非有足够强大的力量撕开两界壁垒\"）4. 理解三源合一的全部代价"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 三源合一完成/被传送到彼岸；冥将挣脱封印后石室局势不明；无法回去"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 生命力近乎耗尽；左肩深可见骨伤痕（待愈合）；铜戒与银戒合二为一（淡金纹路+银芒）；后颈弯月印记/胸口金丝缠印记仍存；幽冥隐脉体觉醒状态；三源已完成合一"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 生命力近乎耗尽；身处异界（彼岸）；无法回去（除非足够强大的力量）；苏婉儿重伤/大长老灵力枯竭/石室情况未知；冥将挣脱封印后动向不明"
+    },
+    {
+      "source": "story/chapter_summaries.md#3",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "夜林惊锋 | 1.（上章推演确认今夜是三日之期最后期限）→ 本章灵泉方向三道气息向杂役区逼近，陈守一躲避不及被筑基修为的中年男子发现并短暂对峙；2.（中年男子原为推演画面中的人物悬念）→ 本章确认身份为执法堂成员，揭示三天前陈守一躲在灵田沟渠时远处树影下的人就是他；3.（虫卵栽赃判定为人为，第2章执法弟子提及灵禾异常增三成）→ 本章中年男子揭露真相：虫卵栽赃的真正目标不是赵海也不是陈守一，而是引出灵泉附近的所有关联者；4.（执法堂调查灵禾异常，第2章执法弟子开始关注陈守一）→ 本章确认执法堂已掌握陈守一三日前行踪和感知能力，指出他能感知执法堂隐蔽阵法很不寻常；5.陈守一左臂被灵气割伤，中年男子主动放走并给出秘密指引：三日后灵泉变故，去后山老槐树下等着；6.中年男子离开后，陈守一发现屋内陈设被未知监视者翻动，手法比执法堂更老练；7.章节末尾小路急促赶来报信\"出大事了\" | 陈守一失去'不冒头'资格——执法堂已掌握其行踪和感知能力，多方势力开始注意这个本不该出现在灵泉线索上的炼气三层杂役；天机簿残页灵力正在缓慢恢复；左臂灵气入体麻痹；中年男子立场复杂——虽来自执法堂但主动放人并给出秘密指引，似乎在布局 | H001_三日之期 resolved; H002_中年男子 progressed; H003_灵泉异常 progressed; H004_执法堂调查 progressed; H005_破屋监视者 progressed; H007_枯叶螟栽赃 resolved"
+    },
+    {
+      "source": "story/chapter_summaries.md#51",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "同源之争 | 1.（上章陈守一用铜环自救/寿数燃烧/同源共振被激活）→ 本章陈守一迈向石台→铜环与暗金环极致碰撞→同源共振彻底爆发→铜环压制暗金环；2.（上章被逐出弟子揭示真实目的要陈守一打开父亲遗物）→ 本章陈守一被震飞→拼尽力气将铜环送到石台边缘→铜环与弯月光芒接触→石台开启；3.（上章陈守一不知母亲存在）→ 本章石台缝隙显现遗物→母亲虚影显现→遗言\"我不是这个世界的人\"→陈守一怔住得知有母亲；4.（上章被逐出弟子嘲讽陈守一）→ 本章被逐出弟子扑向石台→看见母亲虚影后浑身僵硬→眼角泛红（情绪剧变）；5.（上章铜环裂纹变淡/能力下降）→ 本章玉令白光使铜环裂纹愈合→淡金纹路重新亮起→三件钥匙同源同根本是一体（母亲遗言揭示）；6.（上章封印裂痕持续扩大）→ 本章封印裂痕骤然扩大→封印彻底崩溃→冥将疯狂挣脱；7.（上章周执事眼线被替换悬而未决）→ 本章周长老带执法堂弟子涌入石室→宣布\"三十年前的事该有个了结\"→执法堂正式介入 | 陈守一：生命力近乎耗尽/左肩深可见骨伤痕/铜环裂纹愈合/获得玉令/得知母亲存在；被逐出弟子：暗金环被同源共振压制/看见母亲虚影后情绪剧变；封印：彻底崩溃（封印裂痕骤然扩大→崩溃）；冥将：从封印裂痕探出大半身形/黑雾利刃攻击；执法堂：周长老带人涌入石室 | H080/H081/H076/H074/H075/H070 advanced; H062/H077/H082/H083/H078 resolved; H084/H085/H086 new"
+    },
+    {
+      "source": "story/chapter_summaries.md#52",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "三源归一 | 1.母亲虚影揭示三源合一完整真相（来自彼岸/两界通道崩塌/三件钥匙同源彼岸之物/三源合一代价无法回来）；2.被逐出弟子看见母亲虚影后执念崩塌（师妹/十二岁入山/共赴大道誓言）；3.被逐出弟子主动牺牲（\"我欠他的今夜还清\"/暗金环认的是父亲血脉不是他）；4.陈守一二话不说完成三源合一（铜环+银戒融合）；5.父亲神魂最后一次显现（\"你做出了你的选择\"/\"好好活着\"/神魂消散）；6.陈守一被传送到彼岸（陌生星空/紫色月亮/连绵山脉/浓郁灵气）；7.石室内周长老抹血看着空石台；8.周长老带走周执事（\"三十年的债今夜该还了\"）；9.苏婉儿重伤（脸色苍白/胸口缠布条） | 陈守一：位置（灵泉核心石室→彼岸陌生山坡）/铜戒与银戒合二为一/生命力近乎耗尽/被传送到彼岸；被逐出弟子：彻底消散/三十年执念释然/主动牺牲还债；冥将：从封印裂痕挤出大半/黑雾席卷/周长老交战；执法堂：周长老带人涌入金室/押走周执事；苏婉儿：重伤/脸色苍白/被执法堂弟子搀扶；周执事：被押跪/不甘与怨毒 | H080/H081/H074/H075/H076/H070/H079 resolved; H087/H088/H089/H090/H091/H092 new"
+    },
+    {
+      "source": "story/pending_hooks.md#H087_陈守一能否回来",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 后期（彼岸冒险后） | 三源合一代价；无法回来的条件；需要足够强大的力量才能回去"
+    },
+    {
+      "source": "story/pending_hooks.md#H088_彼岸世界",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 中期 | mid-arc | 彼岸世界初揭示；环境陌生；灵气更浓郁"
+    },
+    {
+      "source": "story/pending_hooks.md#H089_陈守一在彼岸的身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | 彼岸如何对待三源合一者；他在彼岸的身份定位"
+    },
+    {
+      "source": "story/pending_hooks.md#H090_苏婉儿安危",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | 苏婉儿重伤后的命运；石室局势如何"
+    },
+    {
+      "source": "story/pending_hooks.md#H091_冥将挣脱后的情况",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | 冥将挣脱后石室局势；周长老能否压制冥将"
+    },
+    {
+      "source": "story/pending_hooks.md#H092_周执事审判",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | 周执事被审判的结果；三十年前的真相是否会公开"
+    }
+  ]
+}

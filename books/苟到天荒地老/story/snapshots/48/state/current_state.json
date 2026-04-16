@@ -1,0 +1,61 @@
+{
+  "chapter": 48,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "**演武场→灵泉核心方向**",
+      "validFromChapter": 48,
+      "validUntilChapter": null,
+      "sourceChapter": 48
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "炼气三层；灵力微弱恢复中（远未全盛）；后颈弯月印记（发热/父亲神魂/与铜环呼应）；胸口金丝缠印记（母亲遗物）；铜环三道裂纹闭合（暗红血色/内部淡金纹路/有东西沉睡）；**幽冥隐脉体首次觉醒**（体表黑光已散/瞳孔变深灰）；**三股力量来源已揭示**（幽冥之力/弯月印记/金丝缠印记）；生命力受损（面色苍白/眼窝凹陷/发间枯灰）；周执事监视眼线仍在跟踪",
+      "validFromChapter": 48,
+      "validUntilChapter": null,
+      "sourceChapter": 48
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "1. **活着**：从执法堂脱身→已达成；外门正式弟子→已达成；**2. 查清三十年前实验真相**→父亲献祭已揭示；演武场见长老→**已达成**；3. **三件钥匙合一**→铜环修复成功；4. **应对孙师兄交易**（欠人情/孙师兄已联络）→待履行；5. **保护苏婉儿**→确认安全；6. **理解幽冥隐脉体**（首次觉醒/三股力量来源已揭示）；7. **探索上古遗迹**（未来目标）；**8. 三日后月圆之夜去灵泉核心**（取父亲留下的东西/压制封印）；**9. 封印被提前触发→紧急前往灵泉核心**",
+      "validFromChapter": 48,
+      "validUntilChapter": null,
+      "sourceChapter": 48
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "灵力未完全恢复（微弱滋生中/远未全盛）；生命力受损（面色苍白/眼窝凹陷/发间枯灰/寿数被抽走）；金丝缠化作印记与弯月遥相呼应；铜环内有东西在沉睡（不敢深探）；天机簿灵力耗尽；令牌碎片被长老收走；孙师兄交易（欠人情）；周执事仍在追杀（监视眼线仍在跟踪）；**幽冥隐脉体首次觉醒（三股力量来源已揭示/但如何协调使用仍未知）**；**幽冥界薄弱节点被激活**（幽冥兽出现/封印不稳定）；**封印被提前触发（冥将苏醒）**",
+      "validFromChapter": 48,
+      "validUntilChapter": null,
+      "sourceChapter": 48
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "周执事(敌对/被逼退/监视眼线仍在/留下威胁\"灵泉核心下方沉睡什么\")",
+      "validFromChapter": 48,
+      "validUntilChapter": null,
+      "sourceChapter": 48
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "表层：演武场对峙→大长老揭露父亲献祭真相→李长老出场→周执事被逼退→周执事留下威胁；深层：封印被提前触发→冥将苏醒→紧急前往灵泉核心；核心：**父亲献祭真相揭示（主动献祭/保护宗门/保护陈守一）**→**三股力量来源揭示（幽冥之力/弯月印记/金丝缠印记）**→**大长老与父亲关系揭示（师徒关系/欠一条命今夜已还）**→**李长老出场（三十年前三人之一/见证献祭）**→**封印被提前触发（冥将苏醒/紧急行动）**→**周执事威胁（灵泉核心下方沉睡什么）**→**三日后月圆之夜去灵泉核心（取父亲留下的东西）**",
+      "validFromChapter": 48,
+      "validUntilChapter": null,
+      "sourceChapter": 48
+    },
+    {
+      "subject": "current_state",
+      "predicate": "章节类型",
+      "object": "高潮揭示章/真相揭露章",
+      "validFromChapter": 48,
+      "validUntilChapter": null,
+      "sourceChapter": 48
+    }
+  ]
+}

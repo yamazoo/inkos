@@ -1,0 +1,61 @@
+{
+  "chapter": 51,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "三方夹击（冥将挣脱封印中/被逐出弟子争夺遗物/执法堂介入）",
+      "validFromChapter": 51,
+      "validUntilChapter": null,
+      "sourceChapter": 51
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "执法堂（周长老带人涌入）",
+      "validFromChapter": 51,
+      "validUntilChapter": null,
+      "sourceChapter": 51
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "1. 活着（当前危急）2. 理解母亲遗言的含义 3. 阻止冥将挣脱封印 4. 保护苏婉儿 5. 面对被逐出弟子与母亲的关联",
+      "validFromChapter": 51,
+      "validUntilChapter": null,
+      "sourceChapter": 51
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "灵泉核心石室",
+      "validFromChapter": 51,
+      "validUntilChapter": null,
+      "sourceChapter": 51
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "生命力近乎耗尽；左肩重伤；铜环虽愈合但刚经历剧战；苏婉儿重伤倒地；大长老灵力枯竭；封印彻底崩溃",
+      "validFromChapter": 51,
+      "validUntilChapter": null,
+      "sourceChapter": 51
+    },
+    {
+      "subject": "current_state",
+      "predicate": "章节类型",
+      "object": "**高潮对峙章/困局章/同源共振变数章**",
+      "validFromChapter": 50,
+      "validUntilChapter": null,
+      "sourceChapter": 50
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "炼气三层；生命力近乎耗尽（寿数消耗至极限）；左肩深可见骨伤痕；铜环裂纹愈合/淡金纹路重新亮起；获得玉令；后颈弯月印记/胸口金丝缠印记仍存；幽冥隐脉体觉醒状态；三件钥匙同源共振被激活",
+      "validFromChapter": 51,
+      "validUntilChapter": null,
+      "sourceChapter": 51
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "hooks": [
+    {
+      "hookId": "H056_父亲献祭真相",
+      "startChapter": 42,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**第43章**",
+      "notes": "**已揭示**：父亲找到退路（窄门）但选择不走→把自己留在门后→成为灵泉核心引子→三件钥匙合一的最后一道关卡；父亲遗言\"不要像我一样\"完整含义→父亲希望陈守一活着走出去；记忆碎片传递完成"
+    },
+    {
+      "hookId": "H057_灵泉核心探索",
+      "startChapter": 42,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**第43章**",
+      "notes": "**已推进**：抵达石板路尽头/窄门前；残魂攻击（两波）；铜环三息强光保护；铜环能量近乎耗尽；窄门出现；门外有活人正在破禁；**陈守一决定侧身进入窄门**"
+    },
+    {
+      "hookId": "H058_体内神秘能力",
+      "startChapter": 42,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 42,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "陈守一体内有能推演、感知阵法的东西；与弯月印记同源但不是同一个；陈老不知道来源；陈守一母亲留给他的；灵泉核心灵力压制下天机簿无法激活"
+    },
+    {
+      "hookId": "H059_铜环彻底修复",
+      "startChapter": 42,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 43,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新信息**：铜环三息强光耗尽父亲能量（近乎归零）；需灵泉核心灵力源头才能彻底修复；陈守一灵力枯竭无法主动引导修复"
+    },
+    {
+      "hookId": "H060_三天期限倒计时",
+      "startChapter": 42,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**三天内**",
+      "notes": "**紧迫加剧**：禁制正在被冲击（时间不足三天）；门外有活人脚步声；周执事的人正在破禁；长老派系在阻止"
+    },
+    {
+      "hookId": "H061_父亲遗言",
+      "startChapter": 42,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**第43章**",
+      "notes": "**已回收**：遗言完整含义——\"不要像我一样\"指父亲希望陈守一活着走出去，不要为了守护而献祭自己；父亲的选择是因为孩子需要一个活下来的机会"
+    },
+    {
+      "hookId": "H052_孙师兄交易",
+      "startChapter": 41,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 42,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "孙师兄和陈守一父亲是旧识；孙师兄要铜牌位置是\"还债\""
+    },
+    {
+      "hookId": "H053_三件钥匙与灵泉核心",
+      "startChapter": 41,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 43,
+      "expectedPayoff": "第43章",
+      "notes": "三件钥匙合一；陈守一体内有一份；父亲献祭成为引子；**已完成进入灵泉核心**"
+    },
+    {
+      "hookId": "H049_执法堂内部裂痕",
+      "startChapter": 40,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**新证据**：记忆碎片中感知到执法堂外部有两方对峙；周执事的人在破禁；长老派系的人在阻止；裂痕正在扩大"
+    },
+    {
+      "hookId": "H050_暗处敲门人",
+      "startChapter": 40,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 42,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "纸团来源与敲门节奏吻合；长老派系相关（推测）"
+    },
+    {
+      "hookId": "H035_陈老欠债",
+      "startChapter": 25,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 42,
+      "expectedPayoff": "第42章",
+      "notes": "陈老欠的是襒褓中孩子父亲的命"
+    },
+    {
+      "hookId": "H051_后山老槐树",
+      "startChapter": 40,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 42,
+      "expectedPayoff": "第42章",
+      "notes": "老槐树下禁制；陈老现身"
+    },
+    {
+      "hookId": "H040_执法堂监视",
+      "startChapter": 29,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 42,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "长老介入；周执事栽赃失败；执法堂内部裂痕公开化"
+    },
+    {
+      "hookId": "H045_三件钥匙共鸣",
+      "startChapter": 40,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 42,
+      "expectedPayoff": "第40-42章",
+      "notes": "三件钥匙同时共鸣指向后山老槐树"
+    },
+    {
+      "hookId": "H046_铜环裂纹变化",
+      "startChapter": 30,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 43,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "铜环能量近乎耗尽；三息强光后几乎归零；需灵泉核心灵力源头修复"
+    },
+    {
+      "hookId": "H047_陈老同源确认",
+      "startChapter": 41,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 42,
+      "expectedPayoff": "第41-42章",
+      "notes": "陈老颈侧暗金色纹路与陈守一同源"
+    }
+  ]
+}

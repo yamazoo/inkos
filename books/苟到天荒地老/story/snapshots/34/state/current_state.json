@@ -1,0 +1,61 @@
+{
+  "chapter": 34,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "外门演武场（比赛场地）；东侧廊道有身影移动；执法堂监视者位置变动",
+      "validFromChapter": 34,
+      "validUntilChapter": null,
+      "sourceChapter": 34
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "炼气三层；丹田恢复**七八成**（比赛消耗后）；左臂\"金丝缠\"**蔓延加速**（手腕中段→战斗中升温）；暗金色光泽浮动；温度持续攀升；**肩胛骨新增裂痕**（左肩比右肩略低）；左手无法动弹；天机簿残纸**灵力耗尽/需恢复**；持有完整铜牌；持有铜环（裂纹扩大/淡青色光芒/温度持续攀升）；持有大比参赛木牌；持有苏婉儿**新纸条**（今晚子时前东侧暗巷有人动手/三个炼气五层）；持有灰袍人纸条（陈旧之物/三日后演武场）；持有苏婉儿旧纸片；持有小册子；持有竹简",
+      "validFromChapter": 34,
+      "validUntilChapter": null,
+      "sourceChapter": 34
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "1. **今晚子时前**赴东侧暗巷（苏婉儿情报/提前行动）；2. 应对执法堂监视者追踪；3. **明天**继续大比；4. **后天**演武场赴约（灰袍人）；5. 查清三十年前实验与自身关联；6. 应对金丝缠暴露风险；7. 保护苏婉儿",
+      "validFromChapter": 34,
+      "validUntilChapter": null,
+      "sourceChapter": 34
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "金丝缠蔓延中（手腕中段+战斗中升温）；肩胛骨裂痕（连抬手困难）；执法堂监视者正在靠近；执法堂计划今晚动手（已调动人手）；天机簿灵力耗尽无法推演",
+      "validFromChapter": 34,
+      "validUntilChapter": null,
+      "sourceChapter": 34
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "周执事（**已确认动手意图**/调动人手/东侧暗巷/三个炼气五层）；苏婉儿（同源者/协助者/被追杀/**今夜传讯**）；陈老（欠债者/幸存者/持有令牌）；灰袍人（陈老代理人/筑基以上）；卫长老（灭口执行者/幕后）；执法堂（威胁/监视者正在追踪）；周铁柱（同源者/**周执事手下**/确认陈守一身份）",
+      "validFromChapter": 34,
+      "validUntilChapter": null,
+      "sourceChapter": 34
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "表层：金丝缠升温+肩胛骨裂痕+执法堂监视者追踪+大比暴露风险；深层：同源者身份确认（周铁柱发现）+灭口行动今夜执行+陈老旧债浮现；核心：今晚子时前东侧暗巷行动 vs 明天大比 vs 后天演武场三重时间压力",
+      "validFromChapter": 34,
+      "validUntilChapter": null,
+      "sourceChapter": 34
+    },
+    {
+      "subject": "current_state",
+      "predicate": "当前悬念",
+      "object": "今晚东侧暗巷会发生什么？苏婉儿能否活过今晚？执法堂监视者为何离开阴影？周执事要灭口的是谁？陈老与自己为何同姓？三件钥匙合一能开启什么？周执事的完整计划是什么？后山与三十年前实验的关系？",
+      "validFromChapter": 34,
+      "validUntilChapter": null,
+      "sourceChapter": 34
+    }
+  ]
+}

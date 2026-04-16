@@ -1,0 +1,45 @@
+{
+  "chapter": 49,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\author_intent.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_focus.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\story_bible.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\volume_outline.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\chapter_summaries.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\book_rules.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_state.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\pending_hooks.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\memory.db"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0049.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#chapter_44_bridge",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "runtime/hook_debt#H061_长老与父亲关系",
+    "runtime/hook_debt#H062_石台传送门",
+    "runtime/hook_debt#H069_铜环玉牌同源共鸣",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#3",
+    "story/pending_hooks.md#H070_父亲在灵泉核心留的东西",
+    "story/pending_hooks.md#H071_玉牌中的封印压制之法",
+    "story/pending_hooks.md#H072_周执事的威胁",
+    "story/pending_hooks.md#H073_被逐出宗门的弟子",
+    "story/pending_hooks.md#H067_幽冥隐脉体觉醒",
+    "story/pending_hooks.md#H068_幽冥界薄弱节点",
+    "story/pending_hooks.md#H069_铜环玉牌同源共鸣",
+    "story/pending_hooks.md#H062_石台传送门"
+  ],
+  "notes": []
+}

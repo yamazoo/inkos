@@ -1,0 +1,130 @@
+{
+  "chapter": 50,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第49章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "天地灵气的衰减周期：每经一个大时代，有效利用率衰减至上一代的70%"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "炼气杂役在宗门夹缝中求生存，在\"不冒头\"与\"被迫展露\"的矛盾中艰难前行"
+    },
+    {
+      "source": "story/chapter_summaries.md#chapter_49_bridge",
+      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
+      "excerpt": "第49章《灵泉惊变》 | 出场人物：陈守一、大长老、苏婉儿、冥将、被逐出弟子 | 本章事件：1.大长老裹挟陈守一紧急前往灵泉核心；2.封印阵基裂痕扩大（两道镇封符文已碎）；3.冥将苏醒（身高丈余/墨蓝皮肤/幽蓝锁链）；4.冥将嘲讽父亲三十年前的献祭；5.大长老与冥将交战（被封印锁链反弹受伤）；6.父亲神魂微弱提示\"用铜环\"；7.大长老要玉牌嵌入阵眼还债；8.陈守一决定自己动（盘算大长老死则封印崩溃）；9.铜环与玉牌同源共鸣触发；10.父亲神魂短暂清晰现身；11.父亲引导同源共鸣化作金色锁链压制冥将；12.冥将被拽回封印深处（最后一道阵纹重新亮起）；13.**代价：陈守一寿数减近十年（从八十余岁减至七十余年）**；14.铜环裂纹变淡/淡金纹路黯淡/父亲神魂重新沉寂；15.**新敌人现身（被逐出弟子）**；16.被逐出弟子揭示触发封印（\"我在封印上动了手脚\"）；17.被逐出弟子持有第三件钥匙（暗金环）；18.被逐出弟子与父亲旧约揭示（共赴大道/父亲违背约定）；19.被逐出弟子揭示周执事眼线被他替换；20.被逐出弟子轰击陈守一（\"你活着就是对他最大的惩罚\"）；21.**苏婉儿及时救援斩落攻击**；22.石室对峙气氛凝滞 | 状态变化：**位置：演武场→灵泉核心石室**；**生命力严重受损**（发间枯灰过半/面色惨白/眼窝深陷/寿数减十年）；**铜环能力下降**（裂纹变淡/淡金纹路黯淡）；**父亲神魂重新沉寂**；**大长老受伤**（内腑受损/袖袍染血/灵力消耗过大）；**冥将暂时被压制**（封印裂痕持续扩大）；**新敌人登场**（被逐出弟子/持有暗金环/因果仇恨） | 悬念活动：**H073重大推进**：被逐出弟子现身石室；触发封印；持有暗金环；与父亲有旧约；**H074-H079新开**；H070-H072深化；封印危机暂时缓解但裂痕扩大；父子情感深化（父亲神魂短暂清晰引导同源共鸣）；新敌人出现剧情升级"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "49: 灵泉惊变 | 44: 石台博弈 | 42: 老槐树下 | 41: 山道逢敌 | 40: 暗室困局"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "49: **震惊→悲痛→坚定→紧迫→决然→震撼→危机→希望→凝滞** / **高潮转折章/真相再揭章/新敌人登场章** | 44: 震撼→坚定→危机→紧迫→抉择→逃脱→活下来 / 高潮转折章/关键节点章/灵泉探索完成章 | 42: 紧张→揭秘→震撼→坚定→希望→警觉 / 揭秘章/关键转折章/灵泉探索起点章 | 41: 困局→希望→警觉→紧张→对峙 / **高潮转折章/关键会面章** | 40: 绝境→盘算→坚定→对峙→揭露→坚定→希望 / **危机深化章/困局章/转折前夕章**"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch47: 更大的变局，已经到来。 | ch48: 三十年前种下的因，今夜开始结出果。而他，将亲手终结这一切。 | ch49: 而新的敌人，已经站在了面前。"
+    },
+    {
+      "source": "runtime/hook_debt#H067_幽冥隐脉体觉醒",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H067_幽冥隐脉体觉醒（悬念钩，可兑现旧债，已开3章） | 读者承诺：待揭示 | 种于第47章：本章未进一步推进（觉醒代价已揭示） | 推进于第49章：ch49 灵泉惊变 - 1.大长老裹挟陈守一紧急前往灵泉核心；2.封印阵基裂痕扩大（两道镇封符文已碎）；3.冥将苏醒（身高丈余/墨蓝皮肤/幽蓝锁链）；4.冥将嘲讽父亲三十年前的献祭；5.大长老与冥将交战（被封印锁链反弹受伤）；6.父亲神魂微弱提示\"用铜环\"；7.大长老要玉牌嵌入阵眼还债；8.陈守一决定自己动（盘算大长老死则封印崩溃）；9.铜环与玉牌同源共鸣触发；10.父亲神魂短暂清晰现身；11.父亲引导同源共鸣化作金色锁链压制冥将；12.冥将被拽回封印深处（最后一道阵纹重新亮起）；13.**代价：陈守一寿数减近十年（从八十余岁减至七十余年）**；14.铜环裂纹变淡/淡金纹路黯淡/父亲神魂重新沉寂；15.**新敌人现身（被逐出弟子）**；16.被逐出弟子揭示触发封印（\"我在封印上动了手脚\"）；17.被逐出弟子持有第三件钥匙（暗金环）；18.被逐出弟子与父亲旧约揭示（共赴大道/父亲违背约定）；19.被逐出弟子揭示周执事眼线被他替换；20.被逐出弟子轰击陈守一（\"你活着就是对他最大的惩罚\"）；21.**苏婉儿及时救援斩落攻击**；22.石室对峙气氛凝滞"
+    },
+    {
+      "source": "runtime/hook_debt#H062_石台传送门",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H062_石台传送门（悬念钩，主要旧债，已开6章） | 读者承诺：待揭示 | 种于第44章：ch44 石台博弈 - 1.陈守一进入窄门→抵达悬浮石台→金色灵液；2.铜环靠近灵液→裂纹底部光芒亮→需同源之力修复；3.灵力枯竭无法主动引导→决定赌一把；4.金丝缠从手臂蔓延→生机被抽走→修复铜环；5.三道灵光攻击→石台底部亮起弯月光芒→虚幻门影出现；6.四方角帽三人夹击→铜环暗红屏障挡下三道灵光；7.长老派系老者现身阻止；8.陈守一被传送到清溪涧；9.长老透露三日后演武场见面"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 表层：**灵泉惊变**（封印崩溃危机/冥将苏醒/被逐出弟子现身）；深层：**三十年前因果今夜爆发**（被逐出弟子与父亲旧约/新敌人登场）；核心：**新敌人被逐出弟子**（触发封印/持有暗金环/与父亲有旧约/\"你活着就是对他最大的惩罚\"）→**封印危机**（冥将暂时被压但裂痕持续扩大）→**父亲遗愿待完成**（取灵泉核心遗物/三件钥匙合一）"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | 1. 活着（当前危急）；2. **阻止冥将**（封印暂时压制/但裂痕仍在扩大）；3. **应对被逐出弟子**（新敌人/持有第三件钥匙暗金环）；4. **取父亲灵泉核心遗物**（铜环修复后显现）；5. 查清三十年前实验真相；6. 三件钥匙合一；7. 理解幽冥隐脉体"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 炼气三层；灵力微弱恢复中（远未全盛）；**生命力严重受损**（发间枯灰过半/面色惨白/眼窝深陷/寿数从八十余岁减至七十余年）；**铜环裂纹变淡/淡金纹路黯淡**；父亲神魂**重新陷入沉寂**；后颈弯月印记/胸口金丝缠印记仍存；**大长老受伤**（内腑受损/袖袍染血/单膝跪地）"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 灵力未完全恢复（微弱滋生中/远未全盛）；**生命力严重受损**（寿数减十年/仅剩七十余年）；**铜环能力下降**（裂纹变淡/淡金纹路黯淡）；**父亲神魂沉寂**（无法呼唤）；天机簿灵力耗尽；令牌碎片被长老收走；孙师兄交易（欠人情）；周执事眼线仍在；**幽冥隐脉体觉醒**（如何协调使用仍未知）；**封印裂痕持续扩大**"
+    },
+    {
+      "source": "story/chapter_summaries.md#3",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "夜林惊锋 | 1.（上章推演确认今夜是三日之期最后期限）→ 本章灵泉方向三道气息向杂役区逼近，陈守一躲避不及被筑基修为的中年男子发现并短暂对峙；2.（中年男子原为推演画面中的人物悬念）→ 本章确认身份为执法堂成员，揭示三天前陈守一躲在灵田沟渠时远处树影下的人就是他；3.（虫卵栽赃判定为人为，第2章执法弟子提及灵禾异常增三成）→ 本章中年男子揭露真相：虫卵栽赃的真正目标不是赵海也不是陈守一，而是引出灵泉附近的所有关联者；4.（执法堂调查灵禾异常，第2章执法弟子开始关注陈守一）→ 本章确认执法堂已掌握陈守一三日前行踪和感知能力，指出他能感知执法堂隐蔽阵法很不寻常；5.陈守一左臂被灵气割伤，中年男子主动放走并给出秘密指引：三日后灵泉变故，去后山老槐树下等着；6.中年男子离开后，陈守一发现屋内陈设被未知监视者翻动，手法比执法堂更老练；7.章节末尾小路急促赶来报信\"出大事了\" | 陈守一失去'不冒头'资格——执法堂已掌握其行踪和感知能力，多方势力开始注意这个本不该出现在灵泉线索上的炼气三层杂役；天机簿残页灵力正在缓慢恢复；左臂灵气入体麻痹；中年男子立场复杂——虽来自执法堂但主动放人并给出秘密指引，似乎在布局 | H001_三日之期 resolved; H002_中年男子 progressed; H003_灵泉异常 progressed; H004_执法堂调查 progressed; H005_破屋监视者 progressed; H007_枯叶螟栽赃 resolved"
+    },
+    {
+      "source": "story/chapter_summaries.md#49",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "灵泉惊变 | 1.大长老裹挟陈守一紧急前往灵泉核心；2.封印阵基裂痕扩大（两道镇封符文已碎）；3.冥将苏醒（身高丈余/墨蓝皮肤/幽蓝锁链）；4.冥将嘲讽父亲三十年前的献祭；5.大长老与冥将交战（被封印锁链反弹受伤）；6.父亲神魂微弱提示\"用铜环\"；7.大长老要玉牌嵌入阵眼还债；8.陈守一决定自己动（盘算大长老死则封印崩溃）；9.铜环与玉牌同源共鸣触发；10.父亲神魂短暂清晰现身；11.父亲引导同源共鸣化作金色锁链压制冥将；12.冥将被拽回封印深处（最后一道阵纹重新亮起）；13.**代价：陈守一寿数减近十年（从八十余岁减至七十余年）**；14.铜环裂纹变淡/淡金纹路黯淡/父亲神魂重新沉寂；15.**新敌人现身（被逐出弟子）**；16.被逐出弟子揭示触发封印（\"我在封印上动了手脚\"）；17.被逐出弟子持有第三件钥匙（暗金环）；18.被逐出弟子与父亲旧约揭示（共赴大道/父亲违背约定）；19.被逐出弟子揭示周执事眼线被他替换；20.被逐出弟子轰击陈守一（\"你活着就是对他最大的惩罚\"）；21.**苏婉儿及时救援斩落攻击**；22.石室对峙气氛凝滞 | **位置：演武场→灵泉核心石室**；**生命力严重受损**（发间枯灰过半/面色惨白/眼窝深陷/寿数减十年）；**铜环能力下降**（裂纹变淡/淡金纹路黯淡）；**父亲神魂重新沉寂**；**大长老受伤**（内腑受损/袖袍染血/灵力消耗过大）；**冥将暂时被压制**（封印裂痕持续扩大）；**新敌人登场**（被逐出弟子/持有暗金环/因果仇恨） | **H073重大推进**：被逐出弟子现身石室；触发封印；持有暗金环；与父亲有旧约；**H074-H079新开**；H070-H072深化；封印危机暂时缓解但裂痕扩大；父子情感深化（父亲神魂短暂清晰引导同源共鸣）；新敌人出现剧情升级"
+    },
+    {
+      "source": "story/pending_hooks.md#H074_被逐出弟子身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | **待揭示** | **新伏笔：三十年前三人之一（周执事/李长老/被逐出弟子）；被逐出弟子真实身份待揭示；与陈守一之父曾有入山求道、共赴大道之约；\"你活着就是对他最大的惩罚\"**"
+    },
+    {
+      "source": "story/pending_hooks.md#H075_被逐出弟子与父亲旧约",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | **待揭示** | **新伏笔：被逐出弟子与父亲曾一同入山求道，约定共赴大道；父亲遇见母亲后违背约定；被逐出弟子等了他三十年**"
+    },
+    {
+      "source": "story/pending_hooks.md#H076_暗金环",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | **待揭示** | **新伏笔：第三件钥匙（暗金环）；与铜环/玉牌同源；被逐出弟子持有；可与铜环/玉牌合一**"
+    },
+    {
+      "source": "story/pending_hooks.md#H077_周执事眼线被替换",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | **待揭示** | **新伏笔：周执事以为眼线是他的人；实际早被被逐出弟子替换；各取所需（周执事灭口/被逐出弟子锁定陈守一行踪）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H078_封印裂痕持续扩大",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | **待揭示** | **新伏笔：冥将暂时被压制但裂痕持续扩大；被逐出弟子动了手脚；封印仍不稳定**"
+    },
+    {
+      "source": "story/pending_hooks.md#H079_父亲遗愿",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | **待揭示** | **新伏笔：被逐出弟子说\"你活着就是对他最大的惩罚\"；父亲指望陈守一继承未完成的一切；遗愿待完成**"
+    },
+    {
+      "source": "story/pending_hooks.md#H062_石台传送门",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | 本章未推进（功能待探索）"
+    },
+    {
+      "source": "story/pending_hooks.md#H070_父亲在灵泉核心留的东西",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 待揭示 | mid-arc | **本章：被逐出弟子出现打断；父亲神魂沉寂；遗物仍待取**"
+    }
+  ]
+}

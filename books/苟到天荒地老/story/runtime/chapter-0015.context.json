@@ -9,7 +9,7 @@
     {
       "source": "story/audit_drift.md",
       "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
-      "excerpt": "> 第15章审计发现以下问题，下一章写作时必须避免："
+      "excerpt": "> 第8章审计发现以下问题，下一章写作时必须避免："
     },
     {
       "source": "story/current_state.md",
@@ -19,107 +19,77 @@
     {
       "source": "story/story_bible.md",
       "reason": "Preserve canon constraints referenced by mustKeep.",
-      "excerpt": "灵气稀薄：仅为上古的千分之一"
+      "excerpt": "天地灵气的衰减周期：每经一个大时代，有效利用率衰减至上一代的70%"
     },
     {
       "source": "story/volume_outline.md",
       "reason": "Anchor the default planning node for this chapter.",
-      "excerpt": "揭露大劫真相"
+      "excerpt": "炼气杂役在宗门夹缝中求生存，在\"不冒头\"与\"被迫展露\"的矛盾中艰难前行"
     },
     {
-      "source": "story/chapter_summaries.md#chapter_14_bridge",
+      "source": "story/chapter_summaries.md#chapter_8_bridge",
       "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
-      "excerpt": "第14章《林间分岔》 | 出场人物：顾长命、小鱼、灰袍男（青云门）、黑衣追兵（2人） | 本章事件：1.清晨巷道逃亡；小鱼听力感知引导方向（躲过两人追兵）；2.三岔路口遭遇灰袍男正面拦截；3.灰袍男揭示核心信息：天裂需东西填、钥匙需引线牵、手上疤是\"现成的引子\"；4.灰袍男试探：青云门找针快一万年、没人被引线认主过、你身上气息和针有关；5.灰袍男提出交易：交出针就不追究小鱼；6.小鱼发现右边墙洞；7.顾长命用旧布袋挡剑鞘制造机会；8.小鱼钻洞逃跑；9.顾长命独自对峙灰袍男（银针）；10.灰袍男绕过顾长命派人追小鱼；11.顾长命决定反向引开追兵；12.三人围堵（左右夹击）；13.顾长命往左迎敌 | 状态变化：小鱼与顾长命分头逃亡；顾长命独自引敌；引线持续发烫；老郎中银针消耗一枚；旧布袋丢失；青云门追踪策略暴露（抓小鱼换别的东西填裂缝） | 悬念活动：H041/H042/H043/H044新增；H004/H010/H011/H037推进；"
+      "excerpt": "第8章《暗潮围猎》 | 出场人物：陈守一、周平手下、林师兄传话者、四方角帽（第四势力） | 本章事件：1.（第7章决定紧急转移）→ 本章三方围堵：周平手下、林师兄传话者、四方角帽同时出现；2.（第7章残纸暴露）→ 本章残纸在月光下泛出诡异微光，引发三方觊觎；3.（第7章第四势力入场）→ 本章四方角帽出手压制另外两方，选择放行陈守一，眼神中只有\"确认\"而非杀意；4.周平手下察觉四方角帽放行的异常；5.（第7章残纸共振）→ 本章残纸短暂力量涌动→经脉→金丝缠点亮发烫→与幽冥气息遥相呼应；6.陈守一逃脱至灵泉废墟西侧地窖；7.地窖为人工建造，有暗格；8.暗格物品：**\"林记，第三批\"聚灵阵布帛**；**小册子**（幽冥接引/第七次实验/纹路转移成功）；**黑铁令牌**（\"执\"字，纹路与金丝缠几乎一样）；9.小册子写\"炼气初期最佳，灵力纯净\"——暗示林师兄当年在杂役身上做实验；10.地窖深处传来震动，亮起很多双幽暗的、泛着微光的眼睛 | 状态变化：灵力持续枯竭；残纸短暂力量涌动后恢复平静；金丝缠留下发烫印记；身份被四方角帽确认；周平手下察觉异常 | 悬念活动：**H012-H015深化**；**H010林师兄重大推进**；**H016-H019四条新钩**；plot-幽冥危机升级；plot-林师兄实验线浮现"
     },
     {
       "source": "story/chapter_summaries.md#recent_titles",
       "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
-      "excerpt": "14: 林间分岔 | 13: 夜尽天明 | 11: 井底问门 | 9: 线断之处 | 8: 困局与抉择"
+      "excerpt": "8: 暗潮围猎 | 7: 灵潮将逆 | 6: 暗流交汇 | 5: 灵泉噬影 | 4: 堂前问"
     },
     {
       "source": "story/chapter_summaries.md#recent_mood_type_trail",
       "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
-      "excerpt": "14: 警觉·紧迫·决断·保护·紧张对峙·诱敌决心 / 追逐章/推进章 | 13: 沉重·警觉·紧迫·温情·决断·追逐开始 / 喘息章/推进章/温情章 | 11: 沉重·警觉·紧迫·决断·倒计时 / 核心揭露章/推进章/承上启下章 | 9: 沉重·震惊·警觉·坚定·紧迫·倒计时 / 核心揭露章/推进章 | 8: 沉重·警觉·抉择压力·内心震动·倒计时紧迫 / 核心揭露章/推进章 / (none)"
+      "excerpt": "8: 紧绷→逃脱→危机暂缓→新威胁降临 / **转折章/逃脱章/危机升级章** | 7: 压抑→剧变→灵力枯竭→危机四伏 / **转折章/危机爆发章/转移节点** | 6: 紧绷→危机骤临 / 转折章/危机爆发章 | 5: 冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 / 转折章/事件章 | 4: 紧张压抑→审问对峙→暗流涌动→悬念重重 / 审讯章/转折章"
     },
     {
       "source": "story/chapters#recent_endings",
       "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
-      "excerpt": "ch12: 天边的那一丝灰白越来越亮，再过一个时辰，天就要亮了。 | ch13: 追逐才刚刚开始。 | ch14: \"来得好。\""
+      "excerpt": "ch12: 夜色深沉，但他知道自己已经没有退路了。 | ch13: \"老杂役vs黑衣人 - 意外干预（伏笔）\" | ch14: 但他知道，留给他的时间不多了。"
+    },
+    {
+      "source": "runtime/hook_debt#H013_残纸历史画面",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H013_残纸历史画面（新钩，主要旧债，已开8章） | 读者承诺：天机簿完整功能/灵气历史 | 种于第7章：ch7 灵潮将逆 - 1.（第6章灵泉异变提前爆发）→ 本章残纸失控震颤，灵力被持续反向抽取；2.王二受周平指使送饭试探，确认陈守一还活着；3.陈老留暗号警告\"时间不多了，灵泉有变，速离\"；4.苏婉儿传话：裂隙开始向外界渗透幽冥气息；伤疤里藏有林师兄当年留下的东西，纹路与描述不符；5.（第6章金丝缠谜团）→ 本章残纸剧烈震颤导致陈守一踉跄，袖口滑落+残纸一角暴露，被不明身份者（第四势力）看到；6.（第6章苏婉儿震惊）→ 本章残纸主动灌注灵气历史画面：古灵泉→衰竭→裂隙→幽冥气息；7.确认灵泉不是被毁而是在漫长岁月中\"死去\"——与H006灵气衰减呼应；8.院门外出现四方角帽黑袍身影——第四势力入场；9.陈守一决定紧急转移"
+    },
+    {
+      "source": "runtime/hook_debt#mystery-苏婉儿看到-金丝缠-伤疤时的复杂",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "mystery-苏婉儿看到-金丝缠-伤疤时的复杂（mystery，主要旧债，已开11章） | 读者承诺：金丝缠真相/林师兄当年经历 | 种于第4章：ch6 暗流交汇 - 1.（第5章获得赵海储物袋和遗信）→ 本章陈守一确认遗信内容——赵海向'林师兄'求救，提及被盯上；2.（第5章周平警告'胆子太大'、陈老目击灵泉行踪）→ 本章周平正式试探陈守一，警告'想清楚那日行踪怎么答'，透露'三天后灵泉出大事'——与孙三传话完全吻合；3.陈守一赴老槐树之约，苏婉儿传达林师兄话：'你身上的东西比灵泉更重要'；4.苏婉儿看到陈守一'金丝缠'伤疤时神情骤变（震惊/疑惑/痛楚），说'没想到会是这样的纹路'后离开；5.陈老从槐树另一侧现身，承认已向周平透露陈守一信息，警告'好好活着，三天后见分晓'；6.灵泉方向传来沉闷轰鸣，天机簿残页震颤加剧——异变提前爆发"
     },
     {
       "source": "story/current_state.md#当前冲突",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "当前冲突 | 青云门追捕（暂时解除）→ 新的不确定性：小鱼去向；大劫真相完整揭示后新的抉择"
+      "excerpt": "当前冲突 | 表面：三方围堵→逃脱→藏身地窖；深层：第四势力选择放行的真实意图；暗线：林师兄三十年前的实验与金丝缠的关联；威胁升级：地窖深处出现大量未知眼睛（幽冥生物？）"
     },
     {
       "source": "story/current_state.md#当前目标",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "当前目标 | 找到小鱼"
+      "excerpt": "当前目标 | 躲避追兵——暂时藏身地窖；确认地窖深处未知威胁"
     },
     {
       "source": "story/current_state.md#主角状态",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "主角状态 | 沉稳·释然·坚定·行动中"
+      "excerpt": "主角状态 | 炼气三层，左臂'金丝缠'伤疤；灵力枯竭（丹田空空）；残纸短暂力量涌动后恢复平静；金丝缠纹路发烫（残留印记）；膝盖发软（体力消耗）"
     },
     {
       "source": "story/current_state.md#当前限制",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "当前限制 | 青云门追捕者暂时离开（信息交换后）；小瓷瓶温热说明小鱼仍存活但不知具体位置"
+      "excerpt": "当前限制 | 灵力枯竭无法战斗；身份已被四方角帽确认；周平手下发现异常"
     },
     {
       "source": "story/chapter_summaries.md#3",
       "reason": "Relevant episodic memory retrieved for the current chapter goal.",
-      "excerpt": "枯井窥天 | 进入玄清阁；老道士揭露大劫真相；青云门追至；老道士消失 | 枯井之约完成；青云门威胁升级为追杀；玉简新能力显现 | H003/H004/H009/H010/H011/H013/H014/H015/H016/H017"
+      "excerpt": "夜林惊锋 | 1.（上章推演确认今夜是三日之期最后期限）→ 本章灵泉方向三道气息向杂役区逼近，陈守一躲避不及被筑基修为的中年男子发现并短暂对峙；2.（中年男子原为推演画面中的人物悬念）→ 本章确认身份为执法堂成员，揭示三天前陈守一躲在灵田沟渠时远处树影下的人就是他；3.（虫卵栽赃判定为人为，第2章执法弟子提及灵禾异常增三成）→ 本章中年男子揭露真相：虫卵栽赃的真正目标不是赵海也不是陈守一，而是引出灵泉附近的所有关联者；4.（执法堂调查灵禾异常，第2章执法弟子开始关注陈守一）→ 本章确认执法堂已掌握陈守一三日前行踪和感知能力，指出他能感知执法堂隐蔽阵法很不寻常；5.陈守一左臂被灵气割伤，中年男子主动放走并给出秘密指引：三日后灵泉变故，去后山老槐树下等着；6.中年男子离开后，陈守一发现屋内陈设被未知监视者翻动，手法比执法堂更老练；7.章节末尾小路急促赶来报信\"出大事了\" | 陈守一失去'不冒头'资格——执法堂已掌握其行踪和感知能力，多方势力开始注意这个本不该出现在灵泉线索上的炼气三层杂役；天机簿残页灵力正在缓慢恢复；左臂灵气入体麻痹；中年男子立场复杂——虽来自执法堂但主动放人并给出秘密指引，似乎在布局 | H001_三日之期 resolved; H002_中年男子 progressed; H003_灵泉异常 progressed; H004_执法堂调查 progressed; H005_破屋监视者 progressed; H007_枯叶螟栽赃 resolved"
     },
     {
-      "source": "story/chapter_summaries.md#7",
-      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
-      "excerpt": "天道疤痕 | 1. 上章周老爷子危急（第6章）→ 本章周府管事深夜敲门求救，顾长命出诊诊脉确认\"不是病，是有人下了重手\"，用三针护住心脉并直言毒解不了只能拖几天，委托周公子查老郎中与钱广的关联后返回。2. 顾长命已知天裂真相（青云门提前知情/可能参与）→ 本章郑怀恩展示枕头下发现的手写纸张，揭露青云门三老祖是三兄弟，万年前烧天49天撕裂天道；天裂会自愈但青云门\"修疤\"维持裂缝不让愈合；目的是让灵气永远只够炼气期、无人能筑基。3. 已知针会落在灵气最浓郁处或与它最亲近之人身边（第6章郑怀恩揭示）→ 本章顾长命结合纸张小字\"针不在器，在意\"和青石镇灵脉残脉，意识到小鱼12年前开始做梦=青云门三年前印记被截走那年；老庙主截走印记是在保护针或针的主人。4. 上章小鱼梦呓\"针\"→ 本章顾长命回忆12年前捡到小鱼时被划伤手指，旧痕三天前玉简发热时开始发痒——暗示顾长命自己可能也与针有关联。 | 周老爷子被顾长命用三针暂时稳住（毒解不了，需追查老郎中）；青云门目的明确：从找针变成毁针——让天裂永远不能愈合；顾长命意识到留给他的时间不多了（周老爷子三天、小鱼身世、三天后玉简再热）；周老爷子病因\"人祸\"真相已揭露（老郎中所为），但背后青云门关联尚待追查。 | H004/H010/H030/H025深化；H026回收（周老爷子病因揭示）；H031新增候选（顾长命旧痕与针的联系）"
-    },
-    {
-      "source": "story/chapter_summaries.md#8",
-      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
-      "excerpt": "困局与抉择 | 1.青云门提前到达（不是明天，是今天），三人入镇往周府方向；2.顾长命决定不带小鱼，独自行动；3.老郎中在庙门口暗示\"有人不想让周老爷子活\"；4.顾长命见老庙主，核心揭露：老槐树是三十七年前栽的用来锁井；天裂根连灵脉源头；青云门一万年前亲手把针送进去；玉简是第一把钥匙；井底门后有同门；小鱼是十二年前从口子掉下来那人的\"一部分\"；老庙主给令牌；5.青云门三人在庙门外拦截顾长命，带他去周府；6.周老爷子临终托付：给顾长命石子（第二把钥匙）；告知\"她是回来找你的\"；让她问小鱼\"记不记得那根线\"；7.老郎中警告\"回春堂不安全了\"；8.结尾：老君庙僧人要见顾长命 | 顾长命获得两把钥匙（玉简+石子）；获得老庙主令牌；小鱼身世核心真相揭露（是一万年前那人的一部分）；青云门开始主动追踪；周老爷子临终托付 | H004/H025/H032/H023/H028/H029/H033/H034/H035推进；H009/H030/H031/H019/H020完成/回收；新增3条伏笔"
-    },
-    {
-      "source": "story/chapter_summaries.md#9",
-      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
-      "excerpt": "线断之处 | 1.顾长命去老君庙见老庙主师兄；2.老僧揭露命线图真相：十七道口子=十七只眼睛；天裂是药引子；3.小鱼命线十二年前断了，缠在顾长命身上；4.小鱼喊过\"接住我\"；5.续命线需要钥匙+引线；引线在顾长命手上（两道疤）；6.小鱼会被拽回去\"填进裂缝里\"；7.老僧给绢帛（命线图）+细绳（引线）；8.老僧说去井底见门后的人；9.青云门周平带8人来回春堂抓人；10.青云门锁定小鱼是\"引线\"；11.顾长命提前转移小鱼到夹壁暗道（昨夜已做）；12.青云门搜空后离开，说明早\"喝茶\"；13.周老爷子今夜断气；14.小鱼掌心疤泛青紫（命线在动）；15.顾长命决定天亮前去井底 | 获得绢帛+细绳；小鱼命线开始动；青云门锁定小鱼是引线；周老爷子今夜断气；顾长命决心天亮前见井底门后之人 | H033/H034/H032/H028回收；H036/H037/H038新开；H004/H029/H030/H031推进"
-    },
-    {
-      "source": "story/pending_hooks.md#H004",
+      "source": "story/pending_hooks.md#H013_残纸历史画面",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "设定 | progressing | 125 | endgame | 本章完整揭露大劫真相：万年前三愚者烧天49天撕裂天道→天裂本可自愈但青云门修疤维持→天裂需针线钥匙三样东西凑齐才能彻底合上→青云门烧断两根线只留钥匙在外→针和线都在青石镇都在顾长命手里→三个追捕者是万年前那三人（他们承认了）"
+      "excerpt": "新钩 | open | 天机簿完整功能/灵气历史 | immediate | 本章残纸短暂力量涌动，与金丝缠产生共振"
     },
     {
-      "source": "story/pending_hooks.md#H010",
+      "source": "story/pending_hooks.md#H008_赵海之死",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "悬念 | progressing | 60+ | mid-arc | 玄清阁灭门真相——本章推进：青云门万年追踪大劫相关者（郑怀恩、玄清阁、小鱼、顾长命）；三个追捕者承认烧天烧线是他们做的"
-    },
-    {
-      "source": "story/pending_hooks.md#H011",
-      "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "悬念 | progressing | 80+ | mid-arc | 筑基真相——本章推进：引线宿主身份确认（从未有人被引线认主过，顾长命是第一个）；青云门万年找不到引线宿主的原因揭晓"
-    },
-    {
-      "source": "story/pending_hooks.md#H041",
-      "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "悬念 | progressing | 立即 | immediate | 青云门要往裂缝里塞什么——本章完全揭示：先塞了17个活人（让裂缝更大灵气更薄）；后换成一根针（引气）、一根线（续命）、一把钥匙（开门）；三样凑齐天裂可合；青云门烧断线只留钥匙是为了阻止天裂愈合"
-    },
-    {
-      "source": "story/pending_hooks.md#H039",
-      "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "悬念 | open | 近期 | near-term | 门后之人身份 - 本章无直接推进"
-    },
-    {
-      "source": "story/pending_hooks.md#H040",
-      "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "悬念 | open | 近期 | near-term | 老七命线转移机制 - 本章无直接推进"
-    },
-    {
-      "source": "story/pending_hooks.md#H037",
-      "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "悬念 | progressing | 14-15 | near-term | 小鱼被拽回去的时间 - 瓷瓶发热；小鱼掌心青紫印记蔓延；分头逃亡"
+      "excerpt": "事件伏笔 | progressing | 孙三/周平关联/林师兄 | mid-arc | 本章未直接推进"
     }
   ]
 }

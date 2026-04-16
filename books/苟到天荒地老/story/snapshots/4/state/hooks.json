@@ -1,134 +1,111 @@
 {
   "hooks": [
     {
-      "hookId": "H004",
+      "hookId": "H006_灵气衰减",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "第2章首次正面呈现",
+      "notes": ""
+    },
+    {
+      "hookId": "mystery-揭示灵泉变故-真相-中年男子警告",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "陈守一与中年男子对峙期间，远处有一道若有若无的气息在窥视；中年男子的目光多次扫向那个方向并眉头微皱——此人是谁？与执法堂、监视者、灵泉变故有何关联？",
+      "notes": ""
+    },
+    {
+      "hookId": "threat-揭示执法堂与-陈守一的关系-走向",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中年男子（执法堂成员）指出虫卵栽赃目标是引出灵泉关联者，陈守一已被标记为'不寻常'的存在；执法堂已掌握其行踪和感知能力；从今夜起主角彻底失去了'不冒头'的资格——多股势力的角逐已经开始",
+      "notes": ""
+    },
+    {
+      "hookId": "H001_三日之期",
       "startChapter": 1,
-      "type": "设定",
-      "status": "open",
-      "lastAdvancedChapter": 4,
-      "expectedPayoff": "125",
-      "payoffTiming": "endgame",
-      "notes": "大劫真相：万年前有人伸手入裂缝，抽取灵脉源头"
-    },
-    {
-      "hookId": "H009",
-      "startChapter": 2,
       "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 4,
-      "expectedPayoff": "125",
-      "payoffTiming": "endgame",
-      "notes": "枯井之约：本章老道士再次关键出手"
-    },
-    {
-      "hookId": "H011",
-      "startChapter": 2,
-      "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 4,
-      "expectedPayoff": "80+",
+      "status": "resolved",
+      "lastAdvancedChapter": 3,
+      "expectedPayoff": "第3章",
       "payoffTiming": "mid-arc",
-      "notes": "筑基真相：万年前筑基是起点，如今千分之一灵气，筑基成传说"
+      "notes": "三天前推演首次出现；第2章再次推演确认"
     },
     {
-      "hookId": "H014",
-      "startChapter": 3,
-      "type": "悬念",
-      "status": "open",
+      "hookId": "H003_灵泉异常",
+      "startChapter": 1,
+      "type": "世界观伏笔",
+      "status": "progressing",
       "lastAdvancedChapter": 4,
-      "expectedPayoff": "125",
-      "payoffTiming": "endgame",
-      "notes": "青云门目的：找万年前从天道裂缝落下的东西"
+      "expectedPayoff": "灵泉方向传来低沉闷响，天机簿残页震颤——真正的异变信号",
+      "payoffTiming": "near-term",
+      "notes": "本章末尾灵泉方向沉闷声响，天机簿残页震颤，第3章中年男子透露的'三日后灵泉变故'进入倒计时"
     },
     {
-      "hookId": "H015",
-      "startChapter": 3,
-      "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 4,
-      "expectedPayoff": "125",
-      "payoffTiming": "endgame",
-      "notes": "郑怀恩之死：追查千年死在青云门手里"
-    },
-    {
-      "hookId": "H016",
-      "startChapter": 3,
-      "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 4,
-      "expectedPayoff": "125",
-      "payoffTiming": "endgame",
-      "notes": "玄清阁灭门：与青云门封锁消息有关"
-    },
-    {
-      "hookId": "H017",
-      "startChapter": 3,
-      "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 4,
-      "expectedPayoff": "140",
-      "payoffTiming": "endgame",
-      "notes": "老道士三十年追寻：比郑怀恩还久，欠郑怀恩一命"
-    },
-    {
-      "hookId": "H010",
+      "hookId": "H005_破屋监视者",
       "startChapter": 2,
-      "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 4,
-      "expectedPayoff": "60+",
-      "payoffTiming": "mid-arc",
-      "notes": "小鱼梦话\"十七\"：对应十七道裂缝/十七道异界气息"
+      "type": "威胁线索",
+      "status": "progressing",
+      "lastAdvancedChapter": 3,
+      "expectedPayoff": "第3章发现的未知监视者身份待揭晓",
+      "payoffTiming": "near-term",
+      "notes": "本章门口有执法堂监视人手，但第3章发现的未知监视者（第2章翻动陈设者）身份仍未明——暂时搁置"
     },
     {
-      "hookId": "H018",
-      "startChapter": 4,
-      "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 4,
-      "expectedPayoff": "125",
-      "payoffTiming": "endgame",
-      "notes": "**天道如线**：小鱼梦中看到\"线\"（红白黑），与郑怀恩手札\"天道如线，脉络分明\"呼应"
+      "hookId": "H007_枯叶螟栽赃",
+      "startChapter": 2,
+      "type": "阴谋线索",
+      "status": "resolved",
+      "lastAdvancedChapter": 3,
+      "expectedPayoff": "近期",
+      "payoffTiming": "near-term",
+      "notes": "与灵禾异常三成数据吻合"
     },
     {
-      "hookId": "H019",
-      "startChapter": 4,
-      "type": "悬念",
-      "status": "open",
+      "hookId": "H004_执法堂调查",
+      "startChapter": 2,
+      "type": "外部冲突",
+      "status": "progressing",
       "lastAdvancedChapter": 4,
-      "expectedPayoff": "125",
-      "payoffTiming": "endgame",
-      "notes": "**小鱼被召唤**：小鱼梦中有声音叫她\"接起来\"——暗示与天道修复有关"
+      "expectedPayoff": "执法堂审讯苏婉儿揭露掌握陈守一行踪和感知能力",
+      "payoffTiming": "near-term",
+      "notes": "苏婉儿审讯时点破陈守一发现执法堂隐蔽阵法并找到薄弱点，确认执法堂已全面掌握其感知能力"
     },
     {
-      "hookId": "H020",
-      "startChapter": 4,
-      "type": "悬念",
-      "status": "open",
+      "hookId": "H002_中年男子",
+      "startChapter": 3,
+      "type": "人物悬念",
+      "status": "progressing",
       "lastAdvancedChapter": 4,
-      "expectedPayoff": "125",
-      "payoffTiming": "endgame",
-      "notes": "**小鱼见过郑怀恩**：能闻到郑怀恩身上\"被火烧过\"的味道——与天裂/大劫关联"
+      "expectedPayoff": "中年男子与苏婉儿同为执法堂成员，都提及老槐树，两人存在某种关联",
+      "payoffTiming": "near-term",
+      "notes": "本章苏婉儿也提老槐树，与中年男子第3章指引呼应，确认两人可能同属执法堂阵营"
     },
     {
-      "hookId": "H021",
+      "hookId": "mystery-苏婉儿看到-金丝缠-伤疤时的复杂",
       "startChapter": 4,
-      "type": "悬念",
-      "status": "open",
+      "type": "mystery",
+      "status": "progressing",
       "lastAdvancedChapter": 4,
-      "expectedPayoff": "125",
-      "payoffTiming": "endgame",
-      "notes": "**灵气印记追踪术**：钱广用特殊液体追踪——青云门有更深的追踪手段"
+      "expectedPayoff": "苏婉儿看到'金丝缠'伤疤时的复杂表情——她与中年男子、与陈守一的伤疤有何渊源？",
+      "payoffTiming": "near-term",
+      "notes": "苏婉儿触摸伤疤时'有震惊，有疑惑，有一丝极力压抑的激动，还有一丝陈守一看不懂的哀伤'——她认得这个伤疤，意味着她与灵气外放者有关联"
     },
     {
-      "hookId": "H022",
+      "hookId": "plot-灵泉异变的正-式爆发-与陈守一体内",
       "startChapter": 4,
-      "type": "悬念",
+      "type": "plot",
       "status": "open",
       "lastAdvancedChapter": 4,
-      "expectedPayoff": "125",
-      "payoffTiming": "endgame",
-      "notes": "**钱广三年前阴影之恨**：三年前钱广追线索被老道士用阴影截走——与老道士有仇"
+      "expectedPayoff": "灵泉异变的正式爆发——与陈守一体内天机簿残页的共鸣",
+      "payoffTiming": "near-term",
+      "notes": "本章末尾灵泉方向传来低沉闷响，陈守一胸口发热，天机簿残页震颤——三日后灵泉变故的前兆"
     }
   ]
 }

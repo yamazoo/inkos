@@ -1,0 +1,46 @@
+{
+  "chapter": 42,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\author_intent.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_focus.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\story_bible.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\volume_outline.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\chapter_summaries.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\book_rules.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_state.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\pending_hooks.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\memory.db"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0042.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#chapter_41_bridge",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "runtime/hook_debt#H035_陈老欠债",
+    "runtime/hook_debt#H040_执法堂监视",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#3",
+    "story/chapter_summaries.md#40",
+    "story/chapter_summaries.md#41",
+    "story/pending_hooks.md#H052_孙师兄交易",
+    "story/pending_hooks.md#H053_三件钥匙与灵泉核心",
+    "story/pending_hooks.md#H054_三十七人vs三十六人",
+    "story/pending_hooks.md#H055_七十三人之谜",
+    "story/pending_hooks.md#H049_执法堂内部裂痕",
+    "story/pending_hooks.md#H050_暗处敲门人",
+    "story/pending_hooks.md#H051_后山老槐树",
+    "story/pending_hooks.md#H048_纸团来源"
+  ],
+  "notes": []
+}

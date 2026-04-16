@@ -9,7 +9,7 @@
     {
       "source": "story/audit_drift.md",
       "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
-      "excerpt": "> 第17章审计发现以下问题，下一章写作时必须避免："
+      "excerpt": "> 第1章审计发现以下问题，下一章写作时必须避免："
     },
     {
       "source": "story/current_state.md",
@@ -19,32 +19,32 @@
     {
       "source": "story/story_bible.md",
       "reason": "Preserve canon constraints referenced by mustKeep.",
-      "excerpt": "灵气稀薄：仅为上古的千分之一"
+      "excerpt": "天地灵气的衰减周期：每经一个大时代，有效利用率衰减至上一代的70%"
     },
     {
       "source": "story/volume_outline.md",
       "reason": "Anchor the default planning node for this chapter.",
-      "excerpt": "揭露大劫真相"
+      "excerpt": "炼气杂役在宗门夹缝中求生存，在\"不冒头\"与\"被迫展露\"的矛盾中艰难前行"
     },
     {
-      "source": "story/current_state.md#当前限制",
+      "source": "story/current_state.md#主角状态",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "当前限制 | 末法灵气稀薄；不能暴露筑基实力；周天成觊觎回春堂"
-    },
-    {
-      "source": "story/current_state.md#读者悬念锚点",
-      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "读者悬念锚点 | 1. 主角如何化解青云门盘查？→ 第1-3章<br>2. 主角的筑基实力何时展现？→ 第8-10章<br>3. 周天成最终下场？→ 第16-18章<br>4. 小鱼身世之谜 → 第31章开始铺垫<br>5. 大劫真相 → 第125章揭露"
+      "excerpt": "主角状态 | 炼气三层，外门杂役，穿越两年，已蛰伏苟活"
     },
     {
       "source": "story/current_state.md#当前冲突",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "当前冲突 | 青云门弟子盘查 → 主角如何应对而不暴露？"
+      "excerpt": "当前冲突 | 潜在的被人盯上风险（尚未爆发）"
     },
     {
       "source": "story/current_state.md#当前目标",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "当前目标 | 活下去，继续苟，不暴露身份"
+      "excerpt": "当前目标 | 明天继续在灵草园干活，不被人盯上"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 资源匮乏、身份低微、不能展露实力"
     }
   ]
 }

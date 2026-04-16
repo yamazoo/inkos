@@ -4,7 +4,7 @@
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "枯井底部石室通往镇外的秘密甬道",
+      "object": "破屋内",
       "validFromChapter": 3,
       "validUntilChapter": null,
       "sourceChapter": 3
@@ -12,7 +12,7 @@
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "沉稳·谨慎·算计深远·保护欲强·行动决断",
+      "object": "炼气三层，左臂外侧灵气割伤（灵气入体麻痹），天机簿残页灵力缓慢恢复中",
       "validFromChapter": 3,
       "validUntilChapter": null,
       "sourceChapter": 3
@@ -20,7 +20,7 @@
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "甩掉青云门追踪；弄清天裂真相；寻找提升实力之法",
+      "object": "决定是否赴后山老槐树之约",
       "validFromChapter": 3,
       "validUntilChapter": null,
       "sourceChapter": 3
@@ -28,7 +28,7 @@
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "青云门外围警戒网；修为炼气三层；灵石近乎耗尽",
+      "object": "身份暴露风险升级——执法堂已掌握其行踪和感知能力；左臂受伤影响战斗力",
       "validFromChapter": 3,
       "validUntilChapter": null,
       "sourceChapter": 3
@@ -36,7 +36,7 @@
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "青云门：追踪中（已入石室）；老道士：暂时同盟（极度虚弱）；小鱼：王婶代为照看（老道士暗中安排保护）",
+      "object": "小路（友善）；中年男子（复杂——给出指引但立场未明）",
       "validFromChapter": 3,
       "validUntilChapter": null,
       "sourceChapter": 3
@@ -44,7 +44,7 @@
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "青云门追至石室；老道士断后掩护；小鱼安置待确认",
+      "object": "表面：虫卵栽赃真相揭露；深层：三日后灵泉变故将至；威胁：未知监视者、暗中窥视者、执法堂关注",
       "validFromChapter": 3,
       "validUntilChapter": null,
       "sourceChapter": 3
