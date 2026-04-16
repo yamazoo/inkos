@@ -24,11 +24,14 @@ import {
   runAgentSession,
   buildAgentSystemPrompt,
   resolveServicePreset,
+  resolveServiceProviderFamily,
+  resolveServiceModelsBaseUrl,
   resolveServiceModel,
   loadSecrets,
   saveSecrets,
   getServiceApiKey,
   listModelsForService,
+  buildExportArtifact,
   GLOBAL_ENV_PATH,
   type ResolvedModel,
   type PipelineConfig,
@@ -380,10 +383,14 @@ function buildModelCandidates(args: {
 }
 
 async function fetchModelsFromServiceBaseUrl(
+  serviceId: string,
   baseUrl: string,
   apiKey: string,
-): Promise<{ models: Array<{ id: string; name: string }>; error?: string }> {
-  const modelsUrl = baseUrl.replace(/\/$/, "") + "/models";
+): Promise<{ models: Array<{ id: string; name: string }>; error?: string; authFailed?: boolean }> {
+  const modelsBaseUrl = isCustomServiceId(serviceId)
+    ? baseUrl
+    : resolveServiceModelsBaseUrl(serviceId) ?? baseUrl;
+  const modelsUrl = modelsBaseUrl.replace(/\/$/, "") + "/models";
   try {
     const res = await fetch(modelsUrl, {
       headers: { Authorization: `Bearer ${apiKey}` },
@@ -391,7 +398,11 @@ async function fetchModelsFromServiceBaseUrl(
     });
     if (!res.ok) {
       const body = await res.text().catch(() => "");
-      return { models: [], error: `服务商返回 ${res.status}: ${body.slice(0, 200)}` };
+      return {
+        models: [],
+        error: `服务商返回 ${res.status}: ${body.slice(0, 200)}`,
+        authFailed: res.status === 401 || res.status === 403,
+      };
     }
     const json = await res.json() as { data?: Array<{ id: string }> };
     return {
@@ -423,10 +434,21 @@ async function probeServiceCapabilities(args: {
       ? envConfig.global.model
       : null;
 
-  const modelsResponse = await fetchModelsFromServiceBaseUrl(args.baseUrl, args.apiKey);
+  const baseService = isCustomServiceId(args.service) ? "custom" : args.service;
+  const modelsResponse = await fetchModelsFromServiceBaseUrl(baseService, args.baseUrl, args.apiKey);
+  if (modelsResponse.authFailed) {
+    return {
+      ok: false,
+      models: [],
+      error: modelsResponse.error ?? "API Key 无效或无权访问模型列表。",
+    };
+  }
   const discoveredModels = modelsResponse.models;
+  // For services with knownModels, use their first model as top candidate — not the global default
+  const preset = resolveServicePreset(baseService);
+  const serviceFirstModel = preset?.knownModels?.[0];
   const modelCandidates = buildModelCandidates({
-    preferredModel: args.preferredModel,
+    preferredModel: args.preferredModel ?? serviceFirstModel,
     configModel: typeof llm.defaultModel === "string" ? llm.defaultModel : typeof llm.model === "string" ? llm.model : undefined,
     envModel,
     discoveredModels,
@@ -445,24 +467,24 @@ async function probeServiceCapabilities(args: {
   for (const model of modelCandidates) {
     for (const plan of buildProbePlans(args.preferredApiFormat, args.preferredStream)) {
       const client = createLLMClient({
-        provider: args.service === "anthropic" ? "anthropic" : "openai",
-        service: isCustomServiceId(args.service) ? "custom" : args.service,
+        provider: resolveServiceProviderFamily(baseService) ?? "openai",
+        service: baseService,
         configSource: "studio",
         baseUrl: args.baseUrl,
         apiKey: args.apiKey.trim(),
         model,
         temperature: 0.7,
-        maxTokens: 64,
+        maxTokens: 2048,
         thinkingBudget: 0,
         apiFormat: plan.apiFormat,
         stream: plan.stream,
       } as ProjectConfig["llm"]);
 
       try {
-        await chatCompletion(client, model, [{ role: "user", content: "ping" }], { maxTokens: 5 });
+        await chatCompletion(client, model, [{ role: "user", content: "ping" }], { maxTokens: 2048 });
         const models = discoveredModels.length > 0
           ? discoveredModels
-          : [{ id: model, name: model }];
+          : preset?.knownModels?.map((id) => ({ id, name: id })) ?? [{ id: model, name: model }];
         return {
           ok: true,
           models,
@@ -1019,28 +1041,39 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
     const service = c.req.param("service");
     const apiKey = c.req.query("apiKey") || await getServiceApiKey(root, service);
 
-    // No key = no models (don't fallback to built-in list)
+    // No key = no models
     if (!apiKey) return c.json({ models: [] });
 
+    // Fast path: services with knownModels return immediately
+    const preset = resolveServicePreset(isCustomServiceId(service) ? "custom" : service);
+    if (preset?.knownModels && preset.knownModels.length > 0) {
+      return c.json({
+        models: preset.knownModels.map((id) => ({ id, name: id })),
+      });
+    }
+
+    // Simple /models API call + fallback to pi-ai built-in list (no slow probe)
     const resolvedBaseUrl = await resolveConfiguredServiceBaseUrl(root, service);
     if (!resolvedBaseUrl) return c.json({ models: [] });
 
-    const rawConfig = await loadRawConfig(root).catch(() => ({} as Record<string, unknown>));
-    const llm = (rawConfig.llm as Record<string, unknown> | undefined) ?? {};
-    const preferredModel = typeof llm.defaultModel === "string" ? llm.defaultModel : undefined;
-    const serviceEntry = await resolveConfiguredServiceEntry(root, service);
-    const probe = await probeServiceCapabilities({
-      root,
-      service,
-      apiKey,
-      baseUrl: resolvedBaseUrl,
-      preferredApiFormat: serviceEntry?.apiFormat,
-      preferredStream: serviceEntry?.stream,
-      preferredModel,
-    });
-    return c.json({
-      models: probe.ok ? probe.models : [],
-    });
+    const modelsBase = preset?.modelsBaseUrl ?? resolvedBaseUrl;
+    let models: Array<{ id: string; name: string }> = [];
+    try {
+      const modelsUrl = modelsBase.replace(/\/$/, "") + "/models";
+      const res = await fetch(modelsUrl, {
+        headers: { Authorization: `Bearer ${apiKey}` },
+        signal: AbortSignal.timeout(10_000),
+      });
+      if (res.ok) {
+        const json = await res.json() as { data?: Array<{ id: string }> };
+        models = (json.data ?? []).map((m) => ({ id: m.id, name: m.id }));
+      }
+    } catch { /* timeout or network error */ }
+    if (models.length === 0) {
+      const builtIn = await listModelsForService(service, apiKey);
+      models = builtIn.map((m) => ({ id: m.id, name: m.name }));
+    }
+    return c.json({ models });
   });
 
   // --- Project info ---
@@ -1659,59 +1692,19 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
     const id = c.req.param("id");
     const format = (c.req.query("format") ?? "txt") as string;
     const approvedOnly = c.req.query("approvedOnly") === "true";
-    const bookDir = state.bookDir(id);
-    const chaptersDir = join(bookDir, "chapters");
 
     try {
-      const book = await state.loadBookConfig(id);
-      const index = await state.loadChapterIndex(id);
-      const approvedNums = new Set(
-        approvedOnly ? index.filter((ch) => ch.status === "approved").map((ch) => ch.number) : [],
-      );
-
-      const files = await readdir(chaptersDir);
-      const mdFiles = files.filter((f) => f.endsWith(".md") && /^\d{4}/.test(f)).sort();
-
-      const filteredFiles = approvedOnly
-        ? mdFiles.filter((f) => approvedNums.has(parseInt(f.slice(0, 4), 10)))
-        : mdFiles;
-
-      const contents = await Promise.all(
-        filteredFiles.map((f) => readFile(join(chaptersDir, f), "utf-8")),
-      );
-
-      if (format === "epub") {
-        // Basic EPUB: XHTML container
-        const chapters = contents.map((content, i) => {
-          const title = content.match(/^#\s+(.+)$/m)?.[1] ?? `Chapter ${i + 1}`;
-          const html = content.split("\n").filter((l) => !l.startsWith("#")).map((l) => l.trim() ? `<p>${l}</p>` : "").join("\n");
-          return { title, html };
-        });
-        const toc = chapters.map((ch, i) => `<li><a href="#ch${i}">${ch.title}</a></li>`).join("\n");
-        const body = chapters.map((ch, i) => `<h2 id="ch${i}">${ch.title}</h2>\n${ch.html}`).join("\n<hr/>\n");
-        const epub = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>${book.title}</title><style>body{font-family:serif;max-width:40em;margin:auto;padding:2em;line-height:1.8}h2{margin-top:3em}</style></head><body><h1>${book.title}</h1><nav><ol>${toc}</ol></nav><hr/>${body}</body></html>`;
-        return new Response(epub, {
-          headers: {
-            "Content-Type": "text/html; charset=utf-8",
-            "Content-Disposition": `attachment; filename="${id}.html"`,
-          },
-        });
-      }
-      if (format === "md") {
-        const body = contents.join("\n\n---\n\n");
-        return new Response(body, {
-          headers: {
-            "Content-Type": "text/markdown; charset=utf-8",
-            "Content-Disposition": `attachment; filename="${id}.md"`,
-          },
-        });
-      }
-      // Default: txt
-      const body = contents.join("\n\n");
-      return new Response(body, {
+      const artifact = await buildExportArtifact(state, id, {
+        format: format as "txt" | "md" | "epub",
+        approvedOnly,
+      });
+      const responseBody = typeof artifact.payload === "string"
+        ? artifact.payload
+        : new Uint8Array(artifact.payload);
+      return new Response(responseBody, {
         headers: {
-          "Content-Type": "text/plain; charset=utf-8",
-          "Content-Disposition": `attachment; filename="${id}.txt"`,
+          "Content-Type": artifact.contentType,
+          "Content-Disposition": `attachment; filename="${artifact.fileName}"`,
         },
       });
     } catch {

@@ -1,9 +1,12 @@
 import { Type, type Static } from "@mariozechner/pi-ai";
 import type { AgentTool, AgentToolResult, AgentToolUpdateCallback } from "@mariozechner/pi-agent-core";
 import type { PipelineRunner } from "../pipeline/runner.js";
-import type { ReviseMode } from "../agents/reviser.js";
+import { DEFAULT_REVISE_MODE, type ReviseMode } from "../agents/reviser.js";
 import { readFile, writeFile, readdir, stat } from "node:fs/promises";
 import { join, normalize, resolve } from "node:path";
+import { StateManager } from "../state/manager.js";
+import { createInteractionToolsFromDeps } from "../interaction/project-tools.js";
+import { writeExportArtifact } from "../interaction/export-artifact.js";
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -25,6 +28,23 @@ function safeBooksPath(booksRoot: string, relativePath: string): string {
   return resolved;
 }
 
+function resolveToolBookId(
+  toolName: string,
+  paramsBookId: string | undefined,
+  activeBookId: string | null,
+): string {
+  const resolvedBookId = paramsBookId ?? activeBookId ?? undefined;
+  if (!resolvedBookId) {
+    throw new Error(`${toolName} requires bookId when there is no active book.`);
+  }
+  return resolvedBookId;
+}
+
+function createDeterministicInteractionTools(pipeline: PipelineRunner, projectRoot: string) {
+  const state = new StateManager(projectRoot);
+  return createInteractionToolsFromDeps(pipeline, state);
+}
+
 // ---------------------------------------------------------------------------
 // 1. SubAgentTool (sub_agent)
 // ---------------------------------------------------------------------------
@@ -39,9 +59,24 @@ const SubAgentParams = Type.Object({
   ]),
   instruction: Type.String({ description: "Natural language instruction from the main Agent" }),
   bookId: Type.Optional(Type.String({ description: "Book ID — required for all agents except architect" })),
+  title: Type.Optional(Type.String({ description: "Architect only: explicit book title. Required when creating a book." })),
+  chapterNumber: Type.Optional(Type.Number({ description: "Target chapter number for auditor/reviser. Omit to use the latest chapter." })),
 });
 
-export function createSubAgentTool(pipeline: PipelineRunner, activeBookId: string | null): AgentTool<typeof SubAgentParams> {
+function deriveBookIdFromTitle(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fff]/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 30);
+}
+
+export function createSubAgentTool(
+  pipeline: PipelineRunner,
+  activeBookId: string | null,
+  projectRoot?: string,
+): AgentTool<typeof SubAgentParams> {
   return {
     name: "sub_agent",
     description:
@@ -56,7 +91,7 @@ export function createSubAgentTool(pipeline: PipelineRunner, activeBookId: strin
       _signal?: AbortSignal,
       onUpdate?: AgentToolUpdateCallback,
     ): Promise<AgentToolResult<undefined>> {
-      const { agent, instruction, bookId } = params;
+      const { agent, instruction, bookId, title, chapterNumber } = params;
 
       const progress = (msg: string) => {
         onUpdate?.(textResult(msg));
@@ -69,14 +104,18 @@ export function createSubAgentTool(pipeline: PipelineRunner, activeBookId: strin
             if (activeBookId) {
               return textResult("当前已有书籍，不需要建书。如果你想创建新书，请先回到首页。");
             }
-            const id = bookId || `book-${Date.now().toString(36)}`;
+            const resolvedTitle = title?.trim();
+            if (!resolvedTitle) {
+              return textResult('Error: title is required for the architect agent.');
+            }
+            const id = bookId || deriveBookIdFromTitle(resolvedTitle) || `book-${Date.now().toString(36)}`;
             progress(`Starting architect for book "${id}"...`);
             await pipeline.initBook(
-              { id, genre: "general", title: "", language: "zh" } as any,
+              { id, genre: "general", title: resolvedTitle, language: "zh" } as any,
               { externalContext: instruction },
             );
             progress(`Architect finished — book "${id}" foundation created.`);
-            return textResult(`Book "${id}" initialised successfully. Foundation files are ready.`);
+            return textResult(`Book "${resolvedTitle}" (${id}) initialised successfully. Foundation files are ready.`);
           }
 
           case "writer": {
@@ -92,8 +131,8 @@ export function createSubAgentTool(pipeline: PipelineRunner, activeBookId: strin
 
           case "auditor": {
             if (!bookId) return textResult("Error: bookId is required for the auditor agent.");
-            progress(`Auditing draft for "${bookId}"...`);
-            const audit = await pipeline.auditDraft(bookId);
+            progress(`Auditing chapter ${chapterNumber ?? "latest"} for "${bookId}"...`);
+            const audit = await pipeline.auditDraft(bookId, chapterNumber);
             progress(`Audit complete for "${bookId}".`);
             const issueCount = audit.issues?.length ?? 0;
             return textResult(
@@ -112,14 +151,29 @@ export function createSubAgentTool(pipeline: PipelineRunner, activeBookId: strin
                 : /rework|返工/.test(instruction)
                   ? "rework"
                   : "spot-fix";
-            progress(`Revising "${bookId}" in ${mode} mode...`);
-            await pipeline.reviseDraft(bookId, undefined, mode);
+            progress(`Revising "${bookId}" chapter ${chapterNumber ?? "latest"} in ${mode} mode...`);
+            await pipeline.reviseDraft(bookId, chapterNumber, mode);
             progress(`Revision complete for "${bookId}".`);
-            return textResult(`Revision (${mode}) complete for "${bookId}".`);
+            return textResult(`Revision (${mode}) complete for "${bookId}" chapter ${chapterNumber ?? "latest"}.`);
           }
 
           case "exporter": {
-            return textResult("Export is not yet implemented. Coming soon.");
+            if (!bookId) return textResult("Error: bookId is required for the exporter agent.");
+            if (!projectRoot) return textResult("Error: exporter requires projectRoot.");
+            const inferredFormat = /epub/i.test(instruction)
+              ? "epub"
+              : /markdown|\bmd\b/i.test(instruction)
+                ? "md"
+                : "txt";
+            const approvedOnly = /approved|已通过|通过章节/.test(instruction);
+            const state = new StateManager(projectRoot);
+            const result = await writeExportArtifact(state, bookId, {
+              format: inferredFormat,
+              approvedOnly,
+            });
+            return textResult(
+              `Exported "${bookId}": ${result.chaptersExported} chapters, ${result.totalWords} words → ${result.outputPath}`,
+            );
           }
 
           default:
@@ -134,7 +188,128 @@ export function createSubAgentTool(pipeline: PipelineRunner, activeBookId: strin
 }
 
 // ---------------------------------------------------------------------------
-// 2. Read Tool
+// 2. Deterministic writing tools
+// ---------------------------------------------------------------------------
+
+const ReviseChapterParams = Type.Object({
+  bookId: Type.Optional(Type.String({ description: "Book ID. Omit to use the active book." })),
+  chapterNumber: Type.Number({ description: "Chapter number to revise." }),
+  mode: Type.Optional(Type.Union([
+    Type.Literal("spot-fix"),
+    Type.Literal("polish"),
+    Type.Literal("rewrite"),
+    Type.Literal("rework"),
+    Type.Literal("anti-detect"),
+  ])),
+});
+
+export function createReviseChapterTool(
+  pipeline: PipelineRunner,
+  activeBookId: string | null,
+): AgentTool<typeof ReviseChapterParams> {
+  return {
+    name: "revise_chapter",
+    description: "Revise a specific chapter through the deterministic revision pipeline.",
+    label: "Revise Chapter",
+    parameters: ReviseChapterParams,
+    async execute(_toolCallId, params): Promise<AgentToolResult<undefined>> {
+      const bookId = resolveToolBookId("revise_chapter", params.bookId, activeBookId);
+      const mode = params.mode ?? DEFAULT_REVISE_MODE;
+      await pipeline.reviseDraft(bookId, params.chapterNumber, mode);
+      return textResult(`Revision (${mode}) complete for "${bookId}" chapter ${params.chapterNumber}.`);
+    },
+  };
+}
+
+const WriteTruthFileParams = Type.Object({
+  bookId: Type.Optional(Type.String({ description: "Book ID. Omit to use the active book." })),
+  fileName: Type.String({ description: "Truth file name under story/, e.g. story_bible.md or current_focus.md." }),
+  content: Type.String({ description: "Full replacement content for the truth file." }),
+});
+
+export function createWriteTruthFileTool(
+  pipeline: PipelineRunner,
+  projectRoot: string,
+  activeBookId: string | null,
+): AgentTool<typeof WriteTruthFileParams> {
+  const tools = createDeterministicInteractionTools(pipeline, projectRoot);
+  return {
+    name: "write_truth_file",
+    description: "Replace a truth/control file under story/ using deterministic project tools.",
+    label: "Write Truth File",
+    parameters: WriteTruthFileParams,
+    async execute(_toolCallId, params): Promise<AgentToolResult<undefined>> {
+      const bookId = resolveToolBookId("write_truth_file", params.bookId, activeBookId);
+      await tools.writeTruthFile(bookId, params.fileName, params.content);
+      return textResult(`Updated "${params.fileName}" for "${bookId}".`);
+    },
+  };
+}
+
+const RenameEntityParams = Type.Object({
+  bookId: Type.Optional(Type.String({ description: "Book ID. Omit to use the active book." })),
+  oldValue: Type.String({ description: "Current entity name." }),
+  newValue: Type.String({ description: "New entity name." }),
+});
+
+export function createRenameEntityTool(
+  pipeline: PipelineRunner,
+  projectRoot: string,
+  activeBookId: string | null,
+): AgentTool<typeof RenameEntityParams> {
+  const tools = createDeterministicInteractionTools(pipeline, projectRoot);
+  return {
+    name: "rename_entity",
+    description: "Rename an entity across truth files and chapters using deterministic edit control.",
+    label: "Rename Entity",
+    parameters: RenameEntityParams,
+    async execute(_toolCallId, params): Promise<AgentToolResult<undefined>> {
+      const bookId = resolveToolBookId("rename_entity", params.bookId, activeBookId);
+      const result = await tools.renameEntity(bookId, params.oldValue, params.newValue) as {
+        readonly __interaction?: { readonly responseText?: string };
+      };
+      const summary = result.__interaction?.responseText ?? `Renamed "${params.oldValue}" to "${params.newValue}" in "${bookId}".`;
+      return textResult(summary);
+    },
+  };
+}
+
+const PatchChapterTextParams = Type.Object({
+  bookId: Type.Optional(Type.String({ description: "Book ID. Omit to use the active book." })),
+  chapterNumber: Type.Number({ description: "Chapter number to patch." }),
+  targetText: Type.String({ description: "Exact text to replace." }),
+  replacementText: Type.String({ description: "Replacement text." }),
+});
+
+export function createPatchChapterTextTool(
+  pipeline: PipelineRunner,
+  projectRoot: string,
+  activeBookId: string | null,
+): AgentTool<typeof PatchChapterTextParams> {
+  const tools = createDeterministicInteractionTools(pipeline, projectRoot);
+  return {
+    name: "patch_chapter_text",
+    description: "Apply a deterministic local text patch to a chapter and mark it for review.",
+    label: "Patch Chapter",
+    parameters: PatchChapterTextParams,
+    async execute(_toolCallId, params): Promise<AgentToolResult<undefined>> {
+      const bookId = resolveToolBookId("patch_chapter_text", params.bookId, activeBookId);
+      const result = await tools.patchChapterText(
+        bookId,
+        params.chapterNumber,
+        params.targetText,
+        params.replacementText,
+      ) as {
+        readonly __interaction?: { readonly responseText?: string };
+      };
+      const summary = result.__interaction?.responseText ?? `Patched chapter ${params.chapterNumber} for "${bookId}".`;
+      return textResult(summary);
+    },
+  };
+}
+
+// ---------------------------------------------------------------------------
+// 3. Read Tool
 // ---------------------------------------------------------------------------
 
 const ReadParams = Type.Object({

@@ -13,6 +13,7 @@ describe("buildAgentSystemPrompt", () => {
       expect(prompt).toContain("核心冲突");
       expect(prompt).toContain("architect");
       expect(prompt).toContain("sub_agent");
+      expect(prompt).toContain("title");
     });
 
     it("English prompt includes info collection workflow", () => {
@@ -22,6 +23,7 @@ describe("buildAgentSystemPrompt", () => {
       expect(prompt).toContain("Genre");
       expect(prompt).toContain("Protagonist");
       expect(prompt).toContain("Core conflict");
+      expect(prompt).toContain("title");
     });
 
     it("Chinese prompt forbids emoji", () => {
@@ -42,7 +44,7 @@ describe("buildAgentSystemPrompt", () => {
   });
 
   describe("with book (writing flow)", () => {
-    it("Chinese prompt includes all tools except architect", () => {
+    it("Chinese prompt includes deterministic writing tools except architect", () => {
       const prompt = buildAgentSystemPrompt("my-book", "zh");
       expect(prompt).toContain("my-book");
       expect(prompt).toContain("sub_agent");
@@ -50,9 +52,21 @@ describe("buildAgentSystemPrompt", () => {
       expect(prompt).toContain("auditor");
       expect(prompt).toContain("reviser");
       expect(prompt).toContain("read");
-      expect(prompt).toContain("edit");
+      expect(prompt).toContain("revise_chapter");
+      expect(prompt).toContain("write_truth_file");
+      expect(prompt).toContain("rename_entity");
+      expect(prompt).toContain("patch_chapter_text");
       expect(prompt).toContain("grep");
       expect(prompt).toContain("ls");
+    });
+
+    it("with-book prompt steers high-risk edits to dedicated deterministic tools", () => {
+      const prompt = buildAgentSystemPrompt("my-book", "zh");
+      expect(prompt).toContain("改设定/改真相文件");
+      expect(prompt).toContain("write_truth_file");
+      expect(prompt).toContain("用户要求重写/精修已有章节");
+      expect(prompt).toContain("revise_chapter");
+      expect(prompt).not.toContain("用户想做小修改（改名字、调设定）→ 用 edit 直接修改");
     });
 
     it("Chinese prompt warns NOT to call architect", () => {

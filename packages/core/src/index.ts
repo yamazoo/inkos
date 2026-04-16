@@ -179,6 +179,7 @@ export {
   processProjectInteractionRequest,
 } from "./interaction/project-control.js";
 export { createInteractionToolsFromDeps } from "./interaction/project-tools.js";
+export { buildExportArtifact, writeExportArtifact } from "./interaction/export-artifact.js";
 export {
   normalizeTruthFileName,
   classifyTruthAuthority,
@@ -208,7 +209,19 @@ export * from "./agent/index.js";
 
 // LLM
 export { createLLMClient, chatCompletion, chatWithTools, createStreamMonitor, PartialResponseError, type LLMClient, type LLMResponse, type LLMMessage, type ToolDefinition, type ToolCall, type AgentMessage, type ChatWithToolsResult, type StreamProgress, type OnStreamProgress } from "./llm/provider.js";
-export { SERVICE_PRESETS, SERVICE_TO_PI_PROVIDER, resolveServicePreset, guessServiceFromBaseUrl, listModelsForService, listServicesWithModelCount, type ServicePreset, type ModelInfo } from "./llm/service-presets.js";
+export {
+  SERVICE_PRESETS,
+  SERVICE_TO_PI_PROVIDER,
+  resolveServicePreset,
+  resolveServiceProviderFamily,
+  resolveServicePiProvider,
+  resolveServiceModelsBaseUrl,
+  guessServiceFromBaseUrl,
+  listModelsForService,
+  listServicesWithModelCount,
+  type ServicePreset,
+  type ModelInfo,
+} from "./llm/service-presets.js";
 export { resolveServiceModel, type ResolvedModel } from "./llm/service-resolver.js";
 export { loadSecrets, saveSecrets, getServiceApiKey, type SecretsFile } from "./llm/secrets.js";
 export { migrateConfig, type MigrationResult } from "./llm/config-migration.js";
