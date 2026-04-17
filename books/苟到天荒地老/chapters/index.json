@@ -2937,5 +2937,37 @@
       "completionTokens": 15284,
       "totalTokens": 31975
     }
+  },
+  {
+    "number": 157,
+    "title": "夜探",
+    "status": "approved",
+    "wordCount": 3103,
+    "createdAt": "2026-04-17T23:21:29.427Z",
+    "updatedAt": "2026-04-17T23:21:38.786Z",
+    "auditIssues": [
+      "[warning] AI标记词密度略高：全章约2800字，出现'忽然'2次、'猛地'2次、'仿佛'1次，共5次。超过每3000字1次的阈值标准。",
+      "[warning] 连续出现3个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3103,
+      "postWriterNormalizeCount": 3103,
+      "postReviseCount": 0,
+      "finalCount": 3103,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 8483,
+      "totalTokens": 8483
+    }
   }
 ]
