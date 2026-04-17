@@ -1,103 +1,104 @@
 {
   "hooks": [
     {
-      "hookId": "H100_赵猛弟弟之死",
-      "startChapter": 56,
-      "type": "悬念钩",
-      "status": "resolved",
-      "lastAdvancedChapter": 73,
-      "expectedPayoff": "**73章已回收**",
-      "notes": "**重大推进→回收**：赵猛看到弟弟死前画面（不是被黑雾害死/是用生命点燃封印的英雄）；守护者证实\"他是英雄\"；赵猛从悲痛转为坚定；陈守一说\"都是替母亲还债\"；赵猛说\"不会拦了\""
-    },
-    {
-      "hookId": "H105_虚境幽冥兽",
-      "startChapter": 58,
-      "type": "悬念钩",
-      "status": "resolved",
-      "lastAdvancedChapter": 73,
-      "expectedPayoff": "**73章已回收**",
-      "notes": "**重大推进→回收**：山中守护者真实身份揭露（上古大劫后留下的守护意识/形体近乎消散/只余金色竖瞳燃烧执念）；等了三源合一血脉三百年；力量传承完成；形体正在消散；最终消散（遗迹崩塌时）"
-    },
-    {
-      "hookId": "H106_母亲当年也有金痕",
-      "startChapter": 58,
-      "type": "悬念钩",
-      "status": "resolved",
-      "lastAdvancedChapter": 73,
-      "expectedPayoff": "**73章已回收**",
-      "notes": "**重大推进→回收**：金痕代价完整揭露（生机消耗加速一年）；守护者揭示母亲当年没有九幽寒莲/十年寿元三年耗尽；陈守一有九幽寒莲减缓但代价仍存在；传承后寿元从五年变为四年"
-    },
-    {
-      "hookId": "H098_玄清宗内鬼",
-      "startChapter": 58,
-      "type": "悬念钩",
-      "status": "resolved",
-      "lastAdvancedChapter": 73,
-      "expectedPayoff": "**73章已回收**",
-      "notes": "**重大推进→回收**：内鬼完整情报揭露（\"正本清源\"组织/三百年前分支/认为冥族是回归者而非入侵/封印是错误的）；周执事只是外围；核心人物是执法堂某位长老"
-    },
-    {
-      "hookId": "H093_神秘生物的身份",
-      "startChapter": 0,
-      "type": "悬念钩",
-      "status": "resolved",
-      "lastAdvancedChapter": 73,
-      "expectedPayoff": "**73章已回收**",
-      "notes": "**重大推进→回收**：山中守护者完整身份揭露（上古大劫守护意识/形体近乎消散/与守夜者一体两面）；三百年前母亲两个同伴之一"
-    },
-    {
-      "hookId": "H097_守夜者",
-      "startChapter": 0,
-      "type": "悬念钩",
-      "status": "resolved",
-      "lastAdvancedChapter": 73,
-      "expectedPayoff": "**73章已回收**",
-      "notes": "**重大推进→回收**：守夜者真实身份揭露（三百年前第一批发现三源合一秘密的修士之一/与母亲同源/选择不同道路/将全部力量融入封印/与守护者一体两面/\"她选择了燃烧，我选择了守护\"）"
-    },
-    {
-      "hookId": "H107_三天之期",
-      "startChapter": 0,
+      "hookId": "H141_守夜者最后一人",
+      "startChapter": 88,
       "type": "悬念钩",
       "status": "open",
-      "lastAdvancedChapter": 73,
-      "expectedPayoff": "**75-76章**",
-      "notes": "**新揭示**：封印松动速度加快；只剩两天半；内鬼在加速完成最后仪式；遗迹入口已崩塌；需要赶回聚居点应对"
+      "lastAdvancedChapter": 89,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：孩子正式登场揭露身份（守夜者第八代收养的孤儿）；自称在此待了三年（与母亲守护陈守一时间一致）；每月圆之夜与分身接触；将第一件同源之物交给陈守一；透露\"那座桥不是用来封印的，是用来渡的\"（与母亲遗言\"渡\"字呼应）；透露三源归一仪式代价（\"比死更难，神魂永镇两界之间\"）；正在拖住冥将残念分身"
     },
     {
-      "hookId": "H108_\"正本清源\"组织",
-      "startChapter": 73,
+      "hookId": "H142_沈炼方向危险",
+      "startChapter": 88,
       "type": "悬念钩",
-      "status": "open",
-      "lastAdvancedChapter": 73,
-      "expectedPayoff": "**80-100章**",
-      "notes": "**新伏笔**：三百年前分支；认为冥族是回归者；认为封印是错误的；灵洲大陆建立血脉传承；玄清宗是据点之一；执法堂长老是核心"
+      "status": "resolved",
+      "lastAdvancedChapter": 89,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**回收**：确认沈炼遭遇冥将残念分身（石室被堵/死路/分身逼近）；陈守一赶到救援；危险解除（暂时）"
     },
     {
-      "hookId": "H109_守夜者的遗言",
-      "startChapter": 73,
+      "hookId": "H143_母亲玉佩碎片",
+      "startChapter": 88,
       "type": "悬念钩",
       "status": "open",
-      "lastAdvancedChapter": 73,
-      "expectedPayoff": "**75-80章**",
-      "notes": "**新伏笔**：遗迹残念消散前的遗言\"替我告诉她，我女儿没白养\"——\"她\"是谁？守夜者的女儿？还是另有所指？"
+      "lastAdvancedChapter": 89,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：与新获得的玉佩（第一件同源之物）纹路一模一样；同时发出微弱光芒；\"一新一旧，像是母亲和孩子的手，在黑暗中紧紧握在一起\""
     },
     {
-      "hookId": "H110_冥将的试探",
-      "startChapter": 73,
+      "hookId": "H140_三源归一新理解",
+      "startChapter": 87,
       "type": "悬念钩",
-      "status": "open",
-      "lastAdvancedChapter": 73,
-      "expectedPayoff": "**80-100章**",
-      "notes": "**新伏笔**：冥将意识在传承时试图侵蚀陈守一神魂；\"三源……终于来了……\"；裂缝深处传来低语；暗示冥将能感知三源合一者"
+      "status": "resolved",
+      "lastAdvancedChapter": 89,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**回收**：孩子揭露\"那座桥不是用来封印的，是用来渡的\"——与母亲遗言\"渡\"字一模一样；孩子揭露仪式代价；两条线索汇合"
     },
     {
-      "hookId": "H111_母亲的最终画面",
-      "startChapter": 73,
+      "hookId": "H139_祭坛深处存在",
+      "startChapter": 86,
       "type": "悬念钩",
       "status": "open",
-      "lastAdvancedChapter": 73,
-      "expectedPayoff": "**75-80章**",
-      "notes": "**新伏笔**：幻境中母亲在彼岸的修炼历程（被守夜者救下/在石屋恢复/遇见守护者/等待孩子长大）；\"若他不愿继承呢？\"/\"那道印记会找到他/它是钥匙也是代价\""
+      "lastAdvancedChapter": 89,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：三双幽蓝眼睛确认是冥将残念分身（从三源通道交汇点渗出/三百年前封印崩溃时被切割出来/饿了很久/比守夜者孩子强）；孩子正在拖住分身"
+    },
+    {
+      "hookId": "H136_有东西在靠近通道",
+      "startChapter": 84,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 89,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**回收**：确认是冥将残念分身；被陈守一三源气息共鸣引开后又回到石室堵住通道口；孩子拖住分身"
+    },
+    {
+      "hookId": "H137_三源归一仪式代价",
+      "startChapter": 84,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 89,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：孩子揭露完整代价（\"比死更难，神魂永镇两界之间，永世不得超生\"）；两条信息线汇合（幻境+孩子口述）"
+    },
+    {
+      "hookId": "H138_组织走捷径",
+      "startChapter": 84,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 89,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "孩子不是组织是守夜者体系；信息补充"
+    },
+    {
+      "hookId": "H144_孩子身份之谜",
+      "startChapter": 89,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 89,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**NEW**：守夜者第八代收养的孤儿；在此待了三年；为何能拖住冥将残念分身；守夜者气息具体指什么；孩子知道多少秘密；与母亲三年守护有何关联"
+    },
+    {
+      "hookId": "H145_陈守一决定引开分身",
+      "startChapter": 89,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 89,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**NEW**：陈守一决定回去引开分身保护孩子；\"从另一条路撤\"；独自面对冥将残念分身；\"我尽量\""
     }
   ]
 }

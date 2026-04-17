@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 81,
+  "lastAppliedChapter": 90,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -164,6 +164,27 @@
     "H115_冥将的目的:lastAdvancedChapter normalized from \"77-78\" to 0",
     "H113_三源同根幽冥同源:lastAdvancedChapter normalized from \"77-78\" to 0",
     "H108_\"正本清源\"组织:lastAdvancedChapter normalized from \"77-78\" to 0",
-    "H120_因果反噬:status normalized from \"**深化→情感高潮**\" to \"open\""
+    "H120_因果反噬:status normalized from \"**深化→情感高潮**\" to \"open\"",
+    "H114_末法时代真相:status normalized from \"**深化**\" to \"open\"",
+    "H130_周沉遗言:status normalized from \"**深化/活跃**\" to \"open\"",
+    "H131_地下河幽冥气息:status normalized from \"**深化/活跃**\" to \"open\"",
+    "H132_沈炼二十年等待:status normalized from \"**深化/活跃**\" to \"open\"",
+    "H124_三件同源之物:status normalized from \"**深化/活跃**\" to \"open\"",
+    "H136_有东西在靠近通道:status normalized from \"**深化/紧急**\" to \"open\"",
+    "H133_三源通道交汇点:status normalized from \"**深化/紧迫**\" to \"open\"",
+    "H114_末法时代真相:status normalized from \"**深化/完整揭露**\" to \"open\"",
+    "H136_有东西在靠近通道:status normalized from \"**深化/新发展**\" to \"open\"",
+    "H133_三源通道交汇点:status normalized from \"深化\" to \"open\"",
+    "H137_三源归一仪式代价:status normalized from \"深化\" to \"open\"",
+    "H138_组织走捷径:status normalized from \"**深化**\" to \"open\"",
+    "H134_献祭图纸:status normalized from \"深化\" to \"open\"",
+    "H135_母亲的抉择:status normalized from \"**深化/情感升华**\" to \"open\"",
+    "H130_周沉遗言:status normalized from \"**深化/情感爆发**\" to \"open\"",
+    "H141_守夜者最后一人:status normalized from \"**深化**\" to \"open\"",
+    "H143_母亲玉佩碎片:status normalized from \"**深化**\" to \"open\"",
+    "H139_祭坛深处存在:status normalized from \"**深化**\" to \"open\"",
+    "H137_三源归一仪式代价:status normalized from \"**深化**\" to \"open\"",
+    "H144_孩子身份之谜:status normalized from \"**NEW**\" to \"open\"",
+    "H145_陈守一决定引开分身:status normalized from \"**NEW**\" to \"open\""
   ]
 }
