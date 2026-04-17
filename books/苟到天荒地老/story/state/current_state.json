@@ -1,4 +1,53 @@
 {
-  "chapter": 137,
-  "facts": []
+  "chapter": 138,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "彼岸枯井/井底石室（方圆十丈/高三丈）",
+      "validFromChapter": 138,
+      "validUntilChapter": null,
+      "sourceChapter": 138
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "精神坚定/平静/等待休息后行动/金痕按在桥心凹槽/核心秘密被青鸾揭露（怕青鸾死）",
+      "validFromChapter": 138,
+      "validUntilChapter": null,
+      "sourceChapter": 138
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "完成三根木桩塞入凹槽/重建两界通道（弥合封印裂缝）",
+      "validFromChapter": 138,
+      "validUntilChapter": null,
+      "sourceChapter": 138
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "三人力量用尽后会变回普通人（炼气三层/无金痕/无血脉加成/无三源合一能力）/青鸾身体虚弱/赵猛体力耗尽/尚未动手/井底念力残留",
+      "validFromChapter": 138,
+      "validUntilChapter": null,
+      "sourceChapter": 138
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "敌对：正本清源（已深入彼岸/威胁暂缓）",
+      "validFromChapter": 138,
+      "validUntilChapter": null,
+      "sourceChapter": 138
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "重建桥梁阻止大劫 vs 代价是变回普通人 vs 尚未动手执行",
+      "validFromChapter": 138,
+      "validUntilChapter": null,
+      "sourceChapter": 138
+    }
+  ]
 }

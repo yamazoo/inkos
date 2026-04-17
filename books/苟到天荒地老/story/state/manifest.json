@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 137,
+  "lastAppliedChapter": 138,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -285,6 +285,16 @@
     "H-三源代价均摊:status normalized from \"**reaching climax**\" to \"open\"",
     "H-第三根木桩:status normalized from \"**resolving**\" to \"open\"",
     "H-陈守一真正死因/代价:status normalized from \"**new**\" to \"open\"",
-    "H-陈守一想活的原因:status normalized from \"**new**\" to \"open\""
+    "H-陈守一想活的原因:status normalized from \"**new**\" to \"open\"",
+    "H-三源代价均摊:status normalized from \"**本章揭示**\" to \"open\"",
+    "H-三源代价均摊:lastAdvancedChapter normalized from \"138章：揭示\"同尽\"是力量用尽而非命用尽；代价是变回普通人（炼气三层/无金痕/无血脉加成/无三源合一能力）\" to 0",
+    "H-三根木桩机制:status normalized from \"**执行准备**\" to \"open\"",
+    "H-三根木桩机制:lastAdvancedChapter normalized from \"138章：木桩底部是空的/下面有空间/三个凹槽呈三角形排列/三根木桩要塞进凹槽然后落下去撑起封印\" to 0",
+    "H-三源归位符号:status normalized from \"**新埋设**\" to \"open\"",
+    "H-三源归位符号:lastAdvancedChapter normalized from \"138章：井壁符号\"三源归位\"/与桥心石台碑文落款相同（母亲刻的）\" to 0",
+    "H-井底念力残留:status normalized from \"**新发现**\" to \"open\"",
+    "H-井底念力残留:lastAdvancedChapter normalized from \"138章：井底有残留念力/守夜者三百年燃烧生机留下的/像看不见的薄雾\" to 0",
+    "H-正本清源后果:status normalized from \"**暂缓**\" to \"open\"",
+    "H-正本清源后果:lastAdvancedChapter normalized from \"138章：封印破后两界平衡打破/冥气涌出/念力消散/最后是两界一起完蛋\" to 0"
   ]
 }
