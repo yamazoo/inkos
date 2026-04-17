@@ -1459,5 +1459,40 @@
       "completionTokens": 14873,
       "totalTokens": 31089
     }
+  },
+  {
+    "number": 116,
+    "title": "晨风不歇",
+    "status": "approved",
+    "wordCount": 2877,
+    "createdAt": "2026-04-17T16:13:32.150Z",
+    "updatedAt": "2026-04-17T16:13:44.068Z",
+    "auditIssues": [
+      "[info] 守夜者在消散前承担了大量信息传递功能：母亲遗言、正本清源组织真相、玄清宗内鬼背景。这是功能性较强的一幕，但考虑到守夜者300年使命的叙事弧线已经完整（从登场到引导到消散），且她本身就是见证者和传递者身份，这个功能化是角色设定的自然延伸而非强行工具人化。",
+      "[info] 本章以陈守一视角为主，但守夜者消散时出现了守夜者\"抬手想按一按衣襟，手指却直接穿过了自己的肩膀\"、\"她低头看了看，然后笑了\"等描述，这些是陈守一作为旁观者可以观察到的外部行为，但视角略有靠近守夜者内心的倾向。整体可接受。",
+      "[info] 青鸾的故事(SP-青鸾的故事)和赵猛弟弟(SP-赵猛弟弟)在本章没有被推进，但这是合理的——本章核心是守夜者消散和\"记住她的话\"的真相揭露，青鸾支线的下一次活跃点应该是陈守一回到聚居点与其会合。",
+      "[info] 陈守一的情感弧线从沉重→坚定→震动→坚定，变化清晰。但整体情绪强度维持在较高水平（9/10），连续多章没有明显的情绪释放或缓冲节奏。不过考虑到剧情阶段（真相高潮后的消散/告别），高强度情感是合理的。",
+      "[warning] 连续出现3个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2877,
+      "postWriterNormalizeCount": 2877,
+      "postReviseCount": 0,
+      "finalCount": 2877,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 31886,
+      "completionTokens": 9031,
+      "totalTokens": 40917
+    }
   }
 ]

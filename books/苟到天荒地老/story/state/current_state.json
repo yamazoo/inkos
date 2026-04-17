@@ -1,53 +1,53 @@
 {
-  "chapter": 115,
+  "chapter": 116,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "第三根石柱顶端→准备下去",
-      "validFromChapter": 115,
+      "predicate": "当前冲突",
+      "object": "封印崩溃前兆|第三条路进行中|玄清宗渗透正本清源|风暴将至",
+      "validFromChapter": 116,
       "validUntilChapter": null,
-      "sourceChapter": 115
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "金线稳定（彻底融入皮肤/光线好时隐约可见淡痕）+ 与玉佩新生金线呼应",
-      "validFromChapter": 115,
-      "validUntilChapter": null,
-      "sourceChapter": 115
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "下去石柱",
-      "validFromChapter": 115,
-      "validUntilChapter": null,
-      "sourceChapter": 115
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "冥将被关在门外",
-      "validFromChapter": 115,
-      "validUntilChapter": null,
-      "sourceChapter": 115
+      "sourceChapter": 116
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "第一个守夜者（盟友/引导者/300年等待/消散中/单薄身影被晨风吹得微微晃动）",
-      "validFromChapter": 115,
+      "object": "\"正本清源\"组织（误解封印本质/被玄清宗渗透）|赵猛（在聚居点等待）|青鸾（在聚居点）",
+      "validFromChapter": 116,
       "validUntilChapter": null,
-      "sourceChapter": 115
+      "sourceChapter": 116
     },
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "封印崩溃前兆",
-      "validFromChapter": 115,
+      "predicate": "当前目标",
+      "object": "执行第三条路/重建两界桥梁",
+      "validFromChapter": 116,
       "validUntilChapter": null,
-      "sourceChapter": 115
+      "sourceChapter": 116
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "山脚→向聚居点方向行进",
+      "validFromChapter": 116,
+      "validUntilChapter": null,
+      "sourceChapter": 116
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "冥将被关在门外|封印正在衰退|风暴还有两天半到达|需要两个被契约选中者合力",
+      "validFromChapter": 116,
+      "validUntilChapter": null,
+      "sourceChapter": 116
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "金线稳定+玉佩金线完全融入玉质|双腿力量恢复|精神坚定|情绪：震动→释然→坚定→沉静前行",
+      "validFromChapter": 116,
+      "validUntilChapter": null,
+      "sourceChapter": 116
     }
   ]
 }
