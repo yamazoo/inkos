@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 117,
+  "lastAppliedChapter": 118,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -239,6 +239,11 @@
     "母亲的选择:lastAdvancedChapter normalized from \"115/117\" to 0",
     "赵猛弟弟:lastAdvancedChapter normalized from \"114/117\" to 0",
     "青鸾的故事:lastAdvancedChapter normalized from \"114/117\" to 0",
-    "正本清源组织误解:lastAdvancedChapter normalized from \"113/117\" to 0"
+    "正本清源组织误解:lastAdvancedChapter normalized from \"113/117\" to 0",
+    "被遗忘的第三方:status normalized from \"**advancing**\" to \"open\"",
+    "赵猛弟弟:status normalized from \"**advancing**\" to \"open\"",
+    "青鸾的故事:status normalized from \"**CRITICAL**\" to \"open\"",
+    "正本清源组织误解:status normalized from \"**advancing**\" to \"open\"",
+    "第一条路（已断）:status normalized from \"**NEW**\" to \"open\""
   ]
 }

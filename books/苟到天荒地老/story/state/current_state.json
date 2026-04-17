@@ -1,205 +1,53 @@
 {
-  "chapter": 117,
+  "chapter": 118,
   "facts": [
     {
-      "subject": "current_state",
-      "predicate": "note_1",
-      "object": "封印崩溃前兆",
-      "validFromChapter": 117,
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "聚居点（青鸾石屋）",
+      "validFromChapter": 118,
       "validUntilChapter": null,
-      "sourceChapter": 117
+      "sourceChapter": 118
     },
     {
-      "subject": "current_state",
-      "predicate": "note_2",
-      "object": "第三条路进行中",
-      "validFromChapter": 117,
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "精神沉重但坚定；金痕发热感应到幽冥气息；玉佩内有新生金线",
+      "validFromChapter": 118,
       "validUntilChapter": null,
-      "sourceChapter": 117
+      "sourceChapter": 118
     },
     {
-      "subject": "current_state",
-      "predicate": "note_3",
-      "object": "玄清宗渗透正本清源",
-      "validFromChapter": 117,
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "三天内找到救醒青鸾的办法；阻止封印进一步崩溃；准备迎接风暴",
+      "validFromChapter": 118,
       "validUntilChapter": null,
-      "sourceChapter": 117
+      "sourceChapter": 118
     },
     {
-      "subject": "current_state",
-      "predicate": "note_4",
-      "object": "风暴将至（两天半期限）",
-      "validFromChapter": 117,
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "风暴两天半到达；青鸾侵蚀昏迷；母亲生机已用于激活玉佩；金线生机有限",
+      "validFromChapter": 118,
       "validUntilChapter": null,
-      "sourceChapter": 117
+      "sourceChapter": 118
     },
     {
-      "subject": "current_state",
-      "predicate": "note_5",
-      "object": "青鸾侵蚀昏迷",
-      "validFromChapter": 117,
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "敌：正本清源组织（正在破坏封印）；冥族（封印崩溃释放的幽冥气息）",
+      "validFromChapter": 118,
       "validUntilChapter": null,
-      "sourceChapter": 117
+      "sourceChapter": 118
     },
     {
-      "subject": "current_state",
-      "predicate": "note_6",
-      "object": "执行第三条路/重建两界桥梁",
-      "validFromChapter": 117,
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "封印崩溃前兆；青鸾生命垂危；风暴将至；三天的时限压力",
+      "validFromChapter": 118,
       "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_7",
-      "object": "救醒青鸾",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_8",
-      "object": "阻止正本清源组织",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_9",
-      "object": "**位置**: 聚居点石屋",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_10",
-      "object": "**身份**: 真正的守夜者（守夜者传承完成）",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_11",
-      "object": "**寿元**: 四年（五年减一年）",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_12",
-      "object": "**身体**: 双腿力量恢复；精神坚定；金线稳定+玉佩金线完全融入玉质",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_13",
-      "object": "**情绪**: 困惑→沉重→坚定",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_14",
-      "object": "**获得**: 末法真相/三源合一修炼法门/母亲生机/守夜者身份/守夜者消散",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_15",
-      "object": "冥将被关在门外",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_16",
-      "object": "封印正在衰退",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_17",
-      "object": "风暴两天半到达",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_18",
-      "object": "需要两个被契约选中者合力",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_19",
-      "object": "青鸾侵蚀昏迷，无灵药可用",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_20",
-      "object": "**赵猛**: 在聚居点等待，青鸾昏迷，疲惫但坚定",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_21",
-      "object": "**青鸾**: 侵蚀昏迷，眉心青黑纹路，生死未卜",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_22",
-      "object": "**守夜者**: 消散完成/三百年前守夜者最后安排已执行",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_23",
-      "object": "**玉佩**: 贴身携带，新生金线在玉石纹理中跳动",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_24",
-      "object": "**令牌**: 暗青色，可打开彼岸遗迹",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
-    },
-    {
-      "subject": "current_state",
-      "predicate": "note_25",
-      "object": "**金线**: 体内稳定，与玉佩新生金线呼应",
-      "validFromChapter": 117,
-      "validUntilChapter": null,
-      "sourceChapter": 117
+      "sourceChapter": 118
     }
   ]
 }

@@ -1529,5 +1529,39 @@
       "completionTokens": 9683,
       "totalTokens": 9683
     }
+  },
+  {
+    "number": 118,
+    "title": "山雨欲来",
+    "status": "approved",
+    "wordCount": 2945,
+    "createdAt": "2026-04-17T16:34:41.825Z",
+    "updatedAt": "2026-04-17T16:36:32.778Z",
+    "auditIssues": [
+      "[info] 本章未出现高疲劳词（无敌、碾压、秒了、恐怖如斯、倒吸一口凉气），也未出现AI标记词（仿佛/不禁/宛如/竟然/忽然/猛地）",
+      "[info] 第一条路（已断）伏笔成功植入：赵猛叔提及'以前有一条路，不用打封印，不用守夜者'，与第113章祖父牺牲导致第三方隐去的设定形成呼应",
+      "[info] SP-青鸾的故事（CRITICAL）正在推进：青鸾侵蚀昏迷，生机流失，三天期限，与赵猛弟弟的悲剧形成呼应",
+      "[warning] 青鸾生死与风暴到达之间存在'半天差值'——青鸾三天期限 vs 风暴两天半到达。如果青鸾在风暴来临前才救醒，留给主角准备迎战的时间将极为有限。但文中未明确说明这半天差值的影响，也未交代风暴来临后青鸾能否继续在石屋内安全恢复"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2544,
+      "postWriterNormalizeCount": 2945,
+      "postReviseCount": 2945,
+      "finalCount": 2945,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 17121,
+      "completionTokens": 21504,
+      "totalTokens": 38625
+    }
   }
 ]

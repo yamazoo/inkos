@@ -1,58 +1,72 @@
 {
   "hooks": [
     {
-      "hookId": "被遗忘的第三方",
-      "startChapter": 109,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "揭露第三方消失真相",
-      "notes": "113章重大推进/117章守夜者消散背景"
-    },
-    {
-      "hookId": "母亲的选择",
-      "startChapter": 114,
-      "type": "character",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "揭露母亲说过的话",
-      "notes": "115章重大推进/\"记住她的话\"悬念持续/117章陈守一反复琢磨矛盾"
-    },
-    {
       "hookId": "父亲祖母的故事",
       "startChapter": 114,
       "type": "character",
       "status": "progressing",
       "lastAdvancedChapter": 115,
       "expectedPayoff": "父亲石柱上的题字",
+      "payoffTiming": "mid-arc",
       "notes": "115章重大推进"
+    },
+    {
+      "hookId": "被遗忘的第三方",
+      "startChapter": 109,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 118,
+      "expectedPayoff": "揭露第三方消失真相",
+      "payoffTiming": "mid-arc",
+      "notes": "118章赵猛提及\"以前有一条路\"——第一条路/祖父牺牲的真相"
+    },
+    {
+      "hookId": "母亲的选择",
+      "startChapter": 114,
+      "type": "character",
+      "status": "progressing",
+      "lastAdvancedChapter": 115,
+      "expectedPayoff": "揭露母亲说过的话",
+      "payoffTiming": "mid-arc",
+      "notes": "115章重大推进/\"记住她的话\"悬念持续"
     },
     {
       "hookId": "赵猛弟弟",
       "startChapter": 114,
       "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "status": "open",
+      "lastAdvancedChapter": 118,
       "expectedPayoff": "与青鸾赵猛关系/弟弟之死的具体经过",
-      "notes": "114章新增/117章重逢激活"
+      "payoffTiming": "mid-arc",
+      "notes": "118章叔临终前讲述弟弟故事/\"别让他白死\""
     },
     {
       "hookId": "青鸾的故事",
       "startChapter": 114,
       "type": "character",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "status": "open",
+      "lastAdvancedChapter": 118,
       "expectedPayoff": "青鸾弟子的故事/开食肆的梦想/弟弟之死/对赵猛的托付",
-      "notes": "114章新增/117章侵蚀昏迷/托付激活"
+      "notes": "**118章青鸾侵蚀昏迷/生死未卜/三天期限/紧急状态**"
     },
     {
       "hookId": "正本清源组织误解",
       "startChapter": 109,
       "type": "relationship",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "status": "open",
+      "lastAdvancedChapter": 118,
       "expectedPayoff": "阻止正本清源打开封印",
-      "notes": "113章重大推进/117章风暴将至/紧迫性提升"
+      "payoffTiming": "mid-arc",
+      "notes": "118章向聚居点众人揭露组织真相/风暴比预计更早"
+    },
+    {
+      "hookId": "第一条路（已断）",
+      "startChapter": 118,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 118,
+      "expectedPayoff": "揭露祖父牺牲导致第一条路断裂",
+      "notes": "118章赵猛提及\"以前有一条路，不用打封印，不用守夜者\"/与113章祖父牺牲吻合"
     }
   ]
 }
