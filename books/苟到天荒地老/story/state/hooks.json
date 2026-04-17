@@ -1,93 +1,64 @@
 {
   "hooks": [
     {
-      "hookId": "H-母亲遗物两块玉佩",
-      "startChapter": 141,
+      "hookId": "H-三源血脉传承",
+      "startChapter": 140,
       "type": "mystery",
-      "status": "resolved",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "两块玉佩合一的秘密",
+      "status": "open",
+      "lastAdvancedChapter": 145,
+      "expectedPayoff": "周平在三源血脉中的角色",
+      "payoffTiming": "slow-burn",
+      "notes": "145章继续揭露三源血脉详情（母亲/祖父/苏婉儿祖父三人）"
+    },
+    {
+      "hookId": "H-正本清源内部线人",
+      "startChapter": 144,
+      "type": "新伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 145,
+      "expectedPayoff": "情报来源/内应身份",
       "payoffTiming": "mid-arc",
-      "notes": "**144章重大进展：第三块获得/三源归位真相揭露（不是凑够玉佩而是三人力汇聚到一人）**"
+      "notes": "145章周平透露\"他们内部有可以利用的人\""
     },
     {
       "hookId": "H-神秘老者身份",
       "startChapter": 141,
       "type": "mystery",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 144,
       "expectedPayoff": "神秘老者完整身份",
       "payoffTiming": "mid-arc",
-      "notes": "**144章揭示：周平与神秘老者可能是同一人或有关联/但142章描述\"须发皆白灰袍\"/143章苏婉儿祖父临终提到\"神秘老者\"/周平与神秘老者是否为同一人待确认**"
-    },
-    {
-      "hookId": "H-苏婉儿祖父遗言",
-      "startChapter": 141,
-      "type": "mystery",
-      "status": "resolved",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "苏婉儿祖父与守夜者的完整关系",
-      "payoffTiming": "mid-arc",
-      "notes": "**144章回收完成**"
-    },
-    {
-      "hookId": "H-三源血脉传承",
-      "startChapter": 140,
-      "type": "mystery",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "周平在三源血脉中的角色",
-      "payoffTiming": "slow-burn",
-      "notes": "**144章重大进展：正本清源完整真相（分裂自三源血脉/目的抽干彼岸）**"
+      "notes": "周平与神秘老者是否为同一人待确认"
     },
     {
       "hookId": "H-苏婉儿身世",
       "startChapter": 140,
       "type": "mystery",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 145,
       "expectedPayoff": "苏婉儿完整身世揭露",
       "payoffTiming": "mid-arc",
-      "notes": "**144章推进：血脉传承完整揭示**"
+      "notes": "145章继续推进：血脉传承完整揭示"
     },
     {
       "hookId": "H-三人的未来",
       "startChapter": 139,
       "type": "新伏笔",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 145,
       "expectedPayoff": "四人新生活",
       "payoffTiming": "mid-arc",
-      "notes": "**144章延续**"
+      "notes": "145章延续：决定先吃饭/明天再去找周平"
     },
     {
       "hookId": "H-封印完全修复",
       "startChapter": 133,
       "type": "core_goal",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 145,
       "expectedPayoff": "封印完全修复",
       "payoffTiming": "slow-burn",
-      "notes": "**144章推进：三源归位机制明确**"
-    },
-    {
-      "hookId": "H-正本清源后果",
-      "startChapter": 133,
-      "type": "threat",
-      "status": "resolved",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "正本清源阴谋被粉碎",
-      "payoffTiming": "mid-arc",
-      "notes": "**144章重大进展：正本清源完整目的揭露/威胁升级**"
-    },
-    {
-      "hookId": "H-正本清源内部线人",
-      "startChapter": 144,
-      "type": "**新伏笔**",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**情报来源/内应身份**",
-      "notes": "**新伏笔：正本清源内部有可利用之人**"
+      "notes": "145章延续：三源归位机制明确/修桥是长期任务"
     }
   ]
 }

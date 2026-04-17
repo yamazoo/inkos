@@ -1,53 +1,53 @@
 {
-  "chapter": 144,
+  "chapter": 145,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点深处/周平石屋→返回途中",
-      "validFromChapter": 144,
+      "object": "聚居点深处住所（院子/灶房）",
+      "validFromChapter": 145,
       "validUntilChapter": null,
-      "sourceChapter": 144
+      "sourceChapter": 145
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "精神平静坚定/灵力枯竭/炼气三层/寿元约两年/三块玉佩在手/温热/内心释然/决心已定",
-      "validFromChapter": 144,
+      "object": "精神平静坚定/内心释然/决心已定/灵力枯竭/炼气三层/寿元约两年/三块玉佩在手/温热",
+      "validFromChapter": 145,
       "validUntilChapter": null,
-      "sourceChapter": 144
+      "sourceChapter": 145
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "明天出发寻找正本清源据点/苏婉儿整理祖父手札线索",
-      "validFromChapter": 144,
+      "object": "明天去找周平问清楚正本清源的事/第一步找正本清源据点/第二步找修复封印的具体方法",
+      "validFromChapter": 145,
       "validUntilChapter": null,
-      "sourceChapter": 144
+      "sourceChapter": 145
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "四人皆残缺/青鸾需半月恢复/封印根基不稳/正本清源威胁延续",
-      "validFromChapter": 144,
+      "object": "四人皆残缺/青鸾需半月恢复/封印根基不稳/正本清源威胁延续/寿元仅两年",
+      "validFromChapter": 145,
       "validUntilChapter": null,
-      "sourceChapter": 144
+      "sourceChapter": 145
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "苏婉儿（三源同源者/加入守护/血脉之谜）",
-      "validFromChapter": 144,
+      "object": "苏婉儿（同行者/三源同源者）",
+      "validFromChapter": 145,
       "validUntilChapter": null,
-      "sourceChapter": 144
+      "sourceChapter": 145
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "封印稳固但根基仍需长期修复/正本清源下一步动向未明/三源归位需要力量汇聚/重建桥梁的代价已知",
-      "validFromChapter": 144,
+      "object": "封印根基不稳/正本清源下一步动向未明/重建桥梁代价已知/三源归位需要力量汇聚",
+      "validFromChapter": 145,
       "validUntilChapter": null,
-      "sourceChapter": 144
+      "sourceChapter": 145
     }
   ]
 }
