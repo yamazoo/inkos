@@ -1,44 +1,43 @@
 {
   "hooks": [
     {
-      "hookId": "H-三人的未来",
-      "startChapter": 139,
-      "type": "新伏笔",
-      "status": "resolved",
-      "lastAdvancedChapter": 154,
-      "expectedPayoff": "四人新生活/三年后共同面对/三年之约",
-      "payoffTiming": "mid-arc",
-      "notes": "**重大推进**：四人达成共识/三年后枯林见/赵猛母亲知情/青鸾被赵母接受/\"以前没有家，现在有了\"/四道影子交织成承诺"
-    },
-    {
-      "hookId": "H-正本清源城东据点",
-      "startChapter": 149,
-      "type": "新伏笔",
-      "status": "progressing",
-      "lastAdvancedChapter": 153,
-      "expectedPayoff": "正本清源完整情报/与幽冥真正关联",
-      "payoffTiming": "near-term",
-      "notes": "无变化：情报工作待三年计划启动后继续"
-    },
-    {
       "hookId": "H-三年时间窗口",
       "startChapter": 148,
       "type": "新伏笔",
       "status": "progressing",
-      "lastAdvancedChapter": 154,
+      "lastAdvancedChapter": 155,
       "expectedPayoff": "三年后枯林再见/封印崩溃或修复",
       "payoffTiming": "mid-arc",
-      "notes": "**推进**：四人明确三年之约/\"三年后，枯林见\"/赵猛对母亲许下承诺/\"三年后，我一定会回来\""
+      "notes": "**推进**：陈守一启程/三年计划正式开始/\"三年后，那里就是他们的战场\"/\"活着回来\"的承诺"
     },
     {
       "hookId": "H-苏婉儿身世",
       "startChapter": 140,
       "type": "mystery",
       "status": "progressing",
-      "lastAdvancedChapter": 154,
+      "lastAdvancedChapter": 155,
       "expectedPayoff": "苏婉儿完整身世/与上古大劫关联",
       "payoffTiming": "near-term",
-      "notes": "**情感推进**：苏婉儿说\"原来这就是家\"/\"以前没有，现在有了\"/玉坠与祖父记忆关联/确认与先祖同行"
+      "notes": "**深化**：祖父二十年追查/死在无人知晓角落/城东草图承载遗愿/\"让我一定要找到答案\"/玉坠与金痕产生共鸣"
+    },
+    {
+      "hookId": "H-正本清源城东据点",
+      "startChapter": 149,
+      "type": "新伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 155,
+      "expectedPayoff": "正本清源完整情报/与幽冥真正关联",
+      "payoffTiming": "near-term",
+      "notes": "**推进**：陈守一正式启程侦查/获得祖父手绘草图/正本清源行事隐秘/二十年未能查到老巢"
+    },
+    {
+      "hookId": "H-玉坠与金痕共鸣",
+      "startChapter": 155,
+      "type": "新伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "后续发展",
+      "notes": "**新种**：玉坠与金痕产生微热反应/暗示第四股血脉与三源核心的联系/可能影响金色种子成熟"
     }
   ]
 }

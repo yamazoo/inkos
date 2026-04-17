@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 154,
+  "lastAppliedChapter": 155,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -324,6 +324,8 @@
     "H-正本清源内部线人:lastAdvancedChapter normalized from \"**144章：周平提到\"他们内部有人\"/\"最近在找什么东西\"/\"如果你能赶在他们前面，也许能掌握一些主动\"**\" to 0",
     "H-哑娘与母亲渊源:status normalized from \"**新埋设**\" to \"open\"",
     "H-哑娘三十年的东西:status normalized from \"**新埋设**\" to \"open\"",
-    "H-三年时间窗口:status normalized from \"**新埋设**\" to \"open\""
+    "H-三年时间窗口:status normalized from \"**新埋设**\" to \"open\"",
+    "H-玉坠与金痕共鸣:status normalized from \"新种\" to \"open\"",
+    "H-玉坠与金痕共鸣:lastAdvancedChapter normalized from \"玉坠接触时眉心金痕微微发热/心跳漏拍\" to 0"
   ]
 }
