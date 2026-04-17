@@ -1,53 +1,53 @@
 {
-  "chapter": 122,
+  "chapter": 123,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点（青鸾石屋外黑雾中）",
-      "validFromChapter": 122,
+      "object": "聚居点（青鸾石屋内）",
+      "validFromChapter": 123,
       "validUntilChapter": null,
-      "sourceChapter": 122
+      "sourceChapter": 123
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "金痕觉醒；三源合一传承者；**对封印与桥梁关系的根本性顿悟**；金痕今日消耗过大（胸口发酸）；精神坚定；准备明天再次进入风暴",
-      "validFromChapter": 122,
+      "object": "金痕觉醒；三源合一传承者；对封印与桥梁关系的根本性顿悟；金痕消耗后缓慢恢复中；精神疲惫但坚定；正在休息；准备明天再次进入风暴",
+      "validFromChapter": 123,
       "validUntilChapter": null,
-      "sourceChapter": 122
+      "sourceChapter": 123
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "**三天内**找到救青鸾的方法；阻止封印崩溃；弄清楚第三条路的真正含义；解读\"桥断之处，血脉守之\"；继续探索风暴",
-      "validFromChapter": 122,
+      "object": "三天内找到救青鸾的方法；阻止封印崩溃；弄清楚第三条路的真正含义；解读\"桥断之处，血脉守之\"；继续探索风暴；明天再入风暴",
+      "validFromChapter": 123,
       "validUntilChapter": null,
-      "sourceChapter": 122
+      "sourceChapter": 123
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "风暴进行中；青鸾侵蚀加剧（黑色纹路蔓延至锁骨/但气息略稳）；封印被人为切割；冥将正在苏醒；金痕今日消耗过大；三源合一法门尚未完全掌握；玉佩金线有限",
-      "validFromChapter": 122,
+      "object": "风暴正在减弱但深处威胁未消；青鸾略稳但根本问题未解（只是稳住不是治好）；封印被人为切割；冥将正在苏醒（但今夜沉睡）；金痕消耗后正在恢复；三源合一法门尚未完全掌握；玉佩金线有限；精神疲惫",
+      "validFromChapter": 123,
       "validUntilChapter": null,
-      "sourceChapter": 122
+      "sourceChapter": 123
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "敌：正本清源组织（切割封印/企图用青鸾力量打开封印）；冥族（冥将正在苏醒/风暴是它的呼吸）",
-      "validFromChapter": 122,
+      "object": "敌：正本清源组织（切割封印/企图用青鸾力量打开封印）；冥族（冥将正在苏醒/风暴是它的呼吸/今夜沉睡）",
+      "validFromChapter": 123,
       "validUntilChapter": null,
-      "sourceChapter": 122
+      "sourceChapter": 123
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "冥将苏醒中；青鸾生命垂危但略稳；封印被人为破坏加速崩溃；三天时限；**正本清源计划用青鸾打开封印**；**冥将在等三源合一血脉完成某种事情**",
-      "validFromChapter": 122,
+      "object": "冥将苏醒中但今夜沉睡；青鸾生命垂危但略稳；封印被人为破坏加速崩溃；三天时限；正本清源计划用青鸾打开封印；冥将在等三源合一血脉完成某种事情",
+      "validFromChapter": 123,
       "validUntilChapter": null,
-      "sourceChapter": 122
+      "sourceChapter": 123
     }
   ]
 }

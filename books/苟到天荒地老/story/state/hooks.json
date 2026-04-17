@@ -5,80 +5,80 @@
       "startChapter": 121,
       "type": "mystery",
       "status": "open",
-      "lastAdvancedChapter": 122,
+      "lastAdvancedChapter": 123,
       "expectedPayoff": "黑雾深处的巨大轮廓是什么",
       "payoffTiming": "mid-arc",
-      "notes": "**122章重大推进：确认是冥将竖瞳（直径超三尺）；风暴是冥将的呼吸，黑雾是它的外溢；冥将正在苏醒；它在等三源合一血脉完成某种事情**"
-    },
-    {
-      "hookId": "父亲祖母的故事",
-      "startChapter": 114,
-      "type": "character",
-      "status": "progressing",
-      "lastAdvancedChapter": 122,
-      "expectedPayoff": "父亲石柱上的题字",
-      "payoffTiming": "mid-arc",
-      "notes": "122章陈守一想起父亲题字\"吾儿守一\"；陈家先祖修路/炸路/留下纸条\"桥断之处，血脉守之\""
-    },
-    {
-      "hookId": "正本清源组织误解",
-      "startChapter": 109,
-      "type": "relationship",
-      "status": "open",
-      "lastAdvancedChapter": 122,
-      "expectedPayoff": "阻止正本清源打开封印",
-      "payoffTiming": "mid-arc",
-      "notes": "122章推进：正本清源切割青鸾封印目的是用她的三源之力加速封印崩溃；冥将正在苏醒；陈守一告诉赵猛正本清源要的就是青鸾体内的力量"
+      "notes": "122章确认冥将竖瞳；123章确认风暴减弱但冥将仍在沉睡；它在等三源合一血脉"
     },
     {
       "hookId": "第三条路具体含义",
       "startChapter": 121,
       "type": "mystery",
       "status": "open",
-      "lastAdvancedChapter": 122,
+      "lastAdvancedChapter": 123,
       "expectedPayoff": "三源合一重铸桥梁的具体方式",
       "payoffTiming": "mid-arc",
-      "notes": "122章推进：获得第一条路线索\"桥断之处，血脉守之\"；祖父留下纸条提醒重建桥梁；他还差一个\"契机\"；风暴里还有东西没看完"
+      "notes": "122-123章推进：获得第一条路线索\"桥断之处，血脉守之\"；祖父留下纸条提醒重建桥梁；他还差一个契机；风暴里还有东西没看完"
     },
     {
       "hookId": "第一条路（已断）",
       "startChapter": 118,
       "type": "mystery",
       "status": "open",
-      "lastAdvancedChapter": 122,
+      "lastAdvancedChapter": 123,
       "expectedPayoff": "揭露祖父牺牲导致第一条路断裂",
       "payoffTiming": "mid-arc",
-      "notes": "**122章重大推进：获得祖父留下的上古纸条\"桥断之处，血脉守之\"；守住不是维持封印，是重建桥梁**"
+      "notes": "122-123章重大推进：获得祖父留下的上古纸条\"桥断之处，血脉守之\"；守住不是维持封印，是重建桥梁"
     },
     {
       "hookId": "母亲的选择",
       "startChapter": 114,
       "type": "character",
       "status": "progressing",
-      "lastAdvancedChapter": 122,
+      "lastAdvancedChapter": 123,
       "expectedPayoff": "揭露母亲说过的话",
       "payoffTiming": "mid-arc",
-      "notes": "122章推进：青鸾梦呓再次说出\"总不能等桥塌了再来修\"（121章已有）；陈守一想起母亲/石柱记载/守夜者讲述"
+      "notes": "122-123章推进：青鸾梦呓再次说出\"总不能等桥塌了再来修\"；陈守一想起母亲/石柱记载/守夜者讲述"
+    },
+    {
+      "hookId": "父亲祖母的故事",
+      "startChapter": 114,
+      "type": "character",
+      "status": "progressing",
+      "lastAdvancedChapter": 123,
+      "expectedPayoff": "父亲石柱上的题字",
+      "payoffTiming": "mid-arc",
+      "notes": "122-123章推进：陈守一想起父亲题字\"吾儿守一\"；陈家先祖修路/炸路/留下纸条\"桥断之处，血脉守之\""
     },
     {
       "hookId": "赵猛弟弟",
       "startChapter": 114,
       "type": "mystery",
       "status": "progressing",
-      "lastAdvancedChapter": 122,
+      "lastAdvancedChapter": 123,
       "expectedPayoff": "与青鸾赵猛关系/弟弟之死的具体经过",
       "payoffTiming": "mid-arc",
-      "notes": "**122章新进展：赵猛补充细节——青鸾弟弟三年前死在封印边，死之前把一股力量打进了封印里，那股力量后来传到了青鸾身上**"
+      "notes": "122-123章深化：青鸾弟弟三年前死在封印边/死之前把一股力量打进了封印里/那股力量后来传到了青鸾身上"
     },
     {
       "hookId": "青鸾的故事",
       "startChapter": 114,
       "type": "character",
       "status": "open",
-      "lastAdvancedChapter": 122,
+      "lastAdvancedChapter": 123,
       "expectedPayoff": "青鸾弟子的故事/开食肆的梦想/弟弟之死/对赵猛的托付",
       "payoffTiming": "mid-arc",
-      "notes": "**122章状态：黑色纹路未继续扩/气息比中午稳了一点（只是稳住不是治好）；封印被切断/三源之力被正本清源觊觎**"
+      "notes": "123章状态：黑色纹路未继续扩/气息比中午稳了一点（只是稳住不是治好）；开食肆卖馄饨的梦想；封印被切断/三源之力被正本清源觊觎"
+    },
+    {
+      "hookId": "正本清源组织误解",
+      "startChapter": 109,
+      "type": "relationship",
+      "status": "open",
+      "lastAdvancedChapter": 123,
+      "expectedPayoff": "阻止正本清源打开封印",
+      "payoffTiming": "mid-arc",
+      "notes": "122-123章推进：正本清源切割青鸾封印目的是用她的三源之力加速封印崩溃；冥将正在苏醒；陈守一告诉赵猛正本清源要的就是青鸾体内的力量"
     }
   ]
 }
