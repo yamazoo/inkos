@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 132,
+  "lastAppliedChapter": 133,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -274,6 +274,13 @@
     "H-三钥合一:lastAdvancedChapter normalized from \"130章：青鸾确认门上有三个孔/大小不一样/其中一个和金痕很像\" to 0",
     "H-玉佩金线指向:lastAdvancedChapter normalized from \"130章：玉佩金线比早上更亮/朝三座山峰方向微微颤动/陈守一感受牵引\" to 0",
     "H-三钥合一:status normalized from \"**near-resolution**\" to \"open\"",
-    "H-彼岸之门:status normalized from \"**near-resolution**\" to \"open\""
+    "H-彼岸之门:status normalized from \"**near-resolution**\" to \"open\"",
+    "H-灵气衰减真相:lastAdvancedChapter normalized from \"133章碑文完整揭露：念力维持封印三百年/灵气被彼岸抽取/封印内敌人/三源之血是引非献祭\" to 0",
+    "H-青鸾弟弟命运:lastAdvancedChapter normalized from \"133章揭露：弟弟化作木桩镇在桥基/赵猛需要补上空位/代价均摊给三人\" to 0",
+    "H-青鸾体内余烬:lastAdvancedChapter normalized from \"133章揭露：余烬是第一代陈青鸾神魂/母亲引渡给青鸾/三源之一\" to 0",
+    "H-正本清源阴谋:status normalized from \"advancing\" to \"open\"",
+    "H-正本清源阴谋:lastAdvancedChapter normalized from \"133章碑文强化：敌在封印内不在封印外/正本清源错解一字/后果自取灭亡\" to 0",
+    "H-三源代价均摊:lastAdvancedChapter normalized from \"133章揭露：代价三人均摊/机制未明/均摊有条件\"一心不舍则桥不通\"\" to 0",
+    "H-第三根木桩:lastAdvancedChapter normalized from \"133章确认：井底孔洞深处有青白光芒/第三根木桩在那里\" to 0"
   ]
 }
