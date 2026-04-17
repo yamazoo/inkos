@@ -1,6 +1,56 @@
 {
   "hooks": [
     {
+      "hookId": "H-三人的未来",
+      "startChapter": 139,
+      "type": "新伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 150,
+      "expectedPayoff": "四人新生活/三年后共同面对",
+      "payoffTiming": "mid-arc",
+      "notes": "150章重大推进：三人石屋各自明确表态（苏婉儿'不会半路丢下'/赵猛'替弟弟看着'/青鸾'不会离开'）/四人达成共识共同生活场景/从敌意转向温馨"
+    },
+    {
+      "hookId": "H-三源血脉传承",
+      "startChapter": 140,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 150,
+      "expectedPayoff": "三源血脉完整传承/金色种子成熟",
+      "payoffTiming": "slow-burn",
+      "notes": "150章重大推进：古石激活三道光影（父亲/母亲/苏婉儿祖父血脉在上古交织）/玉佩是钥匙血脉是根本/丹田生出金色种子作为修炼根基/陈守一成为三源合一承载者"
+    },
+    {
+      "hookId": "H-苏婉儿身世",
+      "startChapter": 140,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 150,
+      "expectedPayoff": "周平往东边灵泉遗址方向走的目的",
+      "payoffTiming": "near-term",
+      "notes": "150章推进：三道光影之一完整呈现苏婉儿祖父（白发老者/临终托付玉佩给年轻姑娘/陈守一确认祖父遗愿是找到他修好封印）"
+    },
+    {
+      "hookId": "H-神秘老者身份",
+      "startChapter": 141,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 150,
+      "expectedPayoff": "神秘老者完整身份",
+      "payoffTiming": "mid-arc",
+      "notes": "150章推进：三道光影之一是苏婉儿祖父（白发苍苍/临死前把玉佩交给年轻姑娘/姑娘跪地哭）→老者身份部分揭示"
+    },
+    {
+      "hookId": "H-周平与神秘老者关系",
+      "startChapter": 146,
+      "type": "新伏笔",
+      "status": "deferred",
+      "lastAdvancedChapter": 150,
+      "expectedPayoff": "周平与神秘老者是否为同一人",
+      "payoffTiming": "mid-arc",
+      "notes": "149章推进：钥匙是死的血脉是活的/周平只认钥匙气息不知三源血脉"
+    },
+    {
       "hookId": "H-三年时间窗口",
       "startChapter": 148,
       "type": "新伏笔",
@@ -14,8 +64,8 @@
       "hookId": "H-哑娘三十年的东西",
       "startChapter": 148,
       "type": "新伏笔",
-      "status": "open",
-      "lastAdvancedChapter": 149,
+      "status": "deferred",
+      "lastAdvancedChapter": 150,
       "expectedPayoff": "三十年证据/资料交接",
       "payoffTiming": "mid-arc",
       "notes": "149章无变化"
@@ -24,61 +74,11 @@
       "hookId": "H-哑娘与母亲渊源",
       "startChapter": 148,
       "type": "新伏笔",
-      "status": "open",
-      "lastAdvancedChapter": 149,
+      "status": "deferred",
+      "lastAdvancedChapter": 150,
       "expectedPayoff": "哑娘与母亲完整关系",
       "payoffTiming": "mid-arc",
       "notes": "149章无变化"
-    },
-    {
-      "hookId": "H-周平与神秘老者关系",
-      "startChapter": 146,
-      "type": "新伏笔",
-      "status": "open",
-      "lastAdvancedChapter": 149,
-      "expectedPayoff": "周平与神秘老者是否为同一人",
-      "payoffTiming": "mid-arc",
-      "notes": "149章推进：钥匙是死的血脉是活的/周平只认钥匙气息不知三源血脉"
-    },
-    {
-      "hookId": "H-神秘老者身份",
-      "startChapter": 141,
-      "type": "mystery",
-      "status": "open",
-      "lastAdvancedChapter": 149,
-      "expectedPayoff": "神秘老者完整身份",
-      "payoffTiming": "mid-arc",
-      "notes": "149章推进：苏婉儿追问钥匙vs血脉区别/神秘老者可能只感应到钥匙"
-    },
-    {
-      "hookId": "H-三源血脉传承",
-      "startChapter": 140,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 149,
-      "expectedPayoff": "三源血脉完整传承",
-      "payoffTiming": "slow-burn",
-      "notes": "149章推进：钥匙和血脉是两回事/正本清源只知钥匙不知血脉/陈守一内心挣扎"
-    },
-    {
-      "hookId": "H-苏婉儿身世",
-      "startChapter": 140,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 149,
-      "expectedPayoff": "苏婉儿身世完整揭露",
-      "payoffTiming": "near-term",
-      "notes": "149章重大推进：苏婉儿祖父找正本清源二十年/死在无人知晓角落/遗愿是修好封印"
-    },
-    {
-      "hookId": "H-三人的未来",
-      "startChapter": 139,
-      "type": "新伏笔",
-      "status": "progressing",
-      "lastAdvancedChapter": 149,
-      "expectedPayoff": "四人新生活",
-      "payoffTiming": "mid-arc",
-      "notes": "149章重大推进：苏婉儿表态\"不管你怎么想我们都跟着你\"/陈守一接受\"不是一个人\""
     },
     {
       "hookId": "H-正本清源城东据点",

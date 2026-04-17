@@ -2697,5 +2697,39 @@
       "completionTokens": 16131,
       "totalTokens": 35605
     }
+  },
+  {
+    "number": 150,
+    "title": "血脉之源",
+    "status": "approved",
+    "wordCount": 2840,
+    "createdAt": "2026-04-17T22:18:09.683Z",
+    "updatedAt": "2026-04-17T22:18:22.816Z",
+    "auditIssues": [
+      "[info] 周平往灵泉遗址方向走的伏笔埋设自然，与主线无冲突",
+      "[info] 章节节奏控制良好：血脉觉醒事件打破前章日常基调，四人围坐讨论重建张力，属于'暗流涌动'型过渡章，符合近期章节类型分布（日常→情报→日常→过渡）",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H-三年时间窗口（中程，可回收）、H-正本清源城东据点（近期，可回收）。",
+      "[warning] 连续出现4个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2840,
+      "postWriterNormalizeCount": 2840,
+      "postReviseCount": 0,
+      "finalCount": 2840,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 19798,
+      "completionTokens": 13070,
+      "totalTokens": 32868
+    }
   }
 ]

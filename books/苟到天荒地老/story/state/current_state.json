@@ -1,53 +1,53 @@
 {
-  "chapter": 149,
+  "chapter": 150,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "聚居点深处住所→聚居点外山路",
-      "validFromChapter": 149,
+      "predicate": "当前冲突",
+      "object": "封印修复需等待三年/正本清源威胁/实力差距悬殊",
+      "validFromChapter": 150,
       "validUntilChapter": null,
-      "sourceChapter": 149
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "精神平静坚定/决心已定/灵力枯竭/炼气三层/寿元约两年/三块玉佩+灰石+正本清源布防图在手/眉心金痕偶尔发热/内心有挣扎但被苏婉儿点破",
-      "validFromChapter": 149,
-      "validUntilChapter": null,
-      "sourceChapter": 149
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "应对正本清源/三年后见哑娘获取修复封印的具体方法/先活着/等几天再打探正本清源情报",
-      "validFromChapter": 149,
-      "validUntilChapter": null,
-      "sourceChapter": 149
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "青鸾恢复中/灵力枯竭/寿元仅两年/正本清源六处眼线/据点在城东/有筑基修士/玄清宗有关系",
-      "validFromChapter": 149,
-      "validUntilChapter": null,
-      "sourceChapter": 149
+      "sourceChapter": 150
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "苏婉儿（同行者/三源同源者/核心盟友/指出陈守一的退路想法）",
-      "validFromChapter": 149,
+      "object": "苏婉儿（核心盟友/三源同源/明确表态同行）/赵猛（同行/明确表态）/青鸾（同行/恢复中/明确表态）/哑娘（关键情报源/三年之约）/周平（情报源/待联络）",
+      "validFromChapter": 150,
       "validUntilChapter": null,
-      "sourceChapter": 149
+      "sourceChapter": 150
     },
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "封印修复路径已知但需等待/正本清源威胁迫在眉睫/实力差距悬殊/陈守一内心挣扎（想当普通人vs必须承担使命）",
-      "validFromChapter": 149,
+      "predicate": "当前目标",
+      "object": "从正本清源据点开始打探/找周平带路/等三年后见哑娘获取修复封印具体方法",
+      "validFromChapter": 150,
       "validUntilChapter": null,
-      "sourceChapter": 149
+      "sourceChapter": 150
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "聚居点石屋",
+      "validFromChapter": 150,
+      "validUntilChapter": null,
+      "sourceChapter": 150
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "青鸾恢复中/灵力枯竭/寿元仅两年/正本清源六处眼线/城东据点守卫严/有筑基修士/玄清宗有关联",
+      "validFromChapter": 150,
+      "validUntilChapter": null,
+      "sourceChapter": 150
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "精神坚定/决心已定/灵力枯竭/炼气三层/寿元约两年/三块玉佩+灰石+布防图在手/眉心金痕稳定/丹田新增金色种子/内心释然",
+      "validFromChapter": 150,
+      "validUntilChapter": null,
+      "sourceChapter": 150
     }
   ]
 }
