@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 114,
+  "lastAppliedChapter": 115,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -231,6 +231,9 @@
     "青鸾的故事:status normalized from \"**NEW**\" to \"open\"",
     "赵猛弟弟:status normalized from \"**NEW**\" to \"open\"",
     "父亲祖母的故事:status normalized from \"**NEW**\" to \"open\"",
-    "母亲的选择:status normalized from \"**NEW**\" to \"open\""
+    "母亲的选择:status normalized from \"**NEW**\" to \"open\"",
+    "末法时代真相:startChapter normalized from \"73-115\" to 0",
+    "三源合一修炼法门:startChapter normalized from \"112-115\" to 0",
+    "记住她的话:status normalized from \"**new**\" to \"open\""
   ]
 }
