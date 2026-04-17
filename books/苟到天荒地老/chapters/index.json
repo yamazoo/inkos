@@ -2236,5 +2236,42 @@
       "completionTokens": 10902,
       "totalTokens": 25076
     }
+  },
+  {
+    "number": 137,
+    "title": "壁上旧影",
+    "status": "approved",
+    "wordCount": 3400,
+    "createdAt": "2026-04-17T20:01:21.735Z",
+    "updatedAt": "2026-04-17T20:01:32.337Z",
+    "auditIssues": [
+      "[warning] 本章情绪降调过于平缓。自134章高潮章后连续多章(134→135→136→137)情绪序列均为'沉重/紧张→坚定→释然/平静'的缓慢降调，缺乏足够的节奏起伏。137章更是几乎全程平稳，只在'听到母亲声音'处有一处情感高点，其余均为日常化的三人对话。",
+      "[warning] 本章中'金痕的光芒'出现频率较高，作为主要光源描写反复使用。",
+      "[info] 第五章壁画'第五幅是一片空白'处，石壁忽然闪了一下幽光又消失，陈守一收回手时'眉头微微皱了皱'。这个细节似乎暗示井壁上曾画过什么但被抹去了，但后续没有回收。可能是有意留白，也可能遗漏。",
+      "[info] 本章视角选择陈守一为唯一观察者，但在描述'赵猛的脸上是一种复杂的表情，有坚定，也有某种释然'和'青鸾的神情则要平静一些'时，是陈守一在观察两人。这种近距离观察井壁壁画时的视角切换略有不自然。",
+      "[warning] 最近4章持续高压（紧张→震动→坚定→紧张→震动→坚定 -> 沉重→震动→释然→坚定 -> 震动→沉重→释然→坚定→期待→平静 -> 沉重→坚定→紧张→释然→震动→期待→高潮），缺少明显的情绪释放。",
+      "[warning] 137个段落里有100个不足35字，段落被切得过碎。",
+      "[warning] 连续出现23个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3400,
+      "postWriterNormalizeCount": 3400,
+      "postReviseCount": 0,
+      "finalCount": 3400,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 10219,
+      "totalTokens": 10219
+    }
   }
 ]
