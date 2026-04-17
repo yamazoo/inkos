@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 129,
+  "lastAppliedChapter": 130,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -264,6 +264,14 @@
     "H-玉佩金线指向:status normalized from \"**新增**\" to \"open\"",
     "H-玉佩金线指向:lastAdvancedChapter normalized from \"金线朝东面山谷微微偏转；指向遗迹方向\" to 0",
     "H-祖父纸条:status normalized from \"关联\" to \"open\"",
-    "H-祖父纸条:lastAdvancedChapter normalized from \"\"桥断之处，血脉守之\"；金线指向与纸条方向吻合\" to 0"
+    "H-祖父纸条:lastAdvancedChapter normalized from \"\"桥断之处，血脉守之\"；金线指向与纸条方向吻合\" to 0",
+    "H-青鸾体内余烬:lastAdvancedChapter normalized from \"130章：青鸾表明余烬与封印有关，到门前时她必须在\" to 0",
+    "H-祖父纸条:lastAdvancedChapter normalized from \"130章：青鸾梦中看到的门与三孔/与纸条描述一致/\"门后之人可入门内之物不可出\"\" to 0",
+    "H-正本清源意图:lastAdvancedChapter normalized from \"130章：青鸾问正本清源会不会也盯着那个地方/陈守一确认\"会\"\" to 0",
+    "H-三源合一代价:lastAdvancedChapter normalized from \"130章：揭示\"门后之人可入门内之物不可出\"/三源合一代价更加明确\" to 0",
+    "H-彼岸之门:lastAdvancedChapter normalized from \"130章：青鸾梦中共鸣看到的门/三孔/窄道/位置确认\" to 0",
+    "H-灵气衰减真相:lastAdvancedChapter normalized from \"130章：陈守一解释\"不去的话灵气会一直流失，迟早都是死\"\" to 0",
+    "H-三钥合一:lastAdvancedChapter normalized from \"130章：青鸾确认门上有三个孔/大小不一样/其中一个和金痕很像\" to 0",
+    "H-玉佩金线指向:lastAdvancedChapter normalized from \"130章：玉佩金线比早上更亮/朝三座山峰方向微微颤动/陈守一感受牵引\" to 0"
   ]
 }

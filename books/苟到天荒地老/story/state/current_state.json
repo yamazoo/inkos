@@ -1,53 +1,53 @@
 {
-  "chapter": 129,
+  "chapter": 130,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "正本清源欲打开封印（会让灵气抽干）vs 重建桥梁需堵上口子",
-      "validFromChapter": 129,
-      "validUntilChapter": null,
-      "sourceChapter": 129
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前敌我",
-      "object": "陈守一+赵猛+青鸾 三人同行",
-      "validFromChapter": 129,
-      "validUntilChapter": null,
-      "sourceChapter": 129
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "明天抵达三座山峰夹着窄道/取得令牌/执行三源合一重建桥梁",
-      "validFromChapter": 129,
-      "validUntilChapter": null,
-      "sourceChapter": 129
-    },
-    {
-      "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "浅石窟（山坳中，祖父纸条标注的山洞）",
-      "validFromChapter": 129,
+      "object": "山脚下石洞（明日翻过山坡再走半个时辰抵达三座山峰）",
+      "validFromChapter": 130,
       "validUntilChapter": null,
-      "sourceChapter": 129
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "青鸾身体虚弱但坚持同行/赵猛体力消耗/三源合一代价未知",
-      "validFromChapter": 129,
-      "validUntilChapter": null,
-      "sourceChapter": 129
+      "sourceChapter": 130
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "金痕若隐若现/持续消耗寿元/玉佩金线比早上更亮/精神坚定",
-      "validFromChapter": 129,
+      "object": "金痕若隐若现/胸口发热/玉佩金线比早上更亮/精神坚定/整夜未眠守夜",
+      "validFromChapter": 130,
       "validUntilChapter": null,
-      "sourceChapter": 129
+      "sourceChapter": 130
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "明日抵达三座山峰窄道/取得令牌/执行三源合一重建桥梁",
+      "validFromChapter": 130,
+      "validUntilChapter": null,
+      "sourceChapter": 130
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "青鸾身体虚弱但坚持同行/赵猛体力消耗/三源合一代价未知/\"门后之人可入门内之物不可出\"",
+      "validFromChapter": 130,
+      "validUntilChapter": null,
+      "sourceChapter": 130
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "陈守一+赵猛+青鸾 三人同行/正本清源可能也在追踪",
+      "validFromChapter": 130,
+      "validUntilChapter": null,
+      "sourceChapter": 130
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "正本清源欲打开封印（会让灵气抽干）vs 重建桥梁需堵上口子",
+      "validFromChapter": 130,
+      "validUntilChapter": null,
+      "sourceChapter": 130
     }
   ]
 }

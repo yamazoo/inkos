@@ -1968,5 +1968,41 @@
       "completionTokens": 11326,
       "totalTokens": 75490
     }
+  },
+  {
+    "number": 130,
+    "title": "三峰之间",
+    "status": "approved",
+    "wordCount": 4014,
+    "createdAt": "2026-04-17T18:58:36.351Z",
+    "updatedAt": "2026-04-17T18:58:49.714Z",
+    "auditIssues": [
+      "[info] 赵猛称青鸾为'嫂子'的称呼。根据角色关系：青鸾是赵猛弟弟的姐姐，赵猛是弟弟的堂兄。赵猛称青鸾为'嫂子'似乎存在辈分/称谓混淆——青鸾是赵猛弟弟的姐姐，赵猛应称其为'姐'或沿用师徒关系称呼更合理。",
+      "[warning] 最近4章持续高压（沉重→欣慰→释然→温暖→期待 -> 沉重→释然→坚定→温暖→平静 -> 沉思→震动→坚定→紧张 -> 沉重→沉默→坚定），缺少明显的情绪释放。",
+      "[warning] 138个段落里有47个不足35字，段落被切得过碎。",
+      "[warning] 连续出现6个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [
+      "第130章经过一次字数归一化后仍超出硬区间（2182-3818，实际 4014）。"
+    ],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2096,
+      "postWriterNormalizeCount": 4014,
+      "postReviseCount": 0,
+      "finalCount": 4014,
+      "normalizeApplied": true,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 48960,
+      "completionTokens": 9085,
+      "totalTokens": 58045
+    }
   }
 ]
