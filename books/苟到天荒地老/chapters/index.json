@@ -2311,5 +2311,39 @@
       "completionTokens": 23709,
       "totalTokens": 23709
     }
+  },
+  {
+    "number": 139,
+    "title": "井底归一",
+    "status": "approved",
+    "wordCount": 2981,
+    "createdAt": "2026-04-17T20:28:22.376Z",
+    "updatedAt": "2026-04-17T20:28:29.666Z",
+    "auditIssues": [
+      "[info] 苏婉儿出现在井口等候，但章节中未交代她何时抵达、如何感知封印修复。建议补充：她是同源者，在封印裂缝弥合的瞬间感知到了两界通道重建，作为等待者出现。",
+      "[info] 开头'约莫小半个时辰后'的过渡稍显生硬，作为138章休息后的快速衔接，可接受但略显仓促。",
+      "[warning] 97个段落里有60个不足35字，段落被切得过碎。",
+      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 4341,
+      "postWriterNormalizeCount": 2764,
+      "postReviseCount": 2981,
+      "finalCount": 2981,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 19866,
+      "totalTokens": 19866
+    }
   }
 ]

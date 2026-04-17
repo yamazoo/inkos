@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 138,
+  "lastAppliedChapter": 139,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -295,6 +295,20 @@
     "H-井底念力残留:status normalized from \"**新发现**\" to \"open\"",
     "H-井底念力残留:lastAdvancedChapter normalized from \"138章：井底有残留念力/守夜者三百年燃烧生机留下的/像看不见的薄雾\" to 0",
     "H-正本清源后果:status normalized from \"**暂缓**\" to \"open\"",
-    "H-正本清源后果:lastAdvancedChapter normalized from \"138章：封印破后两界平衡打破/冥气涌出/念力消散/最后是两界一起完蛋\" to 0"
+    "H-正本清源后果:lastAdvancedChapter normalized from \"138章：封印破后两界平衡打破/冥气涌出/念力消散/最后是两界一起完蛋\" to 0",
+    "H-三源归位符号:lastAdvancedChapter normalized from \"139章：三根木桩归位时符文激活/淡金色光芒从三道弧线交汇处蔓延\" to 0",
+    "H-井底念力残留:lastAdvancedChapter normalized from \"139章：念力回归封印/裂缝弥合/守夜者终于安息\" to 0",
+    "H-三根木桩机制:lastAdvancedChapter normalized from \"139章：执行塞木桩/全部归位形成三角支撑封印\" to 0",
+    "H-三源代价均摊:lastAdvancedChapter normalized from \"139章：代价正式结算/三人灵力耗尽/变回普通人\" to 0",
+    "H-正本清源后果:status normalized from \"**advanced**\" to \"open\"",
+    "H-正本清源后果:lastAdvancedChapter normalized from \"139章：揭露冥族是吞噬者非回归者/上古大劫几乎灭绝所有生灵/正本清源愚蠢计划害死无数人\" to 0",
+    "H-守夜者使命:lastAdvancedChapter normalized from \"139章：三百年守望画上句点/守夜者终于安息\" to 0",
+    "H-苏婉儿与封印联系:status normalized from \"**advanced**\" to \"open\"",
+    "H-苏婉儿与封印联系:lastAdvancedChapter normalized from \"139章：苏婉儿在井外等候/感知到封印修复/两界裂缝弥合\" to 0",
+    "H-正本清源下一步:lastAdvancedChapter normalized from \"139章：正本清源不会善罢甘休/威胁延续\" to 0",
+    "H-三人的未来:status normalized from \"**new**\" to \"open\"",
+    "H-三人的未来:lastAdvancedChapter normalized from \"139章：三人变回普通人/陈守一\"人还在就有办法\"/赵猛想开小铺子/新故事刚开始\" to 0",
+    "H-封印完全修复:status normalized from \"**partial**\" to \"open\"",
+    "H-封印完全修复:lastAdvancedChapter normalized from \"139章：裂缝弥合但未完全修好/争取到时间/大劫还没结束\" to 0"
   ]
 }

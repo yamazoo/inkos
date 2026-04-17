@@ -1,53 +1,53 @@
 {
-  "chapter": 138,
+  "chapter": 139,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "彼岸枯井/井底石室（方圆十丈/高三丈）",
-      "validFromChapter": 138,
+      "object": "彼岸枯井旁荒草地 → 向聚居点行进中",
+      "validFromChapter": 139,
       "validUntilChapter": null,
-      "sourceChapter": 138
+      "sourceChapter": 139
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "精神坚定/平静/等待休息后行动/金痕按在桥心凹槽/核心秘密被青鸾揭露（怕青鸾死）",
-      "validFromChapter": 138,
+      "object": "精神平静/坚定/灵力耗尽/金痕熄灭/弯月印记消退/**炼气三层（回到起点）**/活着/与苏婉儿重逢",
+      "validFromChapter": 139,
       "validUntilChapter": null,
-      "sourceChapter": 138
+      "sourceChapter": 139
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "完成三根木桩塞入凹槽/重建两界通道（弥合封印裂缝）",
-      "validFromChapter": 138,
+      "object": "**返回聚居点休养**/封印裂缝已弥合/冥族黑潮被隔绝/正本清源威胁仍在",
+      "validFromChapter": 139,
       "validUntilChapter": null,
-      "sourceChapter": 138
+      "sourceChapter": 139
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "三人力量用尽后会变回普通人（炼气三层/无金痕/无血脉加成/无三源合一能力）/青鸾身体虚弱/赵猛体力耗尽/尚未动手/井底念力残留",
-      "validFromChapter": 138,
+      "object": "三人皆已变弱/失去修炼者力量/需重新开始/井底封印稳固/三百年守夜者念力消散",
+      "validFromChapter": 139,
       "validUntilChapter": null,
-      "sourceChapter": 138
+      "sourceChapter": 139
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "敌对：正本清源（已深入彼岸/威胁暂缓）",
-      "validFromChapter": 138,
+      "object": "敌对：正本清源（目的揭露：愚蠢/冥族是吞噬者非回归者/威胁暂缓但未解除）",
+      "validFromChapter": 139,
       "validUntilChapter": null,
-      "sourceChapter": 138
+      "sourceChapter": 139
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "重建桥梁阻止大劫 vs 代价是变回普通人 vs 尚未动手执行",
-      "validFromChapter": 138,
+      "object": "~~重建桥梁阻止大劫~~ ✓ 已完成！→ 新冲突：**失去力量后如何生存/正本清源下一步动向/三人的未来**",
+      "validFromChapter": 139,
       "validUntilChapter": null,
-      "sourceChapter": 138
+      "sourceChapter": 139
     }
   ]
 }

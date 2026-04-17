@@ -1,31 +1,12 @@
 {
   "hooks": [
     {
-      "hookId": "H-三源代价均摊",
-      "startChapter": 133,
-      "type": "核心机制",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "139章：执行塞木桩时正式结算",
-      "notes": "关键世界观揭露"
-    },
-    {
-      "hookId": "H-三根木桩机制",
-      "startChapter": 134,
-      "type": "核心道具",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "139章：执行塞木桩",
-      "payoffTiming": "immediate",
-      "notes": "核心任务道具"
-    },
-    {
       "hookId": "H-三源归位符号",
       "startChapter": 138,
       "type": "伏笔呼应",
-      "status": "open",
+      "status": "resolved",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "139章：执行时符文激活",
+      "expectedPayoff": "已回收",
       "payoffTiming": "immediate",
       "notes": "首尾呼应母亲遗物"
     },
@@ -33,11 +14,31 @@
       "hookId": "H-井底念力残留",
       "startChapter": 138,
       "type": "环境细节",
-      "status": "open",
+      "status": "resolved",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "139章：念力回归封印裂缝弥合裂痕",
+      "expectedPayoff": "已回收",
       "payoffTiming": "immediate",
       "notes": "三百年守夜者牺牲"
+    },
+    {
+      "hookId": "H-三根木桩机制",
+      "startChapter": 134,
+      "type": "核心道具",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "已回收",
+      "payoffTiming": "immediate",
+      "notes": "核心任务道具"
+    },
+    {
+      "hookId": "H-三源代价均摊",
+      "startChapter": 133,
+      "type": "核心机制",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "已回收",
+      "payoffTiming": "immediate",
+      "notes": "关键世界观揭露"
     },
     {
       "hookId": "H-正本清源后果",
@@ -45,8 +46,55 @@
       "type": "背景威胁",
       "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "后续章节",
-      "notes": "揭示其愚蠢"
+      "expectedPayoff": "**open**",
+      "payoffTiming": "mid-arc",
+      "notes": "揭示其愚蠢/威胁暂缓未解除"
+    },
+    {
+      "hookId": "H-守夜者使命",
+      "startChapter": 133,
+      "type": "背景",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "已回收",
+      "payoffTiming": "immediate",
+      "notes": "核心任务完成"
+    },
+    {
+      "hookId": "H-苏婉儿与封印联系",
+      "startChapter": 120,
+      "type": "人物关系",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**open**",
+      "notes": "同源者感知能力揭露"
+    },
+    {
+      "hookId": "H-正本清源下一步",
+      "startChapter": 109,
+      "type": "背景威胁",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**open**",
+      "notes": "愚蠢计划导致无数牺牲但仍继续"
+    },
+    {
+      "hookId": "H-三人的未来",
+      "startChapter": 139,
+      "type": "新伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**open**",
+      "notes": "新章节开启"
+    },
+    {
+      "hookId": "H-封印完全修复",
+      "startChapter": 133,
+      "type": "核心目标",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**open**",
+      "notes": "部分完成/长期任务"
     }
   ]
 }
