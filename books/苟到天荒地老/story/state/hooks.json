@@ -1,24 +1,14 @@
 {
   "hooks": [
     {
-      "hookId": "三源合一开门",
-      "startChapter": 106,
-      "type": "mystery",
-      "status": "resolved",
-      "lastAdvancedChapter": 109,
-      "expectedPayoff": "near-term",
-      "payoffTiming": "slow-burn",
-      "notes": "本章完成：母亲完整真相/契约本质/三方势力/封印机制/第三条路方向；门开后进入星空幻境；陈守一已与第一个守夜者会面"
-    },
-    {
-      "hookId": "上古大劫",
+      "hookId": "封印机制",
       "startChapter": 73,
       "type": "mystery",
       "status": "resolved",
       "lastAdvancedChapter": 109,
-      "expectedPayoff": "mid-term",
-      "payoffTiming": "slow-burn",
-      "notes": "**本章核心揭示**：三方势力完整框架（人族/幽冥/被遗忘的第三方）；契约真相（300年前立约）；战争100年；\"被遗忘的第三方要回归\"；母亲是三方立约者之一"
+      "expectedPayoff": "resolved",
+      "payoffTiming": "near-term",
+      "notes": "**本章深化**：封印需要力量维持；力量来自守夜人生机；300年消耗导致衰竭；崩溃前兆（灵气稀薄/生机衰减/界限模糊）；\"正本清源\"误解（以为幽冥是回归者想打开封印）"
     },
     {
       "hookId": "母亲真相",
@@ -31,14 +21,14 @@
       "notes": "**本章重大突破**：母亲仍在彼岸（存活）；用一部分力量帮助封印；切断联系牺牲所有记忆；主动选择让陈守一有机会回去正常活下去；母亲身影已消散（不是死亡，是完成使命）；\"我选了你，不是让你继承位置，是让你找到第三条路\""
     },
     {
-      "hookId": "守夜人周沉",
-      "startChapter": 106,
-      "type": "relationship",
+      "hookId": "上古大劫",
+      "startChapter": 73,
+      "type": "mystery",
       "status": "resolved",
       "lastAdvancedChapter": 109,
-      "expectedPayoff": "resolved",
+      "expectedPayoff": "mid-term",
       "payoffTiming": "slow-burn",
-      "notes": "**本章完成**：第一个守夜者正式登场；三源之器/门的历史完整揭露；300年前架桥真相；被契约选中者不老不死；第一个守夜者等待300年"
+      "notes": "**本章核心揭示**：三方势力完整框架（人族/幽冥/被遗忘的第三方）；契约真相（300年前立约）；战争100年；\"被遗忘的第三方要回归\"；母亲是三方立约者之一"
     },
     {
       "hookId": "第三个选择",
@@ -51,14 +41,34 @@
       "notes": "**本章深化**：第三条路完整揭示（重建桥梁而非封印或锁链）；需要两个被契约选中的人合力；不是打开门，是重建连接；封印转化为桥梁的一部分；桥梁本身是隔绝两界的门"
     },
     {
-      "hookId": "封印机制",
-      "startChapter": 73,
+      "hookId": "三源合一开门",
+      "startChapter": 106,
       "type": "mystery",
       "status": "resolved",
       "lastAdvancedChapter": 109,
+      "expectedPayoff": "near-term",
+      "payoffTiming": "slow-burn",
+      "notes": "本章完成：母亲完整真相/契约本质/三方势力/封印机制/第三条路方向；门开后进入星空幻境；陈守一已与第一个守夜者会面"
+    },
+    {
+      "hookId": "守夜人周沉",
+      "startChapter": 106,
+      "type": "relationship",
+      "status": "resolved",
+      "lastAdvancedChapter": 109,
       "expectedPayoff": "resolved",
-      "payoffTiming": "near-term",
-      "notes": "**本章深化**：封印需要力量维持；力量来自守夜人生机；300年消耗导致衰竭；崩溃前兆（灵气稀薄/生机衰减/界限模糊）；\"正本清源\"误解（以为幽冥是回归者想打开封印）"
+      "payoffTiming": "slow-burn",
+      "notes": "**本章完成**：第一个守夜者正式登场；三源之器/门的历史完整揭露；300年前架桥真相；被契约选中者不老不死；第一个守夜者等待300年"
+    },
+    {
+      "hookId": "\"正本清源\"组织误解",
+      "startChapter": 109,
+      "type": "relationship",
+      "status": "open",
+      "lastAdvancedChapter": 109,
+      "expectedPayoff": "mid-term",
+      "payoffTiming": "slow-burn",
+      "notes": "**新揭示**：组织认为幽冥是\"回归者\"想打开封印让它们回来；母亲指出这是自取灭亡；需要阻止组织"
     },
     {
       "hookId": "被遗忘的第三方",
@@ -74,21 +84,11 @@
       "hookId": "第一个守夜者",
       "startChapter": 109,
       "type": "character",
-      "status": "open",
-      "lastAdvancedChapter": 109,
-      "expectedPayoff": "near-term",
-      "payoffTiming": "slow-burn",
-      "notes": "**新角色**：300年前第一个守夜者；用血肉为桩架桥；唯一成功建立桥梁的人；不老不死直到契约终结；等待陈守一300年；深青道袍/高瘦/步伐沉稳/面容古老沉静"
-    },
-    {
-      "hookId": "\"正本清源\"组织误解",
-      "startChapter": 109,
-      "type": "relationship",
-      "status": "open",
-      "lastAdvancedChapter": 109,
-      "expectedPayoff": "mid-term",
-      "payoffTiming": "slow-burn",
-      "notes": "**新揭示**：组织认为幽冥是\"回归者\"想打开封印让它们回来；母亲指出这是自取灭亡；需要阻止组织"
+      "status": "progressing",
+      "lastAdvancedChapter": 110,
+      "expectedPayoff": "完成第三条路/消散前完成使命",
+      "payoffTiming": "near-term",
+      "notes": "本章完整揭示300年等待故事：亲手埋了17个人/最近一个是七十三年前/其父亲放弃传承选母亲/其母亲握令牌说'别的路'/最终会消散但不后悔/与陈守一确认'血脉非偶然，选择方为真'"
     }
   ]
 }

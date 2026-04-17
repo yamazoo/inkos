@@ -1,53 +1,53 @@
 {
-  "chapter": 109,
+  "chapter": 110,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "门内（星空幻境/桥的彼端）",
-      "validFromChapter": 109,
+      "predicate": "当前冲突",
+      "object": "封印崩溃前兆|第三条路的选择|需要两个被契约选中者共同重建桥梁|第一个守夜者终将消散",
+      "validFromChapter": 110,
       "validUntilChapter": null,
-      "sourceChapter": 109
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "金线与母亲身影共鸣后趋于平静/觉醒稳定/情绪从期待转为坚定/准备跟随第一个守夜者",
-      "validFromChapter": 109,
-      "validUntilChapter": null,
-      "sourceChapter": 109
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "跟随第一个守夜者/了解第三条路的具体执行方式/重建桥梁",
-      "validFromChapter": 109,
-      "validUntilChapter": null,
-      "sourceChapter": 109
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "冥将被关在门外/母亲身影已消散/封印需要新力量/需要找到第二个被契约选中的人",
-      "validFromChapter": 109,
-      "validUntilChapter": null,
-      "sourceChapter": 109
+      "sourceChapter": 110
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "冥将（关在门外）\\",
-      "validFromChapter": 109,
+      "object": "第一个守夜者（等待300年/将引导陈守一/不后悔消散代价）",
+      "validFromChapter": 110,
       "validUntilChapter": null,
-      "sourceChapter": 109
+      "sourceChapter": 110
     },
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "封印崩溃前兆/第三条路的选择/需要两个被契约选中的人共同重建桥梁/母亲的牺牲",
-      "validFromChapter": 109,
+      "predicate": "当前目标",
+      "object": "跟随第一个守夜者|查看三百年前的桥墩|执行第三条路",
+      "validFromChapter": 110,
       "validUntilChapter": null,
-      "sourceChapter": 109
+      "sourceChapter": 110
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "土黄色山路→干涸河床→破败石亭→沿河床继续向前（前往三百年前的桥墩）",
+      "validFromChapter": 110,
+      "validUntilChapter": null,
+      "sourceChapter": 110
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "冥将被关在门外|母亲身影已消散|封印需要新力量|需要两个被契约选中者合力",
+      "validFromChapter": 110,
+      "validUntilChapter": null,
+      "sourceChapter": 110
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "金线稳定（融入胸口）|觉醒完成|情绪从沉重转为坚定|脚步比来时轻快|胸口沉甸甸的东西松动了一点",
+      "validFromChapter": 110,
+      "validUntilChapter": null,
+      "sourceChapter": 110
     }
   ]
 }
