@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 108,
+  "lastAppliedChapter": 109,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -214,6 +214,9 @@
     "封印机制:status normalized from \"**新增/深化**\" to \"open\"",
     "封印机制:lastAdvancedChapter normalized from \"本章揭露：源头无法消灭只能封印；封印需要力量维持；力量来自活着的生命；三百年前选择切断联系让封印自己运转；新力量需要\" to 0",
     "第三个选择:status normalized from \"**新增/深化**\" to \"open\"",
-    "第三个选择:lastAdvancedChapter normalized from \"母亲提到\"封印需要新的力量\"；三百年前的选择（切断联系让封印自己运转）已经不够了\" to 0"
+    "第三个选择:lastAdvancedChapter normalized from \"母亲提到\"封印需要新的力量\"；三百年前的选择（切断联系让封印自己运转）已经不够了\" to 0",
+    "被遗忘的第三方:status normalized from \"**NEW**\" to \"open\"",
+    "第一个守夜者:status normalized from \"**NEW**\" to \"open\"",
+    "\"正本清源\"组织误解:status normalized from \"**NEW**\" to \"open\""
   ]
 }

@@ -1206,5 +1206,37 @@
       "completionTokens": 16052,
       "totalTokens": 20561
     }
+  },
+  {
+    "number": 109,
+    "title": "契约之重",
+    "status": "approved",
+    "wordCount": 2850,
+    "createdAt": "2026-04-17T15:13:51.514Z",
+    "updatedAt": "2026-04-17T15:14:01.912Z",
+    "auditIssues": [
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：三源合一开门（慢烧，陈旧）、守夜人周沉（慢烧，陈旧）。",
+      "[warning] 连续出现4个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2436,
+      "postWriterNormalizeCount": 2850,
+      "postReviseCount": 0,
+      "finalCount": 2850,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 18480,
+      "completionTokens": 10578,
+      "totalTokens": 29058
+    }
   }
 ]
