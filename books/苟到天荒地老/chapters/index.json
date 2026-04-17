@@ -3001,5 +3001,41 @@
       "completionTokens": 14899,
       "totalTokens": 14899
     }
+  },
+  {
+    "number": 159,
+    "title": "暗流涌动：天色",
+    "status": "approved",
+    "wordCount": 3086,
+    "createdAt": "2026-04-17T23:43:58.486Z",
+    "updatedAt": "2026-04-17T23:44:09.763Z",
+    "auditIssues": [
+      "[info] 孙半仙作为情报贩子出场，言行符合'老江湖'设定，但人物塑造较为单薄，仅作为功能性情报源存在。考虑到本章信息密度较高，配角笔墨有限属可接受范围。",
+      "[info] 章末陈守一决定前往青石山，悬念钩子明确（危险的上古古道+灵脉任务），但情报传递行动（给赵猛三人的警告）在本章中未见推进。根据当前状态卡，'传递情报警告三源后人'是核心目标之一，章内应有所交代。",
+      "[info] 金痕与玉坠共振看到三源光影画面（H-玉坠与金痕推进），与守夜者'三源归一方可重铸锁链'形成呼应，伏笔回收节奏良好。'正本清源内部有裂痕可利用'的推断（H-正本清源内部矛盾推进）与前文伏笔（长老'三百年的分支已背道而驰'）逻辑自洽，符合陈守一谨慎分析的性格。",
+      "[info] 本章约2000字，高疲劳词（无敌、碾压、秒了、恐怖如斯、倒吸一口凉气）未出现。AI标记词'猛地'出现1次、'忽然'出现1次，密度在合理范围内。",
+      "[warning] 章节标题\"暗流涌动\"已自动调整为\"暗流涌动：天色\"。",
+      "[warning] 连续出现4个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3705,
+      "postWriterNormalizeCount": 3086,
+      "postReviseCount": 3086,
+      "finalCount": 3086,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 38501,
+      "completionTokens": 29161,
+      "totalTokens": 67662
+    }
   }
 ]

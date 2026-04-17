@@ -1,53 +1,53 @@
 {
-  "chapter": 158,
+  "chapter": 159,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "城西城门口（即将离开）",
-      "validFromChapter": 158,
+      "object": "城西散修聚居点茶摊（即将离开前往青石山）",
+      "validFromChapter": 159,
       "validUntilChapter": null,
-      "sourceChapter": 158
+      "sourceChapter": 159
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "精神紧绷→震动→沉重→坚定/已知正本清源完整计划/寿元两年/眉心金痕蛰伏微跳/玉坠温度消退中/金色种子平静/决心坚定/情报已刻木片",
-      "validFromChapter": 158,
+      "object": "警觉→震动→沉重→坚定→震动→沉重→坚定/已知第四条灵脉位置（城北七十里青石山）/已知古道存在（枯林上古运输要道）/金痕与玉坠强烈共鸣触发三源幻境/出冷汗/决心坚定/情报已刻木片",
+      "validFromChapter": 159,
       "validUntilChapter": null,
-      "sourceChapter": 158
+      "sourceChapter": 159
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "找地方休息→追赵猛三人→传递情报→警告三源后人转移→打听第四条灵脉位置",
-      "validFromChapter": 158,
+      "object": "前往青石山/探查古道禁制/寻找三源归一方法/提防正本清源追杀/利用内部矛盾",
+      "validFromChapter": 159,
       "validUntilChapter": null,
-      "sourceChapter": 158
+      "sourceChapter": 159
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "寿元两年/正本清源盯上三源后人/时间窗口大幅缩短（三年→明年春天前）/情报传递渠道未建立",
-      "validFromChapter": 158,
+      "object": "寿元两年/正本清源盯上三源后人/时间窗口不足半年/古道有上古禁制/玄清宗盯守青石山",
+      "validFromChapter": 159,
       "validUntilChapter": null,
-      "sourceChapter": 158
+      "sourceChapter": 159
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "敌：正本清源（城东据点/长老级人物/至少四人/执法堂制式道袍）\\",
-      "validFromChapter": 158,
+      "object": "敌：正本清源（城东据点/长老级人物/至少四人/执法堂内鬼核心/催办切断灵脉法器）\\",
+      "validFromChapter": 159,
       "validUntilChapter": null,
-      "sourceChapter": 158
+      "sourceChapter": 159
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "正本清源撕裂封印（三年内裂口→明年春天切断第四条灵脉）vs 三源血脉修复封印（时间窗口大幅缩短/情报战开始）",
-      "validFromChapter": 158,
+      "object": "正本清源撕裂封印（明年春天切断第四条灵脉）vs 三源血脉修复封印（不足半年窗口/情报战/古道探查/利用内部矛盾）",
+      "validFromChapter": 159,
       "validUntilChapter": null,
-      "sourceChapter": 158
+      "sourceChapter": 159
     }
   ]
 }

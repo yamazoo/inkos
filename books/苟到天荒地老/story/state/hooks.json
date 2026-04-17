@@ -1,112 +1,103 @@
 {
   "hooks": [
     {
-      "hookId": "H-正本清源城东据点",
-      "startChapter": 149,
-      "type": "侦查目标",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "持续/与主线交织",
-      "notes": "**重大情报揭露**：三年内有裂口/明年春天切断第四条灵脉/三源后人被盯上"
-    },
-    {
-      "hookId": "H-正本清源阴谋",
-      "startChapter": 109,
-      "type": "核心主线",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "三年后大劫",
-      "notes": "**目的完整揭露**：冥族回归/两界合一/三百年等待"
-    },
-    {
-      "hookId": "H-三年时间窗口",
-      "startChapter": 148,
-      "type": "核心主线",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "三年后",
-      "notes": "**时间大幅缩短**：三年→明年春天（不足半年）"
-    },
-    {
       "hookId": "H-三源后人被盯上",
       "startChapter": 158,
       "type": "新种",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 1,
       "expectedPayoff": "待定",
-      "notes": "**新伏笔**：苏婉儿/赵猛/青鸾被正本清源盯上"
-    },
-    {
-      "hookId": "H-第四条灵脉",
-      "startChapter": 158,
-      "type": "新种",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "三年后",
-      "notes": "**新伏笔**：第四条灵脉是封印核心稳定的关键"
-    },
-    {
-      "hookId": "H-彼岸守夜者",
-      "startChapter": 0,
-      "type": "关联",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "待定",
-      "notes": "**新信息**：守夜者位置有眼线/等陈守一继承"
+      "payoffTiming": "mid-arc",
+      "notes": "**新进展**：陈守一担心正本清源会抓/除掉三源后人/危机加剧"
     },
     {
       "hookId": "H-三源归一",
       "startChapter": 158,
       "type": "新种",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 1,
       "expectedPayoff": "待定",
-      "notes": "**新伏笔**：三源归一的潜在力量"
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进**：幻境确认三道光影对应三源/金色（金痕）/青色（令牌）/银色（铜戒/银戒）/\"三源归一方可重铸锁链\""
     },
     {
-      "hookId": "H-正本清源内部矛盾",
-      "startChapter": 109,
-      "type": "隐线",
+      "hookId": "H-第四条灵脉",
+      "startChapter": 158,
+      "type": "新种",
       "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "待定",
-      "notes": "**策略伏笔**：内部并非铁板一块"
-    },
-    {
-      "hookId": "H-玉坠与金痕",
-      "startChapter": 0,
-      "type": "资源关联",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "待揭示",
-      "notes": "**新动态**：金痕与玉坠在回应某物"
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "三年后",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大进展**：确认位置在城北七十里青石山/被玄清宗盯守/有上古古道可绕"
     },
     {
       "hookId": "H-修复封印代价",
       "startChapter": 156,
       "type": "核心主线",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 3,
       "expectedPayoff": "三年后",
-      "notes": "修复封印需燃烧大部分寿元"
+      "payoffTiming": "mid-arc",
+      "notes": "修复需燃烧大部分寿元/不足半年时间窗口"
     },
     {
-      "hookId": "H-祖父身世",
-      "startChapter": 156,
-      "type": "支线完成",
-      "status": "resolved",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "N/A",
-      "notes": "祖父身世完整揭示"
+      "hookId": "H-彼岸守夜者",
+      "startChapter": 0,
+      "type": "关联",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "待定",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大进展**：通过金痕与玉坠呼应传递讯息/三源幻境/位置有眼线"
     },
     {
-      "hookId": "H-苏婉儿身世",
-      "startChapter": 156,
-      "type": "情感主线",
-      "status": "resolved",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "N/A",
-      "notes": "苏婉儿身世与情感线完整"
+      "hookId": "H-玉坠与金痕",
+      "startChapter": 0,
+      "type": "资源关联",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "待揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进**：两者同步热意传递→触发三源幻境→确认与三源血脉有关"
+    },
+    {
+      "hookId": "H-正本清源城东据点",
+      "startChapter": 149,
+      "type": "侦查目标",
+      "status": "progressing",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "持续/主线交织",
+      "payoffTiming": "mid-arc",
+      "notes": "**新动态**：调动人手/执法堂清点灵材准备法器"
+    },
+    {
+      "hookId": "H-三年时间窗口",
+      "startChapter": 148,
+      "type": "核心主线",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "不足半年",
+      "notes": "**新动态**：不足半年/时间窗口大幅缩短确认"
+    },
+    {
+      "hookId": "H-正本清源内部矛盾",
+      "startChapter": 109,
+      "type": "隐线",
+      "status": "progressing",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "未来可用",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进**：长老想等vs黑袍女子想动手/两股势力起内斗可能性/陈守一发现可利用"
+    },
+    {
+      "hookId": "H-古道禁制",
+      "startChapter": 159,
+      "type": "新种",
+      "status": "open",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "未来章",
+      "payoffTiming": "mid-arc",
+      "notes": "**新伏笔**：枯林上古运输要道/有禁制阵法机关/需要查明"
     }
   ]
 }
