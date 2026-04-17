@@ -1,74 +1,101 @@
 {
   "hooks": [
     {
-      "hookId": "H-封印完全修复",
-      "startChapter": 133,
-      "type": "core_goal",
-      "status": "progressing",
-      "lastAdvancedChapter": 147,
-      "expectedPayoff": "封印完全修复",
-      "payoffTiming": "slow-burn",
-      "notes": "147章推进：哑娘在正本清源潜伏三十年/可能见过完整封印构造/可能知道母亲当年的做法/修复路径待探明"
-    },
-    {
-      "hookId": "H-三人的未来",
-      "startChapter": 139,
-      "type": "新伏笔",
-      "status": "progressing",
-      "lastAdvancedChapter": 147,
-      "expectedPayoff": "四人新生活",
-      "payoffTiming": "mid-arc",
-      "notes": "147章推进：明日出发去枯林/四人关系稳固/青鸾身体恢复中"
-    },
-    {
       "hookId": "H-三源血脉传承",
       "startChapter": 140,
       "type": "mystery",
       "status": "progressing",
-      "lastAdvancedChapter": 147,
-      "expectedPayoff": "周平在三源血脉中的角色",
+      "lastAdvancedChapter": 148,
+      "expectedPayoff": "三源血脉完整传承",
       "payoffTiming": "slow-burn",
-      "notes": "147章推进：母亲切断桥的原因完整理解——若不切断冥族涌向灵洲，若切断守夜者回不来/三源血脉传人非天生与封印契合的问题浮现"
+      "notes": "148章推进：哑娘识别出三源血脉/确认周平不知道陈守一的血脉身份"
     },
     {
       "hookId": "H-苏婉儿身世",
       "startChapter": 140,
       "type": "mystery",
       "status": "progressing",
-      "lastAdvancedChapter": 147,
-      "expectedPayoff": "哑娘能否提供修复封印的关键信息",
+      "lastAdvancedChapter": 148,
+      "expectedPayoff": "苏婉儿身世完整揭露",
       "payoffTiming": "near-term",
-      "notes": "147章埋设新悬念：哑娘三十年潜伏积累了哪些核心东西/见过完整封印构造的可能性/苏婉儿提醒'她脾气可能不好'"
+      "notes": "148章推进：哑娘是苏婉儿祖父旧识/提及祖父"
     },
     {
-      "hookId": "H-神秘老者身份",
-      "startChapter": 141,
-      "type": "mystery",
+      "hookId": "H-三人的未来",
+      "startChapter": 139,
+      "type": "新伏笔",
       "status": "progressing",
-      "lastAdvancedChapter": 146,
-      "expectedPayoff": "神秘老者完整身份",
+      "lastAdvancedChapter": 148,
+      "expectedPayoff": "四人新生活",
       "payoffTiming": "mid-arc",
-      "notes": "146章重大推进：赵猛问周平是否认识神秘老者/周平说\"不认识\"但动作有微妙停顿/陈守一捕捉到异常"
+      "notes": "148章推进：四人共同经历枯林之行/关系稳固"
+    },
+    {
+      "hookId": "H-封印完全修复",
+      "startChapter": 133,
+      "type": "core_goal",
+      "status": "resolved",
+      "lastAdvancedChapter": 148,
+      "expectedPayoff": "封印完全修复",
+      "payoffTiming": "slow-burn",
+      "notes": "148章**重大揭露**：哑娘见过完整封印构造/有办法但需先过正本清源这一关/三年之约"
     },
     {
       "hookId": "H-正本清源内部线人",
       "startChapter": 144,
       "type": "新伏笔",
-      "status": "open",
-      "lastAdvancedChapter": 146,
-      "expectedPayoff": "情报来源/内应身份",
+      "status": "resolved",
+      "lastAdvancedChapter": 148,
+      "expectedPayoff": "哑娘完整身份与目的",
       "payoffTiming": "mid-arc",
-      "notes": "146章重大推进：哑娘身份完整揭露（周平师兄女人/三十年实验遗孀/暗中收集证据者）"
+      "notes": "148章**重大揭露**：哑娘给布防图/与母亲有渊源/三年后交出三十年积累的东西"
     },
     {
       "hookId": "H-周平与神秘老者关系",
       "startChapter": 146,
       "type": "新伏笔",
       "status": "open",
-      "lastAdvancedChapter": 146,
+      "lastAdvancedChapter": 148,
       "expectedPayoff": "周平与神秘老者是否为同一人",
       "payoffTiming": "mid-arc",
-      "notes": "146章新伏笔：周平被问及时动作顿了一下/陈守一注意到收回手比平常慢半拍/存疑待查"
+      "notes": "148章延续：周平不知道陈守一的三源血脉身份"
+    },
+    {
+      "hookId": "H-神秘老者身份",
+      "startChapter": 141,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 148,
+      "expectedPayoff": "神秘老者完整身份",
+      "payoffTiming": "mid-arc",
+      "notes": "148章无直接推进"
+    },
+    {
+      "hookId": "H-哑娘与母亲渊源",
+      "startChapter": 148,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 148,
+      "expectedPayoff": "**哑娘与母亲完整关系**",
+      "notes": "**148章新埋设**：母亲三百年前拦住哑娘说\"不是她的错\"/让她活下去"
+    },
+    {
+      "hookId": "H-哑娘三十年的东西",
+      "startChapter": 148,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 148,
+      "expectedPayoff": "**三十年证据/资料交接**",
+      "notes": "**148章新埋设**：哑娘还有事没做完/要把三十年积累的东西交出去"
+    },
+    {
+      "hookId": "H-三年时间窗口",
+      "startChapter": 148,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 148,
+      "expectedPayoff": "**三年后枯林再见**",
+      "notes": "**148章新埋设**：封印能撑三年吗/哑娘说不是现在/正本清源也在找办法"
     }
   ]
 }

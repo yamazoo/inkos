@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 147,
+  "lastAppliedChapter": 148,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -321,6 +321,9 @@
     "H-封印完全修复:lastAdvancedChapter normalized from \"**144章：封印稳固但仍是长期任务/三源归位可以重建桥梁/重建桥梁是最终目标**\" to 0",
     "H-正本清源后果:lastAdvancedChapter normalized from \"**144章：正本清源完整真相揭露/两百年分裂势力/等封印崩溃幽冥累积到一定程度后打开桥抽干彼岸/内部有人在找第三块玉佩**\" to 0",
     "H-正本清源内部线人:status normalized from \"**新开启**\" to \"open\"",
-    "H-正本清源内部线人:lastAdvancedChapter normalized from \"**144章：周平提到\"他们内部有人\"/\"最近在找什么东西\"/\"如果你能赶在他们前面，也许能掌握一些主动\"**\" to 0"
+    "H-正本清源内部线人:lastAdvancedChapter normalized from \"**144章：周平提到\"他们内部有人\"/\"最近在找什么东西\"/\"如果你能赶在他们前面，也许能掌握一些主动\"**\" to 0",
+    "H-哑娘与母亲渊源:status normalized from \"**新埋设**\" to \"open\"",
+    "H-哑娘三十年的东西:status normalized from \"**新埋设**\" to \"open\"",
+    "H-三年时间窗口:status normalized from \"**新埋设**\" to \"open\""
   ]
 }

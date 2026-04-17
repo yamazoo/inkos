@@ -1,61 +1,53 @@
 {
-  "chapter": 147,
+  "chapter": 148,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "封印根基不稳/正本清源下一步动向未明/重建桥梁代价已知/哑娘可信度待验证/神秘老者身份存疑",
-      "validFromChapter": 146,
+      "predicate": "当前位置",
+      "object": "聚居点深处住所（院子）",
+      "validFromChapter": 148,
       "validUntilChapter": null,
-      "sourceChapter": 146
+      "sourceChapter": 148
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "神魂疲惫/精神平静坚定/决心已定/灵力枯竭/炼气三层/寿元约两年/三块玉佩+灰石+正本清源布防图在手",
+      "validFromChapter": 148,
+      "validUntilChapter": null,
+      "sourceChapter": 148
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "应对正本清源/三年后见哑娘获取修复封印的具体方法",
+      "validFromChapter": 148,
+      "validUntilChapter": null,
+      "sourceChapter": 148
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "青鸾恢复中/灵力枯竭/寿元仅两年/正本清源从聚居点到枯林六处眼线/有筑基修士",
+      "validFromChapter": 148,
+      "validUntilChapter": null,
+      "sourceChapter": 148
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
       "object": "苏婉儿（同行者/三源同源者）",
-      "validFromChapter": 146,
+      "validFromChapter": 148,
       "validUntilChapter": null,
-      "sourceChapter": 146
+      "sourceChapter": 148
     },
     {
       "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "明日出发去枯林找哑娘/探查修复封印的具体方法",
-      "validFromChapter": 147,
+      "predicate": "当前冲突",
+      "object": "封印修复路径已知但需等待/正本清源威胁迫在眉睫/哑娘可信度待验证/三年时间窗口/实力差距悬殊",
+      "validFromChapter": 148,
       "validUntilChapter": null,
-      "sourceChapter": 147
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "聚居点深处住所（院子）→聚居点巷子/矮墙边",
-      "validFromChapter": 147,
-      "validUntilChapter": null,
-      "sourceChapter": 147
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "青鸾恢复中/灵力枯竭/寿元仅两年",
-      "validFromChapter": 147,
-      "validUntilChapter": null,
-      "sourceChapter": 147
-    },
-    {
-      "subject": "current_state",
-      "predicate": "当前信息",
-      "object": "正本清源据点位置已确认（东面枯林深处旧矿洞）/哑娘是内部关键人物/灰石是接触凭证/青鸾对哑娘身份有微妙反应/周平与神秘老者关系存疑",
-      "validFromChapter": 146,
-      "validUntilChapter": null,
-      "sourceChapter": 146
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "神魂疲惫/精神平静坚定/决心已定/灵力枯竭/炼气三层/寿元约两年/三块玉佩+灰石在手",
-      "validFromChapter": 147,
-      "validUntilChapter": null,
-      "sourceChapter": 147
+      "sourceChapter": 148
     }
   ]
 }

@@ -2631,5 +2631,40 @@
       "completionTokens": 9284,
       "totalTokens": 29643
     }
+  },
+  {
+    "number": 148,
+    "title": "枯林深处",
+    "status": "approved",
+    "wordCount": 3283,
+    "createdAt": "2026-04-17T22:02:39.115Z",
+    "updatedAt": "2026-04-17T22:02:48.527Z",
+    "auditIssues": [
+      "[info] 本章未出现高频AI词汇（无敌/碾压/秒了/恐怖如斯/倒吸一口凉气等），文风偏写实，符合仙侠网络小说的硬核风格。",
+      "[info] 本章全程以陈守一的第三人称限制视角展开，哑娘、苏婉儿、赵猛、青鸾的言行均通过陈守一的观察和判断呈现，没有出现视角越界。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H-三人的未来（中程，已逾期）、H-神秘老者身份（中程，可回收）。",
+      "[warning] 133个段落里有53个不足35字，段落被切得过碎。",
+      "[warning] 连续出现23个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 5494,
+      "postWriterNormalizeCount": 3283,
+      "postReviseCount": 0,
+      "finalCount": 3283,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 14534,
+      "totalTokens": 14534
+    }
   }
 ]
