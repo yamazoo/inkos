@@ -1,53 +1,53 @@
 {
-  "chapter": 150,
+  "chapter": 151,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "封印修复需等待三年/正本清源威胁/实力差距悬殊",
-      "validFromChapter": 150,
-      "validUntilChapter": null,
-      "sourceChapter": 150
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前敌我",
-      "object": "苏婉儿（核心盟友/三源同源/明确表态同行）/赵猛（同行/明确表态）/青鸾（同行/恢复中/明确表态）/哑娘（关键情报源/三年之约）/周平（情报源/待联络）",
-      "validFromChapter": 150,
-      "validUntilChapter": null,
-      "sourceChapter": 150
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "从正本清源据点开始打探/找周平带路/等三年后见哑娘获取修复封印具体方法",
-      "validFromChapter": 150,
-      "validUntilChapter": null,
-      "sourceChapter": 150
-    },
-    {
-      "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点石屋",
-      "validFromChapter": 150,
+      "object": "聚居点石屋（城东侦查归来）",
+      "validFromChapter": 151,
       "validUntilChapter": null,
-      "sourceChapter": 150
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "青鸾恢复中/灵力枯竭/寿元仅两年/正本清源六处眼线/城东据点守卫严/有筑基修士/玄清宗有关联",
-      "validFromChapter": 150,
-      "validUntilChapter": null,
-      "sourceChapter": 150
+      "sourceChapter": 151
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "精神坚定/决心已定/灵力枯竭/炼气三层/寿元约两年/三块玉佩+灰石+布防图在手/眉心金痕稳定/丹田新增金色种子/内心释然",
-      "validFromChapter": 150,
+      "object": "精神坚定/决心已定/灵力枯竭/炼气三层/寿元约两年/眉心金痕稳定/丹田金色种子/内心警觉/新发现暗道与幽冥关联",
+      "validFromChapter": 151,
       "validUntilChapter": null,
-      "sourceChapter": 150
+      "sourceChapter": 151
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "弄清楚正本清源真正目的/三年内找到修复封印方法/继续监视城东据点",
+      "validFromChapter": 151,
+      "validUntilChapter": null,
+      "sourceChapter": 151
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "青鸾恢复中/灵力枯竭/寿元仅两年/正本清源六处眼线/城东据点有筑基修士/暗道通向未知危险区域",
+      "validFromChapter": 151,
+      "validUntilChapter": null,
+      "sourceChapter": 151
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "苏婉儿(核心盟友/同行侦查/便装伪装)、赵猛(同行侦查)、青鸾(同行/发现冥气)、哑娘(关键情报源/三年之约)、周平(情报源)、正本清源(**确认与幽冥有关联/城东据点有暗道和冥气/不只是想占桥**)",
+      "validFromChapter": 151,
+      "validUntilChapter": null,
+      "sourceChapter": 151
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "正本清源真正目的成谜/城东据点暗道通向危险区域/三年时间窗口压力/灵气流失去向成谜",
+      "validFromChapter": 151,
+      "validUntilChapter": null,
+      "sourceChapter": 151
     }
   ]
 }
