@@ -1,54 +1,44 @@
 {
   "hooks": [
     {
-      "hookId": "H-正本清源内部线人",
-      "startChapter": 144,
-      "type": "新伏笔",
-      "status": "open",
-      "lastAdvancedChapter": 146,
-      "expectedPayoff": "情报来源/内应身份",
-      "payoffTiming": "mid-arc",
-      "notes": "146章重大推进：哑娘身份完整揭露（周平师兄女人/三十年实验遗孀/暗中收集证据者）"
-    },
-    {
-      "hookId": "H-三源血脉传承",
-      "startChapter": 140,
-      "type": "mystery",
-      "status": "open",
-      "lastAdvancedChapter": 145,
-      "expectedPayoff": "周平在三源血脉中的角色",
+      "hookId": "H-封印完全修复",
+      "startChapter": 133,
+      "type": "core_goal",
+      "status": "progressing",
+      "lastAdvancedChapter": 147,
+      "expectedPayoff": "封印完全修复",
       "payoffTiming": "slow-burn",
-      "notes": "146章推进：周平师兄是三源血脉相关人物/哑娘与三十年前实验有关"
-    },
-    {
-      "hookId": "H-苏婉儿身世",
-      "startChapter": 140,
-      "type": "mystery",
-      "status": "open",
-      "lastAdvancedChapter": 145,
-      "expectedPayoff": "苏婉儿完整身世揭露",
-      "payoffTiming": "mid-arc",
-      "notes": "维持现状"
+      "notes": "147章推进：哑娘在正本清源潜伏三十年/可能见过完整封印构造/可能知道母亲当年的做法/修复路径待探明"
     },
     {
       "hookId": "H-三人的未来",
       "startChapter": 139,
       "type": "新伏笔",
       "status": "progressing",
-      "lastAdvancedChapter": 146,
+      "lastAdvancedChapter": 147,
       "expectedPayoff": "四人新生活",
       "payoffTiming": "mid-arc",
-      "notes": "146章推进：决定等青鸾恢复后去枯林/四人关系稳固"
+      "notes": "147章推进：明日出发去枯林/四人关系稳固/青鸾身体恢复中"
     },
     {
-      "hookId": "H-封印完全修复",
-      "startChapter": 133,
-      "type": "core_goal",
+      "hookId": "H-三源血脉传承",
+      "startChapter": 140,
+      "type": "mystery",
       "status": "progressing",
-      "lastAdvancedChapter": 145,
-      "expectedPayoff": "封印完全修复",
+      "lastAdvancedChapter": 147,
+      "expectedPayoff": "周平在三源血脉中的角色",
       "payoffTiming": "slow-burn",
-      "notes": "146章推进：通过哑娘探查修复方法"
+      "notes": "147章推进：母亲切断桥的原因完整理解——若不切断冥族涌向灵洲，若切断守夜者回不来/三源血脉传人非天生与封印契合的问题浮现"
+    },
+    {
+      "hookId": "H-苏婉儿身世",
+      "startChapter": 140,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 147,
+      "expectedPayoff": "哑娘能否提供修复封印的关键信息",
+      "payoffTiming": "near-term",
+      "notes": "147章埋设新悬念：哑娘三十年潜伏积累了哪些核心东西/见过完整封印构造的可能性/苏婉儿提醒'她脾气可能不好'"
     },
     {
       "hookId": "H-神秘老者身份",
@@ -59,6 +49,16 @@
       "expectedPayoff": "神秘老者完整身份",
       "payoffTiming": "mid-arc",
       "notes": "146章重大推进：赵猛问周平是否认识神秘老者/周平说\"不认识\"但动作有微妙停顿/陈守一捕捉到异常"
+    },
+    {
+      "hookId": "H-正本清源内部线人",
+      "startChapter": 144,
+      "type": "新伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 146,
+      "expectedPayoff": "情报来源/内应身份",
+      "payoffTiming": "mid-arc",
+      "notes": "146章重大推进：哑娘身份完整揭露（周平师兄女人/三十年实验遗孀/暗中收集证据者）"
     },
     {
       "hookId": "H-周平与神秘老者关系",
