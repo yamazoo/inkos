@@ -2491,5 +2491,39 @@
       "completionTokens": 15539,
       "totalTokens": 15539
     }
+  },
+  {
+    "number": 144,
+    "title": "访旧",
+    "status": "approved",
+    "wordCount": 3015,
+    "createdAt": "2026-04-17T21:19:10.259Z",
+    "updatedAt": "2026-04-17T21:19:18.967Z",
+    "auditIssues": [
+      "[warning] 章节中存在部分词汇重复使用的情况。'缓缓'出现1次，'淡淡'出现2次，'微微'出现4次，整体密度在可接受范围内但可进一步精简。",
+      "[info] 周平最后一句'因为我不够格'缺乏展开。这句话暗示周平自身有某种不适合承载三源血脉的条件（可能是修为、寿元或血脉因素），但没有给出具体解释，削弱了这句台词的分量。",
+      "[warning] 106个段落里有34个不足35字，段落被切得过碎。",
+      "[warning] 连续出现13个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3511,
+      "postWriterNormalizeCount": 3015,
+      "postReviseCount": 3015,
+      "finalCount": 3015,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 20425,
+      "totalTokens": 20425
+    }
   }
 ]

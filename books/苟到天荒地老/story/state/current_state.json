@@ -1,53 +1,53 @@
 {
-  "chapter": 143,
+  "chapter": 144,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点石屋",
-      "validFromChapter": 143,
+      "object": "聚居点深处/周平石屋→返回途中",
+      "validFromChapter": 144,
       "validUntilChapter": null,
-      "sourceChapter": 143
+      "sourceChapter": 144
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "精神平静坚定/灵力枯竭/炼气三层/寿元约两年/掌心玉佩温热/嘴角微扬（希望）",
-      "validFromChapter": 143,
+      "object": "精神平静坚定/灵力枯竭/炼气三层/寿元约两年/三块玉佩在手/温热/内心释然/决心已定",
+      "validFromChapter": 144,
       "validUntilChapter": null,
-      "sourceChapter": 143
+      "sourceChapter": 144
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "明天去找周平/弄清正本清源动向/寻找第三块玉佩",
-      "validFromChapter": 143,
+      "object": "明天出发寻找正本清源据点/苏婉儿整理祖父手札线索",
+      "validFromChapter": 144,
       "validUntilChapter": null,
-      "sourceChapter": 143
+      "sourceChapter": 144
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
       "object": "四人皆残缺/青鸾需半月恢复/封印根基不稳/正本清源威胁延续",
-      "validFromChapter": 143,
+      "validFromChapter": 144,
       "validUntilChapter": null,
-      "sourceChapter": 143
+      "sourceChapter": 144
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "苏婉儿（三源同源者/加入守护/血脉之谜）\\",
-      "validFromChapter": 143,
+      "object": "苏婉儿（三源同源者/加入守护/血脉之谜）",
+      "validFromChapter": 144,
       "validUntilChapter": null,
-      "sourceChapter": 143
+      "sourceChapter": 144
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "封印虽稳固但根基仍需长期修复/正本清源下一步动向未明/第三块玉佩下落不明",
-      "validFromChapter": 143,
+      "object": "封印稳固但根基仍需长期修复/正本清源下一步动向未明/三源归位需要力量汇聚/重建桥梁的代价已知",
+      "validFromChapter": 144,
       "validUntilChapter": null,
-      "sourceChapter": 143
+      "sourceChapter": 144
     }
   ]
 }

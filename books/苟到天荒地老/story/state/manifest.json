@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 143,
+  "lastAppliedChapter": 144,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -309,6 +309,18 @@
     "H-三人的未来:status normalized from \"**new**\" to \"open\"",
     "H-三人的未来:lastAdvancedChapter normalized from \"139章：三人变回普通人/陈守一\"人还在就有办法\"/赵猛想开小铺子/新故事刚开始\" to 0",
     "H-封印完全修复:status normalized from \"**partial**\" to \"open\"",
-    "H-封印完全修复:lastAdvancedChapter normalized from \"139章：裂缝弥合但未完全修好/争取到时间/大劫还没结束\" to 0"
+    "H-封印完全修复:lastAdvancedChapter normalized from \"139章：裂缝弥合但未完全修好/争取到时间/大劫还没结束\" to 0",
+    "H-母亲遗物两块玉佩:lastAdvancedChapter normalized from \"**144章：三块玉佩终于齐了（母亲/祖父/苏婉儿祖父）/第三块来自苏婉儿祖父临终托付/裂纹与裂纹相对严丝合缝/青光从缝隙中透出**\" to 0",
+    "H-神秘老者身份:lastAdvancedChapter normalized from \"**144章：周平完整出场/三百年前就存在/白发稀疏脊背微驼/眼睛亮得惊人/\"你身上有两块玉佩\"/\"三源血脉不会出软骨头\"/\"因为我不够格\"**\" to 0",
+    "H-苏婉儿祖父遗言:lastAdvancedChapter normalized from \"**144章：祖父遗言完整揭示/通过血脉传递信息/与母亲从未见面/守在桥最远端/最早耗尽力气/临终托付第三块玉佩给周平**\" to 0",
+    "H-三源血脉传承:status normalized from \"**重大进展**\" to \"open\"",
+    "H-三源血脉传承:lastAdvancedChapter normalized from \"**144章：三源血脉三人（陈守一母亲/陈守一祖父/苏婉儿祖父）/正本清源是两百年前从三源血脉分裂出去的/想重建桥梁但走偏了想把桥变成自己的/三源归位是三个人的力量汇聚到同一个人身上**\" to 0",
+    "H-苏婉儿身世:status normalized from \"**重大进展**\" to \"open\"",
+    "H-苏婉儿身世:lastAdvancedChapter normalized from \"**144章：苏婉儿有三源血脉但不完整/力量传承自祖父/祖父把大部分力量留在桥上**\" to 0",
+    "H-三人的未来:lastAdvancedChapter normalized from \"**144章：四人在一起/新篇章开启/\"新的路，开始了\"/明天出发寻找正本清源据点**\" to 0",
+    "H-封印完全修复:lastAdvancedChapter normalized from \"**144章：封印稳固但仍是长期任务/三源归位可以重建桥梁/重建桥梁是最终目标**\" to 0",
+    "H-正本清源后果:lastAdvancedChapter normalized from \"**144章：正本清源完整真相揭露/两百年分裂势力/等封印崩溃幽冥累积到一定程度后打开桥抽干彼岸/内部有人在找第三块玉佩**\" to 0",
+    "H-正本清源内部线人:status normalized from \"**新开启**\" to \"open\"",
+    "H-正本清源内部线人:lastAdvancedChapter normalized from \"**144章：周平提到\"他们内部有人\"/\"最近在找什么东西\"/\"如果你能赶在他们前面，也许能掌握一些主动\"**\" to 0"
   ]
 }
