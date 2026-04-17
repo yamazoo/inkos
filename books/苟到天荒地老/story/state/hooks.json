@@ -1,101 +1,94 @@
 {
   "hooks": [
     {
-      "hookId": "H-三源血脉传承",
-      "startChapter": 140,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 148,
-      "expectedPayoff": "三源血脉完整传承",
-      "payoffTiming": "slow-burn",
-      "notes": "148章推进：哑娘识别出三源血脉/确认周平不知道陈守一的血脉身份"
-    },
-    {
-      "hookId": "H-苏婉儿身世",
-      "startChapter": 140,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 148,
-      "expectedPayoff": "苏婉儿身世完整揭露",
-      "payoffTiming": "near-term",
-      "notes": "148章推进：哑娘是苏婉儿祖父旧识/提及祖父"
-    },
-    {
-      "hookId": "H-三人的未来",
-      "startChapter": 139,
+      "hookId": "H-三年时间窗口",
+      "startChapter": 148,
       "type": "新伏笔",
-      "status": "progressing",
-      "lastAdvancedChapter": 148,
-      "expectedPayoff": "四人新生活",
+      "status": "open",
+      "lastAdvancedChapter": 149,
+      "expectedPayoff": "三年后枯林再见",
       "payoffTiming": "mid-arc",
-      "notes": "148章推进：四人共同经历枯林之行/关系稳固"
+      "notes": "149章延续：三年时间/陈守一独自思考"
     },
     {
-      "hookId": "H-封印完全修复",
-      "startChapter": 133,
-      "type": "core_goal",
-      "status": "resolved",
-      "lastAdvancedChapter": 148,
-      "expectedPayoff": "封印完全修复",
-      "payoffTiming": "slow-burn",
-      "notes": "148章**重大揭露**：哑娘见过完整封印构造/有办法但需先过正本清源这一关/三年之约"
-    },
-    {
-      "hookId": "H-正本清源内部线人",
-      "startChapter": 144,
+      "hookId": "H-哑娘三十年的东西",
+      "startChapter": 148,
       "type": "新伏笔",
-      "status": "resolved",
-      "lastAdvancedChapter": 148,
-      "expectedPayoff": "哑娘完整身份与目的",
+      "status": "open",
+      "lastAdvancedChapter": 149,
+      "expectedPayoff": "三十年证据/资料交接",
       "payoffTiming": "mid-arc",
-      "notes": "148章**重大揭露**：哑娘给布防图/与母亲有渊源/三年后交出三十年积累的东西"
+      "notes": "149章无变化"
+    },
+    {
+      "hookId": "H-哑娘与母亲渊源",
+      "startChapter": 148,
+      "type": "新伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 149,
+      "expectedPayoff": "哑娘与母亲完整关系",
+      "payoffTiming": "mid-arc",
+      "notes": "149章无变化"
     },
     {
       "hookId": "H-周平与神秘老者关系",
       "startChapter": 146,
       "type": "新伏笔",
       "status": "open",
-      "lastAdvancedChapter": 148,
+      "lastAdvancedChapter": 149,
       "expectedPayoff": "周平与神秘老者是否为同一人",
       "payoffTiming": "mid-arc",
-      "notes": "148章延续：周平不知道陈守一的三源血脉身份"
+      "notes": "149章推进：钥匙是死的血脉是活的/周平只认钥匙气息不知三源血脉"
     },
     {
       "hookId": "H-神秘老者身份",
       "startChapter": 141,
       "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 148,
+      "status": "open",
+      "lastAdvancedChapter": 149,
       "expectedPayoff": "神秘老者完整身份",
       "payoffTiming": "mid-arc",
-      "notes": "148章无直接推进"
+      "notes": "149章推进：苏婉儿追问钥匙vs血脉区别/神秘老者可能只感应到钥匙"
     },
     {
-      "hookId": "H-哑娘与母亲渊源",
-      "startChapter": 148,
-      "type": "**新伏笔**",
-      "status": "open",
-      "lastAdvancedChapter": 148,
-      "expectedPayoff": "**哑娘与母亲完整关系**",
-      "notes": "**148章新埋设**：母亲三百年前拦住哑娘说\"不是她的错\"/让她活下去"
+      "hookId": "H-三源血脉传承",
+      "startChapter": 140,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 149,
+      "expectedPayoff": "三源血脉完整传承",
+      "payoffTiming": "slow-burn",
+      "notes": "149章推进：钥匙和血脉是两回事/正本清源只知钥匙不知血脉/陈守一内心挣扎"
     },
     {
-      "hookId": "H-哑娘三十年的东西",
-      "startChapter": 148,
-      "type": "**新伏笔**",
-      "status": "open",
-      "lastAdvancedChapter": 148,
-      "expectedPayoff": "**三十年证据/资料交接**",
-      "notes": "**148章新埋设**：哑娘还有事没做完/要把三十年积累的东西交出去"
+      "hookId": "H-苏婉儿身世",
+      "startChapter": 140,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 149,
+      "expectedPayoff": "苏婉儿身世完整揭露",
+      "payoffTiming": "near-term",
+      "notes": "149章重大推进：苏婉儿祖父找正本清源二十年/死在无人知晓角落/遗愿是修好封印"
     },
     {
-      "hookId": "H-三年时间窗口",
-      "startChapter": 148,
-      "type": "**新伏笔**",
+      "hookId": "H-三人的未来",
+      "startChapter": 139,
+      "type": "新伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 149,
+      "expectedPayoff": "四人新生活",
+      "payoffTiming": "mid-arc",
+      "notes": "149章重大推进：苏婉儿表态\"不管你怎么想我们都跟着你\"/陈守一接受\"不是一个人\""
+    },
+    {
+      "hookId": "H-正本清源城东据点",
+      "startChapter": 149,
+      "type": "新伏笔",
       "status": "open",
-      "lastAdvancedChapter": 148,
-      "expectedPayoff": "**三年后枯林再见**",
-      "notes": "**148章新埋设**：封印能撑三年吗/哑娘说不是现在/正本清源也在找办法"
+      "lastAdvancedChapter": 149,
+      "expectedPayoff": "正本清源完整情报",
+      "payoffTiming": "near-term",
+      "notes": "149章新埋设：据点城东步行半个时辰/守卫很严/与玄清宗有关联/执法堂长老是内鬼"
     }
   ]
 }

@@ -2666,5 +2666,36 @@
       "completionTokens": 14534,
       "totalTokens": 14534
     }
+  },
+  {
+    "number": 149,
+    "title": "山居有邻",
+    "status": "approved",
+    "wordCount": 3796,
+    "createdAt": "2026-04-17T22:12:11.199Z",
+    "updatedAt": "2026-04-17T22:12:24.061Z",
+    "auditIssues": [
+      "[warning] 连续出现6个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3858,
+      "postWriterNormalizeCount": 3796,
+      "postReviseCount": 0,
+      "finalCount": 3796,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 19474,
+      "completionTokens": 16131,
+      "totalTokens": 35605
+    }
   }
 ]
