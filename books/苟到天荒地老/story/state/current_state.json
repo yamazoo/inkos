@@ -1,53 +1,53 @@
 {
-  "chapter": 140,
+  "chapter": 141,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "山路 → **聚居点内（已抵达）**",
-      "validFromChapter": 140,
+      "object": "**聚居点内（已抵达并安顿）**",
+      "validFromChapter": 141,
       "validUntilChapter": null,
-      "sourceChapter": 140
+      "sourceChapter": 141
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "精神平静/坚定/**丹田空空/灵力枯竭/金痕熄灭/弯月消退/炼气三层/寿元约两年/掌心擦伤/手还是他的手**",
-      "validFromChapter": 140,
+      "object": "精神平静/坚定/**丹田空空/灵力枯竭/金痕熄灭/弯月消退/炼气三层/寿元约两年/双腿发软（疲惫）/掌心有玉佩温热残留**",
+      "validFromChapter": 141,
       "validUntilChapter": null,
-      "sourceChapter": 140
+      "sourceChapter": 141
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "**在聚居点休养/站稳脚跟/寻找办法**",
-      "validFromChapter": 140,
+      "object": "**在聚居点休养/站稳脚跟/寻找办法恢复力量/守护封印**",
+      "validFromChapter": 141,
       "validUntilChapter": null,
-      "sourceChapter": 140
+      "sourceChapter": 141
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "四人皆残缺/陈守一炼气三层/赵猛脸色灰败/青鸾余烬已尽/苏婉儿身世未明/正本清源威胁仍在/封印根基不稳",
-      "validFromChapter": 140,
+      "object": "四人皆残缺/陈守一炼气三层/赵猛脸色灰败/青鸾余烬已尽/苏婉儿身世刚揭露/正本清源威胁仍在/封印根基不稳/神秘老者身份不明",
+      "validFromChapter": 141,
       "validUntilChapter": null,
-      "sourceChapter": 140
+      "sourceChapter": 141
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "敌对：**正本清源**（愚蠢/冥族是吞噬者/威胁延续/下一步动向未明）",
-      "validFromChapter": 140,
+      "object": "敌对：**正本清源**（愚蠢/冥族是吞噬者/威胁延续/下一步动向未明）；**封印内冥族**（暂时稳定）",
+      "validFromChapter": 141,
       "validUntilChapter": null,
-      "sourceChapter": 140
+      "sourceChapter": 141
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "**失去力量后如何生存/正本清源下一步动向/三人的未来/苏婉儿身世之谜**",
-      "validFromChapter": 140,
+      "object": "**失去力量后如何生存/正本清源下一步动向/苏婉儿血脉之谜/四人未来/封印修复/神秘老者身份**",
+      "validFromChapter": 141,
       "validUntilChapter": null,
-      "sourceChapter": 140
+      "sourceChapter": 141
     }
   ]
 }

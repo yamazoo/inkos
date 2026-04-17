@@ -2385,5 +2385,39 @@
       "completionTokens": 11391,
       "totalTokens": 11391
     }
+  },
+  {
+    "number": 141,
+    "title": "聚居点灯火",
+    "status": "approved",
+    "wordCount": 2626,
+    "createdAt": "2026-04-17T20:46:54.248Z",
+    "updatedAt": "2026-04-17T20:49:09.646Z",
+    "auditIssues": [
+      "[warning] 第141章约2300字，AI标记词出现情况：仿佛（0次）、不禁（0次）、宛如（0次）、竟然（0次）、忽然（0次）、猛地（0次）。高疲劳词检查：无敌（0）、碾压（0）、秒了（0）、恐怖如斯（0）、倒吸一口凉气（0）。未超过阈值，但发现'怔怔地'出现2次，建议分散使用。",
+      "[info] 141章为过渡章节，重点推进主线（安顿、苏婉儿身世、神秘老者登场），SP-正本清源阴谋支线虽在文中被提及（'他们不会停手'、'不会善罢甘休'），但未具体推进。该支线处于'威胁延续'状态而非完全停滞，符合当前章节定位（铺垫章）。",
+      "[info] 章节类型序列：138（过渡/揭示/休息）→139（高潮/代价揭示）→140（过渡/揭示）→141（揭示/过渡/新篇章开启）。近期章节（138-141）均为揭示/过渡类型，无高潮/爽点章节。建议在142-143章安排适度爽点或情感释放，如角色互动、身份确认后的温情场景等。",
+      "[warning] 最近标题持续围绕“井底”命名（当前窗口命中3次），命名开始坍缩。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 4215,
+      "postWriterNormalizeCount": 2626,
+      "postReviseCount": 2626,
+      "finalCount": 2626,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 18311,
+      "completionTokens": 25396,
+      "totalTokens": 43707
+    }
   }
 ]

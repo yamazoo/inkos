@@ -1,51 +1,81 @@
 {
   "hooks": [
     {
-      "hookId": "H-三人的未来",
-      "startChapter": 139,
-      "type": "新伏笔",
+      "hookId": "H-三源血脉传承",
+      "startChapter": 140,
+      "type": "**新伏笔**",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 141,
       "expectedPayoff": "open",
       "payoffTiming": "mid-arc",
-      "notes": "四人皆残缺/在聚居点休养/新故事开始"
-    },
-    {
-      "hookId": "H-封印完全修复",
-      "startChapter": 133,
-      "type": "核心目标",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "open",
-      "notes": "三根木桩归位/根基不稳/长期任务"
-    },
-    {
-      "hookId": "H-正本清源后果",
-      "startChapter": 133,
-      "type": "背景威胁",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "open",
-      "payoffTiming": "mid-arc",
-      "notes": "愚蠢目的揭露/下一步动向未明/威胁延续"
+      "notes": "**141章深化：苏婉儿手腕三道弧线交汇疤痕与井底符号如出一辙/确认是三源血脉特征之一**"
     },
     {
       "hookId": "H-苏婉儿身世",
       "startChapter": 140,
       "type": "**新伏笔**",
       "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**open**",
-      "notes": "**手腕旧疤/同源者感知/\"她回来了\"/脑中有母亲相关画面**"
+      "lastAdvancedChapter": 141,
+      "expectedPayoff": "open",
+      "payoffTiming": "mid-arc",
+      "notes": "**141章重大揭露：苏婉儿也是三源之一/祖父临终遗言\"替我守好这座桥\"/祖父手腕也有浅印记/祖母或更早先祖与三源有关联**"
     },
     {
-      "hookId": "H-三源血脉传承",
-      "startChapter": 140,
+      "hookId": "H-三人的未来",
+      "startChapter": 139,
+      "type": "新伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 141,
+      "expectedPayoff": "open",
+      "payoffTiming": "mid-arc",
+      "notes": "**141章延伸：四人皆残缺但在聚居点安顿/\"会恢复的\"/\"人还在就有办法\"/新的故事刚开始**"
+    },
+    {
+      "hookId": "H-封印完全修复",
+      "startChapter": 133,
+      "type": "核心目标",
+      "status": "open",
+      "lastAdvancedChapter": 141,
+      "expectedPayoff": "open",
+      "payoffTiming": "mid-arc",
+      "notes": "**141章推进：窗外传来闷响暗示根基不稳/三根木桩归位只是暂时稳住/需要很长时间**"
+    },
+    {
+      "hookId": "H-正本清源后果",
+      "startChapter": 133,
+      "type": "背景威胁",
+      "status": "open",
+      "lastAdvancedChapter": 141,
+      "expectedPayoff": "open",
+      "payoffTiming": "mid-arc",
+      "notes": "**141章延续：正本清源不会善罢甘休/下一步动向未明**"
+    },
+    {
+      "hookId": "H-神秘老者身份",
+      "startChapter": 141,
       "type": "**新伏笔**",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 141,
       "expectedPayoff": "**open**",
-      "notes": "**苏婉儿可能是陈家先祖第五代后人/血脉分支/三源之一**"
+      "notes": "**须发皆白/灰袍/知道陈守一来自彼岸/送来母亲三百年前遗物/留下\"物归原主\"后离去/身份不明/可能知道更多秘密**"
+    },
+    {
+      "hookId": "H-母亲遗物两块玉佩",
+      "startChapter": 141,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 141,
+      "expectedPayoff": "**open**",
+      "notes": "**陈守一已有一块母亲玉佩（温热残留）/神秘老者送来第二块（残破/300年前遗物）/两块玉佩的关系未明**"
+    },
+    {
+      "hookId": "H-苏婉儿祖父遗言",
+      "startChapter": 141,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 141,
+      "expectedPayoff": "**open**",
+      "notes": "**\"替我守好这座桥\"与母亲遗言相同/祖父也是守夜者相关/祖父手腕有浅印记/血脉传承暗示**"
     }
   ]
 }
