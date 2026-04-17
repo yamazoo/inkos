@@ -1,53 +1,53 @@
 {
-  "chapter": 120,
+  "chapter": 121,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点（青鸾石屋）",
-      "validFromChapter": 120,
+      "object": "聚居点（青鸾石屋外）",
+      "validFromChapter": 121,
       "validUntilChapter": null,
-      "sourceChapter": 120
+      "sourceChapter": 121
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "金痕觉醒（神魂深处烙下印记）；玉佩内金线与体内金痕遥相呼应；精神沉重但坚定",
-      "validFromChapter": 120,
+      "object": "金痕觉醒；三源合一传承者；**对封印与桥梁关系的根本性顿悟**；精神坚定，准备迎接风暴",
+      "validFromChapter": 121,
       "validUntilChapter": null,
-      "sourceChapter": 120
+      "sourceChapter": 121
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "三天内找到救醒青鸾的办法；阻止封印进一步崩溃；准备迎接风暴",
-      "validFromChapter": 120,
+      "object": "**三天内**找到救青鸾的方法；阻止封印崩溃；弄清楚第三条路的真正含义；迎接风暴",
+      "validFromChapter": 121,
       "validUntilChapter": null,
-      "sourceChapter": 120
+      "sourceChapter": 121
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "风暴两天半到达；青鸾侵蚀昏迷（黑色纹路蔓延至下颌）；母亲生机已用于激活玉佩；金线生机有限",
-      "validFromChapter": 120,
+      "object": "风暴提前——**最多半天到达**（原估计两天半）；青鸾侵蚀加剧（黑色纹路蔓延至锁骨）；封印被人为切断；三源合一法门尚未完全掌握；金线生机有限",
+      "validFromChapter": 121,
       "validUntilChapter": null,
-      "sourceChapter": 120
+      "sourceChapter": 121
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "敌：正本清源组织（正在破坏封印）；冥族（封印崩溃释放的幽冥气息）",
-      "validFromChapter": 120,
+      "object": "敌：正本清源组织（切割封印/企图用青鸾力量打开封印）；冥族（风暴带来的幽冥之气）",
+      "validFromChapter": 121,
       "validUntilChapter": null,
-      "sourceChapter": 120
+      "sourceChapter": 121
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "封印崩溃前兆；青鸾生命垂危（生机快速流逝）；风暴将至；三天的时限压力；**陈家先祖断路真相揭露**",
-      "validFromChapter": 120,
+      "object": "风暴提前到来；青鸾生命垂危加剧；封印被人为破坏加速崩溃；三天时限；**正本清源计划用青鸾打开封印（灵气与幽冥1:1000比例）**",
+      "validFromChapter": 121,
       "validUntilChapter": null,
-      "sourceChapter": 120
+      "sourceChapter": 121
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 120,
+  "lastAppliedChapter": 121,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -245,6 +245,7 @@
     "青鸾的故事:status normalized from \"**CRITICAL**\" to \"open\"",
     "正本清源组织误解:status normalized from \"**advancing**\" to \"open\"",
     "第一条路（已断）:status normalized from \"**NEW**\" to \"open\"",
-    "第一条路（已断）:status normalized from \"**ADVANCING**\" to \"open\""
+    "第一条路（已断）:status normalized from \"**ADVANCING**\" to \"open\"",
+    "第一条路（已断）:status normalized from \"**advancing**\" to \"open\""
   ]
 }

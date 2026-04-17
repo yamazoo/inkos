@@ -1,33 +1,44 @@
 {
   "hooks": [
     {
+      "hookId": "父亲祖母的故事",
+      "startChapter": 114,
+      "type": "character",
+      "status": "progressing",
+      "lastAdvancedChapter": 121,
+      "expectedPayoff": "父亲石柱上的题字",
+      "payoffTiming": "mid-arc",
+      "notes": "121章陈守一想起父亲题字\"吾儿守一\"/五十年的等待；陈家先祖修路/炸路真相进一步理解"
+    },
+    {
       "hookId": "正本清源组织误解",
       "startChapter": 109,
       "type": "relationship",
       "status": "open",
-      "lastAdvancedChapter": 118,
+      "lastAdvancedChapter": 121,
       "expectedPayoff": "阻止正本清源打开封印",
       "payoffTiming": "mid-arc",
-      "notes": "118章向聚居点众人揭露组织真相/风暴比预计更早"
-    },
-    {
-      "hookId": "被遗忘的第三方",
-      "startChapter": 109,
-      "type": "mystery",
-      "status": "resolved",
-      "lastAdvancedChapter": 120,
-      "expectedPayoff": "揭露第三方消失真相",
-      "notes": "**第一条路=被遗忘的第三方/修桥人/陈家先祖修的路被炸断**"
+      "notes": "**121章重大推进：正本清源切割青鸾封印目的是用她的三源之力打开封印；揭示冥族真相（入侵者非回归者）；灵气与幽冥1:1000比例**"
     },
     {
       "hookId": "第一条路（已断）",
       "startChapter": 118,
       "type": "mystery",
       "status": "open",
-      "lastAdvancedChapter": 120,
+      "lastAdvancedChapter": 121,
       "expectedPayoff": "揭露祖父牺牲导致第一条路断裂",
       "payoffTiming": "mid-arc",
-      "notes": "**120章重大推进：修路120年/五代陈家人/被陈家先祖用生机炸断**"
+      "notes": "121章陈守一彻底理解：封印不是终点，桥梁才是；三源合一的真正目标是重铸桥梁"
+    },
+    {
+      "hookId": "母亲的选择",
+      "startChapter": 114,
+      "type": "character",
+      "status": "progressing",
+      "lastAdvancedChapter": 121,
+      "expectedPayoff": "揭露母亲说过的话",
+      "payoffTiming": "mid-arc",
+      "notes": "121章青鸾梦呓说出\"总不能等桥塌了再来修\"；陈守一听后想起母亲/石柱记载/守夜者讲述"
     },
     {
       "hookId": "赵猛弟弟",
@@ -37,36 +48,37 @@
       "lastAdvancedChapter": 118,
       "expectedPayoff": "与青鸾赵猛关系/弟弟之死的具体经过",
       "payoffTiming": "mid-arc",
-      "notes": "118章叔临终前讲述弟弟故事/\"别让他白死\""
+      "notes": "121章青鸾梦呓叫\"弟弟\"；青鸾弟弟是守夜者，其留下的封印力量被正本清源觊觎"
     },
     {
       "hookId": "青鸾的故事",
       "startChapter": 114,
       "type": "character",
       "status": "open",
-      "lastAdvancedChapter": 118,
+      "lastAdvancedChapter": 121,
       "expectedPayoff": "青鸾弟子的故事/开食肆的梦想/弟弟之死/对赵猛的托付",
-      "notes": "**120章黑色纹路蔓延至下颌/生机快速流逝/三天期限/生死未卜**"
+      "payoffTiming": "mid-arc",
+      "notes": "**121章CRITICAL恶化：黑色纹路从下颌蔓延至锁骨；封印被人为切断；三源之力被正本清源觊觎；梦呓中呼唤弟弟/说出路；生死未卜加剧**"
     },
     {
-      "hookId": "母亲的选择",
-      "startChapter": 114,
-      "type": "character",
-      "status": "progressing",
-      "lastAdvancedChapter": 120,
-      "expectedPayoff": "揭露母亲说过的话",
+      "hookId": "第三条路具体含义",
+      "startChapter": 121,
+      "type": "**NEW**",
+      "status": "open",
+      "lastAdvancedChapter": 121,
+      "expectedPayoff": "三源合一重铸桥梁的具体方式",
       "payoffTiming": "mid-arc",
-      "notes": "**120章赵猛转述母亲话\"总不能等桥塌了再来修\"**"
+      "notes": "121章陈守一顿悟：封印不是终点，桥梁才是；三源合一真正目标是重建桥梁；他还差一个\"契机\""
     },
     {
-      "hookId": "父亲祖母的故事",
-      "startChapter": 114,
-      "type": "character",
-      "status": "progressing",
-      "lastAdvancedChapter": 120,
-      "expectedPayoff": "父亲石柱上的题字",
+      "hookId": "风暴核心真相",
+      "startChapter": 121,
+      "type": "**NEW**",
+      "status": "open",
+      "lastAdvancedChapter": 121,
+      "expectedPayoff": "黑雾深处的巨大轮廓是什么",
       "payoffTiming": "mid-arc",
-      "notes": "120章陈家先祖修路/炸路真相揭露"
+      "notes": "121章陈守一在黑雾深处看到巨大轮廓，像沉睡巨兽正在醒来；三百年大劫终局序曲"
     }
   ]
 }
