@@ -1,53 +1,53 @@
 {
-  "chapter": 142,
+  "chapter": 143,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "封印根基不稳/正本清源下一步动向/青鸾需半月恢复/时间紧迫",
-      "validFromChapter": 142,
+      "predicate": "当前位置",
+      "object": "聚居点石屋",
+      "validFromChapter": 143,
       "validUntilChapter": null,
-      "sourceChapter": 142
+      "sourceChapter": 143
     },
     {
       "subject": "protagonist",
-      "predicate": "当前敌我",
-      "object": "苏婉儿（三源同源者/祖父遗言揭示/提出可找周平帮忙）/周平（祖父旧友/当年暗中帮助过陈守一/可能成为情报来源）",
-      "validFromChapter": 142,
+      "predicate": "主角状态",
+      "object": "精神平静坚定/灵力枯竭/炼气三层/寿元约两年/掌心玉佩温热/嘴角微扬（希望）",
+      "validFromChapter": 143,
       "validUntilChapter": null,
-      "sourceChapter": 142
+      "sourceChapter": 143
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "查看封印状况/边养伤边调查/正本清源动向",
-      "validFromChapter": 142,
+      "object": "明天去找周平/弄清正本清源动向/寻找第三块玉佩",
+      "validFromChapter": 143,
       "validUntilChapter": null,
-      "sourceChapter": 142
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "聚居点石屋 → 枯井方向（移动中）",
-      "validFromChapter": 142,
-      "validUntilChapter": null,
-      "sourceChapter": 142
+      "sourceChapter": 143
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
       "object": "四人皆残缺/青鸾需半月恢复/封印根基不稳/正本清源威胁延续",
-      "validFromChapter": 142,
+      "validFromChapter": 143,
       "validUntilChapter": null,
-      "sourceChapter": 142
+      "sourceChapter": 143
     },
     {
       "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "精神平静坚定/灵力枯竭/炼气三层/寿元约两年/掌心有玉佩温热残留/双腿发软（疲惫已缓）",
-      "validFromChapter": 142,
+      "predicate": "当前敌我",
+      "object": "苏婉儿（三源同源者/加入守护/血脉之谜）\\",
+      "validFromChapter": 143,
       "validUntilChapter": null,
-      "sourceChapter": 142
+      "sourceChapter": 143
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "封印虽稳固但根基仍需长期修复/正本清源下一步动向未明/第三块玉佩下落不明",
+      "validFromChapter": 143,
+      "validUntilChapter": null,
+      "sourceChapter": 143
     }
   ]
 }

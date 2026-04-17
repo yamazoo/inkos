@@ -2457,5 +2457,39 @@
       "completionTokens": 11873,
       "totalTokens": 11873
     }
+  },
+  {
+    "number": 143,
+    "title": "残局未了",
+    "status": "approved",
+    "wordCount": 2968,
+    "createdAt": "2026-04-17T21:06:29.236Z",
+    "updatedAt": "2026-04-17T21:06:36.555Z",
+    "auditIssues": [
+      "[warning] 章节标题\"残局未了\n\n===\"已自动调整为\"残局未了\"。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H-苏婉儿祖父遗言（中程，可回收）。",
+      "[warning] 171个段落里有151个不足35字，段落被切得过碎。",
+      "[warning] 连续出现29个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2289,
+      "postWriterNormalizeCount": 2968,
+      "postReviseCount": 0,
+      "finalCount": 2968,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 15539,
+      "totalTokens": 15539
+    }
   }
 ]

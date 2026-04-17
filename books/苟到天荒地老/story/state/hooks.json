@@ -1,83 +1,83 @@
 {
   "hooks": [
     {
-      "hookId": "H-封印完全修复",
-      "startChapter": 133,
-      "type": "core_goal",
-      "status": "progressing",
-      "lastAdvancedChapter": 142,
-      "expectedPayoff": "封印完全修复",
-      "payoffTiming": "slow-burn",
-      "notes": "142章推进：封印不稳原因揭露——母亲念力三百年消耗殆尽，只剩两三成硬撑；窗外闷响/青光闪烁暗示根基持续动摇"
-    },
-    {
-      "hookId": "H-正本清源后果",
-      "startChapter": 133,
-      "type": "threat",
-      "status": "progressing",
-      "lastAdvancedChapter": 142,
-      "expectedPayoff": "正本清源阴谋被粉碎",
-      "payoffTiming": "mid-arc",
-      "notes": "142章推进：正本清源认为冥族是回归者非入侵者，三百年前那批人也是这么想的（愚蠢）；陈守一评价'愚蠢'时话语寒意让温度下降"
-    },
-    {
-      "hookId": "H-三人的未来",
-      "startChapter": 139,
-      "type": "新伏笔",
-      "status": "open",
-      "lastAdvancedChapter": 141,
-      "expectedPayoff": "open",
-      "payoffTiming": "mid-arc",
-      "notes": "**141章延伸：四人皆残缺但在聚居点安顿/\"会恢复的\"/\"人还在就有办法\"/新的故事刚开始**"
-    },
-    {
-      "hookId": "H-三源血脉传承",
-      "startChapter": 140,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 142,
-      "expectedPayoff": "周平在三源血脉中的角色",
-      "payoffTiming": "slow-burn",
-      "notes": "142章新揭示：周平是苏婉儿祖父唯一信任的人；执法堂成员，三十年前被贬；当年暗中帮助过陈守一（指点后山老槐树/被押往执法堂时给逃跑机会）；可能知道更多三源血脉秘密；苏婉儿提议找他帮忙探风声"
-    },
-    {
-      "hookId": "H-苏婉儿身世",
-      "startChapter": 140,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 142,
-      "expectedPayoff": "苏婉儿完整身世揭露",
-      "payoffTiming": "mid-arc",
-      "notes": "142章推进：确认三源血脉身份；祖父也有相同玉佩和疤痕；苏婉儿提议可找祖父旧友周平帮忙探风声"
-    },
-    {
-      "hookId": "H-神秘老者身份",
-      "startChapter": 141,
-      "type": "**新伏笔**",
-      "status": "open",
-      "lastAdvancedChapter": 141,
-      "expectedPayoff": "**open**",
-      "notes": "**须发皆白/灰袍/知道陈守一来自彼岸/送来母亲三百年前遗物/留下\"物归原主\"后离去/身份不明/可能知道更多秘密**"
-    },
-    {
       "hookId": "H-母亲遗物两块玉佩",
       "startChapter": 141,
       "type": "mystery",
       "status": "progressing",
-      "lastAdvancedChapter": 142,
+      "lastAdvancedChapter": 143,
       "expectedPayoff": "两块玉佩合一的秘密",
       "payoffTiming": "mid-arc",
-      "notes": "142章重大推进：断口刻痕与旧玉三个凹点三角形排列被揭露，两块玉佩昨夜同时发烫同源呼应，三源归位可能需要三块玉"
+      "notes": "**143章揭示：三块玉佩（母亲/祖父/第三块）/两块来自母亲和苏婉儿祖父/第三块下落不明**"
     },
     {
       "hookId": "H-苏婉儿祖父遗言",
       "startChapter": 141,
       "type": "mystery",
       "status": "progressing",
-      "lastAdvancedChapter": 142,
+      "lastAdvancedChapter": 143,
       "expectedPayoff": "苏婉儿祖父与守夜者的完整关系",
       "payoffTiming": "mid-arc",
-      "notes": "142章回收：祖父遗言'替我守好这座桥'与母亲碑文完全一致，两条传承线汇合，祖父也有相同玉佩和疤痕"
+      "notes": "**143章重大回收：祖父遗言\"替我守好这座桥\"母亲收到了/从未见面但通过血脉传递信息/祖父也有玉佩/祖父临终前提到神秘老者**"
+    },
+    {
+      "hookId": "H-三源血脉传承",
+      "startChapter": 140,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 143,
+      "expectedPayoff": "周平在三源血脉中的角色",
+      "payoffTiming": "slow-burn",
+      "notes": "**143章新进展：苏婉儿提议找周平探消息/周平是祖父唯一信任的人/陈守一决定明天去找周平**"
+    },
+    {
+      "hookId": "H-苏婉儿身世",
+      "startChapter": 140,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 143,
+      "expectedPayoff": "苏婉儿完整身世揭露",
+      "payoffTiming": "mid-arc",
+      "notes": "**143章推进：祖父与母亲从未见面但通过血脉传递信息/证实三源血脉传承**"
+    },
+    {
+      "hookId": "H-封印完全修复",
+      "startChapter": 133,
+      "type": "core_goal",
+      "status": "progressing",
+      "lastAdvancedChapter": 143,
+      "expectedPayoff": "封印完全修复",
+      "payoffTiming": "slow-burn",
+      "notes": "**143章部分回收：封印稳固（暂时）/三源之力流转/不再单靠母亲念力/但仍是长期任务**"
+    },
+    {
+      "hookId": "H-正本清源后果",
+      "startChapter": 133,
+      "type": "threat",
+      "status": "progressing",
+      "lastAdvancedChapter": 143,
+      "expectedPayoff": "正本清源阴谋被粉碎",
+      "payoffTiming": "mid-arc",
+      "notes": "**143章延续：威胁仍在/硬碰硬不是办法/决定先探查情报**"
+    },
+    {
+      "hookId": "H-神秘老者身份",
+      "startChapter": 141,
+      "type": "**新伏笔**",
+      "status": "progressing",
+      "lastAdvancedChapter": 143,
+      "expectedPayoff": "**神秘老者完整身份**",
+      "notes": "**143章重大推进：三百年前存在/寿命远超常人/在彼岸遗迹留下阵纹和守护阵法痕迹/留下\"物归原主\"/留下\"桥已修好，桥上该有人了\"/他在等三源归位/可能是三源血脉相关的重要人物**"
+    },
+    {
+      "hookId": "H-三人的未来",
+      "startChapter": 139,
+      "type": "新伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 143,
+      "expectedPayoff": "四人新生活",
+      "payoffTiming": "mid-arc",
+      "notes": "**143章延续：四人在一起/不再是一个人/明天去找周平/新篇章开启**"
     }
   ]
 }
