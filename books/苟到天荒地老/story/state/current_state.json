@@ -1,4 +1,53 @@
 {
-  "chapter": 127,
-  "facts": []
+  "chapter": 128,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "聚居点（风暴后第三天清晨）",
+      "validFromChapter": 128,
+      "validUntilChapter": null,
+      "sourceChapter": 128
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "金痕稳定/精神坚定/三源之力运转正常/身体持续恢复中",
+      "validFromChapter": 128,
+      "validUntilChapter": null,
+      "sourceChapter": 128
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "重建桥梁/救醒青鸾/阻止正本清源/确认三钥合一/启程前往东面山谷",
+      "validFromChapter": 128,
+      "validUntilChapter": null,
+      "sourceChapter": 128
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "青鸾根本问题未解/正本清源活动/风暴停但冥将蛰伏/三钥合一代价未知",
+      "validFromChapter": 128,
+      "validUntilChapter": null,
+      "sourceChapter": 128
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "正本清源（敌对/收集玉料/意图冲突）/冥将（蛰伏中）",
+      "validFromChapter": 128,
+      "validUntilChapter": null,
+      "sourceChapter": 128
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "三钥合一开启彼岸通道 vs 正本清源用玉料激活封印让冥族回归",
+      "validFromChapter": 128,
+      "validUntilChapter": null,
+      "sourceChapter": 128
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 127,
+  "lastAppliedChapter": 128,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -247,6 +247,23 @@
     "第一条路（已断）:status normalized from \"**NEW**\" to \"open\"",
     "第一条路（已断）:status normalized from \"**ADVANCING**\" to \"open\"",
     "第一条路（已断）:status normalized from \"**advancing**\" to \"open\"",
-    "青鸾的弟弟:lastAdvancedChapter normalized from \"126章完整揭露：弟弟死时燃尽力量/三天三夜烧成余烬/传到青鸾体内/是三源之力/重建桥梁可将其稳定\" to 0"
+    "青鸾的弟弟:lastAdvancedChapter normalized from \"126章完整揭露：弟弟死时燃尽力量/三天三夜烧成余烬/传到青鸾体内/是三源之力/重建桥梁可将其稳定\" to 0",
+    "H-三钥合一:lastAdvancedChapter normalized from \"三钥（令牌/玉佩/铜戒）确认；三钥可开启彼岸通道\" to 0",
+    "H-彼岸之门:startChapter normalized from \"73/115\" to 0",
+    "H-彼岸之门:lastAdvancedChapter normalized from \"青鸾看到：一条路/一扇门/三个孔/三把钥匙；彼岸是三源之力源头\" to 0",
+    "H-正本清源意图:startChapter normalized from \"118/121\" to 0",
+    "H-正本清源意图:status normalized from \"**升级**\" to \"open\"",
+    "H-正本清源意图:lastAdvancedChapter normalized from \"赵猛打听到：正本清源在收集所有玉料/目的是激活封印通道让冥族回归\" to 0",
+    "H-灵气衰减真相:startChapter normalized from \"73/128\" to 0",
+    "H-灵气衰减真相:status normalized from \"**深化**\" to \"open\"",
+    "H-灵气衰减真相:lastAdvancedChapter normalized from \"陈守一推理：灵气总量减少不是污染而是有什么在持续抽取；上古大劫不只是冥族入侵\" to 0",
+    "H-三源合一代价:lastAdvancedChapter normalized from \"三钥合一开启彼岸通道的代价未知\" to 0",
+    "H-青鸾体内余烬:startChapter normalized from \"123/126\" to 0",
+    "H-青鸾体内余烬:status normalized from \"深化\" to \"open\"",
+    "H-青鸾体内余烬:lastAdvancedChapter normalized from \"共鸣实验成功：余烬连接彼岸/看到弟弟信息\" to 0",
+    "H-玉佩金线指向:status normalized from \"**新增**\" to \"open\"",
+    "H-玉佩金线指向:lastAdvancedChapter normalized from \"金线朝东面山谷微微偏转；指向遗迹方向\" to 0",
+    "H-祖父纸条:status normalized from \"关联\" to \"open\"",
+    "H-祖父纸条:lastAdvancedChapter normalized from \"\"桥断之处，血脉守之\"；金线指向与纸条方向吻合\" to 0"
   ]
 }
