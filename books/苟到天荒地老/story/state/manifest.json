@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 116,
+  "lastAppliedChapter": 117,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -234,6 +234,11 @@
     "母亲的选择:status normalized from \"**NEW**\" to \"open\"",
     "末法时代真相:startChapter normalized from \"73-115\" to 0",
     "三源合一修炼法门:startChapter normalized from \"112-115\" to 0",
-    "记住她的话:status normalized from \"**new**\" to \"open\""
+    "记住她的话:status normalized from \"**new**\" to \"open\"",
+    "被遗忘的第三方:lastAdvancedChapter normalized from \"113/117\" to 0",
+    "母亲的选择:lastAdvancedChapter normalized from \"115/117\" to 0",
+    "赵猛弟弟:lastAdvancedChapter normalized from \"114/117\" to 0",
+    "青鸾的故事:lastAdvancedChapter normalized from \"114/117\" to 0",
+    "正本清源组织误解:lastAdvancedChapter normalized from \"113/117\" to 0"
   ]
 }
