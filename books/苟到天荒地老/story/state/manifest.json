@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 111,
+  "lastAppliedChapter": 112,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -217,6 +217,15 @@
     "第三个选择:lastAdvancedChapter normalized from \"母亲提到\"封印需要新的力量\"；三百年前的选择（切断联系让封印自己运转）已经不够了\" to 0",
     "被遗忘的第三方:status normalized from \"**NEW**\" to \"open\"",
     "第一个守夜者:status normalized from \"**NEW**\" to \"open\"",
-    "\"正本清源\"组织误解:status normalized from \"**NEW**\" to \"open\""
+    "\"正本清源\"组织误解:status normalized from \"**NEW**\" to \"open\"",
+    "第一个守夜者:lastAdvancedChapter normalized from \"112章深化：揭示守夜者出生地/倾听三百年变化的风声（原本三源气息→现在两源）/陈守一父母五十年前在此住三个月/母亲遗物玉佩代为转交\" to 0",
+    "被遗忘的第三方:lastAdvancedChapter normalized from \"112章提及：风声中原本带着第三方的气息，桥断后消失了\" to 0",
+    "\"正本清源\"组织误解:lastAdvancedChapter normalized from \"109章\" to 0",
+    "母亲遗物:status normalized from \"NEW\" to \"open\"",
+    "母亲遗物:lastAdvancedChapter normalized from \"112章发现：玉佩（通体莹白/莲花正面/\"守一\"背面）\" to 0",
+    "守夜者倾听风声:status normalized from \"NEW\" to \"open\"",
+    "守夜者倾听风声:lastAdvancedChapter normalized from \"112章揭示：左肩前倾习惯/三百年来一直在听三源合一变两源的改变\" to 0",
+    "第三根石柱真相:status normalized from \"NEW\" to \"open\"",
+    "第三根石柱真相:lastAdvancedChapter normalized from \"112章揭示：第三根是父亲五十年前新建的/在桥的另一端打下新地基\" to 0"
   ]
 }

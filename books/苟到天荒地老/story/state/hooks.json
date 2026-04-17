@@ -5,30 +5,59 @@
       "startChapter": 109,
       "type": "character",
       "status": "progressing",
-      "lastAdvancedChapter": 111,
+      "lastAdvancedChapter": 0,
       "expectedPayoff": "完成第三条路/消散前完成使命",
       "payoffTiming": "near-term",
-      "notes": "111章深化：父亲姓周/曾见陈守一父母/亲手送走17位守夜者/都是第三方血脉/母亲是300年前切断联系者/第三根石柱留给还活着的人/\"像你父亲\""
-    },
-    {
-      "hookId": "\"正本清源\"组织误解",
-      "startChapter": 109,
-      "type": "relationship",
-      "status": "open",
-      "lastAdvancedChapter": 109,
-      "expectedPayoff": "mid-term",
-      "payoffTiming": "slow-burn",
-      "notes": "**新揭示**：组织认为幽冥是\"回归者\"想打开封印让它们回来；母亲指出这是自取灭亡；需要阻止组织"
+      "notes": "**112章深化**：出生地石屋/倾听风声的习惯/三源变两源/母亲遗物转交/\"路还长\"承诺"
     },
     {
       "hookId": "被遗忘的第三方",
       "startChapter": 109,
       "type": "mystery",
       "status": "open",
-      "lastAdvancedChapter": 111,
+      "lastAdvancedChapter": 0,
       "expectedPayoff": "mid-term",
       "payoffTiming": "slow-burn",
-      "notes": "**111章深化**：第三方主动选择隐去而非失败/没人想承认不了解的存在/母亲站在中间/守夜者都是第三方血脉/第三方把力量刻进土地/三源合一（金/蓝/紫红）"
+      "notes": "112章提及：三方气息→两方气息/第三方随桥消失"
+    },
+    {
+      "hookId": "\"正本清源\"组织误解",
+      "startChapter": 109,
+      "type": "relationship",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "mid-term",
+      "payoffTiming": "slow-burn",
+      "notes": "**无更新**：本章未提及"
+    },
+    {
+      "hookId": "母亲遗物",
+      "startChapter": 112,
+      "type": "item",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "near-term",
+      "notes": "**NEW**：母亲50年前留在石屋/陈守一贴身携带/金线回应"
+    },
+    {
+      "hookId": "守夜者倾听风声",
+      "startChapter": 112,
+      "type": "character",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "mid-term",
+      "payoffTiming": "slow-burn",
+      "notes": "**NEW**：守夜者的独特感知方式/三源合一的另一佐证"
+    },
+    {
+      "hookId": "第三根石柱真相",
+      "startChapter": 112,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "mid-term",
+      "payoffTiming": "slow-burn",
+      "notes": "**NEW**：父亲的任务与母亲同行/新地基/路还长"
     }
   ]
 }
