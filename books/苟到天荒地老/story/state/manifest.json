@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 130,
+  "lastAppliedChapter": 131,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -272,6 +272,8 @@
     "H-彼岸之门:lastAdvancedChapter normalized from \"130章：青鸾梦中共鸣看到的门/三孔/窄道/位置确认\" to 0",
     "H-灵气衰减真相:lastAdvancedChapter normalized from \"130章：陈守一解释\"不去的话灵气会一直流失，迟早都是死\"\" to 0",
     "H-三钥合一:lastAdvancedChapter normalized from \"130章：青鸾确认门上有三个孔/大小不一样/其中一个和金痕很像\" to 0",
-    "H-玉佩金线指向:lastAdvancedChapter normalized from \"130章：玉佩金线比早上更亮/朝三座山峰方向微微颤动/陈守一感受牵引\" to 0"
+    "H-玉佩金线指向:lastAdvancedChapter normalized from \"130章：玉佩金线比早上更亮/朝三座山峰方向微微颤动/陈守一感受牵引\" to 0",
+    "H-三钥合一:status normalized from \"**near-resolution**\" to \"open\"",
+    "H-彼岸之门:status normalized from \"**near-resolution**\" to \"open\""
   ]
 }

@@ -1,84 +1,83 @@
 {
   "hooks": [
     {
+      "hookId": "H-灵气衰减真相",
+      "startChapter": 73,
+      "type": "世界观",
+      "status": "progressing",
+      "lastAdvancedChapter": 131,
+      "expectedPayoff": "完整世界观揭露",
+      "payoffTiming": "mid-arc",
+      "notes": "131章深化：三人进入彼岸虚空/灵气衰减的源头即将面对"
+    },
+    {
+      "hookId": "H-三钥合一",
+      "startChapter": 128,
+      "type": "核心谜题",
+      "status": "open",
+      "lastAdvancedChapter": 131,
+      "expectedPayoff": "**下一章**",
+      "payoffTiming": "near-term",
+      "notes": "131章**重大推进**：三钥嵌入石壁/石门开启/虚空入口显现"
+    },
+    {
+      "hookId": "H-玉佩金线指向",
+      "startChapter": 128,
+      "type": "新线索",
+      "status": "resolved",
+      "lastAdvancedChapter": 131,
+      "expectedPayoff": "131章回收",
+      "notes": "131章回收：金线指向正确/三人抵达石门前"
+    },
+    {
       "hookId": "H-青鸾体内余烬",
       "startChapter": 123,
       "type": "关键",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 131,
       "expectedPayoff": "重建桥梁执行章",
       "payoffTiming": "near-term",
-      "notes": "130章深化：余烬是三源之力残留/共鸣时看到的门与三孔"
+      "notes": "131章深化：青鸾确认余烬能帮忙/三角凹槽紫色微光/玉佩嵌入激活"
     },
     {
       "hookId": "H-祖父纸条",
       "startChapter": 122,
       "type": "线索",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 131,
       "expectedPayoff": "重建桥梁执行章",
       "payoffTiming": "near-term",
-      "notes": "130章关联确认：纸条背面的话被青鸾在共鸣中看到"
+      "notes": "131章关联：\"门后之人可入门内之物不可出\"与纸条呼应"
     },
     {
-      "hookId": "H-正本清源意图",
-      "startChapter": 118,
+      "hookId": "H-正本清源阴谋",
+      "startChapter": 109,
       "type": "威胁",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "与重建桥梁冲突爆发",
-      "payoffTiming": "near-term",
-      "notes": "130章隐性推进：冲突预兆/三人同行vs正本清源追踪"
-    },
-    {
-      "hookId": "H-三源合一代价",
-      "startChapter": 73,
-      "type": "限制",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "重建桥梁执行章",
-      "payoffTiming": "near-term",
-      "notes": "130章深化：代价不再是模糊的/而是明确的生死抉择"
+      "lastAdvancedChapter": 131,
+      "expectedPayoff": "彼岸对峙",
+      "payoffTiming": "mid-arc",
+      "notes": "131章威胁延续：正本清源可能追踪/三人已进入虚空"
     },
     {
       "hookId": "H-彼岸之门",
       "startChapter": 73,
       "type": "核心谜题",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "重建桥梁执行章",
+      "status": "open",
+      "lastAdvancedChapter": 131,
+      "expectedPayoff": "**下一章**",
       "payoffTiming": "near-term",
-      "notes": "130章重大推进：门的位置/结构/三钥对应关系确认"
+      "notes": "131章**重大推进**：灰白色虚空显现/紫色月亮悬空/彼岸之门在更深处"
     },
     {
-      "hookId": "H-灵气衰减真相",
-      "startChapter": 73,
-      "type": "世界观",
+      "hookId": "H-青鸾弟弟命运",
+      "startChapter": 126,
+      "type": "悬念",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "完整世界观揭露",
+      "lastAdvancedChapter": 131,
+      "expectedPayoff": "待揭露",
       "payoffTiming": "mid-arc",
-      "notes": "130章隐性深化：继续前行的紧迫性"
-    },
-    {
-      "hookId": "H-三钥合一",
-      "startChapter": 128,
-      "type": "核心谜题",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "重建桥梁执行章",
-      "payoffTiming": "mid-arc",
-      "notes": "130章深化：三钥与三孔的对应关系"
-    },
-    {
-      "hookId": "H-玉佩金线指向",
-      "startChapter": 128,
-      "type": "新线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "下一步行动方向",
-      "payoffTiming": "mid-arc",
-      "notes": "130章推进：金线持续指路/明日即将到达"
+      "notes": "131章暗示：青鸾弟弟曾站在石壁前/见过这扇门"
     }
   ]
 }

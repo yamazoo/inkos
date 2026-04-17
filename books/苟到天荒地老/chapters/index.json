@@ -2004,5 +2004,43 @@
       "completionTokens": 9085,
       "totalTokens": 58045
     }
+  },
+  {
+    "number": 131,
+    "title": "石门之前",
+    "status": "approved",
+    "wordCount": 1998,
+    "createdAt": "2026-04-17T19:13:42.541Z",
+    "updatedAt": "2026-04-17T19:13:53.131Z",
+    "auditIssues": [
+      "[warning] 高频词'淡淡'在相近段落中出现2次：'淡淡的荧光'、'淡淡的红晕'。",
+      "[warning] 最近章节类型序列：130（过渡/行路/温情）→129（过渡/行路）→128（推理/过渡）→126（温情/喘息）。本章以'出发→抵达→抉择→开门→进入'的节奏推进，虽有开门爽点，但整体仍处于推进-到达-执行的前置阶段，读者期待已久的'彼岸之门'仅以入口形式出现，核心悬念（门后是什么）被延后。",
+      "[warning] 章节标题\"石门之前\n\n===\"已自动调整为\"石门之前\"。",
+      "[warning] 最近4章持续高压（沉重→释然→坚定→温暖→平静 -> 沉思→震动→坚定→紧张 -> 沉重→沉默→坚定 -> 沉重→沉默→坚定→温暖→坚定），缺少明显的情绪释放。",
+      "[warning] 80个段落里有62个不足35字，段落被切得过碎。",
+      "[warning] 连续出现7个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [
+      "第131章经过一次字数归一化后仍超出硬区间（2182-3818，实际 1998）。"
+    ],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 1998,
+      "postWriterNormalizeCount": 1998,
+      "postReviseCount": 0,
+      "finalCount": 1998,
+      "normalizeApplied": true,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 3312,
+      "completionTokens": 14771,
+      "totalTokens": 18083
+    }
   }
 ]
