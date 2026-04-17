@@ -1563,5 +1563,86 @@
       "completionTokens": 21504,
       "totalTokens": 38625
     }
+  },
+  {
+    "number": 119,
+    "title": "第三条路",
+    "status": "approved",
+    "wordCount": 2722,
+    "createdAt": "2026-04-17T16:47:34.475Z",
+    "updatedAt": "2026-04-17T16:50:21.651Z",
+    "auditIssues": [
+      "[warning] 青鸾的救治线（当前目标核心）在本章完全悬置。赵猛叔祖的\"第一条路\"虽有推进（叔祖为修路牺牲），但青鸾的生死危机只以\"带上她\"一笔带过，与\"三天内找到救醒青鸾的办法\"的当前目标严重脱节。",
+      "[warning] 本章类型序列：守夜→对话→对话深化→风暴来临→决定断后→迎接战斗。全部为紧迫/高潮类型，连续5个节点都是\"压力上升\"，无释放、无转折、无降调。与近期章节类型（118:危机/116:情感告别/115:真相高潮/114:温情过渡）相比，节奏压得过平。",
+      "[info] 风暴\"比预计的早\"与118章\"两天半后风暴来临\"存在轻微矛盾——风暴既然提前，那么原本的\"两天半\"倒计时是否还有效？主角宣告的\"给我两天半\"时限与风暴实际到达时间的关系未明确。",
+      "[info] 本章以\"金痕光芒骤然暴涨/他向前迈出一步\"结尾，悬念感强（主角命运），但之前埋下的\"记住她的话\"、母亲梦中说的话等悬念完全未提及，有被遗忘风险。",
+      "[warning] 状态卡完全未更新，但章节119发生重大变化：",
+      "[warning] 位置应从\"聚居点（青鸾石屋）\"变为\"聚居点外/风暴边缘\"",
+      "[warning] 当前目标应从\"三天内找到救醒青鸾的办法\"变为\"立即阻敌/撤退\"",
+      "[warning] 当前限制应从\"风暴两天半到达\"变为\"风暴已至/半个时辰内到达边缘\"",
+      "[warning] 主角状态应从\"精神沉重但坚定\"变为\"金痕燃烧/准备战斗\"",
+      "[warning] Chapter text标注为119章，但hooks池记录显示\"第一条路\"新hook添加于118章，章节编号不一致",
+      "[warning] 90个段落里有58个不足35字，段落被切得过碎。",
+      "[warning] 连续出现4个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "reviewNote": "{\"kind\":\"state-degraded\",\"baseStatus\":\"audit-failed\",\"injectedIssues\":[\"[warning] 状态卡完全未更新，但章节119发生重大变化：\",\"[warning] 位置应从\\\"聚居点（青鸾石屋）\\\"变为\\\"聚居点外/风暴边缘\\\"\",\"[warning] 当前目标应从\\\"三天内找到救醒青鸾的办法\\\"变为\\\"立即阻敌/撤退\\\"\",\"[warning] 当前限制应从\\\"风暴两天半到达\\\"变为\\\"风暴已至/半个时辰内到达边缘\\\"\",\"[warning] 主角状态应从\\\"精神沉重但坚定\\\"变为\\\"金痕燃烧/准备战斗\\\"\",\"[warning] Chapter text标注为119章，但hooks池记录显示\\\"第一条路\\\"新hook添加于118章，章节编号不一致\"]}",
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2722,
+      "postWriterNormalizeCount": 2722,
+      "postReviseCount": 2722,
+      "finalCount": 2722,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 15911,
+      "totalTokens": 15911
+    }
+  },
+  {
+    "number": 120,
+    "title": "第三条路：醒来",
+    "status": "approved",
+    "wordCount": 2029,
+    "createdAt": "2026-04-17T16:58:59.456Z",
+    "updatedAt": "2026-04-17T16:59:13.645Z",
+    "auditIssues": [
+      "[warning] AI标记词\"忽然\"在约2000字篇幅内出现6次，密度约为每千字3次，超过每3000字1次的warning阈值",
+      "[warning] 青鸾的故事支线（SP-青鸾的故事）从118章进入CRITICAL状态（侵蚀昏迷/生死未卜/三天期限），120章仍在同一状态——黑色纹路从脖颈蔓延到下颌、呼吸更浅、银色印记更暗淡，但仍未有任何推进或转机出现",
+      "[info] 检测到3句连续以相同开头的句子，呈现列表式AI生成结构",
+      "[warning] 章节标题\"第三条路\"已自动调整为\"第三条路：醒来\"。",
+      "[warning] 66个段落里有46个不足35字，段落被切得过碎。",
+      "[warning] 连续出现8个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [
+      "第120章经过一次字数归一化后仍超出硬区间（2182-3818，实际 2029）。"
+    ],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2495,
+      "postWriterNormalizeCount": 2029,
+      "postReviseCount": 0,
+      "finalCount": 2029,
+      "normalizeApplied": true,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 12830,
+      "totalTokens": 12830
+    }
   }
 ]
