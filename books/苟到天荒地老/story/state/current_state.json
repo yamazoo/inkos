@@ -1,53 +1,53 @@
 {
-  "chapter": 106,
+  "chapter": 108,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "门后有等待300年的存在/七人进门只出来两人/第三条路未知",
-      "validFromChapter": 106,
-      "validUntilChapter": null,
-      "sourceChapter": 106
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前敌我",
-      "object": "冥将分身已离开去接应本体（本体行踪未知）",
-      "validFromChapter": 106,
-      "validUntilChapter": null,
-      "sourceChapter": 106
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "找到第三条路/与门后等待300年的存在对话/让桥完全觉醒",
-      "validFromChapter": 106,
-      "validUntilChapter": null,
-      "sourceChapter": 106
-    },
-    {
-      "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "石门内（门后灰白虚空）",
-      "validFromChapter": 106,
+      "object": "门内（星空幻境/桥的彼端）",
+      "validFromChapter": 108,
       "validUntilChapter": null,
-      "sourceChapter": 106
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "无武器/无令牌/门后世界未知/来时方向已留标记",
-      "validFromChapter": 106,
-      "validUntilChapter": null,
-      "sourceChapter": 106
+      "sourceChapter": 108
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "恢复中/金线蔓延至小臂/石门已信任/进入门后灰白空间",
-      "validFromChapter": 106,
+      "object": "金线剧烈跳动与母亲身影共鸣/觉醒加速/情绪激动（哽咽）",
+      "validFromChapter": 108,
       "validUntilChapter": null,
-      "sourceChapter": 106
+      "sourceChapter": 108
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "了解封印真相/获得母亲指引/做出选择",
+      "validFromChapter": 108,
+      "validUntilChapter": null,
+      "sourceChapter": 108
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "冥将被关在门外/母亲身影清晰但仍不完整/封印需要新力量",
+      "validFromChapter": 108,
+      "validUntilChapter": null,
+      "sourceChapter": 108
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "冥将（关在门外）\\",
+      "validFromChapter": 108,
+      "validUntilChapter": null,
+      "sourceChapter": 108
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "封印需要新力量/三百年前的契约/母亲的真相/觉醒的权利",
+      "validFromChapter": 108,
+      "validUntilChapter": null,
+      "sourceChapter": 108
     }
   ]
 }

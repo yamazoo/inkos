@@ -1,34 +1,74 @@
 {
   "hooks": [
     {
-      "hookId": "门后300年的等待",
+      "hookId": "守夜人周沉",
+      "startChapter": 106,
+      "type": "relationship",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**继续深化**",
+      "payoffTiming": "slow-burn",
+      "notes": "本章核心揭示：守夜人身份体系/门的历史/三源之器来源"
+    },
+    {
+      "hookId": "三源合一开门",
       "startChapter": 106,
       "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 106,
-      "expectedPayoff": "门后存在的身份/第三个走上桥的人的身份/如何撑桥",
-      "payoffTiming": "mid-arc",
-      "notes": "门后有声音等待了300年，称300年前有人走入给了承诺，桥等到了愿意走进来的人"
-    },
-    {
-      "hookId": "石门完全开启",
-      "startChapter": 104,
-      "type": "plot",
-      "status": "resolved",
-      "lastAdvancedChapter": 106,
-      "expectedPayoff": "陈守一通过信任让石门完全开启",
-      "payoffTiming": "chapter",
-      "notes": "石门感受到陈守一的信任，主动开启细缝，陈守一进入门后"
-    },
-    {
-      "hookId": "冥将本体行踪",
-      "startChapter": 105,
-      "type": "threat",
       "status": "open",
-      "lastAdvancedChapter": 105,
-      "expectedPayoff": "冥将本体何时出现/与门后世界有何关系",
-      "payoffTiming": "mid-arc",
-      "notes": "冥将分身离开石门去接应本体，本体行踪未知；可能是外部威胁"
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**继续深化**",
+      "payoffTiming": "slow-burn",
+      "notes": "本章核心突破：母亲完整真相/契约本质/三方势力/封印机制"
+    },
+    {
+      "hookId": "上古大劫",
+      "startChapter": 73,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**继续深化**",
+      "payoffTiming": "slow-burn",
+      "notes": "新揭示：三方势力框架/被遗忘的第三方/契约真相"
+    },
+    {
+      "hookId": "金线本质",
+      "startChapter": 1,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**继续深化**",
+      "payoffTiming": "slow-burn",
+      "notes": "新揭示：契约本质/选择权利"
+    },
+    {
+      "hookId": "母亲真相",
+      "startChapter": 73,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**部分回收**",
+      "payoffTiming": "near-term",
+      "notes": "重大突破：母亲完整真相/仍在彼岸/主动选择牺牲"
+    },
+    {
+      "hookId": "封印机制",
+      "startChapter": 73,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**继续深化**",
+      "payoffTiming": "slow-burn",
+      "notes": "深化：封印运作机制/需要的代价"
+    },
+    {
+      "hookId": "第三个选择",
+      "startChapter": 102,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**继续深化**",
+      "payoffTiming": "slow-burn",
+      "notes": "深化：第三条路的方向/新力量需求"
     }
   ]
 }

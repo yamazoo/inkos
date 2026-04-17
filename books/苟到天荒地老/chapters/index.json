@@ -1134,5 +1134,77 @@
       "completionTokens": 20610,
       "totalTokens": 20610
     }
+  },
+  {
+    "number": 107,
+    "title": "门后",
+    "status": "approved",
+    "wordCount": 3280,
+    "createdAt": "2026-04-17T14:48:13.350Z",
+    "updatedAt": "2026-04-17T14:48:23.349Z",
+    "auditIssues": [
+      "[info] 神秘人（年轻男子/旧式道袍/见过母亲在做出选择之前）与周沉、守夜者第八代的关系未明确揭示。伏笔钩子'守夜人周沉'已推进（守夜人身份扩展为群体概念），但该神秘人的完整身份尚未给出，属于合理的新谜团。",
+      "[info] 章尾以'冥将找到他了'收尾，压力骤增但选择尚未落地。这是有效的悬念设置，但需注意不要连续多章用'即将做出决定'作为结尾。",
+      "[info] 章节节奏以'等待-揭示-行走-再揭示-紧迫'为主，情感基调有从'释然'向'紧张'的过渡，但整章氛围偏沉稳，与第106章控制输入要求的'降调/喘息和温情元素'基本吻合。",
+      "[info] 新揭示'门三百年来只开过两次/只有两个人进去过'与第106章章节摘要'七人进门只出来两人'的信息存在表面矛盾——七人进门vs两人进去。需要明确：七人是'找门的人'，两人是'走到这里的人'（通过石门进入的）。",
+      "[warning] 184个段落里有151个不足35字，段落被切得过碎。",
+      "[warning] 连续出现51个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3280,
+      "postWriterNormalizeCount": 3280,
+      "postReviseCount": 0,
+      "finalCount": 3280,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 12489,
+      "completionTokens": 10242,
+      "totalTokens": 22731
+    }
+  },
+  {
+    "number": 108,
+    "title": "抉择：碰到",
+    "status": "approved",
+    "wordCount": 2579,
+    "createdAt": "2026-04-17T15:03:35.132Z",
+    "updatedAt": "2026-04-17T15:05:00.632Z",
+    "auditIssues": [
+      "[warning] 章节类型分布显示108章是纯粹的\"揭秘/情感章\"，没有任何紧张段落或危机转折。回顾近期章节：106（释然/沉思）、107（紧张/抉择）、108（全是揭秘），导致整体节奏平缓，缺少必要的起伏。107章结尾建立的\"冥将找到他了\"的危机感在108章被完全搁置。",
+      "[warning] 陈守一的情绪弧线从107章的\"紧张\"直接跳到108章的\"哽咽/释然\"，中间缺少情绪过渡。他刚刚在灰白空间中与冥将对峙、独自面对分身追杀，此刻应该还处于高度紧绷状态，进入门后见到母亲形象时需要有更复杂的情绪层次（如戒备→疑惑→确认→释然），而不是直接哽咽。",
+      "[warning] 章节中存在视角跳跃问题。在\"那个女人\"的描述中，用了\"穿着陈守一无比熟悉的衣裳\"、\"他记忆中一模一样的发髻\"这样的全知视角旁白，破坏了此前建立的陈守一有限视角。这种旁白式的描述打断了沉浸感，让读者从陈守一的体验中抽离。",
+      "[info] 守夜人人影（年轻男子）的利益动机不清晰。他指引陈守一到门前、解释门的来历、然后让位让母亲出场，但他自己的目的和立场没有被交代。他是谁？为什么要帮陈守一？他与母亲是什么关系？这些信息缺失使得这个角色工具人化。",
+      "[warning] 章节标题\"抉择\"已自动调整为\"抉择：碰到\"。",
+      "[warning] 连续出现4个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3785,
+      "postWriterNormalizeCount": 2579,
+      "postReviseCount": 0,
+      "finalCount": 2579,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 4509,
+      "completionTokens": 16052,
+      "totalTokens": 20561
+    }
   }
 ]

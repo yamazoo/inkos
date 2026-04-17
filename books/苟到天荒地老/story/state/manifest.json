@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 106,
+  "lastAppliedChapter": 108,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -199,6 +199,21 @@
     "manifest lastAppliedChapter normalized from 103 to 5",
     "H163_第一个守夜者身影:lastAdvancedChapter normalized from \"103→104\" to 0",
     "H166_石门与七投影:status normalized from \"**NEW**\" to \"open\"",
-    "H167_玄甲:status normalized from \"**NEW**\" to \"open\""
+    "H167_玄甲:status normalized from \"**NEW**\" to \"open\"",
+    "hooks.json invalid, rebuilt from markdown",
+    "守夜人周沉:status normalized from \"**关键进展/深度揭示**\" to \"open\"",
+    "守夜人周沉:lastAdvancedChapter normalized from \"**本章重大揭示**：1.守夜人不只是周沉，是一群人的传承；2.守夜人周沉（年轻男子）是\"前任持有者\"；3.架桥者从门后带出三件东西（三源之器原型、两界钥匙、门本身）；4.三百年来门只开过两次（架桥者、母亲）；5.陈守一是第三个走到门前的人；6.守夜人人影在母亲做出选择前见过她\" to 0",
+    "三源合一开门:status normalized from \"**重大突破**\" to \"open\"",
+    "三源合一开门:lastAdvancedChapter normalized from \"**本章完整揭示**：1.门的完整历史（三源之器原型/两界钥匙/从门内带出）；2.母亲的具体选择（用一部分力量帮助封印+切断联系让封印只消耗力量不消耗生命）；3.母亲选择的代价（所有关于此地的记忆留在封印中）；4.母亲仍然活着（在彼岸/来处）；5.金线本质揭露（不是血脉是契约/三百年前立下的约定）；6.**上古大劫三方势力**（人族/幽冥/被遗忘的第三方）；7.灵气稀薄真相（战争后遗症/不是天灾是战争消耗）；8.裂缝中透出的气息与冥族不同（更古老/沉寂/蕴含生机）；9.封印机制（源头无法消灭只能封印/需要力量维持）\" to 0",
+    "上古大劫:status normalized from \"**新增/重大揭示**\" to \"open\"",
+    "上古大劫:lastAdvancedChapter normalized from \"**本章完整揭露**：人族、幽冥、以及被遗忘的第三方；三百年前契约；千年战争；灵气消耗殆尽；源头无法消灭只能封印；被遗忘的第三方留在门内化作封印一部分\" to 0",
+    "金线本质:status normalized from \"**新增/重大揭示**\" to \"open\"",
+    "金线本质:lastAdvancedChapter normalized from \"本章揭露：金线不是血脉是契约；三百年与祖先立下的约定；选择才是觉醒的关键\" to 0",
+    "母亲真相:status normalized from \"**新增/重大完整揭示**\" to \"open\"",
+    "母亲真相:lastAdvancedChapter normalized from \"本章完整揭露：母亲仍然活着（彼岸/来处）；用一部分力量帮助封印；切断联系让封印只消耗力量；代价是所有记忆留在封印中；主动选择让陈守一有机会回去正常活下去；\"她选了你\"完整含义\" to 0",
+    "封印机制:status normalized from \"**新增/深化**\" to \"open\"",
+    "封印机制:lastAdvancedChapter normalized from \"本章揭露：源头无法消灭只能封印；封印需要力量维持；力量来自活着的生命；三百年前选择切断联系让封印自己运转；新力量需要\" to 0",
+    "第三个选择:status normalized from \"**新增/深化**\" to \"open\"",
+    "第三个选择:lastAdvancedChapter normalized from \"母亲提到\"封印需要新的力量\"；三百年前的选择（切断联系让封印自己运转）已经不够了\" to 0"
   ]
 }
