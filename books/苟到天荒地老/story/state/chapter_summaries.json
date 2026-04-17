@@ -649,6 +649,26 @@
       "hookActivity": "**青鸾的故事CRITICAL**；被遗忘的第三方advancing；正本清源组织误解advancing；赵猛弟弟advancing；**第一条路NEW**",
       "mood": "沉重→坚定→紧张→沉重→坚定",
       "chapterType": "**危机章/转折章/紧迫章/新冲突爆发章**"
+    },
+    {
+      "chapter": 117,
+      "title": "残史未烬",
+      "characters": "陈守一、第一个守夜者、赵猛",
+      "events": "守夜者在消散后期凝聚最后意识讲述第一条路（不用打封印/幽冥与人间本一体）；陈守一下山与赵猛重逢；抵达聚居点发现青鸾昏迷",
+      "stateChanges": "守夜者彻底消散；陈守一位置（石柱→山路→聚居点）；青鸾状态（侵蚀昏迷）；赵猛得知石柱真相",
+      "hookActivity": "第一条路 advancing; 被遗忘的第三方 advancing; 青鸾的故事 CRITICAL",
+      "mood": "沉重→释然→坚定",
+      "chapterType": "情感告别/过渡章"
+    },
+    {
+      "chapter": 119,
+      "title": "第三条路",
+      "characters": "陈守一、赵猛、青鸾（昏迷）",
+      "events": "陈守一守护青鸾半宿；赵猛讲述叔祖弟弟的故事（为修第一条路牺牲）；风暴比预计早到；陈守一决定独自断后让赵猛带人撤离；金痕剧烈燃烧迎战风暴边缘",
+      "stateChanges": "陈守一位置（聚居点→风暴边缘/独自断后）；青鸾昏迷；风暴已至；金痕燃烧准备战斗",
+      "hookActivity": "第一条路 resolved; 被遗忘的第三方 progressing; 青鸾的故事 CRITICAL; 第三条路抉择 NEW",
+      "mood": "沉重→坚定→紧张→释然→坚定",
+      "chapterType": "危机章/抉择章/战斗章"
     }
   ]
 }

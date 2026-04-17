@@ -14,11 +14,11 @@
       "hookId": "被遗忘的第三方",
       "startChapter": 109,
       "type": "mystery",
-      "status": "open",
-      "lastAdvancedChapter": 118,
-      "expectedPayoff": "揭露第三方消失真相",
+      "status": "progressing",
+      "lastAdvancedChapter": 119,
+      "expectedPayoff": "揭露第三方消失真相/与第一条路的关系",
       "payoffTiming": "mid-arc",
-      "notes": "118章赵猛提及\"以前有一条路\"——第一条路/祖父牺牲的真相"
+      "notes": "119章重大推进：赵猛叔祖为修第一条路牺牲；祖父为阻冥族牺牲；第三方为修补那条路彻底消失——都是无名之人"
     },
     {
       "hookId": "母亲的选择",
@@ -28,45 +28,57 @@
       "lastAdvancedChapter": 115,
       "expectedPayoff": "揭露母亲说过的话",
       "payoffTiming": "mid-arc",
-      "notes": "115章重大推进/\"记住她的话\"悬念持续"
+      "notes": "115章重大推进/'记住她的话'悬念持续"
     },
     {
       "hookId": "赵猛弟弟",
       "startChapter": 114,
       "type": "mystery",
-      "status": "open",
-      "lastAdvancedChapter": 118,
+      "status": "resolved",
+      "lastAdvancedChapter": 119,
       "expectedPayoff": "与青鸾赵猛关系/弟弟之死的具体经过",
       "payoffTiming": "mid-arc",
-      "notes": "118章叔临终前讲述弟弟故事/\"别让他白死\""
+      "notes": "119章赵猛完成情感弧线：恨→释然→坚定；弟弟死在封印边上，来不及等到天亮"
     },
     {
       "hookId": "青鸾的故事",
       "startChapter": 114,
       "type": "character",
-      "status": "open",
-      "lastAdvancedChapter": 118,
-      "expectedPayoff": "青鸾弟子的故事/开食肆的梦想/弟弟之死/对赵猛的托付",
-      "notes": "**118章青鸾侵蚀昏迷/生死未卜/三天期限/紧急状态**"
+      "status": "critical",
+      "lastAdvancedChapter": 119,
+      "expectedPayoff": "青鸾弟子故事/与金痕共鸣/能否醒来",
+      "payoffTiming": "near-term",
+      "notes": "119章青鸾与金痕产生共鸣；昏迷中；赵猛背着她撤离"
     },
     {
       "hookId": "正本清源组织误解",
       "startChapter": 109,
       "type": "relationship",
-      "status": "open",
-      "lastAdvancedChapter": 118,
+      "status": "progressing",
+      "lastAdvancedChapter": 119,
       "expectedPayoff": "阻止正本清源打开封印",
       "payoffTiming": "mid-arc",
-      "notes": "118章向聚居点众人揭露组织真相/风暴比预计更早"
+      "notes": "119章风暴是正本清源引发——封印被破坏导致风暴比预计早到"
     },
     {
       "hookId": "第一条路（已断）",
       "startChapter": 118,
       "type": "mystery",
-      "status": "open",
-      "lastAdvancedChapter": 118,
-      "expectedPayoff": "揭露祖父牺牲导致第一条路断裂",
-      "notes": "118章赵猛提及\"以前有一条路，不用打封印，不用守夜者\"/与113章祖父牺牲吻合"
+      "status": "progressing",
+      "lastAdvancedChapter": 119,
+      "expectedPayoff": "揭露祖父牺牲导致第一条路断裂/与第三条路的关系",
+      "payoffTiming": "mid-arc",
+      "notes": "119章赵猛完整讲述第一条路（不用打封印/不用守夜者/幽冥和人间一体）；祖父为修路牺牲；路断裂后才有的守夜者和封印"
+    },
+    {
+      "hookId": "第三条路抉择",
+      "startChapter": 119,
+      "type": "plot",
+      "status": "progressing",
+      "lastAdvancedChapter": 119,
+      "expectedPayoff": "陈守一能否以第三条路阻止风暴/半个时辰断后的结果",
+      "payoffTiming": "near-term",
+      "notes": "119章陈守一选择独自断后/金痕剧烈燃烧/风暴边缘决战"
     }
   ]
 }

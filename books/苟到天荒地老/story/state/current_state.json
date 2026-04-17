@@ -1,53 +1,53 @@
 {
-  "chapter": 118,
+  "chapter": 119,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点（青鸾石屋）",
-      "validFromChapter": 118,
+      "object": "风暴边缘（聚居点外/独自断后）",
+      "validFromChapter": 119,
       "validUntilChapter": null,
-      "sourceChapter": 118
+      "sourceChapter": 119
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "精神沉重但坚定；金痕发热感应到幽冥气息；玉佩内有新生金线",
-      "validFromChapter": 118,
+      "object": "金痕剧烈燃烧/准备战斗/独自断后/金线快速流动",
+      "validFromChapter": 119,
       "validUntilChapter": null,
-      "sourceChapter": 118
+      "sourceChapter": 119
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "三天内找到救醒青鸾的办法；阻止封印进一步崩溃；准备迎接风暴",
-      "validFromChapter": 118,
+      "object": "拖延半个时辰/让赵猛等人安全撤离山洞/守住风暴边缘",
+      "validFromChapter": 119,
       "validUntilChapter": null,
-      "sourceChapter": 118
+      "sourceChapter": 119
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "风暴两天半到达；青鸾侵蚀昏迷；母亲生机已用于激活玉佩；金线生机有限",
-      "validFromChapter": 118,
+      "object": "风暴边缘/独自面对/半个时辰时限/金痕燃烧消耗生机",
+      "validFromChapter": 119,
       "validUntilChapter": null,
-      "sourceChapter": 118
+      "sourceChapter": 119
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "敌：正本清源组织（正在破坏封印）；冥族（封印崩溃释放的幽冥气息）",
-      "validFromChapter": 118,
+      "object": "敌：正本清源组织（正在破坏封印/引发风暴）；冥族（风暴边缘幽冥之气）",
+      "validFromChapter": 119,
       "validUntilChapter": null,
-      "sourceChapter": 118
+      "sourceChapter": 119
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "封印崩溃前兆；青鸾生命垂危；风暴将至；三天的时限压力",
-      "validFromChapter": 118,
+      "object": "风暴已至/生死决战/半个时辰断后/第三条路抉择",
+      "validFromChapter": 119,
       "validUntilChapter": null,
-      "sourceChapter": 118
+      "sourceChapter": 119
     }
   ]
 }
