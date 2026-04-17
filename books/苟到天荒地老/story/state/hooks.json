@@ -1,6 +1,66 @@
 {
   "hooks": [
     {
+      "hookId": "H-彼岸之门",
+      "startChapter": 73,
+      "type": "核心谜题",
+      "status": "progressing",
+      "lastAdvancedChapter": 129,
+      "expectedPayoff": "重建桥梁执行章",
+      "payoffTiming": "near-term",
+      "notes": "129章关联推进：祖父到过的地方就是三座山峰夹着窄道，令牌位置确认"
+    },
+    {
+      "hookId": "H-灵气衰减真相",
+      "startChapter": 73,
+      "type": "世界观",
+      "status": "progressing",
+      "lastAdvancedChapter": 129,
+      "expectedPayoff": "完整世界观揭露",
+      "payoffTiming": "mid-arc",
+      "notes": "129章深化：封印被改成了吸灵气到彼岸的口子，三百年没停过"
+    },
+    {
+      "hookId": "H-三源合一代价",
+      "startChapter": 73,
+      "type": "限制",
+      "status": "progressing",
+      "lastAdvancedChapter": 129,
+      "expectedPayoff": "重建桥梁执行章",
+      "payoffTiming": "near-term",
+      "notes": "129章新揭示：每个角色都有自己的\"理由\"——陈守一的胸口金痕在消耗寿元、母亲最后消散时的眼神、彼岸那些还在等待的人；这些个人背负构成继续前行的动力"
+    },
+    {
+      "hookId": "H-正本清源意图",
+      "startChapter": 118,
+      "type": "威胁",
+      "status": "progressing",
+      "lastAdvancedChapter": 129,
+      "expectedPayoff": "与重建桥梁冲突爆发",
+      "payoffTiming": "near-term",
+      "notes": "129章明确：他们以为打开封印冥族回归能回上古荣光，但实际上会抽干灵气连根草都不剩"
+    },
+    {
+      "hookId": "H-祖父纸条",
+      "startChapter": 122,
+      "type": "线索",
+      "status": "progressing",
+      "lastAdvancedChapter": 129,
+      "expectedPayoff": "重建桥梁执行章",
+      "payoffTiming": "near-term",
+      "notes": "129章完整揭露纸条内容：祖父经历/三孔/同伴警告/背面关键句\"三源同归血脉为钥门后之人可入门内之物不可出\""
+    },
+    {
+      "hookId": "H-青鸾体内余烬",
+      "startChapter": 123,
+      "type": "关键",
+      "status": "progressing",
+      "lastAdvancedChapter": 129,
+      "expectedPayoff": "重建桥梁执行章",
+      "payoffTiming": "near-term",
+      "notes": "129章深化：青鸾表明余烬与封印有关，到门前时她必须在那里"
+    },
+    {
       "hookId": "H-三钥合一",
       "startChapter": 128,
       "type": "核心谜题",
@@ -10,51 +70,6 @@
       "notes": "128章确认三钥具体物品；正本清源也在收集玉料；冲突升级"
     },
     {
-      "hookId": "H-彼岸之门",
-      "startChapter": 0,
-      "type": "核心谜题",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "重建桥梁执行章",
-      "notes": "128章通过共鸣实验获得关键视觉信息"
-    },
-    {
-      "hookId": "H-正本清源意图",
-      "startChapter": 0,
-      "type": "威胁",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "与重建桥梁冲突爆发",
-      "notes": "与陈守一的\"重建桥梁切断源头\"根本冲突"
-    },
-    {
-      "hookId": "H-灵气衰减真相",
-      "startChapter": 0,
-      "type": "世界观",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "完整世界观揭露",
-      "notes": "128章新增推理；大劫真相可能更深"
-    },
-    {
-      "hookId": "H-三源合一代价",
-      "startChapter": 73,
-      "type": "限制",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "重建桥梁执行章",
-      "notes": "需要三钥合一才能重建桥梁；代价是什么"
-    },
-    {
-      "hookId": "H-青鸾体内余烬",
-      "startChapter": 0,
-      "type": "关键",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "重建桥梁执行章",
-      "notes": "三钥合一可能稳定余烬"
-    },
-    {
       "hookId": "H-玉佩金线指向",
       "startChapter": 128,
       "type": "新线索",
@@ -62,15 +77,6 @@
       "lastAdvancedChapter": 0,
       "expectedPayoff": "下一步行动方向",
       "notes": "128章新现象；可能是通往彼岸的路"
-    },
-    {
-      "hookId": "H-祖父纸条",
-      "startChapter": 122,
-      "type": "线索",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "重建桥梁执行章",
-      "notes": "玉佩金线指向与纸条路线一致"
     }
   ]
 }

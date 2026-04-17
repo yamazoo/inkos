@@ -1,53 +1,53 @@
 {
-  "chapter": 128,
+  "chapter": 129,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "聚居点（风暴后第三天清晨）",
-      "validFromChapter": 128,
+      "predicate": "当前冲突",
+      "object": "正本清源欲打开封印（会让灵气抽干）vs 重建桥梁需堵上口子",
+      "validFromChapter": 129,
       "validUntilChapter": null,
-      "sourceChapter": 128
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "金痕稳定/精神坚定/三源之力运转正常/身体持续恢复中",
-      "validFromChapter": 128,
-      "validUntilChapter": null,
-      "sourceChapter": 128
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "重建桥梁/救醒青鸾/阻止正本清源/确认三钥合一/启程前往东面山谷",
-      "validFromChapter": 128,
-      "validUntilChapter": null,
-      "sourceChapter": 128
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "青鸾根本问题未解/正本清源活动/风暴停但冥将蛰伏/三钥合一代价未知",
-      "validFromChapter": 128,
-      "validUntilChapter": null,
-      "sourceChapter": 128
+      "sourceChapter": 129
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "正本清源（敌对/收集玉料/意图冲突）/冥将（蛰伏中）",
-      "validFromChapter": 128,
+      "object": "陈守一+赵猛+青鸾 三人同行",
+      "validFromChapter": 129,
       "validUntilChapter": null,
-      "sourceChapter": 128
+      "sourceChapter": 129
     },
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "三钥合一开启彼岸通道 vs 正本清源用玉料激活封印让冥族回归",
-      "validFromChapter": 128,
+      "predicate": "当前目标",
+      "object": "明天抵达三座山峰夹着窄道/取得令牌/执行三源合一重建桥梁",
+      "validFromChapter": 129,
       "validUntilChapter": null,
-      "sourceChapter": 128
+      "sourceChapter": 129
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "浅石窟（山坳中，祖父纸条标注的山洞）",
+      "validFromChapter": 129,
+      "validUntilChapter": null,
+      "sourceChapter": 129
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "青鸾身体虚弱但坚持同行/赵猛体力消耗/三源合一代价未知",
+      "validFromChapter": 129,
+      "validUntilChapter": null,
+      "sourceChapter": 129
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "金痕若隐若现/持续消耗寿元/玉佩金线比早上更亮/精神坚定",
+      "validFromChapter": 129,
+      "validUntilChapter": null,
+      "sourceChapter": 129
     }
   ]
 }
