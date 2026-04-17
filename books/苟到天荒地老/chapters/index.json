@@ -1355,5 +1355,39 @@
       "completionTokens": 8645,
       "totalTokens": 12117
     }
+  },
+  {
+    "number": 113,
+    "title": "风声（十三）",
+    "status": "approved",
+    "wordCount": 2789,
+    "createdAt": "2026-04-17T15:45:26.518Z",
+    "updatedAt": "2026-04-17T15:45:40.463Z",
+    "auditIssues": [
+      "[warning] 最近4章持续高压（降调（沉重→松动→坚定） -> 沉重→坚定→期待 -> 沉重→悲痛→释然→温暖→坚定→期待 -> 沉重→沉静→释然→震动→坚定），缺少明显的情绪释放。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：\"正本清源\"组织误解（慢烧，陈旧）、第三根石柱真相（慢烧，陈旧）、母亲遗物（近期，可回收）。",
+      "[warning] 87个段落里有58个不足35字，段落被切得过碎。",
+      "[warning] 连续出现12个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2789,
+      "postWriterNormalizeCount": 2789,
+      "postReviseCount": 0,
+      "finalCount": 2789,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 11921,
+      "totalTokens": 11921
+    }
   }
 ]
