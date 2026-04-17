@@ -1,53 +1,53 @@
 {
-  "chapter": 131,
+  "chapter": 132,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "灰白色虚空（彼岸入口/紫色月亮悬空）",
-      "validFromChapter": 131,
+      "predicate": "当前冲突",
+      "object": "重建桥梁阻止大劫 vs 三源合一代价未明",
+      "validFromChapter": 132,
       "validUntilChapter": null,
-      "sourceChapter": 131
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "金痕隐隐发烫/呼应虚空/精神坚定/整夜未眠后反而稳定",
-      "validFromChapter": 131,
-      "validUntilChapter": null,
-      "sourceChapter": 131
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "穿越虚空/抵达彼岸之门/重建桥梁",
-      "validFromChapter": 131,
-      "validUntilChapter": null,
-      "sourceChapter": 131
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "三源合一代价未知/\"门后之人可入门内之物不可出\"/青鸾身体虚弱/赵猛体力消耗",
-      "validFromChapter": 131,
-      "validUntilChapter": null,
-      "sourceChapter": 131
+      "sourceChapter": 132
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "陈守一+赵猛+青鸾 三人同行/正本清源可能追踪",
-      "validFromChapter": 131,
+      "object": "陈守一+赵猛+青鸾 三人同行",
+      "validFromChapter": 132,
       "validUntilChapter": null,
-      "sourceChapter": 131
+      "sourceChapter": 132
     },
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "正本清源欲打开封印 vs 重建桥梁需堵上口子/三人已踏入虚空",
-      "validFromChapter": 131,
+      "predicate": "当前目标",
+      "object": "抵达门后三十丈枯井/重建三百年桥梁",
+      "validFromChapter": 132,
       "validUntilChapter": null,
-      "sourceChapter": 131
+      "sourceChapter": 132
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "彼岸之门内（枯井方向）",
+      "validFromChapter": 132,
+      "validUntilChapter": null,
+      "sourceChapter": 132
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "三源合一代价未知/青鸾身体虚弱/赵猛体力消耗/重建桥梁代价待揭露",
+      "validFromChapter": 132,
+      "validUntilChapter": null,
+      "sourceChapter": 132
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "金痕发亮/精神坚定/眉心发烫与门呼应",
+      "validFromChapter": 132,
+      "validUntilChapter": null,
+      "sourceChapter": 132
     }
   ]
 }

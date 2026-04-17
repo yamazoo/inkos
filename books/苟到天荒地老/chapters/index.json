@@ -2042,5 +2042,41 @@
       "completionTokens": 14771,
       "totalTokens": 18083
     }
+  },
+  {
+    "number": 132,
+    "title": "彼岸微光：灰白",
+    "status": "approved",
+    "wordCount": 3350,
+    "createdAt": "2026-04-17T19:20:53.669Z",
+    "updatedAt": "2026-04-17T19:21:03.767Z",
+    "auditIssues": [
+      "[warning] 章节后半段碑文信息密度过高，连续三大段（灵气衰减真相揭露→石碑正面→石碑背面→石门开启）几乎全为世界观信息输出，缺乏角色互动和情绪释放节点。",
+      "[warning] 石碑正面记载\"门后之物不可出\"与131章青鸾梦呓\"门后之人可入门内之物不可出\"高度重复（仅少了\"人\"字），且都是\"不可出\"。碑文没有提供新的表达方式。",
+      "[info] 章节约2700字，\"缓缓\"出现2次（石门缓缓转动、石门缓缓向两侧分开），\"隐约\"出现2次（隐约可见、隐约可见），密度可接受。高疲劳词（无敌/碾压/秒了/恐怖如斯/倒吸一口凉气）出现0次。AI标记词密度低。",
+      "[info] 章节以陈守一为核心视角，赵猛和青鸾作为辅助视角穿插，符合陈守一主角定位。赵猛推石碑时\"青筋在额头上暴起\"是合理的外部观察视角；青鸾\"手指无意识地摩挲着胸口\"是旁观视角的细腻捕捉。视角切换自然。",
+      "[warning] 章节标题\"彼岸微光\"已自动调整为\"彼岸微光：灰白\"。",
+      "[warning] 最近4章持续高压（沉重→沉默→坚定 -> 沉重→沉默→坚定→温暖→坚定 -> 紧张→震动→坚定→紧张→震动→坚定 -> 沉重→震动→释然→坚定），缺少明显的情绪释放。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3350,
+      "postWriterNormalizeCount": 3350,
+      "postReviseCount": 0,
+      "finalCount": 3350,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 44158,
+      "completionTokens": 17253,
+      "totalTokens": 61411
+    }
   }
 ]

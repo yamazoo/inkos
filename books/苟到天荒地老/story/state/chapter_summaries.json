@@ -749,6 +749,16 @@
       "hookActivity": "H-三钥合一 near-resolution；H-彼岸之门 near-resolution；H-玉佩金线指向 resolved；H-祖父纸条 advancing；H-青鸾弟弟 advancing",
       "mood": "紧张→震动→坚定→紧张→震动→坚定",
       "chapterType": "**重大转折章/执行章/进入彼岸章**"
+    },
+    {
+      "chapter": 132,
+      "title": "彼岸微光",
+      "characters": "陈守一、赵猛、青鸾",
+      "events": "三人在灰白色虚空石台解读石碑碑文揭露大劫真相，发现母亲留下的母字碑文，用三源血脉开启彼岸之门，踏入通向枯井的门内",
+      "stateChanges": "位置（石台→彼岸之门→门内）；资源（三钥黯淡完成使命/获得石片刻纹）；陈守一（发现母亲碑文/精神震动后坚定）；青鸾（虚弱但目光燃烧）；赵猛（坚定同行）",
+      "hookActivity": "H-三钥合一 resolved; H-彼岸之门 resolved; H-祖父纸条 resolved; H-灵气衰减真相 advanced; H-正本清源阴谋 advanced; H-青鸾弟弟命运 advanced",
+      "mood": "沉重→震动→释然→坚定",
+      "chapterType": "真相高潮章/伏笔回收章/重大转折章"
     }
   ]
 }

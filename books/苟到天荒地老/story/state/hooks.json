@@ -1,24 +1,64 @@
 {
   "hooks": [
     {
+      "hookId": "H-彼岸之门",
+      "startChapter": 73,
+      "type": "核心谜题",
+      "status": "resolved",
+      "lastAdvancedChapter": 132,
+      "expectedPayoff": "**下一章**",
+      "payoffTiming": "near-term",
+      "notes": "131章**重大推进**：灰白色虚空显现/紫色月亮悬空/彼岸之门在更深处"
+    },
+    {
       "hookId": "H-灵气衰减真相",
       "startChapter": 73,
       "type": "世界观",
       "status": "progressing",
-      "lastAdvancedChapter": 131,
+      "lastAdvancedChapter": 132,
       "expectedPayoff": "完整世界观揭露",
       "payoffTiming": "mid-arc",
-      "notes": "131章深化：三人进入彼岸虚空/灵气衰减的源头即将面对"
+      "notes": "132章完整揭露：彼岸虚空是人工抽取阵，灵气被抽走维持封印已三百年；被封印的是大劫始作俑者而非冥族回归者；灵气抽干之日封印之物将带三百年怨气杀回灵洲"
     },
     {
-      "hookId": "H-三钥合一",
-      "startChapter": 128,
-      "type": "核心谜题",
-      "status": "open",
-      "lastAdvancedChapter": 131,
-      "expectedPayoff": "**下一章**",
+      "hookId": "H-正本清源阴谋",
+      "startChapter": 109,
+      "type": "威胁",
+      "status": "progressing",
+      "lastAdvancedChapter": 132,
+      "expectedPayoff": "彼岸对峙",
+      "payoffTiming": "mid-arc",
+      "notes": "132章深化：正本清源以为打开封印是让冥族回归，实际放出的将是大劫始作俑者；冥族只是被引来的棋子；后果是天地沦为幽冥领地"
+    },
+    {
+      "hookId": "H-祖父纸条",
+      "startChapter": 122,
+      "type": "线索",
+      "status": "resolved",
+      "lastAdvancedChapter": 132,
+      "expectedPayoff": "重建桥梁执行章",
       "payoffTiming": "near-term",
-      "notes": "131章**重大推进**：三钥嵌入石壁/石门开启/虚空入口显现"
+      "notes": "131章关联：\"门后之人可入门内之物不可出\"与纸条呼应"
+    },
+    {
+      "hookId": "H-青鸾体内余烬",
+      "startChapter": 123,
+      "type": "关键",
+      "status": "progressing",
+      "lastAdvancedChapter": 132,
+      "expectedPayoff": "重建桥梁执行章",
+      "payoffTiming": "near-term",
+      "notes": "132章关联：青鸾问重建桥梁能否阻止一切，陈守一说余烬能帮忙；母亲碑文揭示三源之血可开启重建之机"
+    },
+    {
+      "hookId": "H-青鸾弟弟命运",
+      "startChapter": 126,
+      "type": "悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 132,
+      "expectedPayoff": "重建桥梁执行章揭露代价细节",
+      "payoffTiming": "slow-burn",
+      "notes": "陈守一只说三源合一代价已付出了一半，剩下一半代价是什么？赵猛被眼神制止追问，青鸾/赵猛仍不知具体代价"
     },
     {
       "hookId": "H-玉佩金线指向",
@@ -30,54 +70,14 @@
       "notes": "131章回收：金线指向正确/三人抵达石门前"
     },
     {
-      "hookId": "H-青鸾体内余烬",
-      "startChapter": 123,
-      "type": "关键",
-      "status": "progressing",
-      "lastAdvancedChapter": 131,
-      "expectedPayoff": "重建桥梁执行章",
-      "payoffTiming": "near-term",
-      "notes": "131章深化：青鸾确认余烬能帮忙/三角凹槽紫色微光/玉佩嵌入激活"
-    },
-    {
-      "hookId": "H-祖父纸条",
-      "startChapter": 122,
-      "type": "线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 131,
-      "expectedPayoff": "重建桥梁执行章",
-      "payoffTiming": "near-term",
-      "notes": "131章关联：\"门后之人可入门内之物不可出\"与纸条呼应"
-    },
-    {
-      "hookId": "H-正本清源阴谋",
-      "startChapter": 109,
-      "type": "威胁",
-      "status": "progressing",
-      "lastAdvancedChapter": 131,
-      "expectedPayoff": "彼岸对峙",
-      "payoffTiming": "mid-arc",
-      "notes": "131章威胁延续：正本清源可能追踪/三人已进入虚空"
-    },
-    {
-      "hookId": "H-彼岸之门",
-      "startChapter": 73,
+      "hookId": "H-三钥合一",
+      "startChapter": 128,
       "type": "核心谜题",
-      "status": "open",
-      "lastAdvancedChapter": 131,
+      "status": "resolved",
+      "lastAdvancedChapter": 132,
       "expectedPayoff": "**下一章**",
       "payoffTiming": "near-term",
-      "notes": "131章**重大推进**：灰白色虚空显现/紫色月亮悬空/彼岸之门在更深处"
-    },
-    {
-      "hookId": "H-青鸾弟弟命运",
-      "startChapter": 126,
-      "type": "悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 131,
-      "expectedPayoff": "待揭露",
-      "payoffTiming": "mid-arc",
-      "notes": "131章暗示：青鸾弟弟曾站在石壁前/见过这扇门"
+      "notes": "131章**重大推进**：三钥嵌入石壁/石门开启/虚空入口显现"
     }
   ]
 }
