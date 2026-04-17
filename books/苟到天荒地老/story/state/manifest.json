@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 133,
+  "lastAppliedChapter": 134,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -281,6 +281,10 @@
     "H-正本清源阴谋:status normalized from \"advancing\" to \"open\"",
     "H-正本清源阴谋:lastAdvancedChapter normalized from \"133章碑文强化：敌在封印内不在封印外/正本清源错解一字/后果自取灭亡\" to 0",
     "H-三源代价均摊:lastAdvancedChapter normalized from \"133章揭露：代价三人均摊/机制未明/均摊有条件\"一心不舍则桥不通\"\" to 0",
-    "H-第三根木桩:lastAdvancedChapter normalized from \"133章确认：井底孔洞深处有青白光芒/第三根木桩在那里\" to 0"
+    "H-第三根木桩:lastAdvancedChapter normalized from \"133章确认：井底孔洞深处有青白光芒/第三根木桩在那里\" to 0",
+    "H-三源代价均摊:status normalized from \"**reaching climax**\" to \"open\"",
+    "H-第三根木桩:status normalized from \"**resolving**\" to \"open\"",
+    "H-陈守一真正死因/代价:status normalized from \"**new**\" to \"open\"",
+    "H-陈守一想活的原因:status normalized from \"**new**\" to \"open\""
   ]
 }

@@ -1,53 +1,53 @@
 {
-  "chapter": 133,
+  "chapter": 134,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "彼岸之门内（桥心石台/枯井边缘）",
-      "validFromChapter": 133,
+      "object": "彼岸石桥（桥面中央/三根木桩之间）",
+      "validFromChapter": 134,
       "validUntilChapter": null,
-      "sourceChapter": 133
+      "sourceChapter": 134
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "精神坚定/寿元已折两年（实际剩余四年但折损两年）/决心开桥",
-      "validFromChapter": 133,
+      "object": "精神坚定/寿元4年/决心开桥/金痕激活按在桥心凹槽/核心秘密被青鸾揭露",
+      "validFromChapter": 134,
       "validUntilChapter": null,
-      "sourceChapter": 133
+      "sourceChapter": 134
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "找到下井路径/完成三源归位/寻找第三根木桩/准备开桥",
-      "validFromChapter": 133,
+      "object": "完成第三根木桩/开启桥梁/重建两界通道",
+      "validFromChapter": 134,
       "validUntilChapter": null,
-      "sourceChapter": 133
+      "sourceChapter": 134
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "三源代价均摊机制未知/青鸾身体虚弱/赵猛需补上弟弟的空位/第三根木桩在井底孔洞深处",
-      "validFromChapter": 133,
+      "object": "三源代价机制已部分明确（均摊/命用于开路）/青鸾身体虚弱/赵猛体力耗尽/桥梁开启的最后一步",
+      "validFromChapter": 134,
       "validUntilChapter": null,
-      "sourceChapter": 133
+      "sourceChapter": 134
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "陈守一+赵猛+青鸾 三人同行/井底封印之物在等待",
-      "validFromChapter": 133,
+      "object": "陈守一+赵猛+青鸾 三人同心/彼岸石桥等待开启",
+      "validFromChapter": 134,
       "validUntilChapter": null,
-      "sourceChapter": 133
+      "sourceChapter": 134
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "重建桥梁阻止大劫 vs 三源代价均摊/均摊机制不明",
-      "validFromChapter": 133,
+      "object": "重建桥梁阻止大劫 vs 三源代价均摊/代价是命/陈守一金痕按在桥心即将完成",
+      "validFromChapter": 134,
       "validUntilChapter": null,
-      "sourceChapter": 133
+      "sourceChapter": 134
     }
   ]
 }
