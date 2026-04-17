@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 157,
+  "lastAppliedChapter": 158,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -326,6 +326,28 @@
     "H-哑娘三十年的东西:status normalized from \"**新埋设**\" to \"open\"",
     "H-三年时间窗口:status normalized from \"**新埋设**\" to \"open\"",
     "H-玉坠与金痕共鸣:status normalized from \"新种\" to \"open\"",
-    "H-玉坠与金痕共鸣:lastAdvancedChapter normalized from \"玉坠接触时眉心金痕微微发热/心跳漏拍\" to 0"
+    "H-玉坠与金痕共鸣:lastAdvancedChapter normalized from \"玉坠接触时眉心金痕微微发热/心跳漏拍\" to 0",
+    "H-正本清源城东据点:lastAdvancedChapter normalized from \"158章：发现长老级人物/至少四人/执法堂道袍/仪式场景/玉简/情报核心揭露\" to 0",
+    "H-正本清源阴谋:lastAdvancedChapter normalized from \"158章：长老亲口揭露目的（冥族回归/两界合一）/\"等待三百年\"/城东布局完成/追查三源后人\" to 0",
+    "H-三年时间窗口:status normalized from \"**活跃→紧迫化**\" to \"open\"",
+    "H-三年时间窗口:lastAdvancedChapter normalized from \"158章：长老透露\"明年春天\"前有动作/三年之约恐有变/时间窗口大幅缩短\" to 0",
+    "H-三源后人被盯上:status normalized from \"**活跃→紧急**\" to \"open\"",
+    "H-三源后人被盯上:lastAdvancedChapter normalized from \"158章：正本清源知道三源后人位置/追查支脉后人/三源后人不能凑一起\" to 0",
+    "H-第四条灵脉:status normalized from \"**活跃→关键**\" to \"open\"",
+    "H-第四条灵脉:lastAdvancedChapter normalized from \"158章：明年春天前切断/切断后封印彻底崩溃/陈守一想打听位置\" to 0",
+    "H-彼岸守夜者:startChapter normalized from \"133/156\" to 0",
+    "H-彼岸守夜者:status normalized from \"**活跃→新信息**\" to \"open\"",
+    "H-彼岸守夜者:lastAdvancedChapter normalized from \"158章：正本清源眼线知道守夜者\"还没死透\"/在等陈守一继承/暂不打草惊蛇\" to 0",
+    "H-三源归一:status normalized from \"**活跃**\" to \"open\"",
+    "H-三源归一:lastAdvancedChapter normalized from \"158章：三源后人凑一起会成气候/正本清源担忧\" to 0",
+    "H-正本清源内部矛盾:status normalized from \"**铺垫→可用**\" to \"open\"",
+    "H-正本清源内部矛盾:lastAdvancedChapter normalized from \"158章：暗示可利用/\"三百年的分支已背道而驰\"\" to 0",
+    "H-玉坠与金痕:startChapter normalized from \"155/156\" to 0",
+    "H-玉坠与金痕:status normalized from \"**活跃→新动态**\" to \"open\"",
+    "H-玉坠与金痕:lastAdvancedChapter normalized from \"158章：玉坠温度\"悄悄消退了些许\"/眉心金痕\"微微一跳\"（回应/警告）\" to 0",
+    "H-修复封印代价:status normalized from \"**活跃**\" to \"open\"",
+    "H-修复封印代价:lastAdvancedChapter normalized from \"158章：陈守一仍有两年寿元/需要燃烧大部分寿元\" to 0",
+    "H-祖父身世:lastAdvancedChapter normalized from \"156章：第四股血脉/与三源先祖并肩/燃烧生机注入锁链\" to 0",
+    "H-苏婉儿身世:lastAdvancedChapter normalized from \"156章：第四股血脉传承/找到归属/\"以前没有家，现在有了\"\" to 0"
   ]
 }

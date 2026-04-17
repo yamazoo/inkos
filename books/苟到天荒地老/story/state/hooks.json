@@ -1,3 +1,112 @@
 {
-  "hooks": []
+  "hooks": [
+    {
+      "hookId": "H-正本清源城东据点",
+      "startChapter": 149,
+      "type": "侦查目标",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "持续/与主线交织",
+      "notes": "**重大情报揭露**：三年内有裂口/明年春天切断第四条灵脉/三源后人被盯上"
+    },
+    {
+      "hookId": "H-正本清源阴谋",
+      "startChapter": 109,
+      "type": "核心主线",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "三年后大劫",
+      "notes": "**目的完整揭露**：冥族回归/两界合一/三百年等待"
+    },
+    {
+      "hookId": "H-三年时间窗口",
+      "startChapter": 148,
+      "type": "核心主线",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "三年后",
+      "notes": "**时间大幅缩短**：三年→明年春天（不足半年）"
+    },
+    {
+      "hookId": "H-三源后人被盯上",
+      "startChapter": 158,
+      "type": "新种",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待定",
+      "notes": "**新伏笔**：苏婉儿/赵猛/青鸾被正本清源盯上"
+    },
+    {
+      "hookId": "H-第四条灵脉",
+      "startChapter": 158,
+      "type": "新种",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "三年后",
+      "notes": "**新伏笔**：第四条灵脉是封印核心稳定的关键"
+    },
+    {
+      "hookId": "H-彼岸守夜者",
+      "startChapter": 0,
+      "type": "关联",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待定",
+      "notes": "**新信息**：守夜者位置有眼线/等陈守一继承"
+    },
+    {
+      "hookId": "H-三源归一",
+      "startChapter": 158,
+      "type": "新种",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待定",
+      "notes": "**新伏笔**：三源归一的潜在力量"
+    },
+    {
+      "hookId": "H-正本清源内部矛盾",
+      "startChapter": 109,
+      "type": "隐线",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待定",
+      "notes": "**策略伏笔**：内部并非铁板一块"
+    },
+    {
+      "hookId": "H-玉坠与金痕",
+      "startChapter": 0,
+      "type": "资源关联",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待揭示",
+      "notes": "**新动态**：金痕与玉坠在回应某物"
+    },
+    {
+      "hookId": "H-修复封印代价",
+      "startChapter": 156,
+      "type": "核心主线",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "三年后",
+      "notes": "修复封印需燃烧大部分寿元"
+    },
+    {
+      "hookId": "H-祖父身世",
+      "startChapter": 156,
+      "type": "支线完成",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "N/A",
+      "notes": "祖父身世完整揭示"
+    },
+    {
+      "hookId": "H-苏婉儿身世",
+      "startChapter": 156,
+      "type": "情感主线",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "N/A",
+      "notes": "苏婉儿身世与情感线完整"
+    }
+  ]
 }
