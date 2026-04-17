@@ -1,24 +1,24 @@
 {
   "hooks": [
     {
-      "hookId": "H-三源血脉传承",
-      "startChapter": 140,
-      "type": "**新伏笔**",
-      "status": "open",
-      "lastAdvancedChapter": 141,
-      "expectedPayoff": "open",
-      "payoffTiming": "mid-arc",
-      "notes": "**141章深化：苏婉儿手腕三道弧线交汇疤痕与井底符号如出一辙/确认是三源血脉特征之一**"
+      "hookId": "H-封印完全修复",
+      "startChapter": 133,
+      "type": "core_goal",
+      "status": "progressing",
+      "lastAdvancedChapter": 142,
+      "expectedPayoff": "封印完全修复",
+      "payoffTiming": "slow-burn",
+      "notes": "142章推进：封印不稳原因揭露——母亲念力三百年消耗殆尽，只剩两三成硬撑；窗外闷响/青光闪烁暗示根基持续动摇"
     },
     {
-      "hookId": "H-苏婉儿身世",
-      "startChapter": 140,
-      "type": "**新伏笔**",
-      "status": "open",
-      "lastAdvancedChapter": 141,
-      "expectedPayoff": "open",
+      "hookId": "H-正本清源后果",
+      "startChapter": 133,
+      "type": "threat",
+      "status": "progressing",
+      "lastAdvancedChapter": 142,
+      "expectedPayoff": "正本清源阴谋被粉碎",
       "payoffTiming": "mid-arc",
-      "notes": "**141章重大揭露：苏婉儿也是三源之一/祖父临终遗言\"替我守好这座桥\"/祖父手腕也有浅印记/祖母或更早先祖与三源有关联**"
+      "notes": "142章推进：正本清源认为冥族是回归者非入侵者，三百年前那批人也是这么想的（愚蠢）；陈守一评价'愚蠢'时话语寒意让温度下降"
     },
     {
       "hookId": "H-三人的未来",
@@ -31,24 +31,24 @@
       "notes": "**141章延伸：四人皆残缺但在聚居点安顿/\"会恢复的\"/\"人还在就有办法\"/新的故事刚开始**"
     },
     {
-      "hookId": "H-封印完全修复",
-      "startChapter": 133,
-      "type": "核心目标",
-      "status": "open",
-      "lastAdvancedChapter": 141,
-      "expectedPayoff": "open",
-      "payoffTiming": "mid-arc",
-      "notes": "**141章推进：窗外传来闷响暗示根基不稳/三根木桩归位只是暂时稳住/需要很长时间**"
+      "hookId": "H-三源血脉传承",
+      "startChapter": 140,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 142,
+      "expectedPayoff": "周平在三源血脉中的角色",
+      "payoffTiming": "slow-burn",
+      "notes": "142章新揭示：周平是苏婉儿祖父唯一信任的人；执法堂成员，三十年前被贬；当年暗中帮助过陈守一（指点后山老槐树/被押往执法堂时给逃跑机会）；可能知道更多三源血脉秘密；苏婉儿提议找他帮忙探风声"
     },
     {
-      "hookId": "H-正本清源后果",
-      "startChapter": 133,
-      "type": "背景威胁",
-      "status": "open",
-      "lastAdvancedChapter": 141,
-      "expectedPayoff": "open",
+      "hookId": "H-苏婉儿身世",
+      "startChapter": 140,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 142,
+      "expectedPayoff": "苏婉儿完整身世揭露",
       "payoffTiming": "mid-arc",
-      "notes": "**141章延续：正本清源不会善罢甘休/下一步动向未明**"
+      "notes": "142章推进：确认三源血脉身份；祖父也有相同玉佩和疤痕；苏婉儿提议可找祖父旧友周平帮忙探风声"
     },
     {
       "hookId": "H-神秘老者身份",
@@ -62,20 +62,22 @@
     {
       "hookId": "H-母亲遗物两块玉佩",
       "startChapter": 141,
-      "type": "**新伏笔**",
-      "status": "open",
-      "lastAdvancedChapter": 141,
-      "expectedPayoff": "**open**",
-      "notes": "**陈守一已有一块母亲玉佩（温热残留）/神秘老者送来第二块（残破/300年前遗物）/两块玉佩的关系未明**"
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 142,
+      "expectedPayoff": "两块玉佩合一的秘密",
+      "payoffTiming": "mid-arc",
+      "notes": "142章重大推进：断口刻痕与旧玉三个凹点三角形排列被揭露，两块玉佩昨夜同时发烫同源呼应，三源归位可能需要三块玉"
     },
     {
       "hookId": "H-苏婉儿祖父遗言",
       "startChapter": 141,
-      "type": "**新伏笔**",
-      "status": "open",
-      "lastAdvancedChapter": 141,
-      "expectedPayoff": "**open**",
-      "notes": "**\"替我守好这座桥\"与母亲遗言相同/祖父也是守夜者相关/祖父手腕有浅印记/血脉传承暗示**"
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 142,
+      "expectedPayoff": "苏婉儿祖父与守夜者的完整关系",
+      "payoffTiming": "mid-arc",
+      "notes": "142章回收：祖父遗言'替我守好这座桥'与母亲碑文完全一致，两条传承线汇合，祖父也有相同玉佩和疤痕"
     }
   ]
 }
