@@ -1,0 +1,120 @@
+{
+  "chapter": 104,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "灵气稀薄：仅为上古的千分之一"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "揭露大劫真相"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "103: 觉醒 | 102: 归途 | 101: 抉择 | 100: 燃灯 | 99: 镇界"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "103: 沉重→紧张（分身逼近）→坚定（不跑）→震惊（桥回应）→震动（第一个守夜者身影）→期待（帛书声音）→沉重（声音消散）→紧张（未知存在）→坚定（三个时辰够了） / **关键转折章/觉醒章/真相深化章/第三条路线索章** | 102: 沉重（末法真相）→震惊（三个选择）→紧张（冥将逼近）→悲痛（秦无涯断后）→坚定（独自引开）→紧张（分头跑） / **转折章/牺牲章/新方向确立章** | 101: 震惊（冥将等待）→沉重（抉择困境）→震动（师兄神魂）→震惊（血脉真相）→紧张（暗号触发）→震惊（印记激活）→沉重（代价确认）→震动（桥在回应）→期待（临渊城方向）→坚定（第三条路） / **抉择章/关键信息揭露章/仪式开始章/新方向确立章** | 100: 紧张→恐惧→拼命→震动（师兄神魂）→震惊（冥将目的）→悲痛（\"知道会这样\"）→释然（秦无涯）→紧张（狂奔）→释然（逃出）→沉重（三天时限）→绝望（桥终将崩塌） / **逃亡章/师兄神魂揭示章/新希望章/紧张升级章/悬念确立章** | 99: 沉重→震惊→悲痛→坚定→紧张→期待 / **真相深化章/紧张升级章/转折章**"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch101: 不是偶然。是他自己，走到这里的。 | ch102: 够他做很多事了。 | ch103: 答案，也许就在前方。"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 冥将分身紧追vs独自引开分身/三个时辰时限紧迫/金线临界点vs觉醒程度未知/第三条路位置vs帛书提示\"门后\"vs暗河入口只是入口/桥的回应vs分身干扰能力"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **三个时辰内找到第三个选择/引开冥将分身争取时间/前往临渊城西北三十里暗河入口/找到剩余两个见过冥族的支撑点**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 极度虚弱（持续）/经脉灼烧感（持续）/双腿灌铅感/金线蔓延至胸口（临界点停住）/七窍渗血（持续）/体力严重透支/手背金线（剧烈跳动/觉醒中/干扰血脉锁定）/三源合一气息外散形成金色薄膜/**新：金线不再继续往下爬（临界点）/**新：双腿能动了（剧痛减轻）/**新：桥的回应干扰了分身血脉锁定**"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 冥将分身紧追（一具继续盯着/一具去通知本体）/三个时辰时限/金线蔓延至胸口/七窍渗血/体力透支/**新：密林深处有更强大的陌生气息（被桥震动惊醒的沉睡者）**"
+    },
+    {
+      "source": "story/chapter_summaries.md#73",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "彼岸大劫 | 1.陈守一与赵猛抵达遗迹入口（晨曦将起/令牌发烫）；2.玉佩与令牌按在光幕（三色光芒/三源归一）；3.遗迹内部场景（群山苍茫/灵气浓郁/古老威压）；4.山中守护者现身（幽蓝光芒巨兽/金色竖瞳/近乎消散）；5.上古大劫真相揭露（冥族入侵/黑潮/冥族三等级：幽冥兽/冥将/冥王）；6.封印机制揭露（冥将不可死/只能封印/三源之力维持）；7.陈守一追问代价（生机消耗加速/一年）；8.寿元从五年变为四年；9.守夜者与山中守护者关系揭露（一体两面/守夜者燃烧/守护者守护）；10.三源合一血脉唯一性揭露；11.\"正本清源\"组织揭露（三百年分支/认为冥族是回归者）；12.执法堂长老是内鬼核心；13.赵猛弟弟真相（用生命点燃封印的英雄）；14.陈守一接受传承（金色光芒涌入/冥将意识试探/七窍渗血）；15.守护者形体消散；16.三重视境（赵猛弟弟/母亲修炼/守夜者身份）；17.赵猛从悲痛转为坚定；18.遗迹震颤崩塌；19.母亲残念最后现身（\"替我告诉她\"）；20.残念消散；21.两人逃出遗迹（向聚居点奔去）；22.两天半期限/风暴将至 | 陈守一：位置（遗迹→山谷外草地→向聚居点）；寿元（五年→四年）；状态（金痕觉醒/神魂被冥将试探/七窍渗血）；获得（完整封印机制知识/\"正本清源\"组织情报）；赵猛：看到弟弟死前真相/从悲痛转为坚定/接受同行；山中守护者：消散；母亲残念：彻底消散；守夜者：真实身份揭露 | H100/H105/H106/H098/H093/H097 resolved；H107/H108/H109/H110/H111 new"
+    },
+    {
+      "source": "story/chapter_summaries.md#99",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "镇界 | 1.秦无涯小屋场景；2.秦无涯揭露桥的真相（镇界之桥/封印非通行）；3.秦无涯揭露三百年前大劫完整细节（十七人赴死/三源合一架桥）；4.秦无涯揭露末法时代真相（不是天灾是人祸/维持桥需要消耗灵气）；5.秦无涯揭露献祭真相（神魂永钉裂隙/三百年来从17人增至100多人）；6.青鸾短暂清醒说\"师父师兄不是自己要送死\"；7.秦无涯揭露青鸾师父完整故事（想毁桥失败/反噬分成两份/师兄神魂一半在青鸾体内）；8.青鸾八岁目睹师兄死亡真相；9.窗外咆哮/冥将信使确认（比普通残念更高）；10.半个时辰倒计时开始（冥将亲至）；11.陈守一问\"有没有别的路\"；12.秦无涯暗示暗道存在（师兄留的）；13.黑雾包围小屋/信使已到 | 陈守一位置（逃亡中→秦无涯小屋/听到桥完整真相）；青鸾（侵蚀蔓延心口/短暂清醒后再次昏迷/师兄神魂在其体内）；威胁升级（冥将信使/半个时辰后冥将亲至）；新选项（暗道逃生）；秦无涯揭露完整桥真相 | H150/H152/H153/H154深化；H146深化（\"有没有别的路\"）；H155/H156/H157新增"
+    },
+    {
+      "source": "story/chapter_summaries.md#102",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "归途 | 1.秦无涯递上帛书；2.帛书正面：七点星图（见过冥族者位置）；3.帛书背面揭示末法真相（不是天灾是主动封印）；4.帛书揭示三个选择；5.冥将感应到印记激活不再等待；6.冥将逼近加速；7.秦无涯主动断后；8.秦无涯燃尽消散；9.沈炼带孩子往北偏西跑；10.西北方向出现分身堵路；11.陈守一决定独自引开分身；12.陈守一将青鸾交给沈炼；13.陈守一往反方向跑去 | 陈守一位置（河床边→往北偏西跑→独自引开分身）；陈守一状态（独自面对冥将分身）；秦无涯（消散）；青鸾（交给沈炼）；沈炼+孩子+青鸾（往北偏西方向）；冥将（本体紧追/多个分身逼近/分身堵路） | H153/H150 resolve（秦无涯完成使命）；H161/H162新增（第三条路/秦无涯消散）；其他钩子深化"
+    },
+    {
+      "source": "story/chapter_summaries.md#103",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "觉醒 | 1.陈守一消失在夜色中独自引开分身；2.金线继续蔓延（手腕→小臂→肩膀→膝盖）；3.金线跳动频率变化（不再追随冥族气息，而是指向西北方向/桥）；4.两具分身逼近（一左一右夹击）；5.陈守一停止逃跑面对分身；6.金线继续蔓延至手腕（气息外散干扰血脉锁定）；7.远方传来桥的低沉轰鸣（三百年首次回应）；8.第一个守夜者身影浮现（\"三百年前我用血肉为桩架桥/不是封印是等待\"）；9.\"血脉非偶然，选择方为真\"确认；10.金线蔓延至肩膀（觉醒加速）；11.分身被桥的回应惊惧，动作变慢；12.帛书发烫，第一个走上桥的人的意志发声；13.帛书声音揭示：帛书是第一个走上桥的人写的/七个光点四个还活着/临渊城方向两个/暗河入口只是入口不是答案/\"那座桥不是你想的那样\"；14.帛书声音揭示关键信息：\"第三条路，不在桥上，也不在锁里。在门后。\"；15.帛书温度冷却，声音消散；16.密林深处传来异响（被桥震动惊醒的未知存在）；17.分身决定分头行动（一继续盯，一去通知本体）；18.金线蔓延至胸口（临界点停住），双腿能动了；19.陈守一望向西北方向，\"三个时辰，够了\" | 陈守一位置（独自引开分身→面对分身对峙）；陈守一状态（金线蔓延胸口/临界点/双腿能动了/觉醒中/气息外散干扰锁定）；金线（从手腕蔓延至胸口/临界点/干扰血脉锁定）；分身（一继续盯陈守一/一去通知本体/对桥震动感到惧意）；帛书（发烫→冷却/声音已消散）；桥（三百年首次回应/第一个守夜者身影浮现）；**新：密林深处有未知存在被惊醒** | H159/H160深化（觉醒临界点/桥回应）；H161深化（\"第三条路在门后\"）；H162深化（帛书声音消散）；H157深化（分身分头行动）；**H163/H164/H165新增**"
+    },
+    {
+      "source": "story/pending_hooks.md#H146_桥需要更多支撑",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | near-term | near-term | 帛书揭示末法真相（故意封印灵气）；炼气期为常态是保护机制；力量越强越容易被冥族感知；**新：帛书声音揭示七个光点中四个还活着/临渊城方向两个/需要找更多愿意走上桥的人（支撑点）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H163_第一个守夜者身影",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | **near-term** | **新：第一个守夜者的身影在桥回应时浮现（三百年架桥者/面容模糊/眉心金痕与陈守一一样/\"不是我选中的你，而是你自己走到了这里\"）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H164_帛书声音",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | **near-term** | **新：帛书内第一个走上桥的人的意志发声（等了三百年/\"秦无涯给你的帛书是我当年写的\"/七个光点四个还活着/临渊城方向两个/\"那座桥不是你想的那样\"/\"第三条路不在桥上，也不在锁里。在门后\"/声音消散）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H165_密林深处未知存在",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | **near-term** | **新：桥的震动惊醒了密林深处某种古老而强大的存在/不是分身/不是桥的回应/被桥震动惊醒的沉睡者**"
+    },
+    {
+      "source": "story/pending_hooks.md#H161_第三个选择",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | near-term | near-term | 帛书提及第三条路存在；临渊城西北三十里暗河入口是线索；**新：帛书声音揭示\"那座桥不是你想的那样\"/帛书声音揭示\"第三条路不在桥上，也不在锁里。在门后。\"**"
+    },
+    {
+      "source": "story/pending_hooks.md#H162_秦无涯消散",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | near-term | near-term | 秦无涯燃尽最后力量消散；二十年守候使命完成；为众人争取三个时辰；**新：帛书内第一个走上桥的人的意志也已消散（耗尽最后力量传递信息）**"
+    },
+    {
+      "source": "story/pending_hooks.md#H159_印记激活与桥连接",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | near-term | near-term | 冥将感应到印记激活后不再等待；金线剧烈跳动感应桥的位置；印记指向西北方向；**新：金线蔓延至胸口（临界点停住）/三源合一气息外散干扰血脉锁定/桥的回应干扰了分身感知**"
+    },
+    {
+      "source": "story/pending_hooks.md#H160_三源归一代价",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | near-term | near-term | 帛书完整揭示三个选择；选择一代价是消散；选择三是未知；三个时辰时限紧迫；**新：桥在回应（三百年首次）/第一个守夜者身影出现/\"血脉非偶然，选择方为真\"确认**"
+    }
+  ]
+}

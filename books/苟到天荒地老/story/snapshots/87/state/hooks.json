@@ -1,0 +1,92 @@
+{
+  "hooks": [
+    {
+      "hookId": "H135_母亲的抉择",
+      "startChapter": 83,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 87,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**完整深化**：\"渡\"注解揭露；母亲是在知道全部真相后选择继承使命；\"不是绝望中的牺牲，是清醒者的承担\"；知道三百年前发生了什么、将要面对什么，仍选择继承；曾祖母延缓三年确保母亲清醒而非绝望中选择"
+    },
+    {
+      "hookId": "H114_末法时代真相",
+      "startChapter": 77,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 87,
+      "expectedPayoff": "80-100章",
+      "notes": "**完整揭露深化+回收**：三百年前幽冥界裂缝扩张至无法封印；两个选择（一起死vs牺牲修行界未来）；人类主动切断天地灵气根源；用三源合一者生命封印裂缝斩断灵气之源；从此灵气千分之一；金丹成传说/筑基成神话/炼气期修士活不过五十；**完整核心揭露：\"不是天灾，是人祸\"——人类祖先亲手斩断修行根**"
+    },
+    {
+      "hookId": "H136_有东西在靠近通道",
+      "startChapter": 84,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 87,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**确认延续到祭坛**：来到祭坛石室；三源通道交汇点崩溃加速（裂纹扩大/暗红液体渗出/黑气涌出）；祭坛深处传来异响（脚步声/拖曳声）；**气息确认：与冥将意识如出一辙却更浓郁更饥饿**；**确认不止一个（三个身影显现）**"
+    },
+    {
+      "hookId": "H138_组织走捷径",
+      "startChapter": 84,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 87,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：第一件同源之物被人取走；新鲜刮痕和脚印（幼小）；可能是组织、冥将手下、或其他什么人"
+    },
+    {
+      "hookId": "H133_三源通道交汇点",
+      "startChapter": 83,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 87,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**崩溃加剧**：裂纹扩大/暗红液体渗出/黑气涌出加剧/水位上涨；陈守一三源气息与三百年阵法共鸣激活幽蓝屏障（争取一盏茶功夫）"
+    },
+    {
+      "hookId": "H134_献祭图纸",
+      "startChapter": 83,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 87,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "献祭图纸与墙壁符文对照吻合；图纸塞进贴身衣襟；\"三源归一，幽冥永镇\"；待进一步解读"
+    },
+    {
+      "hookId": "H139_祭坛深处存在",
+      "startChapter": 86,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 87,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：石室最深处空石台；三源同源之物第一件被人取走；**新线索：幼小脚印（不是成年人）**；**新线索：青鸾呓语\"守夜者的最后的\"**；暗示守夜者体系还有孩子；**三个身影显现**"
+    },
+    {
+      "hookId": "H137_三源归一仪式代价",
+      "startChapter": 84,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 84,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "以生命为代价/仪式完成即消散/与陈守一两年出头寿元相关"
+    },
+    {
+      "hookId": "H140_三源归一新理解",
+      "startChapter": 87,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**80-100章**",
+      "notes": "**青鸾呓语**：\"三源归一不是锁，是桥\"；三百年前人们以为打造锁封住裂缝；**真正意义可能是连接——让人类和幽冥界共存却永不相融**；与\"三源归一，幽冥永镇\"（永恒压制/永远平衡）产生新理解空间"
+    }
+  ]
+}

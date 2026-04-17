@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "volumeId": "vol-1",
+  "entries": [],
+  "arcShape": "alternating",
+  "arcDescription": "",
+  "nextChapterMoodTarget": {
+    "tension": "up",
+    "excitement": "same",
+    "warmth": "same",
+    "reason": "init"
+  }
+}

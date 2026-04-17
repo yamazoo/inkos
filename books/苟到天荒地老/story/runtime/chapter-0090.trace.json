@@ -1,0 +1,36 @@
+{
+  "chapter": 90,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0090.intent.md"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0090.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#chapter_89_bridge",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#73",
+    "story/chapter_summaries.md#84",
+    "story/chapter_summaries.md#87",
+    "story/chapter_summaries.md#88",
+    "story/pending_hooks.md#H144_孩子身份之谜",
+    "story/pending_hooks.md#H145_陈守一决定引开分身",
+    "story/pending_hooks.md#H141_守夜者最后一人",
+    "story/pending_hooks.md#H143_母亲玉佩碎片",
+    "story/pending_hooks.md#H139_祭坛深处存在",
+    "story/pending_hooks.md#H137_三源归一仪式代价",
+    "story/pending_hooks.md#H138_组织走捷径"
+  ],
+  "notes": []
+}

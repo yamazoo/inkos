@@ -1,53 +1,53 @@
 {
-  "chapter": 94,
+  "chapter": 106,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "**祭坛遗址外围山谷（山洞附近→与沈炼对峙）**",
-      "validFromChapter": 93,
+      "predicate": "当前冲突",
+      "object": "门后有等待300年的存在/七人进门只出来两人/第三条路未知",
+      "validFromChapter": 106,
       "validUntilChapter": null,
-      "sourceChapter": 93
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "**极度虚弱；三源之力反噬持续（经络乱窜/经脉火烫冰浸）；寿元两年出头；灵力近乎枯竭；两枚玉佩同时发热（新一旧/母亲的遗物/守夜者三百年前留下）；镇冥石碎片效力已过；身体撑不住但撑五里地没问题；两枚镇冥石碎片已消耗（用于引开分身）；反噬加重（五脏六腑被拧过）；与孩子重逢（孩子精神萎靡/衣衫破损/脸上有擦伤）**",
-      "validFromChapter": 93,
-      "validUntilChapter": null,
-      "sourceChapter": 93
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "1. 活着 2. 恢复伤势（极度虚弱） 3. 与赵猛汇合（已完成） 4. **引开冥将残念分身（已完成/分身被引向断崖深渊）** 5. **找到孩子（已完成/孩子给第一件同源之物）** 6. 寻找三件同源之物（第一件：获得；第二件：黑雾深处；第三件：体内） 7. 封印三源通道交汇点（两个月时限） 8. 疏散三聚居点居民（三个月黑雾抵达） 9. 完成三源合一成为活的桥锚点（两年出头） 10. 安置周沉遗体 11. 解读献祭图纸 12. **寻找更多愿意走上那座桥的人（支撑点）** 13. **回去找孩子（已完成）** 14. **活着回来（进行中）** 15. **了解沈炼知道的信息（关于桥/三百年前/母亲/仪式需要什么）**",
-      "validFromChapter": 93,
-      "validUntilChapter": null,
-      "sourceChapter": 93
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "寿元仅剩两年出头；极度虚弱；灵力近乎枯竭；三源之力狂涌（代价立竿见影）；三源通道交汇点崩溃加速（两个月）；黑雾三个月抵达三聚居点；两枚镇冥石碎片已消耗；镇冥石碎片效力已过（分身可能重新锁定）；反噬加重；沈炼带人找到他们（目的不明）",
-      "validFromChapter": 93,
-      "validUntilChapter": null,
-      "sourceChapter": 93
+      "sourceChapter": 106
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "黑雾（三个月到三聚居点/两个月封印崩溃）；冥将残念分身（从三源通道交汇点渗出/三百年前封印崩溃时被切割出来/饿了很久/比守夜者孩子强/三双幽蓝眼睛/被镇冥石碎片引向断崖深渊/镇冥石碎片效力已过可能重新锁定）；冥将（裂缝中/意识试探）；玄清宗内鬼（已确认）；三源通道交汇点（崩溃加速/渗出冥将残念分身）；守夜者最后一人（孩子/可信/给了第一件同源之物/往西跑躲避/与陈守一重逢）；沈炼（可信/带着青鸾/与陈守一同行/从三聚居点方向过来/声称有关于桥/三百年前/母亲/仪式需要什么的信息）；赵猛（同行/在原地保护周沉遗体）；周沉（已死亡/遗体由赵猛保护）；青鸾（重伤昏迷/侵蚀蔓延锁骨以下/被沈炼背着）；**镇冥石碎片（已消耗/分身被引向断崖深渊/效力已过）**",
-      "validFromChapter": 93,
+      "object": "冥将分身已离开去接应本体（本体行踪未知）",
+      "validFromChapter": 106,
       "validUntilChapter": null,
-      "sourceChapter": 93
+      "sourceChapter": 106
     },
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "**寻找愿意走上那座桥的人（支撑点）**；**引开冥将残念分身（已完成/分身被引向断崖深渊）**；寻找三源同源之物（第一件已获得）；三源通道交汇点崩溃加速（两个月时限）；疏散三聚居点居民（三个月时限）；身体恢复（极度虚弱）；青鸾侵蚀（蔓延锁骨以下）；**\"渡\"完整理解**；**三源归一仪式代价完整理解**；**桥需要更多支撑点的完整理解**；**沈炼知道什么信息（关于桥/三百年前/母亲/仪式需要什么）**；**镇冥石碎片效力已过分身可能重新锁定**",
-      "validFromChapter": 93,
+      "predicate": "当前目标",
+      "object": "找到第三条路/与门后等待300年的存在对话/让桥完全觉醒",
+      "validFromChapter": 106,
       "validUntilChapter": null,
-      "sourceChapter": 93
+      "sourceChapter": 106
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "石门内（门后灰白虚空）",
+      "validFromChapter": 106,
+      "validUntilChapter": null,
+      "sourceChapter": 106
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "无武器/无令牌/门后世界未知/来时方向已留标记",
+      "validFromChapter": 106,
+      "validUntilChapter": null,
+      "sourceChapter": 106
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "恢复中/金线蔓延至小臂/石门已信任/进入门后灰白空间",
+      "validFromChapter": 106,
+      "validUntilChapter": null,
+      "sourceChapter": 106
     }
   ]
 }

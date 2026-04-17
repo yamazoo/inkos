@@ -1,0 +1,48 @@
+{
+  "chapter": 83,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\author_intent.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_focus.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\story_bible.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\volume_outline.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\chapter_summaries.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\book_rules.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_state.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\pending_hooks.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\memory.db"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0083.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#chapter_82_bridge",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "runtime/hook_debt#H115_冥将的目的",
+    "runtime/hook_debt#H114_末法时代真相",
+    "runtime/hook_debt#H127_墓旁脚印",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#73",
+    "story/chapter_summaries.md#77",
+    "story/chapter_summaries.md#78",
+    "story/chapter_summaries.md#80",
+    "story/pending_hooks.md#H114_末法时代真相",
+    "story/pending_hooks.md#H130_周沉遗言",
+    "story/pending_hooks.md#H131_地下河幽冥气息",
+    "story/pending_hooks.md#H132_沈炼二十年等待",
+    "story/pending_hooks.md#H128_黑雾逼近三聚居点",
+    "story/pending_hooks.md#H123_三聚居点",
+    "story/pending_hooks.md#H127_墓旁脚印",
+    "story/pending_hooks.md#H124_三件同源之物"
+  ],
+  "notes": []
+}

@@ -1,0 +1,83 @@
+{
+  "hooks": [
+    {
+      "hookId": "mystery-陈守一需要找到更多见过冥族的人作为支撑点",
+      "startChapter": 95,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 96,
+      "expectedPayoff": "near-term",
+      "notes": "支撑点必须亲眼见过冥族；现在只有陈守一和青鸾两个候选人；孩子见过但没见过冥族本体；沈炼提议去三聚居点找线索"
+    },
+    {
+      "hookId": "H147_壁画女人身份",
+      "startChapter": 93,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 96,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：孩子揭露壁画女人是十七人中第一个自愿走上桥的人；是她留下了那枚玉佩；陈守一血脉源自她"
+    },
+    {
+      "hookId": "H143_母亲玉佩碎片",
+      "startChapter": 88,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 95,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "沈炼完整揭露：玉佩是三百年前壁画女人的遗物；女人是十七人之一；陈守一血脉源自三百年前"
+    },
+    {
+      "hookId": "H139_祭坛深处存在",
+      "startChapter": 86,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 96,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**威胁再临**：镇冥石碎片效力彻底过了；三双幽蓝眼睛再次出现锁定他们；三人逃跑/跳河脱险/分身在河边徘徊"
+    },
+    {
+      "hookId": "H137_三源归一仪式代价",
+      "startChapter": 84,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 96,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "沈炼完整揭露仪式条件：支撑点必须亲眼见过冥族；三源合一者是核心；传承来自三百年前那个人"
+    },
+    {
+      "hookId": "H138_组织走捷径",
+      "startChapter": 84,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 96,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "沈炼揭露：青鸾师父二十年前实验失败死亡；青鸾活下来但代价是侵蚀；组织方法已证明是死路"
+    },
+    {
+      "hookId": "H146_桥需要更多支撑",
+      "startChapter": 92,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 96,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "陈守一决定告诉人们真相让他们自己选择；沈炼同意；目标是找到更多见过冥族愿意上桥的人"
+    },
+    {
+      "hookId": "H144_孩子身份之谜",
+      "startChapter": 89,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 96,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：孩子师父是第八代守夜者，三十年前接替陈守一母亲守护那座桥；临死前把一切传给孩子"
+    }
+  ]
+}

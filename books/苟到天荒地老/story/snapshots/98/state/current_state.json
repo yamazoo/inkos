@@ -1,0 +1,53 @@
+{
+  "chapter": 98,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "雾隐山脉古道 → 秦无涯小屋",
+      "validFromChapter": 98,
+      "validUntilChapter": null,
+      "sourceChapter": 98
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "极度虚弱（持续）/经脉灼烧感（持续）/两枚玉佩（湿透但紧握）/浑身湿透/膝盖处泥沙/抱孩子/嗓子沙哑",
+      "validFromChapter": 98,
+      "validUntilChapter": null,
+      "sourceChapter": 98
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "**抵达秦无涯小屋/询问桥的真相/找到见过冥族的人作为支撑点**",
+      "validFromChapter": 98,
+      "validUntilChapter": null,
+      "sourceChapter": 98
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "青鸾侵蚀蔓延加速（半个时辰从脖颈蔓延到锁骨以下）/三天内必须到达临渊城/分身白天也能动了",
+      "validFromChapter": 98,
+      "validUntilChapter": null,
+      "sourceChapter": 98
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "沈炼（同行/可信盟友/背青鸾/抵达秦无涯小屋）",
+      "validFromChapter": 98,
+      "validUntilChapter": null,
+      "sourceChapter": 98
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "秦无涯出现救援/两头顶分身被击杀/青鸾侵蚀加速/秦无涯暗示他知道桥的真相",
+      "validFromChapter": 98,
+      "validUntilChapter": null,
+      "sourceChapter": 98
+    }
+  ]
+}

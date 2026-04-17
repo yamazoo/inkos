@@ -1,1128 +1,1044 @@
 [
   {
     "number": 1,
-    "title": "灵草园中逢绝路",
-    "status": "drafted",
-    "wordCount": 3801,
-    "createdAt": "2026-04-14T16:03:07.434Z",
-    "updatedAt": "2026-04-14T16:03:07.434Z",
+    "title": "镇口初遇",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 4743,
-      "postWriterNormalizeCount": 3801,
-      "postReviseCount": 0,
-      "finalCount": 3801,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 24635,
-      "completionTokens": 10554,
-      "totalTokens": 35189
-    }
+    "lengthWarnings": []
   },
   {
     "number": 2,
-    "title": "晨露与暗痕",
-    "status": "ready-for-review",
-    "wordCount": 4258,
-    "createdAt": "2026-04-14T16:54:14.778Z",
-    "updatedAt": "2026-04-14T16:54:14.778Z",
-    "auditIssues": [
-      "[warning] 小路的台词\"看他吃瘪我心里痛快\"是主角视角的内心活动，不应由配角说出。小路的帮助（替主角说话、主动提醒周管事问题）过于主动殷勤，与主角\"不欠人情\"的原则相悖，但主角对此毫无警觉和疑虑。",
-      "[warning] 虫卵危机是精心设计的陷阱，但主角\"折中处理\"的解决方式显得平淡，缺乏紧张感和信息揭示的层次感。读者无法感受到\"识破阴谋\"的快感。",
-      "[warning] 小路仅服务于传递信息（提醒周管事问题、替主角说话），执法弟子也只用于推进剧情。配角缺乏独立动机和人物弧线。",
-      "[warning] 虫卵栽赃与举报赵海之间的因果链不清晰。读者难以理解虫卵事件与赵海被带走之间的必然联系，爽点（借宗门之手解决麻烦）被削弱。",
-      "[warning] 执法弟子与周管事的对话场景在第1章和第2章各出现一次，节奏模式重复。虫卵事件虽有冲突节拍，但缺乏\"压力积累→高潮→释放\"的起伏。",
-      "[warning] 本章新开了 3 个伏笔，但没有回收任何旧债。",
-      "[warning] 149个段落里有95个不足35字，段落被切得过碎。",
-      "[warning] 连续出现14个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [
-      "第2章经过一次字数归一化后仍超出硬区间（2182-3818，实际 4258）。"
-    ],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3137,
-      "postWriterNormalizeCount": 3137,
-      "postReviseCount": 4258,
-      "finalCount": 4258,
-      "normalizeApplied": true,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 125195,
-      "completionTokens": 86375,
-      "totalTokens": 211570
-    }
+    "title": "暗格惊变",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
   },
   {
     "number": 3,
-    "title": "夜林惊锋",
-    "status": "ready-for-review",
-    "wordCount": 3215,
-    "createdAt": "2026-04-14T17:49:31.189Z",
-    "updatedAt": "2026-04-14T17:54:43.945Z",
-    "auditIssues": [
-      "[info] 原始细纲规划的'灵泉谷探索'五场景（灵泉谷异常、隐藏灵泉、幽冥气息、危险警告、古修士洞府痕迹）与实际正文存在偏差。但实际正文与章节控制输入、钩子安排（Hook Agenda）完全吻合，中年男子现身、H002/H003/H004/H005伏笔均按预期推进。推断为细纲制定时未充分参照钩子安排，或作者在写作过程中根据章节控制输入调整了方向。",
-      "[info] 第1章末尾钩子'灵泉信号闪烁，某种气息在呼唤他……'在第3章正文未被正面回收（未描写陈守一主动探索灵泉），而是被'中年男子现身'替代。但第2章末尾钩子'现在，他已经没有退路'得到完整回收。",
-      "[info] H006_灵气衰减（世界观伏笔）本轮未推进，但这符合预期回收节奏（80-100章），非问题。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3200,
-      "softMin": 2764,
-      "softMax": 3636,
-      "hardMin": 2328,
-      "hardMax": 4072,
-      "countingMode": "zh_chars",
-      "writerCount": 3217,
-      "postWriterNormalizeCount": 0,
-      "postReviseCount": 3215,
-      "finalCount": 3215,
-      "normalizeApplied": false,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 21169,
-      "completionTokens": 7101,
-      "totalTokens": 28270
-    }
+    "title": "坟地风云",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
   },
   {
     "number": 4,
-    "title": "堂前问",
-    "status": "drafted",
-    "wordCount": 3139,
-    "createdAt": "2026-04-14T18:17:14.002Z",
-    "updatedAt": "2026-04-14T18:17:14.002Z",
+    "title": "月下对峙",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3200,
-      "softMin": 2764,
-      "softMax": 3636,
-      "hardMin": 2328,
-      "hardMax": 4072,
-      "countingMode": "zh_chars",
-      "writerCount": 3139,
-      "postWriterNormalizeCount": 3139,
-      "postReviseCount": 0,
-      "finalCount": 3139,
-      "normalizeApplied": false,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 31039,
-      "completionTokens": 7138,
-      "totalTokens": 38177
-    }
+    "lengthWarnings": []
   },
   {
     "number": 5,
-    "title": "第5章 灵泉噬影",
-    "status": "ready-for-review",
-    "wordCount": 3599,
-    "createdAt": "2026-04-14T18:39:04.959Z",
-    "updatedAt": "2026-04-14T18:39:04.959Z",
-    "auditIssues": [
-      "[info] 主角目睹赵海被吞噬时的内心挣扎描写过于直白。'心底某处传来一丝不属于\"苟道\"的冲动'这句话直接暴露了主角的内心波动，与陈守一\"冷静务实、谨慎多疑\"的人设略有冲突——他更可能是沉默地看着，手在动但心里没有任何动摇。",
-      "[info] 陈老的角色功能过于单一。他目前只承担了\"被主角识破身份\"和\"给予警告\"两个工具性任务，缺乏作为\"执法堂暗子\"应有的复杂性和动机暗示。",
-      "[info] 章节末尾的灵泉轰鸣描写与第4章末尾的描写在形态上较为相似（'低沉的轰鸣'、'大地微微震颤'），连续两章用类似方式预告灵泉变故，可能造成读者审美疲劳。",
-      "[warning] 最近3章持续高压（压抑→紧张→危机将至 -> 紧张压抑→危机降临→悬念重重 -> 紧张压抑→审问对峙→暗流涌动→悬念重重），缺少明显的情绪释放。",
-      "[warning] 章节标题\"第5章\"已自动调整为\"第5章 灵泉噬影\"。",
-      "[warning] 最近3章持续高压（压抑→紧张→危机将至 -> 紧张压抑→危机降临→悬念重重 -> 紧张压抑→审问对峙→暗流涌动→悬念重重），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H002_中年男子（近期，可回收）、mystery-苏婉儿看到-金丝缠-伤疤时的复杂（近期，可回收）、plot-灵泉异变的正-式爆发-与陈守一体内（近期，可回收）。",
-      "[warning] 123个段落里有70个不足35字，段落被切得过碎。",
-      "[warning] 连续出现6个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3317,
-      "postWriterNormalizeCount": 3317,
-      "postReviseCount": 3599,
-      "finalCount": 3599,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 91227,
-      "completionTokens": 32601,
-      "totalTokens": 123828
-    }
+    "title": "第5章_灵泉噬影",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
   },
   {
     "number": 6,
-    "title": "暗流交汇",
-    "status": "drafted",
-    "wordCount": 3096,
-    "createdAt": "2026-04-15T02:56:46.999Z",
-    "updatedAt": "2026-04-15T02:56:46.999Z",
+    "title": "章六",
+    "status": "completed",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:24:15.590Z",
+    "updatedAt": "2026-04-17T06:24:15.590Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3200,
-      "softMin": 2764,
-      "softMax": 3636,
-      "hardMin": 2328,
-      "hardMax": 4072,
-      "countingMode": "zh_chars",
-      "writerCount": 3096,
-      "postWriterNormalizeCount": 3096,
-      "postReviseCount": 0,
-      "finalCount": 3096,
-      "normalizeApplied": false,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 36636,
-      "completionTokens": 8103,
-      "totalTokens": 44739
-    }
+    "lengthWarnings": []
   },
   {
     "number": 7,
-    "title": "灵潮将逆",
-    "status": "ready-for-review",
-    "wordCount": 3452,
-    "createdAt": "2026-04-15T03:19:28.779Z",
-    "updatedAt": "2026-04-15T03:19:28.779Z",
-    "auditIssues": [
-      "[warning] 灵泉异变'提前爆发'与第6章周平/苏婉儿明确承诺的'三天后见分晓'形成时间承诺冲突。原文仅以'时间被某种力量强行压缩'一笔带过，缺乏具体的触发机制或外部事件说明。",
-      "[warning] 苏婉儿的情感弧线出现起伏断层：第6章末尾她因目睹'金丝缠'伤疤而情绪失控（震惊/疑惑/痛楚交织，猛然后退，呼吸急促，沉默数息后离开），但第7章她再次出现时直接传达林师兄的话并主动提及伤疤内容。期间缺少她私下消化/处理这份冲击的必要描写，使情绪高点（第6章）显得孤立，缺乏释放-转折-重估的完整弧线。",
-      "[warning] 连续三章（ch5-ch7）均为'转折/危机'类型章，且三章章尾均为'危机骤临/外部威胁逼近'型悬念：ch5'暴风雨前的平静从来不会持续太久'→ch6'这是暴风雨本身'→ch7'新势力入场/主角决定转移'。节奏模式重复，缺乏回收-释放-高潮的节奏变化。",
-      "[info] 新势力（'四方角帽，黑袍束腰，袖口处绣着一枚陈守一看不懂的徽记'）在章节末尾以'身影一闪而过'的形式入场，制造悬念。但此前伏笔板中未见此势力的铺垫信息（伏笔板中'周平/陈老/林师兄/苏婉儿/中年男子'均无此描述），读者可能缺乏足够的锚点来期待此势力的出现。",
-      "[info] 章节开头'闷响从地底深处传来'与第6章末尾'灵泉方向传来沉闷轰鸣'在表述上高度相似（均为'闷响/沉闷轰鸣+灵泉方向'），容易让读者混淆为同一事件的重复描写而非事件的连续发展。",
-      "[warning] 最近4章持续高压（紧张压抑→危机降临→悬念重重 -> 紧张压抑→审问对峙→暗流涌动→悬念重重 -> 冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（紧张压抑→危机降临→悬念重重 -> 紧张压抑→审问对峙→暗流涌动→悬念重重 -> 冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H003_灵泉异常（近期，已逾期）、H004_执法堂调查（近期，已逾期）、mystery-揭示灵泉变故-真相-中年男子警告（近期，可回收），另有 3 条。",
-      "[warning] 99个段落里有56个不足35字，段落被切得过碎。",
-      "[warning] 连续出现7个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3394,
-      "postWriterNormalizeCount": 3394,
-      "postReviseCount": 3452,
-      "finalCount": 3452,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 83204,
-      "completionTokens": 24019,
-      "totalTokens": 107223
-    }
+    "title": "章七",
+    "status": "completed",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:24:15.590Z",
+    "updatedAt": "2026-04-17T06:24:15.590Z",
+    "auditIssues": [],
+    "lengthWarnings": []
   },
   {
     "number": 8,
-    "title": "暗潮围猎",
-    "status": "ready-for-review",
-    "wordCount": 2844,
-    "createdAt": "2026-04-15T03:42:17.101Z",
-    "updatedAt": "2026-04-15T03:42:17.101Z",
-    "auditIssues": [
-      "[warning] 待审第8章内容与控制输入中的原始细纲存在重大偏差。原始细纲要求'与苏婉儿分别后日常修炼→天机推演警示→周执事身份确认→分析与对策→主动暴露'，但待审内容直接承接第7章结尾的紧急转移决定，呈现'三方势力围堵→四方角帽出手→逃入灵泉废墟→地窖探索→发现林记实验证据→幽暗眼睛'的截然不同情节走向。",
-      "[info] 待审内容未直接推进H006灵气衰减主题（卷纲Must Advance要求）。第7章已通过残纸灌注画面建立了'灵泉自然衰竭→裂隙→幽冥气息'的因果链，第8章待审内容通过地窖幽暗眼睛间接关联（H015幽冥气息外渗），但未进一步深化灵气衰减机制本身（如：为什么灵泉会衰竭？衰减周期与幽冥的关系？）。",
-      "[info] 待审内容节奏紧凑：势力围堵(约30%)→四方角帽出手→逃亡(约25%)→地窖探索/证据收集(约30%)→新危机(约15%)。章尾'地窖深处亮起多双幽暗眼睛'设置悬念，符合'external conflict'结构指令要求。但地窖探索段的信息密度较高（暗格→布帛→小册子→令牌），约400字连续揭示，节奏略赶。",
-      "[warning] 最近4章持续高压（紧张压抑→审问对峙→暗流涌动→悬念重重 -> 冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临 -> 压抑→剧变→灵力枯竭→危机四伏），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（紧张压抑→审问对峙→暗流涌动→悬念重重 -> 冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临 -> 压抑→剧变→灵力枯竭→危机四伏），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H006_灵气衰减（中程，可回收）、mystery-揭示灵泉变故-真相-中年男子警告（近期，已逾期）、plot-灵泉异变的正式爆发-与陈守一体内（近期，可回收），另有 3 条。",
-      "[warning] 连续出现3个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2656,
-      "postWriterNormalizeCount": 2656,
-      "postReviseCount": 2844,
-      "finalCount": 2844,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 47683,
-      "completionTokens": 33445,
-      "totalTokens": 81128
-    }
+    "title": "章八",
+    "status": "completed",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:24:15.590Z",
+    "updatedAt": "2026-04-17T06:24:15.590Z",
+    "auditIssues": [],
+    "lengthWarnings": []
   },
   {
     "number": 9,
     "title": "幽冥裂眼",
-    "status": "drafted",
-    "wordCount": 8845,
-    "createdAt": "2026-04-15T11:48:00.000Z",
-    "updatedAt": "2026-04-15T11:48:00.000Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 8845,
-      "postWriterNormalizeCount": 8845,
-      "postReviseCount": 0,
-      "finalCount": 8845,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 10,
     "title": "暗窟惊魂",
-    "status": "drafted",
-    "wordCount": 8153,
-    "createdAt": "2026-04-15T12:11:00.000Z",
-    "updatedAt": "2026-04-15T12:11:00.000Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 8153,
-      "postWriterNormalizeCount": 8153,
-      "postReviseCount": 0,
-      "finalCount": 8153,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 11,
     "title": "寒霜令",
-    "status": "drafted",
-    "wordCount": 9624,
-    "createdAt": "2026-04-15T12:38:00.000Z",
-    "updatedAt": "2026-04-15T12:38:00.000Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 9624,
-      "postWriterNormalizeCount": 9624,
-      "postReviseCount": 0,
-      "finalCount": 9624,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 12,
     "title": "地窖深渊",
-    "status": "drafted",
-    "wordCount": 10032,
-    "createdAt": "2026-04-15T07:03:35.289Z",
-    "updatedAt": "2026-04-15T07:03:35.293Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 10032,
-      "postWriterNormalizeCount": 10032,
-      "postReviseCount": 0,
-      "finalCount": 10032,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 13,
     "title": "危枝借势",
-    "status": "drafted",
-    "wordCount": 13788,
-    "createdAt": "2026-04-15T07:26:45.558Z",
-    "updatedAt": "2026-04-15T07:26:45.559Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 13788,
-      "postWriterNormalizeCount": 13788,
-      "postReviseCount": 0,
-      "finalCount": 13788,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 14,
     "title": "残纸惊鸣",
-    "status": "drafted",
-    "wordCount": 13916,
-    "createdAt": "2026-04-15T07:40:12.145Z",
-    "updatedAt": "2026-04-15T07:40:12.146Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 13916,
-      "postWriterNormalizeCount": 13916,
-      "postReviseCount": 0,
-      "finalCount": 13916,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 15,
     "title": "演武困局",
-    "status": "drafted",
-    "wordCount": 10096,
-    "createdAt": "2026-04-15T07:50:29.504Z",
-    "updatedAt": "2026-04-15T07:50:29.505Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 10096,
-      "postWriterNormalizeCount": 10096,
-      "postReviseCount": 0,
-      "finalCount": 10096,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 16,
     "title": "幽窖困兽",
-    "status": "drafted",
-    "wordCount": 11741,
-    "createdAt": "2026-04-15T08:07:05.142Z",
-    "updatedAt": "2026-04-15T08:07:05.143Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3844,
-      "postWriterNormalizeCount": 3844,
-      "postReviseCount": 0,
-      "finalCount": 11741,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 17,
     "title": "裂隙将至",
-    "status": "drafted",
-    "wordCount": 6020,
-    "createdAt": "2026-04-15T08:19:17.543Z",
-    "updatedAt": "2026-04-15T08:19:17.543Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2087,
-      "postWriterNormalizeCount": 2087,
-      "postReviseCount": 0,
-      "finalCount": 6020,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 18,
     "title": "身难藏",
-    "status": "drafted",
-    "wordCount": 9437,
-    "createdAt": "2026-04-15T08:46:55.307Z",
-    "updatedAt": "2026-04-15T08:46:55.308Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3948,
-      "postWriterNormalizeCount": 3948,
-      "postReviseCount": 2809,
-      "finalCount": 9437,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 19,
     "title": "困局双逼",
-    "status": "drafted",
-    "wordCount": 11313,
-    "createdAt": "2026-04-15T08:53:33.048Z",
-    "updatedAt": "2026-04-15T08:53:33.048Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3685,
-      "postWriterNormalizeCount": 3685,
-      "postReviseCount": 0,
-      "finalCount": 11313,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 20,
     "title": "幽窖沉眸",
-    "status": "drafted",
-    "wordCount": 8343,
-    "createdAt": "2026-04-15T09:10:03.699Z",
-    "updatedAt": "2026-04-15T09:10:03.700Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 4757,
-      "postWriterNormalizeCount": 4757,
-      "postReviseCount": 2674,
-      "finalCount": 8343,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 21,
     "title": "风云暗涌",
-    "status": "drafted",
-    "wordCount": 10230,
-    "createdAt": "2026-04-15T09:13:40.246Z",
-    "updatedAt": "2026-04-15T09:13:40.247Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3331,
-      "postWriterNormalizeCount": 3331,
-      "postReviseCount": 0,
-      "finalCount": 10230,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 22,
     "title": "借势四两",
-    "status": "drafted",
-    "wordCount": 9170,
-    "createdAt": "2026-04-15T09:26:38.443Z",
-    "updatedAt": "2026-04-15T09:26:38.444Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 5634,
-      "postWriterNormalizeCount": 5634,
-      "postReviseCount": 0,
-      "finalCount": 9170,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 23,
     "title": "槐下授机",
     "status": "approved",
-    "wordCount": 6236,
-    "createdAt": "2026-04-15T09:49:48.542Z",
-    "updatedAt": "2026-04-15T10:30:26.575Z",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2291,
-      "postWriterNormalizeCount": 2752,
-      "postReviseCount": 0,
-      "finalCount": 6236,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 24,
     "title": "幽眼深窖",
     "status": "approved",
-    "wordCount": 2863,
-    "createdAt": "2026-04-15T10:28:17.489Z",
-    "updatedAt": "2026-04-15T10:31:29.548Z",
-    "auditIssues": [
-      "[warning] 最近4章持续高压（冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临 -> 压抑→剧变→灵力枯竭→危机四伏 -> 紧绷→逃脱→危机暂缓→新威胁降临），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（冷静克制→目睹死亡→抉择挣扎→冷静处理→警觉升级 -> 紧绷→危机骤临 -> 压抑→剧变→灵力枯竭→危机四伏 -> 紧绷→逃脱→危机暂缓→新威胁降临），缺少明显的情绪释放。",
-      "[warning] 当前有 14 个活跃伏笔，已经高于建议上限 12 个。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H009_陈老身份（中程，已逾期）、H010_林师兄（中程，已逾期）、H012_四方角帽第四势力（立即，已逾期），另有 6 条。",
-      "[warning] 本章新开了 2 个伏笔，但没有回收任何旧债。",
-      "[warning] 88个段落里有43个不足35字，段落被切得过碎。",
-      "[warning] 连续出现12个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 1890,
-      "postWriterNormalizeCount": 3855,
-      "postReviseCount": 2863,
-      "finalCount": 2863,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 159421,
-      "completionTokens": 80662,
-      "totalTokens": 240083
-    }
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
   },
   {
     "number": 25,
     "title": "槐根问旧",
-    "status": "ready-for-review",
-    "wordCount": 3036,
-    "createdAt": "2026-04-15T10:50:41.431Z",
-    "updatedAt": "2026-04-15T10:50:41.431Z",
-    "auditIssues": [
-      "[warning] SP03（执法堂调查线）的核心推动者苏婉儿选择'暂时收敛锋芒，不再公开调查'，并将线索转交给陈守一。虽然她仍是信息提供者，但她从主动调查者变为被动信息源，这条支线的推动力从执法堂内部转移到了陈守一个人身上，需要后续有足够的外部事件或新角色介入来激活执法堂线，否则该支线可能滑向'接近被遗忘'状态。",
-      "[info] 本章引入了三个新悬念（子时城东旧药铺的约定/苏婉儿左臂秘密的深化/执法堂内部警告者身份），加上原有的孙师兄交易和大比抉择，悬念存量较高。若下一章不能有效推进其中1-2个，可能导致读者期待疲劳。",
-      "[info] 本章'arc'指令要求'推进到新的弧线节点或地点变化'。本章确实发生了地点变化（从藏身处→陈老住处→返回）和弧线节点推进（苏婉儿将调查接力棒交给陈守一），但'被迫展露'的外部压力尚未真正降临。大比作为核心节点还有7天缓冲期，当前章节属于蓄压期，节奏匹配度为中等。",
-      "[info] 苏婉儿收到'再查下去你会死'的警告后，选择将线索转交并退出公开调查。这个决定是理性的（她知道自己处境危险），但作为执法堂成员、追查林师兄旧案多年的人，完全收敛行动可能显得过于保守。不过这也可以解读为她选择了更隐蔽的方式继续关注——将风险转移给陈守一同时保持自身观察者地位。",
-      "[warning] 119个段落里有69个不足35字，段落被切得过碎。",
-      "[warning] 连续出现11个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3589,
-      "postWriterNormalizeCount": 2730,
-      "postReviseCount": 3036,
-      "finalCount": 3036,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 75555,
-      "completionTokens": 26739,
-      "totalTokens": 102294
-    }
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
   },
   {
     "number": 26,
     "title": "幻境遗血",
-    "status": "drafted",
-    "wordCount": 8158,
-    "createdAt": "2026-04-15T11:20:10.623Z",
-    "updatedAt": "2026-04-15T11:20:10.625Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3631,
-      "postWriterNormalizeCount": 3631,
-      "postReviseCount": 2116,
-      "finalCount": 8158,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 27,
     "title": "阴影之间",
     "status": "approved",
-    "wordCount": 3554,
-    "createdAt": "2026-04-15T11:43:40.002Z",
-    "updatedAt": "2026-04-15T12:38:45.292Z",
-    "auditIssues": [
-      "[critical] 章节开头时间线矛盾。本章开头'晨光在他身后渐渐黯淡'，与第26章结尾'晨光越来越亮'在时间方向上相反。第26章幻境结束后是清晨，本章却从黄昏/傍晚开始，时间逻辑断裂。",
-      "[critical] 章节结尾缺乏决定/行动点。根据大纲要求，本章应包含'陈守一决定独自参赛'的明确抉择。但当前章节在'苏婉儿警告别去旧药铺'后戛然而止，没有给出主角的回应或决定。章节末尾'夜色已经降临...远处城东方向有什么东西正在等待着他'只是悬念铺垫，不是完整的决策收尾。",
-      "[critical] 章节缺失'孙师兄的威胁'环节。大纲明确要求：2. 孙师兄的约见充满火药味，他警告陈守一幽冥隐脉体一旦暴露将被宗门当作'邪物'处理，暗示知道体质来历并以此要挟。本章只在杂役堂听到'孙师兄说过这个人'的只言片语，以及最后苏婉儿转述'孙师兄改主意了'，缺少孙师兄直接施压的核心场景。",
-      "[critical] 章节缺失'复杂的抉择'和'决定独自参赛'环节。大纲要求：4. 陈守一需要时间思考，判断各方势力真实意图；5. 经过深思熟虑，决定独自参赛，既不接受周执事庇护，也不畏惧孙师兄威胁。本章完全缺少主角权衡利弊的内心戏，也没有做出'独自参赛'的明确宣告。",
-      "[warning] H008_赵海之死（事件伏笔，积压22章）未在本章推进。第26章幻境虽展示了赵海被拖入灵泉的画面，但'赵海之死'悬念的核心问题——'死在灵泉边的人是被什么杀死的'——仍未正面揭示。本章也没有任何关于赵海死因的追问或新线索。",
-      "[warning] 章节类型序列问题：近三章（24-26）均为'信息揭示章'类型。本章虽然出现了外部接触（杂役堂、周执事、苏婉儿），但核心情节仍是信息传递和局势陈述，缺乏'转折'或'高潮'节拍。节奏类型过于单一。",
-      "[warning] 苏婉儿出场过于工具化。她只带着关键信息出现（'孙师兄改主意了'、'别去旧药铺'），说完就走，缺乏自身的立场展示和情绪层次。她作为'同源疑似者'的身份未被利用来制造张力。",
-      "[warning] 苏婉儿在屋内说出关键信息后，章节迅速切换到她'纵身跃出窗外'离开，然后视角回到陈守一等待。这种快速切换缺少过渡，显得仓促。",
-      "[info] 章尾悬念'城东旧药铺有什么在等待着他'确实重新点燃了好奇心，但与第26章结尾'再往前一步，就是光'形成重复的悬念收尾模式。两章都以'前方有未知事物等待'结尾，缺乏变化。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H008_赵海之死（中程，已逾期）、H013_残纸历史画面（立即，已逾期）、H025_令牌金丝缠同源（中程，可回收），另有 2 条。",
-      "[warning] 158个段落里有91个不足35字，段落被切得过碎。",
-      "[warning] 连续出现22个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 4624,
-      "postWriterNormalizeCount": 2660,
-      "postReviseCount": 4560,
-      "finalCount": 3554,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 134939,
-      "completionTokens": 47993,
-      "totalTokens": 182932
-    }
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
   },
   {
     "number": 28,
     "title": "旧药铺迷局",
-    "status": "ready-for-review",
-    "wordCount": 3833,
-    "createdAt": "2026-04-15T12:58:17.773Z",
-    "updatedAt": "2026-04-15T12:58:17.773Z",
-    "auditIssues": [
-      "[warning] 本章开头节奏与第27章末尾的'抉择临界'氛围断档。第27章以'夜色降临，陈守一面临抉择'收尾，营造了强烈压力；第28章开头却转向整理纸条、推演对手、制定策略，节奏明显放缓。直到药铺场景冲突爆发才重新拉起张力。",
-      "[info] 第27章已明确告知读者主角获得参赛木牌（三天后选拔赛），主角也已知道海选名单的基本信息。本章开头'推演大比对手'的内容，在主角已知信息范围内重复展开，心理准备性质多余信息揭示性质。",
-      "[info] 主角逃出密道后，'更鼓声再次响起。三更了'的时间确认位于主角视角（他听到更鼓声），但描写方式偏向旁白视角的全知叙述，与全章以主角视角为主的风格略有差异。",
-      "[info] 纸条上柳叶印记与苏婉儿伤疤的关联（H025相关）已埋设，但灰袍人身份仍是悬念，读者无法判断'三日后演武场会有人找你'是友是敌。这符合悬念管理，但要注意不要让悬念悬置太久导致读者遗忘。",
-      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [
-      "第28章经过一次字数归一化后仍超出硬区间（2182-3818，实际 3833）。"
-    ],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3122,
-      "postWriterNormalizeCount": 3122,
-      "postReviseCount": 3833,
-      "finalCount": 3833,
-      "normalizeApplied": true,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 108669,
-      "completionTokens": 33086,
-      "totalTokens": 141755
-    }
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
   },
   {
     "number": 29,
     "title": "金丝缠真相",
-    "status": "ready-for-review",
-    "wordCount": 3179,
-    "createdAt": "2026-04-15T13:35:56.194Z",
-    "updatedAt": "2026-04-15T13:35:56.194Z",
-    "auditIssues": [
-      "[info] 本章节奏类型较为单一：危机→逃脱→发现→新危机。连续两章（28-29）均以逃脱/脱困为核心动作，读者可能产生疲劳感。",
-      "[info] 铜环被天机簿推演为\"钥匙\"，但\"能开启什么\"仅以\"还需要更多线索\"悬置。若连续多章仅抛出新物证而不回收其功能，可能导致悬念疲劳。",
-      "[info] 苏婉儿线（SP11）在第29章获得重要推进（卫长老揭露、父亲身份揭示），但当前仅停留于\"信息获取\"阶段，尚未有实际救援行动或危机解决。",
-      "[warning] 本章\"猛地\"出现1次，密度在安全范围内。但\"微微\"出现3次，\"悄然\"出现2次，\"缓缓\"出现1次——连续章节出现高频相似副词。",
-      "[info] 本章获得铜环作为\"身份证明+钥匙\"，符合中期线索铺垫节奏。但铜环的实际功能未展开，读者暂时无法获得\"破解谜题\"的成就感。",
-      "[warning] 当前有 14 个活跃伏笔，已经高于建议上限 12 个。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H024_孙师兄交易（近期，已逾期）、H029_陈老身份（中程，可回收）、H030_执法堂内部对立（中程，可回收），另有 4 条。",
-      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2834,
-      "postWriterNormalizeCount": 2834,
-      "postReviseCount": 3093,
-      "finalCount": 3179,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 198767,
-      "completionTokens": 65578,
-      "totalTokens": 264345
-    }
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
   },
   {
     "number": 30,
     "title": "铜环密钥",
-    "status": "ready-for-review",
-    "wordCount": 3126,
-    "createdAt": "2026-04-15T14:49:56.089Z",
-    "updatedAt": "2026-04-15T14:49:56.089Z",
-    "auditIssues": [
-      "[warning] 章节结尾与第29章完全重复：\"但真正的黑夜，或许才刚刚开始。\" 同一卷内连续两章使用相同结语，降低了悬念收束的新鲜感。",
-      "[warning] 铜环出现\"新裂纹\"是第30章新增的悬念细节，与H041_铜环钥匙（阵纹与封印/激活）存在关联但未明确归属。当前活跃伏笔已达11条，需确认裂纹属于H041的延续还是新悬念钩。若属于H041回收则合理；若视为新钩则需控制。",
-      "[info] 第28章提到天机簿\"耗尽了最后的灵力储备\"，第29章显示\"金色纹路正在缓慢恢复\"，第30章开头天机簿已能推演。恢复速度与程度未明确描述，但考虑到主角刚从逃亡中脱身且丹田仅恢复七八成，天机簿灵力恢复的速率可视为合理隐含设定。",
-      "[info] 苏婉儿在本章承担了\"情报输送者\"功能：提供三件钥匙信息、同源共鸣机制、卫长青灭口真相。角色有内心挣扎（\"你确定？\"→\"我还有别的选择吗？\"），但核心动机交代偏概览式，可视为信息传递效率与角色深度的平衡。",
-      "[info] SP10_大比抉择线在第29章被标记为\"紧急\"，本章仅以\"距离大比只剩两天\"和纸背模糊字迹提及\"演武场/选拔\"，大比策略（\"前胜后让\"因金丝缠蔓延已失效）未实质性推进。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H033_周执事拉拢（近期，可回收）、H034_铜片令牌拼合（中程，可回收）、H035_陈老欠债（中程，可回收），另有 2 条。",
-      "[warning] 112个段落里有46个不足35字，段落被切得过碎。",
-      "[warning] 连续出现20个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3978,
-      "postWriterNormalizeCount": 3038,
-      "postReviseCount": 3126,
-      "finalCount": 3126,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 377968,
-      "completionTokens": 149828,
-      "totalTokens": 527796
-    }
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
   },
   {
     "number": 31,
     "title": "无处可退",
-    "status": "drafted",
-    "wordCount": 12601,
-    "createdAt": "2026-04-15T15:13:00.382Z",
-    "updatedAt": "2026-04-15T15:13:00.383Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 0,
-      "postWriterNormalizeCount": 0,
-      "postReviseCount": 0,
-      "finalCount": 0,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 32,
     "title": "破晓抉择",
-    "status": "ready-for-review",
-    "wordCount": 2875,
-    "createdAt": "2026-04-15T15:41:59.357Z",
-    "updatedAt": "2026-04-15T15:41:59.357Z",
-    "auditIssues": [
-      "[warning] 左臂温度数值不一致：状态卡和正文描述均为'温度高于右臂三寸'，但第31章结尾处却写成'温度高于右臂五寸'。同一章内出现两种数值。",
-      "[warning] 第31章结尾'那么，就让这黑夜，见证他的刀'气势磅礴、情绪饱满，但第32章开头以'晨曦从灌木枝叶缝隙间漏下'平铺直叙地开始，情绪断崖式下跌，节奏衔接略显生硬。",
-      "[info] 本章属于'铺垫准备章'，以心理活动和情报收集为主。章节类型分布显示近期连续多章为信息揭示/转折章，读者可能需要更多外部冲突节拍（如战斗、抉择时刻、谈判交锋）。",
-      "[info] SP10_大比抉择线在本章继续推进（周执事谈判+小路警告），但主角的身体恶化（金丝缠至手指）和外部威胁（大比前夜动手）属于'威胁描述'而非'威胁应对'，支线进度条未实际跨越节点。",
-      "[warning] 90个段落里有51个不足35字，段落被切得过碎。",
-      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2684,
-      "postWriterNormalizeCount": 2684,
-      "postReviseCount": 2875,
-      "finalCount": 2875,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 80479,
-      "completionTokens": 47946,
-      "totalTokens": 128425
-    }
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
   },
   {
     "number": 33,
     "title": "大比前夜",
-    "status": "drafted",
-    "wordCount": 13669,
-    "createdAt": "2026-04-15T15:59:17.723Z",
-    "updatedAt": "2026-04-15T15:59:17.723Z",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
     "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 0,
-      "postWriterNormalizeCount": 0,
-      "postReviseCount": 0,
-      "finalCount": 0,
-      "normalizeApplied": false,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
+    "lengthWarnings": []
   },
   {
     "number": 34,
     "title": "风起演武场",
-    "status": "ready-for-review",
-    "wordCount": 3002,
-    "createdAt": "2026-04-15T16:37:54.397Z",
-    "updatedAt": "2026-04-15T16:37:54.397Z",
-    "auditIssues": [
-      "[warning] AI标记词'仿佛'出现1次，'忽然'出现2次，密度接近临界值（每3000字1次为warning阈值）。",
-      "[info] 近两章情绪类型序列相似度较高：32章'高压→紧张→盘算→压制→展望'，本章'警觉→盘算→压制→危机→决断'。均为'被动应对→信息获取→决策'的线性结构。",
-      "[info] 本章存在斗法碾压（陈守一险胜周铁柱），但被周执事阴谋、同源者身份暴露的危机感冲淡。主角虽赢了一场，但'代价不大，但暴露了'的叙述使爽感被压制。",
-      "[warning] 最近3章持续高压（警觉→盘算→压力升级→震惊→危机→逃脱 -> 警觉→压制→危机→逃脱→展望 -> 高压→紧张→盘算→压制→展望），缺少明显的情绪释放。",
-      "[warning] 最近3章持续高压（警觉→盘算→压力升级→震惊→危机→逃脱 -> 警觉→压制→危机→逃脱→展望 -> 高压→紧张→盘算→压制→展望），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H033_周执事拉拢（近期，已逾期）、H043_苏婉儿处境（近期，已逾期）、H040_执法堂监视（中程，可回收），另有 1 条。",
-      "[warning] 115个段落里有71个不足35字，段落被切得过碎。",
-      "[warning] 连续出现8个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2893,
-      "postWriterNormalizeCount": 2893,
-      "postReviseCount": 3002,
-      "finalCount": 3002,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 283865,
-      "completionTokens": 92195,
-      "totalTokens": 376060
-    }
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
   },
   {
     "number": 35,
     "title": "印记觉醒",
     "status": "approved",
-    "wordCount": 3396,
-    "createdAt": "2026-04-15T16:56:32.386Z",
-    "updatedAt": "2026-04-15T16:57:19.083Z",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 36,
+    "title": "同源相残",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 37,
+    "title": "令牌惊堂",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 38,
+    "title": "地底沉冤",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 39,
+    "title": "暗流涌动",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 40,
+    "title": "暗室困局",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 41,
+    "title": "章四一",
+    "status": "completed",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:24:15.590Z",
+    "updatedAt": "2026-04-17T06:24:15.590Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 42,
+    "title": "第42章_老槐树下",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 43,
+    "title": "灵泉深处",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 44,
+    "title": "窄门之后",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 45,
+    "title": "清溪涧",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 46,
+    "title": "秘境迷踪",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 47,
+    "title": "老槐暗语",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 48,
+    "title": "因果",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 49,
+    "title": "灵泉惊变",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 50,
+    "title": "石室困局",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 51,
+    "title": "同源之争",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 52,
+    "title": "三源归一",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 53,
+    "title": "彼岸微光",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 54,
+    "title": "雾中来客",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 55,
+    "title": "彼岸栖身",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 56,
+    "title": "守一（正文标题）",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 57,
+    "title": "流言",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 58,
+    "title": "秘境试炼",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 59,
+    "title": "幽冥入体",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 60,
+    "title": "山中守护者",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 61,
+    "title": "三源问心",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 62,
+    "title": "金痕之危",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 63,
+    "title": "暗夜伏影",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 64,
+    "title": "裂痕追踪",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 65,
+    "title": "幽谷裂痕",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 66,
+    "title": "联席议事",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 67,
+    "title": "裂隙回响",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 68,
+    "title": "章六八",
+    "status": "completed",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:24:15.590Z",
+    "updatedAt": "2026-04-17T06:24:15.590Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 69,
+    "title": "章六九",
+    "status": "completed",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:24:15.590Z",
+    "updatedAt": "2026-04-17T06:24:15.590Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 70,
+    "title": "风起云涌",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 71,
+    "title": "设网以待",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 72,
+    "title": "真相大白",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 73,
+    "title": "彼岸大劫",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 74,
+    "title": "天锁",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 75,
+    "title": "风暴前夜",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 76,
+    "title": "血债",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 77,
+    "title": "劫烬",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 78,
+    "title": "归途之地",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 79,
+    "title": "薪火",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 80,
+    "title": "劫灰",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 81,
+    "title": "第二章_平衡",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 82,
+    "title": "劫终",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 83,
+    "title": "通道之秘",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 84,
+    "title": "三源归一：陈守",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 85,
+    "title": "血铸封印",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 86,
+    "title": "祭坛之下",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 87,
+    "title": "祭文",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 88,
+    "title": "先人渡",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 89,
+    "title": "三载守望",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 90,
+    "title": "三源噬天",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 91,
+    "title": "彼岸凝视",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 92,
+    "title": "渡人者",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 93,
+    "title": "重逢",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.649Z",
+    "updatedAt": "2026-04-17T06:21:21.649Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 94,
+    "title": "彼岸真相",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.651Z",
+    "updatedAt": "2026-04-17T06:21:21.651Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 95,
+    "title": "沈炼的底牌",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.651Z",
+    "updatedAt": "2026-04-17T06:21:21.651Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 96,
+    "title": "末法",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.651Z",
+    "updatedAt": "2026-04-17T06:21:21.651Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 97,
+    "title": "誓约",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.651Z",
+    "updatedAt": "2026-04-17T06:21:21.651Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 98,
+    "title": "临渊",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.651Z",
+    "updatedAt": "2026-04-17T06:21:21.651Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 99,
+    "title": "镇界",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.651Z",
+    "updatedAt": "2026-04-17T06:21:21.651Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 100,
+    "title": "燃灯",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.651Z",
+    "updatedAt": "2026-04-17T06:21:21.651Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 101,
+    "title": "抉择",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.651Z",
+    "updatedAt": "2026-04-17T06:21:21.651Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 102,
+    "title": "归途",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.651Z",
+    "updatedAt": "2026-04-17T06:21:21.651Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 103,
+    "title": "觉醒",
+    "status": "approved",
+    "wordCount": 0,
+    "createdAt": "2026-04-17T06:21:21.651Z",
+    "updatedAt": "2026-04-17T06:21:21.651Z",
+    "auditIssues": [],
+    "lengthWarnings": []
+  },
+  {
+    "number": 104,
+    "title": "生死门",
+    "status": "approved",
+    "wordCount": 2407,
+    "createdAt": "2026-04-17T14:03:19.082Z",
+    "updatedAt": "2026-04-17T14:05:08.029Z",
     "auditIssues": [
-      "[critical] 本章细纲与实际内容严重偏离。章纲要求：1.复赛开始→2.十六进八（炼气五层对手）→3.暴露边缘（衣袖撕裂/黑纹若隐若现）→4.关键决策→5.八强诞生。但实际内容是：四方角帽直接动手→铜环爆炸→印记觉醒→同源者身份暴露→苏婉儿出场→直接跳到十六进八。章纲中的核心冲突（展露vs隐藏的矛盾抉择）被完全跳过，取而代之的是激进的战斗升级。",
-      "[critical] 主角人设严重偏离。陈守一的约束是'绝不主动招惹麻烦，麻烦来了绝不坐以待毙'、'只展露刚好够脱困的部分，永远留有后手，从不把自己置于必死的绝境'。但本章中：1.铜环脱手（主动暴露底牌）→2.印记觉醒且透出衣领（主动暴露同源者身份）→3.后颈发光（主动成为全场焦点）→4.选择带伤参赛而非逃跑（将自己置于必死绝境）。这些行为与'谨慎多疑'、'绝不把自己置于必死绝境'的人设完全矛盾。",
-      "[critical] 第34章结尾状态与第35章开头时间线断裂。第34章结尾：执法堂监视者离开阴影朝陈守一走来，脚步声正在靠近，铜环温度持续攀升，陈守一需要做出抉择（今晚行动vs监视者追踪）。第35章开头直接跳到四方角帽动手→铜环爆炸→苏婉儿出场→十六进八，中间缺少：1.陈守一对监视者的应对/逃脱过程；2.从比赛暂停到十六进八的过渡；3.为何苏婉儿会出现在演武场（她藏身处刚被发现）。",
-      "[critical] 铜环能量消耗逻辑混乱。铜环在第32章已经有'裂纹扩大/淡青色光芒'，第34章战斗中'持续发烫/裂纹扩大'。第35章又'铜环炸裂出更亮的光芒'，之后'铜环中的能量已经消散了大半'。没有说明铜环的剩余价值量，也没有说明为何能连续爆发。铜环作为三件钥匙之一，其能量衰减曲线应该明确。",
-      "[critical] 章节类型偏离。章纲要求'转折铺垫章'，情绪基调应该是'压抑→紧绷→盘算→危机→抉择'。但本章实际是密集的战斗高潮：四方角帽动手→铜环爆炸→印记觉醒→十六进八比赛→对手嘲讽→开战。连续四个高能事件，节奏过于紧凑，没有给读者喘息空间，也没有体现'抉择'的犹豫过程。",
-      "[critical] 苏婉儿出场逻辑存疑。根据状态卡：苏婉儿'三重陷阱用完/藏身处暴露/被追杀'，她的新纸条是'今晚子时前东侧暗巷动手/三个炼气五层'。但第35章中，她突然出现在演武场，说'我的藏身处被发现了'、'人多的地方他们暂时不敢动手'。这与她被追杀、面临生命危险的设定不符——她应该继续躲藏而非出现在公共场合。",
-      "[critical] 执法堂监视线（SP03/SP19）在第34章重大推进（监视者离开阴影追踪/向周执事汇报）后，第35章没有延续紧张感。四方角帽发出信号后，周执事的反应应该更积极，但文中只提到'四方角帽汇报'和'周执事那边肯定会有所动作'，实际威胁没有展开。执法堂监视线实际处于停滞状态。",
-      "[warning] 章纲要求推进H042_卫长老和H041_铜环钥匙。H042_卫长老只在苏婉儿台词'小心卫长老的人'中提及一次，没有实质推进。H041_铜环钥匙虽然有铜环爆炸和共鸣事件，但属于被动触发而非主动揭示。H044_同源者关系虽然在深化（印记觉醒），但印记觉醒的方式（主动爆发）不符合谨慎人设。",
-      "[warning] 第34章结尾悬念（执法堂监视者脚步声正在靠近/面临抉择）被直接覆盖，没有给读者期待的回响。章内结尾是'锣声落下，这一次，是属于他的战斗'，悬念感较强，但与第34章结尾的悬念断裂。",
-      "[warning] 周执事的利益逻辑不清晰。他已经收到四方角帽的确认信号（同源印记觉醒/三件钥匙齐全），理论上应该立刻调动人手灭口，而非只派人追踪。但本章中周执事的反应仅限于'四方角帽汇报→周执事那边肯定会有所动作'，没有具体动作。",
-      "[warning] 四方角帽说'你身上有三件钥匙的气息'，这是陈守一当前未知的信息（他只知道铜牌和铜环在自己这里，令牌在陈老那里）。四方角帽能感知三件钥匙的气息，说明他有某种探测能力，但这个能力之前没有铺垫。",
-      "[info] 检测到'突然'出现1次（在'铜环突然爆发出一道刺目的光芒'中），未超阈值。整体AI标记词密度较低，符合要求。",
-      "[warning] 最近4章持续高压（警觉→盘算→压力升级→震惊→危机→逃脱 -> 警觉→压制→危机→逃脱→展望 -> 高压→紧张→盘算→压制→展望 -> 压抑→紧绷→盘算→危机→抉择临近），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（警觉→盘算→压力升级→震惊→危机→逃脱 -> 警觉→压制→危机→逃脱→展望 -> 高压→紧张→盘算→压制→展望 -> 压抑→紧绷→盘算→危机→抉择临近），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H047_陈老与陈守一同姓（中程，可回收）。",
-      "[warning] 111个段落里有57个不足35字，段落被切得过碎。",
+      "[warning] 最近4章持续高压（紧张→恐惧→拼命→震动（师兄神魂）→震惊（冥将目的）→悲痛（\"知道会这样\"）→释然（秦无涯）→紧张（狂奔）→释然（逃出）→沉重（三天时限）→绝望（桥终将崩塌） -> 震惊（冥将等待）→沉重（抉择困境）→震动（师兄神魂）→震惊（血脉真相）→紧张（暗号触发）→震惊（印记激活）→沉重（代价确认）→震动（桥在回应）→期待（临渊城方向）→坚定（第三条路） -> 沉重（末法真相）→震惊（三个选择）→紧张（冥将逼近）→悲痛（秦无涯断后）→坚定（独自引开）→紧张（分头跑） -> 沉重→紧张（分身逼近）→坚定（不跑）→震惊（桥回应）→震动（第一个守夜者身影）→期待（帛书声音）→沉重（声音消散）→紧张（未知存在）→坚定（三个时辰够了）），缺少明显的情绪释放。",
+      "[warning] 84个段落里有32个不足35字，段落被切得过碎。",
       "[warning] 连续出现6个不足35字的短段，容易形成短句堆砌。"
     ],
     "lengthWarnings": [],
@@ -1133,597 +1049,36 @@
       "hardMin": 2182,
       "hardMax": 3818,
       "countingMode": "zh_chars",
-      "writerCount": 3541,
-      "postWriterNormalizeCount": 3302,
-      "postReviseCount": 2945,
-      "finalCount": 3396,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 99316,
-      "completionTokens": 32186,
-      "totalTokens": 131502
-    }
-  },
-  {
-    "number": 36,
-    "title": "同源相残",
-    "status": "ready-for-review",
-    "wordCount": 3159,
-    "createdAt": "2026-04-15T17:18:23.086Z",
-    "updatedAt": "2026-04-15T17:18:23.086Z",
-    "auditIssues": [
-      "[warning] 最近4章持续高压（警觉→压制→危机→逃脱→展望 -> 高压→紧张→盘算→压制→展望 -> 压抑→紧绷→盘算→危机→抉择临近 -> 压抑→紧绷→危机→抉择→坚定），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（警觉→压制→危机→逃脱→展望 -> 高压→紧张→盘算→压制→展望 -> 压抑→紧绷→盘算→危机→抉择临近 -> 压抑→紧绷→危机→抉择→坚定），缺少明显的情绪释放。",
-      "[warning] 连续出现3个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2497,
-      "postWriterNormalizeCount": 3128,
-      "postReviseCount": 4448,
-      "finalCount": 3159,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 174395,
-      "completionTokens": 44914,
-      "totalTokens": 219309
-    }
-  },
-  {
-    "number": 37,
-    "title": "令牌惊堂",
-    "status": "drafted",
-    "wordCount": 11617,
-    "createdAt": "2026-04-15T18:07:20.292Z",
-    "updatedAt": "2026-04-15T18:07:20.292Z",
-    "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 0,
-      "postWriterNormalizeCount": 0,
+      "writerCount": 3626,
+      "postWriterNormalizeCount": 2407,
       "postReviseCount": 0,
-      "finalCount": 0,
-      "normalizeApplied": false,
-      "lengthWarning": true
+      "finalCount": 2407,
+      "normalizeApplied": true,
+      "lengthWarning": false
     },
     "tokenUsage": {
       "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
+      "completionTokens": 13354,
+      "totalTokens": 13354
     }
   },
   {
-    "number": 38,
-    "title": "(pending)",
-    "status": "drafted"
-  },
-  {
-    "number": 39,
-    "title": "(pending)",
-    "status": "drafted"
-  },
-  {
-    "number": 40,
-    "title": "暗室困局",
+    "number": 105,
+    "title": "等待者",
     "status": "approved",
-    "wordCount": 3263,
-    "createdAt": "2026-04-15T19:03:17.099Z",
-    "updatedAt": "2026-04-15T19:03:42.095Z",
+    "wordCount": 3182,
+    "createdAt": "2026-04-17T14:16:16.282Z",
+    "updatedAt": "2026-04-17T14:16:26.853Z",
     "auditIssues": [
-      "[warning] 第39章开头提到'三日前被执法堂押走的消息早已传遍内外门'，但第36章章节摘要也记录了'被执法堂以使用禁术名义押走'。这两章都描述了'被押走'事件，且第39章是决赛场景，说明十六进八后执法堂宣布押送但未立即执行，而是决赛结束后才执行。此时间逻辑存在轻微歧义，但不影响第40章的衔接。",
-      "[info] 检测到3句连续以相同开头的句子，呈现列表式AI生成结构",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H042_卫长老（中程，已逾期）、H047_陈老与陈守一同姓（中程，已逾期）。",
-      "[warning] 138个段落里有98个不足35字，段落被切得过碎。",
-      "[warning] 连续出现34个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2843,
-      "postWriterNormalizeCount": 2843,
-      "postReviseCount": 3263,
-      "finalCount": 3263,
-      "normalizeApplied": false,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 79197,
-      "completionTokens": 35187,
-      "totalTokens": 114384
-    }
-  },
-  {
-    "number": 41,
-    "title": "山道逢敌",
-    "status": "approved",
-    "wordCount": 2731,
-    "createdAt": "2026-04-15T19:43:19.090Z",
-    "updatedAt": "2026-04-15T19:43:38.244Z",
-    "auditIssues": [
-      "[warning] 第40章脚边纸团（H048_纸团来源）被提及但未读取：章节中陈守一看到纸团\"歪斜字迹\"，但实际内容（\"长老已知。后山有人接应。周执事的人被拦住了。子时三刻，老槐树下。\"）是由旁白直接揭示而非角色主动读取。纸团作为第36章擂台上获得的悬念道具，与H050_暗处敲门人相关联，此处被\"踢入角落\"后彻底遗忘。",
-      "[warning] 章节实际内容与控制输入（Chapter Intent）存在较大偏差。控制输入描述为\"大比结束后被带往执事堂登记→长老召见询问幽冥隐脉体→复杂处置登记\"，但实际情节为：暗室困局→周执事揭露栽赃→神秘敲门→灰袍执事带离→白发长老审讯→孙师兄拦截交易→周执事人员追杀→到达老槐树。核心\"长老召见\"场景被完全重写，新增暗室困局、周执事对峙、孙师兄交易、追杀逃脱等大量剧情节点。",
-      "[info] 白发长老提及《玄清宗录·秘卷》载\"永安十三年秋，灵泉异变，死三十七人\"，但竹简记载为\"死三十六人\"，相差一人。此差异未被角色提及或解释。",
-      "[info] H035_陈老欠债和H040_执法堂监视被列为\"Must Advance\"，但本章主要通过长老介入完成执法堂困局解套，H040的\"执法堂监视\"在长老\"不要外传\"嘱托后性质转变；H035在陈老出场时\"欠死者一条命\"被简化为\"你比我预想的晚了半个时辰\"，未深入展开。",
-      "[info] 本章通过长老之口揭示\"三件钥匙合一时，能打开的不只是老槐树下那间密室。还有灵泉核心\"，为新信息揭示。当前11条活跃伏笔中，本章未消耗旧债，反而新增信息扩展了既有伏笔（H045三件钥匙功能扩展），伏笔预算管理良好。",
-      "[warning] 章节标题\"山道逢敌\n\n===\"已自动调整为\"山道逢敌\"。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H041_铜环钥匙（中程，已逾期）、H042_卫长老（中程，已逾期）、H046_铜环裂纹（中程，已逾期）。",
-      "[warning] 97个段落里有65个不足35字，段落被切得过碎。",
-      "[warning] 连续出现7个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 4349,
-      "postWriterNormalizeCount": 2610,
-      "postReviseCount": 2731,
-      "finalCount": 2731,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 229223,
-      "completionTokens": 106063,
-      "totalTokens": 335286
-    }
-  },
-  {
-    "number": 42,
-    "title": "第42章 老槐树下",
-    "status": "approved",
-    "wordCount": 3571,
-    "createdAt": "2026-04-15T20:03:27.069Z",
-    "updatedAt": "2026-04-15T20:03:54.000Z",
-    "auditIssues": [
-      "[info] 本章信息密度极高：父亲献祭真相、神魂注入、铜环来历、陈老身份、孙师兄与父亲旧识、进入灵泉等核心信息集中在陈守一与陈老的对话中一次性释放，读者消化压力较大。",
-      "[info] 主角人设符合：谨慎（询问退路、危险程度、准备事项）、有底线（'不能违背我的底线，我才能帮你'）、务实（休息一夜再进入、等待铜环恢复）、记人情（'等我从灵泉里出来，再还他的债'）。",
-      "[info] 陈老、苏婉儿、孙师兄行动逻辑合理：陈老提供信息+禁制保护+三十年布局；苏婉儿被转移到安全地点（呼应第41章她仍在躲避执法堂追杀的状态）；孙师兄拿铜牌位置以还'那人的债'（与父亲旧识的伏笔呼应）。",
-      "[info] 状态变化逻辑自洽：铜环'裂纹深处光芒更亮'呼应第41章'出现稳定脉动'→恢复中；金丝缠'部分纹路消退'呼应陈老说'能消退但不会完全消退'；右肩伤口'已经结痂'呼应'回春丹+一夜休息'。",
-      "[info] 章节末悬念设置有效：未知身影出现（脚步声很轻、很碎、拖行感）→呼应陈老说的'实验失败者残魂，三十年不散'→主角铜环发光预警→外部冲突激活，符合结构指令'禁止以主角内心独白作为章节结尾'。",
-      "[info] 时间线清晰：第41章抵达老槐树→对话（当晚）→休息一夜→天亮→进入灵泉→遭遇未知身影。与当前状态卡中'两个时辰内不宜剧烈动作''隐匿符有效期两个时辰'等限制条件无冲突。",
-      "[info] 无设定冲突：孙师兄说'铜矿本源是三十年前实验副产品'与陈老说'父亲力量封进铜环'不矛盾（铜环是实验产物→母亲遗物→父亲封存力量）；三件钥匙物理分散但主角体内印记+铜环足以激活（'需要引子'的设定）；陈老对天机簿来源'不能说'保持悬念。",
-      "[info] 高频词使用适度：'光芒'（5次）、'缓缓'（3次）、'淡金色'（3次）在可接受范围；AI标记词'忽然'（0次）、'猛地'（0次）、'竟然'（1次）密度极低，符合要求。",
-      "[info] H035_陈老欠债已回收（'你欠一个死者的命'的完整背景揭露）；H051_后山老槐树已推进至进入阶段；H053_三件钥匙与灵泉核心已深化（激活方式揭露）；H055_七十三人之谜已揭露细节（疯六藏五加陈老）。无支线沉寂。",
-      "[info] 主角情感弧线有推进：从'得知父亲献祭真相'（震惊/停滞）→'想起从小没有父亲'（消化/压抑）→'恢复清明、询问具体问题'（接受/务实）→'进入灵泉'（决断/行动）。情绪压力从消化真相到准备行动有转折。",
-      "[info] 章节类型序列正常：第40章困局章→第41章高潮转折/关键会面章→第42章推进/对峙章，本章以对话揭示真相+进入新空间+遭遇悬念结尾，节奏有起伏。",
-      "[info] 各方利益链清晰：主角（查真相+保命+还债）、陈老（还债+引导）、孙师兄（还债+阻止周执事/卫长老）、周执事（灭口）。主角进入灵泉后周执事仍有威胁（禁制三天后解除），利益链未断裂。",
-      "[warning] 章节标题\"欠债还钱\"已自动调整为\"第42章 老槐树下\"。",
-      "[warning] 135个段落里有48个不足35字，段落被切得过碎。",
-      "[warning] 连续出现9个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3481,
-      "postWriterNormalizeCount": 3476,
-      "postReviseCount": 3571,
-      "finalCount": 3571,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 113716,
-      "completionTokens": 42066,
-      "totalTokens": 155782
-    }
-  },
-  {
-    "number": 43,
-    "title": "灵泉深处",
-    "status": "approved",
-    "wordCount": 2740,
-    "createdAt": "2026-04-15T20:21:45.671Z",
-    "updatedAt": "2026-04-15T20:22:02.752Z",
-    "auditIssues": [
-      "[warning] H049执法堂内部裂痕在第40章种下种子，第42章已通过陈老口述方式揭示长老与周执事对立，本章又通过记忆碎片方式提及，但整体推进节奏偏慢。执法堂内部裂痕作为重要支线（钩 Agenda明确要求推进），在陈守一进入灵泉核心的当下，其呈现方式（模糊感知真假难辨）可能削弱读者对这条支线的期待感。",
-      "[info] 状态卡显示铜环'能量持续恢复（裂纹光芒更亮/温润暖意）'，但本章铜环被父亲力量激活后光芒爆发消耗很大。这种变化符合逻辑（老槐树禁制下恢复→进入灵泉核心→父亲力量激活→能量消耗），无需修改。",
-      "[info] H050暗处敲门人在第40章种下种子后，尚未有明确推进。本章专注灵泉核心探索，这条支线暂时悬置属正常节奏安排。",
-      "[warning] 最近3章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉），缺少明显的情绪释放。",
-      "[warning] 章节标题\"灰雾深处\n\n===\"已自动调整为\"灵泉深处\"。",
-      "[warning] 最近3章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉），缺少明显的情绪释放。",
-      "[warning] 连续出现4个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 4279,
-      "postWriterNormalizeCount": 1714,
-      "postReviseCount": 2740,
-      "finalCount": 2740,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 128549,
-      "completionTokens": 29950,
-      "totalTokens": 158499
-    }
-  },
-  {
-    "number": 44,
-    "title": "窄门之后",
-    "status": "approved",
-    "wordCount": 3212,
-    "createdAt": "2026-04-15T20:38:44.082Z",
-    "updatedAt": "2026-04-15T20:39:03.167Z",
-    "auditIssues": [
-      "[info] 本章节奏型为：发现→修复（高强度）→被追（高强度）→被救（高强度）→传送（高强度）→清醒（低强度）。全部为高/低两档交替，无中档节奏作为过渡，读者全程处于紧绷状态。",
-      "[warning] 最近3章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉），缺少明显的情绪释放。",
-      "[warning] 最近3章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H040_执法堂监视（中程，已逾期）、H053_三件钥匙与灵泉核心（中程，可回收）、H057_灵泉核心探索（中程，可回收）。",
-      "[warning] 133个段落里有90个不足35字，段落被切得过碎。",
-      "[warning] 连续出现8个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2676,
-      "postWriterNormalizeCount": 2676,
-      "postReviseCount": 3212,
-      "finalCount": 3212,
-      "normalizeApplied": false,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 96113,
-      "completionTokens": 30450,
-      "totalTokens": 126563
-    }
-  },
-  {
-    "number": 45,
-    "title": "清溪涧",
-    "status": "approved",
-    "wordCount": 1338,
-    "createdAt": "2026-04-15T21:07:53.898Z",
-    "updatedAt": "2026-04-15T21:08:11.853Z",
-    "auditIssues": [
-      "[warning] 苏婉儿'确认安全'（陈老确认已安全转移）与当前行踪暴露存在矛盾。支线SP11显示她'藏身处被执法堂发现'后由陈老转移，当前她主动来到小院且被周执事的人发现，这份冒险的代价应在后续情节中有所呼应（如被跟踪、遭遇危险等），否则'安全确认'的设定显得仓促。",
-      "[info] H052_孙师兄交易在本章未获推进。种子于第41章，已过4章未推进。按照'待揭示'级别的旧债性质，陈守一刚逃出灵泉、身体虚弱、且三日后演武场期限未至，暂缓回收逻辑合理，但需在近期（1-2章内）安排交代。",
-      "[info] 章节开头场景切换略显突兀——陈守一从第44章末尾'穿过漫长甬道抵达清溪涧，跌坐在溪边大石'，到本章节'膝盖撞在青石上闷响，在夜风里格外清晰'，缺少空间过渡的描写。",
-      "[warning] 最近4章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉 -> 震撼→坚定→危机→紧迫→抉择→逃脱→活下来），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉 -> 震撼→坚定→危机→紧迫→抉择→逃脱→活下来），缺少明显的情绪释放。",
-      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [
-      "第45章经过一次字数归一化后仍超出硬区间（2182-3818，实际 1338）。"
-    ],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 4584,
-      "postWriterNormalizeCount": 2061,
-      "postReviseCount": 1338,
-      "finalCount": 1338,
-      "normalizeApplied": true,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 126279,
-      "completionTokens": 69146,
-      "totalTokens": 195425
-    }
-  },
-  {
-    "number": 46,
-    "title": "秘境迷踪",
-    "status": "approved",
-    "wordCount": 3585,
-    "createdAt": "2026-04-15T21:22:53.801Z",
-    "updatedAt": "2026-04-15T21:23:10.288Z",
-    "auditIssues": [
-      "[warning] 第45章结尾苏婉儿话被打断\"我父亲怀疑，苏\"，第46章直接以\"清溪涧的石屋里\"开头补充这句话。陈守一主动说出\"苏远山\"这个名字。虽然陈守一在第41章已知\"苏婉儿父亲被卫长青所杀\"，但直接从陈守一口中说出父亲全名，剥夺了苏婉儿揭示身份的悬念。",
-      "[warning] 第45章和第46章的节奏类型都是\"情报揭示+主角盘算\"模式。连续两章停留在\"苏婉儿带来新线索→陈守一分析局势→决定下一步\"的循环中，没有外部冲突节拍推进。第44章的紧张逃亡后连续两章节奏平缓，读者期待缺口在累积但未被满足。",
-      "[warning] 章节末尾突然切到\"窗外不远处，两个监视者的身影\"视角，描写疤脸男子和另一人的对话。这是纯反派视角段落，与整章以陈守一视角为主的叙事不一致，且没有过渡。",
-      "[info] 第46章新细节：\"铜环内部……闭合处隐约可见淡金色的纹路\"。第44章铜环修复时只提到\"三道裂纹完全闭合\"和\"暗红如血色\"，未提及淡金色纹路。新细节与旧状态存在轻微不一致。",
-      "[info] H052_孙师兄交易线已开5章，本章通过送纸条\"今夜子时，清溪涧后山岔路口老槐树下\"推进了进展。但孙师兄尚未正式出场，\"待揭示\"状态持续，读者期待管理需要明确预期回收时间。",
-      "[warning] 最近4章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉 -> 震撼→坚定→危机→紧迫→抉择→逃脱→活下来），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉 -> 震撼→坚定→危机→紧迫→抉择→逃脱→活下来），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H052_孙师兄交易（中程，可回收）、H061_长老与父亲关系（近期，可回收）。",
-      "[warning] 本章新开了 2 个伏笔，但没有回收任何旧债。",
-      "[warning] 120个段落里有59个不足35字，段落被切得过碎。",
-      "[warning] 连续出现20个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3965,
-      "postWriterNormalizeCount": 2182,
-      "postReviseCount": 3585,
-      "finalCount": 3585,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 94311,
-      "completionTokens": 24237,
-      "totalTokens": 118548
-    }
-  },
-  {
-    "number": 47,
-    "title": "老槐暗语",
-    "status": "approved",
-    "wordCount": 4203,
-    "createdAt": "2026-04-15T21:50:43.860Z",
-    "updatedAt": "2026-04-15T21:51:02.098Z",
-    "auditIssues": [
-      "[warning] 高频词'灼热'在章节中重复约7次，'幽冥兽'重复约13次，'铜环'重复约18次。AI标记词'骤然'出现3次。",
-      "[info] 章节类型序列为：ch44高潮章→ch45过渡章→ch46过渡章→ch47高潮章。连续两章过渡后接高潮章，节奏有起伏但属正常波动。",
-      "[info] SP09_孙师兄交易线从第46章'联络尝试'推进到第47章'会面成功+情报传递'；SP42_联络孙师兄从'新支线'推进到'进行中-重要进展'；SP43_铜环之秘从'待探索'推进到'新变化（与玉牌共鸣/幽冥隐脉体觉醒）'。所有相关支线均有实质推进，无停滞。",
-      "[info] 陈守一情绪弧线：警觉紧张（孙师兄来）→震惊（周执事监视升级）→危机（幽冥兽出现）→化解（血脉共鸣）→警觉（长老提前见面）。压力从8持续上升至9后通过血脉共鸣短暂释放，又因长老提前见面重新点火期待。弧线有起伏，非平坦。",
-      "[info] 章尾'长老说，演武场的事可以提前。今夜子时，他在后山老槐树下等你。'成功重新点燃好奇心，与H061_长老与父亲关系（预期第47-48章回收）呼应。三天期限压缩为今夜，时间紧迫感升级。",
-      "[info] 卷纲节点'炼气杂役在宗门夹缝中求生存，在不冒头与被迫展露的矛盾中艰难前行'——第47章陈守一被迫展露幽冥隐脉体（体表黑光/血脉共鸣），但成功化解危机并被迫提前见长老，符合'被逼展露'的核心主题。剧情推进速度匹配卷纲规划。",
-      "[info] 主要视角保持在陈守一。第三人称全知视角偶尔代入苏婉儿视角（如'苏婉儿话说到一半，脸色骤变'），但立即回到陈守一视角。视角切换过渡自然。",
-      "[warning] 最近4章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉 -> 震撼→坚定→危机→紧迫→抉择→逃脱→活下来），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉 -> 震撼→坚定→危机→紧迫→抉择→逃脱→活下来），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H062_石台传送门（中程，可回收）。",
-      "[warning] 135个段落里有84个不足35字，段落被切得过碎。",
-      "[warning] 连续出现7个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [
-      "第47章经过一次字数归一化后仍超出硬区间（2182-3818，实际 4203）。"
-    ],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2843,
-      "postWriterNormalizeCount": 2843,
-      "postReviseCount": 4203,
-      "finalCount": 4203,
-      "normalizeApplied": true,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 179405,
-      "completionTokens": 59631,
-      "totalTokens": 239036
-    }
-  },
-  {
-    "number": 48,
-    "title": "因果",
-    "status": "approved",
-    "wordCount": 4323,
-    "createdAt": "2026-04-15T22:20:02.489Z",
-    "updatedAt": "2026-04-15T22:20:41.483Z",
-    "auditIssues": [
-      "[critical] 第48章与控制输入(Chapter Intent)严重偏离。控制输入明确要求：1. 陈守一进入古修士洞府，发现洞壁刻满上古文字；2. 通过研读洞府记载了解上古大劫真相；3. 揭示幽冥隐脉体是上古封印者后裔；4. 揭示末法时代与封印衰弱的关联；5. 陈守一意识到自己的体质是一种责任。但实际内容是：陈守一在后山老槐树下等待，与苏婉儿一起前往演武场，由大长老直接揭露真相。章节核心场景、叙事方式、揭示节奏完全不同。",
-      "[critical] 苏婉儿父亲相关设定存在冲突。第46-47章中，苏婉儿揭示父亲是五年前\"失踪\"，并一直在追查真相。但本章大长老和李长老都直接说\"苏长河\"已死（\"他和苏长河没能拦住他\"\"苏婉儿手中的玉牌则是最后一块\"），没有解释失踪与死亡的关系。苏婉儿若知道父亲已死，她追查五年的内容应该是什么？",
-      "[critical] 控制输入中明确要求的\"末法时代\"设定未被使用。控制输入写明：'天地灵气的衰减周期：每经一个大时代，有效利用率衰减至上一代的70%'，并要求揭示'末法时代的到来，与封印的衰弱有直接关系'。这是重要的世界观设定，本章完全未涉及。",
-      "[warning] 陈守一在得知父亲献祭真相后的反应（主动请缨\"我没有父亲的时间。封印在松动...我若不去，迟早会有人替我去。与其把命交到别人手里，不如我自己去拿\"）与他的人设（谨慎多疑、绝不主动招惹麻烦、绝不把自己置于必死绝境）有轻微偏离。正常情况下，刚经历觉醒、灵力未复、生命力受损的炼气三层，面对\"上古大劫凶物\"应该更加犹豫，而非如此决然地主动踏入险地。",
-      "[warning] 周执事、李长老、大长老三人之间的利益格局不够清晰。周执事明显是反派但被迫退场太快；李长老三十年前\"没能拦住\"父亲的献祭，他的立场是什么？愧疚？同样有责任？他在本章中仅出场两段就结束，对后续剧情的影响未做铺垫。",
-      "[warning] H052_孙师兄交易（待履行）和H058_体内神秘能力这两条悬疑钩在本章完全没有推进。孙师兄交易是控制输入明确要求\"Must Advance\"的，但本章孙师兄完全未出场。苏婉儿线索也未深入。",
-      "[warning] 章节末尾\"封印被提前触发\"的悬念足够有力，但封印内具体是什么（\"上古大劫时险些覆灭人间的凶物\"）仍然模糊。这与控制输入要求\"揭示上古大劫真相\"形成矛盾——既要说\"你不需要知道太多\"，又说封印里有凶物，读者期待被点燃但又被压制，可能造成挫败感。",
-      "[info] 本章高潮转折密集，但信息量极大（父亲献祭真相、师徒关系揭示、三人组历史、玉牌来历、封印威胁、封印触发），读者可能在短时间内承受过多冲击。演武场揭秘→封印触发的节奏可以稍微拉开，用两章分别处理更合理。",
-      "[info] 章节中视角偶尔切换到苏婉儿（\"苏婉儿站在一旁，攥着玉牌的手指微微发白\"）但篇幅极短，苏婉儿几乎没有台词或行动。作为与陈守一同源、父亲同样相关的角色，她在演武场揭露真相时应该有更多内心活动或对质。",
-      "[warning] 最近4章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉 -> 震撼→坚定→危机→紧迫→抉择→逃脱→活下来），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉 -> 震撼→坚定→危机→紧迫→抉择→逃脱→活下来），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H052_孙师兄交易（中程，可回收）、H062_石台传送门（中程，可回收）。",
-      "[warning] 125个段落里有42个不足35字，段落被切得过碎。",
-      "[warning] 连续出现10个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [
-      "第48章经过一次字数归一化后仍超出硬区间（2182-3818，实际 4323）。"
-    ],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3783,
-      "postWriterNormalizeCount": 3176,
-      "postReviseCount": 8311,
-      "finalCount": 4323,
-      "normalizeApplied": true,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 198317,
-      "completionTokens": 69706,
-      "totalTokens": 268023
-    }
-  },
-  {
-    "number": 49,
-    "title": "灵泉惊变",
-    "status": "approved",
-    "wordCount": 4453,
-    "createdAt": "2026-04-15T22:53:05.052Z",
-    "updatedAt": "2026-04-15T22:53:30.819Z",
-    "auditIssues": [
-      "[critical] 三件钥匙归属混乱。第48章明确说'灵玉剖开，一分为三'，三人是陈守真（铜环）、周明远（玉牌）、苏长河（玉牌），且周明远的玉牌在孙师兄手中。第49章被逐出弟子却说三件钥匙是'铜环、玉牌、暗金环'，暗金环是他的。这里暗金环从哪里来？周明远的玉牌变成了金环？三件钥匙的数量和归属在两章间严重冲突。",
-      "[critical] 三十年前三人身份矛盾。第48章明确说三十年前三人是'陈守真、周明远、苏长河'，且'苏长河五年前最后接触三人之一'中包括苏长河自己（不合理，应该是另外三人）。被逐出弟子是第四人参与。第49章被逐出弟子却说'当年三人一起布下封印'，暗示他是三人之一。两章对'三人'的定义不一致。",
-      "[critical] 铜环裂纹状态前后矛盾。第48章'铜环三道裂纹闭合（暗红如血色）'，第49章'铜环从他怀中滑落...环身上的裂纹依然存在，但比之前淡了许多'。第48章已写'闭合'，第49章又说'依然存在'，这是逻辑矛盾。",
-      "[warning] 周执事完全消失。第48章他是核心反派、被逐出弟子声称'周执事的眼线是他的'（暗示周执事被操控），但第49章周执事完全没有出场，也没有任何交代。作为重要反派，其消失显得突兀。",
-      "[warning] 被逐出弟子出场过于仓促。他'从阴影中走出'之前，文中只有石室深处的嗤笑声作为铺垫，没有脚步声、气息变化等渐进式出场。相比周执事在第48章的铺垫（威胁'灵泉核心下方沉睡什么'），被逐出弟子的出场显得突然。",
-      "[warning] 苏婉儿出场无铺垫。第48章她被灰袍修士拦在演武场外，第49章她突然出现在灵泉核心石室救人，之间没有任何过渡（如何突破周执事眼线、如何进入灵泉核心、何时出发）。",
-      "[warning] '骤然'出现频率过高（6次以上）。作为AI标记词，高频使用影响文风自然度。",
-      "[warning] 被逐出弟子知道太多。他的发言揭示了：他知道陈守一的行踪（通过眼线网）、他知道铜环与玉牌的关系、他知道陈守真是献祭者、他知道苏长河参与此事、他有暗金环——信息量过大，且没有解释他是如何获取这些情报的。相比之下，第48章大长老揭示真相时，有'三十年前三人共入遗迹''亲手交给三人'等铺垫，被逐出弟子的信息源完全空白。",
-      "[info] 铜环中父亲神魂状态不一致。第48章大长老通过传音告知陈守一'你父亲在灵泉核心留了东西'，说明父亲神魂当时能主动交流。但第49章开头'怀中的铜环滚烫如炭...父亲的神魂没有回应'，陈守一呼唤'父亲？'才有回应。两章间父亲神魂的状态（活跃/沉寂）不一致。",
-      "[info] 周执事-逐出弟子的关系（SP26周执事灭口/SP50周执事秘密/SP51被逐出弟子动向）在本章被突然揭示，但缺乏渐进铺垫。读者刚在第48章知道'有人提前触发封印'，第49章直接揭示是逐出弟子所为，且周执事是他的傀儡——信息密度过高。",
-      "[info] 章尾以'苏婉儿出现对峙被逐出弟子'收尾，但苏婉儿的出场本身就很突兀（见视角一致性issue）。此外，冥将仍在咆哮、封印裂痕扩大、被逐出弟子威胁——多个悬念同时堆积，但没有一个被点亮或释放。",
-      "[warning] 最近4章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉 -> 震撼→坚定→危机→紧迫→抉择→逃脱→活下来），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（绝境→盘算→坚定→对峙→揭露→坚定→希望 -> 困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉 -> 震撼→坚定→危机→紧迫→抉择→逃脱→活下来），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H061_长老与父亲关系（立即，已逾期）、H064_苏婉儿父亲失踪案（中程，可回收）、H065_上古遗迹（中程，可回收），另有 1 条。",
-      "[warning] 122个段落里有48个不足35字，段落被切得过碎。",
-      "[warning] 连续出现10个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [
-      "第49章经过一次字数归一化后仍超出硬区间（2182-3818，实际 4453）。"
-    ],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 6114,
-      "postWriterNormalizeCount": 5019,
-      "postReviseCount": 4102,
-      "finalCount": 4453,
-      "normalizeApplied": true,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 256601,
-      "completionTokens": 63779,
-      "totalTokens": 320380
-    }
-  },
-  {
-    "number": 50,
-    "title": "石室困局",
-    "status": "approved",
-    "wordCount": 2502,
-    "createdAt": "2026-04-15T23:13:20.251Z",
-    "updatedAt": "2026-04-15T23:13:41.969Z",
-    "auditIssues": [
-      "[info] 陈老自第42章后完全消失，未提及与今夜变局的关联或交接动向。考虑到陈老是弯月印记持有者、同源者、欠债者，且三日期限已被打破，其消失较为突兀。",
-      "[info] 苏婉儿重伤后以'别管我'推动情节，符合盟友定位，但当前'双腿一软跌坐在地，却仍死死攥着剑柄'的动作仅功能性表达，可适当增加其作为独立角色的反应（如对被逐出弟子揭露父亲参与一事的情绪波澜），以深化SP40的情感张力。",
-      "[warning] 本章'金光呼啸而至'出现两次（第2段和第5段起），'暗金环'出现11次，'铜环'出现10次。虽然术语重复在情节密集章中难以避免，但'金光呼啸而至'的完全重复可考虑替换。",
-      "[info] 本章从陈守一视角叙事，但有一处提及'被逐出弟子的目光，也在有意无意地朝那个方向瞟去'——此处是陈守一的观察，合理。但石室外部动作（如李长老位置、大长老怀中掏出符箓的具体过程）均通过大长老行动间接呈现，保持了视角统一。",
-      "[info] 铜环比第49章'裂纹变淡'的设定一致，父亲神魂沉寂状态正确。但铜环在第49章已'滚烫如炭'、裂纹变淡，本章开头描写'淡金纹路偶尔泛起一缕微光，像是沉睡前的最后一口气息'——这是父亲神魂沉寂后的余温，逻辑自洽。",
-      "[warning] 最近4章持续高压（困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉 -> 震撼→坚定→危机→紧迫→抉择→逃脱→活下来 -> **震惊→悲痛→坚定→紧迫→决然→震撼→危机→希望→凝滞**），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（困局→希望→警觉→紧张→对峙 -> 紧张→揭秘→震撼→坚定→希望→警觉 -> 震撼→坚定→危机→紧迫→抉择→逃脱→活下来 -> **震惊→悲痛→坚定→紧迫→决然→震撼→危机→希望→凝滞**），缺少明显的情绪释放。",
-      "[warning] 当前有 16 个活跃伏笔，已经高于建议上限 12 个。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H067_幽冥隐脉体觉醒（中程，可回收）、H068_幽冥界薄弱节点（中程，可回收）、H069_铜环玉牌同源共鸣（中程，可回收），另有 3 条。",
-      "[warning] 本章新开了 2 个伏笔，但没有回收任何旧债。",
-      "[warning] 97个段落里有50个不足35字，段落被切得过碎。",
-      "[warning] 连续出现7个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3164,
-      "postWriterNormalizeCount": 3164,
-      "postReviseCount": 2502,
-      "finalCount": 2502,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 149503,
-      "completionTokens": 22139,
-      "totalTokens": 171642
-    }
-  },
-  {
-    "number": 51,
-    "title": "同源之争",
-    "status": "approved",
-    "wordCount": 3163,
-    "createdAt": "2026-04-15T23:26:52.771Z",
-    "updatedAt": "2026-04-15T23:27:09.558Z",
-    "auditIssues": [
-      "[warning] 章节结尾虽以「封印彻底崩溃」制造了悬念，但周长老的救援来得过于及时，且周执事「发现眼线被替换」这一转折在前文完全没有铺垫——这是周执事的秘密，读者没有理由预判他会主动揭露并通知长老派系。",
-      "[warning] 被逐出弟子的行为逻辑前后矛盾。铺垫了他「布局三十年」「利用周执事眼线网」「在封印上动手脚」，是一个老谋深算的角色。但在本章中，面对一个炼气三层的杂役反复失态——先是「面色骤变」「面色铁青」，后又被陈守一冲破防线抢到石台，完全失去了三十年布局者应有的沉稳。",
-      "[warning] 母亲的设定存在「凭空出现」的风险。母亲「不是这个世界的人」「来自故乡」的设定在第48章仅以「金丝缠是母亲遗物」的碎片形式提及，没有系统性铺垫。如果这一设定是早就埋下的设计，需要在更早的章节中增加暗示（例如父亲偶尔流露的异常、母亲遗物上的特殊纹路等）。",
-      "[warning] 母亲的虚影台词略显生硬。「当你看见这个，说明你已经走到了我没能走完的路」和「通往我故乡的路」等信息传递过于直白，像是旁白而非角色的自然表达。",
-      "[info] 陈守一的情绪弧线在「母亲身份揭示」这一重大转折后没有得到充分的内心反应时间——从「母亲」到「封印崩溃」的情绪切换过于迅速，读者可能还沉浸在震惊中就被新的危机打断。",
-      "[warning] 最近4章持续高压（紧张→揭秘→震撼→坚定→希望→警觉 -> 震撼→坚定→危机→紧迫→抉择→逃脱→活下来 -> **震惊→悲痛→坚定→紧迫→决然→震撼→危机→希望→凝滞** -> **震惊→紧张→危机→决然→希望→紧迫→凝重→抉择**），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（震撼→坚定→危机→紧迫→抉择→逃脱→活下来 -> **震惊→悲痛→坚定→紧迫→决然→震撼→危机→希望→凝滞** -> **震惊→紧张→危机→决然→希望→紧迫→凝重→抉择** -> 紧张→震撼→悲痛→希望→绝望→紧绷），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H079_父亲遗愿（中程，可回收）。",
-      "[warning] 138个段落里有79个不足35字，段落被切得过碎。",
-      "[warning] 连续出现9个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3163,
-      "postWriterNormalizeCount": 3163,
-      "postReviseCount": 3222,
-      "finalCount": 3163,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 167097,
-      "completionTokens": 27260,
-      "totalTokens": 194357
-    }
-  },
-  {
-    "number": 52,
-    "title": "三源归一",
-    "status": "approved",
-    "wordCount": 3205,
-    "createdAt": "2026-04-16T00:15:28.424Z",
-    "updatedAt": "2026-04-16T00:15:49.888Z",
-    "auditIssues": [
-      "[warning] 章节以陈守一独自坐在彼岸山坡望着星空结尾，符合承上启下的过渡性质，但缺少明确的悬念钩子。读者已知陈守一穿越成功，但接下来会发生什么——如何面对新世界、如何回去——悬念缺口不够鲜明。",
-      "[info] 冥将威胁未解决。虽然被逐出弟子牺牲自己、传送门开启，但冥将仍在石室中。周长老能否压制冥将、封印问题如何收尾，读者无从得知。这条危机线被搁置而非推进或释放。",
-      "[info] 周长老登场后主要功能是押送周执事、与被逐出弟子对峙并见证其牺牲，但周长老本身的人物弧线（他与周执事的关系、与被逐出弟子的师兄弟关系）交代不足。周执事被按跪在地也未再有任何反应。",
-      "[info] 本章视角在陈守一与被逐出弟子之间多次切换。切换时有过渡（风暴中\"他看见\"），但整体视角仍是第三人称限制性视角，对周长老、冥将、石室其他人的描写偏全知化，与主角当前\"被卷入虚空\"的状态存在矛盾。",
-      "[warning] 最近4章持续高压（震撼→坚定→危机→紧迫→抉择→逃脱→活下来 -> **震惊→悲痛→坚定→紧迫→决然→震撼→危机→希望→凝滞** -> **震惊→紧张→危机→决然→希望→紧迫→凝重→抉择** -> 紧张→震撼→悲痛→希望→绝望→紧绷），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（震撼→坚定→危机→紧迫→抉择→逃脱→活下来 -> **震惊→悲痛→坚定→紧迫→决然→震撼→危机→希望→凝滞** -> **震惊→紧张→危机→决然→希望→紧迫→凝重→抉择** -> 紧张→震撼→悲痛→希望→绝望→紧绷），缺少明显的情绪释放。",
-      "[warning] 111个段落里有62个不足35字，段落被切得过碎。",
+      "[info] 章节成功实现了降调目标，从连续多章的高压紧张状态转入\"喘息\"模式。陈守一靠着石门休息、回忆古谣、思考第三条路、最终疲惫睡去——这是符合mood指令的正确节奏调整。",
+      "[info] H146_桥需要更多支撑：通过对金线蔓延规律的反思，深化了\"等待选择\"的内涵，伏笔有效推进。",
+      "[info] SP-冥将亲至（紧急）在本章处于\"等待\"状态，分身不进攻、本体未到，但这不是停滞——而是有意的时间窗口设计。符合紧张→喘息→再紧张的张弛节奏。",
+      "[info] 本章情感弧线：紧张（分身对峙）→沉重（体力透支）→释然（靠着石门休息）→沉思（回忆古谣/思考第三条路）→坚定（\"我不是不能交，是还没到时候\"）→疲惫→黑暗（睡去）。情绪压力形态有真实转换和释放，符合弧线平坦检查要求。",
+      "[info] 视角全程锚定陈守一的感官和思绪：从七窍血痂的触感，到金线与石门光的同步跳动，到回忆先生教的古谣，到最后的疲惫睡去。视角稳定，无越界。",
+      "[info] 全文约1400字，高疲劳词（无敌/碾压/秒了/恐怖如斯/倒吸一口凉气）零出现；AI标记词（仿佛/不禁/宛如/竟然/忽然/猛地）零出现。词汇使用克制，符合文风要求。",
+      "[warning] 章节末尾出现\"陌生人声让桥再等等\"的悬念，声音身份不明。这个悬念有\"设谜\"嫌疑，但它是功能性悬念（解释桥为何等待陈一醒来、桥有自主意识），而非空洞信息差。可以接受。",
+      "[warning] 最近4章持续高压（震惊（冥将等待）→沉重（抉择困境）→震动（师兄神魂）→震惊（血脉真相）→紧张（暗号触发）→震惊（印记激活）→沉重（代价确认）→震动（桥在回应）→期待（临渊城方向）→坚定（第三条路） -> 沉重（末法真相）→震惊（三个选择）→紧张（冥将逼近）→悲痛（秦无涯断后）→坚定（独自引开）→紧张（分头跑） -> 沉重→紧张（分身逼近）→坚定（不跑）→震惊（桥回应）→震动（第一个守夜者身影）→期待（帛书声音）→沉重（声音消散）→紧张（未知存在）→坚定（三个时辰够了） -> 期待→紧张→震动→沉重→坚定→紧张→沉重→坚定），缺少明显的情绪释放。",
+      "[warning] 154个段落里有121个不足35字，段落被切得过碎。",
       "[warning] 连续出现16个不足35字的短段，容易形成短句堆砌。"
     ],
     "lengthWarnings": [],
@@ -1734,1080 +1089,32 @@
       "hardMin": 2182,
       "hardMax": 3818,
       "countingMode": "zh_chars",
-      "writerCount": 2652,
-      "postWriterNormalizeCount": 2652,
-      "postReviseCount": 3205,
-      "finalCount": 3205,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 527004,
-      "completionTokens": 94298,
-      "totalTokens": 621302
-    }
-  },
-  {
-    "number": 53,
-    "title": "彼岸微光",
-    "status": "approved",
-    "wordCount": 3314,
-    "createdAt": "2026-04-16T00:34:04.856Z",
-    "updatedAt": "2026-04-16T00:36:46.883Z",
-    "auditIssues": [
-      "[warning] 章节结尾设置了悬念钩（深袍身影出现，两人对视），但悬念的紧张感略显不足。该身影的身份、来意、与那些跪拜者的关系都未给出足够信息，读者可能对陈守一的处境感到困惑而非好奇。",
-      "[warning] 本章作为彼岸探索的第一章，整体节奏较为平缓，缺少明显的外部冲突节拍。章节主体是'发现环境→躲藏→被发现→决定走出→对视'，属于被动式叙事，缺乏主动推进的冲突驱动。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H090_苏婉儿安危（中程，陈旧）、H091_冥将挣脱后的情况（中程，陈旧）、H092_周执事审判（中程，陈旧）。",
-      "[warning] 状态校验不可用：Error: 529 {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"当前服务集群负载较高，请稍后重试，感谢您的耐心等待。 (2064) (529)\"},\"request_id\":\"062f6170b97cec57c5333e82077e8954\"}",
-      "[warning] 连续出现3个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "reviewNote": "{\"kind\":\"state-degraded\",\"baseStatus\":\"ready-for-review\",\"injectedIssues\":[\"[warning] 状态校验不可用：Error: 529 {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"overloaded_error\\\",\\\"message\\\":\\\"当前服务集群负载较高，请稍后重试，感谢您的耐心等待。 (2064) (529)\\\"},\\\"request_id\\\":\\\"062f6170b97cec57c5333e82077e8954\\\"}\"]}",
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2421,
-      "postWriterNormalizeCount": 3183,
-      "postReviseCount": 3314,
-      "finalCount": 3314,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 146936,
-      "completionTokens": 27567,
-      "totalTokens": 174503
-    }
-  },
-  {
-    "number": 54,
-    "title": "雾中来客",
-    "status": "approved",
-    "wordCount": 3348,
-    "createdAt": "2026-04-16T01:01:37.143Z",
-    "updatedAt": "2026-04-16T01:02:10.680Z",
-    "auditIssues": [
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H089_陈守一在彼岸的身份（中程，陈旧）、H090_苏婉儿安危（中程，陈旧）、H091_冥将挣脱后的情况（中程，陈旧），另有 1 条。",
-      "[warning] 92个段落里有55个不足35字，段落被切得过碎。",
-      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3244,
-      "postWriterNormalizeCount": 3244,
-      "postReviseCount": 3290,
-      "finalCount": 3348,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 157905,
-      "completionTokens": 28120,
-      "totalTokens": 186025
-    }
-  },
-  {
-    "number": 55,
-    "title": "彼岸栖身",
-    "status": "approved",
-    "wordCount": 3184,
-    "createdAt": "2026-04-16T01:33:45.885Z",
-    "updatedAt": "2026-04-16T01:34:17.981Z",
-    "auditIssues": [
-      "[info] 年轻男子的出场仅服务于制造冲突危机，质疑陈守一身份后立即被神秘生物出场打断，缺乏独立的人物弧线。属于功能性配角，但出场—质疑—被压制三段式略显模式化。",
-      "[info] \"守夜者\"召见承诺了信息回收（两界通道崩塌真相、三源合一真相），符合伏笔回收节奏。但守夜者这一角色在当前伏笔表中尚无对应钩子，属于新引入角色，需确保后续不因信息密度过高而沦为\"设定说明机器\"。",
-      "[info] 青鸾对陈守一的救助动机未作充分说明——纯粹出于人道？还是察觉到他身上的三源气息？从情节逻辑上，她因三源气息而救助是合理的，但文中仅一句\"是我带回来的\"带过，稍显突兀。",
-      "[warning] 第54章和第55章连续两章以\"希望\"作为情感弧线的收尾——第54章结尾\"他找到了第一丝希望\"，第55章结尾\"明天，守夜者将给他答案\"。两章的情绪走向模式相似（陌生→接受→发现生机），节奏类型重叠。",
-      "[info] 本章整体以陈守一视角推进，但\"青鸾没有追问。她转身端起一只瓷碗……\"一段存在轻微视角渗透——若严格从陈守一视角，他无法直接看到青鸾\"嘴角微微一动，似有若无\"的细微表情。建议改为从主角观察角度重构。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H090_苏婉儿安危（中程，可回收）、H091_冥将挣脱后的情况（中程，可回收）、H092_周执事审判（中程，可回收）。",
-      "[warning] 本章新开了 2 个伏笔，但没有回收任何旧债。",
-      "[warning] 100个段落里有35个不足35字，段落被切得过碎。",
-      "[warning] 连续出现7个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 6008,
-      "postWriterNormalizeCount": 2477,
-      "postReviseCount": 3184,
-      "finalCount": 3184,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 236038,
-      "completionTokens": 34798,
-      "totalTokens": 270836
-    }
-  },
-  {
-    "number": 56,
-    "title": "守一（正文标题）",
-    "status": "approved",
-    "wordCount": 3356,
-    "createdAt": "2026-04-16T01:57:23.907Z",
-    "updatedAt": "2026-04-16T01:58:11.772Z",
-    "auditIssues": [
-      "[info] 近期章节类型序列：第54章（过渡）、第55章（过渡）、第56章（揭示/文戏）。连续三章以'静'为主，缺少战斗、冲突或外部威胁作为节奏调节。",
-      "[info] H093（神秘生物的身份）、H094（眉心金痕的意义）在第56章未被推进或提及，两章未活跃。",
-      "[info] 守夜者说'三源合一是唯一能封印那条裂缝的力量'，但'封印裂缝'这一设定在前文未铺垫，与已知'三源合一代价是无法回来'形成新的悬念钩，但未明确说明二者如何共存。",
-      "[info] 陈守一见到母亲残念时情绪崩溃（'眼眶猛地热了'、'声音哽住'、'喉咙像被什么东西堵住'），与之前'少言、冷静、压抑情绪'的性格形成较大反差，但考虑到这是他从未见过面的母亲，且经历了三源合一、穿越异界、父亲神魂消散等一系列剧变后的首次重逢，情绪失控具有合理性。",
-      "[warning] 章节标题\"彼岸遗音\"已自动调整为\"守一（正文标题）\"。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H088_彼岸世界（中程，可回收）、H089_陈守一在彼岸的身份（中程，可回收）、H090_苏婉儿安危（中程，可回收），另有 2 条。",
-      "[warning] 连续出现4个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3262,
-      "postWriterNormalizeCount": 3262,
-      "postReviseCount": 3356,
-      "finalCount": 3356,
+      "writerCount": 3182,
+      "postWriterNormalizeCount": 3182,
+      "postReviseCount": 3182,
+      "finalCount": 3182,
       "normalizeApplied": false,
       "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 130738,
-      "completionTokens": 19696,
-      "totalTokens": 150434
-    }
-  },
-  {
-    "number": 57,
-    "title": "(pending)",
-    "status": "drafted"
-  },
-  {
-    "number": 58,
-    "title": "秘境试炼",
-    "status": "approved",
-    "wordCount": 5168,
-    "createdAt": "2026-04-16T02:34:27.361Z",
-    "updatedAt": "2026-04-16T02:35:00.635Z",
-    "auditIssues": [
-      "[critical] 寿数出现严重数值冲突。当前状态卡显示陈守一寿数约为「六十余年（严重受损）」，而本章守夜者诊脉后却说「若不尽快调养，恐怕撑不过五年」。若按「折损近半后约三十余年」推算，五年寿元意味着生机折损超过95%，这与三源合一消耗的量级不符。",
-      "[critical] 主角人设约束：「绝不主动招惹麻烦」「绝不把自己置于必死的绝境」。陈守一在身体极度虚弱（修为近乎全废）、刚从彼岸传送过来三天、连最基础的养气功法都运转不了的状态下，被警告「进去便是送死」后仍然选择立刻进入秘境。这与「谨慎多疑、永远留有后手」的人设存在明显偏差。",
-      "[critical] 主角刚被诊断为「身体太差，连最基础的养气功法都运转不了」，却在秘境中成功与九幽寒莲的守护禁制完成沟通并取走莲花。九幽寒莲是母亲当年用同样方法获得的东西，而母亲是「在彼岸长大成人」的修士。陈守一的修为近乎全废，却能做到与母亲同等的事，战力跨越缺乏铺垫。",
-      "[critical] 虚境意识传来「玄清宗弟子制式道袍」的画面，确认了内鬼的存在。但灵洲大陆的石室局势在第52章后就没有更新（周长老与冥将交战结果不明，苏婉儿重伤后状态不明），读者无法验证这个信息的真实性。直接将「玄清宗内鬼」作为确凿信息传递给陈守一会造成读者认知断裂——读者知道的比角色少，而且这些信息与第52章之后的时间线完全脱节。",
-      "[warning] 守夜者说「三源合一的代价比你想象的更大」，指出金痕在持续消耗生机。但上一章（56/57章）已经确立了三源合一的代价是「无法回来/寿数减损」，现在又增加了金痕的额外消耗机制，虽然逻辑上可以并存，但「五年」这个数值与当前状态卡的「六十余年」落差过大，容易让读者认为前面几十章的铺垫被推翻。",
-      "[warning] 当前状态卡中有两个重要支线需要推进：H098_幽冥界痕迹（赵猛弟弟死于黑雾）和 H100_赵猛弟弟之死。本章虽然涉及了幽冥界裂缝的内容，但赵猛这条线在守夜者平息冲突后就没有继续。赵猛离去时的情绪（震惊、困惑）没有得到后续发展。",
-      "[warning] 陈守一的情绪在本章经历了多次大幅跳跃：虚弱→平静接受五年死期→坚定→进入秘境→恐惧→坚定→成功获得九幽寒莲→调息。但母亲的残念刚刚在第56章消散，读者预期的哀伤、思念等情感弧线在本章几乎没有体现。守夜者提到母亲时（「你母亲用三百年的心血为你铺了这条路」），陈守一的内心反应几乎是空白。",
-      "[warning] 守夜者诊脉时知道「三源合一时体内激活了某种东西」，然后引出金痕消耗生机的设定。但根据第54章，金痕是「山中守护者」在彼岸刻下的，守夜者当时并未出场。守夜者如何得知金痕正在消耗生机？她应该只能感知到生机虚弱，无法直接判断金痕是消耗源。",
-      "[info] 本章结尾陈守一「开始了真正的修炼」，是一个相对平稳的收尾。但上一章结尾（57章）的悬念钩是「来自幽冥界的视角」，读者期待这个悬念被展开。本章虽然涉及了幽冥界的意识传承，但最终落脚点在了「修炼」而非悬念回收，可能影响期待积累。",
-      "[warning] 连续出现6个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [
-      "第58章经过一次字数归一化后仍超出硬区间（2182-3818，实际 5168）。"
-    ],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2447,
-      "postWriterNormalizeCount": 2053,
-      "postReviseCount": 5715,
-      "finalCount": 5168,
-      "normalizeApplied": true,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 179030,
-      "completionTokens": 54850,
-      "totalTokens": 233880
-    }
-  },
-  {
-    "number": 59,
-    "title": "幽冥入体",
-    "status": "ready-for-review",
-    "wordCount": 1589,
-    "createdAt": "2026-04-16T02:50:13.939Z",
-    "updatedAt": "2026-04-16T02:50:13.939Z",
-    "auditIssues": [
-      "[warning] H105_虚境幽冥兽（\"虚境尽头找到我\"）在第58章提出后，本章（第59章）未见进一步推进，虚境尽头的探索仍悬置。",
-      "[info] \"猛地\"出现3次（\"瞳孔骤然收缩\"、\"握紧拳头\"、\"身体猛地一震\"），密度约为每600字1次，在正常范围内，未触发警告阈值。",
-      "[info] 本章以陈守一视角为主，赵猛段落短暂切换视角（约50字）后迅速回归主视角，过渡自然，未造成阅读障碍。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H094_眉心金痕的意义（中程，可回收）、H097_守夜者（中程，可回收）、H098_幽冥界痕迹（中程，可回收），另有 1 条。",
-      "[warning] 连续出现9个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [
-      "第59章经过一次字数归一化后仍超出硬区间（2182-3818，实际 1589）。"
-    ],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3290,
-      "postWriterNormalizeCount": 3290,
-      "postReviseCount": 1589,
-      "finalCount": 1589,
-      "normalizeApplied": true,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 93120,
-      "completionTokens": 20693,
-      "totalTokens": 113813
-    }
-  },
-  {
-    "number": 60,
-    "title": "山中守护者"
-  },
-  {
-    "number": 61,
-    "title": "三源问心"
-  },
-  {
-    "number": 62,
-    "title": "金痕之危"
-  },
-  {
-    "number": 63,
-    "title": "暗夜伏影"
-  },
-  {
-    "number": 64,
-    "title": "裂痕追踪"
-  },
-  {
-    "number": 65,
-    "title": "幽谷裂痕"
-  },
-  {
-    "number": 66,
-    "title": "联席议事"
-  },
-  {
-    "number": 67,
-    "title": "裂隙回响"
-  },
-  {
-    "number": 68,
-    "title": "深渊之眼"
-  },
-  {
-    "number": 69,
-    "title": "困兽之斗"
-  },
-  {
-    "number": 70,
-    "title": "风起云涌"
-  },
-  {
-    "number": 71,
-    "title": "设网以待"
-  },
-  {
-    "number": 72,
-    "title": "真相大白"
-  },
-  {
-    "number": 73,
-    "title": "彼岸大劫",
-    "status": "approved",
-    "wordCount": 3841,
-    "createdAt": "2026-04-16T15:44:35.713Z",
-    "updatedAt": "2026-04-16T15:44:52.749Z",
-    "auditIssues": [
-      "[warning] 守护者提到母亲寿元时出现时间线矛盾：\"十年寿元在三年内耗尽\"——但根据当前状态卡，母亲是被金痕耗尽生机而亡，并未提及具体时限是三年。此处数字\"三年\"与已建立设定冲突。",
-      "[info] 第72章结尾出现的中年男子（守夜者师弟）在第73章直接消失，角色去向未交代。可能造成读者疑惑：他是被留在洞中还是另有机缘？",
-      "[info] 青鸾在第72章末尾受重伤放入灵泉，第73章仅用\"几个时辰后她就能恢复\"一笔带过。青鸾作为守夜者联络人和聚居点边缘巡查的角色，她的去向和状态未被关注。",
-      "[warning] 本章内容量极大：力量传承、冥将真相、内鬼身份、弟弟真相、母亲经历、守夜者身份，三重幻境密集叠加。多重重大信息在同一章节内集中揭示，可能导致读者信息过载。",
-      "[info] 守夜者与守护者\"一体两面\"的关系揭示较为仓促，守夜者\"将全部力量融入封印，以灵魂守护彼岸\"的具体方式未详细展开。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H098_幽冥界痕迹（中程，已逾期）、H102_守夜者与母亲的关系（中程，已逾期）、H103_幽冥界裂缝（中程，已逾期），另有 2 条。",
-      "[warning] 连续出现4个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [
-      "第73章经过一次字数归一化后仍超出硬区间（2182-3818，实际 3841）。"
-    ],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2391,
-      "postWriterNormalizeCount": 3729,
-      "postReviseCount": 3841,
-      "finalCount": 3841,
-      "normalizeApplied": true,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 334773,
-      "completionTokens": 79745,
-      "totalTokens": 414518
-    }
-  },
-  {
-    "number": 74,
-    "title": "天锁",
-    "status": "approved",
-    "wordCount": 3636,
-    "createdAt": "2026-04-16T16:07:51.166Z",
-    "updatedAt": "2026-04-16T16:08:31.648Z",
-    "auditIssues": [
-      "[warning] 最近3章持续高压（虚弱→震惊→接受→坚定→紧张→希望→震撼→警惕→决心→平静→坚定 -> 平静修炼→紧张对峙→真相揭示→接纳→紧急→凝重→决然→危机 -> 紧张→真相揭露→沉重→悲痛→坚定→危机），缺少明显的情绪释放。",
-      "[warning] 章节标题\"**天锁**\"已自动调整为\"天锁\"。",
-      "[warning] 最近3章持续高压（虚弱→震惊→接受→坚定→紧张→希望→震撼→警惕→决心→平静→坚定 -> 平静修炼→紧张对峙→真相揭示→接纳→紧急→凝重→决然→危机 -> 紧张→真相揭露→沉重→悲痛→坚定→危机），缺少明显的情绪释放。",
-      "[warning] 状态校验不可用：Error: LLM returned empty response",
-      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "reviewNote": "{\"kind\":\"state-degraded\",\"baseStatus\":\"ready-for-review\",\"injectedIssues\":[\"[warning] 状态校验不可用：Error: LLM returned empty response\"]}",
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3930,
-      "postWriterNormalizeCount": 2289,
-      "postReviseCount": 3636,
-      "finalCount": 3636,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 127759,
-      "completionTokens": 38748,
-      "totalTokens": 166507
-    }
-  },
-  {
-    "number": 75,
-    "title": "风暴前夜",
-    "status": "approved",
-    "wordCount": 4038,
-    "createdAt": "2026-04-16T16:40:52.781Z",
-    "updatedAt": "2026-04-16T16:41:05.182Z",
-    "auditIssues": [
-      "[warning] 周沉（\"正本清源\"组织第七代传人）的行为逻辑存在轻微断裂：他的组织理念是\"冥族是回归者、封印是错误的\"，但面对黑渊投影时却主动帮助陈守一。虽然文中有\"铜牌是组织三百年心血、专门克制冥将投影\"的解释，以及\"组织不是叛徒、只是走上了不同的路\"的台词，但周沉为何在\"打开封印\"的最终目标下仍然出手保护陈守一的深层动机未予揭示。",
-      "[warning] 伏笔H109\"守夜者的遗言\"中\"她是谁\"的问题在本章得到暗示性推进（黑渊暗示守夜者有自己的女儿），但答案链条仍不够清晰：母亲遗言\"替我告诉她\"中的\"她\"是否就是\"守夜者的女儿\"？若是，则\"我女儿\"指陈守一自己，母亲在托付守夜者转告\"你的孩子\"——三源合一的传承者没有白养。",
-      "[info] 近期章节（第59、73、74章）均为\"紧张→危机→真相揭露→危机再临\"模式，本章（第75章）继续此节奏：与周沉对峙→黑渊投影→青鸾带来紧急情报→断崖遭遇幽冥兽本体→章尾\"四人扑来\"悬念。节奏类型较为单一，但考虑到当前正处于\"两天半期限\"的高压紧张期，此节奏符合剧情所需的紧迫感。",
-      "[warning] 最近3章持续高压（虚弱→震惊→接受→坚定→紧张→希望→震撼→警惕→决心→平静→坚定 -> 平静修炼→紧张对峙→真相揭示→接纳→紧急→凝重→决然→危机 -> 紧张→真相揭露→沉重→悲痛→坚定→危机），缺少明显的情绪释放。",
-      "[warning] 最近3章持续高压（虚弱→震惊→接受→坚定→紧张→希望→震撼→警惕→决心→平静→坚定 -> 平静修炼→紧张对峙→真相揭示→接纳→紧急→凝重→决然→危机 -> 紧张→真相揭露→沉重→悲痛→坚定→危机），缺少明显的情绪释放。",
-      "[warning] 148个段落里有55个不足35字，段落被切得过碎。",
-      "[warning] 连续出现8个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [
-      "第75章经过一次字数归一化后仍超出硬区间（2182-3818，实际 4038）。"
-    ],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2683,
-      "postWriterNormalizeCount": 2683,
-      "postReviseCount": 4038,
-      "finalCount": 4038,
-      "normalizeApplied": true,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 331443,
-      "completionTokens": 67027,
-      "totalTokens": 398470
-    }
-  },
-  {
-    "number": 76,
-    "title": "血债",
-    "status": "approved",
-    "wordCount": 3299,
-    "createdAt": "2026-04-16T17:29:44.468Z",
-    "updatedAt": "2026-04-16T17:29:56.195Z",
-    "auditIssues": [
-      "[warning] H109_守夜者的遗言（75-80章预期）在第76章通过周沉遗言间接推进，但\"她\"的具体身份仍悬而未决。遗书揭示\"吾女仍在封印之中\"，与周沉所说的\"献祭成为第二道锁\"形成信息矛盾——这不是冲突，而是同一件事的两种描述，需要后续澄清\"献祭\"与\"仍在封印中\"的关系。",
-      "[warning] 章尾陈守一走进黑雾，承诺以三源气息干扰幽冥兽感知为聚居点争取时间，但未说明具体手段和预期结果。读者会期待看到：1）干扰是否成功；2）陈守一如何脱身；3）赵猛等人如何\"做些什么\"。这些期待缺口在累积，需要在下一章快速给出回应。",
-      "[info] 周沉倒下时\"铜牌的光芒比方才黯淡了许多\"与前文铺垫一致——铜牌在第75章抵挡黑渊投影消耗了八成力量，残余金光只够再挡两三息。但铜牌碎裂的时机描述略有模糊：\"屏障崩碎的刹那，细密的裂纹爬满铜牌牌面。金光彻底消散的瞬间，铜牌从周沉手中滑落，碎成数片\"——屏障崩碎、铜牌出现裂纹、金光消散、铜牌滑落碎裂，这些动作的时间顺序可以更清晰。",
-      "[info] \"猛地\"出现4次，在约3000字文本中属于较高频率。虽然未超过每3000字不超过1次AI标记词的阈值（4次/3000字仍在可接受范围），但\"猛地\"的重复使用可能影响阅读流畅度。",
-      "[info] 青鸾在本章中几乎没有台词，以\"嘴唇翕动着，却发不出任何声音\"和一\"击打飞\"结束战斗参与。她作为守夜者联络人、本应熟悉聚居点布局的向导，完全退出了决策链。这与第75章她\"同行确认/报告紧急情况\"的角色定位有落差。",
-      "[warning] 最近4章持续高压（虚弱→震惊→接受→坚定→紧张→希望→震撼→警惕→决心→平静→坚定 -> 平静修炼→紧张对峙→真相揭示→接纳→紧急→凝重→决然→危机 -> 紧张→真相揭露→沉重→悲痛→坚定→危机 -> 紧张→危机升级→沉重→决然→战斗爆发），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（虚弱→震惊→接受→坚定→紧张→希望→震撼→警惕→决心→平静→坚定 -> 平静修炼→紧张对峙→真相揭示→接纳→紧急→凝重→决然→危机 -> 紧张→真相揭露→沉重→悲痛→坚定→危机 -> 紧张→危机升级→沉重→决然→战斗爆发），缺少明显的情绪释放。",
-      "[warning] 109个段落里有46个不足35字，段落被切得过碎。",
-      "[warning] 连续出现8个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2281,
-      "postWriterNormalizeCount": 3699,
-      "postReviseCount": 3299,
-      "finalCount": 3299,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 380233,
-      "completionTokens": 113677,
-      "totalTokens": 493910
-    }
-  },
-  {
-    "number": 77,
-    "title": "劫烬",
-    "status": "approved",
-    "wordCount": 3203,
-    "createdAt": "2026-04-16T17:59:27.982Z",
-    "updatedAt": "2026-04-16T17:59:57.515Z",
-    "auditIssues": [
-      "[info] 青鸾（侵蚀蔓延到脖颈/被压制）和周沉（被利爪贯穿胸膛/重伤昏迷）当前状态为重伤昏迷，但本章聚焦于陈守一独自引开幽冥兽的逃亡，两人的情况在本章未获得任何推进信息。",
-      "[info] 本章结尾'远处，黑雾深处传来一声若有若无的叹息，像是谁在低语'——这个声音来源不明，可能是伏笔（H113/H110的延伸），但未给出任何线索提示读者关注，可能被忽略。",
-      "[warning] 陈守一决定'不是打开封印，也不是永固封印，而是找到那条平衡之路'——这个结论形成较快，从'在意识空间中理解真相'到'确定自己的道路'之间缺乏内心的挣扎和权衡过程。主角性格是'谨慎多疑'，如此重大的决定应有一些犹豫。",
-      "[info] 检测到3句连续以相同开头的句子，呈现列表式AI生成结构",
-      "[warning] 最近4章持续高压（平静修炼→紧张对峙→真相揭示→接纳→紧急→凝重→决然→危机 -> 紧张→真相揭露→沉重→悲痛→坚定→危机 -> 紧张→危机升级→沉重→决然→战斗爆发 -> 危机→战斗→悲痛（周沉倒下）→震惊（发现守夜者遗体）→悲痛（读遗书）→**决然（主动引开幽冥兽）**），缺少明显的情绪释放。",
-      "[warning] 章节标题\"劫烬\n（避免与血债/风暴前夜/彼岸大劫重复，劫烬指向大劫余烬/真相揭露）\"已自动调整为\"劫烬\"。",
-      "[warning] 最近4章持续高压（平静修炼→紧张对峙→真相揭示→接纳→紧急→凝重→决然→危机 -> 紧张→真相揭露→沉重→悲痛→坚定→危机 -> 紧张→危机升级→沉重→决然→战斗爆发 -> 危机→战斗→悲痛（周沉倒下）→震惊（发现守夜者遗体）→悲痛（读遗书）→**决然（主动引开幽冥兽）**），缺少明显的情绪释放。",
-      "[warning] 99个段落里有65个不足35字，段落被切得过碎。",
-      "[warning] 连续出现6个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3049,
-      "postWriterNormalizeCount": 3049,
-      "postReviseCount": 3203,
-      "finalCount": 3203,
-      "normalizeApplied": false,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 342988,
-      "completionTokens": 83757,
-      "totalTokens": 426745
-    }
-  },
-  {
-    "number": 78,
-    "title": "归途之地",
-    "status": "approved",
-    "wordCount": 3374,
-    "createdAt": "2026-04-16T18:16:10.727Z",
-    "updatedAt": "2026-04-16T18:16:21.324Z",
-    "auditIssues": [
-      "[warning] 守夜者第八代的出场服务于剧情揭露目的，但角色本身显得功能性过强。他提供信息的方式过于直接（直接告知外面有赵猛等人、幽冥兽找来、自己的身世），缺少角色的个体性和多维动机。",
-      "[info] 第77章结尾的叹息\"终于，有人明白了\"与第78章的石室、血字、守夜者第八代的关联需要更明确。目前读者可能不清楚叹息究竟来自谁（守夜者第八代还是其他存在），以及石室与母亲遗言之间的传承关系。",
-      "[info] 检测到4句连续以相同开头的句子，呈现列表式AI生成结构",
-      "[warning] 最近4章持续高压（紧张→真相揭露→沉重→悲痛→坚定→危机 -> 紧张→危机升级→沉重→决然→战斗爆发 -> 危机→战斗→悲痛（周沉倒下）→震惊（发现守夜者遗体）→悲痛（读遗书）→**决然（主动引开幽冥兽）** -> 紧张→战斗→震惊（意识幻境）→震惊（末法真相）→悲痛（母亲命运）→决然→坚定（找到使命）→危机→逃脱→沉重→坚定），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（紧张→真相揭露→沉重→悲痛→坚定→危机 -> 紧张→危机升级→沉重→决然→战斗爆发 -> 危机→战斗→悲痛（周沉倒下）→震惊（发现守夜者遗体）→悲痛（读遗书）→**决然（主动引开幽冥兽）** -> 紧张→战斗→震惊（意识幻境）→震惊（末法真相）→悲痛（母亲命运）→决然→坚定（找到使命）→危机→逃脱→沉重→坚定），缺少明显的情绪释放。",
-      "[warning] 114个段落里有55个不足35字，段落被切得过碎。",
-      "[warning] 连续出现10个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3323,
-      "postWriterNormalizeCount": 3323,
-      "postReviseCount": 3374,
-      "finalCount": 3374,
-      "normalizeApplied": false,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 136953,
-      "completionTokens": 21804,
-      "totalTokens": 158757
-    }
-  },
-  {
-    "number": 79,
-    "title": "薪火",
-    "status": "approved",
-    "wordCount": 2905,
-    "createdAt": "2026-04-16T19:46:51.664Z",
-    "updatedAt": "2026-04-16T19:47:13.520Z",
-    "auditIssues": [
-      "[warning] 最近4章持续高压（紧张→危机升级→沉重→决然→战斗爆发 -> 危机→战斗→悲痛（周沉倒下）→震惊（发现守夜者遗体）→悲痛（读遗书）→**决然（主动引开幽冥兽）** -> 紧张→战斗→震惊（意识幻境）→震惊（末法真相）→悲痛（母亲命运）→决然→坚定（找到使命）→危机→逃脱→沉重→坚定 -> 悲痛（发现母亲遗物）→悲痛（回忆幼时）→震惊（第三条路代价）→沉重（因果反噬）→紧张（幽冥兽接近）），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（紧张→危机升级→沉重→决然→战斗爆发 -> 危机→战斗→悲痛（周沉倒下）→震惊（发现守夜者遗体）→悲痛（读遗书）→**决然（主动引开幽冥兽）** -> 紧张→战斗→震惊（意识幻境）→震惊（末法真相）→悲痛（母亲命运）→决然→坚定（找到使命）→危机→逃脱→沉重→坚定 -> 悲痛（发现母亲遗物）→悲痛（回忆幼时）→震惊（第三条路代价）→沉重（因果反噬）→紧张（幽冥兽接近）），缺少明显的情绪释放。",
-      "[warning] 89个段落里有37个不足35字，段落被切得过碎。",
-      "[warning] 连续出现12个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 4437,
-      "postWriterNormalizeCount": 2787,
-      "postReviseCount": 2905,
-      "finalCount": 2905,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 296726,
-      "completionTokens": 216834,
-      "totalTokens": 513560
-    }
-  },
-  {
-    "number": 80,
-    "title": "劫灰",
-    "status": "ready-for-review",
-    "wordCount": 3240,
-    "createdAt": "2026-04-16T20:06:26.804Z",
-    "updatedAt": "2026-04-16T20:20:46.517Z",
-    "auditIssues": [
-      "[warning] 三聚居点支线（SP-三聚居点）在本章获得石牌信息后，暂时没有实质性推进。三聚居点（青岩谷/赤水镇/暮云寨）的结界崩溃后具体情况未知，青鸾的侵蚀仍在蔓延，这些信息在支线板上均未更新。",
-      "[info] AI标记词使用情况：'猛地'出现2次，'忽然'出现1次。整体密度较低，在可接受范围内。",
-      "[info] 检测到3句连续以相同开头的句子，呈现列表式AI生成结构",
-      "[warning] 最近4章持续高压（危机→战斗→悲痛（周沉倒下）→震惊（发现守夜者遗体）→悲痛（读遗书）→**决然（主动引开幽冥兽）** -> 紧张→战斗→震惊（意识幻境）→震惊（末法真相）→悲痛（母亲命运）→决然→坚定（找到使命）→危机→逃脱→沉重→坚定 -> 悲痛（发现母亲遗物）→悲痛（回忆幼时）→震惊（第三条路代价）→沉重（因果反噬）→紧张（幽冥兽接近） -> 悲痛（母亲真相）→沉重（因果反噬）→坚定（叩首立誓）→紧张（暗道岔路）→决然（选择同伴）→紧张（身体将倒）→震惊（重逢）→狂喜（还活着）→危机升级（幽冥兽逼近）→沉重（备战）），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（危机→战斗→悲痛（周沉倒下）→震惊（发现守夜者遗体）→悲痛（读遗书）→**决然（主动引开幽冥兽）** -> 紧张→战斗→震惊（意识幻境）→震惊（末法真相）→悲痛（母亲命运）→决然→坚定（找到使命）→危机→逃脱→沉重→坚定 -> 悲痛（发现母亲遗物）→悲痛（回忆幼时）→震惊（第三条路代价）→沉重（因果反噬）→紧张（幽冥兽接近） -> 悲痛（母亲真相）→沉重（因果反噬）→坚定（叩首立誓）→紧张（暗道岔路）→决然（选择同伴）→紧张（身体将倒）→震惊（重逢）→狂喜（还活着）→危机升级（幽冥兽逼近）→沉重（备战）），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H118_赵猛等人下落（中程，可回收）、H121_第三条路完整代价（中程，可回收）。",
-      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3806,
-      "postWriterNormalizeCount": 3033,
-      "postReviseCount": 3240,
-      "finalCount": 3240,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 172788,
-      "completionTokens": 65762,
-      "totalTokens": 238550
-    }
-  },
-  {
-    "number": 81,
-    "title": "第二章 平衡",
-    "status": "approved",
-    "wordCount": 3023,
-    "createdAt": "2026-04-16T20:28:19.048Z",
-    "updatedAt": "2026-04-16T20:30:45.341Z",
-    "auditIssues": [
-      "[info] 第79-80章的情感弧线经历了连续的真相揭露和情感高潮（母亲真相→因果反噬→叩首立誓→重逢喜悦），第81章切换到纯危机应对模式，节奏类型发生重大转变。但近几章的章节类型序列显示：78章（情感高潮+危机升级），80章（情感高潮+危机升级），本应为情节推进/外部冲突章，节奏转变本身没有问题，但需要确保后续有对应的情节推进（而非持续危机章堆积）。",
-      "[warning] 最近4章持续高压（危机→战斗→悲痛（周沉倒下）→震惊（发现守夜者遗体）→悲痛（读遗书）→**决然（主动引开幽冥兽）** -> 紧张→战斗→震惊（意识幻境）→震惊（末法真相）→悲痛（母亲命运）→决然→坚定（找到使命）→危机→逃脱→沉重→坚定 -> 悲痛（发现母亲遗物）→悲痛（回忆幼时）→震惊（第三条路代价）→沉重（因果反噬）→紧张（幽冥兽接近） -> 悲痛（发现母亲坟墓）→悲痛（回忆幼时）→震惊（冥将嘲讽）→沉重（三年真相）→坚定（第八代遗言）→悲痛（心疼而非后悔）→坚定（立誓\"不悔\"）→震惊（因果反噬）→平静（接受三年）→坚定（传承激活）→希望（获得石牌）→紧张（发现脚印和黑雾）），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（危机→战斗→悲痛（周沉倒下）→震惊（发现守夜者遗体）→悲痛（读遗书）→**决然（主动引开幽冥兽）** -> 紧张→战斗→震惊（意识幻境）→震惊（末法真相）→悲痛（母亲命运）→决然→坚定（找到使命）→危机→逃脱→沉重→坚定 -> 悲痛（发现母亲遗物）→悲痛（回忆幼时）→震惊（第三条路代价）→沉重（因果反噬）→紧张（幽冥兽接近） -> 悲痛（发现母亲坟墓）→悲痛（回忆幼时）→震惊（冥将嘲讽）→沉重（三年真相）→坚定（第八代遗言）→悲痛（心疼而非后悔）→坚定（立誓\"不悔\"）→震惊（因果反噬）→平静（接受三年）→坚定（传承激活）→希望（获得石牌）→紧张（发现脚印和黑雾）），缺少明显的情绪释放。",
-      "[warning] 状态校验不可用：Error: LLM returned empty response",
-      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "reviewNote": "{\"kind\":\"state-degraded\",\"baseStatus\":\"audit-failed\",\"injectedIssues\":[\"[warning] 状态校验不可用：Error: LLM returned empty response\"]}",
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3790,
-      "postWriterNormalizeCount": 1615,
-      "postReviseCount": 3023,
-      "finalCount": 3023,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 175878,
-      "completionTokens": 31137,
-      "totalTokens": 207015
-    }
-  },
-  {
-    "number": 82,
-    "title": "劫终",
-    "status": "approved",
-    "wordCount": 3541,
-    "createdAt": "2026-04-16T20:58:38.988Z",
-    "updatedAt": "2026-04-16T20:59:00.887Z",
-    "auditIssues": [
-      "[warning] 最近4章持续高压（危机→战斗→悲痛（周沉倒下）→震惊（发现守夜者遗体）→悲痛（读遗书）→**决然（主动引开幽冥兽）** -> 紧张→战斗→震惊（意识幻境）→震惊（末法真相）→悲痛（母亲命运）→决然→坚定（找到使命）→危机→逃脱→沉重→坚定 -> 悲痛（发现母亲遗物）→悲痛（回忆幼时）→震惊（第三条路代价）→沉重（因果反噬）→紧张（幽冥兽接近） -> 悲痛（发现母亲坟墓）→悲痛（回忆幼时）→震惊（冥将嘲讽）→沉重（三年真相）→坚定（第八代遗言）→悲痛（心疼而非后悔）→坚定（立誓\"不悔\"）→震惊（因果反噬）→平静（接受三年）→坚定（传承激活）→希望（获得石牌）→紧张（发现脚印和黑雾）），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（危机→战斗→悲痛（周沉倒下）→震惊（发现守夜者遗体）→悲痛（读遗书）→**决然（主动引开幽冥兽）** -> 紧张→战斗→震惊（意识幻境）→震惊（末法真相）→悲痛（母亲命运）→决然→坚定（找到使命）→危机→逃脱→沉重→坚定 -> 悲痛（发现母亲遗物）→悲痛（回忆幼时）→震惊（第三条路代价）→沉重（因果反噬）→紧张（幽冥兽接近） -> 悲痛（发现母亲坟墓）→悲痛（回忆幼时）→震惊（冥将嘲讽）→沉重（三年真相）→坚定（第八代遗言）→悲痛（心疼而非后悔）→坚定（立誓\"不悔\"）→震惊（因果反噬）→平静（接受三年）→坚定（传承激活）→希望（获得石牌）→紧张（发现脚印和黑雾）），缺少明显的情绪释放。",
-      "[warning] 130个段落里有45个不足35字，段落被切得过碎。",
-      "[warning] 连续出现29个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 5067,
-      "postWriterNormalizeCount": 3342,
-      "postReviseCount": 3541,
-      "finalCount": 3541,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 280022,
-      "completionTokens": 51267,
-      "totalTokens": 331289
-    }
-  },
-  {
-    "number": 83,
-    "title": "通道之秘",
-    "status": "approved",
-    "wordCount": 3619,
-    "createdAt": "2026-04-16T21:21:45.340Z",
-    "updatedAt": "2026-04-16T21:22:14.126Z",
-    "auditIssues": [
-      "[critical] 周沉遗言与新揭露信息存在逻辑冲突：第82章中周沉临死前说'替我告诉沈炼'、'青云门还有人记得他们'，将碎玉'塞进陈守一手里'——这些描写呈现的是临终时刻的紧急交付。但本章沈炼揭露周沉'从一开始就知道'自己的身份，'那块碎玉是他提前留给你的，不是在临死前才想起来'。两段描写存在明显矛盾：若碎玉是提前安排，临终场景的紧迫感从何而来？",
-      "[critical] 本章缺少外部冲突节拍。根据Structured Directives要求，本章必须包含至少一个外部冲突：威胁出现/战斗爆发/关系决裂/正面谈判/意外阻碍/紧急抉择。但本章完全是沈炼讲解设定、主角接收信息，没有任何外部事件推动剧情。石室休息是主动选择，不是意外阻碍；冥将的意识试探只是片段，没有形成真正威胁。",
-      "[warning] 本章大量篇幅由沈炼进行信息输出（末法真相、三聚居点目的、周沉身份等），导致叙事视角频繁在陈守一内心和沈炼讲解之间切换。沈炼成为主要信息源和叙事推动者，喧宾夺主。主角陈守一基本处于被动接收状态，反应有限。",
-      "[warning] 沈炼的部分台词过于刻意，像是在念说明书而非正常对话。如'三聚居点从来不是为了抵御黑雾而建。是为了监视那条通道'、'三百年前，先祖们发现那通道根本封不住。除非用整个修行界的修行之力作为献祭'、'末法时代不是天地降下的灾罚，是人类自己选择的结果'——这些信息一次性倾泻而出，不符合正常叙事节奏。",
-      "[warning] 赵猛在本章几乎没有有效反应。周沉'从一开始就知道'自己身份、赵猛是周沉的同伴、两人一起逃生——赵猛对周沉的认知被完全颠覆，但他的反应只是'肩膀微微颤抖'和'点了点头，没有说话'，严重不足。",
-      "[warning] 本章节奏单调，从头到尾是信息揭露→石室休息→信息揭露→结束。缺少章节内部的节奏起伏。虽然总字数的场景描写有一定篇幅，但整体呈现流水账式的信息传递。",
-      "[warning] 本章出现多次'声音很轻'、'声音很平'来描述沈炼的说话方式，词汇重复度高。沈炼的情感表达也过于平稳，缺少与他'等了二十年'、'见到周沉遗体'、'终于等到陈守一'这些重要情感时刻相匹配的情绪波动。",
-      "[info] 本章新揭露的'三源同源之物第三件在周沉身上'与第82章'周沉将玉牌碎块交付陈守一'存在承接关系，但衔接不够紧密。第82章写的是'周沉用尽最后一丝力气，将那块碎玉塞进陈守一手里'，本章揭示这块碎玉就是三源同源之物之一——这个承接是对的，但前文没有给出足够暗示。",
-      "[info] 本章陈守一的情绪弧线几乎为平线：震惊（得知末法真相）→沉默→消化→接受→准备出发。缺少新压力、新转折或重估。周沉刚死的情感余波没有被处理，陈守一就直接进入'任务接收'模式。",
-      "[info] 本章结尾'两个时辰。然后我们出发'与第82章结尾'但他知道，真正的风暴，才刚刚开始'形成类似的悬念收尾模式——都是宣告接下来要行动，缺少足够的钩子吸引力。",
-      "[warning] 最近4章持续高压（紧张→战斗→震惊（意识幻境）→震惊（末法真相）→悲痛（母亲命运）→决然→坚定（找到使命）→危机→逃脱→沉重→坚定 -> 悲痛（发现母亲遗物）→悲痛（回忆幼时）→震惊（第三条路代价）→沉重（因果反噬）→紧张（幽冥兽接近） -> 悲痛（发现母亲坟墓）→悲痛（回忆幼时）→震惊（冥将嘲讽）→沉重（三年真相）→坚定（第八代遗言）→悲痛（心疼而非后悔）→坚定（立誓\"不悔\"）→震惊（因果反噬）→平静（接受三年）→坚定（传承激活）→希望（获得石牌）→紧张（发现脚印和黑雾） -> 紧张（幽冥兽追击）→悲痛（周沉死亡）→震惊（沈炼现身）→沉重（黑雾时限）→紧张（地下河异常）→坚定（继续前行）），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（紧张→战斗→震惊（意识幻境）→震惊（末法真相）→悲痛（母亲命运）→决然→坚定（找到使命）→危机→逃脱→沉重→坚定 -> 悲痛（发现母亲遗物）→悲痛（回忆幼时）→震惊（第三条路代价）→沉重（因果反噬）→紧张（幽冥兽接近） -> 悲痛（发现母亲坟墓）→悲痛（回忆幼时）→震惊（冥将嘲讽）→沉重（三年真相）→坚定（第八代遗言）→悲痛（心疼而非后悔）→坚定（立誓\"不悔\"）→震惊（因果反噬）→平静（接受三年）→坚定（传承激活）→希望（获得石牌）→紧张（发现脚印和黑雾） -> 紧张（幽冥兽追击）→悲痛（周沉死亡）→震惊（沈炼现身）→沉重（黑雾时限）→紧张（地下河异常）→坚定（继续前行）），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H126_三年计划（中程，可回收）、H129_守夜者遗言（老守夜者走了）（中程，可回收）。",
-      "[warning] 连续出现7个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 5482,
-      "postWriterNormalizeCount": 3619,
-      "postReviseCount": 3960,
-      "finalCount": 3619,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 160964,
-      "completionTokens": 31848,
-      "totalTokens": 192812
-    }
-  },
-  {
-    "number": 84,
-    "title": "三源归一：陈守",
-    "status": "approved",
-    "wordCount": 3318,
-    "createdAt": "2026-04-16T21:41:07.354Z",
-    "updatedAt": "2026-04-16T21:41:55.693Z",
-    "auditIssues": [
-      "[warning] 寿元扣减叙事与本章描述存在逻辑链不清晰的问题。沈炼说\"三年减两次，约莫还剩两年出头\"，结合第80章已扣一年（因果反噬/四年→三年），本章又扣一年（三年→两年），确实剩余两年出头。但此前第73章立誓时已扣一年（五年→四年），第80章祭拜立誓又扣一年，时间线上有两次立誓事件，容易造成混淆。",
-      "[warning] 献祭图纸描述与沈炼解读出现潜在矛盾。本章沈炼说\"第二件……具体位置，图上没有标，只说它'自会显现'\"，但本章开头描写献祭图纸时写\"图上的线条已经有些模糊，但仍能辨认出一座祭坛的轮廓，三个光点分布在祭坛周围\"——若三个光点都能辨认，为何第二件的\"具体位置\"没有标？这与83章\"记载三源同源之物位置\"的设定形成矛盾。",
-      "[info] 第83章结尾悬念\"地下河尽头有什么东西正在等待\"与第84章沈炼的发现\"有东西在靠近通道\"呼应不够紧密。青鸾呓语\"别过去……有东西在等\"本应与83章悬念形成回环，但本章被\"有人靠近\"的外部冲突打断，悬念回收的节奏略有错位。",
-      "[info] 本章以对话信息揭露为主（沈炼讲解献祭图纸、三源归一代价、周沉身世），节奏较为平缓。虽然结尾有感应石震动、外部冲突介入，但整体信息密度较高，情感节奏相对前几章（祭拜/立誓/发现母亲坟墓等情感高潮章）有所放缓。",
-      "[info] 三聚居点疏散支线（紧迫/三个月时限）以及黑雾逼近支线在本章仅通过沈炼一句\"赤水镇我已经安排过了，青岩谷和暮云寨得等到了镇上再想办法\"提及，未有实质推进。",
-      "[warning] 转折词重复使用：\"不过\"×4。同一转折模式≥3次暴露AI生成痕迹",
-      "[warning] 最近4章持续高压（悲痛（发现母亲遗物）→悲痛（回忆幼时）→震惊（第三条路代价）→沉重（因果反噬）→紧张（幽冥兽接近） -> 悲痛（发现母亲坟墓）→悲痛（回忆幼时）→震惊（冥将嘲讽）→沉重（三年真相）→坚定（第八代遗言）→悲痛（心疼而非后悔）→坚定（立誓\"不悔\"）→震惊（因果反噬）→平静（接受三年）→坚定（传承激活）→希望（获得石牌）→紧张（发现脚印和黑雾） -> 紧张（幽冥兽追击）→悲痛（周沉死亡）→震惊（沈炼现身）→沉重（黑雾时限）→紧张（地下河异常）→坚定（继续前行） -> 沉重（末法真相）→震惊（献祭真相）→悲痛（母亲遗言）→坚定（使命确认）→紧张（通道崩溃）→希望（献祭图纸）→坚定（继续前行）），缺少明显的情绪释放。",
-      "[warning] 章节标题\"三源归一\"已自动调整为\"三源归一：陈守\"。",
-      "[warning] 最近4章持续高压（悲痛（发现母亲遗物）→悲痛（回忆幼时）→震惊（第三条路代价）→沉重（因果反噬）→紧张（幽冥兽接近） -> 悲痛（发现母亲坟墓）→悲痛（回忆幼时）→震惊（冥将嘲讽）→沉重（三年真相）→坚定（第八代遗言）→悲痛（心疼而非后悔）→坚定（立誓\"不悔\"）→震惊（因果反噬）→平静（接受三年）→坚定（传承激活）→希望（获得石牌）→紧张（发现脚印和黑雾） -> 紧张（幽冥兽追击）→悲痛（周沉死亡）→震惊（沈炼现身）→沉重（黑雾时限）→紧张（地下河异常）→坚定（继续前行） -> 沉重（末法真相）→震惊（献祭真相）→悲痛（母亲遗言）→坚定（使命确认）→紧张（通道崩溃）→希望（献祭图纸）→坚定（继续前行）），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H124_三件同源之物（中程，可回收）、H130_周沉遗言（中程，可回收）、H132_沈炼二十年等待（中程，可回收）。",
-      "[warning] 87个段落里有26个不足35字，段落被切得过碎。",
-      "[warning] 连续出现7个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3608,
-      "postWriterNormalizeCount": 2392,
-      "postReviseCount": 3318,
-      "finalCount": 3318,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 155739,
-      "completionTokens": 31081,
-      "totalTokens": 186820
-    }
-  },
-  {
-    "number": 85,
-    "title": "血铸封印",
-    "status": "approved",
-    "wordCount": 2551,
-    "createdAt": "2026-04-16T21:58:11.372Z",
-    "updatedAt": "2026-04-16T21:58:39.496Z",
-    "auditIssues": [
-      "[warning] 最近4章持续高压（悲痛（发现母亲坟墓）→悲痛（回忆幼时）→震惊（冥将嘲讽）→沉重（三年真相）→坚定（第八代遗言）→悲痛（心疼而非后悔）→坚定（立誓\"不悔\"）→震惊（因果反噬）→平静（接受三年）→坚定（传承激活）→希望（获得石牌）→紧张（发现脚印和黑雾） -> 紧张（幽冥兽追击）→悲痛（周沉死亡）→震惊（沈炼现身）→沉重（黑雾时限）→紧张（地下河异常）→坚定（继续前行） -> 沉重（末法真相）→震惊（献祭真相）→悲痛（母亲遗言）→坚定（使命确认）→紧张（通道崩溃）→希望（献祭图纸）→坚定（继续前行） -> **沉重（代价揭露）→坚定（使命确认）→紧张（感应石发热）→沉重（行程提前）**），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（悲痛（发现母亲坟墓）→悲痛（回忆幼时）→震惊（冥将嘲讽）→沉重（三年真相）→坚定（第八代遗言）→悲痛（心疼而非后悔）→坚定（立誓\"不悔\"）→震惊（因果反噬）→平静（接受三年）→坚定（传承激活）→希望（获得石牌）→紧张（发现脚印和黑雾） -> 紧张（幽冥兽追击）→悲痛（周沉死亡）→震惊（沈炼现身）→沉重（黑雾时限）→紧张（地下河异常）→坚定（继续前行） -> 沉重（末法真相）→震惊（献祭真相）→悲痛（母亲遗言）→坚定（使命确认）→紧张（通道崩溃）→希望（献祭图纸）→坚定（继续前行） -> **沉重（代价揭露）→坚定（使命确认）→紧张（感应石发热）→沉重（行程提前）**），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H128_黑雾逼近三聚居点（中程，可回收）、H130_周沉遗言（中程，可回收）、H131_地下河幽冥气息（中程，可回收），另有 3 条。",
-      "[warning] 连续出现6个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2384,
-      "postWriterNormalizeCount": 2999,
-      "postReviseCount": 2551,
-      "finalCount": 2551,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 146150,
-      "completionTokens": 20777,
-      "totalTokens": 166927
-    }
-  },
-  {
-    "number": 86,
-    "title": "祭坛之下",
-    "status": "approved",
-    "wordCount": 2735,
-    "createdAt": "2026-04-16T22:19:27.008Z",
-    "updatedAt": "2026-04-16T22:19:45.237Z",
-    "auditIssues": [
-      "[warning] 第一件同源之物'被人取走'的情节设定存在逻辑风险。献祭图纸记载其位置为'青岩谷东北三十里古祭坛遗址，需三源血脉激活'，暗示此物与献祭体系深度绑定。然而母亲作为守夜者守护此地三十年，若物品如此轻易被取走，则三源同源之物的守护机制存疑。",
-      "[info] 末法真相（'主动献祭vs被迫'）在第77章首次揭露、第83章完整揭露后，第86章通过石壁刻字进行情感深化。虽然从信息量上属于'重复'，但从叙事节奏看属于正常的情感弧线推进——从'知情'到'亲历'的认知重铸。",
-      "[warning] 最近4章持续高压（紧张（幽冥兽追击）→悲痛（周沉死亡）→震惊（沈炼现身）→沉重（黑雾时限）→紧张（地下河异常）→坚定（继续前行） -> 沉重（末法真相）→震惊（献祭真相）→悲痛（母亲遗言）→坚定（使命确认）→紧张（通道崩溃）→希望（献祭图纸）→坚定（继续前行） -> **沉重（代价揭露）→坚定（使命确认）→紧张（感应石发热）→沉重（行程提前）** -> **紧张（威胁逼近）→震惊（发现不是追而是堵）→沉重（紧急抉择）→坚定（走暗道）→坚定（三源气息干扰）**），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（紧张（幽冥兽追击）→悲痛（周沉死亡）→震惊（沈炼现身）→沉重（黑雾时限）→紧张（地下河异常）→坚定（继续前行） -> 沉重（末法真相）→震惊（献祭真相）→悲痛（母亲遗言）→坚定（使命确认）→紧张（通道崩溃）→希望（献祭图纸）→坚定（继续前行） -> **沉重（代价揭露）→坚定（使命确认）→紧张（感应石发热）→沉重（行程提前）** -> **紧张（威胁逼近）→震惊（发现不是追而是堵）→沉重（紧急抉择）→坚定（走暗道）→坚定（三源气息干扰）**），缺少明显的情绪释放。",
-      "[warning] 连续出现3个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 1915,
-      "postWriterNormalizeCount": 2405,
-      "postReviseCount": 2735,
-      "finalCount": 2735,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 138971,
-      "completionTokens": 26623,
-      "totalTokens": 165594
-    }
-  },
-  {
-    "number": 87,
-    "title": "祭文",
-    "status": "approved",
-    "wordCount": 3650,
-    "createdAt": "2026-04-16T23:10:28.687Z",
-    "updatedAt": "2026-04-16T23:12:17.520Z",
-    "auditIssues": [
-      "[warning] 近期章节（80-87章）情绪基调模式高度重复：沉重（真相揭露）→坚定（使命确认）→紧张（威胁出现）→沉重（代价/紧迫）→坚定（决定行动）。连续8章未出现纯高潮/释放/转折类章节，节奏被压平。",
-      "[warning] H114（末法时代真相）自第77章埋设，至第87章已过去10章，持续深化但未实质性推进。虽核心真相已在83章揭露，后续章节（H133/H135深化）确有必要，但'人类是自身刽子手''清醒者的承担'等主题已出现两次（83章核心揭露→87章再次叙述），读者期待积累较长。",
-      "[info] 赵猛在本章主要承担'提问者'功能（赎罪是什么意思？母亲知道这些吗？），用于引出陈守一的解释。虽角色反应合理（抱着周沉遗体需要理解真相），但整体主动性偏弱。",
-      "[info] 青鸾的呓语'三源归一不是锁，是桥'是重要转折点（将封印概念从'封锁'重新定义为'连接/共存'），但青鸾目前处于昏迷状态，这条线索无法通过角色互动回收，只能等待后续铺垫。",
-      "[info] 本章前半段（约40%）用于末法真相解释和情感铺垫，后半段才推进外部威胁。虽符合'揭露大劫真相'的章节目标，但威胁逼近的紧迫感与真相解释的沉重感在节奏上形成拉扯，可能影响阅读流畅度。",
-      "[warning] 最近4章持续高压（紧张（幽冥兽追击）→悲痛（周沉死亡）→震惊（沈炼现身）→沉重（黑雾时限）→紧张（地下河异常）→坚定（继续前行） -> 沉重（末法真相）→震惊（献祭真相）→悲痛（母亲遗言）→坚定（使命确认）→紧张（通道崩溃）→希望（献祭图纸）→坚定（继续前行） -> **沉重（代价揭露）→坚定（使命确认）→紧张（感应石发热）→沉重（行程提前）** -> **紧张（威胁逼近）→震惊（发现不是追而是堵）→沉重（紧急抉择）→坚定（走暗道）→坚定（三源气息干扰）**），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（紧张（幽冥兽追击）→悲痛（周沉死亡）→震惊（沈炼现身）→沉重（黑雾时限）→紧张（地下河异常）→坚定（继续前行） -> 沉重（末法真相）→震惊（献祭真相）→悲痛（母亲遗言）→坚定（使命确认）→紧张（通道崩溃）→希望（献祭图纸）→坚定（继续前行） -> **沉重（代价揭露）→坚定（使命确认）→紧张（感应石发热）→沉重（行程提前）** -> **紧张（威胁逼近）→震惊（发现不是追而是堵）→沉重（紧急抉择）→坚定（走暗道）→坚定（三源气息干扰）**），缺少明显的情绪释放。",
-      "[warning] 132个段落里有65个不足35字，段落被切得过碎。",
-      "[warning] 连续出现11个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2707,
-      "postWriterNormalizeCount": 2707,
-      "postReviseCount": 3650,
-      "finalCount": 3650,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 256798,
-      "completionTokens": 87801,
-      "totalTokens": 344599
-    }
-  },
-  {
-    "number": 88,
-    "title": "先人渡",
-    "status": "approved",
-    "wordCount": 2816,
-    "createdAt": "2026-04-16T23:27:31.491Z",
-    "updatedAt": "2026-04-16T23:27:53.290Z",
-    "auditIssues": [
-      "[info] 检测到3句连续以相同开头的句子，呈现列表式AI生成结构",
-      "[warning] 最近4章持续高压（沉重（末法真相）→震惊（献祭真相）→悲痛（母亲遗言）→坚定（使命确认）→紧张（通道崩溃）→希望（献祭图纸）→坚定（继续前行） -> **沉重（代价揭露）→坚定（使命确认）→紧张（感应石发热）→沉重（行程提前）** -> **紧张（威胁逼近）→震惊（发现不是追而是堵）→沉重（紧急抉择）→坚定（走暗道）→坚定（三源气息干扰）** -> 沉重（末法真相）→震惊（不是天灾是人祸）→悲痛（祖先献祭）→坚定（跪拜立誓）→坚定（分头行动）→震惊（\"不是锁是桥\"）→紧张（威胁逼近）→紧张（同源之物被取走）→坚定（主动引开）→坚定（追踪）），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（沉重（末法真相）→震惊（献祭真相）→悲痛（母亲遗言）→坚定（使命确认）→紧张（通道崩溃）→希望（献祭图纸）→坚定（继续前行） -> **沉重（代价揭露）→坚定（使命确认）→紧张（感应石发热）→沉重（行程提前）** -> **紧张（威胁逼近）→震惊（发现不是追而是堵）→沉重（紧急抉择）→坚定（走暗道）→坚定（三源气息干扰）** -> 沉重（末法真相）→震惊（不是天灾是人祸）→悲痛（祖先献祭）→坚定（跪拜立誓）→坚定（分头行动）→震惊（\"不是锁是桥\"）→紧张（威胁逼近）→紧张（同源之物被取走）→坚定（主动引开）→坚定（追踪）），缺少明显的情绪释放。",
-      "[warning] 114个段落里有78个不足35字，段落被切得过碎。",
-      "[warning] 连续出现7个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 2355,
-      "postWriterNormalizeCount": 2520,
-      "postReviseCount": 2816,
-      "finalCount": 2816,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 155578,
-      "completionTokens": 19092,
-      "totalTokens": 174670
-    }
-  },
-  {
-    "number": 89,
-    "title": "三载守望",
-    "status": "approved",
-    "wordCount": 1801,
-    "createdAt": "2026-04-16T23:48:51.264Z",
-    "updatedAt": "2026-04-16T23:49:10.760Z",
-    "auditIssues": [
-      "[warning] 第89章提到孩子是\"守夜者第八代收养的孤儿\"，但第73章描述守夜者第八代\"身形佝偻/靠在墙上像枯死的树桩/几颗残缺的牙齿/眼睛却是金色竖瞳\"，且第88章交接时无任何收养信息。守夜者第八代的形象（病弱老人/巨兽形态）与\"收养孤儿抚养长大\"的能力存在轻微矛盾。",
-      "[warning] 陈守一说\"我娘在我身边。这三年来，她一直在守护我。从现在开始，换我来守护她守护的东西。\"——这句台词过于煽情直白，与陈守一一贯少言、行动果断、内心深沉的说话风格不符。",
-      "[warning] 近四章连续以\"新危机/坚定决心\"模式收尾：ch86\"有东西在等\"→ch87\"那笑意里带着冷意\"→ch88\"新的危机正在逼近\"→ch89\"真正的考验才刚开始\"。节奏模式重复，缺乏变化。",
-      "[info] 孩子说\"它认得我，守夜者的气息，它不会主动攻击\"——此处孩子的视角信息略微越界，但考虑到孩子与那东西共处三年的背景，可接受。",
-      "[warning] 最近4章持续高压（**沉重（代价揭露）→坚定（使命确认）→紧张（感应石发热）→沉重（行程提前）** -> **紧张（威胁逼近）→震惊（发现不是追而是堵）→沉重（紧急抉择）→坚定（走暗道）→坚定（三源气息干扰）** -> 沉重（末法真相）→震惊（不是天灾是人祸）→悲痛（祖先献祭）→坚定（跪拜立誓）→坚定（分头行动）→震惊（\"不是锁是桥\"）→紧张（威胁逼近）→紧张（同源之物被取走）→坚定（主动引开）→坚定（追踪） -> 紧张（追踪）→震惊（幻境）→沉重（桥的代价）→坚定（理解使命）→紧张（抉择）→沉重（新危机逼近）），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（**沉重（代价揭露）→坚定（使命确认）→紧张（感应石发热）→沉重（行程提前）** -> **紧张（威胁逼近）→震惊（发现不是追而是堵）→沉重（紧急抉择）→坚定（走暗道）→坚定（三源气息干扰）** -> 沉重（末法真相）→震惊（不是天灾是人祸）→悲痛（祖先献祭）→坚定（跪拜立誓）→坚定（分头行动）→震惊（\"不是锁是桥\"）→紧张（威胁逼近）→紧张（同源之物被取走）→坚定（主动引开）→坚定（追踪） -> 紧张（追踪）→震惊（幻境）→沉重（桥的代价）→坚定（理解使命）→紧张（抉择）→沉重（新危机逼近）），缺少明显的情绪释放。",
-      "[warning] 73个段落里有28个不足35字，段落被切得过碎。",
-      "[warning] 连续出现8个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [
-      "第89章经过一次字数归一化后仍超出硬区间（2182-3818，实际 1801）。"
-    ],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 3350,
-      "postWriterNormalizeCount": 3350,
-      "postReviseCount": 1801,
-      "finalCount": 1801,
-      "normalizeApplied": true,
-      "lengthWarning": true
-    },
-    "tokenUsage": {
-      "promptTokens": 170470,
-      "completionTokens": 21909,
-      "totalTokens": 192379
-    }
-  },
-  {
-    "number": 90,
-    "title": "三源噬天",
-    "status": "approved",
-    "wordCount": 3437,
-    "createdAt": "2026-04-17T08:16:00.000Z",
-    "updatedAt": "2026-04-17T08:16:00.000Z",
-    "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "finalCount": 3437
     },
     "tokenUsage": {
       "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
+      "completionTokens": 18573,
+      "totalTokens": 18573
     }
   },
   {
-    "number": 91,
-    "title": "彼岸凝视",
-    "status": "approved",
-    "wordCount": 2046,
-    "createdAt": "2026-04-17T08:39:00.000Z",
-    "updatedAt": "2026-04-17T08:39:00.000Z",
-    "auditIssues": [],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "finalCount": 2046
-    },
-    "tokenUsage": {
-      "promptTokens": 0,
-      "completionTokens": 0,
-      "totalTokens": 0
-    }
-  },
-  {
-    "number": 92,
-    "title": "渡人者",
-    "status": "approved",
-    "wordCount": 3349,
-    "createdAt": "2026-04-17T01:39:06.091Z",
-    "updatedAt": "2026-04-17T01:39:33.566Z",
-    "auditIssues": [
-      "[warning] 第91章结尾陈守一决定启动'同归于零'阵法（将两块玉佩按在地面，激活三百年阵法），第92章开头却显示'他从石室里脱身了'，中间缺少过渡。母亲的介入过程（如何打断同归于尽阵法、如何帮助陈守一脱身）完全留白，可能导致逻辑断层。",
-      "[warning] 孩子性别不一致。第89章孩子正式登场时描写为女性（'她'）；第91章孩子称呼'你娘不是让你走吗'用'她'；第92章却全文使用男性代词'他'（'他伸出手'、'他转过身'、'孩子的嘴唇动了动'等至少7处）。",
-      "[info] '桥需要17个支撑点'是新信息，但此前幻境（88章）只揭露了守桥者核心代价，未提及支撑点机制。此信息由孩子口述，作为守夜者体系300年传承者的讲述具有合理性，但不构成'伏笔'类问题，而是信息揭露节奏。",
-      "[info] 章节结尾'他要找到愿意走上那座桥的人'和'然后转身，朝来时的路走去'成功点燃新的期待缺口（寻找支撑点），节奏收束良好。标题'那天夜里 完'标注章节结束，格式清晰。",
-      "[warning] 最近4章持续高压（**紧张（威胁逼近）→震惊（发现不是追而是堵）→沉重（紧急抉择）→坚定（走暗道）→坚定（三源气息干扰）** -> 沉重（末法真相）→震惊（不是天灾是人祸）→悲痛（祖先献祭）→坚定（跪拜立誓）→坚定（分头行动）→震惊（\"不是锁是桥\"）→紧张（威胁逼近）→紧张（同源之物被取走）→坚定（主动引开）→坚定（追踪） -> 紧张（追踪）→震惊（幻境）→沉重（桥的代价）→坚定（理解使命）→紧张（抉择）→沉重（新危机逼近） -> 紧张（抉择）→紧张（抵达）→紧张（前后夹击）→震惊（孩子登场）→震动（\"渡\"字呼应）→震动（代价双线汇合）→坚定（获得同源之物）→紧张（撤离）→坚定（引开分身）→沉重（\"换我守护\"）→坚定（消失在黑暗中）→**紧张（考验开始）**），缺少明显的情绪释放。",
-      "[warning] 章节标题\"**渡人者**\"已自动调整为\"渡人者\"。",
-      "[warning] 最近4章持续高压（**紧张（威胁逼近）→震惊（发现不是追而是堵）→沉重（紧急抉择）→坚定（走暗道）→坚定（三源气息干扰）** -> 沉重（末法真相）→震惊（不是天灾是人祸）→悲痛（祖先献祭）→坚定（跪拜立誓）→坚定（分头行动）→震惊（\"不是锁是桥\"）→紧张（威胁逼近）→紧张（同源之物被取走）→坚定（主动引开）→坚定（追踪） -> 紧张（追踪）→震惊（幻境）→沉重（桥的代价）→坚定（理解使命）→紧张（抉择）→沉重（新危机逼近） -> 紧张（抉择）→紧张（抵达）→紧张（前后夹击）→震惊（孩子登场）→震动（\"渡\"字呼应）→震动（代价双线汇合）→坚定（获得同源之物）→紧张（撤离）→坚定（引开分身）→沉重（\"换我守护\"）→坚定（消失在黑暗中）→**紧张（考验开始）**），缺少明显的情绪释放。",
-      "[warning] 连续出现4个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 4617,
-      "postWriterNormalizeCount": 2689,
-      "postReviseCount": 3349,
-      "finalCount": 3349,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 239207,
-      "completionTokens": 30502,
-      "totalTokens": 269709
-    }
-  },
-  {
-    "number": 93,
-    "title": "重逢",
-    "status": "approved",
-    "wordCount": 3189,
-    "createdAt": "2026-04-17T01:58:54.298Z",
-    "updatedAt": "2026-04-17T01:59:11.035Z",
-    "auditIssues": [
-      "[warning] 章节整体节奏平稳但略显平缓。从荒野醒来→躲避分身→找到孩子→山洞对话→沈炼出现，事件序列完整但缺乏强力冲突节拍。Structured Directives要求'本章必须包含至少一个外部冲突节拍'，但本章外部冲突（分身出现）以'被响动引开'的方式快速化解，未形成正面冲突或紧急抉择。",
-      "[warning] 章尾沈炼出现并提及'关于三百年前的事'、'关于那个仪式到底需要什么'、'关于你的母亲'，成功点燃了好奇心。但与第92章结尾'消失在黑暗中'的悬念感相比，本章结束时的新悬念（沈炼知道什么？）属于'情报型悬念'而非'危机型悬念'，读者期待更偏向于'想知道答案'而非'想知道主角如何活下来'。",
-      "[info] 孩子在本章主要承担'信息传递者'功能——接受陈守一关于'选择权'的观点、提及壁画线索后等待主角反应。角色自身的发展弧线（如他与守夜者第八代的关系、三年守望的内心挣扎）未得到展现。",
-      "[warning] 最近4章持续高压（沉重（末法真相）→震惊（不是天灾是人祸）→悲痛（祖先献祭）→坚定（跪拜立誓）→坚定（分头行动）→震惊（\"不是锁是桥\"）→紧张（威胁逼近）→紧张（同源之物被取走）→坚定（主动引开）→坚定（追踪） -> 紧张（追踪）→震惊（幻境）→沉重（桥的代价）→坚定（理解使命）→紧张（抉择）→沉重（新危机逼近） -> 紧张（抉择）→紧张（抵达）→紧张（前后夹击）→震惊（孩子登场）→震动（\"渡\"字呼应）→震动（代价双线汇合）→坚定（获得同源之物）→紧张（撤离）→坚定（引开分身）→沉重（\"换我守护\"）→坚定（消失在黑暗中）→**紧张（考验开始）** -> **沉重（代价揭露）→坚定（使命理解）→紧张（分身逼近）→决然（引开分身）→坚定（消失在黑暗中）→坚定（找更多人走上桥）**），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（沉重（末法真相）→震惊（不是天灾是人祸）→悲痛（祖先献祭）→坚定（跪拜立誓）→坚定（分头行动）→震惊（\"不是锁是桥\"）→紧张（威胁逼近）→紧张（同源之物被取走）→坚定（主动引开）→坚定（追踪） -> 紧张（追踪）→震惊（幻境）→沉重（桥的代价）→坚定（理解使命）→紧张（抉择）→沉重（新危机逼近） -> 紧张（抉择）→紧张（抵达）→紧张（前后夹击）→震惊（孩子登场）→震动（\"渡\"字呼应）→震动（代价双线汇合）→坚定（获得同源之物）→紧张（撤离）→坚定（引开分身）→沉重（\"换我守护\"）→坚定（消失在黑暗中）→**紧张（考验开始）** -> **沉重（代价揭露）→坚定（使命理解）→紧张（分身逼近）→决然（引开分身）→坚定（消失在黑暗中）→坚定（找更多人走上桥）**），缺少明显的情绪释放。",
-      "[warning] 连续出现3个不足35字的短段，容易形成短句堆砌。"
-    ],
-    "lengthWarnings": [],
-    "lengthTelemetry": {
-      "target": 3000,
-      "softMin": 2591,
-      "softMax": 3409,
-      "hardMin": 2182,
-      "hardMax": 3818,
-      "countingMode": "zh_chars",
-      "writerCount": 4531,
-      "postWriterNormalizeCount": 3208,
-      "postReviseCount": 3189,
-      "finalCount": 3189,
-      "normalizeApplied": true,
-      "lengthWarning": false
-    },
-    "tokenUsage": {
-      "promptTokens": 105693,
-      "completionTokens": 17330,
-      "totalTokens": 123023
-    }
-  },
-  {
-    "number": 94,
-    "title": "彼岸真相",
+    "number": 106,
+    "title": "风声停了",
     "status": "approved",
     "wordCount": 2848,
-    "createdAt": "2026-04-17T02:21:29.255Z",
-    "updatedAt": "2026-04-17T02:22:11.645Z",
+    "createdAt": "2026-04-17T14:27:37.867Z",
+    "updatedAt": "2026-04-17T14:41:38.292Z",
     "auditIssues": [
-      "[warning] 章节中沈炼声称有关于\"那个仪式到底需要什么\"的信息，但实际上未完整揭示仪式具体需求（仪式需要的完整条件、桥的激活方法等），读者期待缺口可能需要更明确的管理",
-      "[info] 章节引入\"三天时间限制\"和\"组织会有动作\"两个新紧迫元素，但未完全展开这两个压力的具体含义，仅作为背景信息带过",
-      "[info] 陈微明的完整揭露（三百年前陈氏女儿/眉心金痕/二十三岁/以另一种方式活着与桥核心锚点融合）与前文孩子描述的壁画信息形成完整呼应，信息释放节奏良好",
-      "[warning] 最近4章持续高压（紧张（追踪）→震惊（幻境）→沉重（桥的代价）→坚定（理解使命）→紧张（抉择）→沉重（新危机逼近） -> 紧张（抉择）→紧张（抵达）→紧张（前后夹击）→震惊（孩子登场）→震动（\"渡\"字呼应）→震动（代价双线汇合）→坚定（获得同源之物）→紧张（撤离）→坚定（引开分身）→沉重（\"换我守护\"）→坚定（消失在黑暗中）→**紧张（考验开始）** -> **沉重（代价揭露）→坚定（使命理解）→紧张（分身逼近）→决然（引开分身）→坚定（消失在黑暗中）→坚定（找更多人走上桥）** -> **沉重（反噬持续）→紧张（躲避分身）→释然（与孩子重逢）→震动（17人都见过冥族）→坚定（让人们自己选择）→震动（壁画女人/旧玉佩）→紧张（沈炼找到）→期待（沈炼知道什么）**），缺少明显的情绪释放。",
-      "[warning] 最近4章持续高压（紧张（追踪）→震惊（幻境）→沉重（桥的代价）→坚定（理解使命）→紧张（抉择）→沉重（新危机逼近） -> 紧张（抉择）→紧张（抵达）→紧张（前后夹击）→震惊（孩子登场）→震动（\"渡\"字呼应）→震动（代价双线汇合）→坚定（获得同源之物）→紧张（撤离）→坚定（引开分身）→沉重（\"换我守护\"）→坚定（消失在黑暗中）→**紧张（考验开始）** -> **沉重（代价揭露）→坚定（使命理解）→紧张（分身逼近）→决然（引开分身）→坚定（消失在黑暗中）→坚定（找更多人走上桥）** -> **沉重（反噬持续）→紧张（躲避分身）→释然（与孩子重逢）→震动（17人都见过冥族）→坚定（让人们自己选择）→震动（壁画女人/旧玉佩）→紧张（沈炼找到）→期待（沈炼知道什么）**），缺少明显的情绪释放。",
-      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H139_祭坛深处存在（中程，已逾期）、H141_守夜者最后一人（中程，可回收）、H143_母亲玉佩碎片（中程，可回收），另有 3 条。",
-      "[warning] 状态校验不可用：Error: LLM returned empty response",
-      "[warning] 连续出现3个不足35字的短段，容易形成短句堆砌。"
+      "[warning] 三个时辰时限在105章被反复强调，但106章陈守一睡了整夜（从月亮斜到鱼肚白）石门就打开了。时限似乎变成了软性触发条件而非硬性deadline。",
+      "[info] 陈守一在分身守在外面、本体随时可能到来的情况下选择睡觉，这与\"谨慎多疑\"的人设有轻微张力。虽然他判断\"门会护着我\"，但完全放弃警觉性入眠仍显得过于冒险。",
+      "[info] 多条支线（冥将目的/陈守一使命/三源归一三条件等）在104章有活跃进展，本章作为过渡章节暂时搁置了这些支线，聚焦于石门开启和门后探索。这是合理的节奏安排，但需注意下一章应尽快接续这些紧迫支线。"
     ],
     "lengthWarnings": [],
-    "reviewNote": "{\"kind\":\"state-degraded\",\"baseStatus\":\"ready-for-review\",\"injectedIssues\":[\"[warning] 状态校验不可用：Error: LLM returned empty response\"]}",
     "lengthTelemetry": {
       "target": 3000,
       "softMin": 2591,
@@ -2815,17 +1122,17 @@
       "hardMin": 2182,
       "hardMax": 3818,
       "countingMode": "zh_chars",
-      "writerCount": 4628,
-      "postWriterNormalizeCount": 2743,
+      "writerCount": 2848,
+      "postWriterNormalizeCount": 2848,
       "postReviseCount": 2848,
       "finalCount": 2848,
-      "normalizeApplied": true,
+      "normalizeApplied": false,
       "lengthWarning": false
     },
     "tokenUsage": {
-      "promptTokens": 153410,
-      "completionTokens": 20970,
-      "totalTokens": 174380
+      "promptTokens": 0,
+      "completionTokens": 20610,
+      "totalTokens": 20610
     }
   }
 ]

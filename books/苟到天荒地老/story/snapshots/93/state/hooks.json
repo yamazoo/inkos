@@ -1,0 +1,102 @@
+{
+  "hooks": [
+    {
+      "hookId": "H138_组织走捷径",
+      "startChapter": 84,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 92,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "孩子不是组织是守夜者体系；信息补充（孩子揭露守夜者血脉真相）"
+    },
+    {
+      "hookId": "H146_桥需要更多支撑",
+      "startChapter": 92,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 93,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：陈守一提出告诉人们幽冥界的事让他们自己选择；孩子接受并认可；\"那就一个一个问，问到有人愿意为止\""
+    },
+    {
+      "hookId": "H144_孩子身份之谜",
+      "startChapter": 89,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 93,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：孩子提到师父（守夜者第八代）\"从来不会问我愿不愿意，只会告诉我应该做什么然后替我做完\"；陈守一回去与孩子重逢；孩子精神萎靡/衣衫破损/脸上有擦伤"
+    },
+    {
+      "hookId": "H145_陈守一引开分身",
+      "startChapter": 89,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 93,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化/部分回收**：陈守一消失在黑暗中后醒来；决定回去找孩子；镇冥石碎片效力已过；分身在附近犹豫后被远处声响吸引走；与孩子重逢；**新悬念：镇冥石碎片效力已过，分身可能重新锁定**"
+    },
+    {
+      "hookId": "H141_守夜者最后一人",
+      "startChapter": 88,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 93,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：孩子正式登场揭露身份；守夜者第八代收养的孤儿；在祭坛待了三年（与母亲守护陈守一时间一致）；每月圆之夜与分身接触；将第一件同源之物交给陈守一；揭露\"桥不是封印是渡\"；揭露三源归一仪式代价；**揭露桥的完整机制：需要17个支撑点**；正在拖住分身（往西跑躲避）；**与陈守一重逢**"
+    },
+    {
+      "hookId": "H139_祭坛深处存在",
+      "startChapter": 86,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 93,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：冥将残念分身确认；从三源通道交汇点渗出；三百年封印崩溃时被切割出来；饿了很久；比孩子强；三双幽蓝眼睛；**被镇冥石碎片成功引开（断崖深渊方向）**；**镇冥石碎片效力已过，可能重新锁定**"
+    },
+    {
+      "hookId": "H143_母亲玉佩碎片",
+      "startChapter": 88,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 93,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化/重大发现**：两枚玉佩同时发热；**孩子认出旧玉佩**：在祭坛深处壁画上，画的是三百年前参与仪式的十七个人，其中有一个女人，眉心有和陈守一一样的金痕，手里握着一枚一模一样的玉佩；**这个女人可能是陈守一的祖先/母亲？**；陈守一想起母亲遗言\"替我告诉她\""
+    },
+    {
+      "hookId": "H137_三源归一仪式代价",
+      "startChapter": 84,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 92,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化/部分回收**：代价完整揭露（\"比死更难，神魂永镇两界之间\"）；**孩子揭露桥的完整机制：核心1人+支撑点16人=共17人**；核心独自承受大部分反噬；支撑点分担封印重量（寿命、道行消耗）；孩子\"那座桥不是用来封印的，是用来渡的\"与母亲遗言呼应；**孩子揭露三百年前17人都是\"亲眼见过幽冥界真面目\"后自愿走上那座桥**"
+    },
+    {
+      "hookId": "H147_壁画女人身份",
+      "startChapter": 93,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 93,
+      "expectedPayoff": "**80-100章**",
+      "notes": "**NEW**：孩子在祭坛深处壁画上见过一个女人，眉心有和陈守一一样的金痕，手里握着一枚一模一样的玉佩；这个女人是三百年前参与仪式的十七人之一；可能是陈守一的祖先或与守夜者血脉相关；母亲遗言\"替我告诉她\"与此有关？"
+    },
+    {
+      "hookId": "H148_沈炼掌握的信息",
+      "startChapter": 93,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 93,
+      "expectedPayoff": "**80-100章**",
+      "notes": "**NEW**：沈炼声称有关于那座桥的事、三百年前的事、陈守一母亲的信息，还有\"关于那个仪式到底需要什么\"的信息；沈炼主动找到他们；目的和意图未明"
+    }
+  ]
+}

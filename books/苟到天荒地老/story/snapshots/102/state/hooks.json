@@ -1,0 +1,94 @@
+{
+  "hooks": [
+    {
+      "hookId": "H153_秦无涯与青鸾师父",
+      "startChapter": 98,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 102,
+      "expectedPayoff": "本章",
+      "notes": "秦无涯消散完成二十年守候使命；帛书完整传递；临渊城西北三十里暗河入口线索；师兄遗言完整传递"
+    },
+    {
+      "hookId": "H159_印记激活与桥连接",
+      "startChapter": 101,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 102,
+      "expectedPayoff": "near-term",
+      "notes": "冥将感应到印记激活后不再等待；金线剧烈跳动感应桥的位置；印记正在指向西北方向"
+    },
+    {
+      "hookId": "H160_三源归一代价",
+      "startChapter": 101,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 102,
+      "expectedPayoff": "near-term",
+      "notes": "帛书完整揭示三个选择；选择一代价是消散；选择三是未知；三个时辰时限紧迫"
+    },
+    {
+      "hookId": "H157_冥将亲至",
+      "startChapter": 99,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 102,
+      "expectedPayoff": "near-term",
+      "notes": "冥将感应到印记激活后不再等待；逼近速度加快（三十丈→二十丈→十五丈）；多个分身从不同方向逼近；三个时辰后不顾一切"
+    },
+    {
+      "hookId": "H150_秦无涯",
+      "startChapter": 97,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 102,
+      "expectedPayoff": "本章",
+      "notes": "秦无涯消散；二十年使命完成；临渊城西北三十里暗河入口线索；帛书传递"
+    },
+    {
+      "hookId": "H151_三源归一三条件",
+      "startChapter": 97,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 102,
+      "expectedPayoff": "near-term",
+      "notes": "帛书揭示三选择；仪式代价完整；第三条路存在但未知"
+    },
+    {
+      "hookId": "H147_壁画女人身份",
+      "startChapter": 93,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 102,
+      "expectedPayoff": "near-term",
+      "notes": "秦无涯临终确认\"壁画女人不是第一个被选中的人，她只是第一个选择的人\"；血脉非偶然/选择方为真"
+    },
+    {
+      "hookId": "H146_桥需要更多支撑",
+      "startChapter": 92,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 102,
+      "expectedPayoff": "near-term",
+      "notes": "帛书揭示末法真相（故意封印灵气）；炼气期为常态是保护机制；力量越强越容易被冥族感知"
+    },
+    {
+      "hookId": "H161_第三个选择",
+      "startChapter": 102,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 102,
+      "expectedPayoff": "near-term",
+      "notes": "帛书提及第三条路存在；临渊城西北三十里暗河入口是线索；具体内容未知"
+    },
+    {
+      "hookId": "H162_秦无涯消散",
+      "startChapter": 102,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 102,
+      "expectedPayoff": "near-term",
+      "notes": "秦无涯燃尽最后力量消散；二十年守候使命完成；为众人争取三个时辰"
+    }
+  ]
+}

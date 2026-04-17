@@ -1,0 +1,53 @@
+{
+  "chapter": 95,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "冥将残念分身在断崖附近（暂时离开但随时可能返回）",
+      "validFromChapter": 95,
+      "validUntilChapter": null,
+      "sourceChapter": 95
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "沈炼（揭露大量真相）/守夜者孩子/青鸾（见过冥族的支撑点候选人）",
+      "validFromChapter": 95,
+      "validUntilChapter": null,
+      "sourceChapter": 95
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "活着转移躲避冥将残念分身",
+      "validFromChapter": 95,
+      "validUntilChapter": null,
+      "sourceChapter": 95
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "祭坛遗址外围山谷 → 山谷出口转移中",
+      "validFromChapter": 95,
+      "validUntilChapter": null,
+      "sourceChapter": 95
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "冥将残念分身效力已过可能重新锁定/镇冥石碎片已耗尽",
+      "validFromChapter": 95,
+      "validUntilChapter": null,
+      "sourceChapter": 95
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "极度虚弱（持续）/经脉火烫冰浸（持续）/两枚玉佩发烫/但站得稳/怀抱青鸾转移",
+      "validFromChapter": 95,
+      "validUntilChapter": null,
+      "sourceChapter": 95
+    }
+  ]
+}

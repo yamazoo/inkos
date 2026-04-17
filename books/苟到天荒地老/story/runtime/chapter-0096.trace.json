@@ -1,0 +1,48 @@
+{
+  "chapter": 96,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\author_intent.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_focus.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\story_bible.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\volume_outline.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\chapter_summaries.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\book_rules.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_state.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\pending_hooks.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\memory.db"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0096.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#chapter_95_bridge",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "runtime/hook_debt#H137_三源归一仪式代价",
+    "runtime/hook_debt#H141_守夜者最后一人",
+    "runtime/hook_debt#H144_孩子身份之谜",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前敌我",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/chapter_summaries.md#73",
+    "story/chapter_summaries.md#92",
+    "story/chapter_summaries.md#93",
+    "story/chapter_summaries.md#95",
+    "story/pending_hooks.md#mystery-陈守一需要找-到更多见过冥-族的人作为支",
+    "story/pending_hooks.md#H147_壁画女人身份",
+    "story/pending_hooks.md#H143_母亲玉佩碎片",
+    "story/pending_hooks.md#H139_祭坛深处存在",
+    "story/pending_hooks.md#H137_三源归一仪式代价",
+    "story/pending_hooks.md#H138_组织走捷径",
+    "story/pending_hooks.md#H146_桥需要更多支撑",
+    "story/pending_hooks.md#H144_孩子身份之谜"
+  ],
+  "notes": []
+}

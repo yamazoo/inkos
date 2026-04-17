@@ -1,0 +1,104 @@
+{
+  "hooks": [
+    {
+      "hookId": "H113_三源同根幽冥同源",
+      "startChapter": 76,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大揭示**：玉牌铭文\"三源同根，幽冥同源。血脉为钥，平衡为道\"在第77章被完整理解；三源合一者血脉与冥将力量同源；血脉是钥匙（可以打开封印，也可以永固封印）；具体含义已揭露：两条路线（永固vs平衡）"
+    },
+    {
+      "hookId": "H108_\"正本清源\"组织",
+      "startChapter": 73,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：组织想永固封印（用三源血脉替代第二道锁）；守夜者说封印不可开/平衡才是唯一的路；两条路线矛盾：陈守一面临选择；第77章揭示矛盾本质：对\"平衡\"理解不同"
+    },
+    {
+      "hookId": "H110_冥将的试探",
+      "startChapter": 73,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进**：冥将意识完整对话揭露；冥将目的（毁掉封印或出去）；冥将被囚禁三百年；冥将想重建幽冥界荣光或让人类知道恐惧；**血脉会指引冥将找到陈守一**"
+    },
+    {
+      "hookId": "H111_母亲的最终画面",
+      "startChapter": 73,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：末法时代完整真相揭露——人类主动献祭修行界未来封印幽冥界；灵气从充裕跌至千分之一；金丹/筑基成为传说；炼气期修士拼尽全力活过五十岁"
+    },
+    {
+      "hookId": "H112_守夜者之女",
+      "startChapter": 73,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：守夜者女儿三百年前被献祭成为第二道锁；三代人的牺牲（守夜者之女→守夜者→母亲）只为延缓裂隙扩张"
+    },
+    {
+      "hookId": "H114_末法时代真相",
+      "startChapter": 77,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**新增伏笔**：末法时代完整真相在意识空间中揭露；天地没有抛弃人类，是人类献祭了修行界未来封印幽冥界；灵气断崖式下跌；修士寿命急剧缩短"
+    },
+    {
+      "hookId": "H115_冥将的目的",
+      "startChapter": 77,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**新增伏笔**：冥将被困三百年；目的（毁掉封印或出去）；想重建幽冥界荣光或让人类知道恐惧；血脉会指引冥将找到陈守一"
+    },
+    {
+      "hookId": "H116_陈守一的使命",
+      "startChapter": 77,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**新增伏笔**：陈守一找到自己的道路——不是打开封印，也不是永固封印，而是\"平衡之路\"——让人类和幽冥界共存，却永不相融"
+    },
+    {
+      "hookId": "H117_废墟秘密",
+      "startChapter": 77,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**新增伏笔**：聚居点废墟（三百年前被黑雾侵蚀）；废墟深处有若有若无的光芒；远处传来叹息\"终于，有人明白了\""
+    },
+    {
+      "hookId": "H118_赵猛等人下落",
+      "startChapter": 77,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 77,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**新增伏笔**：赵猛抱着周沉和青鸾撤离；结界崩溃后情况不明；陈守一不知道他们是否逃出来"
+    }
+  ]
+}

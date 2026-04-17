@@ -7,11 +7,6 @@
       "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
     },
     {
-      "source": "story/audit_drift.md",
-      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
-      "excerpt": "> 第6章审计发现以下问题，下一章写作时必须避免："
-    },
-    {
       "source": "story/current_state.md",
       "reason": "Preserve hard state facts referenced by mustKeep.",
       "excerpt": "| 字段 | 值 |"
@@ -19,17 +14,12 @@
     {
       "source": "story/story_bible.md",
       "reason": "Preserve canon constraints referenced by mustKeep.",
-      "excerpt": "天地灵气的衰减周期：每经一个大时代，有效利用率衰减至上一代的70%"
+      "excerpt": "天地大劫发生于万年前。彼时灵气充沛如海，上古大能移山填海、摘星拿月，仙魔并存。然而一场**终极之战**（[未知]真相）导致灵气断绝，天道崩塌。"
     },
     {
       "source": "story/volume_outline.md",
       "reason": "Anchor the default planning node for this chapter.",
-      "excerpt": "炼气杂役在宗门夹缝中求生存，在\"不冒头\"与\"被迫展露\"的矛盾中艰难前行"
-    },
-    {
-      "source": "story/chapter_summaries.md#chapter_5_bridge",
-      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
-      "excerpt": "第5章《灵泉噬影》 | 出场人物：陈守一、赵海（死亡）、陈老、小路 | 本章事件：1.（第4章苏婉儿指引三日后灵泉观察）→ 本章监视松动后陈守一潜入灵泉谷；2.（第3-4章三日之期倒计时）→ 本章确认灵泉变故信号——地底轰鸣；3.亲眼目睹赵海被幽冥气息吞噬全过程，选择不施救，遵循\"苟道\"；4.取走赵海遗留的储物袋和布鞋；5.用天机簿推演确认暂无牵连；6.离开时被陈老目击盘问，收到\"胆子太大不是好事\"警告；7.比对布料碎片确认陈老就是之前的窥视者；8.（第4章虫卵栽赃调查）→ 本章小路揭露执法堂内部有人打招呼捂盖子，苏婉儿追查受阻；9.执法堂定性赵海死因为\"误入禁地\"，案件结案；10.灵泉地底轰鸣加剧，天机簿残页震颤，\"三日之期\"进入倒计时 | 状态变化：赵海死亡（幽冥气息吞噬，尸骨无存）；获得赵海储物袋（内含下品灵石、锈匕首、给\"林师兄\"的求救信）；天机簿灵力消耗1次推演；陈老正式登场并目击主角灵泉行踪；执法堂监视换形式继续；主角被陈老警告 | 悬念活动：H003_灵泉异常 progressed（幽冥气息吞噬赵海、灵泉轰鸣加剧）；H009_陈老身份 new（确认陈老=破屋窥视者=执法堂暗子）；H010_林师兄 new（赵海遗信指向新人物）；执法堂内部派系对立公开化"
+      "excerpt": "| 卷名 | 章节 | 核心冲突 | 关键转折 | 收益目标 |"
     },
     {
       "source": "story/chapter_summaries.md#recent_titles",
@@ -44,37 +34,27 @@
     {
       "source": "story/chapters#recent_endings",
       "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
-      "excerpt": "ch4: 陈守一猛地睁开眼，脸色骤变。 | ch5: 暴风雨前的平静，从来不会持续太久。 | ch5: \"dialogueCheck\": [\"无大段对话，纯行动/观察叙事\"]"
-    },
-    {
-      "source": "runtime/hook_debt#threat-揭示执法堂与-陈守一的关系-走向",
-      "reason": "含原始种子文本的叙事债务简报。",
-      "excerpt": "threat-揭示执法堂与-陈守一的关系-走向（open，可兑现旧债，已开5章） | 读者承诺：中年男子指出虫卵栽赃目标是引出灵泉关联者，陈守一已被标记；执法堂已掌握其行踪；被陈老目击灵泉谷行踪，身份暴露风险升级 | 种于第0章：本章陈老目击后警告\"胆子太大不是好事\"，捂盖子方正式注意到主角 | 推进于第5章：ch5 灵泉噬影 - 1.（第4章苏婉儿指引三日后灵泉观察）→ 本章监视松动后陈守一潜入灵泉谷；2.（第3-4章三日之期倒计时）→ 本章确认灵泉变故信号——地底轰鸣；3.亲眼目睹赵海被幽冥气息吞噬全过程，选择不施救，遵循\"苟道\"；4.取走赵海遗留的储物袋和布鞋；5.用天机簿推演确认暂无牵连；6.离开时被陈老目击盘问，收到\"胆子太大不是好事\"警告；7.比对布料碎片确认陈老就是之前的窥视者；8.（第4章虫卵栽赃调查）→ 本章小路揭露执法堂内部有人打招呼捂盖子，苏婉儿追查受阻；9.执法堂定性赵海死因为\"误入禁地\"，案件结案；10.灵泉地底轰鸣加剧，天机簿残页震颤，\"三日之期\"进入倒计时"
-    },
-    {
-      "source": "runtime/hook_debt#H006_灵气衰减",
-      "reason": "含原始种子文本的叙事债务简报。",
-      "excerpt": "H006_灵气衰减（open，主要旧债，已开5章） | 读者承诺：第2章首次正面呈现 | 种于第0章：第2章首次正面呈现 | 推进于第2章：ch2 晨露与暗痕 - 1.发现枯叶螟虫卵，判定为人栽赃；2.折中处理虫卵，被小路和周管事注意；3.偷听执法弟子与小路对话，得知赵海背后有人，灵禾异常增三成；4.发现破屋被监视，留有脚印和布料证物；5.深夜启用天机簿推演，确认今夜是三日之期最后期限，画面指向灵泉；6.凌晨投递匿名举报信；7.傍晚得知赵海被执法堂带走；8.再次偷听到执法弟子调查陈守一；9.灵泉方向出现信号，危机即将降临"
+      "excerpt": "ch3: 又或许，是某个答案即将揭晓。 | ch4: 在他们身后，一只青色的灵雀无声无息地落在树梢上，猩红的眼睛注视着他们离去的方向。 | ch5: 暴风雨前的平静，从来不会持续太久。"
     },
     {
       "source": "story/current_state.md#当前冲突",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "当前冲突 | 表面：虫卵栽赃真相（执法堂内部捂盖子vs追查）；深层：三股势力（周平/陈老/林师兄）同时盯上陈守一；威胁：灵泉异变提前爆发"
+      "excerpt": "当前冲突 | 冥将分身紧追vs独自引开分身/三个时辰时限紧迫/金线临界点vs觉醒程度未知/第三条路位置vs帛书提示\"门后\"vs暗河入口只是入口/桥的回应vs分身干扰能力"
     },
     {
       "source": "story/current_state.md#当前目标",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "当前目标 | 应对三股势力同时盯上——周平试探、陈老监视、林师兄关注；灵泉异变提前爆发，原'三天后'期限失效"
+      "excerpt": "当前目标 | **三个时辰内找到第三个选择/引开冥将分身争取时间/前往临渊城西北三十里暗河入口/找到剩余两个见过冥族的支撑点**"
     },
     {
       "source": "story/current_state.md#主角状态",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "主角状态 | 炼气三层，左臂'金丝缠'伤疤；天机簿残页震颤加剧（灵泉共鸣临界）；赵海储物袋（内含信纸）已确认收入怀中"
+      "excerpt": "主角状态 | 极度虚弱（持续）/经脉灼烧感（持续）/双腿灌铅感/金线蔓延至胸口（临界点停住）/七窍渗血（持续）/体力严重透支/手背金线（剧烈跳动/觉醒中/干扰血脉锁定）/三源合一气息外散形成金色薄膜/**新：金线不再继续往下爬（临界点）/**新：双腿能动了（剧痛减轻）/**新：桥的回应干扰了分身血脉锁定**"
     },
     {
       "source": "story/current_state.md#当前限制",
       "reason": "Relevant current-state fact retrieved for the current chapter goal.",
-      "excerpt": "当前限制 | 身份暴露风险升级：周平已知两日前行踪；陈老当面点破灵泉行踪；苏婉儿看到伤疤后情绪失控暴露深层秘密"
+      "excerpt": "当前限制 | 冥将分身紧追（一具继续盯着/一具去通知本体）/三个时辰时限/金线蔓延至胸口/七窍渗血/体力透支/**新：密林深处有更强大的陌生气息（被桥震动惊醒的沉睡者）**"
     },
     {
       "source": "story/chapter_summaries.md#2",
@@ -97,44 +77,44 @@
       "excerpt": "灵泉噬影 | 1.（第4章苏婉儿指引三日后灵泉观察）→ 本章监视松动后陈守一潜入灵泉谷；2.（第3-4章三日之期倒计时）→ 本章确认灵泉变故信号——地底轰鸣；3.亲眼目睹赵海被幽冥气息吞噬全过程，选择不施救，遵循\"苟道\"；4.取走赵海遗留的储物袋和布鞋；5.用天机簿推演确认暂无牵连；6.离开时被陈老目击盘问，收到\"胆子太大不是好事\"警告；7.比对布料碎片确认陈老就是之前的窥视者；8.（第4章虫卵栽赃调查）→ 本章小路揭露执法堂内部有人打招呼捂盖子，苏婉儿追查受阻；9.执法堂定性赵海死因为\"误入禁地\"，案件结案；10.灵泉地底轰鸣加剧，天机簿残页震颤，\"三日之期\"进入倒计时 | 赵海死亡（幽冥气息吞噬，尸骨无存）；获得赵海储物袋（内含下品灵石、锈匕首、给\"林师兄\"的求救信）；天机簿灵力消耗1次推演；陈老正式登场并目击主角灵泉行踪；执法堂监视换形式继续；主角被陈老警告 | H003_灵泉异常 progressed（幽冥气息吞噬赵海、灵泉轰鸣加剧）；H009_陈老身份 new（确认陈老=破屋窥视者=执法堂暗子）；H010_林师兄 new（赵海遗信指向新人物）；执法堂内部派系对立公开化"
     },
     {
-      "source": "story/pending_hooks.md#H009_陈老身份",
+      "source": "story/pending_hooks.md#H163_第一个守夜者身影",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "人物悬念 | progressing | 陈老——执法堂捂盖子方暗子，外勤人员 | mid-arc | 本章实质推进：陈老主动现身老槐树，亲口承认向周平透露陈守一信息（'有一个炼气三层入园两年从不领丹药的有趣年轻人'）。当面警告'好好活着，三天后见分晓'——捂盖子方角色彻底明确"
+      "excerpt": "**悬念钩** | open | **near-term** | **新：第一个守夜者的身影在桥回应时浮现（三百年架桥者/面容模糊/眉心金痕与陈守一一样/\"不是我选中的你，而是你自己走到了这里\"）**"
     },
     {
-      "source": "story/pending_hooks.md#mystery-苏婉儿看到-金丝缠-伤疤时的复杂",
+      "source": "story/pending_hooks.md#H157_冥将亲至",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "mystery | progressing | 陈老与陈守一的'三天后见分晓'赌注揭晓 | near-term | 本章实质推进：苏婉儿看到陈守一袖口伤疤时神情骤变——震惊、疑惑、痛楚交织。她猛然后退，呼吸急促，沉默数息后说'没想到会是这样的纹路'。她亲手造成的伤疤却触发如此强烈情绪反应，揭示她与这道伤疤/这种纹路之间存在深层记忆或秘密"
+      "excerpt": "悬念钩 | open | near-term | near-term | 冥将感应到印记激活后不再等待；逼近速度加快；多个分身从不同方向逼近；**新：一分身继续盯着陈守一/一分身去通知本体/分身对桥的震动感到惧意**"
     },
     {
-      "source": "story/pending_hooks.md#plot-灵泉异变的正-式爆发-与陈守一体内",
+      "source": "story/pending_hooks.md#H164_帛书声音",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "plot | progressing | 灵泉异变的正式爆发——与陈守一体内天机簿残页的共鸣 | near-term | 本章实质推进：灵泉异变'提前爆发'——原定三天后期限未至，灵草园深处闷响比前两日更沉，灵泉方向传来沉闷轰鸣，天机簿残页震颤比晨曦时剧烈百倍。暴风雨已至而非将至"
+      "excerpt": "**悬念钩** | open | **near-term** | **新：帛书内第一个走上桥的人的意志发声（等了三百年/\"秦无涯给你的帛书是我当年写的\"/七个光点四个还活着/临渊城方向两个/\"那座桥不是你想的那样\"/\"第三条路不在桥上，也不在锁里。在门后\"/声音消散）**"
     },
     {
-      "source": "story/pending_hooks.md#mystery-揭示灵泉变故-真相-中年男子警告",
+      "source": "story/pending_hooks.md#H165_密林深处未知存在",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "progressing | progressing | 陈守一与中年男子对峙期间，远处有一道若有若无的气息在窥视——此人就是\"陈老\" | near-term | 本章确认陈老就是窥视者，且为执法堂捂盖子方埋入的暗子"
+      "excerpt": "**悬念钩** | open | **near-term** | **新：桥的震动惊醒了密林深处某种古老而强大的存在/不是分身/不是桥的回应/被桥震动惊醒的沉睡者**"
     },
     {
-      "source": "story/pending_hooks.md#H004_执法堂调查",
+      "source": "story/pending_hooks.md#H161_第三个选择",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "外部冲突 | progressing | 执法堂审讯苏婉儿揭露掌握陈守一行踪和感知能力；内部捂盖子vs追查两派对立公开化 | near-term | 本章小路揭露执法堂内部有人打招呼要求尽快结案，苏婉儿追查阻力大"
+      "excerpt": "**悬念钩** | open | near-term | near-term | 帛书提及第三条路存在；临渊城西北三十里暗河入口是线索；**新：帛书声音揭示\"那座桥不是你想的那样\"/帛书声音揭示\"第三条路不在桥上，也不在锁里。在门后。\"**"
     },
     {
-      "source": "story/pending_hooks.md#threat-揭示执法堂与-陈守一的关系-走向",
+      "source": "story/pending_hooks.md#H162_秦无涯消散",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "open | open | 中年男子指出虫卵栽赃目标是引出灵泉关联者，陈守一已被标记；执法堂已掌握其行踪；被陈老目击灵泉谷行踪，身份暴露风险升级 | mid-arc | 本章陈老目击后警告\"胆子太大不是好事\"，捂盖子方正式注意到主角"
+      "excerpt": "**悬念钩** | open | near-term | near-term | 秦无涯燃尽最后力量消散；二十年守候使命完成；为众人争取三个时辰；**新：帛书内第一个走上桥的人的意志也已消散（耗尽最后力量传递信息）**"
     },
     {
-      "source": "story/pending_hooks.md#H006_灵气衰减",
+      "source": "story/pending_hooks.md#H159_印记激活与桥连接",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "open | open | 第2章首次正面呈现 | mid-arc"
+      "excerpt": "悬念钩 | open | near-term | near-term | 冥将感应到印记激活后不再等待；金线剧烈跳动感应桥的位置；印记指向西北方向；**新：金线蔓延至胸口（临界点停住）/三源合一气息外散干扰血脉锁定/桥的回应干扰了分身感知**"
     },
     {
-      "source": "story/pending_hooks.md#H010_林师兄",
+      "source": "story/pending_hooks.md#H160_三源归一代价",
       "reason": "Carry forward unresolved hooks that match the chapter focus.",
-      "excerpt": "人物悬念 | open | 赵海遗信中提及的神秘人物，与执法堂捂盖子方可能有关联 | mid-arc | 信中提及\"灵禾的事可能瞒不住\"，可能是虫卵栽赃幕后主使"
+      "excerpt": "悬念钩 | open | near-term | near-term | 帛书完整揭示三个选择；选择一代价是消散；选择三是未知；三个时辰时限紧迫；**新：桥在回应（三百年首次）/第一个守夜者身影出现/\"血脉非偶然，选择方为真\"确认**"
     }
   ]
 }

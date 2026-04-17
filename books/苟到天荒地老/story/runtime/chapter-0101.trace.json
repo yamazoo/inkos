@@ -1,0 +1,46 @@
+{
+  "chapter": 101,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\author_intent.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_focus.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\story_bible.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\volume_outline.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\chapter_summaries.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\book_rules.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_state.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\pending_hooks.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\memory.db"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0101.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#chapter_100_bridge",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "runtime/hook_debt#H146_桥需要更多支撑",
+    "runtime/hook_debt#H147_壁画女人身份",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#73",
+    "story/chapter_summaries.md#96",
+    "story/chapter_summaries.md#97",
+    "story/chapter_summaries.md#99",
+    "story/pending_hooks.md#H158_师兄留下的东西",
+    "story/pending_hooks.md#H157_冥将亲至",
+    "story/pending_hooks.md#H153_秦无涯与青鸾师父",
+    "story/pending_hooks.md#H150_秦无涯",
+    "story/pending_hooks.md#H151_三源归一三条件",
+    "story/pending_hooks.md#H147_壁画女人身份",
+    "story/pending_hooks.md#H146_桥需要更多支撑"
+  ],
+  "notes": []
+}

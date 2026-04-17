@@ -1,0 +1,48 @@
+{
+  "chapter": 88,
+  "plannerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\author_intent.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_focus.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\story_bible.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\volume_outline.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\chapter_summaries.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\book_rules.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_state.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\pending_hooks.md",
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\memory.db"
+  ],
+  "composerInputs": [
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0088.intent.md"
+  ],
+  "selectedSources": [
+    "story/current_focus.md",
+    "story/audit_drift.md",
+    "story/current_state.md",
+    "story/story_bible.md",
+    "story/volume_outline.md",
+    "story/chapter_summaries.md#chapter_87_bridge",
+    "story/chapter_summaries.md#recent_titles",
+    "story/chapter_summaries.md#recent_mood_type_trail",
+    "story/chapters#recent_endings",
+    "runtime/hook_debt#H133_三源通道交汇点",
+    "runtime/hook_debt#H140_三源归一新理解",
+    "runtime/hook_debt#H137_三源归一仪式代价",
+    "story/current_state.md#当前冲突",
+    "story/current_state.md#当前目标",
+    "story/current_state.md#主角状态",
+    "story/current_state.md#当前限制",
+    "story/chapter_summaries.md#73",
+    "story/chapter_summaries.md#83",
+    "story/chapter_summaries.md#84",
+    "story/chapter_summaries.md#87",
+    "story/pending_hooks.md#H135_母亲的抉择",
+    "story/pending_hooks.md#H139_祭坛深处存在",
+    "story/pending_hooks.md#H136_有东西在靠近通道",
+    "story/pending_hooks.md#H138_组织走捷径",
+    "story/pending_hooks.md#H133_三源通道交汇点",
+    "story/pending_hooks.md#H134_献祭图纸",
+    "story/pending_hooks.md#H140_三源归一新理解",
+    "story/pending_hooks.md#H137_三源归一仪式代价"
+  ],
+  "notes": []
+}

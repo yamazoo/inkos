@@ -1,0 +1,54 @@
+{
+  "hooks": [
+    {
+      "hookId": "H108_\"正本清源\"组织",
+      "startChapter": 73,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 75,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：周沉是第七代传人/普通血脉传承者；铜牌是三百年心血；周沉是周执事的弟弟；组织与冥将投影对峙；周沉说\"组织不是叛徒/只是走上不同的路\""
+    },
+    {
+      "hookId": "H109_守夜者的遗言",
+      "startChapter": 73,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 75,
+      "expectedPayoff": "**75-80章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进**：黑渊揭示母亲遗言\"替我告诉她，我女儿没白养\"；黑渊说\"去问问守夜者/问问她三百年前为什么救你母亲/问问她为什么要把自己的女儿……\"（话未说完被打断）；**暗示守夜者有女儿**；遗言中的\"她\"很可能就是守夜者的女儿"
+    },
+    {
+      "hookId": "H110_冥将的试探",
+      "startChapter": 73,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 75,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进**：黑渊（冥将投影）正式现身；揭示三百年囚禁；嘲笑母亲\"太心软\"；嘲讽封印是\"延长痛苦\"；金痕是追踪目标；**揭示母亲遗言**"
+    },
+    {
+      "hookId": "H111_母亲的最终画面",
+      "startChapter": 73,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 75,
+      "expectedPayoff": "**75-80章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：陈守一回忆幻境中母亲的话\"若他不愿继承\"/\"那道印记会找到他/它是钥匙也是代价\"；命运已注定\"不是被封印吞噬，就是燃烧殆尽\""
+    },
+    {
+      "hookId": "H107_三天之期",
+      "startChapter": 0,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 75,
+      "expectedPayoff": "**75-76章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进/紧急升级**：黑雾提前扩散；聚居点入口被封；守夜者燃烧寿元布禁制；**只剩一夜**；守夜者寿元燃尽在即；**必须穿越裂缝边缘进入聚居点**"
+    }
+  ]
+}

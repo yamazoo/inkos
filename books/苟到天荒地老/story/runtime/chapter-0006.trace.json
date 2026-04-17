@@ -1,31 +1,19 @@
 {
   "chapter": 6,
   "plannerInputs": [
-    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\author_intent.md",
-    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_focus.md",
-    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\story_bible.md",
-    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\volume_outline.md",
-    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\chapter_summaries.md",
-    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\book_rules.md",
-    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\current_state.md",
-    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\pending_hooks.md",
-    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\memory.db"
+    "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0006.intent.md"
   ],
   "composerInputs": [
     "E:\\workspace\\inkos\\books\\苟到天荒地老\\story\\runtime\\chapter-0006.intent.md"
   ],
   "selectedSources": [
     "story/current_focus.md",
-    "story/audit_drift.md",
     "story/current_state.md",
     "story/story_bible.md",
     "story/volume_outline.md",
-    "story/chapter_summaries.md#chapter_5_bridge",
     "story/chapter_summaries.md#recent_titles",
     "story/chapter_summaries.md#recent_mood_type_trail",
     "story/chapters#recent_endings",
-    "runtime/hook_debt#threat-揭示执法堂与-陈守一的关系-走向",
-    "runtime/hook_debt#H006_灵气衰减",
     "story/current_state.md#当前冲突",
     "story/current_state.md#当前目标",
     "story/current_state.md#主角状态",
@@ -34,14 +22,14 @@
     "story/chapter_summaries.md#3",
     "story/chapter_summaries.md#4",
     "story/chapter_summaries.md#5",
-    "story/pending_hooks.md#H009_陈老身份",
-    "story/pending_hooks.md#mystery-苏婉儿看到-金丝缠-伤疤时的复杂",
-    "story/pending_hooks.md#plot-灵泉异变的正-式爆发-与陈守一体内",
-    "story/pending_hooks.md#mystery-揭示灵泉变故-真相-中年男子警告",
-    "story/pending_hooks.md#H004_执法堂调查",
-    "story/pending_hooks.md#threat-揭示执法堂与-陈守一的关系-走向",
-    "story/pending_hooks.md#H006_灵气衰减",
-    "story/pending_hooks.md#H010_林师兄"
+    "story/pending_hooks.md#H163_第一个守夜者身影",
+    "story/pending_hooks.md#H157_冥将亲至",
+    "story/pending_hooks.md#H164_帛书声音",
+    "story/pending_hooks.md#H165_密林深处未知存在",
+    "story/pending_hooks.md#H161_第三个选择",
+    "story/pending_hooks.md#H162_秦无涯消散",
+    "story/pending_hooks.md#H159_印记激活与桥连接",
+    "story/pending_hooks.md#H160_三源归一代价"
   ],
   "notes": [
     "allow local outline deferral"

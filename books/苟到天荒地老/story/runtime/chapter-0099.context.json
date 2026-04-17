@@ -1,0 +1,145 @@
+{
+  "chapter": 99,
+  "selectedContext": [
+    {
+      "source": "story/current_focus.md",
+      "reason": "Current task focus for this chapter.",
+      "excerpt": "（描述接下来 1-3 章最需要优先推进的内容。）"
+    },
+    {
+      "source": "story/audit_drift.md",
+      "reason": "Carry forward audit drift guidance from the previous chapter without polluting hard state facts.",
+      "excerpt": "> 第98章审计发现以下问题，下一章写作时必须避免："
+    },
+    {
+      "source": "story/current_state.md",
+      "reason": "Preserve hard state facts referenced by mustKeep.",
+      "excerpt": "| 字段 | 值 |"
+    },
+    {
+      "source": "story/story_bible.md",
+      "reason": "Preserve canon constraints referenced by mustKeep.",
+      "excerpt": "灵气稀薄：仅为上古的千分之一"
+    },
+    {
+      "source": "story/volume_outline.md",
+      "reason": "Anchor the default planning node for this chapter.",
+      "excerpt": "揭露大劫真相"
+    },
+    {
+      "source": "story/chapter_summaries.md#chapter_97_bridge",
+      "reason": "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
+      "excerpt": "第97章《誓约》 | 出场人物：陈守一、沈炼、守夜者孩子、青鸾、冥将残念分身、秦无涯（提及） | 本章事件：1.陈守一抵达三聚居点石桥（晚了半个时辰/浑身湿透/抱着孩子）；2.沈炼放下青鸾让陈守一看诊（侵蚀蔓延锁骨以下）；3.陈守一取出两枚玉佩放在青鸾身旁（一新一旧）；4.沈炼完整揭露三源归一三条件；5.沈炼揭露壁画女人完整身份；6.陈守一血脉源自壁画女人；7.陈守一理解母亲遗言\"替我告诉她\"的另一层含义；8.镇冥石碎片效力彻底过了；9.三双幽蓝眼睛再次出现；10.四人分头逃跑往北；11.青鸾短暂清醒提及秦无涯；12.青鸾再次昏迷；13.临渊城是新的方向 | 状态变化：陈守一位置（三聚居点石桥→山道北行）；青鸾（侵蚀蔓延锁骨以下/短暂清醒后再次昏迷）；冥将残念分身（三双幽蓝眼睛再次锁定） | 悬念活动：H137/H143/H147/H139深化；H150/H151新增"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_titles",
+      "reason": "Keep recent title history visible to avoid repetitive chapter naming.",
+      "excerpt": "97: 誓约 | 96: 末法 | 95: 沈炼的底牌 | 93: 重逢 | 92: 渡人者"
+    },
+    {
+      "source": "story/chapter_summaries.md#recent_mood_type_trail",
+      "reason": "Keep recent mood and chapter-type cadence visible before writing the next chapter.",
+      "excerpt": "97: 沉重→震动→震动→紧张→逃跑→期待→坚定 / 真相深化章/逃亡章/新线索章/转折章 | 96: 沉重（末法真相）→震惊（人祸）→坚定（使命）→紧张（分头跑）→紧张（跳河）→释然（暂时甩开）→坚定（继续前行） / 真相深化章/逃亡章/转折章 | 95: 沉重→震动（大劫真相）→坚定→紧张（紧迫撤离）→释然（获得完整真相）→紧张（新威胁逼近） / 真相揭露章 | 93: **沉重（反噬持续）→紧张（躲避分身）→释然（与孩子重逢）→震动（17人都见过冥族）→坚定（让人们自己选择）→震动（壁画女人/旧玉佩）→紧张（沈炼找到）→期待（沈炼知道什么）** / **重逢章/真相深化章/新线索章/转折章** | 92: **沉重（代价揭露）→坚定（使命理解）→紧张（分身逼近）→决然（引开分身）→坚定（消失在黑暗中）→坚定（找更多人走上桥）** / **真相深化章/使命确立章/抉择章/角色深化章**"
+    },
+    {
+      "source": "story/chapters#recent_endings",
+      "reason": "Show how recent chapters ended so the writer avoids structural repetition (e.g. 3 consecutive collapse endings).",
+      "excerpt": "ch96: 而他，是唯一能撑起那座桥的人。 | ch97: 新的旅程，从这一刻开始。 | ch98: \"你想知道那座桥是什么吗？\""
+    },
+    {
+      "source": "runtime/hook_debt#H139_祭坛深处存在",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H139_祭坛深处存在（悬念钩，可兑现旧债，已开13章） | 读者承诺：80-100章 | 种于第86章：**重大变化**：三头分身白天出动；秦无涯击杀两头；一头逃跑；分身能力增强（白天也能动了）"
+    },
+    {
+      "source": "runtime/hook_debt#H143_母亲玉佩碎片",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H143_母亲玉佩碎片（悬念钩，主要旧债，已开11章） | 读者承诺：80-100章 | 种于第88章：ch88 先人渡 - 1.追踪幼小脚印发现折返终点是石台；2.判断是刻意留下的标记（引他来此）；3.石台纹路亮起古老幽深的光；4.意识到血脉是第三把钥匙；5.指尖贴上凹槽触发幻境；6.**幻境揭露三百年前祭坛仪式**（白袍老者解释两种封印途径）；7.**\"锁\"vs\"桥\"完整揭露**：锁有朽时/桥两界相连永不相融；8.守桥者以身融阵成为活桥锚点；9.仪式完成己身消散神魂永镇两界之间；10.\"比死更难\"；11.苍老声音打断幻境（\"答案在桥上\"）；12.**代价立竿见影**（剧痛/经脉狂涌/五脏六腑被拧过）；13.幽蓝屏障消散；14.感知赵猛安全；15.发现母亲玉佩碎片（阵法触发后出现）；16.**母亲最后执念揭露**：跨越时空相聚；三年来守护桥也守护陈守一；17.石室深处闷响（三源通道交汇点方向）；18.**未知存在被引开**（循三源气息波动去了别处）；19.意识到幼小脚印是守夜者最后一人（孩子）；20.决定先与赵猛汇合再追踪；21.**沈炼方向传来危险波动**；22.三息内必须抉择（汇合/支援沈炼）；23.赵猛声音传来；24.幽蓝屏障彻底消散；25.**新危机逼近** | 推进于第97章：ch97 誓约 - 1.陈守一抵达三聚居点石桥（晚了半个时辰/浑身湿透/抱着孩子）；2.沈炼放下青鸾让陈守一看诊（侵蚀蔓延锁骨以下）；3.陈守一取出两枚玉佩放在青鸾身旁（一新一旧）；4.沈炼完整揭露三源归一三条件；5.沈炼揭露壁画女人完整身份；6.陈守一血脉源自壁画女人；7.陈守一理解母亲遗言\"替我告诉她\"的另一层含义；8.镇冥石碎片效力彻底过了；9.三双幽蓝眼睛再次出现；10.四人分头逃跑往北；11.青鸾短暂清醒提及秦无涯；12.青鸾再次昏迷；13.临渊城是新的方向"
+    },
+    {
+      "source": "runtime/hook_debt#H144_孩子身份之谜",
+      "reason": "含原始种子文本的叙事债务简报。",
+      "excerpt": "H144_孩子身份之谜（悬念钩，主要旧债，已开10章） | 读者承诺：80-100章 | 种于第89章：ch89 三载守望 - 1.陈守一三息抉择：转向沈炼方向；2.代价立竿见影（三源之力狂涌/胸口闷喘不过气）；3.赶到石室找到沈炼和青鸾；4.确认三双幽蓝眼睛是冥将残念分身（比普通冥将残念更危险）；5.石室是死路/分身堵住唯一出口；6.**守夜者孩子正式登场**（眉心金痕/在此待了三年）；7.孩子揭露身份（守夜者第八代收养的孤儿）；8.**孩子揭露\"桥不是封印是渡\"**（与母亲遗言呼应）；9.**孩子揭露三源归一仪式代价**（\"比死更难\"）；10.孩子给予第一件同源之物（玉佩）；11.孩子拖住分身让陈守一带人撤离；12.陈守一扛着青鸾与赵猛汇合；13.陈守一决定**回去引开分身保护孩子**；14.**\"我娘在我身边，这三年来她守护我，现在换我守护她守护的东西\"**；15.**玉佩碎块与新玉佩同时发光（一新一旧/母亲和孩子的手）** | 推进于第97章：ch97 誓约 - 1.陈守一抵达三聚居点石桥（晚了半个时辰/浑身湿透/抱着孩子）；2.沈炼放下青鸾让陈守一看诊（侵蚀蔓延锁骨以下）；3.陈守一取出两枚玉佩放在青鸾身旁（一新一旧）；4.沈炼完整揭露三源归一三条件；5.沈炼揭露壁画女人完整身份；6.陈守一血脉源自壁画女人；7.陈守一理解母亲遗言\"替我告诉她\"的另一层含义；8.镇冥石碎片效力彻底过了；9.三双幽蓝眼睛再次出现；10.四人分头逃跑往北；11.青鸾短暂清醒提及秦无涯；12.青鸾再次昏迷；13.临渊城是新的方向"
+    },
+    {
+      "source": "story/current_state.md#当前冲突",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前冲突 | 秦无涯出现救援/两头顶分身被击杀/青鸾侵蚀加速/秦无涯暗示他知道桥的真相"
+    },
+    {
+      "source": "story/current_state.md#当前目标",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前目标 | **抵达秦无涯小屋/询问桥的真相/找到见过冥族的人作为支撑点**"
+    },
+    {
+      "source": "story/current_state.md#主角状态",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "主角状态 | 极度虚弱（持续）/经脉灼烧感（持续）/两枚玉佩（湿透但紧握）/浑身湿透/膝盖处泥沙/抱孩子/嗓子沙哑"
+    },
+    {
+      "source": "story/current_state.md#当前限制",
+      "reason": "Relevant current-state fact retrieved for the current chapter goal.",
+      "excerpt": "当前限制 | 青鸾侵蚀蔓延加速（半个时辰从脖颈蔓延到锁骨以下）/三天内必须到达临渊城/分身白天也能动了"
+    },
+    {
+      "source": "story/chapter_summaries.md#73",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "彼岸大劫 | 1.陈守一与赵猛抵达遗迹入口（晨曦将起/令牌发烫）；2.玉佩与令牌按在光幕（三色光芒/三源归一）；3.遗迹内部场景（群山苍茫/灵气浓郁/古老威压）；4.山中守护者现身（幽蓝光芒巨兽/金色竖瞳/近乎消散）；5.上古大劫真相揭露（冥族入侵/黑潮/冥族三等级：幽冥兽/冥将/冥王）；6.封印机制揭露（冥将不可死/只能封印/三源之力维持）；7.陈守一追问代价（生机消耗加速/一年）；8.寿元从五年变为四年；9.守夜者与山中守护者关系揭露（一体两面/守夜者燃烧/守护者守护）；10.三源合一血脉唯一性揭露；11.\"正本清源\"组织揭露（三百年分支/认为冥族是回归者）；12.执法堂长老是内鬼核心；13.赵猛弟弟真相（用生命点燃封印的英雄）；14.陈守一接受传承（金色光芒涌入/冥将意识试探/七窍渗血）；15.守护者形体消散；16.三重视境（赵猛弟弟/母亲修炼/守夜者身份）；17.赵猛从悲痛转为坚定；18.遗迹震颤崩塌；19.母亲残念最后现身（\"替我告诉她\"）；20.残念消散；21.两人逃出遗迹（向聚居点奔去）；22.两天半期限/风暴将至 | 陈守一：位置（遗迹→山谷外草地→向聚居点）；寿元（五年→四年）；状态（金痕觉醒/神魂被冥将试探/七窍渗血）；获得（完整封印机制知识/\"正本清源\"组织情报）；赵猛：看到弟弟死前真相/从悲痛转为坚定/接受同行；山中守护者：消散；母亲残念：彻底消散；守夜者：真实身份揭露 | H100/H105/H106/H098/H093/H097 resolved；H107/H108/H109/H110/H111 new"
+    },
+    {
+      "source": "story/chapter_summaries.md#95",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "沈炼的底牌 | 上章陈守一与沈炼对峙（第93章），要求沈炼说出所知的真相→本章沈炼完整揭露：三百年前大劫是上古修士撕开天地界限引来冥族（非天灾是人祸）；陈守一血脉源自三百年前十七人之一，玉佩是壁画女人遗物；母亲是守夜者第八代收养的孤儿，守了三十年把桥从崩溃边缘拖回→沈炼揭露仪式关键条件（支撑点必须亲眼见过冥族）——这是全新信息，直接影响找支撑点的方向→沈炼揭露组织二十年前已失败过一次（青鸾师父死了/青鸾活下来但代价是侵蚀）→沈炼揭露青鸾是见过冥族的支撑点候选人→沈炼催促撤离（镇冥石碎片效力已过/分身可能返回）→陈守一抱着青鸾跟随沈炼离开山谷→青鸾昏迷中嘴唇动了动说'桥'→他们消失在山谷外的黑暗中 | 陈守一位置（山谷→跟随沈炼转移）；青鸾（仍昏迷/侵蚀蔓延锁骨以下/但被确认为见过冥族的支撑点候选人）；沈炼（完成信息揭露/催促撤离）；新威胁（冥将残念分身在断崖但效力已过可能返回）；新资源（获得仪式完整条件知识：支撑点必须亲眼见过冥族） | H137/H138/H139/H143/H147 advanced; H148 resolved"
+    },
+    {
+      "source": "story/chapter_summaries.md#96",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "末法 | 1.沈炼揭露三百年前完整真相（灵气充沛→修士撕开天地界限→引来冥族→三年大战→灵气稀薄到千分之一=人祸非天灾）；2.桥的机制完整揭露（17人=核心1承受反噬+16分担重量）；3.三源合一者是仪式核心；4.**关键新条件：支撑点必须亲眼见过冥族**；5.青鸾二十年前亲眼目睹师父实验失败/师父死/她活但代价是侵蚀；6.青鸾是见过冥族的支撑点候选人；7.现在只有陈守一和青鸾两个候选人；8.孩子师父是第八代守夜者（三十年前接替陈守一母亲守桥/临死前传给孩子）；9.孩子没亲眼见过冥族但在桥边待了三年看着裂缝扩大封印崩溃；10.陈守一决定告诉人们真相让他们自己选择；11.沈炼同意；12.镇冥石碎片效力彻底过了；三双幽蓝眼睛再次出现；13.三人逃跑（沈炼背青鸾往东/陈守一带孩往北）；14.陈守一抱孩子跳河；15.河水气息暂时遮蔽三源气息甩开分身；16.约定明早三聚居点石桥汇合 | 陈守一位置（山坳→密林→河岸→上岸继续北行）；青鸾（仍昏迷/侵蚀蔓延脖颈/被沈炼背着往东跑）；孩子（精神萎靡/被陈守一抱着跳河/衣衫湿透）；沈炼（背着青鸾往东跑/约定石桥汇合）；冥将残念分身（暂时甩开但在河边徘徊/随时可能追）；新目标确立（天亮前赶到三聚居点石桥/找到见过冥族的人） | H139威胁再临/被暂时甩开；H137/H138/H143/H147深化；H146深化（告诉真相让人自选）；H144深化（孩子师父身份）；新伏笔H149新增（跳河脱险/河水能遮蔽气息）"
+    },
+    {
+      "source": "story/chapter_summaries.md#97",
+      "reason": "Relevant episodic memory retrieved for the current chapter goal.",
+      "excerpt": "誓约 | 1.陈守一抵达三聚居点石桥（晚了半个时辰/浑身湿透/抱着孩子）；2.沈炼放下青鸾让陈守一看诊（侵蚀蔓延锁骨以下）；3.陈守一取出两枚玉佩放在青鸾身旁（一新一旧）；4.沈炼完整揭露三源归一三条件；5.沈炼揭露壁画女人完整身份；6.陈守一血脉源自壁画女人；7.陈守一理解母亲遗言\"替我告诉她\"的另一层含义；8.镇冥石碎片效力彻底过了；9.三双幽蓝眼睛再次出现；10.四人分头逃跑往北；11.青鸾短暂清醒提及秦无涯；12.青鸾再次昏迷；13.临渊城是新的方向 | 陈守一位置（三聚居点石桥→山道北行）；青鸾（侵蚀蔓延锁骨以下/短暂清醒后再次昏迷）；冥将残念分身（三双幽蓝眼睛再次锁定） | H137/H143/H147/H139深化；H150/H151新增"
+    },
+    {
+      "source": "story/pending_hooks.md#H150_秦无涯",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | progressing | **near-term** | near-term | **秦无涯正式登场**：青鸾师父师兄；二十年前见过冥族；见过比青鸾师父更深的景象；活得比青鸾师父更久；确认是见过冥族的支撑点候选人；暗示知道桥的真相"
+    },
+    {
+      "source": "story/pending_hooks.md#H146_桥需要更多支撑",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 80-100章 | mid-arc | 陈守一决定告诉人们真相让他们自己选择；沈炼同意；目标是找到更多见过冥族愿意上桥的人"
+    },
+    {
+      "source": "story/pending_hooks.md#H152_秦无涯小屋",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | **near-term** | near-term | **新增**：秦无涯带众人回小屋；暗示\"你想知道那座桥是什么吗\"；新地点/新场景开启"
+    },
+    {
+      "source": "story/pending_hooks.md#H153_秦无涯与青鸾师父",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | **near-term** | near-term | **新增**：秦无涯是青鸾师父的师兄；二十年前一起去过\"那个地方\"；青鸾师父死了，秦无涯活下来；秦无涯看见的更多"
+    },
+    {
+      "source": "story/pending_hooks.md#H154_分身白天出动",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "**悬念钩** | open | **mid-arc** | mid-arc | **新增**：分身白天也能动了；威胁升级；之前只在夜间或黑暗处活动"
+    },
+    {
+      "source": "story/pending_hooks.md#H151_三源归一三条件",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 80-100章 | mid-arc | 沈炼揭露完整条件：第一，三源合一者必须是核心承受反噬；第二，需要足够多支撑点分担桥的重量；第三，所有支撑点必须亲眼见过冥族真面目"
+    },
+    {
+      "source": "story/pending_hooks.md#H147_壁画女人身份",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | progressing | 80-100章 | mid-arc | 沈炼完整揭露：三百年前壁画上的女人是三源合一血脉的始祖；是第一个自愿走上桥的人；是第一个用神魂镇住两界裂隙的人；陈守一血脉源自她"
+    },
+    {
+      "source": "story/pending_hooks.md#H144_孩子身份之谜",
+      "reason": "Carry forward unresolved hooks that match the chapter focus.",
+      "excerpt": "悬念钩 | open | 80-100章 | mid-arc | 孩子师父是第八代守夜者；三十年前接替陈守一母亲守护那座桥；临死前把一切传给孩子"
+    }
+  ]
+}

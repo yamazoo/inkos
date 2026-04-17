@@ -1,0 +1,181 @@
+```json
+{
+  "scenes": [
+    {
+      "sceneId": "B1-1",
+      "beatId": "B1",
+      "location": "遗迹废墟边缘",
+      "sceneType": "reflection",
+      "event": "传承余韵·神魂震荡",
+      "protagonistReaction": "陈守一勉强站稳，眉心金痕不受控制闪烁，意识中闪过上古画面",
+      "keyDialogue": { "speaker": "赵猛", "line": ""守一？你脸色很差，是不是受伤了？"", "protagonistResponse": ""……没事……让我缓一缓……"", "dramaticMeaning": "虚弱的掩饰暗示更大危机" },
+      "povCharacter": "陈守一",
+      "pacing": { "speed": "slow", "technique": ["fragmented-thoughts", "sensory-detail"], "mood": "虚脱·混乱·隐隐不安", "wordCountTarget": 300 },
+      "factionActivity": [],
+      "hooksTouched": ["H001"],
+      "transitionToNext": "眉心金痕剧烈跳动，意识被上古画面淹没"
+    },
+    {
+      "sceneId": "B2-1",
+      "beatId": "B2",
+      "location": "遗迹废墟边缘",
+      "sceneType": "revelation",
+      "event": "整理碎片·大劫真相初现",
+      "protagonistReaction": "陈守一强迫自己冷静，试图整理传承中的信息碎片",
+      "keyDialogue": { "speaker": "赵猛", "line": ""你看到了什么？"", "protagonistResponse": ""……上古……万年前……"", "dramaticMeaning": "信息量巨大，真相初露端倪" },
+      "povCharacter": "陈守一",
+      "pacing": { "speed": "measured", "technique": ["flashback-intercut", "slow-reveal"], "mood": "震惊→沉重", "wordCountTarget": 300 },
+      "factionActivity": [],
+      "hooksTouched": ["H001", "H002"],
+      "transitionToNext": "碎片逐渐拼凑，真相完整浮现"
+    },
+    {
+      "sceneId": "B2-2",
+      "beatId": "B2",
+      "location": "遗迹废墟边缘",
+      "sceneType": "revelation",
+      "event": "残酷真相揭示·灵气与封印",
+      "protagonistReaction": "陈守一声音颤抖地说出真相，赵猛沉默消化",
+      "keyDialogue": { "speaker": "赵猛", "line": ""所以……灵气消失，是封印的错？"", "protagonistResponse": ""不是消失……是被吞噬。每一分灵气，都在喂养那个封印。"", "dramaticMeaning": "世界真相颠覆认知" },
+      "povCharacter": "陈守一",
+      "pacing": { "speed": "slow", "technique": ["revelation-monologue", "emotional-beat"], "mood": "沉重·理解", "wordCountTarget": 300 },
+      "factionActivity": [],
+      "hooksTouched": ["H002"],
+      "transitionToNext": "赵猛意识到事情比想象中更严重"
+    },
+    {
+      "sceneId": "B3-1",
+      "beatId": "B3",
+      "location": "遗迹废墟边缘",
+      "sceneType": "action",
+      "event": "金痕失控·因果幻境开启",
+      "protagonistReaction": "眉心金痕剧烈跳动，伴随撕裂般的剧痛",
+      "keyDialogue": { "speaker": "陈守一", "line": ""不——！"", "protagonistResponse": "", "dramaticMeaning": "被动触发，无法抗拒" },
+      "povCharacter": "陈守一",
+      "pacing": { "speed": "urgent", "technique": ["sharp-impact", "sensory-overload"], "mood": "恐惧·失控", "wordCountTarget": 250 },
+      "factionActivity": [],
+      "hooksTouched": ["H001", "H003"],
+      "transitionToNext": "意识被拉入因果幻境"
+    },
+    {
+      "sceneId": "B3-2",
+      "beatId": "B3",
+      "location": "因果幻境",
+      "sceneType": "revelation",
+      "event": "母亲经历·三十年前的真相",
+      "protagonistReaction": "陈守一在幻境中看到母亲被带入彼岸，成为封印守护者",
+      "keyDialogue": { "speaker": "守夜者", "line": ""我们没有选择，但你有。"", "protagonistResponse": "", "dramaticMeaning": "母亲的命运与主角的选择" },
+      "povCharacter": "陈守一",
+      "pacing": { "speed": "measured", "technique": ["vision-sequence", "emotional-distance"], "mood": "痛苦·困惑", "wordCountTarget": 250 },
+      "factionActivity": [],
+      "hooksTouched": ["H003", "H004"],
+      "transitionToNext": "幻境继续，母亲做出选择"
+    },
+    {
+      "sceneId": "B3-3",
+      "beatId": "B3",
+      "location": "因果幻境→遗迹废墟边缘",
+      "sceneType": "action",
+      "event": "母亲遗言·主角惊醒",
+      "protagonistReaction": "幻境最后，母亲对年幼的主角说出预言，陈守一猛然惊醒惨叫",
+      "keyDialogue": { "speaker": "守夜者", "line": ""那道印记会找到他。它是钥匙，也是代价。"", "protagonistResponse": "", "dramaticMeaning": "主角命运的预言" },
+      "povCharacter": "陈守一",
+      "pacing": { "speed": "sudden", "technique": ["jarring-awakening", "contrast-cut"], "mood": "冲击·恐惧", "wordCountTarget": 250 },
+      "factionActivity": [],
+      "hooksTouched": ["H003", "H004", "H005"],
+      "transitionToNext": "回到现实，冷汗淋漓"
+    },
+    {
+      "sceneId": "B4-1",
+      "beatId": "B4",
+      "location": "遗迹废墟边缘",
+      "sceneType": "revelation",
+      "event": "残酷真相·第五代献祭者",
+      "protagonistReaction": "陈守一冷静地解释封印的真相：每一代献祭者维持百年封印",
+      "keyDialogue": { "speaker": "陈守一", "line": ""我是第五代。前四个……都死了。"", "protagonistResponse": "", "dramaticMeaning": "命运的宣判" },
+      "povCharacter": "陈守一",
+      "pacing": { "speed": "measured", "technique": ["staccato-revelation", "emotional-suppression"], "mood": "绝望·平静", "wordCountTarget": 300 },
+      "factionActivity": [],
+      "hooksTouched": ["H004", "H005"],
+      "transitionToNext": "更大的阴谋浮现"
+    },
+    {
+      "sceneId": "B4-2",
+      "beatId": "B4",
+      "location": "遗迹废墟边缘",
+      "sceneType": "revelation",
+      "event": "封印漏洞·内鬼真相",
+      "protagonistReaction": "陈守一揭示封印有漏洞，冥族缓慢渗透，内鬼正在扩大漏洞",
+      "keyDialogue": { "speaker": "赵猛", "line": ""内鬼？谁能接触到封印？"", "protagonistResponse": ""……能接触封印的，只有守护者和献祭者。"", "dramaticMeaning": "阴谋指向核心人物" },
+      "povCharacter": "陈守一",
+      "pacing": { "speed": "urgent", "technique": ["revelation-chain", "tension-build"], "mood": "震惊·愤怒", "wordCountTarget": 300 },
+      "factionActivity": [],
+      "hooksTouched": ["H002", "H005"],
+      "transitionToNext": "更大的格局震荡"
+    },
+    {
+      "sceneId": "B4-3",
+      "beatId": "B4",
+      "location": "遗迹废墟边缘",
+      "sceneType": "action",
+      "event": "残酷选择·命运的岔路",
+      "protagonistReaction": "陈守一面临选择：继续献祭维持封印，或让冥族入侵",
+      "keyDialogue": { "speaker": "赵猛", "line": ""一定有别的办法！"", "protagonistResponse": ""传承里没有。我找了……"", "dramaticMeaning": "选择的绝境" },
+      "povCharacter": "陈守一",
+      "pacing": { "speed": "slow", "technique": ["weighted-silence", "contemplative-beat"], "mood": "痛苦·抉择", "wordCountTarget": 300 },
+      "factionActivity": [],
+      "hooksTouched": ["H004", "H005"],
+      "transitionToNext": "主角沉默，但心中已有答案"
+    },
+    {
+      "sceneId": "B5-1",
+      "beatId": "B5",
+      "location": "遗迹废墟边缘",
+      "sceneType": "reflection",
+      "event": "代价显现·母亲的选择",
+      "protagonistReaction": "陈守一感受到代价的重量，回忆起母亲的选择",
+      "keyDialogue": { "speaker": "陈守一", "line": ""她本可以像守夜者一样……燃烧自己。"", "protagonistResponse": ""但她选择生下我……"", "dramaticMeaning": "母爱的代价" },
+      "povCharacter": "陈守一",
+      "pacing": { "speed": "slow", "technique": ["reflection", "emotional-resonance"], "mood": "悲伤·理解", "wordCountTarget": 250 },
+      "factionActivity": [],
+      "hooksTouched": ["H003", "H004"],
+      "transitionToNext": "突然感应到远处有动静"
+    },
+    {
+      "sceneId": "B5-2",
+      "beatId": "B5",
+      "location": "遗迹废墟边缘",
+      "sceneType": "action",
+      "event": "新势力入场·暗流涌动",
+      "protagonistReaction": "陈守一和赵猛同时感应到陌生气息，一道身影出现在视野尽头",
+      "keyDialogue": { "speaker": "未知来者", "line": ""……找到你了。"", "protagonistResponse": "", "dramaticMeaning": "悬念收尾，新势力登场" },
+      "povCharacter": "陈守一",
+      "pacing": { "speed": "suspenseful", "technique": ["cliffhanger", "tension-ending"], "mood": "警觉·不安·悬念", "wordCountTarget": 200 },
+      "factionActivity": [{ "faction": "未知势力", "action": "发现主角踪迹", "powerDelta": "unknown" }],
+      "hooksTouched": ["H001", "H005"],
+      "transitionToNext": "章末悬念，新势力身份成谜"
+    }
+  ],
+  "scenePlanSummary": {
+    "totalScenes": 11,
+    "targetWords": 3000,
+    "estimatedWords": 3200,
+    "beatDistribution": {
+      "B1": { "scenes": 1, "words": 300 },
+      "B2": { "scenes": 2, "words": 600 },
+      "B3": { "scenes": 3, "words": 750 },
+      "B4": { "scenes": 3, "words": 900 },
+      "B5": { "scenes": 2, "words": 450 }
+    },
+    "pacingStrategy": "enlightenment章节奏：铺垫缓慢（B1-B2），冲击爆发（B3），震荡持续（B4），悬念收尾（B5）。因果幻境是关键转折点。",
+    "keyDramaticMoments": [
+      "B1-1: 金痕失控闪回上古画面",
+      "B3-1: 因果幻境强制触发",
+      "B3-3: 母亲遗言与守夜者预言",
+      "B4-1: 第五代献祭者身份揭示",
+      "B4-2: 内鬼真相",
+      "B5-2: 新势力登场悬念"
+    ]
+  }
+}
+```

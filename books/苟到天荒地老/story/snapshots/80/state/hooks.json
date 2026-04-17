@@ -1,0 +1,114 @@
+{
+  "hooks": [
+    {
+      "hookId": "H114_末法时代真相",
+      "startChapter": 77,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 78,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：末法时代完整真相；人类献祭修行界未来封印幽冥界"
+    },
+    {
+      "hookId": "H122_母亲坟墓",
+      "startChapter": 79,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进/完成揭露**：废墟东面枯树下；**已发现/已祭拜**；碑文\"守一，勿忘\"完整揭露"
+    },
+    {
+      "hookId": "H123_三聚居点",
+      "startChapter": 79,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：青岩谷/赤水镇/暮云寨；**三聚居点石牌获得**；**黑雾正在向三聚居点蔓延（紧迫威胁）**"
+    },
+    {
+      "hookId": "H124_三件同源之物",
+      "startChapter": 79,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 79,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**新增**：三件同源之物；都在彼岸；需要在第二年找到"
+    },
+    {
+      "hookId": "H125_沈炼",
+      "startChapter": 79,
+      "type": "悬念钩",
+      "status": "resolved",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进**：赤水镇镇长/可信（守夜者标记）；**三聚居点石牌获得**；**待转告\"老守夜者走了\"**"
+    },
+    {
+      "hookId": "H126_三年计划",
+      "startChapter": 79,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 79,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**新增**：第一年牵制内鬼/第二年找三件同源之物/第三年完成三源合一"
+    },
+    {
+      "hookId": "H115_冥将的目的",
+      "startChapter": 77,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：冥将意识再次试探陈守一；嘲讽母亲牺牲；揭示\"三年\"真相；**守夜者第八代遗言压制冥将**"
+    },
+    {
+      "hookId": "H120_因果反噬",
+      "startChapter": 78,
+      "type": "**悬念钩**",
+      "status": "resolved",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**完整揭露/已发生**：每平衡一年消耗一年寿元；失衡双倍因果反噬；**因果反噬已发生（扣一年寿元从四年变为三年）**"
+    },
+    {
+      "hookId": "H127_墓旁脚印",
+      "startChapter": 80,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**新增**：人类足迹/来自北面（赤水镇方向）/被风沙掩埋/有人来过这里且不止一次/可能与沈炼有关"
+    },
+    {
+      "hookId": "H128_黑雾逼近三聚居点",
+      "startChapter": 80,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**新增**：黑雾正在向三聚居点方向蔓延/比预想中更快/紧迫威胁"
+    },
+    {
+      "hookId": "H129_守夜者遗言（老守夜者走了）",
+      "startChapter": 79,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 80,
+      "expectedPayoff": "**80-100章**",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：待转告沈炼\"老守夜者走了\""
+    }
+  ]
+}

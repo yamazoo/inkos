@@ -1,0 +1,102 @@
+{
+  "hooks": [
+    {
+      "hookId": "H146_桥需要更多支撑",
+      "startChapter": 92,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 97,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "陈守一决定告诉人们真相让他们自己选择；沈炼同意；目标是找到更多见过冥族愿意上桥的人"
+    },
+    {
+      "hookId": "mystery-陈守一需要找到更多见过冥族的人作为支撑点",
+      "startChapter": 95,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 97,
+      "expectedPayoff": "near-term",
+      "payoffTiming": "near-term",
+      "notes": "**深化**：秦无涯（临渊城）被青鸾提及；他是二十年前唯一走在青鸾师父前面的人；他见过比青鸾师父更深的景象；他活得更久；他可能见过冥族"
+    },
+    {
+      "hookId": "H147_壁画女人身份",
+      "startChapter": 93,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 97,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**沈炼完整揭露**：三百年前壁画上的女人是三源合一血脉的始祖；是第一个自愿走上桥的人；是第一个用神魂镇住两界裂隙的人；陈守一血脉源自她"
+    },
+    {
+      "hookId": "H144_孩子身份之谜",
+      "startChapter": 89,
+      "type": "悬念钩",
+      "status": "open",
+      "lastAdvancedChapter": 97,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "孩子师父是第八代守夜者；三十年前接替陈守一母亲守护那座桥；临死前把一切传给孩子"
+    },
+    {
+      "hookId": "H139_祭坛深处存在",
+      "startChapter": 86,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 97,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**威胁再临**：镇冥石碎片效力彻底过了；三双幽蓝眼睛再次出现锁定三人；四人逃跑往北；分身在河对岸树林显现"
+    },
+    {
+      "hookId": "H137_三源归一仪式代价",
+      "startChapter": 84,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 97,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "沈炼完整揭露仪式条件：支撑点必须亲眼见过冥族；三源合一者是核心；传承来自三百年前壁画女人（陈守一始祖）"
+    },
+    {
+      "hookId": "H143_母亲玉佩碎片",
+      "startChapter": 88,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 97,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "**深化**：两枚玉佩（一新一旧）放在青鸾身旁；沈炼确认旧玉佩是三百年前壁画女人遗物；陈守一血脉源自壁画女人"
+    },
+    {
+      "hookId": "H138_组织走捷径",
+      "startChapter": 84,
+      "type": "悬念钩",
+      "status": "progressing",
+      "lastAdvancedChapter": 97,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "mid-arc",
+      "notes": "沈炼揭露：青鸾师父二十年前实验失败死亡；青鸾活下来但代价是侵蚀；组织方法已证明是死路"
+    },
+    {
+      "hookId": "H150_秦无涯",
+      "startChapter": 97,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 97,
+      "expectedPayoff": "**near-term**",
+      "notes": "**青鸾短暂清醒提及**：秦无涯还活着在临渊城；他是二十年前唯一走在青鸾师父前面的人；他见过比青鸾师父更深的景象；他活得更久；可能是见过冥族的支撑点候选人；三日路程到临渊城"
+    },
+    {
+      "hookId": "H151_三源归一三条件",
+      "startChapter": 97,
+      "type": "**悬念钩**",
+      "status": "open",
+      "lastAdvancedChapter": 97,
+      "expectedPayoff": "**80-100章**",
+      "notes": "**沈炼揭露完整条件**：第一，三源合一者必须是核心承受反噬；第二，需要足够多支撑点分担桥的重量；第三，所有支撑点必须亲眼见过冥族真面目"
+    }
+  ]
+}

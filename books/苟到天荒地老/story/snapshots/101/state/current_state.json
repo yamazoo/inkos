@@ -1,0 +1,61 @@
+{
+  "chapter": 101,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "雾隐山脉边缘/干涸河床旁/地道出口外东北方三里处",
+      "validFromChapter": 101,
+      "validUntilChapter": null,
+      "sourceChapter": 101
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "极度虚弱（持续）/经脉灼烧感（持续）/膝盖撞伤/肩膀擦伤/嗓子沙哑/体力严重透支/**手背金线（印记激活）/**眉心金痕发烫/**两枚玉佩同时震动/胸口灼热",
+      "validFromChapter": 101,
+      "validUntilChapter": null,
+      "sourceChapter": 101
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "**三天内完成抉择/确定临渊城方向/利用印记连接感应桥的位置/寻找更多见过冥族的人（临渊城）**",
+      "validFromChapter": 101,
+      "validUntilChapter": null,
+      "sourceChapter": 101
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "冥将本体在三十丈外等待/冥将知道三源合一者位置/冥将知道三源归一仪式开始/三源合一气息更强烈被精准锁定/印记激活后仪式完成即消散/仪式完成需要时间准备/桥崩塌加速（取走备份）",
+      "validFromChapter": 101,
+      "validUntilChapter": null,
+      "sourceChapter": 101
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "沈炼（同行/可信盟友/扛青鸾）",
+      "validFromChapter": 101,
+      "validUntilChapter": null,
+      "sourceChapter": 101
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "石匣备份被取走桥崩塌加速vs不取无路可走/冥将等待仪式完成/印记激活与消散代价/三天时限紧迫/临渊城方向与冥将威胁",
+      "validFromChapter": 101,
+      "validUntilChapter": null,
+      "sourceChapter": 101
+    },
+    {
+      "subject": "current_state",
+      "predicate": "悬念",
+      "object": "三天时限/印记激活代价/仪式如何完成/桥与印记连接/临渊城是否安全/第三条路",
+      "validFromChapter": 101,
+      "validUntilChapter": null,
+      "sourceChapter": 101
+    }
+  ]
+}

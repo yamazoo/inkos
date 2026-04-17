@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 94,
+  "lastAppliedChapter": 106,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -185,6 +185,20 @@
     "H139_祭坛深处存在:status normalized from \"**深化**\" to \"open\"",
     "H137_三源归一仪式代价:status normalized from \"**深化**\" to \"open\"",
     "H144_孩子身份之谜:status normalized from \"**NEW**\" to \"open\"",
-    "H145_陈守一决定引开分身:status normalized from \"**NEW**\" to \"open\""
+    "H145_陈守一决定引开分身:status normalized from \"**NEW**\" to \"open\"",
+    "H157_冥将亲至:status normalized from \"**深化/战略转变**\" to \"open\"",
+    "H153_秦无涯与青鸾师父:status normalized from \"**深化/关键时刻**\" to \"open\"",
+    "H150_秦无涯:status normalized from \"**深化/线索提供者**\" to \"open\"",
+    "H151_三源归一三条件:status normalized from \"**深化/仪式开始**\" to \"open\"",
+    "H147_壁画女人身份:status normalized from \"**深化/身份确立**\" to \"open\"",
+    "H146_桥需要更多支撑:status normalized from \"**深化/使命升级**\" to \"open\"",
+    "H153_秦无涯与青鸾师父:status normalized from \"**resolve**\" to \"open\"",
+    "H150_秦无涯:status normalized from \"**resolve**\" to \"open\"",
+    "H161_第三个选择:status normalized from \"**NEW**\" to \"open\"",
+    "H162_秦无涯消散:status normalized from \"**NEW**\" to \"open\"",
+    "manifest lastAppliedChapter normalized from 103 to 5",
+    "H163_第一个守夜者身影:lastAdvancedChapter normalized from \"103→104\" to 0",
+    "H166_石门与七投影:status normalized from \"**NEW**\" to \"open\"",
+    "H167_玄甲:status normalized from \"**NEW**\" to \"open\""
   ]
 }
