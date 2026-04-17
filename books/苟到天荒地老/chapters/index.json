@@ -2345,5 +2345,45 @@
       "completionTokens": 19866,
       "totalTokens": 19866
     }
+  },
+  {
+    "number": 140,
+    "title": "山路回风",
+    "status": "approved",
+    "wordCount": 2845,
+    "createdAt": "2026-04-17T20:35:51.520Z",
+    "updatedAt": "2026-04-17T20:36:02.078Z",
+    "auditIssues": [
+      "[warning] 近五章（136-140）的章节类型序列为：承诺→承诺→承诺→高潮→过渡/揭示/行路。140章虽承担真相揭示和伏笔埋设功能，但节奏模式仍以对话驱动的信息交代为主，缺少新的压力点或转折。",
+      "[warning] 苏婉儿在本章中主要承担'信息接收者'和'记忆载体'功能，赵猛和青鸾几乎全程沉默。配角的作用被限定在'听陈守一讲述'和'被问时回答'两个动作上，缺乏独立的反应和推动力。",
+      "[info] 本章视角基本锁定陈守一，偶尔切换到苏婉儿说话时的视角（如'苏婉儿下意识攥了攥左腕'），但没有过渡标识。切换频率低，影响不大。",
+      "[info] '忽然'出现2次（'风忽然大了些'、'陈守一的脚步顿了一瞬'），密度较低。但'平静'/'平静地'类词汇可进一步精简。",
+      "[info] 章尾成功埋设多个悬念：苏婉儿身世（外祖母？陈家血脉？）、'她回来了'的声音来源、母亲身影画面、正本清源下一步动向。承诺明确，但未承诺具体回收时间线。",
+      "[warning] 章节标题\"**山路回风**\n===\"已自动调整为\"山路回风\"。",
+      "[warning] 最近标题持续围绕“井底”命名（当前窗口命中3次），命名开始坍缩。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H-封印完全修复（中程，陈旧）、H-正本清源后果（中程，陈旧）。",
+      "[warning] 97个段落里有41个不足35字，段落被切得过碎。",
+      "[warning] 连续出现16个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2848,
+      "postWriterNormalizeCount": 2845,
+      "postReviseCount": 0,
+      "finalCount": 2845,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 11391,
+      "totalTokens": 11391
+    }
   }
 ]

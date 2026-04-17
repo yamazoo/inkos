@@ -1,91 +1,14 @@
 {
   "hooks": [
     {
-      "hookId": "H-三源归位符号",
-      "startChapter": 138,
-      "type": "伏笔呼应",
-      "status": "resolved",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "已回收",
-      "payoffTiming": "immediate",
-      "notes": "首尾呼应母亲遗物"
-    },
-    {
-      "hookId": "H-井底念力残留",
-      "startChapter": 138,
-      "type": "环境细节",
-      "status": "resolved",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "已回收",
-      "payoffTiming": "immediate",
-      "notes": "三百年守夜者牺牲"
-    },
-    {
-      "hookId": "H-三根木桩机制",
-      "startChapter": 134,
-      "type": "核心道具",
-      "status": "resolved",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "已回收",
-      "payoffTiming": "immediate",
-      "notes": "核心任务道具"
-    },
-    {
-      "hookId": "H-三源代价均摊",
-      "startChapter": 133,
-      "type": "核心机制",
-      "status": "resolved",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "已回收",
-      "payoffTiming": "immediate",
-      "notes": "关键世界观揭露"
-    },
-    {
-      "hookId": "H-正本清源后果",
-      "startChapter": 133,
-      "type": "背景威胁",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**open**",
-      "payoffTiming": "mid-arc",
-      "notes": "揭示其愚蠢/威胁暂缓未解除"
-    },
-    {
-      "hookId": "H-守夜者使命",
-      "startChapter": 133,
-      "type": "背景",
-      "status": "resolved",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "已回收",
-      "payoffTiming": "immediate",
-      "notes": "核心任务完成"
-    },
-    {
-      "hookId": "H-苏婉儿与封印联系",
-      "startChapter": 120,
-      "type": "人物关系",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**open**",
-      "notes": "同源者感知能力揭露"
-    },
-    {
-      "hookId": "H-正本清源下一步",
-      "startChapter": 109,
-      "type": "背景威胁",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**open**",
-      "notes": "愚蠢计划导致无数牺牲但仍继续"
-    },
-    {
       "hookId": "H-三人的未来",
       "startChapter": 139,
       "type": "新伏笔",
       "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "**open**",
-      "notes": "新章节开启"
+      "expectedPayoff": "open",
+      "payoffTiming": "mid-arc",
+      "notes": "四人皆残缺/在聚居点休养/新故事开始"
     },
     {
       "hookId": "H-封印完全修复",
@@ -93,8 +16,36 @@
       "type": "核心目标",
       "status": "open",
       "lastAdvancedChapter": 0,
+      "expectedPayoff": "open",
+      "notes": "三根木桩归位/根基不稳/长期任务"
+    },
+    {
+      "hookId": "H-正本清源后果",
+      "startChapter": 133,
+      "type": "背景威胁",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "open",
+      "payoffTiming": "mid-arc",
+      "notes": "愚蠢目的揭露/下一步动向未明/威胁延续"
+    },
+    {
+      "hookId": "H-苏婉儿身世",
+      "startChapter": 140,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
       "expectedPayoff": "**open**",
-      "notes": "部分完成/长期任务"
+      "notes": "**手腕旧疤/同源者感知/\"她回来了\"/脑中有母亲相关画面**"
+    },
+    {
+      "hookId": "H-三源血脉传承",
+      "startChapter": 140,
+      "type": "**新伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**open**",
+      "notes": "**苏婉儿可能是陈家先祖第五代后人/血脉分支/三源之一**"
     }
   ]
 }

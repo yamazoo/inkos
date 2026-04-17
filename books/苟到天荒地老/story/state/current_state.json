@@ -1,53 +1,53 @@
 {
-  "chapter": 139,
+  "chapter": 140,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "彼岸枯井旁荒草地 → 向聚居点行进中",
-      "validFromChapter": 139,
+      "object": "山路 → **聚居点内（已抵达）**",
+      "validFromChapter": 140,
       "validUntilChapter": null,
-      "sourceChapter": 139
+      "sourceChapter": 140
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "精神平静/坚定/灵力耗尽/金痕熄灭/弯月印记消退/**炼气三层（回到起点）**/活着/与苏婉儿重逢",
-      "validFromChapter": 139,
+      "object": "精神平静/坚定/**丹田空空/灵力枯竭/金痕熄灭/弯月消退/炼气三层/寿元约两年/掌心擦伤/手还是他的手**",
+      "validFromChapter": 140,
       "validUntilChapter": null,
-      "sourceChapter": 139
+      "sourceChapter": 140
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "**返回聚居点休养**/封印裂缝已弥合/冥族黑潮被隔绝/正本清源威胁仍在",
-      "validFromChapter": 139,
+      "object": "**在聚居点休养/站稳脚跟/寻找办法**",
+      "validFromChapter": 140,
       "validUntilChapter": null,
-      "sourceChapter": 139
+      "sourceChapter": 140
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "三人皆已变弱/失去修炼者力量/需重新开始/井底封印稳固/三百年守夜者念力消散",
-      "validFromChapter": 139,
+      "object": "四人皆残缺/陈守一炼气三层/赵猛脸色灰败/青鸾余烬已尽/苏婉儿身世未明/正本清源威胁仍在/封印根基不稳",
+      "validFromChapter": 140,
       "validUntilChapter": null,
-      "sourceChapter": 139
+      "sourceChapter": 140
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "敌对：正本清源（目的揭露：愚蠢/冥族是吞噬者非回归者/威胁暂缓但未解除）",
-      "validFromChapter": 139,
+      "object": "敌对：**正本清源**（愚蠢/冥族是吞噬者/威胁延续/下一步动向未明）",
+      "validFromChapter": 140,
       "validUntilChapter": null,
-      "sourceChapter": 139
+      "sourceChapter": 140
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "~~重建桥梁阻止大劫~~ ✓ 已完成！→ 新冲突：**失去力量后如何生存/正本清源下一步动向/三人的未来**",
-      "validFromChapter": 139,
+      "object": "**失去力量后如何生存/正本清源下一步动向/三人的未来/苏婉儿身世之谜**",
+      "validFromChapter": 140,
       "validUntilChapter": null,
-      "sourceChapter": 139
+      "sourceChapter": 140
     }
   ]
 }
