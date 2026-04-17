@@ -1,53 +1,53 @@
 {
-  "chapter": 155,
+  "chapter": 156,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点→城东方向（山路上）",
-      "validFromChapter": 155,
+      "object": "城东（目标院落附近巷子/蹲守观察中/准备撤退）",
+      "validFromChapter": 156,
       "validUntilChapter": null,
-      "sourceChapter": 155
+      "sourceChapter": 156
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "精神坚定/警觉/决心已定/寿元约两年/眉心金痕微微发热（接触玉坠时）/丹田金色种子平静/三源归位核心载体",
-      "validFromChapter": 155,
+      "object": "精神坚定/警觉/决心已定/寿元约两年/眉心金痕发热后蛰伏/金痕与玉坠产生强烈共振/丹田金色种子/三源归位核心载体/已知大劫完整真相",
+      "validFromChapter": 156,
       "validUntilChapter": null,
-      "sourceChapter": 155
+      "sourceChapter": 156
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "三年内：弄清正本清源在做什么/找到所有三源血脉后人/让金色种子彻底成熟/修复封印 **（新增：城东据点侦查）**",
-      "validFromChapter": 155,
+      "object": "三年内：弄清正本清源在做什么/找到所有三源血脉后人/让金色种子彻底成熟/修复封印 **（进行中：城东据点侦查→外围摸排）**",
+      "validFromChapter": 156,
       "validUntilChapter": null,
-      "sourceChapter": 155
+      "sourceChapter": 156
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "寿元仅两年/金色种子需玉坠钥匙才能彻底成熟/修复封印需燃烧大部分寿元/正本清源在撕裂封印/隐息符仅剩一枚能用一个时辰",
-      "validFromChapter": 155,
+      "object": "寿元仅两年/金色种子需玉坠钥匙才能彻底成熟/修复封印需燃烧大部分寿元/正本清源在撕裂封印/隐息符仅剩一枚能用一个时辰/正本清源巡逻人员比预想多",
+      "validFromChapter": 156,
       "validUntilChapter": null,
-      "sourceChapter": 155
+      "sourceChapter": 156
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "苏婉儿(核心盟友/三源同源者/玉坠持有者/第四股血脉传承者/情感升华/留守)、赵猛(同行者/弟弟是封印英雄/留守/母亲的承诺)、青鸾(同行者/弟弟是封印英雄/留守/伤未痊愈)、正本清源(敌对/目的：撕裂封印让冥族回归)、赵猛母亲(知情者/三年之约见证人/留守)、苏婉儿玉坠(现在陈守一持有/第四股力量载体/金痕发热暗示联系)",
-      "validFromChapter": 155,
+      "object": "苏婉儿(核心盟友/三源同源者/玉坠持有者/第四股血脉传承者/情感升华/留守)、赵猛(同行者/弟弟是封印英雄/留守/母亲的承诺)、青鸾(同行者/弟弟是封印英雄/留守/伤未痊愈)、正本清源(敌对/目的：撕裂封印让冥族回归/城东据点巡逻频繁/三男一女受过训练)、赵猛母亲(知情者/三年之约见证人/留守)、苏婉儿玉坠(现在陈守一持有/第四股力量载体/与金痕产生强烈共振/持续发热)",
+      "validFromChapter": 156,
       "validUntilChapter": null,
-      "sourceChapter": 155
+      "sourceChapter": 156
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "正本清源撕裂封印 vs 三源血脉修复封印/三年时间窗口/修复封印的代价是大部分寿元/四人选择共同面对/城东据点侦查未知风险",
-      "validFromChapter": 155,
+      "object": "正本清源撕裂封印 vs 三源血脉修复封印/三年时间窗口/修复封印的代价是大部分寿元/四人选择共同面对/城东据点侦查中/正本清源人员比预想多",
+      "validFromChapter": 156,
       "validUntilChapter": null,
-      "sourceChapter": 155
+      "sourceChapter": 156
     }
   ]
 }
