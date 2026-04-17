@@ -1,61 +1,53 @@
 {
-  "chapter": 113,
+  "chapter": 114,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "封印崩溃前兆|第三条路进行中|明天抵达第三根石柱",
-      "validFromChapter": 113,
+      "predicate": "当前位置",
+      "object": "石柱脚下山洞→第二天清晨准备爬上石柱",
+      "validFromChapter": 114,
       "validUntilChapter": null,
-      "sourceChapter": 113
+      "sourceChapter": 114
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "金线稳定（彻底融入皮肤/光线好时隐约可见淡痕）",
+      "validFromChapter": 114,
+      "validUntilChapter": null,
+      "sourceChapter": 114
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "爬上第三根石柱",
+      "validFromChapter": 114,
+      "validUntilChapter": null,
+      "sourceChapter": 114
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "冥将被关在门外",
+      "validFromChapter": 114,
+      "validUntilChapter": null,
+      "sourceChapter": 114
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
       "object": "第一个守夜者（盟友/引导者/300年等待/第三方血脉/守夜者家族最后一人）",
-      "validFromChapter": 113,
+      "validFromChapter": 114,
       "validUntilChapter": null,
-      "sourceChapter": 113
+      "sourceChapter": 114
     },
     {
       "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "跟随守夜者走完剩余路程|明天抵达第三根石柱|继续执行第三条路",
-      "validFromChapter": 113,
+      "predicate": "当前冲突",
+      "object": "封印崩溃前兆",
+      "validFromChapter": 114,
       "validUntilChapter": null,
-      "sourceChapter": 113
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "山路→松林尽头→明天抵达第三根石柱",
-      "validFromChapter": 113,
-      "validUntilChapter": null,
-      "sourceChapter": 113
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "冥将被关在门外|封印正在衰退|需要两个被契约选中者合力|桥本体在彼岸力量来自两界之间",
-      "validFromChapter": 113,
-      "validUntilChapter": null,
-      "sourceChapter": 113
-    },
-    {
-      "subject": "current_state",
-      "predicate": "情绪基调",
-      "object": "沉重→悲痛→释然→温暖→坚定→期待",
-      "validFromChapter": 112,
-      "validUntilChapter": null,
-      "sourceChapter": 112
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "金线稳定（融入胸口）|玉佩（母亲遗物/莲花/守一）贴身携带|玉佩温热有体温感|双腿行走两个时辰后发酸|情绪悲痛→沉静→释然→震动→坚定",
-      "validFromChapter": 113,
-      "validUntilChapter": null,
-      "sourceChapter": 113
+      "sourceChapter": 114
     }
   ]
 }

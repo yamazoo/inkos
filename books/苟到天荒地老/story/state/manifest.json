@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 113,
+  "lastAppliedChapter": 114,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -226,6 +226,11 @@
     "守夜者倾听风声:status normalized from \"NEW\" to \"open\"",
     "守夜者倾听风声:lastAdvancedChapter normalized from \"112章揭示：左肩前倾习惯/三百年来一直在听三源合一变两源的改变\" to 0",
     "第三根石柱真相:status normalized from \"NEW\" to \"open\"",
-    "第三根石柱真相:lastAdvancedChapter normalized from \"112章揭示：第三根是父亲五十年前新建的/在桥的另一端打下新地基\" to 0"
+    "第三根石柱真相:lastAdvancedChapter normalized from \"112章揭示：第三根是父亲五十年前新建的/在桥的另一端打下新地基\" to 0",
+    "第一个守夜者:lastAdvancedChapter normalized from \"113-114\" to 0",
+    "青鸾的故事:status normalized from \"**NEW**\" to \"open\"",
+    "赵猛弟弟:status normalized from \"**NEW**\" to \"open\"",
+    "父亲祖母的故事:status normalized from \"**NEW**\" to \"open\"",
+    "母亲的选择:status normalized from \"**NEW**\" to \"open\""
   ]
 }

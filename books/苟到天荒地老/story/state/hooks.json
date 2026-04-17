@@ -1,14 +1,24 @@
 {
   "hooks": [
     {
-      "hookId": "\"正本清源\"组织误解",
+      "hookId": "正本清源组织误解",
       "startChapter": 109,
       "type": "relationship",
       "status": "open",
+      "lastAdvancedChapter": 113,
+      "expectedPayoff": "阻止正本清源打开封印",
+      "payoffTiming": "mid-arc",
+      "notes": "113章重大推进：300年前分裂历史/正本清源理念错误/已被蒙蔽数代；陈守一得知母亲30年前拒绝正本清源"
+    },
+    {
+      "hookId": "第一个守夜者",
+      "startChapter": 109,
+      "type": "character",
+      "status": "progressing",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "mid-term",
-      "payoffTiming": "slow-burn",
-      "notes": "**无更新**：本章未提及"
+      "expectedPayoff": "完成第三条路/消散前完成使命",
+      "payoffTiming": "near-term",
+      "notes": "114章深化：继续倾听风声/确认风向无异常/带陈守一抵达石柱/\"它在等你\"/守夜者身形疲惫；消散征兆持续"
     },
     {
       "hookId": "被遗忘的第三方",
@@ -18,56 +28,75 @@
       "lastAdvancedChapter": 113,
       "expectedPayoff": "揭露第三方消失真相",
       "payoffTiming": "near-term",
-      "notes": "113章重大推进：祖父作为第三方血脉在建桥时牺牲，把一切都填进去；第三方彻底隐去因为根基没了；守夜者一家都是第三方血脉后人，十七个守夜者都是第三方血脉后人；守夜者是第三方最后的痕迹"
-    },
-    {
-      "hookId": "第一个守夜者",
-      "startChapter": 109,
-      "type": "character",
-      "status": "progressing",
-      "lastAdvancedChapter": 113,
-      "expectedPayoff": "完成第三条路/消散前完成使命",
-      "payoffTiming": "near-term",
-      "notes": "113章深化：守夜者继续展示倾听风声的感知能力；讲述300年前守夜者分裂历史；揭示正本清源组织真相；揭示祖父牺牲和第三方消失的完整故事；守夜者身形在阳光下显得单薄飘忽（消散征兆）"
-    },
-    {
-      "hookId": "第三根石柱真相",
-      "startChapter": 112,
-      "type": "mystery",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "mid-term",
-      "payoffTiming": "slow-burn",
-      "notes": "**NEW**：父亲的任务与母亲同行/新地基/路还长"
-    },
-    {
-      "hookId": "母亲遗物",
-      "startChapter": 112,
-      "type": "item",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "near-term",
-      "notes": "**NEW**：母亲50年前留在石屋/陈守一贴身携带/金线回应"
+      "notes": "113章重大推进：祖父牺牲/第三方隐去原因/守夜者一家都是第三方血脉后人"
     },
     {
       "hookId": "守夜者倾听风声",
       "startChapter": 112,
       "type": "character",
       "status": "progressing",
-      "lastAdvancedChapter": 113,
+      "lastAdvancedChapter": 114,
       "expectedPayoff": "揭示三源气息变化原因",
       "payoffTiming": "slow-burn",
-      "notes": "113章推进：守夜者继续侧耳倾听风里的讯息；确认风里没有异常时神情放松；揭示三源气息变成两源的原因（祖父牺牲）"
+      "notes": "114章推进：侧耳倾听/分辨风中讯息/确认风向正/无幽冥气息"
     },
     {
-      "hookId": "正本清源组织误解",
-      "startChapter": 113,
-      "type": "relationship",
+      "hookId": "第三根石柱真相",
+      "startChapter": 112,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 114,
+      "expectedPayoff": "mid-term",
+      "payoffTiming": "near-term",
+      "notes": "**重大推进**：父亲打完地基每年回来看/第三根石柱在等陈守一/玉佩与石柱呼应/金线与玉佩同时响应/石柱是\"等待了很久很久的答案\""
+    },
+    {
+      "hookId": "母亲遗物",
+      "startChapter": 112,
+      "type": "item",
+      "status": "progressing",
+      "lastAdvancedChapter": 114,
+      "expectedPayoff": "near-term",
+      "payoffTiming": "near-term",
+      "notes": "114章推进：玉佩温热/与石柱呼应/残留温度/母亲身影在梦中出现（背影很像）"
+    },
+    {
+      "hookId": "青鸾的故事",
+      "startChapter": 114,
+      "type": "character",
       "status": "open",
-      "lastAdvancedChapter": 113,
-      "expectedPayoff": "阻止正本清源打开封印",
-      "payoffTiming": "mid-arc",
-      "notes": "113章重大推进：守夜者完整揭示300年前分裂历史（守封印派vs找别的办法派）；正本清源理念错误（认为幽冥是世界一部分，打开封印能恢复上古灵气）；三百年前打开封印的人全被幽冥吞噬；正本清源已更迭数代不知道真相；守夜者定性为被错误信息蒙蔽的'蠢人'；陈守一得知母亲30年前拒绝正本清源：'如果你们想死，那就去死。但别拉上别人'"
+      "lastAdvancedChapter": 114,
+      "expectedPayoff": "青鸾弟子的故事/开食肆的梦想/弟弟之死/对赵猛的托付",
+      "notes": "114章新增：年轻想开食肆/弟弟死在封印边/赵猛是弟弟独苗/青鸾把本事传给赵猛/哭了一夜后托付给守夜者"
+    },
+    {
+      "hookId": "赵猛弟弟",
+      "startChapter": 114,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 114,
+      "expectedPayoff": "与青鸾赵猛关系/弟弟之死的具体经过",
+      "notes": "114章新增：青鸾的弟弟/死在封印边/差一步没能救回/赵猛是弟弟的独苗"
+    },
+    {
+      "hookId": "父亲祖母的故事",
+      "startChapter": 114,
+      "type": "character",
+      "status": "open",
+      "lastAdvancedChapter": 114,
+      "expectedPayoff": "父亲与祖母的关系/祖母的遗言",
+      "payoffTiming": "near-term",
+      "notes": "114章新增：祖母姓沈/父亲12岁祖母去世/祖母遗言\"守一这孩子心思重但心是好的\"/从未怨过父亲"
+    },
+    {
+      "hookId": "母亲的选择",
+      "startChapter": 114,
+      "type": "character",
+      "status": "open",
+      "lastAdvancedChapter": 114,
+      "expectedPayoff": "母亲\"踏实\"的含义/不害怕的原因",
+      "payoffTiming": "near-term",
+      "notes": "114章新增：选择自己认为对的路并走完/做到这一点的人不会害怕/母亲当时心里是踏实的"
     }
   ]
 }
