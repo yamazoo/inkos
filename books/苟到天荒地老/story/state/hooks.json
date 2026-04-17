@@ -1,13 +1,3 @@
 {
-  "hooks": [
-    {
-      "hookId": "青鸾的弟弟",
-      "startChapter": 125,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "near-term",
-      "notes": "**126章：遗火之锚——余烬完整真相揭露/两条路的选择/重建桥梁确认**"
-    }
-  ]
+  "hooks": []
 }
