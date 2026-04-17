@@ -1831,5 +1831,40 @@
       "completionTokens": 13801,
       "totalTokens": 29415
     }
+  },
+  {
+    "number": 126,
+    "title": "遗火之锚",
+    "status": "approved",
+    "wordCount": 3541,
+    "createdAt": "2026-04-17T18:12:01.226Z",
+    "updatedAt": "2026-04-17T18:12:11.745Z",
+    "auditIssues": [
+      "[info] 赵猛的部分台词仍存在轻微的\"替读者说/替旁白说\"倾向。如\"那这团力量现在在做什么？\"\"那她现在这样……\"等句式更接近旁白推动而非角色自发反应。",
+      "[info] 本章信息密度集中在前半段（玉片解读→两条路→决定），后三分之一的温情收尾节奏优秀，但中间\"第一条路/第二条路\"的说明性段落略显直白，在仙侠语境中稍缺代入感的铺垫。",
+      "[info] 本章回收了\"青鸾的弟弟\"线索（玉片真意、余烬转移机制），但\"重建桥梁的具体执行方式\"仍是悬念，章尾没有新的钩子。",
+      "[warning] 最近4章持续高压（沉重→坚定→紧张→震动→坚定→沉重→坚定 -> 紧张→震动→坚定→沉重→坚定→期待 -> 沉重→释然→坚定→温暖→平静 -> 沉重→欣慰→释然→温暖→期待），缺少明显的情绪释放。",
+      "[warning] 连续出现3个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2317,
+      "postWriterNormalizeCount": 3541,
+      "postReviseCount": 0,
+      "finalCount": 3541,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 10972,
+      "totalTokens": 10972
+    }
   }
 ]

@@ -1,53 +1,53 @@
 {
-  "chapter": 125,
+  "chapter": 126,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "冥将苏醒中/正本清源切割封印/青鸾生命危机",
-      "validFromChapter": 125,
+      "predicate": "当前位置",
+      "object": "聚居点石屋",
+      "validFromChapter": 126,
       "validUntilChapter": null,
-      "sourceChapter": 125
+      "sourceChapter": 126
     },
     {
       "subject": "protagonist",
-      "predicate": "当前敌我",
-      "object": "陈守一、赵猛、青鸾（愿意帮忙）",
-      "validFromChapter": 125,
+      "predicate": "主角状态",
+      "object": "金痕觉醒/持续恢复中/精神坚定",
+      "validFromChapter": 126,
       "validUntilChapter": null,
-      "sourceChapter": 125
+      "sourceChapter": 126
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
       "object": "阻止封印崩溃/救青鸾/重建桥梁",
-      "validFromChapter": 125,
+      "validFromChapter": 126,
       "validUntilChapter": null,
-      "sourceChapter": 125
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "聚居点石屋",
-      "validFromChapter": 125,
-      "validUntilChapter": null,
-      "sourceChapter": 125
+      "sourceChapter": 126
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "风暴停了但冥将仍在/青鸾暂时稳住但无法真正好转/金痕今日消耗大（胸口发酸）",
-      "validFromChapter": 125,
+      "object": "风暴停了但冥将仍在/青鸾暂时稳住但无法真正好转",
+      "validFromChapter": 126,
       "validUntilChapter": null,
-      "sourceChapter": 125
+      "sourceChapter": 126
     },
     {
       "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "金痕觉醒（持续恢复中）/胸口闷胀感消了大半/精神坚定",
-      "validFromChapter": 125,
+      "predicate": "当前敌我",
+      "object": "陈守一、赵猛、青鸾（愿意帮忙）",
+      "validFromChapter": 126,
       "validUntilChapter": null,
-      "sourceChapter": 125
+      "sourceChapter": 126
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "冥将苏醒中/正本清源切割封印/青鸾生命危机/重建桥梁的选择",
+      "validFromChapter": 126,
+      "validUntilChapter": null,
+      "sourceChapter": 126
     }
   ]
 }

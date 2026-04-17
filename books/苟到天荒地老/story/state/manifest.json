@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 125,
+  "lastAppliedChapter": 126,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -246,6 +246,7 @@
     "正本清源组织误解:status normalized from \"**advancing**\" to \"open\"",
     "第一条路（已断）:status normalized from \"**NEW**\" to \"open\"",
     "第一条路（已断）:status normalized from \"**ADVANCING**\" to \"open\"",
-    "第一条路（已断）:status normalized from \"**advancing**\" to \"open\""
+    "第一条路（已断）:status normalized from \"**advancing**\" to \"open\"",
+    "青鸾的弟弟:lastAdvancedChapter normalized from \"126章完整揭露：弟弟死时燃尽力量/三天三夜烧成余烬/传到青鸾体内/是三源之力/重建桥梁可将其稳定\" to 0"
   ]
 }
