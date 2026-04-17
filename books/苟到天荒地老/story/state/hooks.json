@@ -1,64 +1,62 @@
 {
   "hooks": [
     {
-      "hookId": "H-三人的未来",
-      "startChapter": 139,
+      "hookId": "H-正本清源城东据点",
+      "startChapter": 149,
       "type": "新伏笔",
       "status": "progressing",
-      "lastAdvancedChapter": 150,
-      "expectedPayoff": "四人新生活/三年后共同面对",
-      "payoffTiming": "mid-arc",
-      "notes": "本章无新推进，维持150章状态。四人共识已在150章达成，本章继续体现同行关系。"
-    },
-    {
-      "hookId": "H-三源血脉传承",
-      "startChapter": 140,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 152,
-      "expectedPayoff": "三源血脉完整传承/金色种子成熟",
-      "payoffTiming": "slow-burn",
-      "notes": "本章推进：金色种子激活条件更清晰——需要苏婉儿玉坠作为钥匙才能彻底成熟。陈守一眉心金痕对玉坠产生反应，玉坠表面闪过极淡光芒，证实两者配套。"
-    },
-    {
-      "hookId": "H-苏婉儿身世",
-      "startChapter": 140,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 152,
-      "expectedPayoff": "周平往东边灵泉遗址方向走的目的",
+      "lastAdvancedChapter": 153,
+      "expectedPayoff": "正本清源完整情报/与幽冥真正关联",
       "payoffTiming": "near-term",
-      "notes": "本章重大推进：祖父完整遗愿揭晓——玉坠是三源血脉钥匙的一部分，与金色种子配套；祖父让她收好不要让任何人知道；祖父曾与正本清源接触，知道的比他们多得多。玉坠的真正用途被揭示。"
-    },
-    {
-      "hookId": "H-神秘老者身份",
-      "startChapter": 141,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 152,
-      "expectedPayoff": "三源血脉修复封印的具体方法是什么",
-      "payoffTiming": "near-term",
-      "notes": "本章陈守一明确'三源血脉修复封印需要时间'，但正文未揭示具体修复方法是什么。这是新的未解问题：修复封印需要做什么具体的事？"
+      "notes": "持续：需继续侦查暗道/弄清灵气流向"
     },
     {
       "hookId": "H-三年时间窗口",
       "startChapter": 148,
       "type": "新伏笔",
       "status": "progressing",
-      "lastAdvancedChapter": 152,
-      "expectedPayoff": "三年后枯林再见",
+      "lastAdvancedChapter": 153,
+      "expectedPayoff": "三年后枯林再见/封印崩溃或修复",
       "payoffTiming": "mid-arc",
-      "notes": "本章重大推进：三年期限定性为封印彻底崩溃的时间节点，同时是灵气流尽+金色种子成熟的时间点，三线合一。陈守一明确：'三源血脉修复封印需要时间，正本清源在另一边撕裂封印，如果他们速度快过我们，三年后封印彻底崩溃，冥族会重新降临。"
+      "notes": "持续：四人明确三年计划"
     },
     {
-      "hookId": "H-正本清源城东据点",
-      "startChapter": 149,
+      "hookId": "H-神秘老者身份",
+      "startChapter": 141,
+      "type": "mystery",
+      "status": "resolved",
+      "lastAdvancedChapter": 153,
+      "expectedPayoff": "~~三源血脉修复封印的具体方法是什么~~",
+      "notes": "**已回收**：石台画面完整揭示——三源合一/金色种子/以血脉为引/以生机为煤/锻造锁链封堵裂缝"
+    },
+    {
+      "hookId": "H-三源血脉传承",
+      "startChapter": 140,
+      "type": "mystery",
+      "status": "resolved",
+      "lastAdvancedChapter": 153,
+      "expectedPayoff": "~~金色种子成熟/三源血脉完整传承~~",
+      "notes": "**重大回收**：三道刻痕揭示完整传承——父亲(金色)/母亲(银色)/苏婉儿祖父(绿色)；父亲跪坐光影/\"血脉为引，丹田为炉\"；玉坠是第四股血脉载体"
+    },
+    {
+      "hookId": "H-苏婉儿身世",
+      "startChapter": 140,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 153,
+      "expectedPayoff": "苏婉儿完整身世/与上古大劫关联",
+      "payoffTiming": "near-term",
+      "notes": "新推进：苏婉儿是第四股血脉传承者（玉坠继承人）/外祖母是白衣女子后人/玉坠承载第四股力量"
+    },
+    {
+      "hookId": "H-三人的未来",
+      "startChapter": 139,
       "type": "新伏笔",
       "status": "progressing",
-      "lastAdvancedChapter": 152,
-      "expectedPayoff": "正本清源完整情报/与幽冥真正关联",
-      "payoffTiming": "near-term",
-      "notes": "本章重大推进：从'确认幽冥关联'推进为'明确目的=撕裂封印，让两界彻底连通'。陈守一推理出正本清源不是送灵气给彼岸，而是要打开两界通道让冥族回归。"
+      "lastAdvancedChapter": 153,
+      "expectedPayoff": "四人新生活/三年后共同面对",
+      "payoffTiming": "mid-arc",
+      "notes": "**重大推进**：四人达成共识——三年后一起修复封印/赵猛弟弟/青鸾弟弟真相揭示（都是自愿选择）"
     }
   ]
 }
