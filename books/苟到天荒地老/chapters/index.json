@@ -2560,5 +2560,42 @@
       "completionTokens": 12053,
       "totalTokens": 12053
     }
+  },
+  {
+    "number": 146,
+    "title": "晨风未止",
+    "status": "approved",
+    "wordCount": 3138,
+    "createdAt": "2026-04-17T21:46:06.329Z",
+    "updatedAt": "2026-04-17T21:46:14.671Z",
+    "auditIssues": [
+      "[info] 青鸾看到哑娘标记（半开的枯井）时有反应（瞳孔微微一缩），但未说明原因。青鸾在遗迹中见过神秘老者留下的痕迹，可能也见过哑娘的标记？这个细节暗示但未明说，如果哑娘与神秘老者有关联，伏笔链会更加紧密。",
+      "[info] 周平否认认识神秘老者时的反应（动作顿了一瞬、收回手比平常慢半拍）与之前周平塑造的沉稳形象略有差异，增加了读者对'周平与神秘老者是否为同一人'的悬念。当前是伏笔延续中，符合慢烧节奏。",
+      "[info] 正本清源据点有两名筑基期成员，与之前'整个灵洲大陆能摸到筑基边的只有一只手数得过来'的设定看似冲突。但周平提到正本清源自以为冥族是回归者、觉得自己是真正的主人，两百年积累出两名筑基也有合理动机。",
+      "[info] 本章为典型的过渡章/情报收集章，节奏平缓但有效。赵猛对弟弟之死的思考（周平师兄也是自愿去的）形成了与主角的共鸣弧线，配角的内心戏占比略高，但符合角色弧线发展需求。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H-封印完全修复（慢烧，已逾期）、H-三人的未来（中程，可回收）、H-三源血脉传承（慢烧，可回收），另有 1 条。",
+      "[warning] 116个段落里有79个不足35字，段落被切得过碎。",
+      "[warning] 连续出现9个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3906,
+      "postWriterNormalizeCount": 3138,
+      "postReviseCount": 3138,
+      "finalCount": 3138,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 17723,
+      "totalTokens": 17723
+    }
   }
 ]

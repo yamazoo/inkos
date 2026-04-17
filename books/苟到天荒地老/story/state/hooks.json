@@ -1,6 +1,16 @@
 {
   "hooks": [
     {
+      "hookId": "H-正本清源内部线人",
+      "startChapter": 144,
+      "type": "新伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 146,
+      "expectedPayoff": "情报来源/内应身份",
+      "payoffTiming": "mid-arc",
+      "notes": "146章重大推进：哑娘身份完整揭露（周平师兄女人/三十年实验遗孀/暗中收集证据者）"
+    },
+    {
       "hookId": "H-三源血脉传承",
       "startChapter": 140,
       "type": "mystery",
@@ -8,27 +18,7 @@
       "lastAdvancedChapter": 145,
       "expectedPayoff": "周平在三源血脉中的角色",
       "payoffTiming": "slow-burn",
-      "notes": "145章继续揭露三源血脉详情（母亲/祖父/苏婉儿祖父三人）"
-    },
-    {
-      "hookId": "H-正本清源内部线人",
-      "startChapter": 144,
-      "type": "新伏笔",
-      "status": "open",
-      "lastAdvancedChapter": 145,
-      "expectedPayoff": "情报来源/内应身份",
-      "payoffTiming": "mid-arc",
-      "notes": "145章周平透露\"他们内部有可以利用的人\""
-    },
-    {
-      "hookId": "H-神秘老者身份",
-      "startChapter": 141,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 144,
-      "expectedPayoff": "神秘老者完整身份",
-      "payoffTiming": "mid-arc",
-      "notes": "周平与神秘老者是否为同一人待确认"
+      "notes": "146章推进：周平师兄是三源血脉相关人物/哑娘与三十年前实验有关"
     },
     {
       "hookId": "H-苏婉儿身世",
@@ -38,17 +28,17 @@
       "lastAdvancedChapter": 145,
       "expectedPayoff": "苏婉儿完整身世揭露",
       "payoffTiming": "mid-arc",
-      "notes": "145章继续推进：血脉传承完整揭示"
+      "notes": "维持现状"
     },
     {
       "hookId": "H-三人的未来",
       "startChapter": 139,
       "type": "新伏笔",
       "status": "progressing",
-      "lastAdvancedChapter": 145,
+      "lastAdvancedChapter": 146,
       "expectedPayoff": "四人新生活",
       "payoffTiming": "mid-arc",
-      "notes": "145章延续：决定先吃饭/明天再去找周平"
+      "notes": "146章推进：决定等青鸾恢复后去枯林/四人关系稳固"
     },
     {
       "hookId": "H-封印完全修复",
@@ -58,7 +48,27 @@
       "lastAdvancedChapter": 145,
       "expectedPayoff": "封印完全修复",
       "payoffTiming": "slow-burn",
-      "notes": "145章延续：三源归位机制明确/修桥是长期任务"
+      "notes": "146章推进：通过哑娘探查修复方法"
+    },
+    {
+      "hookId": "H-神秘老者身份",
+      "startChapter": 141,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 146,
+      "expectedPayoff": "神秘老者完整身份",
+      "payoffTiming": "mid-arc",
+      "notes": "146章重大推进：赵猛问周平是否认识神秘老者/周平说\"不认识\"但动作有微妙停顿/陈守一捕捉到异常"
+    },
+    {
+      "hookId": "H-周平与神秘老者关系",
+      "startChapter": 146,
+      "type": "新伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 146,
+      "expectedPayoff": "周平与神秘老者是否为同一人",
+      "payoffTiming": "mid-arc",
+      "notes": "146章新伏笔：周平被问及时动作顿了一下/陈守一注意到收回手比平常慢半拍/存疑待查"
     }
   ]
 }
