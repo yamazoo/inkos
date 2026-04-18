@@ -3820,5 +3820,40 @@
       "completionTokens": 14784,
       "totalTokens": 14784
     }
+  },
+  {
+    "number": 182,
+    "title": "灵泉前夕",
+    "status": "approved",
+    "wordCount": 4780,
+    "createdAt": "2026-04-18T17:37:35.785Z",
+    "updatedAt": "2026-04-18T17:37:47.395Z",
+    "auditIssues": [
+      "[warning] 章末存在一处视角越界：\"（日头升高，雾散尽。小路两旁的树影往后掠过，像是时光在倒流。灵泉在等着他，锁链在等着他，那四道抽空两界灵气的封印在等着他。而他身上那道金痕，也在一刻不停地等着，等着把他烧成灰烬。）\"。这段命运式的旁白描述从全知视角渲染\"时光倒流\"、\"灵泉/锁链/封印在等他\"、\"金痕等着把他烧成灰烬\"等意象，超出了陈守一角色的认知边界，属于信息越界。",
+      "[warning] 章中\"眉头动了一下\"（指皱眉头）出现两次：1) 陈守一的眉头动了一下；2) 赵猛的眼神古怪。陈守一的\"眸子动了一下\"也出现了一次。高频肢体词\"动\"修饰不同部位的重复使用略显疲劳。",
+      "[warning] 连续出现6个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [
+      "第182章经过一次字数归一化后仍超出硬区间（2182-3818，实际 4780）。"
+    ],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2060,
+      "postWriterNormalizeCount": 4780,
+      "postReviseCount": 0,
+      "finalCount": 4780,
+      "normalizeApplied": true,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 3370,
+      "completionTokens": 11697,
+      "totalTokens": 15067
+    }
   }
 ]

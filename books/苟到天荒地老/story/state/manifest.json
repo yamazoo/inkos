@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 181,
+  "lastAppliedChapter": 182,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -418,6 +418,9 @@
     "H-老道士遗物三件:lastAdvancedChapter normalized from \"**179章：铜片/黑石/遗书三件遗物全部获得**\" to 0",
     "H-内间完整真相:lastAdvancedChapter normalized from \"**179章：内间目的（牟利）/ 三百年前背叛 / 玄清宗内鬼长期存在**\" to 0",
     "H-金痕幻象:lastAdvancedChapter normalized from \"**179章：金痕视野：焦土/石台/金痕年轻人/裂缝黑触手/白袍女人喊\"大哥\"**\" to 0",
-    "H-内间完整真相:status normalized from \"mention\" to \"open\""
+    "H-内间完整真相:status normalized from \"mention\" to \"open\"",
+    "H-正本清源灵泉据点:status normalized from \"**新种**\" to \"open\"",
+    "H-聚居点暴露:status normalized from \"**新种**\" to \"open\"",
+    "H-正本清源行动布局:status normalized from \"**新种**\" to \"open\""
   ]
 }
