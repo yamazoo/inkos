@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 178,
+  "lastAppliedChapter": 179,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -410,6 +410,13 @@
     "H-两界之争另有根源:lastAdvancedChapter normalized from \"177（内间暗号揭露/内部分裂证实）\" to 0",
     "H-第四脉身份:lastAdvancedChapter normalized from \"177（梦中锁链隐喻/祖父幻象暗示）\" to 0",
     "H-梦中死结锁链:status normalized from \"**new**\" to \"open\"",
-    "H-梦中死结锁链:lastAdvancedChapter normalized from \"**177（梦中揭示：金链+银链死扣/祖父穿死结麻绳外袍）**\" to 0"
+    "H-梦中死结锁链:lastAdvancedChapter normalized from \"**177（梦中揭示：金链+银链死扣/祖父穿死结麻绳外袍）**\" to 0",
+    "H-锁不可开原因:lastAdvancedChapter normalized from \"**179章：自己就是钥匙，不能自己开自己**\" to 0",
+    "H-两天期限:lastAdvancedChapter normalized from \"**179章：老道士遗言强化时间紧迫**\" to 0",
+    "H-两界之争另有根源:lastAdvancedChapter normalized from \"**179章：三百年前背叛/玄清宗内鬼/内间牟利目的揭示**\" to 0",
+    "H-金痕消耗真相:lastAdvancedChapter normalized from \"**179章：获得压制道具（黑石）/ 不能根治/ 根治在锁里**\" to 0",
+    "H-老道士遗物三件:lastAdvancedChapter normalized from \"**179章：铜片/黑石/遗书三件遗物全部获得**\" to 0",
+    "H-内间完整真相:lastAdvancedChapter normalized from \"**179章：内间目的（牟利）/ 三百年前背叛 / 玄清宗内鬼长期存在**\" to 0",
+    "H-金痕幻象:lastAdvancedChapter normalized from \"**179章：金痕视野：焦土/石台/金痕年轻人/裂缝黑触手/白袍女人喊\"大哥\"**\" to 0"
   ]
 }

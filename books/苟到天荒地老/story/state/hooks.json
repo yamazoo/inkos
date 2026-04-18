@@ -1,22 +1,24 @@
 {
   "hooks": [
     {
-      "hookId": "H-金痕消耗真相",
-      "startChapter": 156,
-      "type": "核心代价",
-      "status": "progressing",
+      "hookId": "H-身后尾巴",
+      "startChapter": 178,
+      "type": "**NEW-危机线索**",
+      "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "notes": "持续消耗中，本章眉心发胀"
+      "expectedPayoff": "下章",
+      "payoffTiming": "mid-arc",
+      "notes": "正本清源已盯上陈守一"
     },
     {
-      "hookId": "H-梦中死结锁链",
-      "startChapter": 177,
-      "type": "核心隐喻",
-      "status": "progressing",
-      "lastAdvancedChapter": 1,
+      "hookId": "H-锁不可开原因",
+      "startChapter": 178,
+      "type": "**重要悬念→已推进**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
-      "notes": "**死结麻绳=内间暗号已确认；梦中线索与现实印证**"
+      "payoffTiming": "immediate",
+      "notes": "**重大揭示**"
     },
     {
       "hookId": "H-两天期限",
@@ -25,34 +27,8 @@
       "status": "progressing",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
+      "payoffTiming": "immediate",
       "notes": "祭品提前到位/时间比两天更紧"
-    },
-    {
-      "hookId": "H-内间同袍联络",
-      "startChapter": 175,
-      "type": "核心悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "本卷",
-      "notes": "**死结暗号已确认；内间网络比想象中更广**"
-    },
-    {
-      "hookId": "H-城守府后街吴姓卖肉",
-      "startChapter": 175,
-      "type": "核心线索",
-      "status": "resolved",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "本卷",
-      "notes": "**掌柜是联络人非本人；暗号已对接**"
-    },
-    {
-      "hookId": "H-正本清源坊市撒网",
-      "startChapter": 174,
-      "type": "重要线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "本卷",
-      "notes": "**发现身后有尾巴；正本清源在找生面孔**"
     },
     {
       "hookId": "H-祠堂祭品",
@@ -61,6 +37,7 @@
       "status": "progressing",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
+      "payoffTiming": "mid-arc",
       "notes": "紧迫性增加"
     },
     {
@@ -70,25 +47,47 @@
       "status": "progressing",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
-      "notes": "内间势力长期存在"
+      "payoffTiming": "immediate",
+      "notes": "**重大揭示**"
     },
     {
-      "hookId": "H-锁不可开原因",
-      "startChapter": 178,
-      "type": "**NEW-重要悬念**",
+      "hookId": "H-金痕消耗真相",
+      "startChapter": 156,
+      "type": "核心代价",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "immediate",
+      "notes": "持续消耗中，本章眉心发胀，获得压制道具"
+    },
+    {
+      "hookId": "H-老道士遗物三件",
+      "startChapter": 179,
+      "type": "**NEW-重要线索**",
       "status": "open",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
-      "notes": "祖父遗言含义待查"
+      "payoffTiming": "immediate",
+      "notes": "老道士守夜三百年使命结束"
     },
     {
-      "hookId": "H-身后尾巴",
-      "startChapter": 178,
-      "type": "**NEW-危机线索**",
+      "hookId": "H-内间完整真相",
+      "startChapter": 179,
+      "type": "**NEW-核心揭秘**",
       "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "下章",
-      "notes": "正本清源已盯上陈守一"
+      "expectedPayoff": "本卷",
+      "payoffTiming": "immediate",
+      "notes": "内间不是守护者，而是利用将破未破状态牟利"
+    },
+    {
+      "hookId": "H-金痕幻象",
+      "startChapter": 179,
+      "type": "**NEW-伏笔**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "待定",
+      "notes": "暗示陈守一与上古大劫的直接关联"
     }
   ]
 }

@@ -1,77 +1,85 @@
 {
-  "chapter": 178,
+  "chapter": 179,
   "facts": [
     {
       "subject": "current_state",
       "predicate": "项目",
       "object": "状态",
-      "validFromChapter": 178,
+      "validFromChapter": 179,
       "validUntilChapter": null,
-      "sourceChapter": 178
+      "sourceChapter": 179
     },
     {
       "subject": "current_state",
       "predicate": "**位置**",
-      "object": "聚居点石屋（黄昏）",
-      "validFromChapter": 178,
+      "object": "聚居点石屋（深夜→黎明）",
+      "validFromChapter": 179,
       "validUntilChapter": null,
-      "sourceChapter": 178
+      "sourceChapter": 179
     },
     {
       "subject": "current_state",
       "predicate": "**时限**",
-      "object": "两天期限（进行中）/ 春分祭典",
-      "validFromChapter": 178,
+      "object": "两天期限（进行中）/ 春分祭典 / 老道士遗言揭示时间比两天更紧",
+      "validFromChapter": 179,
       "validUntilChapter": null,
-      "sourceChapter": 178
+      "sourceChapter": 179
     },
     {
       "subject": "current_state",
       "predicate": "**寿元**",
       "object": "不足两年（持续消耗中）",
-      "validFromChapter": 178,
+      "validFromChapter": 179,
       "validUntilChapter": null,
-      "sourceChapter": 178
+      "sourceChapter": 179
     },
     {
       "subject": "current_state",
       "predicate": "**金痕**",
-      "object": "持续发热，眉心发胀",
-      "validFromChapter": 178,
+      "object": "持续发热→暂时安静（获得压制道具）",
+      "validFromChapter": 179,
       "validUntilChapter": null,
-      "sourceChapter": 178
+      "sourceChapter": 179
     },
     {
       "subject": "current_state",
       "predicate": "**装备**",
-      "object": "铜钱（陈记）/ 灰蓝色衣裳（青鸾缝制，双层内袋）/ 母亲玉佩",
-      "validFromChapter": 178,
+      "object": "铜钱（陈记）/ 灰蓝色衣裳（青鸾缝制，双层内袋）/ 母亲玉佩 / **铜片（\"吾孙\"，老道士遗物）** / **黑色石头（压制金痕消耗/与金痕共振，老道士遗物）** / **泛黄纸（老道士遗书，揭示锁的秘密和内间真相）**",
+      "validFromChapter": 179,
       "validUntilChapter": null,
-      "sourceChapter": 178
+      "sourceChapter": 179
     },
     {
       "subject": "current_state",
-      "predicate": "**今日收获**",
-      "object": "死结麻绳暗号确认 / 内间联络网络存在 / 身后有尾巴",
-      "validFromChapter": 178,
+      "predicate": "**当前收获**",
+      "object": "老道士遗物三件 / 锁不可开原因揭示 / 两界之争根源揭示 / 内间完整真相 / 金痕压制道具",
+      "validFromChapter": 179,
       "validUntilChapter": null,
-      "sourceChapter": 178
+      "sourceChapter": 179
     },
     {
       "subject": "current_state",
       "predicate": "**明日计划**",
-      "object": "陈守一联络行动继续 / 青鸾盯城门 / 赵猛继续盯坊市",
-      "validFromChapter": 178,
+      "object": "**去灵泉**（原联络任务变更）",
+      "validFromChapter": 179,
       "validUntilChapter": null,
-      "sourceChapter": 178
+      "sourceChapter": 179
     },
     {
       "subject": "current_state",
       "predicate": "**关键信息**",
-      "object": "内间同袍网络比想象中更广 / 正本清源在坊市撒网找生面孔 / 锁不可开原因待查",
-      "validFromChapter": 178,
+      "object": "锁打不开因自己是钥匙 / 三百年前背叛 / 玄清宗内鬼 / 内间目的（牟利）/ 老道士守夜三百年使命结束",
+      "validFromChapter": 179,
       "validUntilChapter": null,
-      "sourceChapter": 178
+      "sourceChapter": 179
+    },
+    {
+      "subject": "current_state",
+      "predicate": "**新角色死亡**",
+      "object": "老道士（周沉/周守夜人）- 守夜使命结束",
+      "validFromChapter": 179,
+      "validUntilChapter": null,
+      "sourceChapter": 179
     }
   ]
 }
