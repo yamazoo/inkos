@@ -1069,6 +1069,16 @@
       "hookActivity": "H-正本清源计划 advanced; H-第四脉身份 advanced; H-铜钱陈记 advanced; H-绢帛画像 advanced; H-守夜者三天期限 advanced; H-金痕消耗真相 advanced",
       "mood": "沉重",
       "chapterType": "推演章/情报整合章/行动准备章"
+    },
+    {
+      "chapter": 172,
+      "title": "晨光未破",
+      "characters": "陈守一,赵猛,青鸾",
+      "events": "赵猛带回城东戒严情报揭示正本清源与城守府勾结，陈守一验证铜钱是钥匙并用金痕激活绢帛隐藏内容，发现'神尊非敌冥王非友两界之争另有根源'核心悬念，黑雾加速扩散雾中出现冥物人形",
+      "stateChanges": "位置从石屋移至院子/时间两天期限已过一夜/绢帛隐藏内容激活成功/铜钱钥匙功能确认/新核心悬念'两界之争另有根源'确立",
+      "hookActivity": "H-正本清源计划 advanced; H-冥族存在 advanced; H-三源血脉 advanced; 核心线索-冥王曾试图谈 advanced (重构); H-铜钱陈记 resolved",
+      "mood": "紧绷→震惊→沉重→坚定",
+      "chapterType": "真相揭露章/情报整合章/行动确立章/危机升级章"
     }
   ]
 }

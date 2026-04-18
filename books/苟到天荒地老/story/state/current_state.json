@@ -1,53 +1,53 @@
 {
-  "chapter": 171,
+  "chapter": 172,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "正本清源撕裂封印（三十二份祭品/春分前完成/核心人物不明）vs 三源血脉修复封印（寿元不足两年/金痕持续消耗/令牌可用/已知第四脉代价）",
-      "validFromChapter": 171,
+      "object": "正本清源撕裂封印（两天期限/三十二份祭品/勾结城守府）vs 三源血脉修复封印（寿元不足两年/两天期限/需找帮手）",
+      "validFromChapter": 172,
       "validUntilChapter": null,
-      "sourceChapter": 171
+      "sourceChapter": 172
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "苏婉儿(同行者/核心盟友/留守) | 赵猛(同行者/誓言同行/外出打听消息) | 青鸾(同行者/明日继续盯梢枯叶铺子)",
-      "validFromChapter": 171,
+      "object": "苏婉儿(同行者/核心盟友/留守)/赵猛(同行者/誓言同行/已带回情报)/青鸾(同行者/预警黑雾/留守)",
+      "validFromChapter": 172,
       "validUntilChapter": null,
-      "sourceChapter": 171
+      "sourceChapter": 172
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "阻止正本清源撕裂封印/传递情报警告三源后人/寻找修复封印的别的方法",
-      "validFromChapter": 171,
+      "object": "阻止正本清源撕裂封印/寻找三源血脉帮手/修复封印/传递情报警告三源后人",
+      "validFromChapter": 172,
       "validUntilChapter": null,
-      "sourceChapter": 171
+      "sourceChapter": 172
     },
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点石屋内",
-      "validFromChapter": 171,
+      "object": "聚居点院子",
+      "validFromChapter": 172,
       "validUntilChapter": null,
-      "sourceChapter": 171
+      "sourceChapter": 172
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "寿元不足两年/金痕持续消耗/三天期限（剩余两天）/玉坠降温加速",
-      "validFromChapter": 171,
+      "object": "寿元不足两年/两天期限/黑雾加速扩散/金痕持续消耗",
+      "validFromChapter": 172,
       "validUntilChapter": null,
-      "sourceChapter": 171
+      "sourceChapter": 172
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "金痕蛰伏/玉坠持续降温/三天期限已过一夜剩余两天/已知万年前大劫完整真相/已知第四脉身份/已知祖父完整身份/已知第四脉代价（用寿元补锁链缺口）/已知祖父可能是卧底/决心坚定但计划沉重/整夜未眠",
-      "validFromChapter": 171,
+      "object": "金痕蛰伏发热警告/整夜未眠/决心坚定/绢帛激活成功/已知完整绢帛内容（锁魂渊底封魔之器/三源血脉可启/四脉生机可铸/神尊非敌冥王非友）/已知铜钱是钥匙/已知正本清源与城守府勾结/",
+      "validFromChapter": 172,
       "validUntilChapter": null,
-      "sourceChapter": 171
+      "sourceChapter": 172
     }
   ]
 }
