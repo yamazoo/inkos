@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 204,
+  "lastAppliedChapter": 205,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -553,6 +553,15 @@
     "hook-16:lastAdvancedChapter normalized from \"**本章新种**：赵猛位置外围护卫/因心性不稳会被卷进去/只能阻止有人破坏仪式\" to 0",
     "hook-17:lastAdvancedChapter normalized from \"**本章新种**：陈守一决心\"不重蹈母亲覆辙\"/母亲当年孤身一人没有四脉齐聚条件/现在三脉后人都在/有把握成功\" to 0",
     "hook-18:lastAdvancedChapter normalized from \"**本章新种**：赵猛和青鸾讨论灵泉地形并画草图/标注聚居点位置/最初苏婉儿位置定在\"最安全的外围点\"/陈守一纠正\"太安全引不出力量\"改为\"临界点\"/青鸾手札有乱葬岗记载\" to 0",
-    "hook-19:lastAdvancedChapter normalized from \"**本章新种**：苏青黛遗言\"源根归位之日，便是新的开始。无论成败，都不会是结束\"/孙师兄在绢帛背面写\"活着回来\"\" to 0"
+    "hook-19:lastAdvancedChapter normalized from \"**本章新种**：苏青黛遗言\"源根归位之日，便是新的开始。无论成败，都不会是结束\"/孙师兄在绢帛背面写\"活着回来\"\" to 0",
+    "hook-13:lastAdvancedChapter normalized from \"0→1\" to 0",
+    "hook-14:lastAdvancedChapter normalized from \"0→1\" to 0",
+    "hook-15:lastAdvancedChapter normalized from \"0→1\" to 0",
+    "hook-16:lastAdvancedChapter normalized from \"0→1\" to 0",
+    "hook-17:lastAdvancedChapter normalized from \"0→1\" to 0",
+    "hook-18:lastAdvancedChapter normalized from \"0→1\" to 0",
+    "hook-19:lastAdvancedChapter normalized from \"0→1→**resolved**\" to 0",
+    "hook-1:startChapter normalized from \"0→1\" to 0",
+    "hook-1:lastAdvancedChapter normalized from \"0→**resolved**\" to 0"
   ]
 }

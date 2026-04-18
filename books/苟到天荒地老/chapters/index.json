@@ -4599,5 +4599,39 @@
       "completionTokens": 13177,
       "totalTokens": 13177
     }
+  },
+  {
+    "number": 205,
+    "title": "荒丘遗音",
+    "status": "approved",
+    "wordCount": 2687,
+    "createdAt": "2026-04-18T23:11:02.133Z",
+    "updatedAt": "2026-04-18T23:11:11.373Z",
+    "auditIssues": [
+      "[warning] 章节开头出现'七十三年年前'，多了一个'十'字，应为'七十三年前'",
+      "[info] 绢帛中写'铜戒+玉佩合二为一可开彼岸通道'，而之前章节描述三件钥匙（铜环+令牌+玉简）合一后将他送到彼岸。两者描述略有出入但可调和：铜戒玉佩开通道，三件钥匙引导源根力量，是不同步骤。",
+      "[info] Hook-1（乱葬岗之谜）重大推进：发现地下石室、母亲绢帛、源根归位完整方法、玉佩作用。青鸾手札发挥作用（带绢帛记载乱葬岗）。Hook-17（陈守一决心）呼应：'不会重蹈覆辙'已在绢帛中得到母亲遗言印证。",
+      "[warning] 连续出现3个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2234,
+      "postWriterNormalizeCount": 2687,
+      "postReviseCount": 0,
+      "finalCount": 2687,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 10210,
+      "totalTokens": 10210
+    }
   }
 ]
