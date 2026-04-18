@@ -1,3 +1,85 @@
 {
-  "hooks": []
+  "hooks": [
+    {
+      "hookId": "H-井的秘密",
+      "startChapter": 162,
+      "type": "核心谜题",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷/165+",
+      "notes": "**关键情报：井底有冥物/用祭品可强行打开/春分前完成**"
+    },
+    {
+      "hookId": "H-正本清源计划",
+      "startChapter": 149,
+      "type": "核心阴谋",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷/165+",
+      "notes": "**关键情报：春分前打开通道/用祭品替代三源血脉/失踪人口有了解释**"
+    },
+    {
+      "hookId": "H-三源血脉",
+      "startChapter": 156,
+      "type": "核心设定",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "notes": "**关键情报：三源后人被追查/但祭品方法更粗暴**"
+    },
+    {
+      "hookId": "H-金痕消耗真相",
+      "startChapter": 156,
+      "type": "核心代价",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "notes": "寿元不足两年，金痕持续燃烧"
+    },
+    {
+      "hookId": "H-灵气衰减真相",
+      "startChapter": 156,
+      "type": "世界观",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "80-100章",
+      "notes": "末法时代背景"
+    },
+    {
+      "hookId": "H-修复封印代价",
+      "startChapter": 156,
+      "type": "核心代价",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "notes": "主角必须找到替代方案"
+    },
+    {
+      "hookId": "H-冥族存在",
+      "startChapter": 156,
+      "type": "核心威胁",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "40-60章",
+      "notes": "封印三年内有裂口"
+    },
+    {
+      "hookId": "H-守夜者位置",
+      "startChapter": 73,
+      "type": "核心NPC",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "notes": "等待继承者"
+    },
+    {
+      "hookId": "H-坊间失踪人口",
+      "startChapter": 162,
+      "type": "情报线索",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**本章回收**",
+      "notes": "正本清源抓人"
+    }
+  ]
 }

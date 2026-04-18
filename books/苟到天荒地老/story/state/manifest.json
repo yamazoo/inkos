@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 163,
+  "lastAppliedChapter": 164,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -351,6 +351,19 @@
     "H-苏婉儿身世:lastAdvancedChapter normalized from \"156章：第四股血脉传承/找到归属/\"以前没有家，现在有了\"\" to 0",
     "H-大劫真相:lastAdvancedChapter normalized from \"已揭露\" to 0",
     "H-金痕消耗真相:lastAdvancedChapter normalized from \"**0（本章首次提出）**\" to 0",
-    "H-玉坠与第四股血脉:lastAdvancedChapter normalized from \"**0（本章首次提出）**\" to 0"
+    "H-玉坠与第四股血脉:lastAdvancedChapter normalized from \"**0（本章首次提出）**\" to 0",
+    "H-井的秘密:lastAdvancedChapter normalized from \"164章：确认井是通往某处的通道/不是普通裂缝/有冥物从井底伸出枯手/需要祭品打开/不是三源血脉而是人命祭品\" to 0",
+    "H-正本清源计划:lastAdvancedChapter normalized from \"164章：确认祭品是人命/井底冥物存在/春分前必须打开/三源血脉太难寻所以用祭品/失踪人口是被抓走当祭品\" to 0",
+    "H-三源血脉:lastAdvancedChapter normalized from \"164章：井底冥物说\"三源血脉太难寻\"——正本清源还没找到足够三源后人/但会继续抓人用祭品\" to 0",
+    "H-金痕消耗真相:status normalized from \"持续\" to \"open\"",
+    "H-金痕消耗真相:lastAdvancedChapter normalized from \"164章：主角面临抉择——修复封印代价一年/不修复封印被打开\" to 0",
+    "H-灵气衰减真相:status normalized from \"持续\" to \"open\"",
+    "H-灵气衰减真相:lastAdvancedChapter normalized from \"164章：主角想起祖父幻境中的话——上古灵气是现在千倍\" to 0",
+    "H-修复封印代价:status normalized from \"**紧迫化**\" to \"open\"",
+    "H-修复封印代价:lastAdvancedChapter normalized from \"164章：修复代价是一年寿元/只剩不到一年/必须找别的方法\" to 0",
+    "H-冥族存在:lastAdvancedChapter normalized from \"164章：井底有冥物/黑色枯手/幽绿眼眶火焰/井通往冥界\" to 0",
+    "H-守夜者位置:status normalized from \"持续\" to \"open\"",
+    "H-守夜者位置:lastAdvancedChapter normalized from \"164章：主角决心阻止正本清源/守夜者的责任开始传递\" to 0",
+    "H-坊间失踪人口:lastAdvancedChapter normalized from \"164章：失踪人口是被抓去当祭品/赵猛弟弟可能也是祭品\" to 0"
   ]
 }

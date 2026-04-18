@@ -1,4 +1,53 @@
 {
-  "chapter": 163,
-  "facts": []
+  "chapter": 164,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "聚居点石屋内（从城东废墟井口返回）",
+      "validFromChapter": 164,
+      "validUntilChapter": null,
+      "sourceChapter": 164
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "金痕蛰伏/玉坠温凉/决心坚定/情感觉醒持续/决断形成",
+      "validFromChapter": 164,
+      "validUntilChapter": null,
+      "sourceChapter": 164
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "**查清井的秘密（通往何处/需要什么条件打开）** / **查清正本清源人数和祭品数量** / **找修复封印的别的方法** / **阻止正本清源打开通道** / **传递情报警告三源后人**",
+      "validFromChapter": 164,
+      "validUntilChapter": null,
+      "sourceChapter": 164
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "**寿元不足两年（持续消耗中）** / 隐息符用尽 / 神识耗尽 / 体力精力部分恢复 / **三个月期限（春分之前）**",
+      "validFromChapter": 164,
+      "validUntilChapter": null,
+      "sourceChapter": 164
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "正本清源（敌对/城东据点/井是通道/用祭品打开/春分前动手）vs 三源血脉（修复封印代价是大部寿元/需找别的方法）",
+      "validFromChapter": 164,
+      "validUntilChapter": null,
+      "sourceChapter": 164
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "正本清源撕裂封印（井是通道/祭品开路/春分前打开/抓人当祭品）vs 三源血脉修复封印（寿元不足两年/金痕持续消耗/需找别的方法/三个月期限紧迫）",
+      "validFromChapter": 164,
+      "validUntilChapter": null,
+      "sourceChapter": 164
+    }
+  ]
 }
