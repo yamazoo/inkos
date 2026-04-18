@@ -1,53 +1,53 @@
 {
-  "chapter": 198,
+  "chapter": 199,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "聚居点（夜幕降临）",
-      "validFromChapter": 198,
+      "predicate": "当前冲突",
+      "object": "正本清源三月十四夜动手/源根被接走/万年前大劫真相/两枚玉坠之谜/钥匙不止三把",
+      "validFromChapter": 199,
       "validUntilChapter": null,
-      "sourceChapter": 198
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "平静/警觉细微波动/苟道哲学深化/金痕隐隐跳动/情绪平稳/有一丝警觉但按而不发",
-      "validFromChapter": 198,
-      "validUntilChapter": null,
-      "sourceChapter": 198
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "三月十四夜酉时前往城西接头点/三月十四夜前往灵泉/种乌头种子/继续调查周执事",
-      "validFromChapter": 198,
-      "validUntilChapter": null,
-      "sourceChapter": 198
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "金痕持续消散/修为持续减弱/最多半年寿命/黑石最多十来次/三月十四夜正本清源动手",
-      "validFromChapter": 198,
-      "validUntilChapter": null,
-      "sourceChapter": 198
+      "sourceChapter": 199
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "青鸾/赵猛/苏婉儿/孙师兄/周老头(遗物已交付)/周执事(被邀请三月十四夜相见)",
-      "validFromChapter": 198,
+      "object": "青鸾/赵猛/苏婉儿/孙师兄/周老头遗物已交付/跛脚者（完成使命后离去）",
+      "validFromChapter": 199,
       "validUntilChapter": null,
-      "sourceChapter": 198
+      "sourceChapter": 199
     },
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "正本清源三月十四夜动手/源根被\"接走\"/灵泉大劫/修复封印另一条路/城西接头点约见/乱葬岗无碑坟包/烧鸡来源之谜",
-      "validFromChapter": 198,
+      "predicate": "当前目标",
+      "object": "三月十四夜行动（酉时城西接头点 + 灵泉）/准备迎接即将到来的事件",
+      "validFromChapter": 199,
       "validUntilChapter": null,
-      "sourceChapter": 198
+      "sourceChapter": 199
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "城西旧铺后巷废屋",
+      "validFromChapter": 199,
+      "validUntilChapter": null,
+      "sourceChapter": 199
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "金痕持续消散/最多半年寿命/黑石最多十来次",
+      "validFromChapter": 199,
+      "validUntilChapter": null,
+      "sourceChapter": 199
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "震动→凝重→坚定/金痕隐隐跳动/三月十四倒计时最后一天/手中持有两枚玉坠和纸张",
+      "validFromChapter": 199,
+      "validUntilChapter": null,
+      "sourceChapter": 199
     }
   ]
 }

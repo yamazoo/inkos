@@ -1,6 +1,15 @@
 {
   "hooks": [
     {
+      "hookId": "H-乱葬岗真相",
+      "startChapter": 0,
+      "type": "**198**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
       "hookId": "H-麦芽糖来源",
       "startChapter": 0,
       "type": "197",
@@ -10,34 +19,7 @@
       "notes": ""
     },
     {
-      "hookId": "H-烧鸡来源",
-      "startChapter": 0,
-      "type": "**198**",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": ""
-    },
-    {
       "hookId": "H-乌头种子来源",
-      "startChapter": 0,
-      "type": "197",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": ""
-    },
-    {
-      "hookId": "H-跛脚者身份",
-      "startChapter": 0,
-      "type": "197",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": ""
-    },
-    {
-      "hookId": "H-源根",
       "startChapter": 0,
       "type": "197",
       "status": "open",
@@ -55,18 +37,9 @@
       "notes": ""
     },
     {
-      "hookId": "H-乱葬岗真相",
+      "hookId": "H-源根",
       "startChapter": 0,
-      "type": "**198**",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": ""
-    },
-    {
-      "hookId": "H-老道士身份",
-      "startChapter": 0,
-      "type": "195",
+      "type": "197",
       "status": "open",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "",
@@ -80,6 +53,46 @@
       "lastAdvancedChapter": 0,
       "expectedPayoff": "",
       "notes": ""
+    },
+    {
+      "hookId": "H-老道士身份",
+      "startChapter": 195,
+      "type": "role",
+      "status": "progressing",
+      "lastAdvancedChapter": 199,
+      "expectedPayoff": "老道士完整身份和绢帛被撕原因揭示",
+      "payoffTiming": "near-term",
+      "notes": "本章推进：老道士临死前托人将遗书送到跛脚者处，遗书内容（万年前大劫，非天祸，乃人祸）正式交付陈守一。绢帛被撕原因仍未揭示。"
+    },
+    {
+      "hookId": "H-跛脚者身份",
+      "startChapter": 197,
+      "type": "role",
+      "status": "progressing",
+      "lastAdvancedChapter": 199,
+      "expectedPayoff": "跛脚者完整身份揭晓/师父遗愿完成",
+      "payoffTiming": "near-term",
+      "notes": "本章确认：跛脚者是第四脉相关传承者（师父的师父与祖父同门/后来改姓），手中持有玉坠和纸张，完成师父遗愿后一瘸一拐离去。身份基本明确但姓名仍未知。"
+    },
+    {
+      "hookId": "H-烧鸡来源",
+      "startChapter": 198,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 198,
+      "expectedPayoff": "烧鸡来源揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "本章仅 mention：梦里提到乱葬岗，但无新信息推进此伏笔。"
+    },
+    {
+      "hookId": "mystery-两枚玉坠的关-跛脚者手中的-玉坠为何与苏",
+      "startChapter": 199,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 199,
+      "expectedPayoff": "两枚玉坠的关系/跛脚者手中的玉坠为何与苏婉儿几乎一模一样",
+      "payoffTiming": "slow-burn",
+      "notes": "跛脚者掏出的玉坠和苏婉儿的几乎一模一样，这是一个新的未解问题：为什么两枚玉坠如此相似？它们之间有什么关联？是同一批锻造还是有什么更深的联系？"
     }
   ]
 }

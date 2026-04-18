@@ -4397,5 +4397,39 @@
       "completionTokens": 8291,
       "totalTokens": 8291
     }
+  },
+  {
+    "number": 199,
+    "title": "跛者留痕",
+    "status": "approved",
+    "wordCount": 3085,
+    "createdAt": "2026-04-18T21:41:59.688Z",
+    "updatedAt": "2026-04-18T21:49:07.931Z",
+    "auditIssues": [
+      "[info] 跛脚者提到'钥匙不止这三把，还有别的'，但没有展开说明这个悬念，留下一个未解钩子。这是伏笔铺垫还是信息缺失需要确认。",
+      "[info] 本章作为真相揭示章，信息密度很高：祖父主动跳入裂缝、三源先祖锻三把钥匙、第四脉传承、万年前大劫真相、两枚几乎一模一样的玉坠、周老头与跛脚者的关系等。这些信息大多在前文有铺垫但本章集中揭示，节奏较快。",
+      "[warning] 青鸾和赵猛在本章开头短暂出现（青鸾在窗台看陈守一、赵猛问今天还去城西吗）后便退出叙事，直到章节末尾也没有出现。他们在真相揭示过程中完全缺席，成为功能性背景板。",
+      "[info] SP-情感觉醒支线（赵猛梦见老赵三要他种树/青鸾的温情互动）在198章有'三人分食烧鸡'的情感深化场景，但199章完全转向真相揭示，情感觉醒支线暂停推进。考虑到下一章是终局决战，情感弧线可能需要在第200章集中呈现。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3085,
+      "postWriterNormalizeCount": 3085,
+      "postReviseCount": 3085,
+      "finalCount": 3085,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 19410,
+      "totalTokens": 19410
+    }
   }
 ]
