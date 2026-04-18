@@ -4054,5 +4054,37 @@
       "completionTokens": 15788,
       "totalTokens": 39317
     }
+  },
+  {
+    "number": 189,
+    "title": "槐荫絮语",
+    "status": "approved",
+    "wordCount": 2678,
+    "createdAt": "2026-04-18T19:03:31.501Z",
+    "updatedAt": "2026-04-18T19:11:28.565Z",
+    "auditIssues": [
+      "[info] 本章出现了2次'猛地'（青鸾'猛地'拍他、青鸾'猛地'坐起来），每3000字约0.67次，在安全阈值内（<1次/3000字），但建议适当替换以保持新鲜感。",
+      "[info] 章末连续抛出三个新悬念（乌头种子谜题、戴斗笠出城者、孙师兄在城里），信息量略大，但与喘息章定位相符，且各悬念均有足够铺垫。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2229,
+      "postWriterNormalizeCount": 3996,
+      "postReviseCount": 2678,
+      "finalCount": 2678,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 35129,
+      "completionTokens": 28043,
+      "totalTokens": 63172
+    }
   }
 ]

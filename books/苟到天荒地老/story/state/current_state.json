@@ -1,53 +1,53 @@
 {
-  "chapter": 188,
+  "chapter": 189,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
       "object": "灵泉石室（归来）",
-      "validFromChapter": 188,
+      "validFromChapter": 189,
       "validUntilChapter": null,
-      "sourceChapter": 188
+      "sourceChapter": 189
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "**生机大损/金痕继续消退（从三指宽缩至两指/赤金褪成淡黄）/修为从炼气二层跌至炼气一层后继续减弱/灵气吸纳速度更慢/经脉金色纹路仍在且更清晰/身体虚弱但稳定**",
-      "validFromChapter": 188,
+      "object": "**生机大损/金痕继续消退（淡得几乎看不见/三个月前小指粗→现在几乎消失）/修为持续减弱/灵气吸纳速度更慢/经脉金色纹路更清晰且往深处扎根/身体虚弱但稳定/黑石压制效果减弱**",
+      "validFromChapter": 189,
       "validUntilChapter": null,
-      "sourceChapter": 188
+      "sourceChapter": 189
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "**活着/继续拖住正本清源/监视城守府后街联络网/追查孙师兄去向/等待赵猛等人撤离**",
-      "validFromChapter": 188,
+      "object": "**活着/继续拖住正本清源/监视城守府后街联络网/追查孙师兄去向/监视城西五石散线索/监视城东济世堂方向戴斗笠出城者**",
+      "validFromChapter": 189,
       "validUntilChapter": null,
-      "sourceChapter": 188
+      "sourceChapter": 189
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "**金痕消散中/修为继续减弱/最多半年寿命**",
-      "validFromChapter": 188,
+      "object": "**金痕消散中/修为继续减弱/最多半年寿命/黑石最多再用十来次**",
+      "validFromChapter": 189,
       "validUntilChapter": null,
-      "sourceChapter": 188
+      "sourceChapter": 189
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "陈守一 vs 正本清源(城东+祠堂+济世堂+城守府后街+吴记肉铺+茶楼+吴记药行) / 陈守一 vs 封印代价",
-      "validFromChapter": 188,
+      "object": "陈守一 vs 正本清源(城东+祠堂+济世堂+城守府后街+吴记肉铺+茶楼+吴记药行+城西) / 陈守一 vs 封印代价",
+      "validFromChapter": 189,
       "validUntilChapter": null,
-      "sourceChapter": 188
+      "sourceChapter": 189
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "**祠堂暗道部分坍塌但不会阻止太久/正本清源不知道封印已修复/金痕继续消散/半年期限/内间情报网络完整揭示/孙师兄新线索（人在城里不在地窖）**",
-      "validFromChapter": 188,
+      "object": "**祠堂暗道部分坍塌但不会阻止太久/正本清源不知道封印已修复/金痕继续消散/半年期限/内间情报网络完整揭示/孙师兄新线索（人在城里不在地窖/临时竹签标记）/城西五石散新线索/城东戴斗笠者新线索/乌头种子+花瓣混合物新谜题**",
+      "validFromChapter": 189,
       "validUntilChapter": null,
-      "sourceChapter": 188
+      "sourceChapter": 189
     }
   ]
 }
