@@ -1,53 +1,53 @@
 {
-  "chapter": 195,
+  "chapter": 196,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "城西（从城西旧铺返回聚居点途中）",
-      "validFromChapter": 195,
+      "predicate": "当前冲突",
+      "object": "正本清源三月十四夜动手/源根真相完整揭露/灵泉大劫完整历史/祖父愧疚完整真相/周执事恨宗门/修复封印另一条路（乌头）确认",
+      "validFromChapter": 196,
       "validUntilChapter": null,
-      "sourceChapter": 195
+      "sourceChapter": 196
     },
     {
       "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "警觉/情报整合完成/内间真相完整揭露/源根发现/修复封印另一条路确认/与周老头建立联系/决定三月十四夜前往灵泉",
-      "validFromChapter": 195,
+      "predicate": "当前敌我",
+      "object": "青鸾/赵猛/苏婉儿/孙师兄/周老头(遗物已交付)/周执事(被邀请三月十四夜相见)",
+      "validFromChapter": 196,
       "validUntilChapter": null,
-      "sourceChapter": 195
+      "sourceChapter": 196
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "三月十四夜前往灵泉/准备应对正本清源动手/继续监视城西接头点/确认跛脚者身份",
-      "validFromChapter": 195,
+      "object": "三月十四夜前往灵泉/去城西接头点查看/继续调查周执事/找法子藏好残碑",
+      "validFromChapter": 196,
       "validUntilChapter": null,
-      "sourceChapter": 195
+      "sourceChapter": 196
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "聚居点",
+      "validFromChapter": 196,
+      "validUntilChapter": null,
+      "sourceChapter": 196
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
       "object": "金痕持续消散/修为持续减弱/最多半年寿命/黑石最多十来次/三月十四夜正本清源动手",
-      "validFromChapter": 195,
+      "validFromChapter": 196,
       "validUntilChapter": null,
-      "sourceChapter": 195
+      "sourceChapter": 196
     },
     {
       "subject": "protagonist",
-      "predicate": "当前敌我",
-      "object": "陈守一/青鸾/赵猛/苏婉儿/孙师兄/周老头(**真实身份揭示：周执事师弟的师兄/师父是三十年前七十三人之一/隐姓埋名三十年/与祖父同门师兄弟/真实身手不凡**)/周执事(**新揭示：周老头的师弟/被贬守灵泉三十年**)/城西接头点/正本清源(含内间)/周执事旧部",
-      "validFromChapter": 195,
+      "predicate": "主角状态",
+      "object": "坚定/沉重/情报整合完成/内间真相完整揭露/灵泉大劫完整历史已知/与周老头遗物交付完成/独自祭扫乱葬岗后情绪沉淀/决定继续行动",
+      "validFromChapter": 196,
       "validUntilChapter": null,
-      "sourceChapter": 195
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "**源根真相完整揭露：两界灵气之源/内间真正目的**/正本清源三月十四夜动手/内间目的是夺取源根控制两界灵气/跛脚者可能是内间成员/周执事与周老头是师兄弟关系/修复封印另一条路（乌头）确认/老道士绢帛被撕原因待查/聚居点位置暴露",
-      "validFromChapter": 195,
-      "validUntilChapter": null,
-      "sourceChapter": 195
+      "sourceChapter": 196
     }
   ]
 }
