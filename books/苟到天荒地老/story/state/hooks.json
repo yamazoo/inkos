@@ -7,8 +7,16 @@
       "status": "progressing",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "持续消耗中"
+      "notes": "持续消耗中，本章眉心发胀"
+    },
+    {
+      "hookId": "H-两天期限",
+      "startChapter": 176,
+      "type": "时间压力",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "notes": "祭品提前到位/时间比两天更紧"
     },
     {
       "hookId": "H-内间同袍联络",
@@ -18,7 +26,7 @@
       "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
       "payoffTiming": "near-term",
-      "notes": "联络点确认/暗号未知"
+      "notes": "**死结麻绳=内间暗号/金丝缠=死结同源**"
     },
     {
       "hookId": "H-城守府后街吴姓卖肉",
@@ -28,67 +36,7 @@
       "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
       "payoffTiming": "near-term",
-      "notes": "可能是内间同袍"
-    },
-    {
-      "hookId": "H-两界之争另有根源",
-      "startChapter": 173,
-      "type": "核心悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "mid-arc",
-      "notes": "证实内部有分裂"
-    },
-    {
-      "hookId": "H-第四脉身份",
-      "startChapter": 170,
-      "type": "核心悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "已完整揭示"
-    },
-    {
-      "hookId": "H-绢帛画像",
-      "startChapter": 170,
-      "type": "核心线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "等待后续"
-    },
-    {
-      "hookId": "H-正本清源计划",
-      "startChapter": 149,
-      "type": "核心阴谋",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "危机升级"
-    },
-    {
-      "hookId": "H-冥族存在",
-      "startChapter": 40,
-      "type": "核心悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "持续铺垫"
-    },
-    {
-      "hookId": "H-祠堂祭品",
-      "startChapter": 174,
-      "type": "重要线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "紧迫性增加"
+      "notes": "吴记肉铺掌柜=明日联络目标"
     },
     {
       "hookId": "H-正本清源坊市撒网",
@@ -101,13 +49,43 @@
       "notes": "危机升级"
     },
     {
-      "hookId": "H-两天期限",
-      "startChapter": 176,
-      "type": "**NEW-时间压力**",
+      "hookId": "H-祠堂祭品",
+      "startChapter": 174,
+      "type": "重要线索",
       "status": "progressing",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
-      "notes": "**新伏笔：时间比预想更紧迫**"
+      "payoffTiming": "near-term",
+      "notes": "紧迫性增加"
+    },
+    {
+      "hookId": "H-两界之争另有根源",
+      "startChapter": 173,
+      "type": "核心悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "mid-arc",
+      "notes": "内间势力长期存在"
+    },
+    {
+      "hookId": "H-第四脉身份",
+      "startChapter": 170,
+      "type": "核心悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "已完整揭示/梦中暗示关联"
+    },
+    {
+      "hookId": "H-梦中死结锁链",
+      "startChapter": 177,
+      "type": "**NEW-核心隐喻**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "notes": "**三源血脉封印结构暗示/内间同袍身份暗示**"
     }
   ]
 }

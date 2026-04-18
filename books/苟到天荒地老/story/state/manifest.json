@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 176,
+  "lastAppliedChapter": 177,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -400,6 +400,16 @@
     "H-冥族存在:lastAdvancedChapter normalized from \"164（春分之前打开通道/三源血脉太难寻）\" to 0",
     "H-祠堂祭品:lastAdvancedChapter normalized from \"**176（子时前后油布蒙车进祠堂/三四人/灰衣/祭品提前到位/门从里面锁了）**\" to 0",
     "H-正本清源坊市撒网:lastAdvancedChapter normalized from \"**176（东市人数比昨天多一倍/青鸾甩掉两人跟了三条街）**\" to 0",
-    "H-两天期限:lastAdvancedChapter normalized from \"**176（春分之前/祭品提前到位说明时间更紧/陈守一判断可能没有两天）**\" to 0"
+    "H-两天期限:lastAdvancedChapter normalized from \"**176（春分之前/祭品提前到位说明时间更紧/陈守一判断可能没有两天）**\" to 0",
+    "H-金痕消耗真相:lastAdvancedChapter normalized from \"177（梦中发热/眉心发胀）\" to 0",
+    "H-两天期限:lastAdvancedChapter normalized from \"177（确认两天/梦中强化）\" to 0",
+    "H-内间同袍联络:lastAdvancedChapter normalized from \"**177（死结麻绳暗号揭露/青鸾线索）**\" to 0",
+    "H-城守府后街吴姓卖肉:lastAdvancedChapter normalized from \"177（确认手腕青印/明日联络目标）\" to 0",
+    "H-正本清源坊市撒网:lastAdvancedChapter normalized from \"177（祭品提前到位/情节延续）\" to 0",
+    "H-祠堂祭品:lastAdvancedChapter normalized from \"177（确认城外祠堂是祭坛/祭品到位）\" to 0",
+    "H-两界之争另有根源:lastAdvancedChapter normalized from \"177（内间暗号揭露/内部分裂证实）\" to 0",
+    "H-第四脉身份:lastAdvancedChapter normalized from \"177（梦中锁链隐喻/祖父幻象暗示）\" to 0",
+    "H-梦中死结锁链:status normalized from \"**new**\" to \"open\"",
+    "H-梦中死结锁链:lastAdvancedChapter normalized from \"**177（梦中揭示：金链+银链死扣/祖父穿死结麻绳外袍）**\" to 0"
   ]
 }
