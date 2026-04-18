@@ -3242,5 +3242,41 @@
       "completionTokens": 11049,
       "totalTokens": 32884
     }
+  },
+  {
+    "number": 166,
+    "title": "残简解码",
+    "status": "ready-for-review",
+    "wordCount": 2367,
+    "createdAt": "2026-04-18T00:59:08.254Z",
+    "updatedAt": "2026-04-18T00:59:08.254Z",
+    "auditIssues": [
+      "[info] 章节结尾处黑雾出现后的情绪张力略有不足：青鸾报告黑雾后主角立即进入推理模式，没有充分展现'封印三年内有裂口'这一核心威胁被部分兑现的压迫感",
+      "[info] 玉简信息解读节奏略快：从'看出一部分'到'三十二份祭品'的信息跃进，中间的推理过程和灵力解读细节可以再充实一层",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H-冥族存在（中程，已逾期）、H-金痕消耗真相（中程，已逾期）、H-灵气衰减真相（慢烧，可回收），另有 3 条。",
+      "[warning] 本章新开了 2 个伏笔，但没有回收任何旧债。",
+      "[warning] 83个段落里有53个不足35字，段落被切得过碎。",
+      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3439,
+      "postWriterNormalizeCount": 2367,
+      "postReviseCount": 0,
+      "finalCount": 2367,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 39359,
+      "completionTokens": 15399,
+      "totalTokens": 54758
+    }
   }
 ]

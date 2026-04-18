@@ -1,53 +1,53 @@
 {
-  "chapter": 165,
+  "chapter": 166,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "正本清源撕裂封印（井是通道碎片/祭品撑开裂缝/春分前打开/抓人当祭品）vs 三源血脉修复封印（寿元不足两年/金痕持续消耗/新增两条替代路线）",
-      "validFromChapter": 165,
-      "validUntilChapter": null,
-      "sourceChapter": 165
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前敌我",
-      "object": "苏婉儿(同行者/三源同源者/核心盟友/被盯上)/赵猛(同行者/誓言同行/被盯上)/青鸾(同行者/被盯上)/守夜者(关键盟友/三天寿命)",
-      "validFromChapter": 165,
-      "validUntilChapter": null,
-      "sourceChapter": 165
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "查清井的秘密/查清正本清源人数和祭品数量/找修复封印的别的方法（玉坠力量/与冥王谈判）/阻止正本清源打开通道/传递情报警告三源后人",
-      "validFromChapter": 165,
-      "validUntilChapter": null,
-      "sourceChapter": 165
-    },
-    {
-      "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点院中→石屋门口",
-      "validFromChapter": 165,
+      "object": "聚居点石屋→准备出发前往城东",
+      "validFromChapter": 166,
       "validUntilChapter": null,
-      "sourceChapter": 165
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "寿元不足两年（持续消耗中）/隐息符用尽/神识消耗/体力精力部分恢复/三个月期限（春分之前）",
-      "validFromChapter": 165,
-      "validUntilChapter": null,
-      "sourceChapter": 165
+      "sourceChapter": 166
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "金痕蛰伏/玉坠温度升高（守夜者离去后）/决心坚定/决断形成/情感觉醒持续",
-      "validFromChapter": 165,
+      "object": "金痕蛰伏/玉坠先温热后转凉（守夜者三天期限进行中）/决心坚定/决断形成/情感觉醒持续/行动方案确立",
+      "validFromChapter": 166,
       "validUntilChapter": null,
-      "sourceChapter": 165
+      "sourceChapter": 166
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "查清正本清源祭坛位置/验证令牌可用性/阻止正本清源打开通道/三天期限第一天紧迫",
+      "validFromChapter": 166,
+      "validUntilChapter": null,
+      "sourceChapter": 166
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "寿元不足两年（持续消耗中）/隐息符用尽/神识消耗/体力精力部分恢复/三天期限（春分之前）",
+      "validFromChapter": 166,
+      "validUntilChapter": null,
+      "sourceChapter": 166
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "苏婉儿(同行者/三源同源者/核心盟友/被盯上)/赵猛(同行者/誓言同行/被盯上)/青鸾(同行者/留守聚居点/被盯上)/守夜者(关键盟友/三天寿命倒计时)",
+      "validFromChapter": 166,
+      "validUntilChapter": null,
+      "sourceChapter": 166
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "正本清源撕裂封印（井是通道碎片/祭品撑开裂缝/三十二份祭品/春分前完成/井口是障眼法/祭坛在别处）vs 三源血脉修复封印（寿元不足两年/金痕持续消耗/新增两条替代路线/令牌可用性待验证）",
+      "validFromChapter": 166,
+      "validUntilChapter": null,
+      "sourceChapter": 166
     }
   ]
 }

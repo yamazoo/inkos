@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 165,
+  "lastAppliedChapter": 166,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -364,6 +364,7 @@
     "H-冥族存在:lastAdvancedChapter normalized from \"164章：井底有冥物/黑色枯手/幽绿眼眶火焰/井通往冥界\" to 0",
     "H-守夜者位置:status normalized from \"持续\" to \"open\"",
     "H-守夜者位置:lastAdvancedChapter normalized from \"164章：主角决心阻止正本清源/守夜者的责任开始传递\" to 0",
-    "H-坊间失踪人口:lastAdvancedChapter normalized from \"164章：失踪人口是被抓去当祭品/赵猛弟弟可能也是祭品\" to 0"
+    "H-坊间失踪人口:lastAdvancedChapter normalized from \"164章：失踪人口是被抓去当祭品/赵猛弟弟可能也是祭品\" to 0",
+    "H-祖父身份之谜:status normalized from \"**new**\" to \"open\""
   ]
 }
