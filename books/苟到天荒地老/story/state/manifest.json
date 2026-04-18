@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 180,
+  "lastAppliedChapter": 181,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -417,6 +417,7 @@
     "H-金痕消耗真相:lastAdvancedChapter normalized from \"**179章：获得压制道具（黑石）/ 不能根治/ 根治在锁里**\" to 0",
     "H-老道士遗物三件:lastAdvancedChapter normalized from \"**179章：铜片/黑石/遗书三件遗物全部获得**\" to 0",
     "H-内间完整真相:lastAdvancedChapter normalized from \"**179章：内间目的（牟利）/ 三百年前背叛 / 玄清宗内鬼长期存在**\" to 0",
-    "H-金痕幻象:lastAdvancedChapter normalized from \"**179章：金痕视野：焦土/石台/金痕年轻人/裂缝黑触手/白袍女人喊\"大哥\"**\" to 0"
+    "H-金痕幻象:lastAdvancedChapter normalized from \"**179章：金痕视野：焦土/石台/金痕年轻人/裂缝黑触手/白袍女人喊\"大哥\"**\" to 0",
+    "H-内间完整真相:status normalized from \"mention\" to \"open\""
   ]
 }

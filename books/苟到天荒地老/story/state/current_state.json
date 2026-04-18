@@ -1,133 +1,53 @@
 {
-  "chapter": 180,
+  "chapter": 181,
   "facts": [
     {
-      "subject": "current_state",
-      "predicate": "**当前收获**",
-      "object": "老道士遗物三件 / 锁不可开原因揭示 / 两界之争根源揭示 / 内间完整真相 / 金痕压制道具",
-      "validFromChapter": 179,
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "聚居点石屋",
+      "validFromChapter": 181,
       "validUntilChapter": null,
-      "sourceChapter": 179
-    },
-    {
-      "subject": "current_state",
-      "predicate": "**关键信息**",
-      "object": "锁打不开因自己是钥匙 / 三百年前背叛 / 玄清宗内鬼 / 内间目的（牟利）/ 老道士守夜三百年使命结束",
-      "validFromChapter": 179,
-      "validUntilChapter": null,
-      "sourceChapter": 179
-    },
-    {
-      "subject": "current_state",
-      "predicate": "**金痕**",
-      "object": "持续发热→暂时安静（获得压制道具）",
-      "validFromChapter": 179,
-      "validUntilChapter": null,
-      "sourceChapter": 179
-    },
-    {
-      "subject": "current_state",
-      "predicate": "**明日计划**",
-      "object": "**去灵泉**（原联络任务变更）",
-      "validFromChapter": 179,
-      "validUntilChapter": null,
-      "sourceChapter": 179
-    },
-    {
-      "subject": "current_state",
-      "predicate": "**时限**",
-      "object": "两天期限（进行中）/ 春分祭典 / 老道士遗言揭示时间比两天更紧",
-      "validFromChapter": 179,
-      "validUntilChapter": null,
-      "sourceChapter": 179
-    },
-    {
-      "subject": "current_state",
-      "predicate": "**寿元**",
-      "object": "不足两年（持续消耗中）",
-      "validFromChapter": 179,
-      "validUntilChapter": null,
-      "sourceChapter": 179
-    },
-    {
-      "subject": "current_state",
-      "predicate": "**位置**",
-      "object": "聚居点石屋（深夜→黎明）",
-      "validFromChapter": 179,
-      "validUntilChapter": null,
-      "sourceChapter": 179
-    },
-    {
-      "subject": "current_state",
-      "predicate": "**新角色死亡**",
-      "object": "老道士（周沉/周守夜人）- 守夜使命结束",
-      "validFromChapter": 179,
-      "validUntilChapter": null,
-      "sourceChapter": 179
-    },
-    {
-      "subject": "current_state",
-      "predicate": "**装备**",
-      "object": "铜钱（陈记）/ 灰蓝色衣裳（青鸾缝制，双层内袋）/ 母亲玉佩 / **铜片（\"吾孙\"，老道士遗物）** / **黑色石头（压制金痕消耗/与金痕共振，老道士遗物）** / **泛黄纸（老道士遗书，揭示锁的秘密和内间真相）**",
-      "validFromChapter": 179,
-      "validUntilChapter": null,
-      "sourceChapter": 179
+      "sourceChapter": 181
     },
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "祠堂势力（跛脚者）+ 内间真相（牟利非守护）",
-      "validFromChapter": 180,
+      "predicate": "主角状态",
+      "object": "眉心胀意缓解（黑石压制）；金痕跳动被压下只剩一丝温热；遗书内容完整掌握；决心坚定；整理完出发物品",
+      "validFromChapter": 181,
       "validUntilChapter": null,
-      "sourceChapter": 180
+      "sourceChapter": 181
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "**明天去灵泉**（任务变更：原计划去南面林子地窖调查改为去灵泉）",
+      "validFromChapter": 181,
+      "validUntilChapter": null,
+      "sourceChapter": 181
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "黑石能量持续消耗（用不了太久）；金痕仍是消耗根源",
+      "validFromChapter": 181,
+      "validUntilChapter": null,
+      "sourceChapter": 181
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
       "object": "陈守一 + 赵猛 + 青鸾 三人同行",
-      "validFromChapter": 180,
+      "validFromChapter": 181,
       "validUntilChapter": null,
-      "sourceChapter": 180
+      "sourceChapter": 181
     },
     {
       "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "去南面林子调查地窖",
-      "validFromChapter": 180,
+      "predicate": "当前冲突",
+      "object": "祠堂势力（跛脚者）+ 内间真相（牟利非守护）+ 三天后春分祭典",
+      "validFromChapter": 181,
       "validUntilChapter": null,
-      "sourceChapter": 180
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "聚居点石屋 → 南面林子方向（行动确立）",
-      "validFromChapter": 180,
-      "validUntilChapter": null,
-      "sourceChapter": 180
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "黑石能量持续消耗（用不了太久）",
-      "validFromChapter": 180,
-      "validUntilChapter": null,
-      "sourceChapter": 180
-    },
-    {
-      "subject": "current_state",
-      "predicate": "项目",
-      "object": "状态",
-      "validFromChapter": 179,
-      "validUntilChapter": null,
-      "sourceChapter": 179
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "眉心胀意缓解（黑石压制）；金痕边缘泛青紫；遗书内容完整掌握；决心坚定",
-      "validFromChapter": 180,
-      "validUntilChapter": null,
-      "sourceChapter": 180
+      "sourceChapter": 181
     }
   ]
 }
