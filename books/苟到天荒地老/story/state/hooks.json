@@ -3,74 +3,118 @@
     {
       "hookId": "hook-1",
       "startChapter": 0,
-      "type": "unspecified",
-      "status": "open",
+      "type": "mystery",
+      "status": "progressing",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": "story/pending_hooks.md#H-乱葬岗真相: open | open | 乱葬岗真相 | mid-arc | 本章推进：乱葬岗埋的是三十年前七十三人/陈守义死前被埋于此"
+      "expectedPayoff": "**乱葬岗真相/石板被刮原因/数字含义/乱葬岗下还埋着什么**",
+      "payoffTiming": "mid-arc",
+      "notes": "本章重大推进：乱葬岗实地探查"
     },
     {
       "hookId": "hook-2",
       "startChapter": 0,
-      "type": "unspecified",
+      "type": "role",
       "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": "story/pending_hooks.md#H-孙师兄身份推测: **新种/role** | open | 孙师兄完整身份揭示 | **新种：陈守一推测孙师兄可能是祖父师妹的后人（祖母提起过/手艺极好/嫁去外地/糖方传了好几代）**"
+      "expectedPayoff": "孙师兄完整身份/令牌绢帛铜牌来源/师妹后人现状",
+      "payoffTiming": "mid-arc",
+      "notes": "新推进：师妹后人身份确认"
     },
     {
       "hookId": "hook-3",
       "startChapter": 0,
-      "type": "unspecified",
+      "type": "mystery",
       "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": "story/pending_hooks.md#H-源根与血脉关系: **新种/mystery** | open | 源根与四脉血脉关系的完整揭示 | **新种：三源先祖用三脉合一引源根入锁链/引源根出锁链需要四脉血脉同时在场/陈守一是第四脉/正本清源必须凑齐四脉血脉**"
+      "expectedPayoff": "源根与四脉血脉关系的完整揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "上章已揭示：三源先祖三脉合一引源根入锁链/四脉同时在场引源根出"
     },
     {
       "hookId": "hook-4",
       "startChapter": 0,
-      "type": "unspecified",
+      "type": "mystery",
       "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": "story/pending_hooks.md#H-祖父绢帛被撕: **新种/mystery** | open | 祖父绢帛被撕原因揭示 | **新种：祖父怕陈守一看完整条路后忍不住去试，所以撕掉一角**"
+      "expectedPayoff": "祖父绢帛被撕原因揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "上章已揭示：怕陈守一忍不住去试"
     },
     {
       "hookId": "hook-5",
       "startChapter": 0,
-      "type": "unspecified",
-      "status": "open",
+      "type": "mystery",
+      "status": "progressing",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": "story/pending_hooks.md#mystery-两枚玉坠的关-跛脚者手中的-玉坠为何与苏: mystery | progressing | 两枚玉坠的关系/跛脚者手中的玉坠为何与苏婉儿几乎一模一样 | slow-burn | 本章无新推进"
+      "expectedPayoff": "两枚玉坠的关系",
+      "payoffTiming": "slow-burn",
+      "notes": "本章无新推进"
     },
     {
       "hookId": "hook-6",
       "startChapter": 0,
-      "type": "unspecified",
+      "type": "mystery",
       "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": "story/pending_hooks.md#H-乌头种子来源: open | open | 乌头种子来源揭示 | mid-arc | 本章无新推进"
+      "expectedPayoff": "乌头种子来源揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "本章无新推进（仅提及金痕压制）"
     },
     {
       "hookId": "hook-7",
       "startChapter": 0,
-      "type": "unspecified",
+      "type": "mystery",
       "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": "story/pending_hooks.md#H-烧鸡来源: mystery | open | 烧鸡来源揭示 | mid-arc | 本章无新推进"
+      "expectedPayoff": "烧鸡来源揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "本章无新推进"
     },
     {
       "hookId": "hook-8",
       "startChapter": 0,
-      "type": "unspecified",
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "修复封印另一条路完整揭示",
+      "payoffTiming": "mid-arc",
+      "notes": "上章已揭示：引导源根/容器引出/四脉同时在场"
+    },
+    {
+      "hookId": "hook-9",
+      "startChapter": 201,
+      "type": "**mystery**",
       "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": "story/pending_hooks.md#H-修复封印另一条路: open | progressing | 修复封印另一条路 | mid-arc | **新揭示：用容器引出源根力量而非堵住/需要四脉血脉同时在场/祖父找到这条路但凑不齐所需之物**"
+      "expectedPayoff": "**陈守义血脉秘密/乱葬岗还埋着什么**",
+      "notes": "**新种：陈守义血脉之谜**"
+    },
+    {
+      "hookId": "hook-10",
+      "startChapter": 201,
+      "type": "**mystery**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**石板被刮真相**",
+      "notes": "**新种：石板被刮之谜**"
+    },
+    {
+      "hookId": "hook-11",
+      "startChapter": 201,
+      "type": "**mystery**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**容器具体信息**",
+      "notes": "**新种：源根容器之谜**"
+    },
+    {
+      "hookId": "hook-12",
+      "startChapter": 201,
+      "type": "**mystery**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**三源先祖三支后人下落**",
+      "notes": "**新种：其他三脉后人**"
     }
   ]
 }

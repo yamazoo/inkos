@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 200,
+  "lastAppliedChapter": 201,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -516,6 +516,12 @@
     "H-老道士身份:startChapter normalized from \"角色\" to 0",
     "H-老道士身份:status normalized from \"绢帛被撕原因待查/祖父同门师兄弟关系仍待揭示\" to \"open\"",
     "H-周执事身份:startChapter normalized from \"角色\" to 0",
-    "H-周执事身份:status normalized from \"兄长死于灵泉→恨上宗门/被贬三十年/陈守一邀请三月十四夜相见\" to \"open\""
+    "H-周执事身份:status normalized from \"兄长死于灵泉→恨上宗门/被贬三十年/陈守一邀请三月十四夜相见\" to \"open\"",
+    "hook-1:lastAdvancedChapter normalized from \"**201：乱葬岗确认埋葬七十三人/陈守义葬于此/石板被刮只留数字（一二三/五十二/三）/祖父年年清明来/陈守义替祖父来/祖父怕立碑太招眼/祖父坟也无碑**\" to 0",
+    "hook-2:lastAdvancedChapter normalized from \"**201：确认孙师兄可能是祖父师妹后人（祖母证实/嫁去南边/手艺好/糖方传代）+ 推测令牌绢帛铜牌流散后聚拢到陈守一手中是\"三源先祖的东西总会回来\"**\" to 0",
+    "hook-9:lastAdvancedChapter normalized from \"**201：陈守义被灌注过/血脉里的东西还在/祖父单独藏他可能为保护血脉或其他东西/乱葬岗下可能还埋着什么**\" to 0",
+    "hook-10:lastAdvancedChapter normalized from \"**201：有人来刮掉石板名字/只留数字/为什么不砸碎石板/是谁做的**\" to 0",
+    "hook-11:lastAdvancedChapter normalized from \"**201：引导源根需要容器/容器形状/大小/承载量/灵泉附近可能有线索**\" to 0",
+    "hook-12:lastAdvancedChapter normalized from \"**201：三源先祖还有三支后人散落外面/要去找/孙师兄可能是线索**\" to 0"
   ]
 }

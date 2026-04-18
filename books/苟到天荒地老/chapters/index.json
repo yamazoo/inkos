@@ -4460,5 +4460,43 @@
       "completionTokens": 20556,
       "totalTokens": 39161
     }
+  },
+  {
+    "number": 201,
+    "title": "荒丘旧骨",
+    "status": "approved",
+    "wordCount": 4468,
+    "createdAt": "2026-04-18T22:12:02.555Z",
+    "updatedAt": "2026-04-18T22:12:10.562Z",
+    "auditIssues": [
+      "[info] 第200章揭示的'容器'概念在本章被提及但未深入：'我想确认一下，现在灵泉的状况到底如何'以及'答案可能就在灵泉附近'。主角意识到周老头提到的容器是关键，但未展开具体推理或给出方向性判断。",
+      "[info] 本章存在视角轻微飘移：结尾处'陈守一闭上眼睛，这一次没有再想那些乱七八糟的念头'后，窗外仍有'月光如水'和'远处传来一声夜枭的啼叫'的环境描写，属于较轻微的全知收尾视角，在过渡章中属于常见手法，影响有限。",
+      "[info] 本章情绪弧线较为平坦：陈守一全程处于'沉思→坚定→沉思→坚定'的反复，情绪强度始终维持在5-6之间，无明显起伏或转折点。对比近期章节：第200章有明显情绪波峰（震动→凝重→坚定→沉重），第199章有确认跛脚者的紧张收尾，本章缺少同等量级的情绪锚点。",
+      "[warning] 套话词（似乎/可能/或许等）密度为4.2次/千字（阈值>3），语气过于模糊犹豫",
+      "[info] 检测到5句连续以相同开头的句子，呈现列表式AI生成结构",
+      "[warning] 连续出现4个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [
+      "第201章经过一次字数归一化后仍超出硬区间（2182-3818，实际 4468）。"
+    ],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2014,
+      "postWriterNormalizeCount": 4468,
+      "postReviseCount": 0,
+      "finalCount": 4468,
+      "normalizeApplied": true,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 20706,
+      "completionTokens": 10367,
+      "totalTokens": 31073
+    }
   }
 ]

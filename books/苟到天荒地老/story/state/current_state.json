@@ -1,53 +1,53 @@
 {
-  "chapter": 200,
+  "chapter": 201,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
       "object": "聚居点石屋",
-      "validFromChapter": 200,
+      "validFromChapter": 201,
       "validUntilChapter": null,
-      "sourceChapter": 200
+      "sourceChapter": 201
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "震动→凝重→坚定/金痕隐隐跳动/情绪沉淀/三月十四倒计时（还剩两天）",
-      "validFromChapter": 200,
+      "object": "沉重→沉思→坚定→平静→坚定/金痕隐隐跳动（比之前活跃）/玉坠热度继续降低（但未完全消退）/三月十四倒计时（还剩两天）",
+      "validFromChapter": 201,
       "validUntilChapter": null,
-      "sourceChapter": 200
+      "sourceChapter": 201
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "三月十四夜行动（酉时城西接头点 + 灵泉）/确认孙师兄身份/准备迎接正本清源行动",
-      "validFromChapter": 200,
+      "object": "明天灵泉侦察（确认源根残留和容器线索）+ 后天城西接头点见孙师兄",
+      "validFromChapter": 201,
       "validUntilChapter": null,
-      "sourceChapter": 200
+      "sourceChapter": 201
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "金痕持续消散/最多半年寿命/黑石最多十来次",
-      "validFromChapter": 200,
+      "object": "金痕持续消散/最多半年寿命/黑石即将耗尽（纹路快看不见）",
+      "validFromChapter": 201,
       "validUntilChapter": null,
-      "sourceChapter": 200
+      "sourceChapter": 201
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "青鸾/赵猛/苏婉儿/孙师兄/周老头/陈守义（已故）",
-      "validFromChapter": 200,
+      "object": "青鸾/赵猛/苏婉儿/孙师兄/周老头",
+      "validFromChapter": 201,
       "validUntilChapter": null,
-      "sourceChapter": 200
+      "sourceChapter": 201
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "正本清源三月十四夜动手/源根被接走/万年前大劫真相/四脉血脉与源根的关系/孙师兄身份之谜",
-      "validFromChapter": 200,
+      "object": "三月十四夜行动在即/源根容器之谜/孙师兄真实身份待确认/乱葬岗石板被刮之谜",
+      "validFromChapter": 201,
       "validUntilChapter": null,
-      "sourceChapter": 200
+      "sourceChapter": 201
     }
   ]
 }
