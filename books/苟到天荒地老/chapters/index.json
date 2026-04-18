@@ -3416,5 +3416,41 @@
       "completionTokens": 10581,
       "totalTokens": 10581
     }
+  },
+  {
+    "number": 171,
+    "title": "夜深推演",
+    "status": "approved",
+    "wordCount": 3061,
+    "createdAt": "2026-04-18T15:42:39.607Z",
+    "updatedAt": "2026-04-18T15:42:52.915Z",
+    "auditIssues": [
+      "[info] 青鸾发现令牌背面小孔这一细节略显突兀。陈守一持有令牌并多次使用，却未注意到背面有针尖大小的孔洞，而青鸾只是借看片刻便发现。",
+      "[info] 本章以对话交代背景信息为主，通过陈守一对赵猛、青鸾复述万年前大劫真相、第四脉身份、令牌机制等内容。信息密度较大，对话承担了较多'说明书'功能。",
+      "[info] 苏婉儿作为核心盟友（当前状态卡标注为'同行者/三源同源者/核心盟友'）在本章完全未出场。170章她留守聚居点，171章陈守一回石屋分享重要情报时未提及她。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H-冥族存在（中程，已逾期）、H-三源血脉（近期，已逾期）、核心线索-本卷-冥王曾试图谈（近期，已逾期）。",
+      "[warning] 114个段落里有79个不足35字，段落被切得过碎。",
+      "[warning] 连续出现17个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3061,
+      "postWriterNormalizeCount": 3061,
+      "postReviseCount": 0,
+      "finalCount": 3061,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 13985,
+      "totalTokens": 13985
+    }
   }
 ]

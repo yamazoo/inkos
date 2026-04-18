@@ -1,53 +1,53 @@
 {
-  "chapter": 170,
+  "chapter": 171,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "两棵槐树宅院内部（甬道→石室→返回聚居点途中）",
-      "validFromChapter": 170,
+      "predicate": "当前冲突",
+      "object": "正本清源撕裂封印（三十二份祭品/春分前完成/核心人物不明）vs 三源血脉修复封印（寿元不足两年/金痕持续消耗/令牌可用/已知第四脉代价）",
+      "validFromChapter": 171,
       "validUntilChapter": null,
-      "sourceChapter": 170
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "金痕蛰伏/玉坠持续降温/三天期限第一天进行中/令牌验证成功/获得祖父遗物（铜钱-陈记）/决心坚定/决断形成/行动方案确立/情报整合完成/令牌可用/已知万年前大劫完整真相/已知第四脉身份/已知祖父完整身份",
-      "validFromChapter": 170,
-      "validUntilChapter": null,
-      "sourceChapter": 170
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "返回聚居点/分析情报/制定下一步行动计划",
-      "validFromChapter": 170,
-      "validUntilChapter": null,
-      "sourceChapter": 170
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "寿元不足两年/隐息符用尽/神识消耗/体力精力部分消耗/三天期限（春分之前）/玉坠降温加速",
-      "validFromChapter": 170,
-      "validUntilChapter": null,
-      "sourceChapter": 170
+      "sourceChapter": 171
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "苏婉儿(同行者/三源同源者/核心盟友/被盯上/留守)",
-      "validFromChapter": 170,
+      "object": "苏婉儿(同行者/核心盟友/留守) | 赵猛(同行者/誓言同行/外出打听消息) | 青鸾(同行者/明日继续盯梢枯叶铺子)",
+      "validFromChapter": 171,
       "validUntilChapter": null,
-      "sourceChapter": 170
+      "sourceChapter": 171
     },
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "正本清源撕裂封印（祭坛在城东西南/三处据点/最大宅院门口两棵槐树/需要令牌进入/三十二份祭品/春分前完成）vs 三源血脉修复封印（寿元不足两年/金痕持续消耗/令牌可用性已验证/玉坠封着母亲力量待用/已知第四脉身份/已知祖父完整身份）",
-      "validFromChapter": 170,
+      "predicate": "当前目标",
+      "object": "阻止正本清源撕裂封印/传递情报警告三源后人/寻找修复封印的别的方法",
+      "validFromChapter": 171,
       "validUntilChapter": null,
-      "sourceChapter": 170
+      "sourceChapter": 171
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "聚居点石屋内",
+      "validFromChapter": 171,
+      "validUntilChapter": null,
+      "sourceChapter": 171
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "寿元不足两年/金痕持续消耗/三天期限（剩余两天）/玉坠降温加速",
+      "validFromChapter": 171,
+      "validUntilChapter": null,
+      "sourceChapter": 171
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "金痕蛰伏/玉坠持续降温/三天期限已过一夜剩余两天/已知万年前大劫完整真相/已知第四脉身份/已知祖父完整身份/已知第四脉代价（用寿元补锁链缺口）/已知祖父可能是卧底/决心坚定但计划沉重/整夜未眠",
+      "validFromChapter": 171,
+      "validUntilChapter": null,
+      "sourceChapter": 171
     }
   ]
 }
