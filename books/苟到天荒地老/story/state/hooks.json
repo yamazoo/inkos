@@ -1,104 +1,85 @@
 {
   "hooks": [
     {
-      "hookId": "H-源根",
-      "startChapter": 194,
-      "type": "世界设定",
+      "hookId": "H-麦芽糖来源",
+      "startChapter": 0,
+      "type": "197",
       "status": "open",
-      "lastAdvancedChapter": 197,
-      "expectedPayoff": "三月十四夜",
-      "payoffTiming": "mid-arc",
-      "notes": "**本章重大揭示：三十年前七十三人死后灵泉冒出一缕气被\"接走\"/祖父遗书有\"源根\"二字/源根=两界灵气之源=万年前大劫真正起因**"
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
     },
     {
-      "hookId": "H-城西接头点",
-      "startChapter": 196,
-      "type": "地点",
-      "status": "resolved",
-      "lastAdvancedChapter": 197,
-      "expectedPayoff": "三月十四夜酉时",
-      "payoffTiming": "mid-arc",
-      "notes": "**本章执行完成：找到接头点/获得约见条（三月十四夜酉时/铁铺后巷垃圾桶旁）/约见条字迹清秀像女子笔迹**"
-    },
-    {
-      "hookId": "H-乱葬岗真相",
-      "startChapter": 191,
-      "type": "世界设定",
-      "status": "progressing",
-      "lastAdvancedChapter": 197,
-      "expectedPayoff": "祭典期间",
-      "payoffTiming": "near-term",
-      "notes": "本章赵猛发现一座没立碑的小土堆/可能是尸骨不全或身份特殊"
-    },
-    {
-      "hookId": "H-周执事身份",
-      "startChapter": 195,
-      "type": "角色",
-      "status": "progressing",
-      "lastAdvancedChapter": 196,
-      "expectedPayoff": "三月十四夜",
-      "payoffTiming": "near-term",
-      "notes": "兄长死于灵泉→恨上宗门；被贬守灵泉三十年真相（想拦没拦住）；周老头讲述完整背景"
+      "hookId": "H-烧鸡来源",
+      "startChapter": 0,
+      "type": "**198**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
     },
     {
       "hookId": "H-乌头种子来源",
-      "startChapter": 195,
-      "type": "物品",
-      "status": "progressing",
-      "lastAdvancedChapter": 197,
-      "expectedPayoff": "mid-arc",
-      "payoffTiming": "mid-arc",
-      "notes": "油纸包里黑色粉末确认是乌头粉/与周老头给的种子一致"
-    },
-    {
-      "hookId": "H-周老头身份",
-      "startChapter": 194,
-      "type": "角色",
-      "status": "progressing",
-      "lastAdvancedChapter": 196,
-      "expectedPayoff": "已揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "周执事师弟的师兄/师父是三十年前七十三人之一/隐姓埋名三十年/与祖父同门师兄弟/真实身手不凡/送绢帛铜环乌头种子/警示正本清源里有内间"
-    },
-    {
-      "hookId": "H-修复封印另一条路",
-      "startChapter": 193,
-      "type": "悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 197,
-      "expectedPayoff": "mid-arc",
-      "payoffTiming": "mid-arc",
-      "notes": "乌头种子/需种在灵泉边上吸收灵气/周执事可能看守这些种子/乌头可锻造锁链不必燃烧寿元"
-    },
-    {
-      "hookId": "H-老道士身份",
-      "startChapter": 194,
-      "type": "角色",
+      "startChapter": 0,
+      "type": "197",
       "status": "open",
-      "lastAdvancedChapter": 195,
-      "expectedPayoff": "待揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "绢帛被撕原因待查/周老头不知道老道士是谁/祖父同门师兄弟关系仍待揭示"
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
     },
     {
       "hookId": "H-跛脚者身份",
-      "startChapter": 195,
-      "type": "角色",
-      "status": "progressing",
-      "lastAdvancedChapter": 197,
-      "expectedPayoff": "三月十四夜前",
-      "payoffTiming": "mid-arc",
-      "notes": "**孙师兄警告城西有跛脚者（灰布衣/短刀/左腿跛）不要招惹；陈守一亲眼确认此人从后院出来；疑似接头点内部人员**"
+      "startChapter": 0,
+      "type": "197",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
     },
     {
-      "hookId": "H-麦芽糖来源",
-      "startChapter": 197,
-      "type": "悬念",
+      "hookId": "H-源根",
+      "startChapter": 0,
+      "type": "197",
       "status": "open",
-      "lastAdvancedChapter": 197,
-      "expectedPayoff": "待揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "**神秘人送到孙师兄门口/来去无踪/无毒/谁送的？**"
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H-修复封印另一条路",
+      "startChapter": 0,
+      "type": "197",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H-乱葬岗真相",
+      "startChapter": 0,
+      "type": "**198**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H-老道士身份",
+      "startChapter": 0,
+      "type": "195",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H-周执事身份",
+      "startChapter": 0,
+      "type": "195",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
     }
   ]
 }

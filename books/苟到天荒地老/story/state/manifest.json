@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 197,
+  "lastAppliedChapter": 198,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -497,6 +497,25 @@
     "H-周执事身份:status normalized from \"**新揭示**\" to \"open\"",
     "H-乌头种子来源:status normalized from \"**新揭示**\" to \"open\"",
     "H-源根:status normalized from \"**新揭示**\" to \"open\"",
-    "H-麦芽糖来源:status normalized from \"**新种**\" to \"open\""
+    "H-麦芽糖来源:status normalized from \"**新种**\" to \"open\"",
+    "H-烧鸡来源:status normalized from \"**new**\" to \"open\"",
+    "H-麦芽糖来源:startChapter normalized from \"悬念\" to 0",
+    "H-麦芽糖来源:status normalized from \"神秘人送到孙师兄门口/来去无踪/无毒/陈守一掰一块尝了/甜得纯粹/留大半未吃\" to \"open\"",
+    "H-烧鸡来源:startChapter normalized from \"悬念\" to 0",
+    "H-烧鸡来源:status normalized from \"新增细节：烧鸡有城里商人字号印记，暗示来自有组织渠道\" to \"open\"",
+    "H-乌头种子来源:startChapter normalized from \"物品\" to 0",
+    "H-乌头种子来源:status normalized from \"油纸包里乌头粉与周老头给的种子一致\" to \"open\"",
+    "H-跛脚者身份:startChapter normalized from \"角色\" to 0",
+    "H-跛脚者身份:status normalized from \"孙师兄警告/陈守一亲眼确认/可能内间成员\" to \"open\"",
+    "H-源根:startChapter normalized from \"世界设定\" to 0",
+    "H-源根:status normalized from \"三十年前七十三人死后灵泉冒出一缕气被\"接走\"/祖父遗书有\"源根\"二字\" to \"open\"",
+    "H-修复封印另一条路:startChapter normalized from \"悬念\" to 0",
+    "H-修复封印另一条路:status normalized from \"乌头种子/需种在灵泉边上吸收灵气/周执事可能看守这些种子\" to \"open\"",
+    "H-乱葬岗真相:startChapter normalized from \"世界设定\" to 0",
+    "H-乱葬岗真相:status normalized from \"新增：陈守一想起赵猛梦话中的无碑坟包，按而不发，待赵猛继续查\" to \"open\"",
+    "H-老道士身份:startChapter normalized from \"角色\" to 0",
+    "H-老道士身份:status normalized from \"绢帛被撕原因待查/祖父同门师兄弟关系仍待揭示\" to \"open\"",
+    "H-周执事身份:startChapter normalized from \"角色\" to 0",
+    "H-周执事身份:status normalized from \"兄长死于灵泉→恨上宗门/被贬三十年/陈守一邀请三月十四夜相见\" to \"open\""
   ]
 }

@@ -4364,5 +4364,38 @@
       "completionTokens": 24078,
       "totalTokens": 24111
     }
+  },
+  {
+    "number": 198,
+    "title": "晨露微凉",
+    "status": "approved",
+    "wordCount": 2914,
+    "createdAt": "2026-04-18T21:18:14.995Z",
+    "updatedAt": "2026-04-18T21:32:28.345Z",
+    "auditIssues": [
+      "[warning] 章节节奏类型单一。198章为降调章/日常章，与197章（降调章/温情章/过渡章）节奏类型高度相似。主角全天未外出，仅有日常活动（晒太阳、打盹、分食烧鸡），虽有小幅推进（麦芽糖尝了一小块/烧鸡字号印记发现），但整体处于\"蛰伏等待\"状态。",
+      "[info] 高疲劳词密度检查：\"忽然\"出现1次（3000字章节），符合阈值要求。AI标记词密度正常。",
+      "[info] 章尾悬念设计良好：三月十四夜倒计时（还有两天）+ 烧鸡来源之谜（新悬念钩子）+ 约见条（城西接头点酉时）。\"急不得，该来的，都会来\"的结语既呼应苟道哲学，又为后续高潮做好铺垫。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2674,
+      "postWriterNormalizeCount": 0,
+      "postReviseCount": 2914,
+      "finalCount": 2914,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 8291,
+      "totalTokens": 8291
+    }
   }
 ]
