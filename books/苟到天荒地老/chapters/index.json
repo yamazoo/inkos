@@ -4255,5 +4255,40 @@
       "completionTokens": 25704,
       "totalTokens": 25704
     }
+  },
+  {
+    "number": 195,
+    "title": "城西旧铺",
+    "status": "approved",
+    "wordCount": 3120,
+    "createdAt": "2026-04-18T20:33:23.863Z",
+    "updatedAt": "2026-04-18T20:33:36.246Z",
+    "auditIssues": [
+      "[warning] 第194章周老头说「我师父是七十三人之一」「侥幸活了下来隐姓埋名三十年后才敢把东西传给我」与本章周师傅（亲历者）描述矛盾。周师傅明确说师父（周执事）「冲进去救人」「黑雾散了井边一个人都没有」，师父死在了灵泉边。而周执事（周执事的师弟）才是被贬到灵泉边「侥幸活下来」的人。",
+      "[warning] 本章末尾陈守一说「三月十四夜正本清源动手的时候，我会去灵泉」，周师傅叹气。这是个不错的情绪收尾点，但「推门离去」后直接结束略显仓促。上一章（194）末尾「又是新的一天」给了足够情绪落点，本章收尾力道偏弱。",
+      "[warning] 最近4章持续高压（**警觉→警惕→紧张→震动→沉思→坚定→沉思→坚定→震动→沉思→坚定→沉重→坚定** -> **警觉→沉思→紧张→释然→坚定→沉思→紧张→震动→沉思→坚定→沉重→坚定→沉思→坚定** -> 警觉→紧张→释然→警觉→紧张→震动→沉思→坚定→沉思→坚定→沉重→坚定 -> 警觉→紧张→释然→紧张→震动→沉思→坚定→沉思→坚定→沉重→坚定），缺少明显的情绪释放。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H-城西接头点（中程，可回收）、H-乱葬岗真相（近期，可回收）、H-七十三人尸骨线索（近期，可回收）。",
+      "[warning] 连续出现4个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 5777,
+      "postWriterNormalizeCount": 3951,
+      "postReviseCount": 3120,
+      "finalCount": 3120,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 24730,
+      "completionTokens": 36614,
+      "totalTokens": 61344
+    }
   }
 ]

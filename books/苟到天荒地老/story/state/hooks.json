@@ -5,7 +5,7 @@
       "startChapter": 191,
       "type": "世界设定",
       "status": "progressing",
-      "lastAdvancedChapter": 194,
+      "lastAdvancedChapter": 195,
       "expectedPayoff": "祭典期间",
       "payoffTiming": "near-term",
       "notes": "乱葬岗埋的是三十年前死在灵泉边的七十三人/可能藏有封印残留线索"
@@ -15,36 +15,54 @@
       "startChapter": 191,
       "type": "世界设定",
       "status": "progressing",
-      "lastAdvancedChapter": 194,
+      "lastAdvancedChapter": 195,
       "expectedPayoff": "三月十四夜前后",
       "payoffTiming": "mid-arc",
-      "notes": "潭底青光确认/真正的封印在灵泉底部/三源合一只是引子/黑石是钥匙"
+      "notes": "潭底青光确认/真正的封印在灵泉底部/三源合一只是引子/黑石是钥匙/源根藏在潭底封印中"
     },
     {
-      "hookId": "H-内间完整真相",
-      "startChapter": 187,
-      "type": "**势力**",
-      "status": "resolved",
-      "lastAdvancedChapter": 194,
-      "expectedPayoff": "**194章已揭示：内间目的是夺取源根不是灵气流通/源根是两界灵气之源/万年前大劫真正起因/正本清源里有内间的人/祖父是最早发现者之一**",
-      "notes": "**内间目的明确/源根揭露/与正本清源区别明确**"
+      "hookId": "H-周老头身份",
+      "startChapter": 194,
+      "type": "**角色**",
+      "status": "open",
+      "lastAdvancedChapter": 195,
+      "expectedPayoff": "**已揭示**",
+      "notes": "**周执事师弟的师兄/师父是三十年前七十三人之一/隐姓埋名三十年/与祖父同门师兄弟/真实身手不凡/送绢帛铜环乌头种子/警示正本清源里有内间**"
+    },
+    {
+      "hookId": "H-源根",
+      "startChapter": 194,
+      "type": "**世界设定**",
+      "status": "open",
+      "lastAdvancedChapter": 195,
+      "expectedPayoff": "**三月十四夜**",
+      "notes": "**两界灵气之源/万年前大劫真正起因/内间真正目的/封印破开源根流出/正本清源想夺取源根控制两界灵气**"
+    },
+    {
+      "hookId": "H-老道士身份",
+      "startChapter": 194,
+      "type": "**角色**",
+      "status": "open",
+      "lastAdvancedChapter": 195,
+      "expectedPayoff": "**待揭示**",
+      "notes": "**绢帛被撕原因待查/周老头不知道老道士是谁/祖父同门师兄弟关系仍待揭示**"
     },
     {
       "hookId": "H-修复封印另一条路",
       "startChapter": 193,
       "type": "悬念",
-      "status": "open",
-      "lastAdvancedChapter": 194,
+      "status": "progressing",
+      "lastAdvancedChapter": 195,
       "expectedPayoff": "mid-arc",
       "payoffTiming": "mid-arc",
-      "notes": "万年前锻造锁链材料已失传/可重新加固封印不必燃烧寿元/可能找得到也可能找不到/与乌头粉关联"
+      "notes": "乌头种子获得/需种在灵泉边上吸收灵气/周执事可能看守这些种子/乌头可锻造锁链不必燃烧寿元"
     },
     {
       "hookId": "H-七十三人尸骨线索",
       "startChapter": 192,
       "type": "悬念",
       "status": "progressing",
-      "lastAdvancedChapter": 194,
+      "lastAdvancedChapter": 195,
       "expectedPayoff": "祭典期间",
       "payoffTiming": "mid-arc",
       "notes": "如果尸骨上有封印相关残留线索/正本清源和周执事旧部目标可能有重叠"
@@ -52,59 +70,29 @@
     {
       "hookId": "H-跛脚者",
       "startChapter": 192,
-      "type": "角色",
+      "type": "**角色**",
       "status": "progressing",
-      "lastAdvancedChapter": 194,
-      "expectedPayoff": "三月十四夜前后",
-      "payoffTiming": "mid-arc",
-      "notes": "城西接头点出现/灰布袍子/个子不高/走路有点跛/可能是接头点关键人物/步子刻意控制可能不是真跛/周老头提到正本清源里有内间的人"
+      "lastAdvancedChapter": 195,
+      "expectedPayoff": "**三月十四夜前**",
+      "notes": "**城西接头点出现/灰布袍子/个子不高/走路有点跛/周老头揭示可能是内间成员**"
     },
     {
-      "hookId": "H-乌头种子谜题",
-      "startChapter": 189,
-      "type": "物品",
-      "status": "progressing",
-      "lastAdvancedChapter": 194,
-      "expectedPayoff": "三月十四夜前后",
-      "payoffTiming": "mid-arc",
-      "notes": "确认是乌头粉不是五石散/万年前大劫封印裂缝材料/能压制灵气流动/正本清源对封印了解更深"
-    },
-    {
-      "hookId": "H-城西接头点",
-      "startChapter": 189,
-      "type": "地点",
-      "status": "progressing",
-      "lastAdvancedChapter": 194,
-      "expectedPayoff": "三月十四夜前",
-      "payoffTiming": "mid-arc",
-      "notes": "位置确认：第三个巷口左拐/济世堂分号/半掩木门/酉时接头/乌头粉残留/斗笠人进入后未出"
-    },
-    {
-      "hookId": "H-源根",
-      "startChapter": 194,
-      "type": "**世界设定**",
+      "hookId": "H-周执事身份",
+      "startChapter": 195,
+      "type": "**角色**",
       "status": "open",
-      "lastAdvancedChapter": 194,
+      "lastAdvancedChapter": 195,
+      "expectedPayoff": "**三月十四夜**",
+      "notes": "**周老头的师弟/三十年前被贬守灵泉/可能看守乌头种子/被陈守一邀请三月十四夜相见**"
+    },
+    {
+      "hookId": "H-乌头种子来源",
+      "startChapter": 195,
+      "type": "**物品**",
+      "status": "open",
+      "lastAdvancedChapter": 195,
       "expectedPayoff": "**mid-arc**",
-      "notes": "**封印中的\"源根\"/两界灵气之源/万年前大劫真正起因/内间真正目的/可能与修复封印另一条路相关**"
-    },
-    {
-      "hookId": "H-老道士身份",
-      "startChapter": 194,
-      "type": "**角色**",
-      "status": "open",
-      "lastAdvancedChapter": 194,
-      "expectedPayoff": "**待揭示**",
-      "notes": "**绢帛被撕掉/周老头不知道/祖父同门师兄弟可能是关键/周老头师父的师父与祖父是同门**"
-    },
-    {
-      "hookId": "H-周老头身份",
-      "startChapter": 194,
-      "type": "**角色**",
-      "status": "open",
-      "lastAdvancedChapter": 194,
-      "expectedPayoff": "**待揭示**",
-      "notes": "**真实身手不凡/三十年前七十三人之一师父的徒弟/隐姓埋名三十年/与陈家/祖父有间接关系/可能与周执事有关联**"
+      "notes": "**周老头找了三十年只找到数粒种子/周执事可能看守更多/需种在灵泉边上吸收灵气**"
     }
   ]
 }
