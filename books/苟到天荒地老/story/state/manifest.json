@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 175,
+  "lastAppliedChapter": 176,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -389,6 +389,17 @@
     "H-两界之争另有根源:lastAdvancedChapter normalized from \"175章：**核心推进：正本清源内部有分歧/内间势力压着行动/祖父卧底廿年**\" to 0",
     "mystery-171-解释祖父为何-持有正本清源-内部令牌:lastAdvancedChapter normalized from \"175章：**重大揭示完成：祖父是卧底/在内间同袍接应下进入/廿年卧底/留下联络信物**\" to 0",
     "H-内间同袍联络:lastAdvancedChapter normalized from \"175章：发现祖父册子/名单（城东义庄/城北旧祠/城守府后街）/纸条\"二物合一可为信物\"/决定明日联络尝试\" to 0",
-    "H-城守府后街吴姓卖肉:lastAdvancedChapter normalized from \"175章：赵猛提及城守府后街有个卖肉的姓吴/人还算仗义/明日去后街打探\" to 0"
+    "H-城守府后街吴姓卖肉:lastAdvancedChapter normalized from \"175章：赵猛提及城守府后街有个卖肉的姓吴/人还算仗义/明日去后街打探\" to 0",
+    "H-金痕消耗真相:lastAdvancedChapter normalized from \"176（持续发热如细针扎眉心）\" to 0",
+    "H-内间同袍联络:lastAdvancedChapter normalized from \"**176（确认吴记肉铺掌柜手腕青印/明日联络尝试/五成把握）**\" to 0",
+    "H-城守府后街吴姓卖肉:lastAdvancedChapter normalized from \"**176（吴记肉铺侦察成功/掌柜三十来岁/高个子/粗壮手臂/刀工利落/手腕青色印记很浅）**\" to 0",
+    "H-两界之争另有根源:lastAdvancedChapter normalized from \"176（正本清源内部有\"内间\"势力存在）\" to 0",
+    "H-第四脉身份:lastAdvancedChapter normalized from \"175（身份完整揭示）\" to 0",
+    "H-绢帛画像:lastAdvancedChapter normalized from \"170（高个子观察姿势）\" to 0",
+    "H-正本清源计划:lastAdvancedChapter normalized from \"**176（祭品提前到位/祠堂锁门/时间比两天更紧）**\" to 0",
+    "H-冥族存在:lastAdvancedChapter normalized from \"164（春分之前打开通道/三源血脉太难寻）\" to 0",
+    "H-祠堂祭品:lastAdvancedChapter normalized from \"**176（子时前后油布蒙车进祠堂/三四人/灰衣/祭品提前到位/门从里面锁了）**\" to 0",
+    "H-正本清源坊市撒网:lastAdvancedChapter normalized from \"**176（东市人数比昨天多一倍/青鸾甩掉两人跟了三条街）**\" to 0",
+    "H-两天期限:lastAdvancedChapter normalized from \"**176（春分之前/祭品提前到位说明时间更紧/陈守一判断可能没有两天）**\" to 0"
   ]
 }

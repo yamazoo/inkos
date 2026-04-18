@@ -1,53 +1,53 @@
 {
-  "chapter": 175,
+  "chapter": 176,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点石屋（傍晚）/城东老宅子（白天侦察）",
-      "validFromChapter": 175,
+      "object": "聚居点石屋（夜晚）",
+      "validFromChapter": 176,
       "validUntilChapter": null,
-      "sourceChapter": 175
+      "sourceChapter": 176
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "金痕持续发热加剧（比早上更高）/脸色变差/眼底青黑/决心坚定/独自侦察成功/已发现城外祠堂据点/掌握城守府与正本清源勾结证据/知晓正本清源在坊市布置探子/发现祖父卧底廿年真相/获得内间同袍联络线索（城守府后街）/获得关键物品（祖父册子/纸条/名单纸张）/知晓铜钱与令牌合一可作为信物/决心坚定/情感归属感",
-      "validFromChapter": 175,
+      "object": "金痕持续发热/脸色变差/眼底青黑/决心坚定/独自侦察成功/已确认吴记肉铺掌柜手腕青印/掌握正本清源城东据点完整情报/知晓城外祠堂祭品提前到位/五成把握联络内间/情感归属稳定",
+      "validFromChapter": 176,
       "validUntilChapter": null,
-      "sourceChapter": 175
+      "sourceChapter": 176
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "联络内间同袍（通过城守府后街）/若联络不上则硬来/两天内阻止正本清源/阻止春分祭典",
-      "validFromChapter": 175,
+      "object": "明日（第一天）联络吴记肉铺内间同袍/若联络不上则硬来/两天内阻止正本清源/阻止春分祭典",
+      "validFromChapter": 176,
       "validUntilChapter": null,
-      "sourceChapter": 175
+      "sourceChapter": 176
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "寿元不足两年/两天期限（春分前）/黑雾加速扩散/金痕持续消耗加剧",
-      "validFromChapter": 175,
+      "object": "寿元不足两年/两天期限（春分前）/黑雾加速扩散/金痕持续消耗加剧/正本清源可能提前动手",
+      "validFromChapter": 176,
       "validUntilChapter": null,
-      "sourceChapter": 175
+      "sourceChapter": 176
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "正本清源（敌对/调动人手/城外祠堂据点/城守府勾结/坊市布置探子/内部有\"内间\"分裂势力）vs 苏婉儿(同行者/核心盟友/留守) vs 赵猛(同行者/誓言同行/明日去城守府后街打探/可信赖) vs 青鸾(同行者/留守/情报来源/母亲接受)",
-      "validFromChapter": 175,
+      "object": "正本清源（敌对/内部有\"内间\"/春分祭典/城外祠堂据点/城守府勾结/坊市探子撒网/祭品提前到位/可能比两天更早动手）vs 苏婉儿（同行者/核心盟友/留守） vs 赵猛（同行者/誓言同行/明日盯祠堂/可信赖） vs 青鸾（同行者/情报来源/明日盯城门/母亲接受） vs 吴记肉铺掌柜（潜在内间同袍/手腕青印/明日联络目标）",
+      "validFromChapter": 176,
       "validUntilChapter": null,
-      "sourceChapter": 175
+      "sourceChapter": 176
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "正本清源撕裂封印（两天期限/春分祭典/三十二份祭品/勾结城守府/城外祠堂据点/坊市探子撒网/内部有\"内间\"势力压着）vs 三源血脉阻止封印（寿元不足两年/两天期限/掌握城外据点位置/掌握城守府勾结证据/发现祖父是内应/获得内间联络线索/明日联络尝试）",
-      "validFromChapter": 175,
+      "object": "正本清源撕裂封印（两天期限/春分祭典/三十二份祭品/勾结城守府/城外祠堂据点/祭品提前到位/内部有\"内间\"势力压着）vs 三源血脉阻止封印（寿元不足两年/两天期限/掌握城外据点位置/掌握城守府勾结证据/发现祖父是内应/确认吴记肉铺掌柜手腕青印/明日联络尝试）",
+      "validFromChapter": 176,
       "validUntilChapter": null,
-      "sourceChapter": 175
+      "sourceChapter": 176
     }
   ]
 }

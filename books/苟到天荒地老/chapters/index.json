@@ -3602,5 +3602,37 @@
       "completionTokens": 23242,
       "totalTokens": 36154
     }
+  },
+  {
+    "number": 176,
+    "title": "晨光入檐",
+    "status": "approved",
+    "wordCount": 2486,
+    "createdAt": "2026-04-18T16:30:20.086Z",
+    "updatedAt": "2026-04-18T16:30:30.765Z",
+    "auditIssues": [
+      "[warning] 最近4章持续高压（沉重 -> 紧绷→震惊→沉重→坚定 -> 凝重→平静→坚定→温暖→坚定→温暖 -> 凝重→沉思→坚定→紧张→震动→坚定→沉静），缺少明显的情绪释放。",
+      "[warning] 连续出现3个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3424,
+      "postWriterNormalizeCount": 2486,
+      "postReviseCount": 0,
+      "finalCount": 2486,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 12689,
+      "completionTokens": 14799,
+      "totalTokens": 27488
+    }
   }
 ]
