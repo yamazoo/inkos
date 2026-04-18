@@ -4115,5 +4115,36 @@
       "completionTokens": 21556,
       "totalTokens": 55578
     }
+  },
+  {
+    "number": 191,
+    "title": "月下乱葬岗",
+    "status": "approved",
+    "wordCount": 2738,
+    "createdAt": "2026-04-18T19:33:50.986Z",
+    "updatedAt": "2026-04-18T19:35:52.476Z",
+    "auditIssues": [
+      "[info] 孙师兄独白式信息量略大"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3871,
+      "postWriterNormalizeCount": 2738,
+      "postReviseCount": 0,
+      "finalCount": 2738,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 25222,
+      "completionTokens": 16130,
+      "totalTokens": 41352
+    }
   }
 ]

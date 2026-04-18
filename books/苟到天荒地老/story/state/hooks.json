@@ -1,77 +1,73 @@
 {
   "hooks": [
     {
-      "hookId": "H-内间完整真相",
-      "startChapter": 187,
+      "hookId": "H-正本清源行动布局",
+      "startChapter": 0,
       "type": "progressing",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "near-term",
-      "notes": "中程弧线"
-    },
-    {
-      "hookId": "H-孙师兄令牌",
-      "startChapter": 185,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**near-term**",
-      "notes": "**立场复杂/可能是盟友也可能是陷阱**"
-    },
-    {
-      "hookId": "H-城守府后街联络网",
-      "startChapter": 187,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**near-term**",
-      "notes": "**可考虑回收**"
+      "lastAdvancedChapter": 191,
+      "expectedPayoff": "祭典期间",
+      "payoffTiming": "near-term",
+      "notes": "祭典最早是周执事旧部放出的风声/正本清源和周执事旧部两拨人各有目的/祭典那晚可能同时动手"
     },
     {
       "hookId": "H-济世堂据点",
       "startChapter": 0,
       "type": "open",
-      "status": "progressing",
-      "lastAdvancedChapter": 190,
-      "expectedPayoff": "济世堂据点完整揭示",
+      "status": "resolved",
+      "lastAdvancedChapter": 191,
+      "expectedPayoff": "已揭示",
       "payoffTiming": "near-term",
-      "notes": "190：确认济世堂传来祭典日子已定的消息；每天清晨有人往济世堂方向出城，身形像孙师兄"
+      "notes": "**济世堂是两方共同的联络点（正本清源+周执事旧部）/吴掌柜是两方共同的联络人**"
+    },
+    {
+      "hookId": "H-内间完整真相",
+      "startChapter": 187,
+      "type": "progressing",
+      "status": "progressing",
+      "lastAdvancedChapter": 191,
+      "expectedPayoff": "祭典期间",
+      "payoffTiming": "mid-arc",
+      "notes": "城守府后街是周执事旧部/正本清源内部还有\"内间\"/两方势力交织"
     },
     {
       "hookId": "H-孙师兄后续",
       "startChapter": 189,
       "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**near-term**",
-      "notes": "**核心悬念**"
+      "status": "resolved",
+      "lastAdvancedChapter": 191,
+      "expectedPayoff": "已揭示",
+      "payoffTiming": "near-term",
+      "notes": "**孙师兄真实身份完全揭示：替师父还债/祖父救了他师父/三十年前师父本该死在里面/祖父把他换出来自己留下**"
     },
     {
-      "hookId": "H-吴记肉铺掌柜",
-      "startChapter": 187,
+      "hookId": "H-周执事旧案",
+      "startChapter": 10,
+      "type": "**open→progressing**",
+      "status": "progressing",
+      "lastAdvancedChapter": 191,
+      "expectedPayoff": "祭典期间",
+      "payoffTiming": "mid-arc",
+      "notes": "**周执事三十年前负责善后/留人盯着玄清宗/被贬后消失/最近又开始活动/祭典是他旧部放出风声**"
+    },
+    {
+      "hookId": "H-乌头种子谜题",
+      "startChapter": 189,
       "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "near-term",
-      "notes": "身份基本确认"
-    },
-    {
-      "hookId": "H-正本清源行动布局",
-      "startChapter": 0,
-      "type": "progressing",
-      "status": "progressing",
-      "lastAdvancedChapter": 190,
-      "expectedPayoff": "祭典阴谋完整揭示",
-      "payoffTiming": "near-term",
-      "notes": "190：茶楼偷听获得祭典日期（三月十五）、三月十四夜围祠堂、暗道清淤、城守府后街接应点等大量情报"
+      "lastAdvancedChapter": 189,
+      "expectedPayoff": "mid-arc",
+      "payoffTiming": "mid-arc",
+      "notes": "用途仍不明"
     },
     {
       "hookId": "H-城西接头点",
       "startChapter": 189,
       "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 189,
       "expectedPayoff": "mid-arc",
+      "payoffTiming": "mid-arc",
       "notes": "位置待确认"
     },
     {
@@ -79,27 +75,30 @@
       "startChapter": 189,
       "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 189,
       "expectedPayoff": "near-term",
-      "notes": "身份待确认"
+      "payoffTiming": "near-term",
+      "notes": "身份待确认（可能是孙师兄）"
     },
     {
-      "hookId": "H-乌头种子谜题",
-      "startChapter": 189,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "mid-arc",
-      "notes": "用途仍不明"
-    },
-    {
-      "hookId": "mystery-乱葬岗之约真-纸条-子时",
-      "startChapter": 190,
-      "type": "**mystery→progressing**",
+      "hookId": "H-灵泉真相",
+      "startChapter": 191,
+      "type": "**new**",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**near-term**",
-      "notes": "**190章核心悬念/子时乱葬岗之约/孙师兄身份待确认**"
+      "lastAdvancedChapter": 191,
+      "expectedPayoff": "祭典期间",
+      "payoffTiming": "near-term",
+      "notes": "**父亲以身为饵引各方入局/黑石是开启灵泉真正的钥匙/三源合一只是引子/真正的封印在更深的地方**"
+    },
+    {
+      "hookId": "H-乱葬岗真相",
+      "startChapter": 191,
+      "type": "**new**",
+      "status": "progressing",
+      "lastAdvancedChapter": 191,
+      "expectedPayoff": "已揭示",
+      "payoffTiming": "near-term",
+      "notes": "**乱葬岗埋的是三十年前死在灵泉边的七十三人**"
     }
   ]
 }
