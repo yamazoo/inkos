@@ -3317,5 +3317,36 @@
       "completionTokens": 9343,
       "totalTokens": 9343
     }
+  },
+  {
+    "number": 168,
+    "title": "晨间问价",
+    "status": "approved",
+    "wordCount": 2927,
+    "createdAt": "2026-04-18T01:37:05.295Z",
+    "updatedAt": "2026-04-18T01:38:29.451Z",
+    "auditIssues": [
+      "[info] 章节中有几处描写似乎略微超出了主角陈守一的感知范围：青鸾压低声音汇报三个据点位置时、赵猛在井边洗脸时的细节描写。这些内容可以通过陈守一的观察来解释（他醒来后看到/听到），但描写方式略显直白。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3158,
+      "postWriterNormalizeCount": 3158,
+      "postReviseCount": 2927,
+      "finalCount": 2927,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 19882,
+      "totalTokens": 19882
+    }
   }
 ]

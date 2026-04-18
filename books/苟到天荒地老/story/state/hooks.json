@@ -5,7 +5,7 @@
       "startChapter": 156,
       "type": "世界观",
       "status": "progressing",
-      "lastAdvancedChapter": 166,
+      "lastAdvancedChapter": 156,
       "expectedPayoff": "80-100章",
       "payoffTiming": "slow-burn",
       "notes": "末法时代背景：锁链抽干两界灵气，上古灵气是现在千倍"
@@ -15,7 +15,7 @@
       "startChapter": 156,
       "type": "核心代价",
       "status": "progressing",
-      "lastAdvancedChapter": 166,
+      "lastAdvancedChapter": 167,
       "expectedPayoff": "本卷",
       "payoffTiming": "mid-arc",
       "notes": "持续消耗，寿元不足两年"
@@ -28,17 +28,17 @@
       "lastAdvancedChapter": 167,
       "expectedPayoff": "本卷",
       "payoffTiming": "mid-arc",
-      "notes": "**167章深化：令牌背面纹路（不完整圆环+竖线）可能是正本清源内部身份凭证/祖父能进入比外围更深的地方/祖父立场待验证**"
+      "notes": "令牌背面纹路（不完整圆环+竖线）可能是正本清源内部身份凭证/祖父能进入比外围更深的地方/祖父立场待验证/令牌能否使用168章确认待验证"
     },
     {
-      "hookId": "H-井的秘密",
-      "startChapter": 162,
-      "type": "核心谜题",
+      "hookId": "H-守夜者三天期限",
+      "startChapter": 165,
+      "type": "紧迫倒计时",
       "status": "progressing",
-      "lastAdvancedChapter": 166,
-      "expectedPayoff": "本卷/165+",
+      "lastAdvancedChapter": 168,
+      "expectedPayoff": "本卷",
       "payoffTiming": "near-term",
-      "notes": "井是当年那扇门的碎片/裂缝，冥族回家的通道；三十二份祭品；井口是障眼法；祭坛在别处"
+      "notes": "168章推进：玉坠持续降温/第一天进行中/温度比昨天更低"
     },
     {
       "hookId": "H-冥族存在",
@@ -48,17 +48,17 @@
       "lastAdvancedChapter": 167,
       "expectedPayoff": "40-60章",
       "payoffTiming": "mid-arc",
-      "notes": "**167章推进：黑雾加速扩散/两天前几缕薄烟→现在遮住小半边天/通道不稳定恶化**"
+      "notes": "黑雾加速扩散/通道不稳定恶化"
     },
     {
       "hookId": "H-正本清源计划",
       "startChapter": 149,
       "type": "核心阴谋",
       "status": "progressing",
-      "lastAdvancedChapter": 167,
+      "lastAdvancedChapter": 168,
       "expectedPayoff": "本卷/165+",
       "payoffTiming": "near-term",
-      "notes": "三十二份祭品/春分前完成/井口是障眼法/祭坛在别处/用祭品精血打开通道/需要令牌进入/正本清源内部通行凭证"
+      "notes": "**168章重大推进：确认祭坛在城东西南（不在东北井口）/三个据点位置确认/最大宅院门口两棵槐树/有禁制/青鸾灵识无法穿透/令牌是关键入口**"
     },
     {
       "hookId": "核心线索-本卷-冥王曾试图谈",
@@ -79,16 +79,6 @@
       "expectedPayoff": "本卷",
       "payoffTiming": "near-term",
       "notes": "玉坠封着母亲'那一刀的力量'，可用于补刀封印，但用完后会归还（守夜者承诺）"
-    },
-    {
-      "hookId": "H-守夜者三天期限",
-      "startChapter": 165,
-      "type": "紧迫倒计时",
-      "status": "progressing",
-      "lastAdvancedChapter": 167,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "**167章推进：玉坠持续降温/温度比昨夜更低/玉坠封着的力量消散速度比预想快/可能用不了三天**"
     }
   ]
 }
