@@ -25,60 +25,50 @@
       "startChapter": 166,
       "type": "核心悬念",
       "status": "progressing",
-      "lastAdvancedChapter": 167,
+      "lastAdvancedChapter": 169,
       "expectedPayoff": "本卷",
       "payoffTiming": "mid-arc",
-      "notes": "令牌背面纹路（不完整圆环+竖线）可能是正本清源内部身份凭证/祖父能进入比外围更深的地方/祖父立场待验证/令牌能否使用168章确认待验证"
+      "notes": "令牌背面纹路（不完整圆环+竖线）已验证可用/祖父能进入比外围更深的地方/令牌验证成功/明天子时活动待探"
     },
     {
       "hookId": "H-守夜者三天期限",
       "startChapter": 165,
       "type": "紧迫倒计时",
       "status": "progressing",
-      "lastAdvancedChapter": 168,
+      "lastAdvancedChapter": 169,
       "expectedPayoff": "本卷",
       "payoffTiming": "near-term",
-      "notes": "168章推进：玉坠持续降温/第一天进行中/温度比昨天更低"
+      "notes": "169章推进：玉坠持续降温/令牌验证成功/明天子时正本清源有活动"
     },
     {
       "hookId": "H-冥族存在",
       "startChapter": 156,
       "type": "核心威胁",
       "status": "progressing",
-      "lastAdvancedChapter": 167,
+      "lastAdvancedChapter": 169,
       "expectedPayoff": "40-60章",
       "payoffTiming": "mid-arc",
-      "notes": "黑雾加速扩散/通道不稳定恶化"
+      "notes": "黑雾加速扩散/冥王回归目的已确认（等了三百年有诚意）"
     },
     {
       "hookId": "H-正本清源计划",
       "startChapter": 149,
       "type": "核心阴谋",
       "status": "progressing",
-      "lastAdvancedChapter": 168,
+      "lastAdvancedChapter": 169,
       "expectedPayoff": "本卷/165+",
       "payoffTiming": "near-term",
-      "notes": "**168章重大推进：确认祭坛在城东西南（不在东北井口）/三个据点位置确认/最大宅院门口两棵槐树/有禁制/青鸾灵识无法穿透/令牌是关键入口**"
-    },
-    {
-      "hookId": "核心线索-本卷-冥王曾试图谈",
-      "startChapter": 165,
-      "type": "核心线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 165,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "冥王曾试图谈判但无人听取，已等三百年有诚意，但主角一旦暴露三源血脉身份，正本清源会不惜一切代价抓住他"
+      "notes": "**169章重大推进：令牌验证成功/三源血脉打开彼岸之门/冥王回归目的/祭品不足但有其他安排/明天子时有活动**"
     },
     {
       "hookId": "H-三源血脉",
       "startChapter": 156,
       "type": "核心设定",
       "status": "progressing",
-      "lastAdvancedChapter": 165,
+      "lastAdvancedChapter": 169,
       "expectedPayoff": "本卷",
       "payoffTiming": "near-term",
-      "notes": "玉坠封着母亲'那一刀的力量'，可用于补刀封印，但用完后会归还（守夜者承诺）"
+      "notes": "玉坠封着母亲'那一刀的力量'，可用于补刀封印/三源血脉可以打开彼岸之门"
     }
   ]
 }

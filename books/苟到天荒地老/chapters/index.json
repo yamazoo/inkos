@@ -3348,5 +3348,51 @@
       "completionTokens": 19882,
       "totalTokens": 19882
     }
+  },
+  {
+    "number": 169,
+    "title": "夜深叩门\n\n===",
+    "status": "approved",
+    "wordCount": 2648,
+    "createdAt": "2026-04-18T01:48:40.948Z",
+    "updatedAt": "2026-04-18T01:51:42.738Z",
+    "auditIssues": [
+      "[warning] 第169章窃听对话时，陈守一听到了正本清源成员讨论'正本清源这些年做的是什么'、'冥王会认我们这些三百年没回家的子孙'等深层情报。这些信息本应是内部核心机密，通过背对着的灰袍人低声说出，且距离主角约三丈远，窃听难度偏高。",
+      "[info] 第168章是'喘息章/温情过渡章'，第169章直接进入夜间行动，节奏从温情快速切换到紧张的探查行动。对照近期章节（166-168章）类型分布：情报整合→温情→情报整合→行动，节奏变化明显但过渡依赖'夜间'这一时间跳变实现。",
+      "[info] SP-情感觉醒/家的归属 支线（苏婉儿、赵猛）在第168章有温馨场景（烙饼、苏婉儿微笑），第169章完全聚焦行动探查，情感支线暂时搁置。但考虑到行动紧迫性，这属于正常节奏安排。"
+    ],
+    "lengthWarnings": [],
+    "reviewNote": "{\"kind\":\"state-degraded\",\"baseStatus\":\"ready-for-review\",\"injectedIssues\":[\"[warning] 状态校验不可用：Error: LLM returned empty response from stream (usage=0+32768)\"]}",
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2648,
+      "postWriterNormalizeCount": 2648,
+      "postReviseCount": 0,
+      "finalCount": 2648,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 13522,
+      "completionTokens": 8289,
+      "totalTokens": 21811
+    }
+  },
+  {
+    "number": 169,
+    "title": "夜深叩门",
+    "status": "ready-for-review",
+    "wordCount": 2648,
+    "createdAt": "2026-04-18T01:00:00.000Z",
+    "updatedAt": "2026-04-18T01:00:00.000Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {},
+    "tokenUsage": {}
   }
 ]

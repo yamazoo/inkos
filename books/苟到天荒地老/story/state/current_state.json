@@ -1,37 +1,37 @@
 {
-  "chapter": 168,
+  "chapter": 169,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点石屋（行动准备完成，准备明日验证令牌）",
-      "validFromChapter": 168,
+      "object": "城东宅院外墙（令牌验证成功，第一次潜入）",
+      "validFromChapter": 169,
       "validUntilChapter": null,
-      "sourceChapter": 168
+      "sourceChapter": 169
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "金痕蛰伏/玉坠持续降温（守夜者三天期限第一天）/令牌可用性待验证/决心坚定/决断形成/行动方案确立/情报整合完成/探查行动完成",
-      "validFromChapter": 168,
+      "object": "金痕蛰伏/玉坠持续降温（守夜者三天期限第一天）/令牌验证成功/决心坚定/行动进行中",
+      "validFromChapter": 169,
       "validUntilChapter": null,
-      "sourceChapter": 168
+      "sourceChapter": 169
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "验证令牌可用性/进入两棵槐树宅院/阻止正本清源打开祭坛",
-      "validFromChapter": 168,
+      "object": "进入两棵槐树宅院/阻止正本清源打开祭坛/明天子时再探",
+      "validFromChapter": 169,
       "validUntilChapter": null,
-      "sourceChapter": 168
+      "sourceChapter": 169
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "寿元不足两年/隐息符用尽/神识消耗/体力精力部分恢复/三天期限（春分之前）/玉坠降温加速/令牌能否使用未知",
-      "validFromChapter": 168,
+      "object": "寿元不足两年/隐息符用尽/神识消耗/体力精力部分恢复/三天期限（春分之前）/玉坠降温加速",
+      "validFromChapter": 169,
       "validUntilChapter": null,
-      "sourceChapter": 168
+      "sourceChapter": 169
     },
     {
       "subject": "protagonist",
@@ -44,10 +44,10 @@
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "正本清源撕裂封印（祭坛在城东西南/三处据点/最大宅院门口两棵槐树/有禁制/需要令牌进入/三十二份祭品/春分前完成）vs 三源血脉修复封印（寿元不足两年/金痕持续消耗/令牌可用性待验证/玉坠封着母亲力量待用）",
-      "validFromChapter": 168,
+      "object": "正本清源撕裂封印（祭坛在城东西南/三处据点/最大宅院门口两棵槐树/需要令牌进入/三十二份祭品/春分前完成/明天子时有活动/三源血脉打开彼岸之门/冥王回归目的/祭品不足有其他安排）vs 三源血脉修复封印（寿元不足两年/金痕持续消耗/令牌验证成功/玉坠封着母亲力量待用）",
+      "validFromChapter": 169,
       "validUntilChapter": null,
-      "sourceChapter": 168
+      "sourceChapter": 169
     }
   ]
 }
