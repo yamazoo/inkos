@@ -1,58 +1,24 @@
 {
   "hooks": [
     {
-      "hookId": "H-井的秘密",
-      "startChapter": 162,
-      "type": "核心谜题",
+      "hookId": "H-守夜者位置",
+      "startChapter": 73,
+      "type": "核心NPC",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷/165+",
-      "notes": "**关键情报：井底有冥物/用祭品可强行打开/春分前完成**"
+      "lastAdvancedChapter": 165,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "守夜者只剩三天寿命，本章'消失'是离去而非死亡，三天内必须完成关键交接/行动"
     },
     {
       "hookId": "H-正本清源计划",
       "startChapter": 149,
       "type": "核心阴谋",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 165,
       "expectedPayoff": "本卷/165+",
-      "notes": "**关键情报：春分前打开通道/用祭品替代三源血脉/失踪人口有了解释**"
-    },
-    {
-      "hookId": "H-三源血脉",
-      "startChapter": 156,
-      "type": "核心设定",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "notes": "**关键情报：三源后人被追查/但祭品方法更粗暴**"
-    },
-    {
-      "hookId": "H-金痕消耗真相",
-      "startChapter": 156,
-      "type": "核心代价",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "notes": "寿元不足两年，金痕持续燃烧"
-    },
-    {
-      "hookId": "H-灵气衰减真相",
-      "startChapter": 156,
-      "type": "世界观",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "80-100章",
-      "notes": "末法时代背景"
-    },
-    {
-      "hookId": "H-修复封印代价",
-      "startChapter": 156,
-      "type": "核心代价",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "notes": "主角必须找到替代方案"
+      "payoffTiming": "near-term",
+      "notes": "井是当年那扇门的碎片/裂缝，祭品撑开裂缝替代三源血脉，春分前完成"
     },
     {
       "hookId": "H-冥族存在",
@@ -64,13 +30,44 @@
       "notes": "封印三年内有裂口"
     },
     {
-      "hookId": "H-守夜者位置",
-      "startChapter": 73,
-      "type": "核心NPC",
-      "status": "open",
-      "lastAdvancedChapter": 0,
+      "hookId": "H-金痕消耗真相",
+      "startChapter": 156,
+      "type": "核心代价",
+      "status": "progressing",
+      "lastAdvancedChapter": 165,
       "expectedPayoff": "本卷",
-      "notes": "等待继承者"
+      "payoffTiming": "mid-arc",
+      "notes": "持续消耗，寿元不足两年"
+    },
+    {
+      "hookId": "H-灵气衰减真相",
+      "startChapter": 156,
+      "type": "世界观",
+      "status": "progressing",
+      "lastAdvancedChapter": 165,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "slow-burn",
+      "notes": "末法时代背景：锁链抽干两界灵气，上古灵气是现在千倍"
+    },
+    {
+      "hookId": "H-三源血脉",
+      "startChapter": 156,
+      "type": "核心设定",
+      "status": "progressing",
+      "lastAdvancedChapter": 165,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "玉坠封着母亲'那一刀的力量'，可用于补刀封印，但用完后会归还（守夜者承诺）"
+    },
+    {
+      "hookId": "H-修复封印代价",
+      "startChapter": 156,
+      "type": "核心代价",
+      "status": "progressing",
+      "lastAdvancedChapter": 165,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "三条路可选：1.三源血脉+大部寿元 2.与冥王谈判从外部加固 3.玉坠力量补刀。母亲遗言强化'走最难的那条'"
     },
     {
       "hookId": "H-坊间失踪人口",
@@ -80,6 +77,26 @@
       "lastAdvancedChapter": 0,
       "expectedPayoff": "**本章回收**",
       "notes": "正本清源抓人"
+    },
+    {
+      "hookId": "H-井的秘密",
+      "startChapter": 162,
+      "type": "核心谜题",
+      "status": "progressing",
+      "lastAdvancedChapter": 165,
+      "expectedPayoff": "本卷/165+",
+      "payoffTiming": "near-term",
+      "notes": "井是当年那扇门的碎片/裂缝，冥族回家的通道"
+    },
+    {
+      "hookId": "核心线索-本卷-冥王曾试图谈",
+      "startChapter": 165,
+      "type": "核心线索",
+      "status": "progressing",
+      "lastAdvancedChapter": 165,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "冥王曾试图谈判但无人听取，已等三百年有诚意，但主角一旦暴露三源血脉身份，正本清源会不惜一切代价抓住他"
     }
   ]
 }

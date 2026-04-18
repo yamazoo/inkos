@@ -3207,5 +3207,40 @@
       "completionTokens": 14780,
       "totalTokens": 14780
     }
+  },
+  {
+    "number": 165,
+    "title": "破晓隐声",
+    "status": "approved",
+    "wordCount": 2994,
+    "createdAt": "2026-04-18T00:50:51.164Z",
+    "updatedAt": "2026-04-18T00:51:00.922Z",
+    "auditIssues": [
+      "[info] SP-情感觉醒/三年之约支线在本章未推进，仍停留在'承诺强化'阶段。赵猛与主角的互动仅一句'一大早去哪了？饿死我了'，缺乏情感深度交流。",
+      "[warning] 守夜者提出'另一条路'后立即离去，留下的悬念（如何操作/守夜者三天后会怎样/正本清源下一步动作）过多，但当前剧情只推进了'去查正本清源人数和祭品'这一条线索，其余悬念的回收节奏需在后续章节明确。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H-冥族存在（中程，已逾期）。",
+      "[warning] 111个段落里有80个不足35字，段落被切得过碎。",
+      "[warning] 连续出现9个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2994,
+      "postWriterNormalizeCount": 2994,
+      "postReviseCount": 0,
+      "finalCount": 2994,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 21835,
+      "completionTokens": 11049,
+      "totalTokens": 32884
+    }
   }
 ]
