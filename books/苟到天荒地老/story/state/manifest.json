@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 205,
+  "lastAppliedChapter": 206,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -562,6 +562,13 @@
     "hook-18:lastAdvancedChapter normalized from \"0→1\" to 0",
     "hook-19:lastAdvancedChapter normalized from \"0→1→**resolved**\" to 0",
     "hook-1:startChapter normalized from \"0→1\" to 0",
-    "hook-1:lastAdvancedChapter normalized from \"0→**resolved**\" to 0"
+    "hook-1:lastAdvancedChapter normalized from \"0→**resolved**\" to 0",
+    "hook-13:lastAdvancedChapter normalized from \"205-206\" to 0",
+    "hook-14:lastAdvancedChapter normalized from \"204-206\" to 0",
+    "hook-15:lastAdvancedChapter normalized from \"204-206\" to 0",
+    "hook-16:lastAdvancedChapter normalized from \"204-206\" to 0",
+    "hook-17:lastAdvancedChapter normalized from \"204-206\" to 0",
+    "hook-18:lastAdvancedChapter normalized from \"205-206\" to 0",
+    "hook-19:lastAdvancedChapter normalized from \"205-206\" to 0"
   ]
 }

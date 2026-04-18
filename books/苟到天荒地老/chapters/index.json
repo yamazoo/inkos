@@ -4633,5 +4633,39 @@
       "completionTokens": 10210,
       "totalTokens": 10210
     }
+  },
+  {
+    "number": 206,
+    "title": "归途微光",
+    "status": "approved",
+    "wordCount": 3246,
+    "createdAt": "2026-04-18T23:28:57.717Z",
+    "updatedAt": "2026-04-18T23:29:07.554Z",
+    "auditIssues": [
+      "[warning] 最近3章持续高压（**震动→沉重→坚定→沉默→坚定→沉重→坚定→沉默→沉重→坚定** -> **坚定→沉默→沉重→坚定→沉默→沉重→坚定** -> **坚定→沉默→沉重→坚定→沉默→沉重→坚定→坚定→坚定**），缺少明显的情绪释放。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：hook-14（中程，陈旧）、hook-15（中程，陈旧）、hook-16（中程，陈旧），另有 2 条。",
+      "[warning] 104个段落里有64个不足35字，段落被切得过碎。",
+      "[warning] 连续出现6个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3246,
+      "postWriterNormalizeCount": 3246,
+      "postReviseCount": 0,
+      "finalCount": 3246,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 9665,
+      "totalTokens": 9665
+    }
   }
 ]

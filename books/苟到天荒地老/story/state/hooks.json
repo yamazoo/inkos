@@ -1,6 +1,15 @@
 {
   "hooks": [
     {
+      "hookId": "hook-1",
+      "startChapter": 0,
+      "type": "progressing→**resolved**",
+      "status": "resolved",
+      "lastAdvancedChapter": 205,
+      "expectedPayoff": "-",
+      "notes": "乱葬岗真相：石室入口/母亲绢帛/母亲遗言 → **本章收束确认**"
+    },
+    {
       "hookId": "hook-13",
       "startChapter": 204,
       "type": "open",
@@ -8,7 +17,7 @@
       "lastAdvancedChapter": 0,
       "expectedPayoff": "中程",
       "payoffTiming": "mid-arc",
-      "notes": "**大劫根子新揭示**：万年前四脉瓜分源根是人祸根源/三源先祖燃尽寿元是善后而非起因"
+      "notes": "**大劫根子新揭示**：万年前四脉瓜分源根是人祸根源/三源先祖燃尽寿元是善后而非起因 → 本章青鸾手札印证\"独占其三\""
     },
     {
       "hookId": "hook-14",
@@ -48,7 +57,7 @@
       "lastAdvancedChapter": 0,
       "expectedPayoff": "中程",
       "payoffTiming": "mid-arc",
-      "notes": "**陈守一决心**：不会重蹈覆辙/条件已具备"
+      "notes": "**陈守一决心**：不会重蹈覆辙/条件已具备 → **本章确认\"想活着出来\"而非\"以为自己能活着出来\"**"
     },
     {
       "hookId": "hook-18",
@@ -58,7 +67,7 @@
       "lastAdvancedChapter": 0,
       "expectedPayoff": "中程",
       "payoffTiming": "mid-arc",
-      "notes": "**聚居点草图/站位调整/青鸾手札乱葬岗记载**"
+      "notes": "**聚居点草图/站位调整/青鸾手札乱葬岗记载** → **本章青鸾手札印证节点信息**"
     },
     {
       "hookId": "hook-19",
@@ -68,17 +77,7 @@
       "lastAdvancedChapter": 0,
       "expectedPayoff": "中程",
       "payoffTiming": "mid-arc",
-      "notes": "**苏青黛遗言**：无论成败都不是结束/只是开始→**本章母亲绢帛完整揭示**"
-    },
-    {
-      "hookId": "hook-1",
-      "startChapter": 0,
-      "type": "progressing→**resolved**",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "中程",
-      "payoffTiming": "mid-arc",
-      "notes": "**乱葬岗真相：本章完全揭示/石室入口/母亲绢帛/母亲遗言**"
+      "notes": "**苏青黛遗言**：无论成败都不是结束/只是开始 → 本章\"这一次，我想活着出来\"呼应"
     }
   ]
 }

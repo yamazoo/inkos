@@ -1,69 +1,53 @@
 {
-  "chapter": 205,
+  "chapter": 206,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "**聚居点（夜间归来，经过城西小路、周老头破屋门口）**",
-      "validFromChapter": 205,
+      "object": "**聚居点→灵泉方向（晨间出发）**",
+      "validFromChapter": 206,
       "validUntilChapter": null,
-      "sourceChapter": 205
+      "sourceChapter": 206
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "**坚定→沉默→沉重→坚定→沉默→沉重→坚定→坚定→坚定 / 金痕对母亲绢帛产生共鸣反应（跳动→平息）→胸口温暖/获得母亲绢帛完整内容/已知铜戒+玉佩开启彼岸通道/已知母亲完整遗言/\"锁不可开\"含义理解/明天三月十四灵泉行动**",
-      "validFromChapter": 205,
+      "object": "**坚定→沉重→温暖→坚定→平静→温暖→坚定→紧张→坚定→坚定→坚定 / 金痕温热/已整合所有信息/完成心理准备/决心不重蹈覆辙/想要活着回来/准备出发**",
+      "validFromChapter": 206,
       "validUntilChapter": null,
-      "sourceChapter": 205
+      "sourceChapter": 206
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "**明天（三月十四）灵泉行动——源根归位，封印重启**",
-      "validFromChapter": 205,
+      "object": "**三月十四灵泉行动——源根归位，封印重启 / 去灵泉/见四脉/活着回来**",
+      "validFromChapter": 206,
       "validUntilChapter": null,
-      "sourceChapter": 205
+      "sourceChapter": 206
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "**金痕持续消耗/最多半年寿命/源根归位时必须站在封印正中心/承受源根之力反噬/母亲当年也以为自己能活着出来/非大毅力者不能为**",
-      "validFromChapter": 205,
+      "object": "**金痕持续消耗/最多半年寿命/源根归位时必须站在封印正中心/承受源根之力反噬/非大毅力者不能为**",
+      "validFromChapter": 206,
       "validUntilChapter": null,
-      "sourceChapter": 205
+      "sourceChapter": 206
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "**孙师兄（盟友/留守教苏婉儿站位）/青鸾（同行/聚居点等待收拾）/赵猛（同行/地窖入口守夜）/苏婉儿（同行/临界点站位）/正本清源（目的：让源根传人打开封印）**",
-      "validFromChapter": 205,
+      "object": "**孙师兄（盟友/留守教苏婉儿站位）/青鸾（同行/聚居点等待）/赵猛（同行/外围护卫）/苏婉儿（同行/临界点站位）/正本清源（目的：让源根传人打开封印）**",
+      "validFromChapter": 206,
       "validUntilChapter": null,
-      "sourceChapter": 205
+      "sourceChapter": 206
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "**源根传人身份确认/母亲遗言完整揭示/打开封印的代价/四脉站位阵法/\"非大毅力者不能为\"/明天三月十四灵泉行动**",
-      "validFromChapter": 205,
+      "object": "**源根传人身份确认/母亲遗言完整揭示/打开封印的代价/四脉站位阵法/\"非大毅力者不能为\"/三月十四灵泉行动开始**",
+      "validFromChapter": 206,
       "validUntilChapter": null,
-      "sourceChapter": 205
-    },
-    {
-      "subject": "current_state",
-      "predicate": "当前资源",
-      "object": "**黑石（即将耗尽）/玉坠（母亲力量持续消散）/铜戒（父亲遗物）/绢帛（母亲遗物/NEW：乱葬岗获得完整版本）/令牌（清源令）/玉简（残破半截）/玉佩（母亲遗物/贴身）/麦芽糖**",
-      "validFromChapter": 205,
-      "validUntilChapter": null,
-      "sourceChapter": 205
-    },
-    {
-      "subject": "current_state",
-      "predicate": "金痕状态",
-      "object": "**对绢帛产生共鸣（跳动）→完成使命后平息→胸口温暖**",
-      "validFromChapter": 205,
-      "validUntilChapter": null,
-      "sourceChapter": 205
+      "sourceChapter": 206
     }
   ]
 }
