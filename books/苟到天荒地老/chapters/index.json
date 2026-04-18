@@ -3961,5 +3961,34 @@
       "completionTokens": 32885,
       "totalTokens": 73120
     }
+  },
+  {
+    "number": 186,
+    "title": "春分惊变",
+    "status": "approved",
+    "wordCount": 2808,
+    "createdAt": "2026-04-18T18:20:08.220Z",
+    "updatedAt": "2026-04-18T18:25:04.581Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2808,
+      "postWriterNormalizeCount": 0,
+      "postReviseCount": 2808,
+      "finalCount": 2808,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 20089,
+      "completionTokens": 26024,
+      "totalTokens": 46113
+    }
   }
 ]

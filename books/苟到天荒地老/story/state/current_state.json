@@ -1,53 +1,53 @@
 {
-  "chapter": 185,
+  "chapter": 186,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点石屋",
-      "validFromChapter": 185,
+      "object": "灵泉石室→甬道出口→外界山路",
+      "validFromChapter": 186,
       "validUntilChapter": null,
-      "sourceChapter": 185
+      "sourceChapter": 186
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "决心坚定/眉心隐痛（但仍能承受）/黑石剩余约4次/明日下午独自赴灵泉",
-      "validFromChapter": 185,
+      "object": "**生机大损/金痕消退大半/修为从炼气期开始减弱/封印已稳固/眉心隐痛/身体虚弱/需要毁掉暗道**",
+      "validFromChapter": 186,
       "validUntilChapter": null,
-      "sourceChapter": 185
+      "sourceChapter": 186
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "**明日春分下午前往灵泉/天黑前进入灵泉核心激活封印/祠堂纵火争取时间窗口**",
-      "validFromChapter": 185,
+      "object": "**毁掉祠堂暗道/拖住正本清源/让赵猛等人安全撤离/活着**",
+      "validFromChapter": 186,
       "validUntilChapter": null,
-      "sourceChapter": 185
+      "sourceChapter": 186
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "黑石能量（约4次）/独自行动/时间窗口仅一天/孙师兄令牌",
-      "validFromChapter": 185,
+      "object": "**金痕消散中/生机在流失/修为在减弱/最多半年寿命（封印激活折损后的期限）**",
+      "validFromChapter": 186,
       "validUntilChapter": null,
-      "sourceChapter": 185
+      "sourceChapter": 186
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "陈守一 vs 正本清源(城东+祠堂+济世堂)",
-      "validFromChapter": 185,
+      "object": "陈守一 vs 正本清源(城东+祠堂+济世堂+城守府后街) / 陈守一 vs 封印代价",
+      "validFromChapter": 186,
       "validUntilChapter": null,
-      "sourceChapter": 185
+      "sourceChapter": 186
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "祠堂暗道逼近封印核心+春分祭典今夜+济世堂是城里据点+聚居点撤离中",
-      "validFromChapter": 185,
+      "object": "封印已修复但代价巨大/正本清源不会善罢甘休/金痕消散危机/需要毁掉暗道证据",
+      "validFromChapter": 186,
       "validUntilChapter": null,
-      "sourceChapter": 185
+      "sourceChapter": 186
     }
   ]
 }
