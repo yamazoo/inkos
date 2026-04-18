@@ -1179,6 +1179,16 @@
       "hookActivity": "H-内间完整真相 advanced; H-玄清宗内鬼 advanced; H-金痕消耗真相 advanced; H-聚居点暴露 advanced; H-正本清源行动布局 advanced; H-三源血脉 advanced",
       "mood": "警觉→沉思→沉重→坚定→平静→坚定",
       "chapterType": "情报整合章/真相揭示章/行动确认章"
+    },
+    {
+      "chapter": 184,
+      "title": "静夜筹谋",
+      "characters": "陈守一,赵猛,青鸾",
+      "events": "三人篝火前确认计划：春分祭典真相揭示（聚灵阵倒灌灵气破坏封印）+铜片阵图与地窖符纸关联确认+陈守一独自赴灵泉激活锁链+赵猛明夜再探地窖",
+      "stateChanges": "黑石再消耗一次（剩余约4次）/计划锁定/真相完整揭示/陈守一决心坚定",
+      "hookActivity": "H-正本清源行动布局 advanced; H-金痕消耗真相 advanced; H-内间完整真相 advanced; 赵猛侦查结果 advanced; H-三源血脉 advanced",
+      "mood": "紧绷",
+      "chapterType": "筹谋章/真相揭示章/行动确认章"
     }
   ]
 }

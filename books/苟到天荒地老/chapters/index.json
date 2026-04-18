@@ -3888,5 +3888,40 @@
       "completionTokens": 9250,
       "totalTokens": 9250
     }
+  },
+  {
+    "number": 184,
+    "title": "静夜筹谋",
+    "status": "approved",
+    "wordCount": 3407,
+    "createdAt": "2026-04-18T17:49:19.379Z",
+    "updatedAt": "2026-04-18T17:49:30.181Z",
+    "auditIssues": [
+      "[info] 183章与184章之间的日期计算存在轻微模糊：183章开头'春分还有三天'，183章结尾'明天就是十五'，184章开头重复'明天就是十五，后天十六，后天夜里就是春分'。遗书上的'三月十七'是祭典正日，与'春分还有三天'存在潜在混淆（三月十五春分，三月十七是祭典当天）。",
+      "[warning] 184章的篝火场景（青鸾三问）与183章篝火场景（确认计划）在情绪基调和功能上有重叠：两次篝火场景都围绕'是否独自行动'展开讨论，青鸾的第一问'那草图上的三点，你真打算去？'与183章结尾的'计划不变'形成重复确认。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H-玄清宗内鬼（立即，已逾期）、H-聚居点暴露（近期，可回收）。",
+      "[warning] 116个段落里有77个不足35字，段落被切得过碎。",
+      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3407,
+      "postWriterNormalizeCount": 3407,
+      "postReviseCount": 0,
+      "finalCount": 3407,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 40963,
+      "completionTokens": 15808,
+      "totalTokens": 56771
+    }
   }
 ]

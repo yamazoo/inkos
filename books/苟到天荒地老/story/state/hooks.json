@@ -5,20 +5,20 @@
       "startChapter": 156,
       "type": "核心代价",
       "status": "progressing",
-      "lastAdvancedChapter": 183,
-      "expectedPayoff": "本卷",
+      "lastAdvancedChapter": 184,
+      "expectedPayoff": "封印锁链激活时",
       "payoffTiming": "immediate",
-      "notes": "黑石纹路再淡一层；剩余约4-5次；\"压得住但压不住根\"；根治在锁里"
+      "notes": "黑石再消耗一次，纹路又淡一层；眉心胀热是金痕在提醒但选择不消耗次数；金痕来自彼岸冥族"
     },
     {
       "hookId": "H-三源血脉",
       "startChapter": 156,
       "type": "重要信息",
       "status": "progressing",
-      "lastAdvancedChapter": 183,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "赵猛师父\"三源分道，各有归处\"被印证；铜片三条线=三源血脉标记+一条锁链；四源合一封印稳固；\"锁不可开\"是嘱托而非警告"
+      "lastAdvancedChapter": 184,
+      "expectedPayoff": "封印锁链激活时",
+      "payoffTiming": "immediate",
+      "notes": "陈守一完整解释：三源分道+第四脉断传承→封印本已松动→只需再加一把力→三源合一+第四脉可激活锁链"
     },
     {
       "hookId": "H-身后尾巴",
@@ -34,20 +34,10 @@
       "startChapter": 178,
       "type": "mystery",
       "status": "progressing",
-      "lastAdvancedChapter": 183,
+      "lastAdvancedChapter": 184,
       "expectedPayoff": "揭开\"三月十七灵泉祭\"的具体仪式内容及正本清源如何借祭典破坏最后一道锁链",
-      "payoffTiming": "near-term",
+      "payoffTiming": "mid-arc",
       "notes": "刀痕四行字揭示：三月十七是祭典正日；\"锁链动封印松\"说明他们要在祭典上动手；\"三百年前未尽之事今可竟全功\"暗示他们知道三百年前被阻挠的完整计划"
-    },
-    {
-      "hookId": "H-内间完整真相",
-      "startChapter": 179,
-      "type": "核心揭秘",
-      "status": "progressing",
-      "lastAdvancedChapter": 183,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "immediate",
-      "notes": "铜片背面阵图揭示：三条线=三源标记，第四符号=锁链；三条线汇聚一点=封印中心；四源合一封印稳固；三源分道被印证；内间暗记=执法堂内部符号"
     },
     {
       "hookId": "H-玄清宗内鬼",
@@ -60,24 +50,34 @@
       "notes": "云雷纹靴底=执法堂执事一级制式；执事级人员出现在地窖附近；三百年前背叛者与三百年后布局者用同一套逻辑，都在执法堂"
     },
     {
-      "hookId": "赵猛侦查结果",
-      "startChapter": 180,
-      "type": "情报线索",
+      "hookId": "H-内间完整真相",
+      "startChapter": 179,
+      "type": "核心揭秘",
       "status": "progressing",
-      "lastAdvancedChapter": 182,
-      "expectedPayoff": "本卷",
+      "lastAdvancedChapter": 184,
+      "expectedPayoff": "封印锁链激活时",
       "payoffTiming": "immediate",
-      "notes": "**182章地窖情报：入口还在/没人守着/符纸换新（昨晚连夜画）/脚印被抹但留有痕迹往祠堂方向（好几条不是一条）**"
+      "notes": "地窖符纸布片阵图与铜片背面阵图一致：三条线汇聚一点=封印中心；三源合一+第四脉可激活锁链"
     },
     {
       "hookId": "眉心金痕青紫压痕",
       "startChapter": 180,
       "type": "身体状态",
       "status": "progressing",
-      "lastAdvancedChapter": 183,
+      "lastAdvancedChapter": 184,
       "expectedPayoff": "待定",
       "payoffTiming": "immediate",
-      "notes": "金痕跳动、眉心胀热、虫蚁蠕动感；黑石压制后缓解；纹路再淡一层"
+      "notes": "黑石压制后缓解但胀热感持续；青鸾指出眉心又在跳"
+    },
+    {
+      "hookId": "赵猛侦查结果",
+      "startChapter": 180,
+      "type": "情报线索",
+      "status": "progressing",
+      "lastAdvancedChapter": 184,
+      "expectedPayoff": "明夜春分",
+      "payoffTiming": "near-term",
+      "notes": "带靛青布片回/地窖符纸新换/阵图与铜片一致/赵猛决定明夜再探地窖查人数"
     },
     {
       "hookId": "H-正本清源灵泉据点",
@@ -104,10 +104,20 @@
       "startChapter": 182,
       "type": "核心揭秘",
       "status": "progressing",
-      "lastAdvancedChapter": 183,
-      "expectedPayoff": "三天后",
+      "lastAdvancedChapter": 184,
+      "expectedPayoff": "明夜春分祭典",
       "payoffTiming": "near-term",
-      "notes": "刀痕文字：三月十七灵泉祭/锁链动封印松/三百年前未尽之事今可竟全功/勿失良机；祭典前布局完整；陈守一决定明日春分夜独自赴灵泉"
+      "notes": "本章完整揭示：聚灵阵倒灌灵气到封印中心→撑开裂缝；三源分道+第四脉断传承→封印已松→只需再加一把力；陈守一计划是在阵法完成前激活锁链"
+    },
+    {
+      "hookId": "mystery-金痕代价根源-金痕是冥族刻-在陈守一身上",
+      "startChapter": 184,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 184,
+      "expectedPayoff": "金痕代价根源",
+      "payoffTiming": "mid-arc",
+      "notes": "金痕是冥族刻在陈守一身上的，来自彼岸——为何是冥族刻的？与封印有何关系？"
     }
   ]
 }
