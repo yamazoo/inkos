@@ -1,53 +1,53 @@
 {
-  "chapter": 159,
+  "chapter": 160,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "城西散修聚居点茶摊（即将离开前往青石山）",
-      "validFromChapter": 159,
+      "object": "废弃磨坊（侦察完城东目标院落后撤回）",
+      "validFromChapter": 160,
       "validUntilChapter": null,
-      "sourceChapter": 159
+      "sourceChapter": 160
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "警觉→震动→沉重→坚定→震动→沉重→坚定/已知第四条灵脉位置（城北七十里青石山）/已知古道存在（枯林上古运输要道）/金痕与玉坠强烈共鸣触发三源幻境/出冷汗/决心坚定/情报已刻木片",
-      "validFromChapter": 159,
+      "object": "沉重→坚定→震动→凝重→沉重→坚定/已探明院中有井/金痕预警院中有冥族相关危险/发现黑衣人有执法堂长老痣/决心坚定/决不死的信念",
+      "validFromChapter": 160,
       "validUntilChapter": null,
-      "sourceChapter": 159
+      "sourceChapter": 160
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "前往青石山/探查古道禁制/寻找三源归一方法/提防正本清源追杀/利用内部矛盾",
-      "validFromChapter": 159,
+      "object": "探查井的秘密/找到修复封印的别的方法/查明玉坠与第四股血脉的关联/传递情报警告三源后人",
+      "validFromChapter": 160,
       "validUntilChapter": null,
-      "sourceChapter": 159
+      "sourceChapter": 160
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "寿元两年/正本清源盯上三源后人/时间窗口不足半年/古道有上古禁制/玄清宗盯守青石山",
-      "validFromChapter": 159,
+      "object": "寿元两年/正本清源据点有禁制阵法/井中有冥族气息/正本清源追查三源后人/时间窗口不足半年",
+      "validFromChapter": 160,
       "validUntilChapter": null,
-      "sourceChapter": 159
+      "sourceChapter": 160
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "敌：正本清源（城东据点/长老级人物/至少四人/执法堂内鬼核心/催办切断灵脉法器）\\",
-      "validFromChapter": 159,
+      "object": "敌：正本清源（城东据点/禁制阵法/井中有冥族力量/执法堂长老痣黑衣人）\\",
+      "validFromChapter": 160,
       "validUntilChapter": null,
-      "sourceChapter": 159
+      "sourceChapter": 160
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "正本清源撕裂封印（明年春天切断第四条灵脉）vs 三源血脉修复封印（不足半年窗口/情报战/古道探查/利用内部矛盾）",
-      "validFromChapter": 159,
+      "object": "正本清源撕裂封印（井是通道入口/明年春天切断灵脉）vs 三源血脉修复封印（不足两年寿元/需要找到别的方法/情报战）",
+      "validFromChapter": 160,
       "validUntilChapter": null,
-      "sourceChapter": 159
+      "sourceChapter": 160
     }
   ]
 }

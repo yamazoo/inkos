@@ -1,95 +1,6 @@
 {
   "hooks": [
     {
-      "hookId": "H-三源后人被盯上",
-      "startChapter": 158,
-      "type": "新种",
-      "status": "open",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "待定",
-      "payoffTiming": "mid-arc",
-      "notes": "**新进展**：陈守一担心正本清源会抓/除掉三源后人/危机加剧"
-    },
-    {
-      "hookId": "H-三源归一",
-      "startChapter": 158,
-      "type": "新种",
-      "status": "open",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "待定",
-      "payoffTiming": "mid-arc",
-      "notes": "**重大推进**：幻境确认三道光影对应三源/金色（金痕）/青色（令牌）/银色（铜戒/银戒）/\"三源归一方可重铸锁链\""
-    },
-    {
-      "hookId": "H-第四条灵脉",
-      "startChapter": 158,
-      "type": "新种",
-      "status": "open",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "三年后",
-      "payoffTiming": "mid-arc",
-      "notes": "**重大进展**：确认位置在城北七十里青石山/被玄清宗盯守/有上古古道可绕"
-    },
-    {
-      "hookId": "H-修复封印代价",
-      "startChapter": 156,
-      "type": "核心主线",
-      "status": "open",
-      "lastAdvancedChapter": 3,
-      "expectedPayoff": "三年后",
-      "payoffTiming": "mid-arc",
-      "notes": "修复需燃烧大部分寿元/不足半年时间窗口"
-    },
-    {
-      "hookId": "H-彼岸守夜者",
-      "startChapter": 0,
-      "type": "关联",
-      "status": "open",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "待定",
-      "payoffTiming": "mid-arc",
-      "notes": "**重大进展**：通过金痕与玉坠呼应传递讯息/三源幻境/位置有眼线"
-    },
-    {
-      "hookId": "H-玉坠与金痕",
-      "startChapter": 0,
-      "type": "资源关联",
-      "status": "open",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "待揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "**重大推进**：两者同步热意传递→触发三源幻境→确认与三源血脉有关"
-    },
-    {
-      "hookId": "H-正本清源城东据点",
-      "startChapter": 149,
-      "type": "侦查目标",
-      "status": "progressing",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "持续/主线交织",
-      "payoffTiming": "mid-arc",
-      "notes": "**新动态**：调动人手/执法堂清点灵材准备法器"
-    },
-    {
-      "hookId": "H-三年时间窗口",
-      "startChapter": 148,
-      "type": "核心主线",
-      "status": "open",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "不足半年",
-      "notes": "**新动态**：不足半年/时间窗口大幅缩短确认"
-    },
-    {
-      "hookId": "H-正本清源内部矛盾",
-      "startChapter": 109,
-      "type": "隐线",
-      "status": "progressing",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "未来可用",
-      "payoffTiming": "mid-arc",
-      "notes": "**重大推进**：长老想等vs黑袍女子想动手/两股势力起内斗可能性/陈守一发现可利用"
-    },
-    {
       "hookId": "H-古道禁制",
       "startChapter": 159,
       "type": "新种",
@@ -97,7 +8,125 @@
       "lastAdvancedChapter": 1,
       "expectedPayoff": "未来章",
       "payoffTiming": "mid-arc",
-      "notes": "**新伏笔**：枯林上古运输要道/有禁制阵法机关/需要查明"
+      "notes": "枯林上古运输要道/有禁制阵法机关/需要查明"
+    },
+    {
+      "hookId": "H-三源后人被盯上",
+      "startChapter": 158,
+      "type": "新种",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "待定",
+      "payoffTiming": "mid-arc",
+      "notes": "正本清源追查三源后人/危机加剧/需要警告转移"
+    },
+    {
+      "hookId": "H-正本清源城东据点",
+      "startChapter": 149,
+      "type": "核心",
+      "status": "open",
+      "lastAdvancedChapter": 8,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "mid-arc",
+      "notes": "本章重大推进：井中有冥族力量/禁制阵法/与执法堂长老有关联"
+    },
+    {
+      "hookId": "H-玉坠与金痕",
+      "startChapter": 141,
+      "type": "核心",
+      "status": "open",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "mid-arc",
+      "notes": "本章重大推进：玉坠可能承载第四股血脉信息/不只是遗物"
+    },
+    {
+      "hookId": "H-井的秘密",
+      "startChapter": 160,
+      "type": "新种",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "未来章",
+      "payoffTiming": "mid-arc",
+      "notes": "城东院中有井/正本清源改造/有冥族气息/可能是通道入口"
+    },
+    {
+      "hookId": "H-执法堂长老痣",
+      "startChapter": 160,
+      "type": "新种",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "未来章",
+      "payoffTiming": "mid-arc",
+      "notes": "黑衣人有执法堂长老痣/两人关系待查"
+    },
+    {
+      "hookId": "H-正本清源内部矛盾",
+      "startChapter": 109,
+      "type": "核心",
+      "status": "open",
+      "lastAdvancedChapter": 19,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "mid-arc",
+      "notes": "长老与黑袍女子有分歧/可利用"
+    },
+    {
+      "hookId": "H-三年之约",
+      "startChapter": 148,
+      "type": "核心",
+      "status": "open",
+      "lastAdvancedChapter": 12,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "mid-arc",
+      "notes": "枯林见/危机加剧/陈守一决心坚定"
+    },
+    {
+      "hookId": "H-三源代价均摊",
+      "startChapter": 133,
+      "type": "核心",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "mid-arc",
+      "notes": "代价明确：需燃烧寿元"
+    },
+    {
+      "hookId": "H-三人的未来",
+      "startChapter": 139,
+      "type": "核心",
+      "status": "open",
+      "lastAdvancedChapter": 21,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "mid-arc",
+      "notes": "需要警告转移/陈守一担忧"
+    },
+    {
+      "hookId": "H-守夜者使命",
+      "startChapter": 133,
+      "type": "核心",
+      "status": "open",
+      "lastAdvancedChapter": 27,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "mid-arc",
+      "notes": "守夜者传递讯息/等待继承"
+    },
+    {
+      "hookId": "H-灵气流失之谜",
+      "startChapter": 151,
+      "type": "背景",
+      "status": "open",
+      "lastAdvancedChapter": 9,
+      "expectedPayoff": "已揭露",
+      "notes": "灵气被抽干七成"
+    },
+    {
+      "hookId": "H-大劫真相",
+      "startChapter": 156,
+      "type": "背景",
+      "status": "open",
+      "lastAdvancedChapter": 4,
+      "expectedPayoff": "已揭露",
+      "notes": "锁链封裂缝/祖父第四股力量"
     }
   ]
 }
