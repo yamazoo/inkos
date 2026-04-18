@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 174,
+  "lastAppliedChapter": 175,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -379,6 +379,16 @@
     "mystery-171-解释祖父为何-持有正本清源-内部令牌:lastAdvancedChapter normalized from \"173章推进：陈守一思考祖父留下铜钱/绢帛/\"吾儿若见此书\"的完整意义——祖父知道些什么；祖父立场明确是守护者，但持有正本清源令牌仍是悬念\" to 0",
     "H-正本清源计划:lastAdvancedChapter normalized from \"173章维持：两天期限/正本清源勾结城守府/仍在准备行动；主角判断\"坊间戒严不会持续太久，一旦风声过去，该动的人一定会动\"\" to 0",
     "H-两界之争另有根源:status normalized from \"**NEW**\" to \"open\"",
-    "H-两界之争另有根源:lastAdvancedChapter normalized from \"**173章核心发现**：绢帛\"神尊非敌冥王非友两界之争另有根源\"→陈守一推理：如果神尊冥王都不是敌人，万年来两界争斗的真正敌人另有其人→推动这一切的究竟是谁？→叙事边界拓展\" to 0"
+    "H-两界之争另有根源:lastAdvancedChapter normalized from \"**173章核心发现**：绢帛\"神尊非敌冥王非友两界之争另有根源\"→陈守一推理：如果神尊冥王都不是敌人，万年来两界争斗的真正敌人另有其人→推动这一切的究竟是谁？→叙事边界拓展\" to 0",
+    "H-金痕消耗真相:lastAdvancedChapter normalized from \"175章：温度比早上又高了些/脸色比昨天差\" to 0",
+    "H-守夜者三天期限:lastAdvancedChapter normalized from \"175章：两天期限（春分前）/只剩两天/时间很紧\" to 0",
+    "H-正本清源计划:lastAdvancedChapter normalized from \"175章：发现内间同袍存在/祖父卧底廿年/内部有分裂势力压着行动\" to 0",
+    "H-冥族存在:lastAdvancedChapter normalized from \"175章：提及但未直接推进\" to 0",
+    "H-第四脉身份:lastAdvancedChapter normalized from \"175章：祖父册子证实第四脉使命/卧底身份\" to 0",
+    "H-绢帛画像:lastAdvancedChapter normalized from \"175章：提及但未直接推进\" to 0",
+    "H-两界之争另有根源:lastAdvancedChapter normalized from \"175章：**核心推进：正本清源内部有分歧/内间势力压着行动/祖父卧底廿年**\" to 0",
+    "mystery-171-解释祖父为何-持有正本清源-内部令牌:lastAdvancedChapter normalized from \"175章：**重大揭示完成：祖父是卧底/在内间同袍接应下进入/廿年卧底/留下联络信物**\" to 0",
+    "H-内间同袍联络:lastAdvancedChapter normalized from \"175章：发现祖父册子/名单（城东义庄/城北旧祠/城守府后街）/纸条\"二物合一可为信物\"/决定明日联络尝试\" to 0",
+    "H-城守府后街吴姓卖肉:lastAdvancedChapter normalized from \"175章：赵猛提及城守府后街有个卖肉的姓吴/人还算仗义/明日去后街打探\" to 0"
   ]
 }
