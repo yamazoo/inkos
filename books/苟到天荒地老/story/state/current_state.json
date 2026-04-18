@@ -1,53 +1,53 @@
 {
-  "chapter": 161,
+  "chapter": 162,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "废弃磨坊（城东废墟边缘）",
-      "validFromChapter": 161,
+      "object": "城东废墟→主街早市→返回聚居点途中",
+      "validFromChapter": 162,
       "validUntilChapter": null,
-      "sourceChapter": 161
+      "sourceChapter": 162
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "疲惫→沉重→坚定→释然→决然 / 金痕余韵蛰伏 / 玉坠温热贴胸口 / 体力精力消耗严重 / 神识耗尽 / 隐息符用尽 / 决心找到别的方法 / 有了一个家的归属感",
-      "validFromChapter": 161,
+      "object": "疲惫但稳定 / 金痕余韵消退中（蛰伏）/ 玉坠温凉（接近体温）/ 体力精力部分恢复 / 神识耗尽 / 隐息符用尽 / 饥饿（刚吃过馄饨）/ 情报整合完成 / 情感觉醒持续 / 有了家的归属感 / 决然返回",
+      "validFromChapter": 162,
       "validUntilChapter": null,
-      "sourceChapter": 161
+      "sourceChapter": 162
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "查井的秘密（正本清源的门） / 查痣（执法堂长老关联） / 找修复封印的别的方法 / 找新的落脚点（靠近城东） / 传递情报警告三源后人",
-      "validFromChapter": 161,
+      "object": "查井的秘密（正本清源的门）/ 查痣（执法堂长老关联）/ 找修复封印的别的方法 / 传递情报警告三源后人 / 等神识恢复再探井 / 等隐息符有了着落 / 更熟悉区域后再行动",
+      "validFromChapter": 162,
       "validUntilChapter": null,
-      "sourceChapter": 161
+      "sourceChapter": 162
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "寿元不足两年（持续消耗中）/ 隐息符用尽 / 神识耗尽 / 体力精力严重消耗 / 正本清源追查三源后人",
-      "validFromChapter": 161,
+      "object": "寿元不足两年（持续消耗中）/ 隐息符用尽 / 神识耗尽 / 体力精力部分恢复但仍有限 / 正本清源在城东活动频繁",
+      "validFromChapter": 162,
       "validUntilChapter": null,
-      "sourceChapter": 161
+      "sourceChapter": 162
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "敌：正本清源（城东据点/井是通道入口/执法堂长老内鬼）",
-      "validFromChapter": 161,
+      "object": "敌：正本清源（城东据点/井是通道入口/执法堂长老内鬼/夜间活动频繁/多人多火把）",
+      "validFromChapter": 162,
       "validUntilChapter": null,
-      "sourceChapter": 161
+      "sourceChapter": 162
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "正本清源撕裂封印（井是通道/明年春天切断灵脉）vs 三源血脉修复封印（不足两年寿元/金痕已在消耗生机/需找别的方法）",
-      "validFromChapter": 161,
+      "object": "正本清源撕裂封印（井是通道/明年春天切断灵脉/夜间活动频繁）vs 三源血脉修复封印（不足两年寿元/金痕已在消耗生机/需找别的方法）",
+      "validFromChapter": 162,
       "validUntilChapter": null,
-      "sourceChapter": 161
+      "sourceChapter": 162
     }
   ]
 }

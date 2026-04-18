@@ -11,51 +11,11 @@
       "notes": "锁链封裂缝/祖父第四股力量"
     },
     {
-      "hookId": "H-井的秘密",
-      "startChapter": 160,
-      "type": "新种",
-      "status": "open",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "未来章",
-      "payoffTiming": "mid-arc",
-      "notes": "城东院中有井/正本清源改造/有冥族气息/可能是通道入口/正本清源的\"门\""
-    },
-    {
-      "hookId": "H-执法堂长老痣",
-      "startChapter": 160,
-      "type": "新种",
-      "status": "open",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "未来章",
-      "payoffTiming": "mid-arc",
-      "notes": "黑衣人有执法堂长老痣/两人关系（同门或内应）待查"
-    },
-    {
-      "hookId": "H-古道禁制",
-      "startChapter": 159,
-      "type": "新种",
-      "status": "open",
-      "lastAdvancedChapter": 2,
-      "expectedPayoff": "未来章",
-      "payoffTiming": "mid-arc",
-      "notes": "枯林上古运输要道/有禁制阵法机关/需要查明"
-    },
-    {
-      "hookId": "H-三源后人被盯上",
-      "startChapter": 158,
-      "type": "新种",
-      "status": "open",
-      "lastAdvancedChapter": 3,
-      "expectedPayoff": "待定",
-      "payoffTiming": "mid-arc",
-      "notes": "正本清源追查三源后人/危机加剧/需要警告转移"
-    },
-    {
       "hookId": "H-金痕消耗真相",
       "startChapter": 161,
       "type": "新种",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 1,
       "expectedPayoff": "未来章",
       "payoffTiming": "mid-arc",
       "notes": "金痕从灵泉激活起就在燃烧生机/是锁链一部分/一直填命"
@@ -65,10 +25,30 @@
       "startChapter": 161,
       "type": "新种",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 1,
       "expectedPayoff": "未来章",
       "payoffTiming": "mid-arc",
       "notes": "玉坠承载第四股血脉信息/不只是遗物"
+    },
+    {
+      "hookId": "H-井的秘密",
+      "startChapter": 160,
+      "type": "新种",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "未来章",
+      "payoffTiming": "mid-arc",
+      "notes": "城东废墟中有井/正本清源改过/青石井沿/直径五六尺/可能是通道入口/正本清源的\"门\""
+    },
+    {
+      "hookId": "H-执法堂长老痣",
+      "startChapter": 160,
+      "type": "新种",
+      "status": "open",
+      "lastAdvancedChapter": 2,
+      "expectedPayoff": "未来章",
+      "payoffTiming": "mid-arc",
+      "notes": "黑衣人有执法堂长老痣/两人关系（同门或内应）待查/黑衣人=执法堂长老手下"
     }
   ]
 }

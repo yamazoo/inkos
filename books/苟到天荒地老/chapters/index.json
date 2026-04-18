@@ -3107,5 +3107,38 @@
       "completionTokens": 18975,
       "totalTokens": 18975
     }
+  },
+  {
+    "number": 162,
+    "title": "井口余温",
+    "status": "approved",
+    "wordCount": 3978,
+    "createdAt": "2026-04-18T00:21:57.456Z",
+    "updatedAt": "2026-04-18T00:22:51.974Z",
+    "auditIssues": [
+      "[info] 检测到3句连续以相同开头的句子，呈现列表式AI生成结构"
+    ],
+    "lengthWarnings": [
+      "第162章经过一次字数归一化后仍超出硬区间（2182-3818，实际 3978）。"
+    ],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2477,
+      "postWriterNormalizeCount": 3978,
+      "postReviseCount": 0,
+      "finalCount": 3978,
+      "normalizeApplied": true,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 19076,
+      "completionTokens": 13108,
+      "totalTokens": 32184
+    }
   }
 ]
