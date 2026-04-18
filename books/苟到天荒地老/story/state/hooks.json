@@ -7,34 +7,7 @@
       "status": "open",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "中程",
-      "notes": "**重大推进**：乱葬岗下有封印阵/是七个节点之一/三源先祖精血神魂注入/七十三人埋葬与此相关"
-    },
-    {
-      "hookId": "hook-2",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "中程",
-      "notes": "**重大推进**：孙师兄身份确认（苏青黛徒弟/师姐）；师妹后人线索完整串联"
-    },
-    {
-      "hookId": "hook-3",
-      "startChapter": 0,
-      "type": "progressing",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "中程",
-      "notes": "**完整揭示**：源根本身是第四脉/长兄的后人就是源根本身/陈守一是源根传人/母亲是长兄直系血脉"
-    },
-    {
-      "hookId": "hook-4",
-      "startChapter": 0,
-      "type": "mystery",
-      "status": "resolved",
-      "lastAdvancedChapter": 200,
-      "expectedPayoff": "祖父绢帛被撕原因揭示",
-      "notes": "已在200章揭示"
+      "notes": "**重大推进**：乱葬岗下有封印阵/是七个节点之一/三源先祖精血神魂注入/七十三人埋葬与此相关/陈守一即将前往"
     },
     {
       "hookId": "hook-10",
@@ -52,7 +25,7 @@
       "status": "open",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "中程",
-      "notes": "**本章重大推进**：令牌凹槽+玉简边缘+绢帛印子三者纹路吻合，疑似同一块东西碎裂后的三个部分"
+      "notes": "清源令之谜/碎裂三部分/封印钥匙"
     },
     {
       "hookId": "hook-12",
@@ -61,7 +34,90 @@
       "status": "open",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "中程",
-      "notes": "**本章推进**：青鸾师父/苏青黛/孙师兄三人均指向同一支后人"
+      "notes": "青鸾/苏青黛/孙师兄传承链"
+    },
+    {
+      "hookId": "hook-2",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中程",
+      "notes": "孙师兄身份/师妹后人传承链"
+    },
+    {
+      "hookId": "hook-3",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中程",
+      "payoffTiming": "mid-arc",
+      "notes": "**完整揭示**：源根/金痕/母亲/四脉/代价"
+    },
+    {
+      "hookId": "hook-13",
+      "startChapter": 204,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中程",
+      "notes": "**大劫根子新揭示**：万年前四脉瓜分源根是人祸根源/三源先祖燃尽寿元是善后而非起因"
+    },
+    {
+      "hookId": "hook-14",
+      "startChapter": 204,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中程",
+      "notes": "陈守义无金痕/为何不是传人/金痕必要性"
+    },
+    {
+      "hookId": "hook-15",
+      "startChapter": 204,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中程",
+      "notes": "**苏婉儿临界点站位**：精准一尺/三年练习/生死两隔"
+    },
+    {
+      "hookId": "hook-16",
+      "startChapter": 204,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中程",
+      "notes": "赵猛为何不去/心性不稳/外围护卫"
+    },
+    {
+      "hookId": "hook-17",
+      "startChapter": 204,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中程",
+      "payoffTiming": "mid-arc",
+      "notes": "**陈守一决心**：不会重蹈覆辙/条件已具备"
+    },
+    {
+      "hookId": "hook-18",
+      "startChapter": 204,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中程",
+      "notes": "**聚居点草图/站位调整/青鸾手札乱葬岗记载**"
+    },
+    {
+      "hookId": "hook-19",
+      "startChapter": 204,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中程",
+      "notes": "**苏青黛遗言**：无论成败都不是结束/只是开始"
     }
   ]
 }

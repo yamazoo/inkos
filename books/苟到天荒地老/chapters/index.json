@@ -4566,5 +4566,38 @@
       "completionTokens": 25897,
       "totalTokens": 49432
     }
+  },
+  {
+    "number": 204,
+    "title": "承志",
+    "status": "approved",
+    "wordCount": 3718,
+    "createdAt": "2026-04-18T22:57:30.116Z",
+    "updatedAt": "2026-04-18T22:57:37.464Z",
+    "auditIssues": [
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：hook-10（中程，已逾期）、hook-11（立即，已逾期）、hook-12（立即，已逾期），另有 1 条。",
+      "[warning] 161个段落里有124个不足35字，段落被切得过碎。",
+      "[warning] 连续出现16个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 4410,
+      "postWriterNormalizeCount": 3718,
+      "postReviseCount": 0,
+      "finalCount": 3718,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 13177,
+      "totalTokens": 13177
+    }
   }
 ]

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 203,
+  "lastAppliedChapter": 204,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -540,6 +540,19 @@
     "hook-11:lastAdvancedChapter normalized from \"容器具体信息\" to 0",
     "hook-12:startChapter normalized from \"mystery\" to 0",
     "hook-12:status normalized from \"1\" to \"open\"",
-    "hook-12:lastAdvancedChapter normalized from \"三源先祖三支后人下落\" to 0"
+    "hook-12:lastAdvancedChapter normalized from \"三源先祖三支后人下落\" to 0",
+    "hook-1:lastAdvancedChapter normalized from \"**本章推进**：陈守一即将前往乱葬岗取母亲留下的东西/乱葬岗下有封印阵/是七个节点之一\" to 0",
+    "hook-10:lastAdvancedChapter normalized from \"未推进\" to 0",
+    "hook-11:lastAdvancedChapter normalized from \"**本章维持**：令牌凹槽+玉简边缘+绢帛印子三者纹路吻合/同源清源令碎裂三份/誓约原文已抄录交付\" to 0",
+    "hook-12:lastAdvancedChapter normalized from \"**本章维持**：青鸾师父/苏青黛/孙师兄三人均指向同一支后人\" to 0",
+    "hook-2:lastAdvancedChapter normalized from \"**本章维持**：孙师兄师姐弟关系确认/苏青黛徒弟/师妹后人线索完整串联\" to 0",
+    "hook-3:lastAdvancedChapter normalized from \"**本章维持**：源根本身是第四脉/长兄的后人就是源根本身/陈守一是源根传人/母亲是长兄直系血脉/金痕持续活跃/后天灵泉行动\" to 0",
+    "hook-13:lastAdvancedChapter normalized from \"**本章新种**：孙师兄引述苏青黛遗言\"大劫不是天罚，是人祸。但人祸的根子，不在当年那四个人身上\"/陈守一解读\"真正的人祸在更早之前四脉瓜分源根\"\" to 0",
+    "hook-14:lastAdvancedChapter normalized from \"**本章新种**：陈守义不知道自己也是三源先祖后裔/祖父没告诉他因为没有金痕/陈守义被灌灵泉水根基毁了/金痕是成为源根传人的必要条件\" to 0",
+    "hook-15:lastAdvancedChapter normalized from \"**本章新种**：苏婉儿站位精确到一尺/误差一尺生死两隔/临界点引导源根力量/太近被吞噬/太远引不动/苏婉儿练了三年\" to 0",
+    "hook-16:lastAdvancedChapter normalized from \"**本章新种**：赵猛位置外围护卫/因心性不稳会被卷进去/只能阻止有人破坏仪式\" to 0",
+    "hook-17:lastAdvancedChapter normalized from \"**本章新种**：陈守一决心\"不重蹈母亲覆辙\"/母亲当年孤身一人没有四脉齐聚条件/现在三脉后人都在/有把握成功\" to 0",
+    "hook-18:lastAdvancedChapter normalized from \"**本章新种**：赵猛和青鸾讨论灵泉地形并画草图/标注聚居点位置/最初苏婉儿位置定在\"最安全的外围点\"/陈守一纠正\"太安全引不出力量\"改为\"临界点\"/青鸾手札有乱葬岗记载\" to 0",
+    "hook-19:lastAdvancedChapter normalized from \"**本章新种**：苏青黛遗言\"源根归位之日，便是新的开始。无论成败，都不会是结束\"/孙师兄在绢帛背面写\"活着回来\"\" to 0"
   ]
 }
