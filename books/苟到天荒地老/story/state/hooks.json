@@ -1,104 +1,94 @@
 {
   "hooks": [
     {
-      "hookId": "H-金痕消耗真相",
-      "startChapter": 156,
-      "type": "核心代价",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "mid-arc",
-      "notes": "持续消耗中，两天期限内必须解决"
-    },
-    {
-      "hookId": "H-第四脉身份",
-      "startChapter": 170,
+      "hookId": "H-两界之争另有根源",
+      "startChapter": 173,
       "type": "核心悬念",
       "status": "progressing",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "第四脉使命（以生机补缺铸锁链）已明确"
-    },
-    {
-      "hookId": "H-守夜者三天期限",
-      "startChapter": 165,
-      "type": "紧迫倒计时",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "两天期限已确立"
-    },
-    {
-      "hookId": "核心线索-本卷-冥王曾试图谈",
-      "startChapter": 165,
-      "type": "核心线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "**核心对立逻辑重构：万年来两界争斗的真正敌人另有其人**"
-    },
-    {
-      "hookId": "H-三源血脉",
-      "startChapter": 156,
-      "type": "核心设定",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "激活方法已明确"
-    },
-    {
-      "hookId": "H-冥族存在",
-      "startChapter": 156,
-      "type": "核心威胁",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "40-60章",
       "payoffTiming": "mid-arc",
-      "notes": "紧迫性维持"
-    },
-    {
-      "hookId": "H-绢帛画像",
-      "startChapter": 170,
-      "type": "核心线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "高个子身份悬念深化"
-    },
-    {
-      "hookId": "mystery-171-解释祖父为何-持有正本清源-内部令牌",
-      "startChapter": 171,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "解释祖父为何持有正本清源内部令牌、祖父如何获得正本清源信任",
-      "payoffTiming": "near-term",
-      "notes": "祖父同时是第四脉传人和正本清源内部人员，身份双重性仍是谜"
+      "notes": "核心对立逻辑重构：神尊冥王都不是敌人，真正敌人另有其人"
     },
     {
       "hookId": "H-正本清源计划",
       "startChapter": 149,
       "type": "核心阴谋",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 174,
       "expectedPayoff": "本卷",
       "payoffTiming": "near-term",
-      "notes": "可考虑近期回收"
+      "notes": "**174章重大推进：确认春分祭典/城外设坛/义庄祭品来源/城守府勾结/坊市探子/城外祠堂据点发现**"
     },
     {
-      "hookId": "H-两界之争另有根源",
-      "startChapter": 173,
-      "type": "**NEW/核心悬念**",
-      "status": "open",
-      "lastAdvancedChapter": 0,
+      "hookId": "H-金痕消耗真相",
+      "startChapter": 156,
+      "type": "核心代价",
+      "status": "progressing",
+      "lastAdvancedChapter": 174,
       "expectedPayoff": "本卷",
-      "payoffTiming": "mid-arc",
-      "notes": "**核心对立逻辑被重构**"
+      "payoffTiming": "near-term",
+      "notes": "**174章：热度比早上又高了些/脸色比前两天还差/眼底青黑骗不了人/青鸾评价\"撑不了多久\"**"
+    },
+    {
+      "hookId": "H-第四脉身份",
+      "startChapter": 170,
+      "type": "核心悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 173,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "第四脉使命已明确；身份悬念已收窄至祖父双重身份来源"
+    },
+    {
+      "hookId": "H-绢帛画像",
+      "startChapter": 170,
+      "type": "核心线索",
+      "status": "progressing",
+      "lastAdvancedChapter": 173,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "高个子观察姿势已发现；画像悬念深化"
+    },
+    {
+      "hookId": "H-守夜者三天期限",
+      "startChapter": 165,
+      "type": "紧迫倒计时",
+      "status": "progressing",
+      "lastAdvancedChapter": 174,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "**两天期限已确立（春分前）；青鸾、赵猛已知期限紧迫**"
+    },
+    {
+      "hookId": "H-冥族存在",
+      "startChapter": 40,
+      "type": "核心悬念",
+      "status": "progressing",
+      "lastAdvancedChapter": 174,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "城东义庄祭品来源暗示/黑雾中冥物人形/城外祠堂可能是冥气相关仪式"
+    },
+    {
+      "hookId": "mystery-171-解释祖父为何-持有正本清源-内部令牌",
+      "startChapter": 171,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 171,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "祖父同时是第四脉传人和正本清源内部人员；身份双重性仍是谜"
+    },
+    {
+      "hookId": "核心线索-本卷-冥王曾试图谈",
+      "startChapter": 165,
+      "type": "核心线索",
+      "status": "progressing",
+      "lastAdvancedChapter": 173,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "核心对立逻辑重构：万年来两界争斗的真正敌人另有其人"
     }
   ]
 }

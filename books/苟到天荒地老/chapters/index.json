@@ -3527,5 +3527,42 @@
       "completionTokens": 12352,
       "totalTokens": 35942
     }
+  },
+  {
+    "number": 174,
+    "title": "归人带风：灶边听",
+    "status": "approved",
+    "wordCount": 4872,
+    "createdAt": "2026-04-18T16:08:13.631Z",
+    "updatedAt": "2026-04-18T16:08:23.463Z",
+    "auditIssues": [
+      "[info] 第174章开篇\"三人围着灶台吃粥\"与第173章\"三人围灶台吃粥\"场景高度相似。虽然通过赵猛\"出门快两个时辰\"可推断174章是午饭场景（173章是早饭），但粥的描写角度接近——都是野菜稀粥、呼噜扒饭、添粥拨碗底的吃法。",
+      "[info] 第173章末尾发现\"绢帛画像高个子站姿异常（观察姿势非等待）\"，174章中陈守一推理\"正本清源可能不知道真相被利用\"，但未回扣\"高个子在观察什么\"这一细节。高个子究竟在观察什么、与\"另有根源\"的关联尚未建立。",
+      "[warning] 最近3章持续高压（紧张→平静→震惊→凝重→坚定→坚定 -> 沉重 -> 紧绷→震惊→沉重→坚定），缺少明显的情绪释放。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H-冥族存在（中程，已逾期）、H-三源血脉（近期，已逾期）、核心线索-本卷-冥王曾试图谈（近期，已逾期），另有 4 条。",
+      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [
+      "第174章经过一次字数归一化后仍超出硬区间（2182-3818，实际 4872）。"
+    ],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2367,
+      "postWriterNormalizeCount": 4872,
+      "postReviseCount": 0,
+      "finalCount": 4872,
+      "normalizeApplied": true,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 10825,
+      "totalTokens": 10825
+    }
   }
 ]

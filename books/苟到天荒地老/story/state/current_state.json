@@ -1,53 +1,53 @@
 {
-  "chapter": 173,
+  "chapter": 174,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点院子",
-      "validFromChapter": 173,
+      "object": "聚居点石屋院子（傍晚）",
+      "validFromChapter": 174,
       "validUntilChapter": null,
-      "sourceChapter": 173
+      "sourceChapter": 174
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "金痕蛰伏发热警告/整夜未眠后小憩/决心坚定/绢帛激活成功/已知完整绢帛内容/已发现绢帛画像高者站姿异常（观察姿势非等待）/铜钱握在手心/独自思考中",
-      "validFromChapter": 173,
+      "object": "金痕持续发热加剧（比早上更高）/脸色变差/眼底青黑/决心坚定/独自侦察成功/已发现城外祠堂据点/掌握城守府与正本清源勾结证据/知晓正本清源在坊市布置探子/决定明日探查老宅子",
+      "validFromChapter": 174,
       "validUntilChapter": null,
-      "sourceChapter": 173
+      "sourceChapter": 174
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "阻止正本清源撕裂封印/寻找三源血脉帮手/修复封印/传递情报警告三源后人/等消息/想清楚下一步",
-      "validFromChapter": 173,
+      "object": "明日探查城东老宅子/继续追查祭坛位置/两天内阻止正本清源/阻止春分祭典",
+      "validFromChapter": 174,
       "validUntilChapter": null,
-      "sourceChapter": 173
+      "sourceChapter": 174
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "寿元不足两年/两天期限/黑雾加速扩散一倍/金痕持续消耗",
-      "validFromChapter": 173,
+      "object": "寿元不足两年/两天期限（春分前）/黑雾加速扩散/金痕持续消耗加剧",
+      "validFromChapter": 174,
       "validUntilChapter": null,
-      "sourceChapter": 173
+      "sourceChapter": 174
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "苏婉儿(同行者/核心盟友/留守)/赵猛(同行者/誓言同行/外出侦察/在聚居点附近转)/青鸾(同行者/预警黑雾/外出挖野菜/右腿微跛/消耗未恢复)",
-      "validFromChapter": 173,
+      "object": "正本清源（敌对/调动人手/城外祠堂据点/城守府勾结/坊市布置探子）vs 苏婉儿(同行者/留守/核心盟友) vs 赵猛(同行者/誓言同行/留守/可信赖/糖葫芦情报意识) vs 青鸾(同行者/右腿微跛/留守/情报来源/母亲接受)",
+      "validFromChapter": 174,
       "validUntilChapter": null,
-      "sourceChapter": 173
+      "sourceChapter": 174
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "正本清源撕裂封印（两天期限/三十二份祭品/勾结城守府/正在行动）vs 三源血脉修复封印（寿元不足两年/两天期限/需找帮手/仍在情报整合阶段）",
-      "validFromChapter": 173,
+      "object": "正本清源撕裂封印（两天期限/春分祭典/三十二份祭品/勾结城守府/城外祠堂据点/坊市探子撒网/正在收紧防线）vs 三源血脉阻止封印（寿元不足两年/两天期限/掌握城外据点位置/掌握城守府勾结证据/明日继续探查老宅）",
+      "validFromChapter": 174,
       "validUntilChapter": null,
-      "sourceChapter": 173
+      "sourceChapter": 174
     }
   ]
 }
