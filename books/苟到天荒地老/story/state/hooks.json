@@ -1,104 +1,99 @@
 {
   "hooks": [
     {
-      "hookId": "H-正本清源行动布局",
-      "startChapter": 0,
-      "type": "progressing",
+      "hookId": "H-乱葬岗真相",
+      "startChapter": 191,
+      "type": "世界设定",
       "status": "progressing",
       "lastAdvancedChapter": 191,
       "expectedPayoff": "祭典期间",
       "payoffTiming": "near-term",
-      "notes": "祭典最早是周执事旧部放出的风声/正本清源和周执事旧部两拨人各有目的/祭典那晚可能同时动手"
+      "notes": "乱葬岗埋的是三十年前死在灵泉边的七十三人"
     },
     {
-      "hookId": "H-济世堂据点",
-      "startChapter": 0,
-      "type": "open",
-      "status": "resolved",
+      "hookId": "H-灵泉真相",
+      "startChapter": 191,
+      "type": "世界设定",
+      "status": "progressing",
       "lastAdvancedChapter": 191,
-      "expectedPayoff": "已揭示",
+      "expectedPayoff": "祭典期间",
       "payoffTiming": "near-term",
-      "notes": "**济世堂是两方共同的联络点（正本清源+周执事旧部）/吴掌柜是两方共同的联络人**"
+      "notes": "父亲以身为饵引各方入局/黑石是开启灵泉真正的钥匙/三源合一只是引子/真正的封印在更深的地方"
     },
     {
       "hookId": "H-内间完整真相",
       "startChapter": 187,
-      "type": "progressing",
+      "type": "势力",
       "status": "progressing",
-      "lastAdvancedChapter": 191,
+      "lastAdvancedChapter": 192,
       "expectedPayoff": "祭典期间",
       "payoffTiming": "mid-arc",
       "notes": "城守府后街是周执事旧部/正本清源内部还有\"内间\"/两方势力交织"
     },
     {
-      "hookId": "H-孙师兄后续",
-      "startChapter": 189,
-      "type": "open",
-      "status": "resolved",
-      "lastAdvancedChapter": 191,
-      "expectedPayoff": "已揭示",
-      "payoffTiming": "near-term",
-      "notes": "**孙师兄真实身份完全揭示：替师父还债/祖父救了他师父/三十年前师父本该死在里面/祖父把他换出来自己留下**"
-    },
-    {
       "hookId": "H-周执事旧案",
       "startChapter": 10,
-      "type": "**open→progressing**",
+      "type": "势力",
       "status": "progressing",
-      "lastAdvancedChapter": 191,
+      "lastAdvancedChapter": 192,
       "expectedPayoff": "祭典期间",
       "payoffTiming": "mid-arc",
-      "notes": "**周执事三十年前负责善后/留人盯着玄清宗/被贬后消失/最近又开始活动/祭典是他旧部放出风声**"
+      "notes": "周执事三十年前负责善后/留人盯着玄清宗/被贬后消失/最近又开始活动/祭典是他旧部放出风声"
+    },
+    {
+      "hookId": "H-正本清源行动布局",
+      "startChapter": 0,
+      "type": "势力",
+      "status": "progressing",
+      "lastAdvancedChapter": 192,
+      "expectedPayoff": "**祭典（三月十四夜）**",
+      "notes": "**正本清源三月十四夜动手（比祭典早一天）/祠堂+灵泉两处同时动手可能性**"
     },
     {
       "hookId": "H-乌头种子谜题",
       "startChapter": 189,
-      "type": "open",
+      "type": "物品",
       "status": "open",
       "lastAdvancedChapter": 189,
       "expectedPayoff": "mid-arc",
       "payoffTiming": "mid-arc",
-      "notes": "用途仍不明"
+      "notes": "用途仍不明（城西五石散接头点有残留粉末）"
     },
     {
       "hookId": "H-城西接头点",
       "startChapter": 189,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 189,
-      "expectedPayoff": "mid-arc",
-      "payoffTiming": "mid-arc",
-      "notes": "位置待确认"
+      "type": "地点",
+      "status": "progressing",
+      "lastAdvancedChapter": 192,
+      "expectedPayoff": "**祭典期间**",
+      "notes": "**位置确认：第三个巷口左拐/济世堂分号标记/半掩木门/酉时接头/五石散残留**"
     },
     {
       "hookId": "H-戴斗笠出城者",
       "startChapter": 189,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 189,
-      "expectedPayoff": "near-term",
-      "payoffTiming": "near-term",
-      "notes": "身份待确认（可能是孙师兄）"
+      "type": "角色",
+      "status": "progressing",
+      "lastAdvancedChapter": 192,
+      "expectedPayoff": "**祭典期间**",
+      "notes": "**斗笠人出城往城西济世堂方向/早上孙师兄也往那边跑/可能都是接头人/跛脚灰袍人**"
     },
     {
-      "hookId": "H-灵泉真相",
-      "startChapter": 191,
-      "type": "**new**",
+      "hookId": "H-跛脚者",
+      "startChapter": 192,
+      "type": "**角色**",
       "status": "progressing",
-      "lastAdvancedChapter": 191,
-      "expectedPayoff": "祭典期间",
-      "payoffTiming": "near-term",
-      "notes": "**父亲以身为饵引各方入局/黑石是开启灵泉真正的钥匙/三源合一只是引子/真正的封印在更深的地方**"
+      "lastAdvancedChapter": 192,
+      "expectedPayoff": "**祭典期间**",
+      "notes": "**城西接头点出现/灰布袍子/个子不高/走路有点跛/可能是接头点关键人物**"
     },
     {
-      "hookId": "H-乱葬岗真相",
-      "startChapter": 191,
-      "type": "**new**",
+      "hookId": "H-七十三人尸骨线索",
+      "startChapter": 192,
+      "type": "**悬念**",
       "status": "progressing",
-      "lastAdvancedChapter": 191,
-      "expectedPayoff": "已揭示",
-      "payoffTiming": "near-term",
-      "notes": "**乱葬岗埋的是三十年前死在灵泉边的七十三人**"
+      "lastAdvancedChapter": 192,
+      "expectedPayoff": "**祭典期间**",
+      "notes": "**如果尸骨上有封印相关残留线索/正本清源和周执事旧部目标可能有重叠**"
     }
   ]
 }

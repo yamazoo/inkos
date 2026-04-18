@@ -1,53 +1,53 @@
 {
-  "chapter": 191,
+  "chapter": 192,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "乱葬岗（返回途中）",
-      "validFromChapter": 191,
+      "object": "聚居点石屋（子时过半归来）",
+      "validFromChapter": 192,
       "validUntilChapter": null,
-      "sourceChapter": 191
+      "sourceChapter": 192
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "身体虚弱但稳定/金痕在眉心微微跳动（听到父亲遗言时有反应）/修为持续减弱/获得第二枚暗青色令牌/获得父亲遗书/得知灵泉真相",
-      "validFromChapter": 191,
+      "object": "警觉/情报整合中/黑石再淡一层（睡觉时金痕跳动消耗了一次）/青鸾带回关键情报/修为持续减弱/金痕眉心微微跳动",
+      "validFromChapter": 192,
       "validUntilChapter": null,
-      "sourceChapter": 191
+      "sourceChapter": 192
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "活着/监视城守府后街联络网（已确认为周执事旧部）/祭典那日不要去灵泉/等待正本清源和周执事旧部行动",
-      "validFromChapter": 191,
+      "object": "活着/监视城西接头点（已确认济世堂分号位置）/监视城东斗笠人/祭典那日不要去灵泉/明天去城东亲眼确认斗笠人出城",
+      "validFromChapter": 192,
       "validUntilChapter": null,
-      "sourceChapter": 191
+      "sourceChapter": 192
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "金痕消散中/修为继续减弱/最多半年寿命/黑石最多再用十来次/祭典那晚可能有变数",
-      "validFromChapter": 191,
+      "object": "金痕消散中/修为继续减弱/最多半年寿命/黑石最多再用十来次/三月十四夜正本清源动手（比原定祭典早一天）",
+      "validFromChapter": 192,
       "validUntilChapter": null,
-      "sourceChapter": 191
+      "sourceChapter": 192
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "陈守一/赵猛/青鸾/苏婉儿/孙师兄（真实身份揭示：替师父还债/祖父救了他师父）/正本清源（敌对）/周执事旧部（第三方势力）",
-      "validFromChapter": 191,
+      "object": "陈守一/青鸾/赵猛/苏婉儿/孙师兄（两边都被监视的小角色）/**城西接头点（济世堂分号/五石散/酉时接头）**/正本清源（**三月十四夜动手**）/周执事旧部（围祠堂参与者）",
+      "validFromChapter": 192,
       "validUntilChapter": null,
-      "sourceChapter": 191
+      "sourceChapter": 192
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "祠堂暗道部分坍塌但正本清源在清淤/祭典是周执事旧部放出的风声/祭典那晚正本清源和周执事旧部可能同时动手/孙师兄立场成谜（\"两边都压不住\"）/乱葬岗埋的是三十年前死在灵泉边的七十三人",
-      "validFromChapter": 191,
+      "object": "**城西接头点确认：济世堂分号/酉时接头/五石散**/斗笠人身份待确认/**正本清源三月十四夜动手（提前一天）**/灵泉和祠堂两处同时动手可能性/七十三人尸骨可能有残留线索/孙师兄被两边同时监视",
+      "validFromChapter": 192,
       "validUntilChapter": null,
-      "sourceChapter": 191
+      "sourceChapter": 192
     }
   ]
 }
