@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 160,
+  "lastAppliedChapter": 161,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -348,6 +348,9 @@
     "H-修复封印代价:status normalized from \"**活跃**\" to \"open\"",
     "H-修复封印代价:lastAdvancedChapter normalized from \"158章：陈守一仍有两年寿元/需要燃烧大部分寿元\" to 0",
     "H-祖父身世:lastAdvancedChapter normalized from \"156章：第四股血脉/与三源先祖并肩/燃烧生机注入锁链\" to 0",
-    "H-苏婉儿身世:lastAdvancedChapter normalized from \"156章：第四股血脉传承/找到归属/\"以前没有家，现在有了\"\" to 0"
+    "H-苏婉儿身世:lastAdvancedChapter normalized from \"156章：第四股血脉传承/找到归属/\"以前没有家，现在有了\"\" to 0",
+    "H-大劫真相:lastAdvancedChapter normalized from \"已揭露\" to 0",
+    "H-金痕消耗真相:lastAdvancedChapter normalized from \"**0（本章首次提出）**\" to 0",
+    "H-玉坠与第四股血脉:lastAdvancedChapter normalized from \"**0（本章首次提出）**\" to 0"
   ]
 }
