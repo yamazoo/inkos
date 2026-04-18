@@ -4431,5 +4431,34 @@
       "completionTokens": 19410,
       "totalTokens": 19410
     }
+  },
+  {
+    "number": 200,
+    "title": "故纸余温",
+    "status": "approved",
+    "wordCount": 3352,
+    "createdAt": "2026-04-18T21:59:04.860Z",
+    "updatedAt": "2026-04-18T22:03:23.069Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3355,
+      "postWriterNormalizeCount": 0,
+      "postReviseCount": 3352,
+      "finalCount": 3352,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 18605,
+      "completionTokens": 20556,
+      "totalTokens": 39161
+    }
   }
 ]

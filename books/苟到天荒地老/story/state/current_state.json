@@ -1,53 +1,53 @@
 {
-  "chapter": 199,
+  "chapter": 200,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "正本清源三月十四夜动手/源根被接走/万年前大劫真相/两枚玉坠之谜/钥匙不止三把",
-      "validFromChapter": 199,
+      "predicate": "当前位置",
+      "object": "聚居点石屋",
+      "validFromChapter": 200,
       "validUntilChapter": null,
-      "sourceChapter": 199
+      "sourceChapter": 200
     },
     {
       "subject": "protagonist",
-      "predicate": "当前敌我",
-      "object": "青鸾/赵猛/苏婉儿/孙师兄/周老头遗物已交付/跛脚者（完成使命后离去）",
-      "validFromChapter": 199,
+      "predicate": "主角状态",
+      "object": "震动→凝重→坚定/金痕隐隐跳动/情绪沉淀/三月十四倒计时（还剩两天）",
+      "validFromChapter": 200,
       "validUntilChapter": null,
-      "sourceChapter": 199
+      "sourceChapter": 200
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "三月十四夜行动（酉时城西接头点 + 灵泉）/准备迎接即将到来的事件",
-      "validFromChapter": 199,
+      "object": "三月十四夜行动（酉时城西接头点 + 灵泉）/确认孙师兄身份/准备迎接正本清源行动",
+      "validFromChapter": 200,
       "validUntilChapter": null,
-      "sourceChapter": 199
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "城西旧铺后巷废屋",
-      "validFromChapter": 199,
-      "validUntilChapter": null,
-      "sourceChapter": 199
+      "sourceChapter": 200
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
       "object": "金痕持续消散/最多半年寿命/黑石最多十来次",
-      "validFromChapter": 199,
+      "validFromChapter": 200,
       "validUntilChapter": null,
-      "sourceChapter": 199
+      "sourceChapter": 200
     },
     {
       "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "震动→凝重→坚定/金痕隐隐跳动/三月十四倒计时最后一天/手中持有两枚玉坠和纸张",
-      "validFromChapter": 199,
+      "predicate": "当前敌我",
+      "object": "青鸾/赵猛/苏婉儿/孙师兄/周老头/陈守义（已故）",
+      "validFromChapter": 200,
       "validUntilChapter": null,
-      "sourceChapter": 199
+      "sourceChapter": 200
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "正本清源三月十四夜动手/源根被接走/万年前大劫真相/四脉血脉与源根的关系/孙师兄身份之谜",
+      "validFromChapter": 200,
+      "validUntilChapter": null,
+      "sourceChapter": 200
     }
   ]
 }
