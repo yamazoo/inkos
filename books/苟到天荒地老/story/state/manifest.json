@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 189,
+  "lastAppliedChapter": 190,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -479,6 +479,15 @@
     "H-孙师兄后续:lastAdvancedChapter normalized from \"185-188\" to 0",
     "H-封印修复方法:lastAdvancedChapter normalized from \"186-187\" to 0",
     "H-正本清源行动布局:lastAdvancedChapter normalized from \"182-188\" to 0",
-    "H-济世堂据点:lastAdvancedChapter normalized from \"175-188\" to 0"
+    "H-济世堂据点:lastAdvancedChapter normalized from \"175-188\" to 0",
+    "H-内间完整真相:lastAdvancedChapter normalized from \"187：内间网络完整揭示/三短横夹一竖符号；188：情报网络蜘蛛网式布局确认；189：青鸾带回枯叶包着乌头种子和花瓣/指向济世堂；**190：城守府后街是三月十四夜接应点确认**\" to 0",
+    "H-孙师兄令牌:lastAdvancedChapter normalized from \"185：揭示；186：决定继续盯着；187：任务接替；189：竹签临时制作/人不在地窖在城里；**190：孙师兄被调去灵泉/但每天清晨往济世堂方向跑/乱葬岗之约发出者**\" to 0",
+    "H-城守府后街联络网:lastAdvancedChapter normalized from \"187：三点网络（灵-祠-济）；188：完整揭示（济世堂-吴记肉铺-茶楼-吴记药行）；189：继续监视/戴斗笠出城者新线索；**190：确认城守府后街是三月十四夜围祠堂接应点/茶楼是接头地点**\" to 0",
+    "H-孙师兄后续:lastAdvancedChapter normalized from \"189：人在城里不在地窖/竹签临时制作；**190：被调去灵泉/却每天往济世堂方向/乱葬岗之约/今晚子时赴约将揭晓**\" to 0",
+    "H-吴记肉铺掌柜:lastAdvancedChapter normalized from \"187：青印确认/与正本清源相连；188：弟弟在济世堂当账房/吴记药行关联；189：城西五石散新线索/城西接头点悬念；**190：确认吴掌柜是茶楼接头常客/正本清源网络节点**\" to 0",
+    "H-城西接头点:lastAdvancedChapter normalized from \"189：青鸾带回枯叶/五石散/城西方向；**190：城西五石散线索待赵猛追查/孙师兄可能在城西有布局**\" to 0",
+    "H-戴斗笠出城者:lastAdvancedChapter normalized from \"189：每天清晨戴斗笠出城/济世堂方向；**190：茶楼对话确认有人在盯着城东方向/身形\"像是孙师兄\"**\" to 0",
+    "H-乌头种子谜题:lastAdvancedChapter normalized from \"189：青鸾带回枯叶包着乌头种子和花瓣/指向济世堂；**190：孙师兄可能是放纸条的人/城西五石散线索待追**\" to 0",
+    "mystery-乱葬岗之约真-纸条-子时:lastAdvancedChapter normalized from \"190：确认城守府后街是三月十四夜接应点/确认孙师兄被调去灵泉/孙师兄每天清晨往济世堂方向跑/乱葬岗之约今晚子时/决定赴约\" to 0"
   ]
 }

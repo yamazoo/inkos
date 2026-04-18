@@ -4086,5 +4086,34 @@
       "completionTokens": 28043,
       "totalTokens": 63172
     }
+  },
+  {
+    "number": 190,
+    "title": "暗巷追踪",
+    "status": "approved",
+    "wordCount": 3090,
+    "createdAt": "2026-04-18T19:20:23.831Z",
+    "updatedAt": "2026-04-18T19:24:32.869Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3090,
+      "postWriterNormalizeCount": 0,
+      "postReviseCount": 3090,
+      "finalCount": 3090,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 34022,
+      "completionTokens": 21556,
+      "totalTokens": 55578
+    }
   }
 ]

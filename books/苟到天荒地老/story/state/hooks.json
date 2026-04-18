@@ -2,100 +2,104 @@
   "hooks": [
     {
       "hookId": "H-内间完整真相",
-      "startChapter": 0,
+      "startChapter": 187,
       "type": "progressing",
       "status": "progressing",
-      "lastAdvancedChapter": 189,
-      "expectedPayoff": "",
-      "payoffTiming": "mid-arc",
-      "notes": "187：内间网络完整揭示/三短横夹一竖符号；188：情报网络蜘蛛网式布局确认；**189：青鸾带回枯叶包着乌头种子和花瓣/指向济世堂**"
-    },
-    {
-      "hookId": "H-吴记肉铺掌柜",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 189,
-      "expectedPayoff": "",
-      "payoffTiming": "mid-arc",
-      "notes": "187：青印确认/与正本清源相连；188：弟弟在济世堂当账房/吴记药行关联；**189：城西五石散新线索/城西接头点悬念**"
-    },
-    {
-      "hookId": "H-城守府后街联络网",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 189,
-      "expectedPayoff": "",
-      "payoffTiming": "mid-arc",
-      "notes": "187：三点网络（灵-祠-济）；188：完整揭示（济世堂-吴记肉铺-茶楼-吴记药行）；**189：继续监视/戴斗笠出城者新线索**"
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "near-term",
+      "notes": "中程弧线"
     },
     {
       "hookId": "H-孙师兄令牌",
-      "startChapter": 0,
+      "startChapter": 185,
       "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 189,
-      "expectedPayoff": "",
-      "payoffTiming": "mid-arc",
-      "notes": "185：揭示；186：决定继续盯着；187：任务接替；**189：竹签临时制作/人不在地窖在城里/临时标记/新悬念**"
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**near-term**",
+      "notes": "**立场复杂/可能是盟友也可能是陷阱**"
+    },
+    {
+      "hookId": "H-城守府后街联络网",
+      "startChapter": 187,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**near-term**",
+      "notes": "**可考虑回收**"
+    },
+    {
+      "hookId": "H-济世堂据点",
+      "startChapter": 0,
+      "type": "open",
+      "status": "progressing",
+      "lastAdvancedChapter": 190,
+      "expectedPayoff": "济世堂据点完整揭示",
+      "payoffTiming": "near-term",
+      "notes": "190：确认济世堂传来祭典日子已定的消息；每天清晨有人往济世堂方向出城，身形像孙师兄"
     },
     {
       "hookId": "H-孙师兄后续",
-      "startChapter": 0,
+      "startChapter": 189,
       "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 189,
-      "expectedPayoff": "",
-      "payoffTiming": "mid-arc",
-      "notes": "185：身份揭示完成；**189：人在城里不在地窖/竹签临时制作/为什么用临时标记/他在城里做什么/被调走还是自己出来**"
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**near-term**",
+      "notes": "**核心悬念**"
+    },
+    {
+      "hookId": "H-吴记肉铺掌柜",
+      "startChapter": 187,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "near-term",
+      "notes": "身份基本确认"
     },
     {
       "hookId": "H-正本清源行动布局",
       "startChapter": 0,
       "type": "progressing",
       "status": "progressing",
-      "lastAdvancedChapter": 189,
-      "expectedPayoff": "",
-      "payoffTiming": "mid-arc",
-      "notes": "182：草图标注三处；185：济世堂确认；187：三点网络；188：蜘蛛网式情报系统确认/吴记药行新节点；**189：城西五石散接头点/城东济世堂戴斗笠出城者/乌头种子+花瓣混合物新谜题**"
-    },
-    {
-      "hookId": "H-济世堂据点",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 189,
-      "expectedPayoff": "",
-      "payoffTiming": "mid-arc",
-      "notes": "175：发现；185：确认；187：符号确认；188：弟弟当账房/每天傍晚报马车/送药去吴记药行；**189：青鸾带回枯叶包乌头种子和花瓣/指向济世堂/戴斗笠出城者新线索**"
+      "lastAdvancedChapter": 190,
+      "expectedPayoff": "祭典阴谋完整揭示",
+      "payoffTiming": "near-term",
+      "notes": "190：茶楼偷听获得祭典日期（三月十五）、三月十四夜围祠堂、暗道清淤、城守府后街接应点等大量情报"
     },
     {
       "hookId": "H-城西接头点",
       "startChapter": 189,
-      "type": "**open**",
+      "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 189,
-      "expectedPayoff": "",
-      "notes": "**新线索：青鸾带回枯叶/五石散/城西方向/正本清源另一个据点可能性**"
-    },
-    {
-      "hookId": "H-乌头种子谜题",
-      "startChapter": 189,
-      "type": "**open**",
-      "status": "open",
-      "lastAdvancedChapter": 189,
-      "expectedPayoff": "",
-      "notes": "**新线索：乌头种子+干枯花瓣混合物/用途不明/毒药还是其他用途**"
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "mid-arc",
+      "notes": "位置待确认"
     },
     {
       "hookId": "H-戴斗笠出城者",
       "startChapter": 189,
-      "type": "**open**",
+      "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 189,
-      "expectedPayoff": "",
-      "notes": "**新线索：每天清晨戴斗笠出城/济世堂方向/青鸾特意指出说明不寻常**"
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "near-term",
+      "notes": "身份待确认"
+    },
+    {
+      "hookId": "H-乌头种子谜题",
+      "startChapter": 189,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "mid-arc",
+      "notes": "用途仍不明"
+    },
+    {
+      "hookId": "mystery-乱葬岗之约真-纸条-子时",
+      "startChapter": 190,
+      "type": "**mystery→progressing**",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**near-term**",
+      "notes": "**190章核心悬念/子时乱葬岗之约/孙师兄身份待确认**"
     }
   ]
 }
