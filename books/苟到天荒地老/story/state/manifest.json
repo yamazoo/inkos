@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 196,
+  "lastAppliedChapter": 197,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -495,6 +495,8 @@
     "H-周老头身份:status normalized from \"**NEW**\" to \"open\"",
     "H-周老头身份:status normalized from \"**revealed**\" to \"open\"",
     "H-周执事身份:status normalized from \"**新揭示**\" to \"open\"",
-    "H-乌头种子来源:status normalized from \"**新揭示**\" to \"open\""
+    "H-乌头种子来源:status normalized from \"**新揭示**\" to \"open\"",
+    "H-源根:status normalized from \"**新揭示**\" to \"open\"",
+    "H-麦芽糖来源:status normalized from \"**新种**\" to \"open\""
   ]
 }
