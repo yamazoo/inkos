@@ -1,53 +1,61 @@
 {
-  "chapter": 206,
+  "chapter": 207,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "**聚居点→灵泉方向（晨间出发）**",
-      "validFromChapter": 206,
+      "object": "**聚居点→灵泉方向（晨间出发/即将抵达）**",
+      "validFromChapter": 207,
       "validUntilChapter": null,
-      "sourceChapter": 206
+      "sourceChapter": 207
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "**坚定→沉重→温暖→坚定→平静→温暖→坚定→紧张→坚定→坚定→坚定 / 金痕温热/已整合所有信息/完成心理准备/决心不重蹈覆辙/想要活着回来/准备出发**",
-      "validFromChapter": 206,
+      "object": "**温暖→坚定→平静→温暖→坚定→温暖→坚定→温暖→坚定 / 金痕温热（回应式发热）/完成所有信息整合/完成心理准备/决心不重蹈覆辙/\"想活着出来\"而非\"以为自己能活着出来\"/准备出发/即将出发**",
+      "validFromChapter": 207,
       "validUntilChapter": null,
-      "sourceChapter": 206
+      "sourceChapter": 207
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "**三月十四灵泉行动——源根归位，封印重启 / 去灵泉/见四脉/活着回来**",
-      "validFromChapter": 206,
+      "object": "**三月十四灵泉行动——源根归位，封印重启 / 去灵泉/见四脉/活着回来 / 明天辰时出发（现在是出发日）**",
+      "validFromChapter": 207,
       "validUntilChapter": null,
-      "sourceChapter": 206
+      "sourceChapter": 207
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
       "object": "**金痕持续消耗/最多半年寿命/源根归位时必须站在封印正中心/承受源根之力反噬/非大毅力者不能为**",
-      "validFromChapter": 206,
+      "validFromChapter": 207,
       "validUntilChapter": null,
-      "sourceChapter": 206
+      "sourceChapter": 207
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "**孙师兄（盟友/留守教苏婉儿站位）/青鸾（同行/聚居点等待）/赵猛（同行/外围护卫）/苏婉儿（同行/临界点站位）/正本清源（目的：让源根传人打开封印）**",
-      "validFromChapter": 206,
+      "object": "**孙师兄（盟友/留守教苏婉儿站位/约定灵泉见）/青鸾（同行→留守/聚居点等待/目送/目送）/赵猛（同行/外围护卫/一起出发）/苏婉儿（同行/临界点站位/误差一尺/三年练习/等待）/正本清源（目的：让源根传人打开封印/不知道真相是冥气倒灌）**",
+      "validFromChapter": 207,
       "validUntilChapter": null,
-      "sourceChapter": 206
+      "sourceChapter": 207
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "**源根传人身份确认/母亲遗言完整揭示/打开封印的代价/四脉站位阵法/\"非大毅力者不能为\"/三月十四灵泉行动开始**",
-      "validFromChapter": 206,
+      "object": "**三月十四灵泉行动开始/源根归位/四脉站位阵法/封印重启/源根之力反噬/非大毅力者不能为/明天辰时出发**",
+      "validFromChapter": 207,
       "validUntilChapter": null,
-      "sourceChapter": 206
+      "sourceChapter": 207
+    },
+    {
+      "subject": "current_state",
+      "predicate": "当前叙事",
+      "object": "**降调章/温情章/准备章/出发章/伏笔印证章/心理确认章/行动前最终确认章**",
+      "validFromChapter": 207,
+      "validUntilChapter": null,
+      "sourceChapter": 207
     }
   ]
 }

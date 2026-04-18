@@ -4667,5 +4667,34 @@
       "completionTokens": 9665,
       "totalTokens": 9665
     }
+  },
+  {
+    "number": 207,
+    "title": "青鸾手札",
+    "status": "approved",
+    "wordCount": 2422,
+    "createdAt": "2026-04-18T23:43:30.134Z",
+    "updatedAt": "2026-04-18T23:47:10.369Z",
+    "auditIssues": [],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2544,
+      "postWriterNormalizeCount": 4749,
+      "postReviseCount": 2422,
+      "finalCount": 2422,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 19239,
+      "completionTokens": 26644,
+      "totalTokens": 45883
+    }
   }
 ]

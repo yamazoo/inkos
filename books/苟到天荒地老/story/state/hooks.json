@@ -1,30 +1,21 @@
 {
   "hooks": [
     {
-      "hookId": "hook-1",
-      "startChapter": 0,
-      "type": "progressing→**resolved**",
-      "status": "resolved",
-      "lastAdvancedChapter": 205,
-      "expectedPayoff": "-",
-      "notes": "乱葬岗真相：石室入口/母亲绢帛/母亲遗言 → **本章收束确认**"
-    },
-    {
       "hookId": "hook-13",
       "startChapter": 204,
       "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 207,
       "expectedPayoff": "中程",
       "payoffTiming": "mid-arc",
-      "notes": "**大劫根子新揭示**：万年前四脉瓜分源根是人祸根源/三源先祖燃尽寿元是善后而非起因 → 本章青鸾手札印证\"独占其三\""
+      "notes": "**大劫根子新揭示**：万年前四脉瓜分源根是人祸根源/三源先祖燃尽寿元是善后而非起因 → **本章青鸾手札\"独占其三\"完整印证**"
     },
     {
       "hookId": "hook-14",
       "startChapter": 204,
       "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 207,
       "expectedPayoff": "中程",
       "payoffTiming": "mid-arc",
       "notes": "陈守义无金痕/为何不是传人/金痕必要性"
@@ -34,7 +25,7 @@
       "startChapter": 204,
       "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 207,
       "expectedPayoff": "中程",
       "payoffTiming": "mid-arc",
       "notes": "**苏婉儿临界点站位**：精准一尺/三年练习/生死两隔"
@@ -44,7 +35,7 @@
       "startChapter": 204,
       "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 207,
       "expectedPayoff": "中程",
       "payoffTiming": "mid-arc",
       "notes": "赵猛为何不去/心性不稳/外围护卫"
@@ -54,7 +45,7 @@
       "startChapter": 204,
       "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 207,
       "expectedPayoff": "中程",
       "payoffTiming": "mid-arc",
       "notes": "**陈守一决心**：不会重蹈覆辙/条件已具备 → **本章确认\"想活着出来\"而非\"以为自己能活着出来\"**"
@@ -64,20 +55,20 @@
       "startChapter": 204,
       "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 207,
       "expectedPayoff": "中程",
       "payoffTiming": "mid-arc",
-      "notes": "**聚居点草图/站位调整/青鸾手札乱葬岗记载** → **本章青鸾手札印证节点信息**"
+      "notes": "**聚居点草图/站位调整/青鸾手札乱葬岗记载** → **本章青鸾手札印证节点信息（七个点/七批/七十三人）**"
     },
     {
       "hookId": "hook-19",
       "startChapter": 204,
       "type": "open",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 207,
       "expectedPayoff": "中程",
       "payoffTiming": "mid-arc",
-      "notes": "**苏青黛遗言**：无论成败都不是结束/只是开始 → 本章\"这一次，我想活着出来\"呼应"
+      "notes": "**苏青黛遗言**：无论成败都不是结束/只是开始 → **本章\"这一次，我想活着出来\"呼应**"
     }
   ]
 }
