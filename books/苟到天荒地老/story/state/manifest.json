@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 187,
+  "lastAppliedChapter": 188,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -471,6 +471,14 @@
     "H-祠堂暗道:startChapter normalized from \"**resolved**\" to 0",
     "H-祠堂暗道:status normalized from \"**部分坍塌**：靠近灵泉一端坍塌/需几天疏通\" to \"open\"",
     "H-吴记肉铺掌柜:startChapter normalized from \"open\" to 0",
-    "H-吴记肉铺掌柜:status normalized from \"手腕青印/与济世堂、祠堂暗道、灵泉据点相连/身份待查\" to \"open\""
+    "H-吴记肉铺掌柜:status normalized from \"手腕青印/与济世堂、祠堂暗道、灵泉据点相连/身份待查\" to \"open\"",
+    "H-内间完整真相:lastAdvancedChapter normalized from \"187-188\" to 0",
+    "H-吴记肉铺掌柜:lastAdvancedChapter normalized from \"175-188\" to 0",
+    "H-城守府后街联络网:lastAdvancedChapter normalized from \"187-188\" to 0",
+    "H-孙师兄令牌:lastAdvancedChapter normalized from \"185-188\" to 0",
+    "H-孙师兄后续:lastAdvancedChapter normalized from \"185-188\" to 0",
+    "H-封印修复方法:lastAdvancedChapter normalized from \"186-187\" to 0",
+    "H-正本清源行动布局:lastAdvancedChapter normalized from \"182-188\" to 0",
+    "H-济世堂据点:lastAdvancedChapter normalized from \"175-188\" to 0"
   ]
 }

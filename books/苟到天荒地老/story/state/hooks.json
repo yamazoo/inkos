@@ -1,85 +1,82 @@
 {
   "hooks": [
     {
-      "hookId": "H-正本清源行动布局",
-      "startChapter": 0,
-      "type": "187",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": ""
-    },
-    {
       "hookId": "H-内间完整真相",
       "startChapter": 0,
-      "type": "187",
+      "type": "progressing",
       "status": "progressing",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "",
-      "notes": ""
-    },
-    {
-      "hookId": "H-城守府后街联络网",
-      "startChapter": 0,
-      "type": "187",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": ""
-    },
-    {
-      "hookId": "H-孙师兄令牌",
-      "startChapter": 0,
-      "type": "187",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": ""
-    },
-    {
-      "hookId": "H-孙师兄后续",
-      "startChapter": 0,
-      "type": "187",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": ""
-    },
-    {
-      "hookId": "H-封印修复方法",
-      "startChapter": 0,
-      "type": "187",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": ""
-    },
-    {
-      "hookId": "H-济世堂据点",
-      "startChapter": 0,
-      "type": "187",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": ""
-    },
-    {
-      "hookId": "H-祠堂暗道",
-      "startChapter": 0,
-      "type": "187",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "",
-      "notes": ""
+      "payoffTiming": "mid-arc",
+      "notes": "187：内间网络完整揭示/三短横夹一竖符号；188：情报网络蜘蛛网式布局确认"
     },
     {
       "hookId": "H-吴记肉铺掌柜",
       "startChapter": 0,
-      "type": "187",
+      "type": "open",
       "status": "open",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "",
-      "notes": ""
+      "payoffTiming": "mid-arc",
+      "notes": "187：青印确认/与正本清源相连；188：弟弟在济世堂当账房/吴记药行关联/新线索"
+    },
+    {
+      "hookId": "H-城守府后街联络网",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "payoffTiming": "mid-arc",
+      "notes": "187：三点网络（灵-祠-济）；188：完整揭示（济世堂-吴记肉铺-茶楼-吴记药行）/确认是正本清源情报系统"
+    },
+    {
+      "hookId": "H-孙师兄令牌",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "payoffTiming": "mid-arc",
+      "notes": "185：揭示；186：决定继续盯着；187：任务接替；188：新增悬念（人在城里不在地窖）"
+    },
+    {
+      "hookId": "H-孙师兄后续",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "185：身份揭示完成；188：**新发现：孙师兄人在城里不在地窖/竹签标记/临时制作/他回来做什么**"
+    },
+    {
+      "hookId": "H-封印修复方法",
+      "startChapter": 0,
+      "type": "open",
+      "status": "resolved",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": "186：封印修复完成/代价揭示；187：完成"
+    },
+    {
+      "hookId": "H-正本清源行动布局",
+      "startChapter": 0,
+      "type": "progressing",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "payoffTiming": "mid-arc",
+      "notes": "182：草图标注三处；185：济世堂确认；187：三点网络；188：蜘蛛网式情报系统确认/吴记药行新节点"
+    },
+    {
+      "hookId": "H-济世堂据点",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "payoffTiming": "mid-arc",
+      "notes": "175：发现；185：确认；187：符号确认；188：弟弟当账房/每天傍晚报马车/送药去吴记药行"
     }
   ]
 }
