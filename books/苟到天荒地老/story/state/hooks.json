@@ -5,7 +5,7 @@
       "startChapter": 156,
       "type": "世界观",
       "status": "progressing",
-      "lastAdvancedChapter": 165,
+      "lastAdvancedChapter": 166,
       "expectedPayoff": "80-100章",
       "payoffTiming": "slow-burn",
       "notes": "末法时代背景：锁链抽干两界灵气，上古灵气是现在千倍"
@@ -15,20 +15,20 @@
       "startChapter": 156,
       "type": "核心代价",
       "status": "progressing",
-      "lastAdvancedChapter": 165,
+      "lastAdvancedChapter": 166,
       "expectedPayoff": "本卷",
       "payoffTiming": "mid-arc",
       "notes": "持续消耗，寿元不足两年"
     },
     {
-      "hookId": "核心线索-本卷-冥王曾试图谈",
-      "startChapter": 165,
-      "type": "核心线索",
+      "hookId": "H-祖父身份之谜",
+      "startChapter": 166,
+      "type": "核心悬念",
       "status": "progressing",
-      "lastAdvancedChapter": 165,
+      "lastAdvancedChapter": 167,
       "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "冥王曾试图谈判但无人听取，已等三百年有诚意，但主角一旦暴露三源血脉身份，正本清源会不惜一切代价抓住他"
+      "payoffTiming": "mid-arc",
+      "notes": "**167章深化：令牌背面纹路（不完整圆环+竖线）可能是正本清源内部身份凭证/祖父能进入比外围更深的地方/祖父立场待验证**"
     },
     {
       "hookId": "H-井的秘密",
@@ -41,6 +41,36 @@
       "notes": "井是当年那扇门的碎片/裂缝，冥族回家的通道；三十二份祭品；井口是障眼法；祭坛在别处"
     },
     {
+      "hookId": "H-冥族存在",
+      "startChapter": 156,
+      "type": "核心威胁",
+      "status": "progressing",
+      "lastAdvancedChapter": 167,
+      "expectedPayoff": "40-60章",
+      "payoffTiming": "mid-arc",
+      "notes": "**167章推进：黑雾加速扩散/两天前几缕薄烟→现在遮住小半边天/通道不稳定恶化**"
+    },
+    {
+      "hookId": "H-正本清源计划",
+      "startChapter": 149,
+      "type": "核心阴谋",
+      "status": "progressing",
+      "lastAdvancedChapter": 167,
+      "expectedPayoff": "本卷/165+",
+      "payoffTiming": "near-term",
+      "notes": "三十二份祭品/春分前完成/井口是障眼法/祭坛在别处/用祭品精血打开通道/需要令牌进入/正本清源内部通行凭证"
+    },
+    {
+      "hookId": "核心线索-本卷-冥王曾试图谈",
+      "startChapter": 165,
+      "type": "核心线索",
+      "status": "progressing",
+      "lastAdvancedChapter": 165,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "冥王曾试图谈判但无人听取，已等三百年有诚意，但主角一旦暴露三源血脉身份，正本清源会不惜一切代价抓住他"
+    },
+    {
       "hookId": "H-三源血脉",
       "startChapter": 156,
       "type": "核心设定",
@@ -51,43 +81,14 @@
       "notes": "玉坠封着母亲'那一刀的力量'，可用于补刀封印，但用完后会归还（守夜者承诺）"
     },
     {
-      "hookId": "H-修复封印代价",
-      "startChapter": 156,
-      "type": "核心代价",
+      "hookId": "H-守夜者三天期限",
+      "startChapter": 165,
+      "type": "紧迫倒计时",
       "status": "progressing",
-      "lastAdvancedChapter": 165,
+      "lastAdvancedChapter": 167,
       "expectedPayoff": "本卷",
       "payoffTiming": "near-term",
-      "notes": "三条路可选：1.三源血脉+大部寿元 2.与冥王谈判从外部加固 3.玉坠力量补刀。母亲遗言强化'走最难的那条'"
-    },
-    {
-      "hookId": "H-冥族存在",
-      "startChapter": 156,
-      "type": "核心威胁",
-      "status": "progressing",
-      "lastAdvancedChapter": 166,
-      "expectedPayoff": "40-60章",
-      "payoffTiming": "mid-arc",
-      "notes": "**封印三年内有裂口/黑雾出现（与遗迹相同）/通道不稳定会把两边不该过来的东西都拉过来**"
-    },
-    {
-      "hookId": "H-正本清源计划",
-      "startChapter": 149,
-      "type": "核心阴谋",
-      "status": "progressing",
-      "lastAdvancedChapter": 166,
-      "expectedPayoff": "本卷/165+",
-      "payoffTiming": "near-term",
-      "notes": "**三十二份祭品/春分前完成/井口是障眼法/祭坛在别处/用祭品精血打开通道/需要令牌进入/正本清源内部通行凭证**"
-    },
-    {
-      "hookId": "H-祖父身份之谜",
-      "startChapter": 166,
-      "type": "**核心悬念**",
-      "status": "open",
-      "lastAdvancedChapter": 166,
-      "expectedPayoff": "**本卷**",
-      "notes": "**令牌来源：城东院落祖父遗物/可能是正本清源内部通行凭证/祖父立场存疑/需要在行动中验证**"
+      "notes": "**167章推进：玉坠持续降温/温度比昨夜更低/玉坠封着的力量消散速度比预想快/可能用不了三天**"
     }
   ]
 }
