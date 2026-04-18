@@ -10,6 +10,15 @@
       "notes": "持续消耗中，本章眉心发胀"
     },
     {
+      "hookId": "H-梦中死结锁链",
+      "startChapter": 177,
+      "type": "核心隐喻",
+      "status": "progressing",
+      "lastAdvancedChapter": 1,
+      "expectedPayoff": "本卷",
+      "notes": "**死结麻绳=内间暗号已确认；梦中线索与现实印证**"
+    },
+    {
       "hookId": "H-两天期限",
       "startChapter": 176,
       "type": "时间压力",
@@ -23,30 +32,27 @@
       "startChapter": 175,
       "type": "核心悬念",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 1,
       "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "**死结麻绳=内间暗号/金丝缠=死结同源**"
+      "notes": "**死结暗号已确认；内间网络比想象中更广**"
     },
     {
       "hookId": "H-城守府后街吴姓卖肉",
       "startChapter": 175,
       "type": "核心线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "status": "resolved",
+      "lastAdvancedChapter": 1,
       "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "吴记肉铺掌柜=明日联络目标"
+      "notes": "**掌柜是联络人非本人；暗号已对接**"
     },
     {
       "hookId": "H-正本清源坊市撒网",
       "startChapter": 174,
       "type": "重要线索",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 1,
       "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "危机升级"
+      "notes": "**发现身后有尾巴；正本清源在找生面孔**"
     },
     {
       "hookId": "H-祠堂祭品",
@@ -55,7 +61,6 @@
       "status": "progressing",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
       "notes": "紧迫性增加"
     },
     {
@@ -65,27 +70,25 @@
       "status": "progressing",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
-      "payoffTiming": "mid-arc",
       "notes": "内间势力长期存在"
     },
     {
-      "hookId": "H-第四脉身份",
-      "startChapter": 170,
-      "type": "核心悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "已完整揭示/梦中暗示关联"
-    },
-    {
-      "hookId": "H-梦中死结锁链",
-      "startChapter": 177,
-      "type": "**NEW-核心隐喻**",
+      "hookId": "H-锁不可开原因",
+      "startChapter": 178,
+      "type": "**NEW-重要悬念**",
       "status": "open",
       "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
-      "notes": "**三源血脉封印结构暗示/内间同袍身份暗示**"
+      "notes": "祖父遗言含义待查"
+    },
+    {
+      "hookId": "H-身后尾巴",
+      "startChapter": 178,
+      "type": "**NEW-危机线索**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "下章",
+      "notes": "正本清源已盯上陈守一"
     }
   ]
 }

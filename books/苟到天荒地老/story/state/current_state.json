@@ -1,53 +1,77 @@
 {
-  "chapter": 177,
+  "chapter": 178,
   "facts": [
     {
-      "subject": "protagonist",
-      "predicate": "当前位置",
-      "object": "聚居点石屋（深夜→即将天明）",
-      "validFromChapter": 177,
+      "subject": "current_state",
+      "predicate": "项目",
+      "object": "状态",
+      "validFromChapter": 178,
       "validUntilChapter": null,
-      "sourceChapter": 177
+      "sourceChapter": 178
     },
     {
-      "subject": "protagonist",
-      "predicate": "主角状态",
-      "object": "疲惫/后背酸/膝盖发僵/金痕持续发热/眉心发胀/决心坚定/独自侦察成功/掌握完整情报/梦中揭示关键线索/死结暗号顿悟/情感归属稳定",
-      "validFromChapter": 177,
+      "subject": "current_state",
+      "predicate": "**位置**",
+      "object": "聚居点石屋（黄昏）",
+      "validFromChapter": 178,
       "validUntilChapter": null,
-      "sourceChapter": 177
+      "sourceChapter": 178
     },
     {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "明日（第一天）联络吴记肉铺内间同袍/验证死结麻绳暗号/两天内阻止正本清源/阻止春分祭典",
-      "validFromChapter": 177,
+      "subject": "current_state",
+      "predicate": "**时限**",
+      "object": "两天期限（进行中）/ 春分祭典",
+      "validFromChapter": 178,
       "validUntilChapter": null,
-      "sourceChapter": 177
+      "sourceChapter": 178
     },
     {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "寿元不足两年/两天期限（春分前）/金痕持续消耗/正本清源可能提前动手/联络暗号未知但有线索",
-      "validFromChapter": 177,
+      "subject": "current_state",
+      "predicate": "**寿元**",
+      "object": "不足两年（持续消耗中）",
+      "validFromChapter": 178,
       "validUntilChapter": null,
-      "sourceChapter": 177
+      "sourceChapter": 178
     },
     {
-      "subject": "protagonist",
-      "predicate": "当前敌我",
-      "object": "正本清源（敌对/春分祭典/城外祠堂祭坛/三十二份祭品/内部有\"内间\"势力）vs 内间同袍（潜在盟友/吴记肉铺联络点/死结麻绳暗号）vs 苏婉儿（核心盟友/留守）vs 赵猛（同行者/明日祠堂踩点）vs 青鸾（同行者/情报来源/明日城门盯梢）",
-      "validFromChapter": 177,
+      "subject": "current_state",
+      "predicate": "**金痕**",
+      "object": "持续发热，眉心发胀",
+      "validFromChapter": 178,
       "validUntilChapter": null,
-      "sourceChapter": 177
+      "sourceChapter": 178
     },
     {
-      "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "正本清源撕裂封印（两天期限/春分祭典/祭品提前到位）vs 三源血脉阻止封印（寿元不足两年/两天期限/死结暗号顿悟/梦中线索/明日联络内间）",
-      "validFromChapter": 177,
+      "subject": "current_state",
+      "predicate": "**装备**",
+      "object": "铜钱（陈记）/ 灰蓝色衣裳（青鸾缝制，双层内袋）/ 母亲玉佩",
+      "validFromChapter": 178,
       "validUntilChapter": null,
-      "sourceChapter": 177
+      "sourceChapter": 178
+    },
+    {
+      "subject": "current_state",
+      "predicate": "**今日收获**",
+      "object": "死结麻绳暗号确认 / 内间联络网络存在 / 身后有尾巴",
+      "validFromChapter": 178,
+      "validUntilChapter": null,
+      "sourceChapter": 178
+    },
+    {
+      "subject": "current_state",
+      "predicate": "**明日计划**",
+      "object": "陈守一联络行动继续 / 青鸾盯城门 / 赵猛继续盯坊市",
+      "validFromChapter": 178,
+      "validUntilChapter": null,
+      "sourceChapter": 178
+    },
+    {
+      "subject": "current_state",
+      "predicate": "**关键信息**",
+      "object": "内间同袍网络比想象中更广 / 正本清源在坊市撒网找生面孔 / 锁不可开原因待查",
+      "validFromChapter": 178,
+      "validUntilChapter": null,
+      "sourceChapter": 178
     }
   ]
 }

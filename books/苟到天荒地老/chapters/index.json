@@ -3671,5 +3671,39 @@
       "completionTokens": 12108,
       "totalTokens": 25042
     }
+  },
+  {
+    "number": 178,
+    "title": "晨炊未散：梦里分明",
+    "status": "approved",
+    "wordCount": 2721,
+    "createdAt": "2026-04-18T16:43:34.344Z",
+    "updatedAt": "2026-04-18T16:48:13.029Z",
+    "auditIssues": [
+      "[warning] 第178章结尾缺乏悬念钩子。本章作为联络任务执行章节，完成了死结麻绳暗号确认和内间网络分析，但结尾'明天还要继续。联络的事只是开始，真正的仗还在后头。但今天，他想先把这顿饭吃完'过于平铺直叙，没有重新点燃读者的好奇心或为下一章制造期待缺口。",
+      "[info] 本章节奏较为平缓，以侦察-确认-返回-思考为主线，缺少紧张感或转折点。章节类型偏向'信息确认章'，适合作为过渡，但连续两章（177、178）都属于'准备/确认'性质，读者可能期待看到行动的实质推进。",
+      "[info] SP-赵猛弟弟线索（赵猛弟弟失踪前在义庄附近出现/可能被当作祭品）自174章后连续4章（175-178）没有推进。该支线目前处于'沉寂'状态。",
+      "[warning] 最近4章持续高压（凝重→平静→坚定→温暖→坚定→温暖 -> 凝重→沉思→坚定→紧张→震动→坚定→沉静 -> **凝重→坚定→紧张→沉思→坚定→紧张→坚定→沉稳→坚定** -> 沉稳→紧张→坚定→沉思→震动→坚定→沉重→坚定→沉稳），缺少明显的情绪释放。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2721,
+      "postWriterNormalizeCount": 0,
+      "postReviseCount": 2721,
+      "finalCount": 2721,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 33207,
+      "completionTokens": 12958,
+      "totalTokens": 46165
+    }
   }
 ]
