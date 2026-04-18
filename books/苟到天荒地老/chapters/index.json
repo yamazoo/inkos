@@ -3351,7 +3351,7 @@
   },
   {
     "number": 169,
-    "title": "夜深叩门\n\n===",
+    "title": "夜深叩门",
     "status": "approved",
     "wordCount": 2648,
     "createdAt": "2026-04-18T01:48:40.948Z",
@@ -3384,15 +3384,37 @@
     }
   },
   {
-    "number": 169,
-    "title": "夜深叩门",
-    "status": "ready-for-review",
-    "wordCount": 2648,
-    "createdAt": "2026-04-18T01:00:00.000Z",
-    "updatedAt": "2026-04-18T01:00:00.000Z",
-    "auditIssues": [],
+    "number": 170,
+    "title": "故纸残痕",
+    "status": "approved",
+    "wordCount": 2735,
+    "createdAt": "2026-04-18T02:05:04.971Z",
+    "updatedAt": "2026-04-18T02:08:15.942Z",
+    "auditIssues": [
+      "[info] 绢帛上祖父的措辞\"吾儿若见此书，便是归途断绝之日。勿念，勿寻。\"对于一个可能有复杂身份（第四脉传人/正本清源内部潜伏者）的角色来说，语气过于直白和决绝，与前文暗示的\"祖父能进比外围更深的地方、令牌背面纹路说明他在内部有真实地位\"形成张力——一个真正的内应不会留下如此明确的决裂文字。",
+      "[info] 正本清源据点内部的守卫/巡逻描写缺失。169章提到\"明天子时还有一场\"，本章开头他进入时没有任何阻碍，过程中也没有遭遇巡逻人员，但169章明确描写了石室内有三个灰袍人在讨论祭品进度——这些人在他探索期间去哪了？若都去参加子时活动，基地内部完全无人看守是否合理？",
+      "[info] 铜钱的出现缺乏铺垫和意义锚定。\"陈记\"与\"陈旧之物\"的呼应虽然精妙，但铜钱本身作为\"祖父遗物\"的价值未被建立——它既不是法宝也不是信物，只是一枚普通的旧铜钱。陈守一捡起它然后\"攥着\"离开，读者的情感锚点不足。",
+      "[warning] 连续出现4个不足35字的短段，容易形成短句堆砌。"
+    ],
     "lengthWarnings": [],
-    "lengthTelemetry": {},
-    "tokenUsage": {}
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2752,
+      "postWriterNormalizeCount": 2735,
+      "postReviseCount": 0,
+      "finalCount": 2735,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 10581,
+      "totalTokens": 10581
+    }
   }
 ]

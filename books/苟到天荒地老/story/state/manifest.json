@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 169,
+  "lastAppliedChapter": 170,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -365,6 +365,9 @@
     "H-守夜者位置:status normalized from \"持续\" to \"open\"",
     "H-守夜者位置:lastAdvancedChapter normalized from \"164章：主角决心阻止正本清源/守夜者的责任开始传递\" to 0",
     "H-坊间失踪人口:lastAdvancedChapter normalized from \"164章：失踪人口是被抓去当祭品/赵猛弟弟可能也是祭品\" to 0",
-    "H-祖父身份之谜:status normalized from \"**new**\" to \"open\""
+    "H-祖父身份之谜:status normalized from \"**new**\" to \"open\"",
+    "H-第四脉身份:status normalized from \"**NEW**\" to \"open\"",
+    "H-铜钱陈记:status normalized from \"**NEW**\" to \"open\"",
+    "H-绢帛画像:status normalized from \"**NEW**\" to \"open\""
   ]
 }

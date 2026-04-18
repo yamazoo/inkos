@@ -1,74 +1,114 @@
 {
   "hooks": [
     {
-      "hookId": "H-灵气衰减真相",
-      "startChapter": 156,
-      "type": "世界观",
-      "status": "progressing",
-      "lastAdvancedChapter": 156,
-      "expectedPayoff": "80-100章",
-      "payoffTiming": "slow-burn",
-      "notes": "末法时代背景：锁链抽干两界灵气，上古灵气是现在千倍"
-    },
-    {
-      "hookId": "H-金痕消耗真相",
-      "startChapter": 156,
-      "type": "核心代价",
-      "status": "progressing",
-      "lastAdvancedChapter": 167,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "mid-arc",
-      "notes": "持续消耗，寿元不足两年"
-    },
-    {
-      "hookId": "H-祖父身份之谜",
-      "startChapter": 166,
-      "type": "核心悬念",
-      "status": "progressing",
-      "lastAdvancedChapter": 169,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "mid-arc",
-      "notes": "令牌背面纹路（不完整圆环+竖线）已验证可用/祖父能进入比外围更深的地方/令牌验证成功/明天子时活动待探"
-    },
-    {
       "hookId": "H-守夜者三天期限",
       "startChapter": 165,
       "type": "紧迫倒计时",
       "status": "progressing",
-      "lastAdvancedChapter": 169,
+      "lastAdvancedChapter": 170,
       "expectedPayoff": "本卷",
       "payoffTiming": "near-term",
-      "notes": "169章推进：玉坠持续降温/令牌验证成功/明天子时正本清源有活动"
-    },
-    {
-      "hookId": "H-冥族存在",
-      "startChapter": 156,
-      "type": "核心威胁",
-      "status": "progressing",
-      "lastAdvancedChapter": 169,
-      "expectedPayoff": "40-60章",
-      "payoffTiming": "mid-arc",
-      "notes": "黑雾加速扩散/冥王回归目的已确认（等了三百年有诚意）"
+      "notes": "玉坠持续降温/第一天进行中/温度比昨天更低/夜深约寅时过半"
     },
     {
       "hookId": "H-正本清源计划",
       "startChapter": 149,
       "type": "核心阴谋",
       "status": "progressing",
-      "lastAdvancedChapter": 169,
+      "lastAdvancedChapter": 170,
       "expectedPayoff": "本卷/165+",
       "payoffTiming": "near-term",
-      "notes": "**169章重大推进：令牌验证成功/三源血脉打开彼岸之门/冥王回归目的/祭品不足但有其他安排/明天子时有活动**"
+      "notes": "**重大推进：令牌验证成功/进入核心据点内部/发现万年前大劫完整记录/冥王神尊锻锁链/祖父是第四脉传人/祖父留下警告\"锁不可开\"**"
+    },
+    {
+      "hookId": "H-祖父身份之谜",
+      "startChapter": 166,
+      "type": "核心悬念",
+      "status": "resolved",
+      "lastAdvancedChapter": 170,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "**170章重大揭示：祖父是第四脉传人/永镇锁魂渊/持有正本清源内部令牌/留下绢帛警告\"锁不可开开则万劫不复\"/知道正本清源在做什么/立场是守门人/祖父木牌与令牌吻合/\"吾儿若见此书\"**"
+    },
+    {
+      "hookId": "H-冥族存在",
+      "startChapter": 156,
+      "type": "核心威胁",
+      "status": "progressing",
+      "lastAdvancedChapter": 170,
+      "expectedPayoff": "40-60章",
+      "payoffTiming": "mid-arc",
+      "notes": "黑雾加速扩散/万年前大劫真相揭示/冥王与神尊共锻锁链"
+    },
+    {
+      "hookId": "H-金痕消耗真相",
+      "startChapter": 156,
+      "type": "核心代价",
+      "status": "progressing",
+      "lastAdvancedChapter": 170,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "mid-arc",
+      "notes": "持续消耗，寿元不足两年"
+    },
+    {
+      "hookId": "核心线索-本卷-冥王曾试图谈",
+      "startChapter": 165,
+      "type": "核心线索",
+      "status": "progressing",
+      "lastAdvancedChapter": 170,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "冥王曾试图谈判但无人听取/已等三百年/万年前冥王神尊共锻锁链"
+    },
+    {
+      "hookId": "H-灵气衰减真相",
+      "startChapter": 156,
+      "type": "世界观",
+      "status": "resolved",
+      "lastAdvancedChapter": 170,
+      "expectedPayoff": "80-100章",
+      "payoffTiming": "slow-burn",
+      "notes": "**170章完整揭示：万载之初灵气充沛如海/天裂于北/锁链抽干两界灵气/上古灵气是现在千倍/锁链不止吞噬灵韵终成末法**"
     },
     {
       "hookId": "H-三源血脉",
       "startChapter": 156,
       "type": "核心设定",
       "status": "progressing",
-      "lastAdvancedChapter": 169,
+      "lastAdvancedChapter": 170,
       "expectedPayoff": "本卷",
       "payoffTiming": "near-term",
-      "notes": "玉坠封着母亲'那一刀的力量'，可用于补刀封印/三源血脉可以打开彼岸之门"
+      "notes": "第四脉揭示：三源之外第四股力量/第四脉补缺生机/永镇锁魂渊/祖父是第四脉传人"
+    },
+    {
+      "hookId": "H-第四脉身份",
+      "startChapter": 170,
+      "type": "核心悬念",
+      "status": "open",
+      "lastAdvancedChapter": 170,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "**170章新揭示：第四脉与三源并列/祖父是第四脉传人/永镇锁魂渊/以生机补锁链之缺/祖父同时持有正本清源内部令牌说明有特殊身份**"
+    },
+    {
+      "hookId": "H-铜钱陈记",
+      "startChapter": 170,
+      "type": "核心线索",
+      "status": "open",
+      "lastAdvancedChapter": 170,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "**170章新发现：铜钱正面刻古怪符号/背面\"陈记\"二字/陈老说\"陈旧之物\"=陈记/陈家遗物/与枯叶铺子铜环呼应**"
+    },
+    {
+      "hookId": "H-绢帛画像",
+      "startChapter": 170,
+      "type": "核心线索",
+      "status": "open",
+      "lastAdvancedChapter": 170,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "**170章新发现：绢帛画两人/高者衣袍宽大面目模糊唯眼清晰/矮者敦实肩膀宽前倾/矮者脸被抹去/两人连着锁链/矮者与陈老形象吻合**"
     }
   ]
 }
