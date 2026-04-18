@@ -1,124 +1,104 @@
 {
   "hooks": [
     {
-      "hookId": "H-正本清源计划",
-      "startChapter": 149,
-      "type": "核心阴谋",
-      "status": "progressing",
-      "lastAdvancedChapter": 172,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "172章重大推进：悬赏通告符号证实正本清源与城守府勾结；赵猛情报揭示城北12岁男孩失踪与灰袍人关联；十七个孩子失踪卷宗全是'下落不明'；铜钱+令牌构成入口钥匙组；正本清源负责提供'线索'城守府压案，形成完整祭品供应链"
-    },
-    {
-      "hookId": "H-灵气衰减真相",
-      "startChapter": 156,
-      "type": "世界观",
-      "status": "resolved",
-      "lastAdvancedChapter": 170,
-      "expectedPayoff": "80-100章",
-      "payoffTiming": "slow-burn",
-      "notes": "**170章完整揭示：万载之初灵气充沛如海/天裂于北/锁链抽干两界灵气/上古灵气是现在千倍/锁链不止吞噬灵韵终成末法**"
-    },
-    {
       "hookId": "H-金痕消耗真相",
       "startChapter": 156,
       "type": "核心代价",
       "status": "progressing",
-      "lastAdvancedChapter": 171,
+      "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
       "payoffTiming": "mid-arc",
-      "notes": "172章维持：金痕在衣服底下微微发热——警告/催促；不足两年寿元（从未对任何人说）"
-    },
-    {
-      "hookId": "H-冥族存在",
-      "startChapter": 156,
-      "type": "核心威胁",
-      "status": "progressing",
-      "lastAdvancedChapter": 172,
-      "expectedPayoff": "40-60章",
-      "payoffTiming": "mid-arc",
-      "notes": "172章重大推进：黑雾扩散速度是昨天一倍；青鸾发现雾中有东西在走（非雾气翻涌）；人形冥物在缓缓移动；封印越松冥界东西走得越远——紧迫性显著升级"
-    },
-    {
-      "hookId": "H-三源血脉",
-      "startChapter": 156,
-      "type": "核心设定",
-      "status": "progressing",
-      "lastAdvancedChapter": 172,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "172章推进：绢帛激活揭示'三源血脉可启'确认激活方法；新悬念'神尊非敌冥王非友'暗示三源血脉用途可能不仅是修复封印——叙事边界拓展"
-    },
-    {
-      "hookId": "核心线索-本卷-冥王曾试图谈",
-      "startChapter": 165,
-      "type": "核心线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 172,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "172章重大推进：绢帛明确揭示'神尊非敌，冥王非友，两界之争另有根源'——若冥王不是敌人（165章已揭示冥王曾试图谈判但无人听取），神尊也不是敌人，则两界万年对立的真正敌人另有其人，核心对立逻辑被重构"
-    },
-    {
-      "hookId": "H-守夜者三天期限",
-      "startChapter": 165,
-      "type": "紧迫倒计时",
-      "status": "progressing",
-      "lastAdvancedChapter": 172,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "172章时间流逝：三天期限已过一夜，剩余两天——紧迫性维持"
-    },
-    {
-      "hookId": "H-祖父身份之谜",
-      "startChapter": 166,
-      "type": "核心悬念",
-      "status": "resolved",
-      "lastAdvancedChapter": 170,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "**170章重大揭示：祖父是第四脉传人/永镇锁魂渊/持有正本清源内部令牌/留下绢帛警告\"锁不可开开则万劫不复\"/知道正本清源在做什么/立场是守门人/祖父木牌与令牌吻合/\"吾儿若见此书\"**"
-    },
-    {
-      "hookId": "H-绢帛画像",
-      "startChapter": 170,
-      "type": "核心线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 171,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "171章推进：绢帛矮者确认是祖父（敦实的肩膀，宽宽的背）；高个子可能是神尊或冥王"
+      "notes": "持续消耗中，两天期限内必须解决"
     },
     {
       "hookId": "H-第四脉身份",
       "startChapter": 170,
       "type": "核心悬念",
       "status": "progressing",
-      "lastAdvancedChapter": 172,
+      "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
       "payoffTiming": "near-term",
-      "notes": "172章新推进：绢帛激活揭示'四脉生机可铸'——确认第四脉使命是补缺生机铸就锁链；祖父是第四脉传人的完整意义进一步明确"
+      "notes": "第四脉使命（以生机补缺铸锁链）已明确"
     },
     {
-      "hookId": "H-铜钱陈记",
-      "startChapter": 170,
-      "type": "核心线索",
-      "status": "resolved",
-      "lastAdvancedChapter": 172,
+      "hookId": "H-守夜者三天期限",
+      "startChapter": 165,
+      "type": "紧迫倒计时",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
       "expectedPayoff": "本卷",
       "payoffTiming": "near-term",
-      "notes": "171章推进：青鸾发现令牌背面边缘有针尖大小小孔；铜钱和令牌背面小孔位置几乎一模一样；两者是同一套遗物"
+      "notes": "两天期限已确立"
+    },
+    {
+      "hookId": "核心线索-本卷-冥王曾试图谈",
+      "startChapter": 165,
+      "type": "核心线索",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "**核心对立逻辑重构：万年来两界争斗的真正敌人另有其人**"
+    },
+    {
+      "hookId": "H-三源血脉",
+      "startChapter": 156,
+      "type": "核心设定",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "激活方法已明确"
+    },
+    {
+      "hookId": "H-冥族存在",
+      "startChapter": 156,
+      "type": "核心威胁",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "40-60章",
+      "payoffTiming": "mid-arc",
+      "notes": "紧迫性维持"
+    },
+    {
+      "hookId": "H-绢帛画像",
+      "startChapter": 170,
+      "type": "核心线索",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "高个子身份悬念深化"
     },
     {
       "hookId": "mystery-171-解释祖父为何-持有正本清源-内部令牌",
       "startChapter": 171,
       "type": "mystery",
       "status": "progressing",
-      "lastAdvancedChapter": 171,
+      "lastAdvancedChapter": 0,
       "expectedPayoff": "解释祖父为何持有正本清源内部令牌、祖父如何获得正本清源信任",
       "payoffTiming": "near-term",
-      "notes": "171章新揭示：祖父可能不是被正本清源接纳而是卧底进去；但绢帛上只有'吾儿若见此书'留言，没有提到祖父后来的下落——祖父后来发生了什么？"
+      "notes": "祖父同时是第四脉传人和正本清源内部人员，身份双重性仍是谜"
+    },
+    {
+      "hookId": "H-正本清源计划",
+      "startChapter": 149,
+      "type": "核心阴谋",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "near-term",
+      "notes": "可考虑近期回收"
+    },
+    {
+      "hookId": "H-两界之争另有根源",
+      "startChapter": 173,
+      "type": "**NEW/核心悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "mid-arc",
+      "notes": "**核心对立逻辑被重构**"
     }
   ]
 }

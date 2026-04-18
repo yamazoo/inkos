@@ -3491,5 +3491,41 @@
       "completionTokens": 13595,
       "totalTokens": 36333
     }
+  },
+  {
+    "number": 173,
+    "title": "晨粥微温：窗缝",
+    "status": "approved",
+    "wordCount": 3092,
+    "createdAt": "2026-04-18T15:57:33.969Z",
+    "updatedAt": "2026-04-18T15:59:17.798Z",
+    "auditIssues": [
+      "[info] 检测到3句连续以相同开头的句子，呈现列表式AI生成结构",
+      "[warning] 章节标题\"晨粥微温\"已自动调整为\"晨粥微温：窗缝\"。",
+      "[warning] 最近3章持续高压（紧张→平静→震惊→凝重→坚定→坚定 -> 沉重 -> 紧绷→震惊→沉重→坚定），缺少明显的情绪释放。",
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：H-正本清源计划（近期，已逾期）、H-金痕消耗真相（中程，已逾期）、H-三源血脉（近期，已逾期），另有 2 条。",
+      "[warning] 102个段落里有54个不足35字，段落被切得过碎。",
+      "[warning] 连续出现8个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2325,
+      "postWriterNormalizeCount": 3092,
+      "postReviseCount": 0,
+      "finalCount": 3092,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 23590,
+      "completionTokens": 12352,
+      "totalTokens": 35942
+    }
   }
 ]

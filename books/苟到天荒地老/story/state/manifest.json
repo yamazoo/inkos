@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 172,
+  "lastAppliedChapter": 173,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -368,6 +368,17 @@
     "H-祖父身份之谜:status normalized from \"**new**\" to \"open\"",
     "H-第四脉身份:status normalized from \"**NEW**\" to \"open\"",
     "H-铜钱陈记:status normalized from \"**NEW**\" to \"open\"",
-    "H-绢帛画像:status normalized from \"**NEW**\" to \"open\""
+    "H-绢帛画像:status normalized from \"**NEW**\" to \"open\"",
+    "H-金痕消耗真相:lastAdvancedChapter normalized from \"173章维持：金痕在衣领底下微微发烫，像灶膛里压着的余烬——持续警告/催促；不足两年寿元（从未对任何人说）\" to 0",
+    "H-第四脉身份:lastAdvancedChapter normalized from \"172章已揭示'四脉生机可铸'；173章主角独自思考祖父知道些什么/铜钱/绢帛\" to 0",
+    "H-守夜者三天期限:lastAdvancedChapter normalized from \"173章时间流逝确认：三天期限已过一夜，剩余两天——紧迫性维持\" to 0",
+    "核心线索-本卷-冥王曾试图谈:lastAdvancedChapter normalized from \"**173章重大推进**：陈守一推理突破——\"神尊非敌冥王非友\"→正本清源不知道这层→正本清源以为在做对的事实则被利用→两界之争另有根源，根源在别的地方→核心对立逻辑重构\" to 0",
+    "H-三源血脉:lastAdvancedChapter normalized from \"172章揭示'三源血脉可启'；173章陈守一独自思考绢帛/铜钱/祖父遗言\" to 0",
+    "H-冥族存在:lastAdvancedChapter normalized from \"173章维持：黑雾扩散速度是昨天一倍/主角确认观察/赵猛和青鸾反应\" to 0",
+    "H-绢帛画像:lastAdvancedChapter normalized from \"**173章新推进**：主角发现高个子站姿异常——脚尖朝前但上半身微侧转，像在看旁边什么东西（观察姿势非等待）；主角判断\"也许不是在等人，也许是在看什么\"\" to 0",
+    "mystery-171-解释祖父为何-持有正本清源-内部令牌:lastAdvancedChapter normalized from \"173章推进：陈守一思考祖父留下铜钱/绢帛/\"吾儿若见此书\"的完整意义——祖父知道些什么；祖父立场明确是守护者，但持有正本清源令牌仍是悬念\" to 0",
+    "H-正本清源计划:lastAdvancedChapter normalized from \"173章维持：两天期限/正本清源勾结城守府/仍在准备行动；主角判断\"坊间戒严不会持续太久，一旦风声过去，该动的人一定会动\"\" to 0",
+    "H-两界之争另有根源:status normalized from \"**NEW**\" to \"open\"",
+    "H-两界之争另有根源:lastAdvancedChapter normalized from \"**173章核心发现**：绢帛\"神尊非敌冥王非友两界之争另有根源\"→陈守一推理：如果神尊冥王都不是敌人，万年来两界争斗的真正敌人另有其人→推动这一切的究竟是谁？→叙事边界拓展\" to 0"
   ]
 }
