@@ -1,53 +1,53 @@
 {
-  "chapter": 184,
+  "chapter": 185,
   "facts": [
-    {
-      "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "执法堂执事现身地窖+春分祭典明夜+聚居点三点一线暴露",
-      "validFromChapter": 184,
-      "validUntilChapter": null,
-      "sourceChapter": 184
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前敌我",
-      "object": "陈守一+赵猛+青鸾 明日分头行动",
-      "validFromChapter": 184,
-      "validUntilChapter": null,
-      "sourceChapter": 184
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "明日春分夜独自前往灵泉/抢在聚灵阵完成前激活锁链/赵猛明夜盯地窖/青鸾留守接应",
-      "validFromChapter": 184,
-      "validUntilChapter": null,
-      "sourceChapter": 184
-    },
     {
       "subject": "protagonist",
       "predicate": "当前位置",
       "object": "聚居点石屋",
-      "validFromChapter": 184,
+      "validFromChapter": 185,
       "validUntilChapter": null,
-      "sourceChapter": 184
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "黑石能量（剩余约4次）/独自行动风险/聚居点暴露",
-      "validFromChapter": 184,
-      "validUntilChapter": null,
-      "sourceChapter": 184
+      "sourceChapter": 185
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "决心坚定/眉心胀热（黑石压制后缓解）/黑石剩余约4次/明日独自赴灵泉",
-      "validFromChapter": 184,
+      "object": "决心坚定/眉心隐痛（但仍能承受）/黑石剩余约4次/明日下午独自赴灵泉",
+      "validFromChapter": 185,
       "validUntilChapter": null,
-      "sourceChapter": 184
+      "sourceChapter": 185
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "**明日春分下午前往灵泉/天黑前进入灵泉核心激活封印/祠堂纵火争取时间窗口**",
+      "validFromChapter": 185,
+      "validUntilChapter": null,
+      "sourceChapter": 185
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "黑石能量（约4次）/独自行动/时间窗口仅一天/孙师兄令牌",
+      "validFromChapter": 185,
+      "validUntilChapter": null,
+      "sourceChapter": 185
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "陈守一 vs 正本清源(城东+祠堂+济世堂)",
+      "validFromChapter": 185,
+      "validUntilChapter": null,
+      "sourceChapter": 185
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "祠堂暗道逼近封印核心+春分祭典今夜+济世堂是城里据点+聚居点撤离中",
+      "validFromChapter": 185,
+      "validUntilChapter": null,
+      "sourceChapter": 185
     }
   ]
 }

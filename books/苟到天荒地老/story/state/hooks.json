@@ -1,123 +1,122 @@
 {
   "hooks": [
     {
-      "hookId": "H-金痕消耗真相",
-      "startChapter": 156,
-      "type": "核心代价",
-      "status": "progressing",
-      "lastAdvancedChapter": 184,
-      "expectedPayoff": "封印锁链激活时",
-      "payoffTiming": "immediate",
-      "notes": "黑石再消耗一次，纹路又淡一层；眉心胀热是金痕在提醒但选择不消耗次数；金痕来自彼岸冥族"
-    },
-    {
-      "hookId": "H-三源血脉",
-      "startChapter": 156,
-      "type": "重要信息",
-      "status": "progressing",
-      "lastAdvancedChapter": 184,
-      "expectedPayoff": "封印锁链激活时",
-      "payoffTiming": "immediate",
-      "notes": "陈守一完整解释：三源分道+第四脉断传承→封印本已松动→只需再加一把力→三源合一+第四脉可激活锁链"
-    },
-    {
-      "hookId": "H-身后尾巴",
-      "startChapter": 178,
-      "type": "危机线索",
-      "status": "resolved",
-      "lastAdvancedChapter": 182,
-      "expectedPayoff": "—",
-      "notes": "**182章确认：出门时回头看/身后没有尾巴/但正本清源迟早会发现令牌丢失**"
-    },
-    {
-      "hookId": "H-祠堂跛脚者身份",
-      "startChapter": 178,
-      "type": "mystery",
-      "status": "progressing",
-      "lastAdvancedChapter": 184,
-      "expectedPayoff": "揭开\"三月十七灵泉祭\"的具体仪式内容及正本清源如何借祭典破坏最后一道锁链",
-      "payoffTiming": "mid-arc",
-      "notes": "刀痕四行字揭示：三月十七是祭典正日；\"锁链动封印松\"说明他们要在祭典上动手；\"三百年前未尽之事今可竟全功\"暗示他们知道三百年前被阻挠的完整计划"
-    },
-    {
-      "hookId": "H-玄清宗内鬼",
-      "startChapter": 179,
-      "type": "核心揭秘",
-      "status": "progressing",
-      "lastAdvancedChapter": 183,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "immediate",
-      "notes": "云雷纹靴底=执法堂执事一级制式；执事级人员出现在地窖附近；三百年前背叛者与三百年后布局者用同一套逻辑，都在执法堂"
-    },
-    {
       "hookId": "H-内间完整真相",
       "startChapter": 179,
       "type": "核心揭秘",
       "status": "progressing",
-      "lastAdvancedChapter": 184,
+      "lastAdvancedChapter": 185,
       "expectedPayoff": "封印锁链激活时",
       "payoffTiming": "immediate",
-      "notes": "地窖符纸布片阵图与铜片背面阵图一致：三条线汇聚一点=封印中心；三源合一+第四脉可激活锁链"
+      "notes": "孙师兄令牌出现——他是外鬼还是内间？遗书说内间牟利，但他自称报恩"
     },
     {
-      "hookId": "眉心金痕青紫压痕",
-      "startChapter": 180,
-      "type": "身体状态",
+      "hookId": "H-金痕消耗真相",
+      "startChapter": 156,
+      "type": "核心代价",
       "status": "progressing",
-      "lastAdvancedChapter": 184,
-      "expectedPayoff": "待定",
+      "lastAdvancedChapter": 185,
+      "expectedPayoff": "封印锁链激活时",
       "payoffTiming": "immediate",
-      "notes": "黑石压制后缓解但胀热感持续；青鸾指出眉心又在跳"
-    },
-    {
-      "hookId": "赵猛侦查结果",
-      "startChapter": 180,
-      "type": "情报线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 184,
-      "expectedPayoff": "明夜春分",
-      "payoffTiming": "near-term",
-      "notes": "带靛青布片回/地窖符纸新换/阵图与铜片一致/赵猛决定明夜再探地窖查人数"
-    },
-    {
-      "hookId": "H-正本清源灵泉据点",
-      "startChapter": 182,
-      "type": "**情报线索**",
-      "status": "open",
-      "lastAdvancedChapter": 182,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "mid-arc",
-      "notes": "**本章发现：灵泉附近洼地石潭旁有窄缝石室/正本清源秘密据点/有新凿痕迹/符纸草图齐全**"
-    },
-    {
-      "hookId": "H-聚居点暴露",
-      "startChapter": 182,
-      "type": "危机线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 183,
-      "expectedPayoff": "下章",
-      "payoffTiming": "near-term",
-      "notes": "草图三点一线确认；执法堂执事级人员出现在地窖附近；陈守一决定\"将计就计\"而非撤离"
+      "notes": "金痕在祠堂强烈示警（眉心剧烈跳动）；陈守一选择不消耗黑石压制"
     },
     {
       "hookId": "H-正本清源行动布局",
       "startChapter": 182,
       "type": "核心揭秘",
       "status": "progressing",
-      "lastAdvancedChapter": 184,
-      "expectedPayoff": "明夜春分祭典",
+      "lastAdvancedChapter": 185,
+      "expectedPayoff": "**今夜春分祭典**",
+      "notes": "**祠堂暗道直通灵泉核心/灵液已接触石板/今晚就会挖通/必须今夜激活封印**"
+    },
+    {
+      "hookId": "眉心金痕青紫压痕",
+      "startChapter": 180,
+      "type": "身体状态",
+      "status": "progressing",
+      "lastAdvancedChapter": 185,
+      "expectedPayoff": "待定",
+      "payoffTiming": "immediate",
+      "notes": "祠堂金痕剧烈跳动示警；陈守一选择压制"
+    },
+    {
+      "hookId": "赵猛侦查结果",
+      "startChapter": 180,
+      "type": "情报线索",
+      "status": "resolved",
+      "lastAdvancedChapter": 185,
+      "expectedPayoff": "本章已回收",
+      "payoffTiming": "immediate",
+      "notes": "济世堂是城里据点/赵猛侦察任务完成"
+    },
+    {
+      "hookId": "H-孙师兄真相",
+      "startChapter": 185,
+      "type": "**新种**",
+      "status": "open",
+      "lastAdvancedChapter": 185,
+      "expectedPayoff": "封印激活时或之后",
+      "payoffTiming": "mid-arc",
+      "notes": "正本清源内鬼/但与师父有旧/被迫为之/主动透露阵心信息/丢下令牌离去/自称\"跑不掉\""
+    },
+    {
+      "hookId": "H-祠堂暗道",
+      "startChapter": 185,
+      "type": "**新种**",
+      "status": "open",
+      "lastAdvancedChapter": 185,
+      "expectedPayoff": "今夜/明晨",
+      "notes": "祠堂地下→灵泉核心/正本清源连夜挖掘/灵液已接触石板/陈守一纵火争取时间"
+    },
+    {
+      "hookId": "H-济世堂据点",
+      "startChapter": 185,
+      "type": "**新种**",
+      "status": "open",
+      "lastAdvancedChapter": 185,
+      "expectedPayoff": "待定",
       "payoffTiming": "near-term",
-      "notes": "本章完整揭示：聚灵阵倒灌灵气到封印中心→撑开裂缝；三源分道+第四脉断传承→封印已松→只需再加一把力；陈守一计划是在阵法完成前激活锁链"
+      "notes": "城里最大药铺/正本清源据点/城守府后街吴记肉铺联络方向吻合"
+    },
+    {
+      "hookId": "H-正本清源灵泉据点",
+      "startChapter": 182,
+      "type": "情报线索",
+      "status": "resolved",
+      "lastAdvancedChapter": 185,
+      "expectedPayoff": "本章回收",
+      "payoffTiming": "immediate",
+      "notes": "草图标注位置已确认/暗道直通灵泉核心/任务完成"
+    },
+    {
+      "hookId": "H-聚居点暴露",
+      "startChapter": 182,
+      "type": "危机线索",
+      "status": "progressing",
+      "lastAdvancedChapter": 185,
+      "expectedPayoff": "下章",
+      "payoffTiming": "near-term",
+      "notes": "撤离中/赵猛和青鸾明日带众人往清溪涧"
+    },
+    {
+      "hookId": "H-孙师兄令牌",
+      "startChapter": 185,
+      "type": "**新种**",
+      "status": "open",
+      "lastAdvancedChapter": 185,
+      "expectedPayoff": "待定",
+      "payoffTiming": "mid-arc",
+      "notes": "孙师兄丢下的令牌/陈守一收入怀中/与原令牌不同"
     },
     {
       "hookId": "mystery-金痕代价根源-金痕是冥族刻-在陈守一身上",
       "startChapter": 184,
       "type": "mystery",
       "status": "open",
-      "lastAdvancedChapter": 184,
+      "lastAdvancedChapter": 185,
       "expectedPayoff": "金痕代价根源",
       "payoffTiming": "mid-arc",
-      "notes": "金痕是冥族刻在陈守一身上的，来自彼岸——为何是冥族刻的？与封印有何关系？"
+      "notes": "金痕来自彼岸冥族/刻在陈守一身上——为何？与封印有何关系？"
     }
   ]
 }
