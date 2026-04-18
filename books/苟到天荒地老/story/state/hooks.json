@@ -1,21 +1,11 @@
 {
   "hooks": [
     {
-      "hookId": "H-内间完整真相",
-      "startChapter": 187,
-      "type": "势力",
-      "status": "progressing",
-      "lastAdvancedChapter": 193,
-      "expectedPayoff": "祭典期间",
-      "payoffTiming": "mid-arc",
-      "notes": "城守府后街是周执事旧部/正本清源内部还有\"内间\"/两方势力交织"
-    },
-    {
       "hookId": "H-乱葬岗真相",
       "startChapter": 191,
       "type": "世界设定",
       "status": "progressing",
-      "lastAdvancedChapter": 193,
+      "lastAdvancedChapter": 194,
       "expectedPayoff": "祭典期间",
       "payoffTiming": "near-term",
       "notes": "乱葬岗埋的是三十年前死在灵泉边的七十三人/可能藏有封印残留线索"
@@ -25,16 +15,36 @@
       "startChapter": 191,
       "type": "世界设定",
       "status": "progressing",
-      "lastAdvancedChapter": 193,
-      "expectedPayoff": "**三月十四夜前后**",
-      "notes": "**潭底青光确认/真正的封印在灵泉底部/三源合一只是引子/黑石是钥匙**"
+      "lastAdvancedChapter": 194,
+      "expectedPayoff": "三月十四夜前后",
+      "payoffTiming": "mid-arc",
+      "notes": "潭底青光确认/真正的封印在灵泉底部/三源合一只是引子/黑石是钥匙"
+    },
+    {
+      "hookId": "H-内间完整真相",
+      "startChapter": 187,
+      "type": "**势力**",
+      "status": "resolved",
+      "lastAdvancedChapter": 194,
+      "expectedPayoff": "**194章已揭示：内间目的是夺取源根不是灵气流通/源根是两界灵气之源/万年前大劫真正起因/正本清源里有内间的人/祖父是最早发现者之一**",
+      "notes": "**内间目的明确/源根揭露/与正本清源区别明确**"
+    },
+    {
+      "hookId": "H-修复封印另一条路",
+      "startChapter": 193,
+      "type": "悬念",
+      "status": "open",
+      "lastAdvancedChapter": 194,
+      "expectedPayoff": "mid-arc",
+      "payoffTiming": "mid-arc",
+      "notes": "万年前锻造锁链材料已失传/可重新加固封印不必燃烧寿元/可能找得到也可能找不到/与乌头粉关联"
     },
     {
       "hookId": "H-七十三人尸骨线索",
       "startChapter": 192,
       "type": "悬念",
       "status": "progressing",
-      "lastAdvancedChapter": 193,
+      "lastAdvancedChapter": 194,
       "expectedPayoff": "祭典期间",
       "payoffTiming": "mid-arc",
       "notes": "如果尸骨上有封印相关残留线索/正本清源和周执事旧部目标可能有重叠"
@@ -44,47 +54,57 @@
       "startChapter": 192,
       "type": "角色",
       "status": "progressing",
-      "lastAdvancedChapter": 193,
-      "expectedPayoff": "祭典期间",
+      "lastAdvancedChapter": 194,
+      "expectedPayoff": "三月十四夜前后",
       "payoffTiming": "mid-arc",
-      "notes": "城西接头点出现/灰布袍子/个子不高/走路有点跛/可能是接头点关键人物/步子刻意控制可能不是真跛"
-    },
-    {
-      "hookId": "H-城西接头点",
-      "startChapter": 189,
-      "type": "地点",
-      "status": "progressing",
-      "lastAdvancedChapter": 193,
-      "expectedPayoff": "**三月十四夜前**",
-      "notes": "**位置确认：第三个巷口左拐/济世堂分号/半掩木门/酉时接头/**乌头粉**残留/**斗笠人进入后未出**"
+      "notes": "城西接头点出现/灰布袍子/个子不高/走路有点跛/可能是接头点关键人物/步子刻意控制可能不是真跛/周老头提到正本清源里有内间的人"
     },
     {
       "hookId": "H-乌头种子谜题",
       "startChapter": 189,
       "type": "物品",
       "status": "progressing",
-      "lastAdvancedChapter": 193,
-      "expectedPayoff": "**三月十四夜前后**",
-      "notes": "**确认是乌头粉不是五石散/万年前大劫封印裂缝材料/能压制灵气流动/正本清源对封印了解更深**"
+      "lastAdvancedChapter": 194,
+      "expectedPayoff": "三月十四夜前后",
+      "payoffTiming": "mid-arc",
+      "notes": "确认是乌头粉不是五石散/万年前大劫封印裂缝材料/能压制灵气流动/正本清源对封印了解更深"
     },
     {
-      "hookId": "H-戴斗笠出城者",
+      "hookId": "H-城西接头点",
       "startChapter": 189,
-      "type": "角色",
+      "type": "地点",
       "status": "progressing",
-      "lastAdvancedChapter": 193,
+      "lastAdvancedChapter": 194,
       "expectedPayoff": "三月十四夜前",
       "payoffTiming": "mid-arc",
-      "notes": "每天清晨出城往城西济世堂方向/步子刻意控制/可能是接头人/跛脚可能是伪装"
+      "notes": "位置确认：第三个巷口左拐/济世堂分号/半掩木门/酉时接头/乌头粉残留/斗笠人进入后未出"
     },
     {
-      "hookId": "H-修复封印另一条路",
-      "startChapter": 193,
-      "type": "**悬念**",
+      "hookId": "H-源根",
+      "startChapter": 194,
+      "type": "**世界设定**",
       "status": "open",
-      "lastAdvancedChapter": 193,
+      "lastAdvancedChapter": 194,
       "expectedPayoff": "**mid-arc**",
-      "notes": "**万年前锻造锁链材料已失传/可重新加固封印不必燃烧寿元/可能找得到也可能找不到/与乌头粉关联**"
+      "notes": "**封印中的\"源根\"/两界灵气之源/万年前大劫真正起因/内间真正目的/可能与修复封印另一条路相关**"
+    },
+    {
+      "hookId": "H-老道士身份",
+      "startChapter": 194,
+      "type": "**角色**",
+      "status": "open",
+      "lastAdvancedChapter": 194,
+      "expectedPayoff": "**待揭示**",
+      "notes": "**绢帛被撕掉/周老头不知道/祖父同门师兄弟可能是关键/周老头师父的师父与祖父是同门**"
+    },
+    {
+      "hookId": "H-周老头身份",
+      "startChapter": 194,
+      "type": "**角色**",
+      "status": "open",
+      "lastAdvancedChapter": 194,
+      "expectedPayoff": "**待揭示**",
+      "notes": "**真实身手不凡/三十年前七十三人之一师父的徒弟/隐姓埋名三十年/与陈家/祖父有间接关系/可能与周执事有关联**"
     }
   ]
 }
