@@ -1,93 +1,124 @@
 {
   "hooks": [
     {
-      "hookId": "H-身后尾巴",
-      "startChapter": 178,
-      "type": "**NEW-危机线索**",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "下章",
-      "payoffTiming": "mid-arc",
-      "notes": "正本清源已盯上陈守一"
-    },
-    {
-      "hookId": "H-锁不可开原因",
-      "startChapter": 178,
-      "type": "**重要悬念→已推进**",
-      "status": "open",
-      "lastAdvancedChapter": 0,
+      "hookId": "H-金痕消耗真相",
+      "startChapter": 156,
+      "type": "核心代价",
+      "status": "progressing",
+      "lastAdvancedChapter": 180,
       "expectedPayoff": "本卷",
       "payoffTiming": "immediate",
-      "notes": "**重大揭示**"
-    },
-    {
-      "hookId": "H-两天期限",
-      "startChapter": 176,
-      "type": "时间压力",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "immediate",
-      "notes": "祭品提前到位/时间比两天更紧"
-    },
-    {
-      "hookId": "H-祠堂祭品",
-      "startChapter": 174,
-      "type": "重要线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "mid-arc",
-      "notes": "紧迫性增加"
+      "notes": "本章新状态：比前两日凉/轻/光泽暗淡/纹路粗糙，持续消耗中，推进至open→progressing"
     },
     {
       "hookId": "H-两界之争另有根源",
       "startChapter": 173,
       "type": "核心悬念",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 179,
       "expectedPayoff": "本卷",
       "payoffTiming": "immediate",
-      "notes": "**重大揭示**"
+      "notes": "本章遗书重述两界之争根源，无新增信息，放入mention"
     },
     {
-      "hookId": "H-金痕消耗真相",
-      "startChapter": 156,
-      "type": "核心代价",
+      "hookId": "H-祠堂祭品",
+      "startChapter": 174,
+      "type": "重要线索",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 180,
       "expectedPayoff": "本卷",
-      "payoffTiming": "immediate",
-      "notes": "持续消耗中，本章眉心发胀，获得压制道具"
+      "payoffTiming": "mid-arc",
+      "notes": "本章赵猛侦查结果确认跛脚者来自祠堂，推进至open→progressing"
     },
     {
-      "hookId": "H-老道士遗物三件",
-      "startChapter": 179,
-      "type": "**NEW-重要线索**",
-      "status": "open",
-      "lastAdvancedChapter": 0,
+      "hookId": "H-两天期限",
+      "startChapter": 176,
+      "type": "时间压力",
+      "status": "progressing",
+      "lastAdvancedChapter": 179,
       "expectedPayoff": "本卷",
       "payoffTiming": "immediate",
-      "notes": "老道士守夜三百年使命结束"
+      "notes": "本章无提及，保持open状态"
     },
     {
-      "hookId": "H-内间完整真相",
-      "startChapter": 179,
-      "type": "**NEW-核心揭秘**",
+      "hookId": "H-身后尾巴",
+      "startChapter": 178,
+      "type": "危机线索",
       "status": "open",
       "lastAdvancedChapter": 0,
+      "expectedPayoff": "下章",
+      "payoffTiming": "mid-arc",
+      "notes": "正本清源已盯上陈守一，本章无新增信息/无推进"
+    },
+    {
+      "hookId": "H-锁不可开原因",
+      "startChapter": 178,
+      "type": "重要悬念",
+      "status": "open",
+      "lastAdvancedChapter": 179,
       "expectedPayoff": "本卷",
       "payoffTiming": "immediate",
-      "notes": "内间不是守护者，而是利用将破未破状态牟利"
+      "notes": "本章遗书重述锁不可开原因，无新增信息，放入mention"
     },
     {
       "hookId": "H-金痕幻象",
       "startChapter": 179,
-      "type": "**NEW-伏笔**",
+      "type": "伏笔",
       "status": "open",
-      "lastAdvancedChapter": 0,
+      "lastAdvancedChapter": 179,
       "expectedPayoff": "待定",
-      "notes": "暗示陈守一与上古大劫的直接关联"
+      "payoffTiming": "slow-burn",
+      "notes": "本章无新幻象出现，保持open状态"
+    },
+    {
+      "hookId": "H-老道士遗物三件",
+      "startChapter": 179,
+      "type": "重要线索",
+      "status": "open",
+      "lastAdvancedChapter": 179,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "immediate",
+      "notes": "本章继续阅读遗书，无新增遗物，无推进"
+    },
+    {
+      "hookId": "H-内间完整真相",
+      "startChapter": 179,
+      "type": "核心揭秘",
+      "status": "open",
+      "lastAdvancedChapter": 179,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "immediate",
+      "notes": "本章遗书重述内间真相，无新增信息，放入mention"
+    },
+    {
+      "hookId": "眉心金痕青紫压痕",
+      "startChapter": 180,
+      "type": "身体状态",
+      "status": "open",
+      "lastAdvancedChapter": 180,
+      "expectedPayoff": "待定",
+      "payoffTiming": "immediate",
+      "notes": "本章新状态：边缘泛青紫，被什么东西从里往外压着，胀意被黑石缓解"
+    },
+    {
+      "hookId": "赵猛侦查结果",
+      "startChapter": 180,
+      "type": "情报线索",
+      "status": "open",
+      "lastAdvancedChapter": 180,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "immediate",
+      "notes": "本章明确揭示：三人/跛脚者来自祠堂/南面林子地窖（血腥味+符纸焦味），从178章埋设正式推进"
+    },
+    {
+      "hookId": "mystery-祠堂跛脚者身-份揭示-赵猛侦查发现",
+      "startChapter": 180,
+      "type": "mystery",
+      "status": "progressing",
+      "lastAdvancedChapter": 180,
+      "expectedPayoff": "祠堂跛脚者身份揭示",
+      "payoffTiming": "near-term",
+      "notes": "赵猛发现南面林子地窖，有血腥味和符纸焦味，与正本清源春分祭典有何关联？是祭坛还是其他用途？"
     }
   ]
 }
