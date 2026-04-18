@@ -1,64 +1,24 @@
 {
   "hooks": [
     {
-      "hookId": "H-内间完整真相",
-      "startChapter": 179,
-      "type": "核心揭秘",
-      "status": "open",
-      "lastAdvancedChapter": 181,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "immediate",
-      "notes": "遗书已揭露（牟利非守护）；无新增信息"
-    },
-    {
       "hookId": "H-金痕消耗真相",
       "startChapter": 156,
       "type": "核心代价",
       "status": "progressing",
-      "lastAdvancedChapter": 182,
+      "lastAdvancedChapter": 183,
       "expectedPayoff": "本卷",
       "payoffTiming": "immediate",
-      "notes": "**本章推进：黑石压制有效但有极限/\"压得住但压不住根本\"/最多再用四五次/根治在锁里**"
+      "notes": "黑石纹路再淡一层；剩余约4-5次；\"压得住但压不住根\"；根治在锁里"
     },
     {
       "hookId": "H-三源血脉",
       "startChapter": 156,
       "type": "重要信息",
       "status": "progressing",
-      "lastAdvancedChapter": 182,
+      "lastAdvancedChapter": 183,
       "expectedPayoff": "本卷",
-      "payoffTiming": "immediate",
-      "notes": "本章回顾：三源先祖燃烧寿元修复锁链/代价明确"
-    },
-    {
-      "hookId": "眉心金痕青紫压痕",
-      "startChapter": 180,
-      "type": "身体状态",
-      "status": "progressing",
-      "lastAdvancedChapter": 182,
-      "expectedPayoff": "待定",
-      "payoffTiming": "immediate",
-      "notes": "黑石压制有效/胀意出现后被压下"
-    },
-    {
-      "hookId": "赵猛侦查结果",
-      "startChapter": 180,
-      "type": "情报线索",
-      "status": "progressing",
-      "lastAdvancedChapter": 182,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "immediate",
-      "notes": "**182章地窖情报：入口还在/没人守着/符纸换新（昨晚连夜画）/脚印被抹但留有痕迹往祠堂方向（好几条不是一条）**"
-    },
-    {
-      "hookId": "H-玄清宗内鬼",
-      "startChapter": 179,
-      "type": "核心揭秘",
-      "status": "open",
-      "lastAdvancedChapter": 181,
-      "expectedPayoff": "本卷",
-      "payoffTiming": "immediate",
-      "notes": "遗书已揭露；无新增"
+      "payoffTiming": "near-term",
+      "notes": "赵猛师父\"三源分道，各有归处\"被印证；铜片三条线=三源血脉标记+一条锁链；四源合一封印稳固；\"锁不可开\"是嘱托而非警告"
     },
     {
       "hookId": "H-身后尾巴",
@@ -74,10 +34,50 @@
       "startChapter": 178,
       "type": "mystery",
       "status": "progressing",
+      "lastAdvancedChapter": 183,
+      "expectedPayoff": "揭开\"三月十七灵泉祭\"的具体仪式内容及正本清源如何借祭典破坏最后一道锁链",
+      "payoffTiming": "near-term",
+      "notes": "刀痕四行字揭示：三月十七是祭典正日；\"锁链动封印松\"说明他们要在祭典上动手；\"三百年前未尽之事今可竟全功\"暗示他们知道三百年前被阻挠的完整计划"
+    },
+    {
+      "hookId": "H-内间完整真相",
+      "startChapter": 179,
+      "type": "核心揭秘",
+      "status": "progressing",
+      "lastAdvancedChapter": 183,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "immediate",
+      "notes": "铜片背面阵图揭示：三条线=三源标记，第四符号=锁链；三条线汇聚一点=封印中心；四源合一封印稳固；三源分道被印证；内间暗记=执法堂内部符号"
+    },
+    {
+      "hookId": "H-玄清宗内鬼",
+      "startChapter": 179,
+      "type": "核心揭秘",
+      "status": "progressing",
+      "lastAdvancedChapter": 183,
+      "expectedPayoff": "本卷",
+      "payoffTiming": "immediate",
+      "notes": "云雷纹靴底=执法堂执事一级制式；执事级人员出现在地窖附近；三百年前背叛者与三百年后布局者用同一套逻辑，都在执法堂"
+    },
+    {
+      "hookId": "赵猛侦查结果",
+      "startChapter": 180,
+      "type": "情报线索",
+      "status": "progressing",
       "lastAdvancedChapter": 182,
       "expectedPayoff": "本卷",
-      "payoffTiming": "near-term",
-      "notes": "脚印确认往祠堂方向去；跛脚者来自祠堂"
+      "payoffTiming": "immediate",
+      "notes": "**182章地窖情报：入口还在/没人守着/符纸换新（昨晚连夜画）/脚印被抹但留有痕迹往祠堂方向（好几条不是一条）**"
+    },
+    {
+      "hookId": "眉心金痕青紫压痕",
+      "startChapter": 180,
+      "type": "身体状态",
+      "status": "progressing",
+      "lastAdvancedChapter": 183,
+      "expectedPayoff": "待定",
+      "payoffTiming": "immediate",
+      "notes": "金痕跳动、眉心胀热、虫蚁蠕动感；黑石压制后缓解；纹路再淡一层"
     },
     {
       "hookId": "H-正本清源灵泉据点",
@@ -92,22 +92,22 @@
     {
       "hookId": "H-聚居点暴露",
       "startChapter": 182,
-      "type": "**危机线索**",
-      "status": "open",
-      "lastAdvancedChapter": 182,
+      "type": "危机线索",
+      "status": "progressing",
+      "lastAdvancedChapter": 183,
       "expectedPayoff": "下章",
       "payoffTiming": "near-term",
-      "notes": "**草图标注聚居点位置/正本清源早就盯上他们/迟早会发现**"
+      "notes": "草图三点一线确认；执法堂执事级人员出现在地窖附近；陈守一决定\"将计就计\"而非撤离"
     },
     {
       "hookId": "H-正本清源行动布局",
       "startChapter": 182,
-      "type": "**核心揭秘**",
-      "status": "open",
-      "lastAdvancedChapter": 182,
+      "type": "核心揭秘",
+      "status": "progressing",
+      "lastAdvancedChapter": 183,
       "expectedPayoff": "三天后",
       "payoffTiming": "near-term",
-      "notes": "**石室草图标注灵泉+祠堂+聚居点/三处联动/祭典前布局完整**"
+      "notes": "刀痕文字：三月十七灵泉祭/锁链动封印松/三百年前未尽之事今可竟全功/勿失良机；祭典前布局完整；陈守一决定明日春分夜独自赴灵泉"
     }
   ]
 }

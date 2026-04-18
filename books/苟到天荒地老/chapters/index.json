@@ -3855,5 +3855,38 @@
       "completionTokens": 11697,
       "totalTokens": 15067
     }
+  },
+  {
+    "number": 183,
+    "title": "**地窖残痕**",
+    "status": "approved",
+    "wordCount": 3104,
+    "createdAt": "2026-04-18T17:42:51.544Z",
+    "updatedAt": "2026-04-18T17:43:02.626Z",
+    "auditIssues": [
+      "[warning] 这些伏笔已经进入回收/推进压力，但本章没有真正处理：赵猛侦查结果（立即，已逾期）。",
+      "[warning] 121个段落里有68个不足35字，段落被切得过碎。",
+      "[warning] 连续出现14个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3104,
+      "postWriterNormalizeCount": 3104,
+      "postReviseCount": 0,
+      "finalCount": 3104,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 9250,
+      "totalTokens": 9250
+    }
   }
 ]
