@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 192,
+  "lastAppliedChapter": 193,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -488,6 +488,7 @@
     "H-城西接头点:lastAdvancedChapter normalized from \"189：青鸾带回枯叶/五石散/城西方向；**190：城西五石散线索待赵猛追查/孙师兄可能在城西有布局**\" to 0",
     "H-戴斗笠出城者:lastAdvancedChapter normalized from \"189：每天清晨戴斗笠出城/济世堂方向；**190：茶楼对话确认有人在盯着城东方向/身形\"像是孙师兄\"**\" to 0",
     "H-乌头种子谜题:lastAdvancedChapter normalized from \"189：青鸾带回枯叶包着乌头种子和花瓣/指向济世堂；**190：孙师兄可能是放纸条的人/城西五石散线索待追**\" to 0",
-    "mystery-乱葬岗之约真-纸条-子时:lastAdvancedChapter normalized from \"190：确认城守府后街是三月十四夜接应点/确认孙师兄被调去灵泉/孙师兄每天清晨往济世堂方向跑/乱葬岗之约今晚子时/决定赴约\" to 0"
+    "mystery-乱葬岗之约真-纸条-子时:lastAdvancedChapter normalized from \"190：确认城守府后街是三月十四夜接应点/确认孙师兄被调去灵泉/孙师兄每天清晨往济世堂方向跑/乱葬岗之约今晚子时/决定赴约\" to 0",
+    "H-修复封印另一条路:status normalized from \"**新种**\" to \"open\""
   ]
 }

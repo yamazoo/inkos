@@ -1,99 +1,90 @@
 {
   "hooks": [
     {
+      "hookId": "H-内间完整真相",
+      "startChapter": 187,
+      "type": "势力",
+      "status": "progressing",
+      "lastAdvancedChapter": 193,
+      "expectedPayoff": "祭典期间",
+      "payoffTiming": "mid-arc",
+      "notes": "城守府后街是周执事旧部/正本清源内部还有\"内间\"/两方势力交织"
+    },
+    {
       "hookId": "H-乱葬岗真相",
       "startChapter": 191,
       "type": "世界设定",
       "status": "progressing",
-      "lastAdvancedChapter": 191,
+      "lastAdvancedChapter": 193,
       "expectedPayoff": "祭典期间",
       "payoffTiming": "near-term",
-      "notes": "乱葬岗埋的是三十年前死在灵泉边的七十三人"
+      "notes": "乱葬岗埋的是三十年前死在灵泉边的七十三人/可能藏有封印残留线索"
     },
     {
       "hookId": "H-灵泉真相",
       "startChapter": 191,
       "type": "世界设定",
       "status": "progressing",
-      "lastAdvancedChapter": 191,
-      "expectedPayoff": "祭典期间",
-      "payoffTiming": "near-term",
-      "notes": "父亲以身为饵引各方入局/黑石是开启灵泉真正的钥匙/三源合一只是引子/真正的封印在更深的地方"
+      "lastAdvancedChapter": 193,
+      "expectedPayoff": "**三月十四夜前后**",
+      "notes": "**潭底青光确认/真正的封印在灵泉底部/三源合一只是引子/黑石是钥匙**"
     },
     {
-      "hookId": "H-内间完整真相",
-      "startChapter": 187,
-      "type": "势力",
+      "hookId": "H-七十三人尸骨线索",
+      "startChapter": 192,
+      "type": "悬念",
       "status": "progressing",
-      "lastAdvancedChapter": 192,
-      "expectedPayoff": "祭典期间",
-      "payoffTiming": "mid-arc",
-      "notes": "城守府后街是周执事旧部/正本清源内部还有\"内间\"/两方势力交织"
-    },
-    {
-      "hookId": "H-周执事旧案",
-      "startChapter": 10,
-      "type": "势力",
-      "status": "progressing",
-      "lastAdvancedChapter": 192,
+      "lastAdvancedChapter": 193,
       "expectedPayoff": "祭典期间",
       "payoffTiming": "mid-arc",
-      "notes": "周执事三十年前负责善后/留人盯着玄清宗/被贬后消失/最近又开始活动/祭典是他旧部放出风声"
+      "notes": "如果尸骨上有封印相关残留线索/正本清源和周执事旧部目标可能有重叠"
     },
     {
-      "hookId": "H-正本清源行动布局",
-      "startChapter": 0,
-      "type": "势力",
+      "hookId": "H-跛脚者",
+      "startChapter": 192,
+      "type": "角色",
       "status": "progressing",
-      "lastAdvancedChapter": 192,
-      "expectedPayoff": "**祭典（三月十四夜）**",
-      "notes": "**正本清源三月十四夜动手（比祭典早一天）/祠堂+灵泉两处同时动手可能性**"
-    },
-    {
-      "hookId": "H-乌头种子谜题",
-      "startChapter": 189,
-      "type": "物品",
-      "status": "open",
-      "lastAdvancedChapter": 189,
-      "expectedPayoff": "mid-arc",
+      "lastAdvancedChapter": 193,
+      "expectedPayoff": "祭典期间",
       "payoffTiming": "mid-arc",
-      "notes": "用途仍不明（城西五石散接头点有残留粉末）"
+      "notes": "城西接头点出现/灰布袍子/个子不高/走路有点跛/可能是接头点关键人物/步子刻意控制可能不是真跛"
     },
     {
       "hookId": "H-城西接头点",
       "startChapter": 189,
       "type": "地点",
       "status": "progressing",
-      "lastAdvancedChapter": 192,
-      "expectedPayoff": "**祭典期间**",
-      "notes": "**位置确认：第三个巷口左拐/济世堂分号标记/半掩木门/酉时接头/五石散残留**"
+      "lastAdvancedChapter": 193,
+      "expectedPayoff": "**三月十四夜前**",
+      "notes": "**位置确认：第三个巷口左拐/济世堂分号/半掩木门/酉时接头/**乌头粉**残留/**斗笠人进入后未出**"
+    },
+    {
+      "hookId": "H-乌头种子谜题",
+      "startChapter": 189,
+      "type": "物品",
+      "status": "progressing",
+      "lastAdvancedChapter": 193,
+      "expectedPayoff": "**三月十四夜前后**",
+      "notes": "**确认是乌头粉不是五石散/万年前大劫封印裂缝材料/能压制灵气流动/正本清源对封印了解更深**"
     },
     {
       "hookId": "H-戴斗笠出城者",
       "startChapter": 189,
       "type": "角色",
       "status": "progressing",
-      "lastAdvancedChapter": 192,
-      "expectedPayoff": "**祭典期间**",
-      "notes": "**斗笠人出城往城西济世堂方向/早上孙师兄也往那边跑/可能都是接头人/跛脚灰袍人**"
+      "lastAdvancedChapter": 193,
+      "expectedPayoff": "三月十四夜前",
+      "payoffTiming": "mid-arc",
+      "notes": "每天清晨出城往城西济世堂方向/步子刻意控制/可能是接头人/跛脚可能是伪装"
     },
     {
-      "hookId": "H-跛脚者",
-      "startChapter": 192,
-      "type": "**角色**",
-      "status": "progressing",
-      "lastAdvancedChapter": 192,
-      "expectedPayoff": "**祭典期间**",
-      "notes": "**城西接头点出现/灰布袍子/个子不高/走路有点跛/可能是接头点关键人物**"
-    },
-    {
-      "hookId": "H-七十三人尸骨线索",
-      "startChapter": 192,
+      "hookId": "H-修复封印另一条路",
+      "startChapter": 193,
       "type": "**悬念**",
-      "status": "progressing",
-      "lastAdvancedChapter": 192,
-      "expectedPayoff": "**祭典期间**",
-      "notes": "**如果尸骨上有封印相关残留线索/正本清源和周执事旧部目标可能有重叠**"
+      "status": "open",
+      "lastAdvancedChapter": 193,
+      "expectedPayoff": "**mid-arc**",
+      "notes": "**万年前锻造锁链材料已失传/可重新加固封印不必燃烧寿元/可能找得到也可能找不到/与乌头粉关联**"
     }
   ]
 }

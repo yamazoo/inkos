@@ -1,53 +1,53 @@
 {
-  "chapter": 192,
+  "chapter": 193,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点石屋（子时过半归来）",
-      "validFromChapter": 192,
+      "object": "聚居点石屋（子时归来）",
+      "validFromChapter": 193,
       "validUntilChapter": null,
-      "sourceChapter": 192
+      "sourceChapter": 193
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "警觉/情报整合中/黑石再淡一层（睡觉时金痕跳动消耗了一次）/青鸾带回关键情报/修为持续减弱/金痕眉心微微跳动",
-      "validFromChapter": 192,
+      "object": "警觉/情报整合中/黑石再淡一层/潭底青光共振/乌头粉确认为封印材料/发现修复封印另一条路",
+      "validFromChapter": 193,
       "validUntilChapter": null,
-      "sourceChapter": 192
+      "sourceChapter": 193
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "活着/监视城西接头点（已确认济世堂分号位置）/监视城东斗笠人/祭典那日不要去灵泉/明天去城东亲眼确认斗笠人出城",
-      "validFromChapter": 192,
+      "object": "活着/三月十四夜正本清源动手/准备聚居点暴露应对/继续监视城西接头点和斗笠人",
+      "validFromChapter": 193,
       "validUntilChapter": null,
-      "sourceChapter": 192
+      "sourceChapter": 193
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "金痕消散中/修为继续减弱/最多半年寿命/黑石最多再用十来次/三月十四夜正本清源动手（比原定祭典早一天）",
-      "validFromChapter": 192,
+      "object": "金痕消散中/修为继续减弱/最多半年寿命/黑石最多再用十来次/三月十四夜正本清源动手",
+      "validFromChapter": 193,
       "validUntilChapter": null,
-      "sourceChapter": 192
+      "sourceChapter": 193
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "陈守一/青鸾/赵猛/苏婉儿/孙师兄（两边都被监视的小角色）/**城西接头点（济世堂分号/五石散/酉时接头）**/正本清源（**三月十四夜动手**）/周执事旧部（围祠堂参与者）",
-      "validFromChapter": 192,
+      "object": "陈守一/青鸾/赵猛/苏婉儿/孙师兄/**城西接头点（济世堂分号/乌头粉/酉时接头）**/正本清源（**三月十四夜动手**）/周执事旧部",
+      "validFromChapter": 193,
       "validUntilChapter": null,
-      "sourceChapter": 192
+      "sourceChapter": 193
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "**城西接头点确认：济世堂分号/酉时接头/五石散**/斗笠人身份待确认/**正本清源三月十四夜动手（提前一天）**/灵泉和祠堂两处同时动手可能性/七十三人尸骨可能有残留线索/孙师兄被两边同时监视",
-      "validFromChapter": 192,
+      "object": "**潭底青光/真正的封印在灵泉底部/三源合一只是引子/黑石是钥匙**/斗笠人身份待确认/**正本清源三月十四夜动手（提前一天）**/乌头粉是封印材料/**修复封印另一条路（万年前材料已失传）**/灵泉和祠堂两处同时动手可能性/七十三人尸骨线索/聚居点位置暴露",
+      "validFromChapter": 193,
       "validUntilChapter": null,
-      "sourceChapter": 192
+      "sourceChapter": 193
     }
   ]
 }
