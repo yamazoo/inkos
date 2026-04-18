@@ -1,111 +1,84 @@
 {
   "hooks": [
     {
-      "hookId": "H-孙师兄真相",
-      "startChapter": 185,
-      "type": "核心揭秘",
-      "status": "resolved",
-      "lastAdvancedChapter": 186,
-      "expectedPayoff": "本章已回收",
-      "notes": "孙师兄是老道士徒弟/三十年前祖父救了他师父/来还恩情/师父临死前让他接替位置/潜伏正本清源查内间/发现真正目的（开封印让冥气倒灌）"
+      "hookId": "H-正本清源行动布局",
+      "startChapter": 0,
+      "type": "187",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
     },
     {
       "hookId": "H-内间完整真相",
       "startChapter": 0,
-      "type": "progressing",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "正本清源认为开封印灵气充沛/不知道真相是冥气倒灌/孙师兄说他们\"不知道真相\"",
-      "notes": ""
-    },
-    {
-      "hookId": "H-金痕消耗真相",
-      "startChapter": 156,
-      "type": "核心代价",
-      "status": "resolved",
-      "lastAdvancedChapter": 186,
-      "expectedPayoff": "**本章已回收**",
-      "notes": "金痕消退/生机流失/修为减弱/最多半年（原说五年）/祖父当年也是金痕吸干寿元/这是陈家血脉的规矩"
-    },
-    {
-      "hookId": "H-孙师兄令牌",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "背面刻\"报恩\"二字/在身",
-      "notes": ""
-    },
-    {
-      "hookId": "H-济世堂据点",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "城里最大药铺/正本清源据点/孙师兄提及联络方向",
-      "notes": ""
-    },
-    {
-      "hookId": "H-祠堂暗道",
-      "startChapter": 0,
-      "type": "**progressing**",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "今夜去毁暗道/暗道是证据",
-      "notes": ""
-    },
-    {
-      "hookId": "mystery-金痕代价根源",
-      "startChapter": 0,
-      "type": "progressing",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "金痕是冥族刻在陈家人身上的标记/激活共鸣彻底消散/祖父也是这么做的",
-      "notes": ""
-    },
-    {
-      "hookId": "H-正本清源行动布局",
-      "startChapter": 182,
-      "type": "核心揭秘",
+      "type": "187",
       "status": "progressing",
-      "lastAdvancedChapter": 186,
-      "expectedPayoff": "接下来",
-      "notes": "封印已修复/但他们不会善罢甘休/需要毁掉暗道拖住他们"
-    },
-    {
-      "hookId": "H-鹤发童颜老人",
-      "startChapter": 0,
-      "type": "**resolved**",
-      "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "石室守护者/研究封印几十年/主动替陈守一挡住正本清源",
-      "notes": ""
-    },
-    {
-      "hookId": "H-封印修复方法",
-      "startChapter": 0,
-      "type": "**resolved**",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "四脉锁链血脉共鸣法/铜钱是关键/鹤发老人替陈守一守住石室",
-      "notes": ""
-    },
-    {
-      "hookId": "H-孙师兄后续",
-      "startChapter": 0,
-      "type": "open",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "孙师兄说要替陈守一盯着正本清源/城里的济世堂/城守府后街",
+      "expectedPayoff": "",
       "notes": ""
     },
     {
       "hookId": "H-城守府后街联络网",
       "startChapter": 0,
-      "type": "**新种**",
+      "type": "187",
       "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "吴记肉铺掌柜/手腕青印/与济世堂同属内间网络",
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H-孙师兄令牌",
+      "startChapter": 0,
+      "type": "187",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H-孙师兄后续",
+      "startChapter": 0,
+      "type": "187",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H-封印修复方法",
+      "startChapter": 0,
+      "type": "187",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H-济世堂据点",
+      "startChapter": 0,
+      "type": "187",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H-祠堂暗道",
+      "startChapter": 0,
+      "type": "187",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
+      "notes": ""
+    },
+    {
+      "hookId": "H-吴记肉铺掌柜",
+      "startChapter": 0,
+      "type": "187",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "",
       "notes": ""
     }
   ]

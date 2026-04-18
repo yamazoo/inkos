@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 186,
+  "lastAppliedChapter": 187,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -449,6 +449,28 @@
     "H-孙师兄后续:lastAdvancedChapter normalized from \"待定\" to 0",
     "H-城守府后街联络网:startChapter normalized from \"情报点\" to 0",
     "H-城守府后街联络网:status normalized from \"186\" to \"open\"",
-    "H-城守府后街联络网:lastAdvancedChapter normalized from \"近期\" to 0"
+    "H-城守府后街联络网:lastAdvancedChapter normalized from \"近期\" to 0",
+    "H-正本清源行动布局:lastAdvancedChapter normalized from \"**187：祠堂暗道部分坍塌/正本清源需再费几天疏通/但不会停手/他们不知道封印已修复**\" to 0",
+    "H-城守府后街联络网:status normalized from \"**核心揭示**\" to \"open\"",
+    "H-城守府后街联络网:lastAdvancedChapter normalized from \"**187：吴掌柜、济世堂、祠堂暗道、灵泉据点全连在一起/吴记符号三短横夹一竖/与祖父册子描述的青印同源**\" to 0",
+    "H-孙师兄后续:lastAdvancedChapter normalized from \"**187：新谜题：孙师兄盯着的到底是正本清源还是别的/他是否知道吴掌柜**\" to 0",
+    "H-济世堂据点:lastAdvancedChapter normalized from \"**187：济世堂是三点之一（灵-祠-济）/与吴记、祠堂暗道、灵泉据点相连**\" to 0",
+    "H-祠堂暗道:lastAdvancedChapter normalized from \"**187：暗道部分坍塌/正本清源需几天疏通/暂时拖住**\" to 0",
+    "H-正本清源行动布局:startChapter normalized from \"progressing\" to 0",
+    "H-内间完整真相:startChapter normalized from \"progressing\" to 0",
+    "H-城守府后街联络网:startChapter normalized from \"**progressing（升级）**\" to 0",
+    "H-城守府后街联络网:status normalized from \"**重大揭示**：联络网是内间网络边缘触角/吴记-济世堂-祠堂暗道-灵泉据点连成一线\" to \"open\"",
+    "H-孙师兄令牌:startChapter normalized from \"open\" to 0",
+    "H-孙师兄令牌:status normalized from \"背面刻\"报恩\"二字/在身\" to \"open\"",
+    "H-孙师兄后续:startChapter normalized from \"open\" to 0",
+    "H-孙师兄后续:status normalized from \"**新增疑问**：孙师兄是否知道吴掌柜的存在/盯的到底是什么\" to \"open\"",
+    "H-封印修复方法:startChapter normalized from \"resolved\" to 0",
+    "H-封印修复方法:status normalized from \"四脉锁链血脉共鸣法/铜钱是关键/鹤发老人替陈守一守住石室\" to \"open\"",
+    "H-济世堂据点:startChapter normalized from \"open\" to 0",
+    "H-济世堂据点:status normalized from \"城里最大药铺/正本清源据点/孙师兄提及联络方向\" to \"open\"",
+    "H-祠堂暗道:startChapter normalized from \"**resolved**\" to 0",
+    "H-祠堂暗道:status normalized from \"**部分坍塌**：靠近灵泉一端坍塌/需几天疏通\" to \"open\"",
+    "H-吴记肉铺掌柜:startChapter normalized from \"open\" to 0",
+    "H-吴记肉铺掌柜:status normalized from \"手腕青印/与济世堂、祠堂暗道、灵泉据点相连/身份待查\" to \"open\""
   ]
 }
