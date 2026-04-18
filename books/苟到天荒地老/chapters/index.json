@@ -3140,5 +3140,40 @@
       "completionTokens": 13108,
       "totalTokens": 32184
     }
+  },
+  {
+    "number": 163,
+    "title": "归途心痕",
+    "status": "approved",
+    "wordCount": 3175,
+    "createdAt": "2026-04-18T00:28:01.617Z",
+    "updatedAt": "2026-04-18T00:28:13.776Z",
+    "auditIssues": [
+      "[warning] 章节类型重复：近期章节(160-163)均为'侦查/情报整合/情感觉醒/喘息'类型连续排列，未出现高潮/斗法/爽点回收类章节。节奏压平，缺乏起伏。",
+      "[info] SP-正本清源城东据点支线在162章确认情报后，本章未直接推进（井的秘密仍在等待再次侦查）。支线处于'确认但未深入'状态。",
+      "[info] H-大劫真相（已揭露）→H-金痕消耗真相（新种）→H-玉坠与第四股血脉（新种）→H-井的秘密（新种）——当前4条伏笔均为'认知深化型'，缺乏'危机/冲突'型伏笔平衡。",
+      "[warning] 156个段落里有127个不足35字，段落被切得过碎。",
+      "[warning] 连续出现34个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3175,
+      "postWriterNormalizeCount": 3175,
+      "postReviseCount": 0,
+      "finalCount": 3175,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 11132,
+      "totalTokens": 11132
+    }
   }
 ]
