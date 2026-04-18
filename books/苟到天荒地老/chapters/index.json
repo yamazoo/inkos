@@ -4533,5 +4533,38 @@
       "completionTokens": 16740,
       "totalTokens": 16740
     }
+  },
+  {
+    "number": 203,
+    "title": "残碑深铭",
+    "status": "approved",
+    "wordCount": 4482,
+    "createdAt": "2026-04-18T22:36:15.896Z",
+    "updatedAt": "2026-04-18T22:45:51.230Z",
+    "auditIssues": [
+      "[info] 章节中出现'猛地'1次，密度较低但可注意控制"
+    ],
+    "lengthWarnings": [
+      "第203章经过一次字数归一化后仍超出硬区间（2182-3818，实际 4482）。"
+    ],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 4482,
+      "postWriterNormalizeCount": 0,
+      "postReviseCount": 4482,
+      "finalCount": 4482,
+      "normalizeApplied": true,
+      "lengthWarning": true
+    },
+    "tokenUsage": {
+      "promptTokens": 23535,
+      "completionTokens": 25897,
+      "totalTokens": 49432
+    }
   }
 ]

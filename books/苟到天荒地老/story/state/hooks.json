@@ -3,82 +3,65 @@
     {
       "hookId": "hook-1",
       "startChapter": 0,
-      "type": "mystery",
-      "status": "progressing",
+      "type": "progressing",
+      "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "乱葬岗真相/石板被刮原因/数字含义/乱葬岗下还埋着什么",
-      "payoffTiming": "mid-arc",
-      "notes": "**本章重大推进**：孙师兄引述师父遗言\"乱葬岗下面埋的东西，不止是尸骨\""
-    },
-    {
-      "hookId": "hook-10",
-      "startChapter": 201,
-      "type": "mystery",
-      "status": "open",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "石板被刮真相",
-      "payoffTiming": "mid-arc",
-      "notes": "未推进"
-    },
-    {
-      "hookId": "hook-11",
-      "startChapter": 201,
-      "type": "mystery",
-      "status": "open",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "容器具体信息",
-      "payoffTiming": "mid-arc",
-      "notes": "**本章重大推进**：令牌凹槽+玉简边缘+绢帛印子三者纹路吻合，疑似同一块东西碎裂后的三个部分"
-    },
-    {
-      "hookId": "hook-12",
-      "startChapter": 201,
-      "type": "mystery",
-      "status": "open",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "三源先祖三支后人下落",
-      "payoffTiming": "mid-arc",
-      "notes": "**本章推进**：青鸾师父/苏青黛/孙师兄三人均指向同一支后人（师妹→苏青黛→青鸾）"
-    },
-    {
-      "hookId": "hook-9",
-      "startChapter": 201,
-      "type": "mystery",
-      "status": "open",
-      "lastAdvancedChapter": 1,
-      "expectedPayoff": "陈守义血脉秘密/乱葬岗还埋着什么",
-      "payoffTiming": "mid-arc",
-      "notes": "未直接推进"
+      "expectedPayoff": "中程",
+      "notes": "**重大推进**：乱葬岗下有封印阵/是七个节点之一/三源先祖精血神魂注入/七十三人埋葬与此相关"
     },
     {
       "hookId": "hook-2",
       "startChapter": 0,
-      "type": "role",
+      "type": "open",
       "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "孙师兄完整身份/令牌绢帛铜牌来源/师妹后人现状",
-      "payoffTiming": "mid-arc",
-      "notes": "**重大推进**：孙师兄身份确认（苏青黛徒弟/师姐）；师妹后人线索完整串联（青鸾师父=师妹→苏青黛→青鸾/孙师兄）；令牌来源确认（清源令/正本清源起源）"
+      "expectedPayoff": "中程",
+      "notes": "**重大推进**：孙师兄身份确认（苏青黛徒弟/师姐）；师妹后人线索完整串联"
     },
     {
       "hookId": "hook-3",
       "startChapter": 0,
-      "type": "mystery",
+      "type": "progressing",
       "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "源根与四脉血脉关系的完整揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "未直接推进（但三件残片线索为后续伏笔）"
+      "expectedPayoff": "中程",
+      "notes": "**完整揭示**：源根本身是第四脉/长兄的后人就是源根本身/陈守一是源根传人/母亲是长兄直系血脉"
     },
     {
       "hookId": "hook-4",
       "startChapter": 0,
       "type": "mystery",
+      "status": "resolved",
+      "lastAdvancedChapter": 200,
+      "expectedPayoff": "祖父绢帛被撕原因揭示",
+      "notes": "已在200章揭示"
+    },
+    {
+      "hookId": "hook-10",
+      "startChapter": 0,
+      "type": "open",
       "status": "open",
       "lastAdvancedChapter": 0,
-      "expectedPayoff": "祖父绢帛被撕原因揭示",
-      "payoffTiming": "mid-arc",
-      "notes": "未推进（已在上章揭示）"
+      "expectedPayoff": "中程",
+      "notes": "未推进"
+    },
+    {
+      "hookId": "hook-11",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中程",
+      "notes": "**本章重大推进**：令牌凹槽+玉简边缘+绢帛印子三者纹路吻合，疑似同一块东西碎裂后的三个部分"
+    },
+    {
+      "hookId": "hook-12",
+      "startChapter": 0,
+      "type": "open",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "中程",
+      "notes": "**本章推进**：青鸾师父/苏青黛/孙师兄三人均指向同一支后人"
     }
   ]
 }

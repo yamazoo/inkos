@@ -1,53 +1,53 @@
 {
-  "chapter": 202,
+  "chapter": 203,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点石屋",
-      "validFromChapter": 202,
+      "object": "城西破庙",
+      "validFromChapter": 203,
       "validUntilChapter": null,
-      "sourceChapter": 202
+      "sourceChapter": 203
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "坚定→沉思→警觉→震动→坚定→沉思→坚定/金痕被玉简唤醒（温和呼唤式震颤，比躁动更活跃）/玉坠热度继续降低（但未完全消退）/三月十四倒计时（还剩一天）",
-      "validFromChapter": 202,
+      "object": "**震动→沉重→坚定→沉默/金痕持续活跃/已知自身是源根传人/已知母亲真相/已知打开封印的代价**",
+      "validFromChapter": 203,
       "validUntilChapter": null,
-      "sourceChapter": 202
+      "sourceChapter": 203
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "**明天（202章当晚/三月十三）去城西破庙见孙师兄 + 确认手札内容** / **后天（三月十四）灵泉行动**",
-      "validFromChapter": 202,
+      "object": "**后天（三月十四）灵泉行动——源根归位，封印重启**",
+      "validFromChapter": 203,
       "validUntilChapter": null,
-      "sourceChapter": 202
+      "sourceChapter": 203
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "金痕持续消散/最多半年寿命/黑石即将耗尽（纹路快看不见，最多再压一次）",
-      "validFromChapter": 202,
+      "object": "金痕持续消耗/最多半年寿命/源根归位时必须站在封印正中心/母亲当年也以为自己能活着出来",
+      "validFromChapter": 203,
       "validUntilChapter": null,
-      "sourceChapter": 202
+      "sourceChapter": 203
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "青鸾/赵猛/苏婉儿/孙师兄（真实身份确认）/周老头/苏青黛（已故）",
-      "validFromChapter": 202,
+      "object": "孙师兄（盟友/确认师姐弟关系）/青鸾/赵猛/苏婉儿/正本清源（目的：让陈守一打开封印）",
+      "validFromChapter": 203,
       "validUntilChapter": null,
-      "sourceChapter": 202
+      "sourceChapter": 203
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "**三件残片拼合之谜（令牌+玉简+绢帛）/青鸾手札之谜/乱葬岗下不止尸骨/明天城西接头/后天三月十四夜行动**",
-      "validFromChapter": 202,
+      "object": "**源根传人身份确认/母亲真相/打开封印的代价/三脉后人齐聚（陈家、苏家、何家）/后天灵泉行动**",
+      "validFromChapter": 203,
       "validUntilChapter": null,
-      "sourceChapter": 202
+      "sourceChapter": 203
     }
   ]
 }
