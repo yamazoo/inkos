@@ -4696,5 +4696,40 @@
       "completionTokens": 26644,
       "totalTokens": 45883
     }
+  },
+  {
+    "number": 208,
+    "title": "溯源",
+    "status": "approved",
+    "wordCount": 3491,
+    "createdAt": "2026-04-18T23:55:21.201Z",
+    "updatedAt": "2026-04-18T23:55:29.613Z",
+    "auditIssues": [
+      "[warning] 孙师兄说\"四脉里头的那个，我替你看过了，血统纯正\"——此处\"四脉里头\"容易造成读者混淆。根据设定，四脉包括长兄（陈守一）、三弟、四妹、二弟守真后裔。陈守一本身就是长兄后人/第四脉传人，那正本清源里的三源后人该如何归类？如果按\"陈守一=第四脉\"理解，正本清源的三脉后人并不在\"四脉里头\"；如果按\"三源+陈守一=四脉\"理解，孙师兄的话又与\"陈守一=第四脉\"矛盾。建议明确为\"三源里头那个\"或\"正本清源里三脉后人中的一个\"，以免读者困惑。",
+      "[info] 金痕热度在接近灵泉时的变化：从207章的\"微微发热，不是疼，是暖\"到本章的\"烫得他心口发紧\"再到\"烫得几乎站不住\"，变化较为陡峭。虽然在叙事逻辑上（靠近灵泉→金痕反应加剧）可以自洽，但可考虑在过渡时增加一句感知描写，让变化更平滑。",
+      "[info] Hook-13（独占其三）、Hook-17（想活着出来）、Hook-18（乱葬岗七个点/七批/七十三人）在本章都得到了完整回收。Hook-14（陈守义无金痕/金痕必要性）通过孙师兄之口部分解释（金痕是钥匙/能打开三道锁），但\"为何陈守义无金痕\"的核心问题仍未直接解答。建议在后文补完。",
+      "[info] 检测到3句连续以相同开头的句子，呈现列表式AI生成结构",
+      "[warning] 连续出现6个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 4120,
+      "postWriterNormalizeCount": 3491,
+      "postReviseCount": 0,
+      "finalCount": 3491,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 26644,
+      "completionTokens": 13131,
+      "totalTokens": 39775
+    }
   }
 ]

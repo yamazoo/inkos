@@ -1,61 +1,61 @@
 {
-  "chapter": 207,
+  "chapter": 208,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "**聚居点→灵泉方向（晨间出发/即将抵达）**",
-      "validFromChapter": 207,
+      "object": "**灵泉潭边（即将开始行动）**",
+      "validFromChapter": 208,
       "validUntilChapter": null,
-      "sourceChapter": 207
+      "sourceChapter": 208
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "**温暖→坚定→平静→温暖→坚定→温暖→坚定→温暖→坚定 / 金痕温热（回应式发热）/完成所有信息整合/完成心理准备/决心不重蹈覆辙/\"想活着出来\"而非\"以为自己能活着出来\"/准备出发/即将出发**",
-      "validFromChapter": 207,
+      "object": "**坚定→沉重→坚定→沉重→坚定→坚定→坚定→坚定→坚定 / 金痕剧烈发烫（主动式/非回应式/热度穿透骨髓/在发光/催促）/完成所有信息整合/完成心理准备/\"想活着出来\"确认/决心已定/即将开始源根归位**",
+      "validFromChapter": 208,
       "validUntilChapter": null,
-      "sourceChapter": 207
+      "sourceChapter": 208
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "**三月十四灵泉行动——源根归位，封印重启 / 去灵泉/见四脉/活着回来 / 明天辰时出发（现在是出发日）**",
-      "validFromChapter": 207,
+      "object": "**源根归位/四脉站位阵法启动/三源后人现身/封印正中心就位/抽取三源血脉中的三股/源根四股合一/活着回来**",
+      "validFromChapter": 208,
       "validUntilChapter": null,
-      "sourceChapter": 207
+      "sourceChapter": 208
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "**金痕持续消耗/最多半年寿命/源根归位时必须站在封印正中心/承受源根之力反噬/非大毅力者不能为**",
-      "validFromChapter": 207,
+      "object": "**金痕持续剧烈消耗/最多半年寿命/源根归位时必须站在封印正中心/承受源根之力反噬/非大毅力者不能为/将三源后人体内的三股硬生生扯出来**",
+      "validFromChapter": 208,
       "validUntilChapter": null,
-      "sourceChapter": 207
+      "sourceChapter": 208
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "**孙师兄（盟友/留守教苏婉儿站位/约定灵泉见）/青鸾（同行→留守/聚居点等待/目送/目送）/赵猛（同行/外围护卫/一起出发）/苏婉儿（同行/临界点站位/误差一尺/三年练习/等待）/正本清源（目的：让源根传人打开封印/不知道真相是冥气倒灌）**",
-      "validFromChapter": 207,
+      "object": "**孙师兄（盟友/已在灵泉方向/已确认四脉之一血统纯正/同行）/赵猛（同行/外围护卫/已抵达灵泉/守护身后）/苏婉儿（盟友/临界点站位/误差一尺/三年练习/潭边等待/已确认站位/\"你得知道我不会动\"/\"你要是出不来我会替你活着\"）/三源后人（灰袍/青衣/黑衣/潭水另一侧/与陈守一遥遥相对/站三个角灌注力量）/正本清源（外围/催促行动/不知道真相是冥气倒灌）**",
+      "validFromChapter": 208,
       "validUntilChapter": null,
-      "sourceChapter": 207
+      "sourceChapter": 208
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "**三月十四灵泉行动开始/源根归位/四脉站位阵法/封印重启/源根之力反噬/非大毅力者不能为/明天辰时出发**",
-      "validFromChapter": 207,
+      "object": "**源根归位开始/四脉站位阵法启动/源根之力反噬/非大毅力者不能为/金痕主动式剧烈发热/即将抽取三源血脉中的三股/三源后人已现身/对峙开始**",
+      "validFromChapter": 208,
       "validUntilChapter": null,
-      "sourceChapter": 207
+      "sourceChapter": 208
     },
     {
       "subject": "current_state",
       "predicate": "当前叙事",
-      "object": "**降调章/温情章/准备章/出发章/伏笔印证章/心理确认章/行动前最终确认章**",
-      "validFromChapter": 207,
+      "object": "**升调章/行动章/对峙章/决战前章/伏笔印证章/真相完整揭示章/仪式开始章**",
+      "validFromChapter": 208,
       "validUntilChapter": null,
-      "sourceChapter": 207
+      "sourceChapter": 208
     }
   ]
 }
