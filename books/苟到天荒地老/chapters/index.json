@@ -5097,5 +5097,40 @@
       "completionTokens": 10934,
       "totalTokens": 32054
     }
+  },
+  {
+    "number": 220,
+    "title": "梦痕",
+    "status": "approved",
+    "wordCount": 3141,
+    "createdAt": "2026-04-19T02:07:31.649Z",
+    "updatedAt": "2026-04-19T02:07:41.061Z",
+    "auditIssues": [
+      "[info] 本章采用陈守一\"进入\"冥的记忆/梦境的方式呈现万年前画面，而非直接切换到过去人物的意识。这种处理方式（主角作为旁观者观看记忆片段）符合仙侠小说常见处理手法，避免了视角直接跳跃到过去角色的主观意识问题。",
+      "[info] 陈守一情感弧线在219章\"沉重→坚定→平静\"基础上，本章推进了\"平静→主动探索→震动→沉默→坚定\"的新发展。通过他主动请求进入大劫记忆、观看完整真相后的沉默和反思，情感弧线有实质性推进。",
+      "[info] 章尾处理得当：1)219章末尾\"他有的是时间\"的悬念通过本章大劫真相的完整揭示得到回应；2)章节以\"这一次，不能再重蹈覆辙\"收束，既完成阶段性回收又点燃新的悬念（陈守一会怎么做？）；3)冥的状态（梦游/被动）与219章\"冥在看\"的信息一致——\"看\"是本能驱动的注视而非清醒的观察。",
+      "[warning] 118个段落里有71个不足35字，段落被切得过碎。",
+      "[warning] 连续出现10个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3145,
+      "postWriterNormalizeCount": 3141,
+      "postReviseCount": 0,
+      "finalCount": 3141,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 48288,
+      "completionTokens": 17227,
+      "totalTokens": 65515
+    }
   }
 ]
