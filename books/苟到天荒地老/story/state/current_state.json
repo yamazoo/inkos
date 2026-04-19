@@ -1,53 +1,53 @@
 {
-  "chapter": 217,
+  "chapter": 218,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点潭边→聚居点方向（仪式后第七天）",
-      "validFromChapter": 217,
+      "object": "聚居点潭边",
+      "validFromChapter": 218,
       "validUntilChapter": null,
-      "sourceChapter": 217
+      "sourceChapter": 218
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "源根共生适应中/金痕稳定/得知冥完整真相/心态坚定/算账中/制定\"拖延\"战略",
-      "validFromChapter": 217,
+      "object": "源根共生适应中/金痕稳定/得知冥完整真相/心态坚定/算账完成/拖延战略制定完成/\"慢慢来\"/\"不急\"/\"它等了一万年我再等七十年也不是等不起\"",
+      "validFromChapter": 218,
       "validUntilChapter": null,
-      "sourceChapter": 217
+      "sourceChapter": 218
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "**源根共生适应/面对冥的威胁/\"七十年内分出胜负\"/算如何让灵气恢复更快/拖延战略/不让冥知道底牌**",
-      "validFromChapter": 217,
+      "object": "**源根共生适应/面对冥的威胁/七十年内分出胜负/寻找上古灵泉旧址/刺激残存根系恢复/\"慢慢来\"拖延战略执行/不让冥知道底牌**",
+      "validFromChapter": 218,
       "validUntilChapter": null,
-      "sourceChapter": 217
+      "sourceChapter": 218
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "**冥的注视与等待/封印松动/源根完全恢复需100年/灵气稀薄（上古千分之一）/七十年的赛跑时限**",
-      "validFromChapter": 217,
+      "object": "**冥的注视与等待/封印松动/源根完全恢复需100年/灵气稀薄（上古千分之一）/七十年的赛跑时限/冥不知源根与陈守一融合**",
+      "validFromChapter": 218,
       "validUntilChapter": null,
-      "sourceChapter": 217
+      "sourceChapter": 218
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "**核心威胁：冥（暗面/比源根更古老/天地初开就已存在/灵气因它而生却不是它的本体/万年前撕裂时产生/被封印在撕裂口另一侧/源根缠住冥使其无法单独挣脱/比完整源根更强/幽冥气息来源/困兽之斗/万年纠缠/原始的饥饿）**",
-      "validFromChapter": 217,
+      "object": "**核心威胁：冥（暗面/比源根更古老/天地初开就已存在/原始的饥饿/灵气因它而生却不是它的本体/万年前撕裂时产生/被封印在撕裂口另一侧/源根缠住冥使其无法单独挣脱/比完整源根更强/幽冥气息来源/万年纠缠/困兽之斗）；盟友：源根（共生/平等对话/一起扛/七十年赛跑）/苏婉儿/赵猛/青鸾/孙师兄/三源后人**",
+      "validFromChapter": 218,
       "validUntilChapter": null,
-      "sourceChapter": 217
+      "sourceChapter": 218
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "**源根恢复 vs 冥苏醒的竞赛（正式命名）/困兽之斗/七十年时限/陈守一制定\"慢慢来\"拖延战略**",
-      "validFromChapter": 217,
+      "object": "**源根恢复 vs 冥苏醒的竞赛/困兽之斗/七十年时限/陈守一制定\"慢慢来\"拖延战略/\"慢慢长/不急/藏好底牌\"**",
+      "validFromChapter": 218,
       "validUntilChapter": null,
-      "sourceChapter": 217
+      "sourceChapter": 218
     }
   ]
 }
