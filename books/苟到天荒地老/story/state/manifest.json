@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 210,
+  "lastAppliedChapter": 211,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -573,6 +573,15 @@
     "hook-13:status normalized from \"**eligible-resolve**\" to \"open\"",
     "hook-17:status normalized from \"**eligible-resolve**\" to \"open\"",
     "hook-18:status normalized from \"**eligible-resolve**\" to \"open\"",
-    "hook-19:status normalized from \"**eligible-resolve**\" to \"open\""
+    "hook-19:status normalized from \"**eligible-resolve**\" to \"open\"",
+    "H-源根真相:lastAdvancedChapter normalized from \"**211：源根本体具象化（金色树干银色树叶的光树）/开始与金痕融合/万年前大劫真相完整揭示（人祸非天灾/四脉瓜分源根/独占其三让第四个扛后果/灵气稀薄因源根被撕裂）**\" to 0",
+    "H-源根归位仪式:lastAdvancedChapter normalized from \"**211：仪式高潮/三道力量汇聚涌向源根/金痕与源根本体融合/光芒吞没一切/源根承诺延寿反哺**\" to 0",
+    "H-末法时代真相:status normalized from \"**→揭示→高潮→融合**\" to \"open\"",
+    "H-末法时代真相:lastAdvancedChapter normalized from \"**211：源根揭示\"我本是天地灵气源头/万年前被撕裂/没法维持灵气平衡所以越来越稀薄\"/不是天道惩罚是人祸后遗症**\" to 0",
+    "H-三源血脉抽取:lastAdvancedChapter normalized from \"**211：第一道锁断裂/第二第三松动中/三道力量汇聚涌向源根**\" to 0",
+    "H-源根与陈守一交易:status normalized from \"**新种**\" to \"open\"",
+    "H-源根与陈守一交易:lastAdvancedChapter normalized from \"**211：源根揭示存在意义\"让灵气恢复正常\"/陈守一提出\"你带我回家我带你回家\"平等交易/源根接受/达成合作（借血脉归位/反哺生机）**\" to 0",
+    "H-源根本体具象化:status normalized from \"**新种**\" to \"open\"",
+    "H-源根本体具象化:lastAdvancedChapter normalized from \"**211：源根本体具象化为\"一道光\"/不是金色不是银色/是天地初开第一缕光/万物起源第一丝生机/正在与金痕融合**\" to 0"
   ]
 }

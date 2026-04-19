@@ -4796,5 +4796,42 @@
       "completionTokens": 13145,
       "totalTokens": 38884
     }
+  },
+  {
+    "number": 211,
+    "title": "源根苏醒",
+    "status": "approved",
+    "wordCount": 3540,
+    "createdAt": "2026-04-19T00:26:29.853Z",
+    "updatedAt": "2026-04-19T00:26:36.838Z",
+    "auditIssues": [
+      "[warning] 主角人设\"谨慎多疑、算账精深\"在本章体现不足。主角陈守一直接向万年之物承诺\"我会带你回家\"，随后提出\"交易\"并立即点头同意，整个过程缺少迟疑、追问细节、权衡利弊的谨慎表现。虽然这是仪式高潮场景，但与角色一贯性格存在轻微落差。",
+      "[info] 三源后人（灰袍、青衣、黑衣）在本章完全消失。第210章明确提到三人在三个方位站位、灌注力量、\"三弟你那边怎么样\"的对话，但本章只以\"三道力量\"一笔带过，没有交代三人状态。",
+      "[info] 第209章状态卡记载\"金痕持续消耗生机（五年期限）\"，本章源根提出\"延寿\"作为交易对价，两者在叙事逻辑上可以共存（交易后的延寿可以抵消甚至超越消耗），但没有明确说明这一层关系。",
+      "[info] 章尾\"光芒吞没了一切\"是典型的悬念式结尾，但没有为下一章留下明确钩子。前几章的钩子分别是\"仪式正式开始\"（209章）、\"他还有很多事情要做\"（210章），本章的结尾稍显仓促。",
+      "[info] 检测到6句连续以相同开头的句子，呈现列表式AI生成结构",
+      "[warning] 155个段落里有126个不足35字，段落被切得过碎。",
+      "[warning] 连续出现24个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 4078,
+      "postWriterNormalizeCount": 3540,
+      "postReviseCount": 0,
+      "finalCount": 3540,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 24254,
+      "completionTokens": 12971,
+      "totalTokens": 37225
+    }
   }
 ]

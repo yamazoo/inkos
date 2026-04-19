@@ -1,4 +1,53 @@
 {
-  "chapter": 210,
-  "facts": []
+  "chapter": 211,
+  "facts": [
+    {
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "灵泉潭底/封印正中心（仪式高潮/源根归位进行中）",
+      "validFromChapter": 211,
+      "validUntilChapter": null,
+      "sourceChapter": 211
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "蜕变进行中/金痕与源根融合中/承受源根之力/疼痛但坚定/完成与源根的平等对话/达成交易/光芒吞没一切",
+      "validFromChapter": 211,
+      "validUntilChapter": null,
+      "sourceChapter": 211
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "源根归位/仪式完成/活着出来/回家",
+      "validFromChapter": 211,
+      "validUntilChapter": null,
+      "sourceChapter": 211
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "仪式进行中/源根融合不可中断/需要承受代价",
+      "validFromChapter": 211,
+      "validUntilChapter": null,
+      "sourceChapter": 211
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "苏婉儿(潭边等待/临界点站位)",
+      "validFromChapter": 211,
+      "validUntilChapter": null,
+      "sourceChapter": 211
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "仪式高潮/源根归位进行中/金痕与源根本体融合/光芒吞没一切",
+      "validFromChapter": 211,
+      "validUntilChapter": null,
+      "sourceChapter": 211
+    }
+  ]
 }

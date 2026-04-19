@@ -1,3 +1,58 @@
 {
-  "hooks": []
+  "hooks": [
+    {
+      "hookId": "H-源根真相",
+      "startChapter": 200,
+      "type": "世界真相",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**211-215（仪式完成）**",
+      "notes": "**源根归位仪式高潮/源根本体显现/与陈守一达成平等交易/正在融合中**"
+    },
+    {
+      "hookId": "H-源根归位仪式",
+      "startChapter": 209,
+      "type": "核心主线",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**211-215（仪式完成）**",
+      "notes": "**仪式进入最终阶段/源根归位进行中/陈守一与源根融合**"
+    },
+    {
+      "hookId": "H-末法时代真相",
+      "startChapter": 200,
+      "type": "世界真相",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**211-220（灵气恢复显现）**",
+      "notes": "**末法时代真相完整揭示/灵气恢复有希望/但需要源根完全归位后逐步恢复**"
+    },
+    {
+      "hookId": "H-三源血脉抽取",
+      "startChapter": 209,
+      "type": "核心主线",
+      "status": "progressing",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**211（仪式完成）**",
+      "notes": "**三道锁同时松动/正在断裂中/源根归位进程加速**"
+    },
+    {
+      "hookId": "H-源根与陈守一交易",
+      "startChapter": 211,
+      "type": "**NEW→高潮**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**211-215（交易履行）**",
+      "notes": "**新伏笔：源根承诺延寿/取决于愿意付出多少/交易正式开始**"
+    },
+    {
+      "hookId": "H-源根本体具象化",
+      "startChapter": 211,
+      "type": "**NEW→高潮**",
+      "status": "open",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "**211-215（融合完成）**",
+      "notes": "**新伏笔：源根本体形态揭示/与金痕正在融合中**"
+    }
+  ]
 }
