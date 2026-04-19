@@ -2,42 +2,41 @@
   "hooks": [
     {
       "hookId": "H-末法时代真相",
-      "startChapter": 200,
+      "startChapter": 0,
       "type": "世界真相",
-      "status": "progressing",
-      "lastAdvancedChapter": 213,
-      "expectedPayoff": "**220-250（灵气恢复显现）**",
-      "payoffTiming": "mid-arc",
-      "notes": "**推进：源根确认灵气恢复时间表（10年2倍/50年一成/100年三成/几百年完全恢复）/\"像冰块化水\"**"
-    },
-    {
-      "hookId": "H-寿元代价最终确认",
-      "startChapter": 212,
-      "type": "悬念",
       "status": "resolved",
-      "lastAdvancedChapter": 213,
-      "expectedPayoff": "~~213-215~~",
-      "notes": "**resolved本章：源根确认70年/30年损耗无法补回/但70年不会再减/源根承诺反哺生机**"
+      "lastAdvancedChapter": 211,
+      "expectedPayoff": "213-214",
+      "notes": "源根完整揭示（人祸非天灾/四脉瓜分）"
     },
     {
       "hookId": "H-源根恢复计划",
       "startChapter": 212,
       "type": "世界观",
-      "status": "open",
+      "status": "progressing",
       "lastAdvancedChapter": 213,
-      "expectedPayoff": "**220-300（恢复进程显现）**",
+      "expectedPayoff": "220-300",
       "payoffTiming": "mid-arc",
-      "notes": "**推进：灵气恢复时间表揭示/寿元与灵气挂钩/源根是关键/陈守一与源根共生关系确立**"
+      "notes": "灵气恢复时间表揭示/寿元与灵气挂钩"
     },
     {
       "hookId": "H-灵气恢复时间",
       "startChapter": 212,
       "type": "世界观",
-      "status": "open",
+      "status": "progressing",
       "lastAdvancedChapter": 213,
-      "expectedPayoff": "**220-300（灵气恢复显现）**",
+      "expectedPayoff": "220-300",
       "payoffTiming": "mid-arc",
-      "notes": "**推进：具体时间表（10年/50年/100年/几百年）/恢复速度\"像冰块化水\"/陈守一问\"我能装得下吗\"已埋下伏笔**"
+      "notes": "具体时间线/恢复速度\"像冰块化水\""
+    },
+    {
+      "hookId": "H-冥的苏醒",
+      "startChapter": 214,
+      "type": "伏笔",
+      "status": "open",
+      "lastAdvancedChapter": 214,
+      "expectedPayoff": "待定",
+      "notes": "**NEW：源根感知到\"冥\"的存在/金痕发热反应/古老存在正在注视**"
     }
   ]
 }

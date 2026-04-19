@@ -4901,5 +4901,37 @@
       "completionTokens": 15927,
       "totalTokens": 39281
     }
+  },
+  {
+    "number": 214,
+    "title": "余波",
+    "status": "approved",
+    "wordCount": 2766,
+    "createdAt": "2026-04-19T00:52:44.822Z",
+    "updatedAt": "2026-04-19T00:56:06.967Z",
+    "auditIssues": [
+      "[info] AI标记词'缓缓'在短距离内出现两次（'那双眼睛没有瞳孔，只有两团幽绿色的火焰。它似乎感知到了什么，嘴角缓缓勾起一个弧度' / '声音沙哑，像是生锈的铁器在摩擦'处，以及'而在灵泉深处，某条幽暗的裂隙中，一双眼睛缓缓睁开'），建议替换以增强多样性。",
+      "[warning] 徒弟描述灵眼枯竭原因时说'像是……像是灵气被什么东西抽走了'——这与源根归位导致灵气重新流动的逻辑略有偏差。实际上灵气不是被抽走，而是源根归位后灵气源头重新激活，导致原本被抽取供养的灵眼失去供养来源而枯竭。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2766,
+      "postWriterNormalizeCount": 0,
+      "postReviseCount": 2766,
+      "finalCount": 2766,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 8444,
+      "totalTokens": 8444
+    }
   }
 ]
