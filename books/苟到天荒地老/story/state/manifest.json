@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 223,
+  "lastAppliedChapter": 224,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -587,6 +587,9 @@
     "H-源根恢复计划:lastAdvancedChapter normalized from \"213→216\" to 0",
     "H-灵气恢复时间:lastAdvancedChapter normalized from \"213→216\" to 0",
     "两百年时间线:status normalized from \"new\" to \"open\"",
-    "苏婉儿承诺:status normalized from \"new\" to \"open\""
+    "苏婉儿承诺:status normalized from \"new\" to \"open\"",
+    "源根适应期:status normalized from \"NEW\" to \"open\"",
+    "材料缺口:status normalized from \"NEW\" to \"open\"",
+    "源根与陈守一的默契:status normalized from \"NEW\" to \"open\""
   ]
 }
