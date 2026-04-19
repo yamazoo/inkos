@@ -4764,5 +4764,37 @@
       "completionTokens": 13658,
       "totalTokens": 27615
     }
+  },
+  {
+    "number": 210,
+    "title": "源根",
+    "status": "approved",
+    "wordCount": 3110,
+    "createdAt": "2026-04-19T00:18:50.824Z",
+    "updatedAt": "2026-04-19T00:18:58.251Z",
+    "auditIssues": [
+      "[warning] 118个段落里有85个不足35字，段落被切得过碎。",
+      "[warning] 连续出现11个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3110,
+      "postWriterNormalizeCount": 3110,
+      "postReviseCount": 0,
+      "finalCount": 3110,
+      "normalizeApplied": false,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 25739,
+      "completionTokens": 13145,
+      "totalTokens": 38884
+    }
   }
 ]
