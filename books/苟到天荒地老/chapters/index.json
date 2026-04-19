@@ -4731,5 +4731,38 @@
       "completionTokens": 13131,
       "totalTokens": 39775
     }
+  },
+  {
+    "number": 209,
+    "title": "归源",
+    "status": "approved",
+    "wordCount": 2694,
+    "createdAt": "2026-04-19T00:05:57.296Z",
+    "updatedAt": "2026-04-19T00:07:54.849Z",
+    "auditIssues": [
+      "[info] 章节结尾以「仪式，正式开始」收束，悬念管理到位。但仪式开始后的具体过程和代价未完全揭示，为第210章留下了足够的悬念空间。",
+      "[info] 配角内心通过陈守一的感知呈现（感觉到赵猛的气息/孙师兄的气息/苏婉儿的气息），符合第三人称有限视角，未进入其他角色内心。",
+      "[info] 三源后人的台词克制有力，揭示信息的同时未超出身份定位。灰袍/青衣/黑衣各有职责区分：灰袍关注仪式进程、青衣传递历史信息、黑衣揭示金痕本质。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 2424,
+      "postWriterNormalizeCount": 2694,
+      "postReviseCount": 0,
+      "finalCount": 2694,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 13957,
+      "completionTokens": 13658,
+      "totalTokens": 27615
+    }
   }
 ]
