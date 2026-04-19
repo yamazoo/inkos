@@ -1,53 +1,53 @@
 {
-  "chapter": 215,
+  "chapter": 216,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点石屋（从灵泉潭边归来，已过六天）",
-      "validFromChapter": 215,
+      "object": "聚居点石屋（仪式后第七天）",
+      "validFromChapter": 216,
       "validUntilChapter": null,
-      "sourceChapter": 215
+      "sourceChapter": 216
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "初愈恢复中/金痕对\"冥\"注视产生反应（暖→烫）",
-      "validFromChapter": 215,
+      "object": "初愈恢复中/金痕稳定/已得知冥的完整真相/心态坚定",
+      "validFromChapter": 216,
       "validUntilChapter": null,
-      "sourceChapter": 215
+      "sourceChapter": 216
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "源根共生适应/应对\"冥\"的威胁",
-      "validFromChapter": 215,
+      "object": "**源根共生适应/面对冥的威胁/拖延战略/\"七十年内分出胜负\"**",
+      "validFromChapter": 216,
       "validUntilChapter": null,
-      "sourceChapter": 215
+      "sourceChapter": 216
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "冥的注视/封印松动/源根尚未完全恢复",
-      "validFromChapter": 215,
+      "object": "**冥的注视与等待/封印松动/源根恢复需要一百年/灵气稀薄（上古千分之一）**",
+      "validFromChapter": 216,
       "validUntilChapter": null,
-      "sourceChapter": 215
+      "sourceChapter": 216
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "**新增威胁：冥（古老存在/比源根更古老/在等源根恢复后吞噬）**",
-      "validFromChapter": 215,
+      "object": "**核心威胁：冥（古老存在/比源根更古老/在等吞噬源根/比完整源根更强/万年前四个合力才推出/暗面/沉在水底的东西）**",
+      "validFromChapter": 216,
       "validUntilChapter": null,
-      "sourceChapter": 215
+      "sourceChapter": 216
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "源根共生适应期/源根恢复 vs 冥苏醒的竞赛",
-      "validFromChapter": 215,
+      "object": "**源根恢复 vs 冥苏醒的竞赛（命名后正式确立）/困兽之斗/七十年时限**",
+      "validFromChapter": 216,
       "validUntilChapter": null,
-      "sourceChapter": 215
+      "sourceChapter": 216
     }
   ]
 }

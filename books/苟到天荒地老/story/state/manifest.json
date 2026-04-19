@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 215,
+  "lastAppliedChapter": 216,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -583,6 +583,8 @@
     "H-源根与陈守一交易:lastAdvancedChapter normalized from \"**211：源根揭示存在意义\"让灵气恢复正常\"/陈守一提出\"你带我回家我带你回家\"平等交易/源根接受/达成合作（借血脉归位/反哺生机）**\" to 0",
     "H-源根本体具象化:status normalized from \"**新种**\" to \"open\"",
     "H-源根本体具象化:lastAdvancedChapter normalized from \"**211：源根本体具象化为\"一道光\"/不是金色不是银色/是天地初开第一缕光/万物起源第一丝生机/正在与金痕融合**\" to 0",
-    "H-末法时代真相:startChapter normalized from \"200→211\" to 0"
+    "H-末法时代真相:startChapter normalized from \"200→211\" to 0",
+    "H-源根恢复计划:lastAdvancedChapter normalized from \"213→216\" to 0",
+    "H-灵气恢复时间:lastAdvancedChapter normalized from \"213→216\" to 0"
   ]
 }

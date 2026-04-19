@@ -5,30 +5,29 @@
       "startChapter": 214,
       "type": "伏笔",
       "status": "progressing",
-      "lastAdvancedChapter": 215,
+      "lastAdvancedChapter": 216,
       "expectedPayoff": "待定",
-      "payoffTiming": "mid-arc",
-      "notes": "**本章推进：冥命名/完整揭示（被撕裂的部分/比源根更古老/在等源根恢复后吞噬/比完整源根更强/万年前四个合力才将其推出/幽冥气息来源之一/封印同时封源根和冥）**"
+      "notes": "**本章重大推进：冥完整命名（\"沉在水底的东西\"）/本质揭示（暗面/比源根更古老/灵气因它而生却不是它的本体）/机制揭示（等源根恢复后吞噬/比完整源根更强/万年前四个合力才推出/幽冥气息来源之一/封印同时封源根和冥/源根缠住冥使其无法单独挣脱/困兽之斗）/源根承认恐惧/陈守一制定\"拖延\"战略/七十年时限确立/赛跑有了名字**"
     },
     {
       "hookId": "H-源根恢复计划",
       "startChapter": 212,
       "type": "世界观",
       "status": "progressing",
-      "lastAdvancedChapter": 213,
+      "lastAdvancedChapter": 0,
       "expectedPayoff": "220-300",
       "payoffTiming": "mid-arc",
-      "notes": "灵气恢复时间表揭示/寿元与灵气挂钩"
+      "notes": "灵气恢复时间表/寿元与灵气挂钩/恢复速度取决于灵气、寿元、陈守一本人/完全恢复需100年/陈守一制定拖延战略"
     },
     {
       "hookId": "H-灵气恢复时间",
       "startChapter": 212,
       "type": "世界观",
       "status": "progressing",
-      "lastAdvancedChapter": 213,
+      "lastAdvancedChapter": 0,
       "expectedPayoff": "220-300",
       "payoffTiming": "mid-arc",
-      "notes": "具体时间线/恢复速度\"像冰块化水\""
+      "notes": "具体时间线揭示（100年3%/几百年完全恢复）/速度\"像冰块化水\"/外力可加速恢复/陈守一思考加速途径"
     }
   ]
 }

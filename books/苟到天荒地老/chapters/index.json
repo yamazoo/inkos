@@ -4967,5 +4967,36 @@
       "completionTokens": 13895,
       "totalTokens": 29216
     }
+  },
+  {
+    "number": 216,
+    "title": "（从正文标题行提取或推断章节标题，只输出标题文字）\n\n第216章",
+    "status": "approved",
+    "wordCount": 3180,
+    "createdAt": "2026-04-19T01:16:08.083Z",
+    "updatedAt": "2026-04-19T01:20:21.405Z",
+    "auditIssues": [
+      "[info] 本章揭示了大量关于冥的核心设定（暗面本质、天地初开存在、灵气因它而生等），这些信息在215章命名冥之后立即揭示，时序上略微紧凑"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3666,
+      "postWriterNormalizeCount": 3180,
+      "postReviseCount": 3180,
+      "finalCount": 3180,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 17694,
+      "totalTokens": 17694
+    }
   }
 ]
