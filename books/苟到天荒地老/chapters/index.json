@@ -4998,5 +4998,38 @@
       "completionTokens": 17694,
       "totalTokens": 17694
     }
+  },
+  {
+    "number": 217,
+    "title": "沉在水底的东西（下）",
+    "status": "approved",
+    "wordCount": 3658,
+    "createdAt": "2026-04-19T01:32:09.163Z",
+    "updatedAt": "2026-04-19T01:32:17.770Z",
+    "auditIssues": [
+      "[warning] 章节标题\"**沉在水底的东西（下）**\"已自动调整为\"沉在水底的东西（下）\"。",
+      "[warning] 142个段落里有96个不足35字，段落被切得过碎。",
+      "[warning] 连续出现6个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3714,
+      "postWriterNormalizeCount": 3658,
+      "postReviseCount": 0,
+      "finalCount": 3658,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 16771,
+      "totalTokens": 16771
+    }
   }
 ]
