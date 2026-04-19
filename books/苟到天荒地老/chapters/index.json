@@ -5199,5 +5199,40 @@
       "completionTokens": 10585,
       "totalTokens": 25250
     }
+  },
+  {
+    "number": 223,
+    "title": "根须",
+    "status": "approved",
+    "wordCount": 2235,
+    "createdAt": "2026-04-19T02:32:59.109Z",
+    "updatedAt": "2026-04-19T02:33:11.287Z",
+    "auditIssues": [
+      "[warning] 赵猛汇报的'黑雾扩散规律'（从东面山谷往外推/北面最薄）与第222章已建立的设定高度重叠。赵猛在两章中都是'观察-汇报'的传声筒角色，未有新角度或新发现。本章推进了聚灵阵计划，但布防执行本身没有产生新的信息增量。",
+      "[info] 源根在内心对话中说'所以我才愿意告诉你这些'，这句话的语气相比此前源根疲惫、沉重的基调略显轻快，与第220章'现在你知道了'的疲惫感略有漂移。整体仍在合理范围内，但需注意保持源根情绪的连贯性。",
+      "[warning] 最近3章持续高压（**平静→释然→好奇→沉重→沉默→释然→温暖→轻松→感动（降调章/温情章/初愈章/日常章/活着真好章）** -> **沉重→理解→坚定→震动→沉重→坚定→释然→沉重→坚定→坚定** -> 沉重→平静（战略确定后）），缺少明显的情绪释放。",
+      "[warning] 80个段落里有29个不足35字，段落被切得过碎。",
+      "[warning] 连续出现5个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 4487,
+      "postWriterNormalizeCount": 2235,
+      "postReviseCount": 0,
+      "finalCount": 2235,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 15069,
+      "totalTokens": 15069
+    }
   }
 ]

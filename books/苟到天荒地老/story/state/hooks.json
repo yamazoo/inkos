@@ -5,50 +5,68 @@
       "startChapter": 222,
       "type": "threat",
       "status": "progressing",
-      "lastAdvancedChapter": 222,
+      "lastAdvancedChapter": 223,
       "expectedPayoff": "冥被压制或陈守一应对升级",
       "payoffTiming": "near-term",
-      "notes": "本章黑雾扩散被实地确认，冥正在试探封印边界——\"它在试探封印松了没有\"，\"每次我开始恢复它都能感觉到\"。源根揭示\"黑雾扩散是在测试边界的厚度\"。战略定性：这是一场赛跑。"
+      "notes": "本章黑雾扩散规律确认：从东山谷往外推/北面最薄/冥在试探封印边界厚度/在找灵气最薄点作为突破口"
     },
     {
       "hookId": "拖延战略",
       "startChapter": 222,
       "type": "strategy",
       "status": "open",
-      "lastAdvancedChapter": 222,
+      "lastAdvancedChapter": 223,
       "expectedPayoff": "七十年内源根恢复压制冥",
       "payoffTiming": "immediate",
-      "notes": "本章\"慢慢来\"策略具体化为\"藏\"字诀：藏源根恢复进度、藏底牌、藏真实实力，让冥以为\"我们很弱\"，\"太急了它会强攻，强攻我们守不住\"。"
+      "notes": "本章战略执行：\"藏\"字诀/布聚灵阵稳北面灵气/聚灵阵不是为了反击是为了拖延时间"
     },
     {
       "hookId": "源根恢复进度",
       "startChapter": 222,
       "type": "plot",
       "status": "open",
-      "lastAdvancedChapter": 222,
+      "lastAdvancedChapter": 223,
       "expectedPayoff": "灵气恢复/压制冥/根系布满大陆",
       "payoffTiming": "mid-arc",
-      "notes": "仪式后第8天，源根气息比昨晚更稳，正在慢慢扎根。青鸾确认黑雾比前两天扩散，源根透露\"每次我开始恢复它都能感觉到\"——恢复与苏醒同步进行。"
+      "notes": "仪式后第8天/源根稳定扎根/意识偶尔浮现/话不多/源根在恢复冥也在试探/比耐心较量"
+    },
+    {
+      "hookId": "布防计划执行",
+      "startChapter": 222,
+      "type": "strategy",
+      "status": "open",
+      "lastAdvancedChapter": 223,
+      "expectedPayoff": "布防计划执行/灵气流向摸清",
+      "payoffTiming": "near-term",
+      "notes": "**重大推进**：赵猛核实黑雾扩散规律完成/确认东山谷往外推/北面最薄/黑雾往灵气薄弱处扩"
     },
     {
       "hookId": "源根记忆",
       "startChapter": 222,
       "type": "mystery",
-      "status": "open",
-      "lastAdvancedChapter": 222,
+      "status": "resolved",
+      "lastAdvancedChapter": 223,
       "expectedPayoff": "陈守一从记忆中吸取教训",
-      "payoffTiming": "immediate",
-      "notes": "本章陈守一想起昨晚在源根记忆里看到的画面——万年前三人撕源根的画面，提醒自己\"不能重蹈覆辙\"。战略警示已内化。"
+      "notes": "本章陈守一想起万年前画面/\"不是一个人\"/战略警示内化/\"我会帮你\""
     },
     {
-      "hookId": "strategy-布防计划执行-灵气流向摸清-陈守一让赵猛",
-      "startChapter": 222,
-      "type": "strategy",
+      "hookId": "两百年时间线",
+      "startChapter": 223,
+      "type": "plot",
       "status": "open",
-      "lastAdvancedChapter": 222,
-      "expectedPayoff": "布防计划执行/灵气流向摸清",
-      "payoffTiming": "near-term",
-      "notes": "陈守一让赵猛\"先把周围几座山的灵气流向摸清楚，看看哪里灵气最薄，黑雾最容易从哪个方向渗\"——这是一条执行中的支线任务，结果待定。"
+      "lastAdvancedChapter": 223,
+      "expectedPayoff": "源根完全恢复/根系布满大陆",
+      "notes": "源根揭示完全恢复需要两百年/两百年内冥不突破封印就有赢的机会"
+    },
+    {
+      "hookId": "苏婉儿承诺",
+      "startChapter": 223,
+      "type": "emotional",
+      "status": "open",
+      "lastAdvancedChapter": 223,
+      "expectedPayoff": "情感发展/危机考验",
+      "payoffTiming": "mid-arc",
+      "notes": "\"两百年太长我陪不了/但能陪多久是多久\"/情感弧线新节点"
     }
   ]
 }

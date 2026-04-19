@@ -1,53 +1,53 @@
 {
-  "chapter": 222,
+  "chapter": 223,
   "facts": [
     {
       "subject": "protagonist",
-      "predicate": "当前冲突",
-      "object": "源根恢复速度 vs 冥苏醒压制/漫长消耗战/这是一场赛跑",
-      "validFromChapter": 222,
-      "validUntilChapter": null,
-      "sourceChapter": 222
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前敌我",
-      "object": "苏婉儿（核心同行）、赵猛（布防执行）、青鸾（情报侦察）",
-      "validFromChapter": 222,
-      "validUntilChapter": null,
-      "sourceChapter": 222
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前目标",
-      "object": "执行\"藏\"字诀拖延战略/摸清灵气流向布防/源根恢复（长期）",
-      "validFromChapter": 222,
-      "validUntilChapter": null,
-      "sourceChapter": 222
-    },
-    {
-      "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "聚居点（屋内/院子）",
-      "validFromChapter": 222,
+      "object": "聚居点（院子/山道）",
+      "validFromChapter": 223,
       "validUntilChapter": null,
-      "sourceChapter": 222
-    },
-    {
-      "subject": "protagonist",
-      "predicate": "当前限制",
-      "object": "冥在试探/黑雾扩散/源根恢复需200年/70年寿元时限/冥与源根赛跑",
-      "validFromChapter": 222,
-      "validUntilChapter": null,
-      "sourceChapter": 222
+      "sourceChapter": 223
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "仪式后第8天/金痕温热稳定/源根共生适应中/沉重→坚定（策略制定后）",
-      "validFromChapter": 222,
+      "object": "仪式后第8天/金痕温热稳定/源根共生适应中/稳定扎根/坚定（战略执行+情感确认后）",
+      "validFromChapter": 223,
       "validUntilChapter": null,
-      "sourceChapter": 222
+      "sourceChapter": 223
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "执行\"藏\"字诀/布聚灵阵稳北面灵气/源根继续扎根/摸清灵气流向",
+      "validFromChapter": 223,
+      "validUntilChapter": null,
+      "sourceChapter": 223
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "冥在试探/黑雾从东山谷扩散/北面最薄/源根恢复需200年/70年寿元时限",
+      "validFromChapter": 223,
+      "validUntilChapter": null,
+      "sourceChapter": 223
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "苏婉儿（核心同行/情感确认）、赵猛（侦察+布阵执行）、源根（共生/扎根中）",
+      "validFromChapter": 223,
+      "validUntilChapter": null,
+      "sourceChapter": 223
+    },
+    {
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "源根恢复速度 vs 冥苏醒压制/漫长消耗战/比耐心较量",
+      "validFromChapter": 223,
+      "validUntilChapter": null,
+      "sourceChapter": 223
     }
   ]
 }

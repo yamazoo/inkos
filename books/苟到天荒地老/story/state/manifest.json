@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "language": "zh",
-  "lastAppliedChapter": 222,
+  "lastAppliedChapter": 223,
   "projectionVersion": 1,
   "migrationWarnings": [
     "H001_天机簿:status normalized from \"伏笔\" to \"open\"",
@@ -585,6 +585,8 @@
     "H-源根本体具象化:lastAdvancedChapter normalized from \"**211：源根本体具象化为\"一道光\"/不是金色不是银色/是天地初开第一缕光/万物起源第一丝生机/正在与金痕融合**\" to 0",
     "H-末法时代真相:startChapter normalized from \"200→211\" to 0",
     "H-源根恢复计划:lastAdvancedChapter normalized from \"213→216\" to 0",
-    "H-灵气恢复时间:lastAdvancedChapter normalized from \"213→216\" to 0"
+    "H-灵气恢复时间:lastAdvancedChapter normalized from \"213→216\" to 0",
+    "两百年时间线:status normalized from \"new\" to \"open\"",
+    "苏婉儿承诺:status normalized from \"new\" to \"open\""
   ]
 }
