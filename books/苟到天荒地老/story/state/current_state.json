@@ -1,53 +1,53 @@
 {
-  "chapter": 211,
+  "chapter": 212,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
-      "object": "灵泉潭底/封印正中心（仪式高潮/源根归位进行中）",
-      "validFromChapter": 211,
+      "object": "灵泉潭边",
+      "validFromChapter": 212,
       "validUntilChapter": null,
-      "sourceChapter": 211
+      "sourceChapter": 212
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "蜕变进行中/金痕与源根融合中/承受源根之力/疼痛但坚定/完成与源根的平等对话/达成交易/光芒吞没一切",
-      "validFromChapter": 211,
+      "object": "**蜕变完成/融合成功/虚弱/饿了/活着/金痕稳定（暖意取代灼烧）/源根力量融入体内**",
+      "validFromChapter": 212,
       "validUntilChapter": null,
-      "sourceChapter": 211
+      "sourceChapter": 212
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "源根归位/仪式完成/活着出来/回家",
-      "validFromChapter": 211,
+      "object": "活着/吃饭/休养/源根归位后续/带源根回家",
+      "validFromChapter": 212,
       "validUntilChapter": null,
-      "sourceChapter": 211
+      "sourceChapter": 212
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "仪式进行中/源根融合不可中断/需要承受代价",
-      "validFromChapter": 211,
+      "object": "虚弱/需要休养/源根融合后适应期",
+      "validFromChapter": 212,
       "validUntilChapter": null,
-      "sourceChapter": 211
+      "sourceChapter": 212
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "苏婉儿(潭边等待/临界点站位)",
-      "validFromChapter": 211,
+      "object": "苏婉儿(潭边守护/等待成功/递馒头)",
+      "validFromChapter": 212,
       "validUntilChapter": null,
-      "sourceChapter": 211
+      "sourceChapter": 212
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "仪式高潮/源根归位进行中/金痕与源根本体融合/光芒吞没一切",
-      "validFromChapter": 211,
+      "object": "**源根归位仪式完成/融合成功/灵气恢复开始/后续适应**",
+      "validFromChapter": 212,
       "validUntilChapter": null,
-      "sourceChapter": 211
+      "sourceChapter": 212
     }
   ]
 }

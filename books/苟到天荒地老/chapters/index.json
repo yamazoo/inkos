@@ -4833,5 +4833,40 @@
       "completionTokens": 12971,
       "totalTokens": 37225
     }
+  },
+  {
+    "number": 212,
+    "title": "第212章",
+    "status": "approved",
+    "wordCount": 2950,
+    "createdAt": "2026-04-19T00:36:41.879Z",
+    "updatedAt": "2026-04-19T00:36:50.608Z",
+    "auditIssues": [
+      "[warning] 本章存在'忽然'一次、'像是'三次、'感觉'两次的AI标记词使用，但密度在可接受范围内（每3000字约1-2次），未触发阈值警告。",
+      "[info] 本章作为211章的延续，完成了仪式高潮后的过渡。211章结尾'光芒吞没一切'悬念得到完整回应（仪式成功/活着出来），但新悬念埋设较轻（源根归位后的具体变化、灵气恢复的过程）。",
+      "[warning] 最近3章持续高压（**坚定→沉重→坚定→沉重→坚定→坚定→坚定→坚定→坚定 / 升调章/行动章/对峙章/决战前章/伏笔印证章/真相完整揭示章/仪式开始章** -> **坚定→沉重→坚定→沉重→坚定→坚定→坚定→坚定→坚定→坚定→坚定→坚定→坚定→坚定→坚定→坚定→坚定→坚定→坚定（升调章/仪式进行章/高潮章/真相完整揭示章/源根归位章/决战机缘章）** -> **坚定→震动→沉重→坚定→坚定→平等对话→期待→释然→坚定→光芒吞没（高潮章/真相揭示章/平等对话章/交易达成章/融合章/仪式最终章）**），缺少明显的情绪释放。",
+      "[warning] 135个段落里有103个不足35字，段落被切得过碎。",
+      "[warning] 连续出现15个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3451,
+      "postWriterNormalizeCount": 2950,
+      "postReviseCount": 0,
+      "finalCount": 2950,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 0,
+      "completionTokens": 16864,
+      "totalTokens": 16864
+    }
   }
 ]

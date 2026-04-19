@@ -4,55 +4,82 @@
       "hookId": "H-源根真相",
       "startChapter": 200,
       "type": "世界真相",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**211-215（仪式完成）**",
-      "notes": "**源根归位仪式高潮/源根本体显现/与陈守一达成平等交易/正在融合中**"
+      "status": "resolved",
+      "lastAdvancedChapter": 212,
+      "expectedPayoff": "**212（融合完成/真相揭示）**",
+      "notes": "**源根归位完成/融合成功/本体具象化/万年前真相完整揭示/四脉撕裂/母亲意识**"
+    },
+    {
+      "hookId": "H-源根与陈守一交易",
+      "startChapter": 211,
+      "type": "**NEW→resolved**",
+      "status": "resolved",
+      "lastAdvancedChapter": 212,
+      "expectedPayoff": "**212（交易履行完成）**",
+      "notes": "**交易履行完成/融合成功/寿元待定（需后续确认）**"
+    },
+    {
+      "hookId": "H-源根本体具象化",
+      "startChapter": 211,
+      "type": "**NEW→resolved**",
+      "status": "resolved",
+      "lastAdvancedChapter": 212,
+      "expectedPayoff": "**212（融合完成）**",
+      "notes": "**金色树干银色枝叶的小树/融合成功/裂纹因金线修复浅了**"
     },
     {
       "hookId": "H-源根归位仪式",
       "startChapter": 209,
       "type": "核心主线",
-      "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**211-215（仪式完成）**",
-      "notes": "**仪式进入最终阶段/源根归位进行中/陈守一与源根融合**"
-    },
-    {
-      "hookId": "H-末法时代真相",
-      "startChapter": 200,
-      "type": "世界真相",
-      "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**211-220（灵气恢复显现）**",
-      "notes": "**末法时代真相完整揭示/灵气恢复有希望/但需要源根完全归位后逐步恢复**"
+      "status": "resolved",
+      "lastAdvancedChapter": 212,
+      "expectedPayoff": "**212（仪式完成）**",
+      "notes": "**三个时辰/仪式完成/融合成功/苏婉儿等待成功**"
     },
     {
       "hookId": "H-三源血脉抽取",
       "startChapter": 209,
       "type": "核心主线",
+      "status": "resolved",
+      "lastAdvancedChapter": 212,
+      "expectedPayoff": "**212（仪式完成）**",
+      "notes": "**三道锁断裂/血脉归位/融合成功**"
+    },
+    {
+      "hookId": "H-末法时代真相",
+      "startChapter": 200,
+      "type": "世界真相",
       "status": "progressing",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**211（仪式完成）**",
-      "notes": "**三道锁同时松动/正在断裂中/源根归位进程加速**"
+      "lastAdvancedChapter": 212,
+      "expectedPayoff": "**220-250（灵气恢复显现）**",
+      "notes": "**推进：源根归位成功/灵气恢复开始/但需长期过程/\"像冰块化水一点一点\"/上古画面揭示灵气充沛**"
     },
     {
-      "hookId": "H-源根与陈守一交易",
-      "startChapter": 211,
-      "type": "**NEW→高潮**",
+      "hookId": "H-灵气恢复时间",
+      "startChapter": 212,
+      "type": "**NEW→世界观**",
       "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**211-215（交易履行）**",
-      "notes": "**新伏笔：源根承诺延寿/取决于愿意付出多少/交易正式开始**"
+      "lastAdvancedChapter": 212,
+      "expectedPayoff": "**220-300（灵气恢复显现）**",
+      "notes": "**新伏笔：源根揭示灵气恢复需漫长时间/陈守一问\"我能装得下吗\"/上古画面：灵气充沛/修士千年**"
     },
     {
-      "hookId": "H-源根本体具象化",
-      "startChapter": 211,
-      "type": "**NEW→高潮**",
+      "hookId": "H-源根恢复计划",
+      "startChapter": 212,
+      "type": "**NEW→世界观**",
       "status": "open",
-      "lastAdvancedChapter": 0,
-      "expectedPayoff": "**211-215（融合完成）**",
-      "notes": "**新伏笔：源根本体形态揭示/与金痕正在融合中**"
+      "lastAdvancedChapter": 212,
+      "expectedPayoff": "**220-300（恢复进程显现）**",
+      "notes": "**新伏笔：源根归位后恢复灵气/需要时间/需要陈守一配合/长期共生关系**"
+    },
+    {
+      "hookId": "H-寿元代价最终确认",
+      "startChapter": 212,
+      "type": "**NEW→悬念**",
+      "status": "open",
+      "lastAdvancedChapter": 212,
+      "expectedPayoff": "**213-215（代价明确）**",
+      "notes": "**新悬念：交易达成但最终寿元代价未明确/源根承诺反哺生机但需确认**"
     }
   ]
 }
