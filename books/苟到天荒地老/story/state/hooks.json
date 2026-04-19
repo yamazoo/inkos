@@ -1,13 +1,14 @@
 {
   "hooks": [
     {
-      "hookId": "H-末法时代真相",
-      "startChapter": 0,
-      "type": "世界真相",
-      "status": "resolved",
-      "lastAdvancedChapter": 211,
-      "expectedPayoff": "213-214",
-      "notes": "源根完整揭示（人祸非天灾/四脉瓜分）"
+      "hookId": "H-冥的苏醒",
+      "startChapter": 214,
+      "type": "伏笔",
+      "status": "progressing",
+      "lastAdvancedChapter": 215,
+      "expectedPayoff": "待定",
+      "payoffTiming": "mid-arc",
+      "notes": "**本章推进：冥命名/完整揭示（被撕裂的部分/比源根更古老/在等源根恢复后吞噬/比完整源根更强/万年前四个合力才将其推出/幽冥气息来源之一/封印同时封源根和冥）**"
     },
     {
       "hookId": "H-源根恢复计划",
@@ -28,15 +29,6 @@
       "expectedPayoff": "220-300",
       "payoffTiming": "mid-arc",
       "notes": "具体时间线/恢复速度\"像冰块化水\""
-    },
-    {
-      "hookId": "H-冥的苏醒",
-      "startChapter": 214,
-      "type": "伏笔",
-      "status": "open",
-      "lastAdvancedChapter": 214,
-      "expectedPayoff": "待定",
-      "notes": "**NEW：源根感知到\"冥\"的存在/金痕发热反应/古老存在正在注视**"
     }
   ]
 }

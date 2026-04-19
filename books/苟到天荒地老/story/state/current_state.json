@@ -1,149 +1,53 @@
 {
-  "chapter": 214,
+  "chapter": 215,
   "facts": [
     {
-      "subject": "current_state",
-      "predicate": "维度",
-      "object": "当前状态",
-      "validFromChapter": 214,
+      "subject": "protagonist",
+      "predicate": "当前位置",
+      "object": "聚居点石屋（从灵泉潭边归来，已过六天）",
+      "validFromChapter": 215,
       "validUntilChapter": null,
-      "sourceChapter": 214
+      "sourceChapter": 215
     },
     {
-      "subject": "current_state",
-      "predicate": "位置",
-      "object": "灵泉潭边",
-      "validFromChapter": 214,
+      "subject": "protagonist",
+      "predicate": "主角状态",
+      "object": "初愈恢复中/金痕对\"冥\"注视产生反应（暖→烫）",
+      "validFromChapter": 215,
       "validUntilChapter": null,
-      "sourceChapter": 214
+      "sourceChapter": 215
     },
     {
-      "subject": "current_state",
-      "predicate": "身体",
-      "object": "初愈/虚弱恢复中/金痕稳定（暖意→微热→渐退）",
-      "validFromChapter": 214,
+      "subject": "protagonist",
+      "predicate": "当前目标",
+      "object": "源根共生适应/应对\"冥\"的威胁",
+      "validFromChapter": 215,
       "validUntilChapter": null,
-      "sourceChapter": 214
+      "sourceChapter": 215
     },
     {
-      "subject": "current_state",
-      "predicate": "心理",
-      "object": "平静/警觉/释然",
-      "validFromChapter": 214,
+      "subject": "protagonist",
+      "predicate": "当前限制",
+      "object": "冥的注视/封印松动/源根尚未完全恢复",
+      "validFromChapter": 215,
       "validUntilChapter": null,
-      "sourceChapter": 214
+      "sourceChapter": 215
     },
     {
-      "subject": "current_state",
-      "predicate": "寿元",
-      "object": "70年（确认）",
-      "validFromChapter": 214,
+      "subject": "protagonist",
+      "predicate": "当前敌我",
+      "object": "**新增威胁：冥（古老存在/比源根更古老/在等源根恢复后吞噬）**",
+      "validFromChapter": 215,
       "validUntilChapter": null,
-      "sourceChapter": 214
+      "sourceChapter": 215
     },
     {
-      "subject": "current_state",
-      "predicate": "修为",
-      "object": "炼气三层",
-      "validFromChapter": 214,
+      "subject": "protagonist",
+      "predicate": "当前冲突",
+      "object": "源根共生适应期/源根恢复 vs 冥苏醒的竞赛",
+      "validFromChapter": 215,
       "validUntilChapter": null,
-      "sourceChapter": 214
-    },
-    {
-      "subject": "current_state",
-      "predicate": "关系",
-      "object": "源根共生/苏婉儿同行/赵猛护卫",
-      "validFromChapter": 214,
-      "validUntilChapter": null,
-      "sourceChapter": 214
-    },
-    {
-      "subject": "current_state",
-      "predicate": "资源",
-      "object": "源根归位完成",
-      "validFromChapter": 214,
-      "validUntilChapter": null,
-      "sourceChapter": 214
-    },
-    {
-      "subject": "current_state",
-      "predicate": "维度",
-      "object": "当前状态",
-      "validFromChapter": 214,
-      "validUntilChapter": null,
-      "sourceChapter": 214
-    },
-    {
-      "subject": "current_state",
-      "predicate": "位置",
-      "object": "陈守一体内/丹田深处",
-      "validFromChapter": 214,
-      "validUntilChapter": null,
-      "sourceChapter": 214
-    },
-    {
-      "subject": "current_state",
-      "predicate": "状态",
-      "object": "归位完成/共生/虚弱（正在恢复）",
-      "validFromChapter": 214,
-      "validUntilChapter": null,
-      "sourceChapter": 214
-    },
-    {
-      "subject": "current_state",
-      "predicate": "感知",
-      "object": "察觉到\"冥\"的存在/高度警觉",
-      "validFromChapter": 214,
-      "validUntilChapter": null,
-      "sourceChapter": 214
-    },
-    {
-      "subject": "current_state",
-      "predicate": "关系",
-      "object": "与陈守一完全融合",
-      "validFromChapter": 214,
-      "validUntilChapter": null,
-      "sourceChapter": 214
-    },
-    {
-      "subject": "current_state",
-      "predicate": "资源",
-      "object": "状态",
-      "validFromChapter": 214,
-      "validUntilChapter": null,
-      "sourceChapter": 214
-    },
-    {
-      "subject": "current_state",
-      "predicate": "金痕",
-      "object": "稳定（暖意取代灼烧）/对\"冥\"注视有反应（发热）",
-      "validFromChapter": 214,
-      "validUntilChapter": null,
-      "sourceChapter": 214
-    },
-    {
-      "subject": "current_state",
-      "predicate": "源根",
-      "object": "完全归位/共生/在丹田扎根",
-      "validFromChapter": 214,
-      "validUntilChapter": null,
-      "sourceChapter": 214
-    },
-    {
-      "subject": "current_state",
-      "predicate": "灵气",
-      "object": "当前：上古的千分之一点一 / 恢复中",
-      "validFromChapter": 214,
-      "validUntilChapter": null,
-      "sourceChapter": 214
-    },
-    {
-      "subject": "current_state",
-      "predicate": "寿元",
-      "object": "70年（已确认/不再减少）",
-      "validFromChapter": 214,
-      "validUntilChapter": null,
-      "sourceChapter": 214
+      "sourceChapter": 215
     }
   ]
 }
