@@ -21,6 +21,11 @@ import {
   loadBookSession,
   persistBookSession,
   appendBookSessionMessage,
+  createAndPersistBookSession,
+  renameBookSession,
+  deleteBookSession,
+  migrateBookSession,
+  SessionAlreadyMigratedError,
   runAgentSession,
   buildAgentSystemPrompt,
   resolveServicePreset,
@@ -38,7 +43,6 @@ import {
   type ProjectConfig,
   type LogSink,
   type LogEntry,
-  type BookSession,
 } from "@actalk/inkos-core";
 import { access, readFile, readdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -120,6 +124,9 @@ interface CollectedToolExec {
 type EventHandler = (event: string, data: unknown) => void;
 const subscribers = new Set<EventHandler>();
 const bookCreateStatus = new Map<string, { status: "creating" | "error"; error?: string }>();
+
+// 内存缓存：service -> 模型列表 + 更新时间戳；避免每次 sidebar 挂载时都打真实 LLM /models
+const modelListCache = new Map<string, { models: Array<{ id: string; name: string }>; at: number }>();
 
 interface ServiceConfigEntry {
   service: string;
@@ -571,10 +578,23 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
   async function buildPipelineConfig(
     overrides?: Partial<Pick<PipelineConfig, "externalContext" | "client" | "model">> & {
       readonly currentConfig?: ProjectConfig;
+      readonly sessionIdForSSE?: string;
     },
   ): Promise<PipelineConfig> {
     const currentConfig = overrides?.currentConfig ?? await loadCurrentProjectConfig();
-    const logger = createLogger({ tag: "studio", sinks: [sseSink, consoleSink] });
+    const scopedSseSink: LogSink = overrides?.sessionIdForSSE
+      ? {
+          write(entry) {
+            broadcast("log", {
+              sessionId: overrides.sessionIdForSSE,
+              level: entry.level,
+              tag: entry.tag,
+              message: entry.message,
+            });
+          },
+        }
+      : sseSink;
+    const logger = createLogger({ tag: "studio", sinks: [scopedSseSink, consoleSink] });
     return {
       client: overrides?.client ?? createLLMClient(currentConfig.llm),
       model: overrides?.model ?? currentConfig.llm.model,
@@ -585,6 +605,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
       logger,
       onStreamProgress: (progress) => {
         broadcast("llm:progress", {
+          ...(overrides?.sessionIdForSSE ? { sessionId: overrides.sessionIdForSSE } : {}),
           status: progress.status,
           elapsedMs: progress.elapsedMs,
           totalChars: progress.totalChars,
@@ -1005,7 +1026,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
     return c.json({
       ok: true,
       modelCount: probe.models.length,
-      models: probe.models.slice(0, 50),
+      models: probe.models,
       selectedModel: probe.selectedModel,
       detected: {
         apiFormat: probe.apiFormat,
@@ -1039,21 +1060,32 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
 
   app.get("/api/v1/services/:service/models", async (c) => {
     const service = c.req.param("service");
+    const refresh = c.req.query("refresh") === "1";
     const apiKey = c.req.query("apiKey") || await getServiceApiKey(root, service);
 
     // No key = no models
     if (!apiKey) return c.json({ models: [] });
 
-    // Fast path: services with knownModels return immediately
     const preset = resolveServicePreset(isCustomServiceId(service) ? "custom" : service);
+    const resolvedBaseUrl = await resolveConfiguredServiceBaseUrl(root, service);
+
+    // Cache by service + resolved baseUrl + apiKey fingerprint; valid for 10 min unless ?refresh=1
+    const cacheKey = `${service}::${resolvedBaseUrl ?? ""}::${apiKey.slice(-8)}`;
+    if (!refresh) {
+      const cached = modelListCache.get(cacheKey);
+      if (cached && Date.now() - cached.at < 10 * 60 * 1000) {
+        return c.json({ models: cached.models });
+      }
+    }
+
+    // Fast path: services with knownModels return immediately
     if (preset?.knownModels && preset.knownModels.length > 0) {
-      return c.json({
-        models: preset.knownModels.map((id) => ({ id, name: id })),
-      });
+      const models = preset.knownModels.map((id) => ({ id, name: id }));
+      modelListCache.set(cacheKey, { models, at: Date.now() });
+      return c.json({ models });
     }
 
     // Simple /models API call + fallback to pi-ai built-in list (no slow probe)
-    const resolvedBaseUrl = await resolveConfiguredServiceBaseUrl(root, service);
     if (!resolvedBaseUrl) return c.json({ models: [] });
 
     const modelsBase = preset?.modelsBaseUrl ?? resolvedBaseUrl;
@@ -1073,6 +1105,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
       const builtIn = await listModelsForService(service, apiKey);
       models = builtIn.map((m) => ({ id: m.id, name: m.name }));
     }
+    modelListCache.set(cacheKey, { models, at: Date.now() });
     return c.json({ models });
   });
 
@@ -1241,13 +1274,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
   app.get("/api/v1/sessions", async (c) => {
     const bookId = c.req.query("bookId");
     const sessions = await listBookSessions(root, bookId === undefined ? null : bookId === "null" ? null : bookId);
-    return c.json({ sessions: sessions.map((s) => ({
-      sessionId: s.sessionId,
-      bookId: s.bookId,
-      messageCount: s.messages.length,
-      createdAt: s.createdAt,
-      updatedAt: s.updatedAt,
-    })) });
+    return c.json({ sessions });
   });
 
   app.get("/api/v1/sessions/:sessionId", async (c) => {
@@ -1257,10 +1284,33 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
   });
 
   app.post("/api/v1/sessions", async (c) => {
-    const body = await c.req.json<{ bookId?: string | null }>().catch(() => ({}));
+    const body = await c.req.json<{ bookId?: string | null; sessionId?: string }>().catch(() => ({}));
     const bookId = (body as { bookId?: string | null }).bookId ?? null;
-    const session = await findOrCreateBookSession(root, bookId);
+    const sessionId = (body as { sessionId?: string }).sessionId;
+    // sessionId 只允许 timestamp-random 格式；防止注入任意文件名
+    const safeSessionId = sessionId && /^[0-9]+-[a-z0-9]+$/.test(sessionId) ? sessionId : undefined;
+    const session = await createAndPersistBookSession(root, bookId, safeSessionId);
     return c.json({ session });
+  });
+
+  app.put("/api/v1/sessions/:sessionId", async (c) => {
+    const sessionId = c.req.param("sessionId");
+    const body = await c.req.json<{ title?: string }>().catch(() => ({}) as { title?: string });
+    const title = body.title?.trim();
+    if (!title) {
+      throw new ApiError(400, "INVALID_SESSION_TITLE", "Session title is required");
+    }
+
+    const session = await renameBookSession(root, sessionId, title);
+    if (!session) {
+      return c.json({ error: "Session not found" }, 404);
+    }
+    return c.json({ session });
+  });
+
+  app.delete("/api/v1/sessions/:sessionId", async (c) => {
+    await deleteBookSession(root, c.req.param("sessionId"));
+    return c.json({ ok: true });
   });
 
   app.post("/api/v1/agent", async (c) => {
@@ -1275,23 +1325,23 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
     if (!instruction?.trim()) {
       return c.json({ error: "No instruction provided" }, 400);
     }
+    if (!sessionId?.trim()) {
+      throw new ApiError(400, "SESSION_ID_REQUIRED", "sessionId is required");
+    }
 
-    broadcast("agent:start", { instruction, activeBookId });
+    broadcast("agent:start", { instruction, activeBookId, sessionId });
 
     try {
       // Load config + create LLM client (pipeline created after model resolution)
       const config = await loadCurrentProjectConfig({ requireApiKey: false });
       const client = createLLMClient(config.llm);
 
-      // Resolve or create BookSession for history
-      let bookSession: BookSession;
-      if (sessionId) {
-        bookSession =
-          (await loadBookSession(root, sessionId)) ??
-          (await findOrCreateBookSession(root, activeBookId ?? null));
-      } else {
-        bookSession = await findOrCreateBookSession(root, activeBookId ?? null);
+      const loadedBookSession = await loadBookSession(root, sessionId);
+      if (!loadedBookSession) {
+        throw new ApiError(404, "SESSION_NOT_FOUND", `Session not found: ${sessionId}`);
       }
+      let bookSession = loadedBookSession;
+      const streamSessionId = loadedBookSession.sessionId;
 
       // Build initial message context from persisted session
       const initialMessages = bookSession.messages
@@ -1403,6 +1453,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
         client: pipelineClient,
         model: reqModel ?? config.llm.model,
         currentConfig: config,
+        sessionIdForSSE: bookSession.sessionId,
       }));
 
       // Run pi-agent session
@@ -1420,13 +1471,13 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
             if (event.type === "message_update") {
               const ame = event.assistantMessageEvent;
               if (ame.type === "text_delta") {
-                broadcast("draft:delta", { text: ame.delta });
+                broadcast("draft:delta", { sessionId: streamSessionId, text: ame.delta });
               } else if (ame.type === "thinking_delta") {
-                broadcast("thinking:delta", { text: (ame as any).delta });
+                broadcast("thinking:delta", { sessionId: streamSessionId, text: (ame as any).delta });
               } else if (ame.type === "thinking_start") {
-                broadcast("thinking:start", {});
+                broadcast("thinking:start", { sessionId: streamSessionId });
               } else if (ame.type === "thinking_end") {
-                broadcast("thinking:end", {});
+                broadcast("thinking:end", { sessionId: streamSessionId });
               }
             }
             if (event.type === "tool_execution_start") {
@@ -1448,6 +1499,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
               });
 
               broadcast("tool:start", {
+                sessionId: streamSessionId,
                 id: event.toolCallId,
                 tool: event.toolName,
                 args,
@@ -1455,7 +1507,11 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
               });
             }
             if (event.type === "tool_execution_update") {
-              broadcast("tool:update", { tool: event.toolName, partialResult: event.partialResult });
+              broadcast("tool:update", {
+                sessionId: streamSessionId,
+                tool: event.toolName,
+                partialResult: event.partialResult,
+              });
             }
             if (event.type === "tool_execution_end") {
               const exec = collectedToolExecs.find(t => t.id === event.toolCallId);
@@ -1467,6 +1523,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
                 else exec.result = summarizeResult(event.result);
               }
               broadcast("tool:end", {
+                sessionId: streamSessionId,
                 id: event.toolCallId,
                 tool: event.toolName,
                 result: event.result,
@@ -1485,6 +1542,16 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
         content: instruction,
         timestamp: Date.now(),
       });
+      // 第一条用户消息就是 session 的标题：如果 title 还是 null，用消息内容（单行、≤20字）写入。
+      // 后续消息不覆盖；用户手动改名通过 renameBookSession 覆盖。
+      if (bookSession.title === null) {
+        const oneLine = instruction.trim().replace(/\s+/g, " ");
+        const title = oneLine.length > 20 ? `${oneLine.slice(0, 20)}…` : oneLine;
+        if (title) {
+          bookSession = { ...bookSession, title };
+          broadcast("session:title", { sessionId: bookSession.sessionId, title });
+        }
+      }
       if (result.responseText) {
         const lastAssistant = result.messages?.filter((m: any) => m.role === "assistant").pop();
         const thinking = lastAssistant?.thinking;
@@ -1564,7 +1631,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
       }
       await persistBookSession(root, bookSession);
 
-      broadcast("agent:complete", { instruction, activeBookId });
+      broadcast("agent:complete", { instruction, activeBookId, sessionId: bookSession.sessionId });
 
       // If a sub_agent created a new book during this session, broadcast book:created
       // so the sidebar refreshes.
@@ -1572,17 +1639,37 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
         const books = await state.listBooks();
         const latestBook = books.at(-1);
         if (latestBook) {
-          broadcast("book:created", { bookId: latestBook });
+          try {
+            const migratedSession = await migrateBookSession(root, bookSession.sessionId, latestBook);
+            if (migratedSession) {
+              bookSession = migratedSession;
+            }
+          } catch (e) {
+            if (!(e instanceof SessionAlreadyMigratedError)) {
+              throw e;
+            }
+          }
+          broadcast("book:created", { bookId: latestBook, sessionId: bookSession.sessionId });
         }
       }
 
       return c.json({
         response: result.responseText,
-        session: { sessionId: bookSession.sessionId },
+        session: {
+          sessionId: bookSession.sessionId,
+          ...(bookSession.bookId ? { activeBookId: bookSession.bookId } : {}),
+        },
       });
     } catch (e) {
+      if (e instanceof ApiError) {
+        throw e;
+      }
+      if (e instanceof SessionAlreadyMigratedError) {
+        const migratedMessage = e instanceof Error ? e.message : String(e);
+        throw new ApiError(409, "SESSION_ALREADY_MIGRATED", migratedMessage);
+      }
       const msg = e instanceof Error ? e.message : String(e);
-      broadcast("agent:error", { instruction, activeBookId, error: msg });
+      broadcast("agent:error", { instruction, activeBookId, sessionId, error: msg });
 
       // Agent busy — return 429 with user-friendly message
       if (/already processing|prompt.*queue/i.test(msg)) {

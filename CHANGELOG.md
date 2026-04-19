@@ -1,5 +1,35 @@
 # Changelog
 
+## v1.3.5
+
+### Improvements
+
+- **Session / Sidebar 体验重构**：Studio 引入 per-session runtime，`pendingBookArgs` 下沉到 session 级，session SSE 监听从 `App.tsx` 抽离；sidebar 支持按书折叠、草稿会话延迟展示、会话列表不再点击重排
+- **会话标题简化**：不再走 LLM 生成标题；第一条用户消息直接成为 session title，并对历史 session 做 lazy migration
+- **Draft Session 工作流**：新建会话延迟到第一条消息才持久化，未发送消息的草稿会话不会落盘，也不会在侧边栏出现
+- **Session 列表性能提升**：`listBookSessions` 改为并发读取并返回轻量 summary，避免侧边栏一次读取大量完整 session 文件
+
+### Bug Fixes
+
+- **模型列表缓存修复**：`/services/:service/models` 的缓存 key 现在包含 `resolvedBaseUrl`，custom 服务切换端点后不再错误复用旧模型列表
+- **会话删除确认弹窗定位**：`ConfirmDialog` 改走 portal，避免被 sidebar 的 containing block 锁在侧栏内
+- **测试清理**：移除 `server.test.ts` 里已废弃的 `updateSessionTitle` mock 残留
+
+## v1.3.4
+
+### Bug Fixes
+
+- **依赖版本钉死**：固定 `@mariozechner/pi-ai` / `pi-agent-core` 到 `0.67.1`，降低 npm 镜像滞后导致全局安装失败的概率
+- **服务探测与模型列表提速**：`GET /models` 回到快路径，`knownModels` 服务不再走慢 probe；`/models` 不可用时会返回服务自己的 `knownModels`
+- **服务验证更可靠**：`/models` 返回 `401/403` 时直接短路；服务详情页保存前先走 `/test` 验 key，页面加载时也会用 `/test` 校验真实连接状态
+- **完整模型列表返回**：服务测试接口不再默认裁成 50 个模型
+
+### Improvements
+
+- **agent 通用文件工具面恢复**：`edit` 回归正常工具面，并新增 `write` 工具用于创建/覆盖写文件，路径仍限制在 `books/` 下
+- **`sub_agent` 最小控制面扩展**：新增 `writer.chapterWordCount`、`reviser.mode`、`exporter.format`、`exporter.approvedOnly`
+- **修订入口统一**：book-mode 下整章修订收敛到 `sub_agent(reviser)`，减少模型在 `revise_chapter` 与 `sub_agent` 之间摇摆
+
 ## v1.3.3
 
 ### Bug Fixes
