@@ -1,3 +1,54 @@
 {
-  "hooks": []
+  "hooks": [
+    {
+      "hookId": "冥的苏醒",
+      "startChapter": 222,
+      "type": "threat",
+      "status": "progressing",
+      "lastAdvancedChapter": 222,
+      "expectedPayoff": "冥被压制或陈守一应对升级",
+      "payoffTiming": "near-term",
+      "notes": "本章黑雾扩散被实地确认，冥正在试探封印边界——\"它在试探封印松了没有\"，\"每次我开始恢复它都能感觉到\"。源根揭示\"黑雾扩散是在测试边界的厚度\"。战略定性：这是一场赛跑。"
+    },
+    {
+      "hookId": "拖延战略",
+      "startChapter": 222,
+      "type": "strategy",
+      "status": "open",
+      "lastAdvancedChapter": 222,
+      "expectedPayoff": "七十年内源根恢复压制冥",
+      "payoffTiming": "immediate",
+      "notes": "本章\"慢慢来\"策略具体化为\"藏\"字诀：藏源根恢复进度、藏底牌、藏真实实力，让冥以为\"我们很弱\"，\"太急了它会强攻，强攻我们守不住\"。"
+    },
+    {
+      "hookId": "源根恢复进度",
+      "startChapter": 222,
+      "type": "plot",
+      "status": "open",
+      "lastAdvancedChapter": 222,
+      "expectedPayoff": "灵气恢复/压制冥/根系布满大陆",
+      "payoffTiming": "mid-arc",
+      "notes": "仪式后第8天，源根气息比昨晚更稳，正在慢慢扎根。青鸾确认黑雾比前两天扩散，源根透露\"每次我开始恢复它都能感觉到\"——恢复与苏醒同步进行。"
+    },
+    {
+      "hookId": "源根记忆",
+      "startChapter": 222,
+      "type": "mystery",
+      "status": "open",
+      "lastAdvancedChapter": 222,
+      "expectedPayoff": "陈守一从记忆中吸取教训",
+      "payoffTiming": "immediate",
+      "notes": "本章陈守一想起昨晚在源根记忆里看到的画面——万年前三人撕源根的画面，提醒自己\"不能重蹈覆辙\"。战略警示已内化。"
+    },
+    {
+      "hookId": "strategy-布防计划执行-灵气流向摸清-陈守一让赵猛",
+      "startChapter": 222,
+      "type": "strategy",
+      "status": "open",
+      "lastAdvancedChapter": 222,
+      "expectedPayoff": "布防计划执行/灵气流向摸清",
+      "payoffTiming": "near-term",
+      "notes": "陈守一让赵猛\"先把周围几座山的灵气流向摸清楚，看看哪里灵气最薄，黑雾最容易从哪个方向渗\"——这是一条执行中的支线任务，结果待定。"
+    }
+  ]
 }
