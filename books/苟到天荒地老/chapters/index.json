@@ -4868,5 +4868,38 @@
       "completionTokens": 16864,
       "totalTokens": 16864
     }
+  },
+  {
+    "number": 213,
+    "title": "初愈",
+    "status": "approved",
+    "wordCount": 3362,
+    "createdAt": "2026-04-19T00:45:52.804Z",
+    "updatedAt": "2026-04-19T00:46:01.647Z",
+    "auditIssues": [
+      "[info] 灵气恢复数值逻辑存在内部一致性轻微模糊。源根说当前灵气是上古千分之一，十年恢复到现在的两倍，五十恢复到上古一成。按数学推算千分之一恢复到一成需百倍增长，但设定强调'很慢'且用'像冰块化水'比喻，暗示非线性过程。这种模糊性在仙侠世界观中通常可接受。",
+      "[warning] 128个段落里有94个不足35字，段落被切得过碎。",
+      "[warning] 连续出现16个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 3450,
+      "postWriterNormalizeCount": 3362,
+      "postReviseCount": 0,
+      "finalCount": 3362,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 23354,
+      "completionTokens": 15927,
+      "totalTokens": 39281
+    }
   }
 ]

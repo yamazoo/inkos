@@ -1,53 +1,53 @@
 {
-  "chapter": 212,
+  "chapter": 213,
   "facts": [
     {
       "subject": "protagonist",
       "predicate": "当前位置",
       "object": "灵泉潭边",
-      "validFromChapter": 212,
+      "validFromChapter": 213,
       "validUntilChapter": null,
-      "sourceChapter": 212
+      "sourceChapter": 213
     },
     {
       "subject": "protagonist",
       "predicate": "主角状态",
-      "object": "**蜕变完成/融合成功/虚弱/饿了/活着/金痕稳定（暖意取代灼烧）/源根力量融入体内**",
-      "validFromChapter": 212,
+      "object": "**融合成功/初愈/虚弱恢复中/饿了/活着/金痕稳定（暖意取代灼烧）/源根共生/寿元确认（70年）/心情平静释然**",
+      "validFromChapter": 213,
       "validUntilChapter": null,
-      "sourceChapter": 212
+      "sourceChapter": 213
     },
     {
       "subject": "protagonist",
       "predicate": "当前目标",
-      "object": "活着/吃饭/休养/源根归位后续/带源根回家",
-      "validFromChapter": 212,
+      "object": "活着/休养/源根归位后续/带源根回家/适应共生状态",
+      "validFromChapter": 213,
       "validUntilChapter": null,
-      "sourceChapter": 212
+      "sourceChapter": 213
     },
     {
       "subject": "protagonist",
       "predicate": "当前限制",
-      "object": "虚弱/需要休养/源根融合后适应期",
-      "validFromChapter": 212,
+      "object": "虚弱/需要休养/源根融合后适应期/方圆几十里能感觉到源根归位动静",
+      "validFromChapter": 213,
       "validUntilChapter": null,
-      "sourceChapter": 212
+      "sourceChapter": 213
     },
     {
       "subject": "protagonist",
       "predicate": "当前敌我",
-      "object": "苏婉儿(潭边守护/等待成功/递馒头)",
-      "validFromChapter": 212,
+      "object": "苏婉儿(潭边守护/递水递饭/担心/温柔)",
+      "validFromChapter": 213,
       "validUntilChapter": null,
-      "sourceChapter": 212
+      "sourceChapter": 213
     },
     {
       "subject": "protagonist",
       "predicate": "当前冲突",
-      "object": "**源根归位仪式完成/融合成功/灵气恢复开始/后续适应**",
-      "validFromChapter": 212,
+      "object": "**源根归位仪式完成/融合成功/寿元代价确认（70年）/灵气恢复开始（长期过程）/共生适应期**",
+      "validFromChapter": 213,
       "validUntilChapter": null,
-      "sourceChapter": 212
+      "sourceChapter": 213
     }
   ]
 }
