@@ -5062,5 +5062,40 @@
       "completionTokens": 15774,
       "totalTokens": 45239
     }
+  },
+  {
+    "number": 219,
+    "title": "困兽之斗",
+    "status": "approved",
+    "wordCount": 2862,
+    "createdAt": "2026-04-19T01:55:56.580Z",
+    "updatedAt": "2026-04-19T01:56:06.607Z",
+    "auditIssues": [
+      "[warning] 本章节奏较为平缓，以信息揭示和温情互动为主，缺少明显的起伏或高潮。连续多章（213-218降调/温情，219同样基调）停留在相似节奏，可能造成读者疲劳。",
+      "[info] 本章虽然回答了'冥何时真正醒来'的不确定性（'不知道，可能十年可能二十年可能就在明天'），但信息增量有限。读者期待的悬念回收（如冥开始'找'的触发条件）尚未推进。",
+      "[info] SP-寻找灵泉旧址支线（NEW/战略形成期）在本章仅停留在'战略确认'阶段，尚未有具体行动或位置线索推进。源根'记忆不完整需陈守一寻找精确位置'的设定需要具体化。",
+      "[warning] 132个段落里有105个不足35字，段落被切得过碎。",
+      "[warning] 连续出现13个不足35字的短段，容易形成短句堆砌。"
+    ],
+    "lengthWarnings": [],
+    "lengthTelemetry": {
+      "target": 3000,
+      "softMin": 2591,
+      "softMax": 3409,
+      "hardMin": 2182,
+      "hardMax": 3818,
+      "countingMode": "zh_chars",
+      "writerCount": 1931,
+      "postWriterNormalizeCount": 2862,
+      "postReviseCount": 0,
+      "finalCount": 2862,
+      "normalizeApplied": true,
+      "lengthWarning": false
+    },
+    "tokenUsage": {
+      "promptTokens": 21120,
+      "completionTokens": 10934,
+      "totalTokens": 32054
+    }
   }
 ]
