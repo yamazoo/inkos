@@ -1,4 +1,52 @@
-// @ts-nocheck -- browser-evaluate callbacks run in DOM context (Element, window, document are browser globals)
+// DOM globals injected by Playwright into the browser context of page.evaluate()
+declare const window: Window & typeof globalThis;
+declare const document: Document;
+interface Element {
+  tagName: string;
+  id: string;
+  className: string;
+  getBoundingClientRect(): DOMRect;
+  getAttribute(name: string): string | null;
+  isContentEditable: boolean;
+  nodeType: number;
+  textContent: string | null;
+  closest(selector: string): Element | null;
+  parentElement: Element | null;
+  children: HTMLCollectionOf<Element>;
+}
+interface HTMLElement extends Element {
+  className: string;
+}
+interface HTMLInputElement extends HTMLElement {
+  name: string;
+  placeholder: string;
+}
+interface Document {
+  querySelector(selector: string): Element | null;
+  querySelectorAll(selector: string): NodeListOf<Element>;
+}
+interface Window {
+  getComputedStyle(el: Element): CSSStyleDeclaration;
+}
+interface DOMRect {
+  width: number;
+  height: number;
+  top: number;
+}
+interface CSSStyleDeclaration {
+  visibility: string;
+  display: string;
+}
+interface NodeListOf<T> {
+  length: number;
+  [index: number]: T;
+  [Symbol.iterator](): Iterator<T>;
+}
+interface HTMLCollectionOf<T> {
+  length: number;
+  [index: number]: T;
+  [Symbol.iterator](): Iterator<T>;
+}
 import type { Page } from "@playwright/test";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
@@ -318,7 +366,7 @@ export function deriveSelectorBundle(snapshot: PageSnapshot): SelectorBundle {
 }
 
 export async function capturePageSnapshot(page: Page): Promise<PageSnapshot> {
-  return page.evaluate(() => {
+  return page.evaluate<PageSnapshot>(() => {
     const normalize = (text: string) => (text || "").replace(/\s+/g, " ").trim();
     const isVisible = (el: Element) => {
       if (!el) return false;
@@ -328,7 +376,7 @@ export async function capturePageSnapshot(page: Page): Promise<PageSnapshot> {
     };
 
     const cssPath = (el: Element): string => {
-      if (!el || !(el instanceof Element)) return "";
+      if (!el) return "";
       const parts: string[] = [];
       let node: Element | null = el;
       while (node && node.nodeType === 1 && parts.length < 8) {
@@ -343,9 +391,9 @@ export async function capturePageSnapshot(page: Page): Promise<PageSnapshot> {
           const cls = className.split(/\s+/)[0];
           if (cls) part += `.${cls}`;
         }
-        const parent = node.parentElement;
+        const parent: Element | null = node.parentElement;
         if (parent) {
-          const siblings = Array.from(parent.children).filter((c) => c.tagName === node!.tagName);
+          const siblings = Array.from(parent.children as unknown as Element[]).filter((c: Element) => c.tagName === node!.tagName);
           if (siblings.length > 1) {
             const pos = siblings.indexOf(node!) + 1;
             part += `:nth-of-type(${pos})`;
