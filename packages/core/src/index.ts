@@ -299,6 +299,35 @@ export { Scheduler, type SchedulerConfig } from "./pipeline/scheduler.js";
 export { runAgentLoop, AGENT_TOOLS as AGENT_TOOLS, type AgentLoopOptions } from "./pipeline/agent.js";
 export { detectChapter, detectAndRewrite, loadDetectionHistory, type DetectChapterResult, type DetectAndRewriteResult } from "./pipeline/detection-runner.js";
 
+// Upload
+export {
+  Uploader,
+  UploadStateManager,
+  launchBrowser,
+  saveCookies,
+  loadCookies,
+  waitForUserLogin,
+  TomatoPlatformAdapter,
+  COOKIES_DIR,
+  calibrateSelectors,
+  saveSelectorTemplate,
+  type UploadOptions,
+  type UploadProgress,
+  type UploadSummary,
+  type BrowserSession,
+  type BrowserDeps,
+} from "./upload/index.js";
+export {
+  UploadStateSchema,
+  UploadChapterStatusSchema,
+  UploadChapterResultSchema,
+  type UploadState,
+  type UploadChapterStatus,
+  type UploadChapterResult,
+  type ChapterContent,
+  type UploadResult,
+} from "./models/upload.js";
+
 // State
 export { StateManager } from "./state/manager.js";
 export { bootstrapStructuredStateFromMarkdown } from "./state/state-bootstrap.js";
