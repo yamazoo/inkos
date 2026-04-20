@@ -326,6 +326,7 @@ export {
   type UploadChapterResult,
   type ChapterContent,
   type UploadResult,
+  type SelectorBundle,
 } from "./models/upload.js";
 
 // State
