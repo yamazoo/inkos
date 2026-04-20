@@ -20,12 +20,6 @@ interface TomatoConfig {
   selectors?: SelectorBundle;
 }
 
-const CHINESE_DIGIT_MAP: Record<string, number> = {
-  零: 0, 一: 1, 二: 2, 三: 3, 四: 4, 五: 5,
-  六: 6, 七: 7, 八: 8, 九: 9, 两: 2,
-  〇: 0,
-};
-
 function parseChineseNumber(text: string): number {
   // Regex-based parse: scan left-to-right, each match is one (group, scale) pair.
   // - Group (digits + optional scale word) → value × scale
@@ -91,7 +85,7 @@ function parseChineseNumber(text: string): number {
   return result;
 }
 
-function randomBetween(min: number, max: number): number {
+export function randomBetween(min: number, max: number): number {
   return Math.random() * (max - min) + min;
 }
 
@@ -179,7 +173,7 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
         const chapterNo = this.deriveChapterNumber(chapter.title);
 
         if (chapterNo) {
-          const ok = await this._setFieldValue(page, "chapter_no_selectors", chapterNo, screenshotPath);
+          const ok = await this._setFieldValue(page, "chapter_no_selectors", chapterNo);
           if (!ok) {
             await this._maybeScreenshot(page, screenshotPath);
             return { success: false, error: `章节号填写失败: ${this.lastError}` };
@@ -188,7 +182,7 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
 
         await this._actionDelay();
 
-        const ok = await this._setFieldValue(page, "title_selectors", chapter.title, screenshotPath);
+        const ok = await this._setFieldValue(page, "title_selectors", chapter.title);
         if (!ok) {
           await this._maybeScreenshot(page, screenshotPath);
           return { success: false, error: `标题填写失败: ${this.lastError}` };
@@ -196,7 +190,7 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
 
         await this._actionDelay();
 
-        const ok2 = await this._setFieldValue(page, "content_selectors", chapter.content, screenshotPath);
+        const ok2 = await this._setFieldValue(page, "content_selectors", chapter.content);
         if (!ok2) {
           await this._maybeScreenshot(page, screenshotPath);
           return { success: false, error: `正文填写失败: ${this.lastError}` };
@@ -204,19 +198,19 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
 
         await this._actionDelay();
 
-        await this._clickNextStep(page, screenshotPath);
+        await this._clickNextStep(page);
         await this._actionDelay();
 
-        await this._handleContinuePrompt(page, screenshotPath);
+        await this._handleContinuePrompt(page);
         await this._actionDelay();
 
-        await this._handleRiskConfirm(page, screenshotPath);
+        await this._handleRiskConfirm(page);
         await this._actionDelay();
 
         await this._handleAiPrompt(page);
         await this._actionDelay();
 
-        await this._handlePublishSetting(page, screenshotPath);
+        await this._handlePublishSetting(page);
         await this._actionDelay();
 
         const success = await this._waitForPublishFeedback(page);
@@ -281,7 +275,6 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
     page: Page,
     selectorKey: keyof SelectorBundle,
     value: string,
-    screenshotPath: string,
   ): Promise<boolean> {
     const { locator, found } = await this._findVisibleLocator(page, selectorKey);
 
@@ -305,14 +298,15 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
     }
   }
 
-  private async _clickNextStep(page: Page, _screenshotPath: string): Promise<void> {
+  private async _clickNextStep(page: Page): Promise<void> {
     const { locator, found } = await this._findVisibleLocator(page, "next_step_button_selectors");
     if (found) {
+      // Button may not be present on all chapter types — non-presence is acceptable.
       await locator.click({ timeout: 5000 }).catch(() => {});
     }
   }
 
-  private async _handleContinuePrompt(page: Page, _screenshotPath: string): Promise<void> {
+  private async _handleContinuePrompt(page: Page): Promise<void> {
     const keywords = ["继续", "去提交", "继续发布", "提交", "确定提交"];
     for (const kw of keywords) {
       try {
@@ -323,14 +317,15 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
           return;
         }
       } catch {
-        // try next
+        // try next keyword
       }
     }
   }
 
-  private async _handleRiskConfirm(page: Page, _screenshotPath: string): Promise<void> {
+  private async _handleRiskConfirm(page: Page): Promise<void> {
     const { locator, found } = await this._findVisibleLocator(page, "risk_confirm_selectors");
     if (found) {
+      // Risk confirm dialog may not appear on every upload — non-presence is acceptable.
       await locator.click({ timeout: 3000 }).catch(() => {});
     }
   }
@@ -351,9 +346,10 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
     }
   }
 
-  private async _handlePublishSetting(page: Page, _screenshotPath: string): Promise<void> {
+  private async _handlePublishSetting(page: Page): Promise<void> {
     const { locator, found } = await this._findVisibleLocator(page, "publish_button_selectors");
     if (found) {
+      // Publish button may not be present in all flows — non-presence is acceptable.
       await locator.click({ timeout: 5000 }).catch(() => {});
     }
   }
@@ -361,7 +357,11 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
   private async _waitForPublishFeedback(page: Page): Promise<boolean> {
     const keywords = this._splitSelectors(this.selectors.success_text_keywords);
 
-    await page.waitForLoadState("networkidle").catch(() => {});
+    try {
+      await page.waitForLoadState("networkidle");
+    } catch {
+      // Network state may not be reached; continue with timeout wait.
+    }
     await page.waitForTimeout(this.successWaitSec * 1000);
 
     for (const keyword of keywords) {
@@ -398,8 +398,8 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
   private async _maybeScreenshot(page: Page, screenshotPath: string): Promise<void> {
     try {
       await page.screenshot({ path: screenshotPath });
-    } catch {
-      // ignore
+    } catch (err) {
+      console.error(`[upload] 截图保存失败 ${screenshotPath}: ${err instanceof Error ? err.message : String(err)}`);
     }
   }
 }
