@@ -23,7 +23,7 @@ describe("ArchitectAgent", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0, maxTokensCap: null,
+          thinkingBudget: 0,
           extra: {},
         },
       },
@@ -89,7 +89,7 @@ describe("ArchitectAgent", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0, maxTokensCap: null,
+          thinkingBudget: 0,
           extra: {},
         },
       },
@@ -141,8 +141,10 @@ describe("ArchitectAgent", () => {
     );
 
     const messages = chat.mock.calls[0]?.[0] as Array<{ role: string; content: string }>;
-    expect(messages[0]?.content).toContain("## 01_Worldview");
-    expect(messages[0]?.content).toContain("## Narrative Perspective");
+    // Phase 5: architect prompts describe the new prose sections. The English
+    // import prompt must not slip Chinese section headers into the system text.
+    expect(messages[0]?.content).toContain("story_frame");
+    expect(messages[0]?.content).toContain("volume_map");
     expect(messages[0]?.content).not.toContain("## 01_世界观");
     expect(messages[0]?.content).not.toContain("## 叙事视角");
   });
@@ -156,7 +158,7 @@ describe("ArchitectAgent", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0, maxTokensCap: null,
+          thinkingBudget: 0,
           extra: {},
         },
       },
@@ -221,7 +223,7 @@ describe("ArchitectAgent", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0, maxTokensCap: null,
+          thinkingBudget: 0,
           extra: {},
         },
       },
@@ -287,7 +289,7 @@ describe("ArchitectAgent", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0, maxTokensCap: null,
+          thinkingBudget: 0,
           extra: {},
         },
       },
@@ -338,7 +340,11 @@ describe("ArchitectAgent", () => {
 
     const result = await agent.generateFoundation(book);
 
-    expect(result.pendingHooks).toContain("| H01 | 1 | 主线 | 未开启 | 0 | 10章 | 中程 | 主线核心钩子 |");
+    // Phase 7 + hotfixes 1/2: ledger renders extended columns — depends_on,
+    // pays_off_in_arc, core_hook, half_life (empty when not specified), and
+    // promoted (computed at architect time). This hook has no promotion rule
+    // firing (core=否, no depends_on, in-volume payoff) so 升级=否.
+    expect(result.pendingHooks).toContain("| H01 | 1 | 主线 | 未开启 | 0 | 10章 | 中程 | 无 |  | 否 |  | 否 | 主线核心钩子 |");
     expect(result.pendingHooks).not.toContain("如果你愿意");
     expect(result.pendingHooks).not.toContain("前10章逐章细纲");
   });
@@ -352,7 +358,7 @@ describe("ArchitectAgent", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0, maxTokensCap: null,
+          thinkingBudget: 0,
           extra: {},
         },
       },
@@ -400,7 +406,7 @@ describe("ArchitectAgent", () => {
 
     const result = await agent.generateFoundation(book);
 
-    expect(result.pendingHooks).toContain("| H13 | 22 | 舆情操盘 | 待推进 | 0 | 51-60章 | 中程 | 庄蔓出场后逐步揭露（初始线索：一家自媒体公司在多个旧案节点同步接单） |");
+    expect(result.pendingHooks).toContain("| H13 | 22 | 舆情操盘 | 待推进 | 0 | 51-60章 | 中程 | 无 |  | 否 |  | 否 | 庄蔓出场后逐步揭露（初始线索：一家自媒体公司在多个旧案节点同步接单） |");
   });
 
   it("accepts section labels with spacing and punctuation drift from non-strict models", async () => {
@@ -412,7 +418,7 @@ describe("ArchitectAgent", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0, maxTokensCap: null,
+          thinkingBudget: 0,
           extra: {},
         },
       },
@@ -464,7 +470,7 @@ describe("ArchitectAgent", () => {
     expect(result.volumeOutline).toBe("# 卷纲");
     expect(result.bookRules).toContain("version: \"1.0\"");
     expect(result.currentState).toBe("# 当前状态");
-    expect(result.pendingHooks).toContain("| H01 | 1 | mystery | open | 0 | 10章 | 中程 | 初始钩子 |");
+    expect(result.pendingHooks).toContain("| H01 | 1 | mystery | open | 0 | 10章 | 中程 | 无 |  | 否 |  | 否 | 初始钩子 |");
   });
 
   it("throws when a required foundation section is missing", async () => {
@@ -476,7 +482,7 @@ describe("ArchitectAgent", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0, maxTokensCap: null,
+          thinkingBudget: 0,
           extra: {},
         },
       },
@@ -518,7 +524,7 @@ describe("ArchitectAgent", () => {
     await expect(agent.generateFoundation(book)).rejects.toThrow(/book_rules/i);
   });
 
-  it("passes maxTokens 16384 when generating foundation", async () => {
+  it("uses modelCard output budget when generating foundation", async () => {
     const agent = new ArchitectAgent({
       client: {
         provider: "openai",
@@ -527,7 +533,7 @@ describe("ArchitectAgent", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0, maxTokensCap: null,
+          thinkingBudget: 0,
           extra: {},
         },
       },
@@ -575,13 +581,12 @@ describe("ArchitectAgent", () => {
 
     await agent.generateFoundation(book);
 
-    expect(chatSpy).toHaveBeenCalledWith(
-      expect.any(Array),
-      expect.objectContaining({ temperature: 0.8, maxTokens: 16384 }),
-    );
+    const options = chatSpy.mock.calls[0]?.[1] as { temperature?: number; maxTokens?: number } | undefined;
+    expect(options).toEqual(expect.objectContaining({ temperature: 0.8 }));
+    expect(options).not.toHaveProperty("maxTokens");
   });
 
-  it("passes maxTokens 16384 when generating foundation from import", async () => {
+  it("uses modelCard output budget when generating foundation from import", async () => {
     const agent = new ArchitectAgent({
       client: {
         provider: "openai",
@@ -590,7 +595,7 @@ describe("ArchitectAgent", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0, maxTokensCap: null,
+          thinkingBudget: 0,
           extra: {},
         },
       },
@@ -638,13 +643,12 @@ describe("ArchitectAgent", () => {
 
     await agent.generateFoundationFromImport(book, "第一章正文");
 
-    expect(chatSpy).toHaveBeenCalledWith(
-      expect.any(Array),
-      expect.objectContaining({ temperature: 0.5, maxTokens: 16384 }),
-    );
+    const options = chatSpy.mock.calls[0]?.[1] as { temperature?: number; maxTokens?: number } | undefined;
+    expect(options).toEqual(expect.objectContaining({ temperature: 0.5 }));
+    expect(options).not.toHaveProperty("maxTokens");
   });
 
-  it("passes maxTokens 16384 when generating fanfic foundation", async () => {
+  it("uses modelCard output budget when generating fanfic foundation", async () => {
     const agent = new ArchitectAgent({
       client: {
         provider: "openai",
@@ -653,7 +657,7 @@ describe("ArchitectAgent", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0, maxTokensCap: null,
+          thinkingBudget: 0,
           extra: {},
         },
       },
@@ -701,10 +705,156 @@ describe("ArchitectAgent", () => {
 
     await agent.generateFanficFoundation(book, "正典文本", "canon");
 
-    expect(chatSpy).toHaveBeenCalledWith(
-      expect.any(Array),
-      expect.objectContaining({ temperature: 0.7, maxTokens: 16384 }),
-    );
+    const options = chatSpy.mock.calls[0]?.[1] as { temperature?: number; maxTokens?: number } | undefined;
+    expect(options).toEqual(expect.objectContaining({ temperature: 0.7 }));
+    expect(options).not.toHaveProperty("maxTokens");
+  });
+
+  // ---- Phase 5 段落式架构稿专项 ----
+
+  // 测试 stub：chat 会被 vi.spyOn 拦截，client.defaults 运行时不会被读取。
+  // 故意不填 temperature / maxTokens 等数字——避免在测试里留下"推荐配置"的
+  // 错误示范（maxTokens 填错会误导后续抄到生产，触发 CLAUDE.md 禁止的
+  // maxTokens 回归）。只保留类型要求的身份字段。
+  const buildPhase5Agent = (): ArchitectAgent =>
+    new ArchitectAgent({
+      client: {
+        provider: "openai",
+        apiFormat: "chat",
+        stream: false,
+      } as unknown as LLMClient,
+      model: "test-model",
+      projectRoot: process.cwd(),
+    });
+
+  const phase5Book = (): BookConfig => ({
+    id: "phase5-book",
+    title: "测试书",
+    platform: "qidian",
+    genre: "xuanhuan",
+    status: "active",
+    targetChapters: 50,
+    chapterWordCount: 3000,
+    language: "zh",
+    createdAt: "2026-04-19T00:00:00.000Z",
+    updatedAt: "2026-04-19T00:00:00.000Z",
+  });
+
+  it("generateFoundation parses story_frame / volume_map / roles sections", async () => {
+    const agent = buildPhase5Agent();
+    const book = phase5Book();
+
+    vi.spyOn(agent as unknown as { chat: (...args: unknown[]) => Promise<unknown> }, "chat")
+      .mockResolvedValue({
+        content: [
+          "=== SECTION: story_frame ===",
+          "## 主题与基调",
+          "段落 1 主题段落。",
+          "",
+          "## 核心冲突",
+          "段落 2 冲突段落。",
+          "",
+          "=== SECTION: volume_map ===",
+          "## 段 1",
+          "卷一段落。",
+          "",
+          "=== SECTION: roles ===",
+          "---ROLE---",
+          "tier: major",
+          "name: 林辞",
+          "---CONTENT---",
+          "## 核心标签",
+          "冷静、执着",
+          "",
+          "---ROLE---",
+          "tier: minor",
+          "name: 配角A",
+          "---CONTENT---",
+          "次要角色描写",
+          "",
+          "=== SECTION: book_rules ===",
+          "---",
+          "version: \"1.0\"",
+          "protagonist:",
+          "  name: 林辞",
+          "---",
+          "",
+          "=== SECTION: pending_hooks ===",
+          "| hook_id | 起始章节 | 类型 | 状态 | 最近推进 | 预期回收 | 回收节奏 | 备注 |",
+          "|---|---|---|---|---|---|---|---|",
+          "| H001 | 1 | 主线 | open | 0 | 3 | 近期 | 初始线索 |",
+        ].join("\n"),
+        usage: ZERO_USAGE,
+      });
+
+    const output = await agent.generateFoundation(book);
+
+    expect(output.storyFrame).toContain("主题与基调");
+    expect(output.volumeMap).toContain("段 1");
+    expect(output.roles).toBeDefined();
+    expect(output.roles!.length).toBe(2);
+    expect(output.roles![0]).toMatchObject({ tier: "major", name: "林辞" });
+    expect(output.roles![1]).toMatchObject({ tier: "minor", name: "配角A" });
+  });
+
+  it("writeFoundationFiles writes outline/ and roles/ when Phase 5 fields present", async () => {
+    const { mkdtemp, rm, access } = await import("node:fs/promises");
+    const { tmpdir } = await import("node:os");
+    const { join } = await import("node:path");
+
+    const agent = buildPhase5Agent();
+    const tmpDir = await mkdtemp(join(tmpdir(), "inkos-arch-test-"));
+    try {
+      await agent.writeFoundationFiles(tmpDir, {
+        storyBible: "legacy shim body",
+        volumeOutline: "legacy outline",
+        bookRules: "---\nversion: \"1.0\"\n---\n",
+        currentState: "",
+        pendingHooks: "| hook_id |",
+        storyFrame: "## 主题\n\n段落内容",
+        volumeMap: "## 卷一\n\n卷一段落",
+        roles: [
+          { tier: "major", name: "林辞", content: "主角描写" },
+          { tier: "minor", name: "配角A", content: "配角描写" },
+        ],
+      }, false, "zh");
+
+      await expect(access(join(tmpDir, "story", "outline", "story_frame.md"))).resolves.not.toThrow();
+      await expect(access(join(tmpDir, "story", "outline", "volume_map.md"))).resolves.not.toThrow();
+      await expect(access(join(tmpDir, "story", "roles", "主要角色", "林辞.md"))).resolves.not.toThrow();
+      await expect(access(join(tmpDir, "story", "roles", "次要角色", "配角A.md"))).resolves.not.toThrow();
+      // Shim 文件也要在（向后兼容读取点用）
+      await expect(access(join(tmpDir, "story", "story_bible.md"))).resolves.not.toThrow();
+      await expect(access(join(tmpDir, "story", "character_matrix.md"))).resolves.not.toThrow();
+      await expect(access(join(tmpDir, "story", "book_rules.md"))).resolves.not.toThrow();
+    } finally {
+      await rm(tmpDir, { recursive: true, force: true });
+    }
+  });
+
+  it("writeFoundationFiles falls back to legacy layout when storyFrame is empty", async () => {
+    const { mkdtemp, rm, access, readFile } = await import("node:fs/promises");
+    const { tmpdir } = await import("node:os");
+    const { join } = await import("node:path");
+
+    const agent = buildPhase5Agent();
+    const tmpDir = await mkdtemp(join(tmpdir(), "inkos-arch-legacy-test-"));
+    try {
+      await agent.writeFoundationFiles(tmpDir, {
+        storyBible: "# Legacy Story Bible\n",
+        volumeOutline: "# Legacy Volume Outline\n",
+        bookRules: "# Legacy Book Rules\n",
+        currentState: "# Current State\n",
+        pendingHooks: "| hook_id |\n",
+      }, false, "zh");
+
+      const storyBible = await readFile(join(tmpDir, "story", "story_bible.md"), "utf-8");
+      expect(storyBible).toContain("Legacy Story Bible");
+      // outline/ 目录是创建的但里面没 story_frame.md
+      await expect(access(join(tmpDir, "story", "outline", "story_frame.md"))).rejects.toThrow();
+    } finally {
+      await rm(tmpDir, { recursive: true, force: true });
+    }
   });
 
   // ---- Phase 5 段落式架构稿专项 ----

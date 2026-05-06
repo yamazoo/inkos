@@ -1,22 +1,15 @@
 import { describe, expect, it, vi } from "vitest";
 import {
+  matchServiceConfigEntryForDetail,
   rehydrateServiceConnectionStatus,
-  saveServiceConfigWithValidation,
+  saveServiceConfig,
 } from "./service-detail-state";
 
 describe("rehydrateServiceConnectionStatus", () => {
-  it("verifies the saved key via /test on page load instead of /models", async () => {
+  it("loads saved key without probing models on page load", async () => {
     const fetchJsonImpl = vi.fn(async (path: string) => {
       if (path === "/services/openai/secret") {
         return { apiKey: "sk-live" };
-      }
-      if (path === "/services/openai/test") {
-        return {
-          ok: true,
-          models: [{ id: "gpt-5.4", name: "gpt-5.4" }],
-          selectedModel: "gpt-5.4",
-          detected: { apiFormat: "responses", stream: false, modelsSource: "api" },
-        };
       }
       throw new Error(`unexpected path: ${path}`);
     });
@@ -31,36 +24,47 @@ describe("rehydrateServiceConnectionStatus", () => {
       fetchJsonImpl: fetchJsonImpl as never,
     });
 
-    expect(fetchJsonImpl).toHaveBeenCalledTimes(2);
-    expect(fetchJsonImpl).toHaveBeenNthCalledWith(1, "/services/openai/secret");
-    expect(fetchJsonImpl).toHaveBeenNthCalledWith(
-      2,
-      "/services/openai/test",
-      expect.objectContaining({ method: "POST" }),
-    );
+    expect(fetchJsonImpl).toHaveBeenCalledTimes(1);
+    expect(fetchJsonImpl).toHaveBeenCalledWith("/services/openai/secret");
     expect(result).toMatchObject({
       apiKey: "sk-live",
-      detectedModel: "gpt-5.4",
-      detectedConfig: { apiFormat: "responses", stream: false, modelsSource: "api" },
-      status: {
-        state: "connected",
-        models: [{ id: "gpt-5.4", name: "gpt-5.4" }],
-      },
+      detectedModel: "",
+      detectedConfig: null,
+      status: { state: "idle" },
     });
   });
 });
 
-describe("saveServiceConfigWithValidation", () => {
-  it("validates the key before persisting secrets/config", async () => {
+describe("matchServiceConfigEntryForDetail", () => {
+  const entries = [
+    { service: "moonshot", temperature: 0.5 },
+    { service: "custom", name: "内网GPT", baseUrl: "https://llm.internal.corp/v1" },
+    { service: "custom", name: "本地Ollama", baseUrl: "http://localhost:11434/v1" },
+  ];
+
+  it("matches concrete custom services without treating bare custom as an existing config", () => {
+    expect(matchServiceConfigEntryForDetail(entries, "custom")).toBeUndefined();
+    expect(matchServiceConfigEntryForDetail(entries, "custom:内网GPT")).toEqual(entries[1]);
+  });
+
+  it("matches non-custom services by service id", () => {
+    expect(matchServiceConfigEntryForDetail(entries, "moonshot")).toEqual(entries[0]);
+  });
+});
+
+describe("saveServiceConfig", () => {
+  it("validates the upstream service before persisting secrets/config", async () => {
     const calls: string[] = [];
-    const fetchJsonImpl = vi.fn(async (path: string) => {
+    const bodies: unknown[] = [];
+    const fetchJsonImpl = vi.fn(async (path: string, init?: { body?: string }) => {
       calls.push(path);
+      if (init?.body) bodies.push(JSON.parse(init.body));
       if (path === "/services/openai/test") {
         return {
           ok: true,
-          models: [{ id: "gpt-5.4", name: "gpt-5.4" }],
-          selectedModel: "gpt-5.4",
-          detected: { apiFormat: "responses", stream: false },
+          models: [{ id: "gpt-5.5" }],
+          selectedModel: "gpt-5.5",
+          detected: { apiFormat: "chat", stream: true },
         };
       }
       if (path === "/services/openai/secret") return { ok: true };
@@ -68,7 +72,7 @@ describe("saveServiceConfigWithValidation", () => {
       throw new Error(`unexpected path: ${path}`);
     });
 
-    const result = await saveServiceConfigWithValidation({
+    const result = await saveServiceConfig({
       effectiveServiceId: "openai",
       serviceId: "openai",
       isCustom: false,
@@ -78,7 +82,6 @@ describe("saveServiceConfigWithValidation", () => {
       apiFormat: "chat",
       stream: true,
       temperature: "0.7",
-      maxTokens: "4096",
       detectedModel: "",
       fetchJsonImpl: fetchJsonImpl as never,
     });
@@ -88,27 +91,40 @@ describe("saveServiceConfigWithValidation", () => {
       "/services/openai/secret",
       "/services/config",
     ]);
-    expect(result).toMatchObject({
-      detectedModel: "gpt-5.4",
-      detectedConfig: { apiFormat: "responses", stream: false },
-      status: {
-        state: "connected",
-        models: [{ id: "gpt-5.4", name: "gpt-5.4" }],
+    expect(bodies).toEqual([
+      { apiKey: "sk-live", apiFormat: "chat", stream: true },
+      { apiKey: "sk-live" },
+      {
+        service: "openai",
+        defaultModel: "gpt-5.5",
+        services: [
+          { service: "openai", temperature: 0.7, apiFormat: "chat", stream: true },
+        ],
       },
+    ]);
+    expect(result).toEqual({
+      detectedModel: "gpt-5.5",
+      detectedConfig: { apiFormat: "chat", stream: true },
+      status: { state: "connected", models: [{ id: "gpt-5.5" }] },
     });
   });
 
   it("does not persist secrets/config when validation fails", async () => {
     const calls: string[] = [];
-    const fetchJsonImpl = vi.fn(async (path: string) => {
+    const fetchJsonImpl = vi.fn(async (path: string, init?: { body?: string }) => {
       calls.push(path);
       if (path === "/services/openai/test") {
-        throw new Error("401 Unauthorized");
+        expect(init?.body ? JSON.parse(init.body) : null).toEqual({
+          apiKey: "sk-bad",
+          apiFormat: "chat",
+          stream: true,
+        });
+        return { ok: false, error: "invalid key" };
       }
       throw new Error(`unexpected path: ${path}`);
     });
 
-    await expect(saveServiceConfigWithValidation({
+    await expect(saveServiceConfig({
       effectiveServiceId: "openai",
       serviceId: "openai",
       isCustom: false,
@@ -118,10 +134,13 @@ describe("saveServiceConfigWithValidation", () => {
       apiFormat: "chat",
       stream: true,
       temperature: "0.7",
-      maxTokens: "4096",
       detectedModel: "",
       fetchJsonImpl: fetchJsonImpl as never,
-    })).rejects.toThrow("401 Unauthorized");
+    })).resolves.toEqual({
+      detectedModel: "",
+      detectedConfig: null,
+      status: { state: "error", message: "invalid key" },
+    });
 
     expect(calls).toEqual(["/services/openai/test"]);
   });

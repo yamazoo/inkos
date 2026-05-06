@@ -8,7 +8,6 @@ import type {
   ReviseMode,
   LLMClient,
   BookConfig,
-  Platform,
   ToolDefinition,
 } from "../index.js";
 import { chatCompletion, chatWithTools } from "../index.js";
@@ -16,6 +15,55 @@ import { executeEditTransaction } from "./edit-controller.js";
 import type { InteractionRuntimeTools } from "./runtime.js";
 import type { BookCreationDraft } from "./session.js";
 import { writeExportArtifact } from "./export-artifact.js";
+import { safeChildPath } from "../utils/path-safety.js";
+import { deriveBookIdFromTitle } from "../utils/book-id.js";
+import { normalizePlatformOrOther } from "../models/book.js";
+
+const SAFE_TRUTH_FLAT_FILE_NAMES = new Set([
+  "author_intent.md",
+  "current_focus.md",
+  "story_bible.md",
+  "volume_outline.md",
+  "book_rules.md",
+  "particle_ledger.md",
+  "subplot_board.md",
+  "emotional_arcs.md",
+  "style_guide.md",
+  "parent_canon.md",
+  "fanfic_canon.md",
+  "character_matrix.md",
+  "current_state.md",
+  "pending_hooks.md",
+  "chapter_summaries.md",
+]);
+
+const SAFE_TRUTH_OUTLINE_FILE_NAMES = new Set([
+  "outline/story_frame.md",
+  "outline/volume_map.md",
+  "outline/节奏原则.md",
+  "outline/rhythm_principles.md",
+]);
+
+const SAFE_ROLE_TRUTH_FILE_RE = /^roles\/(主要角色|次要角色|major|minor)\/[^/\\]+\.md$/u;
+
+export function assertSafeTruthFileName(fileName: string): string {
+  const trimmed = fileName.trim();
+  const withExtension = trimmed.endsWith(".md") ? trimmed : `${trimmed}.md`;
+  const lower = withExtension.toLowerCase();
+  if (
+    !trimmed ||
+    withExtension.startsWith("/") ||
+    withExtension.includes("\\") ||
+    withExtension.includes("\0") ||
+    withExtension.includes("..")
+  ) {
+    throw new Error(`Invalid truth file name: ${JSON.stringify(fileName)}`);
+  }
+  if (SAFE_TRUTH_FLAT_FILE_NAMES.has(lower)) return lower;
+  if (SAFE_TRUTH_OUTLINE_FILE_NAMES.has(lower)) return lower;
+  if (SAFE_ROLE_TRUTH_FILE_RE.test(withExtension)) return withExtension;
+  throw new Error(`Invalid truth file name: ${JSON.stringify(fileName)}`);
+}
 
 type PipelineLike = Pick<PipelineRunner, "writeNextChapter" | "reviseDraft"> & {
   readonly initBook?: (
@@ -36,25 +84,6 @@ type InstrumentablePipelineLike = PipelineLike & {
   };
 };
 
-function normalizePlatform(platform?: string): Platform {
-  switch (platform) {
-    case "tomato":
-    case "feilu":
-    case "qidian":
-      return platform;
-    default:
-      return "other";
-  }
-}
-
-function deriveBookId(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9\u4e00-\u9fff]/g, "-")
-    .replace(/-+/g, "-")
-    .slice(0, 30);
-}
-
 function buildBookConfig(input: {
   readonly title: string;
   readonly genre?: string;
@@ -65,9 +94,9 @@ function buildBookConfig(input: {
 }): BookConfig {
   const now = new Date().toISOString();
   return {
-    id: deriveBookId(input.title),
+    id: deriveBookIdFromTitle(input.title) || `book-${Date.now().toString(36)}`,
     title: input.title,
-    platform: normalizePlatform(input.platform),
+    platform: normalizePlatformOrOther(input.platform),
     genre: input.genre ?? "other",
     status: "outlining",
     targetChapters: input.targetChapters ?? 200,
@@ -665,7 +694,11 @@ export function createInteractionToolsFromDeps(
     },
     writeTruthFile: async (bookId, fileName, content) => {
       await state.ensureControlDocuments(bookId);
-      await writeFile(join(state.bookDir(bookId), "story", fileName), content, "utf-8");
+      const storyDir = join(state.bookDir(bookId), "story");
+      const safeFileName = assertSafeTruthFileName(fileName);
+      const targetPath = safeChildPath(storyDir, safeFileName);
+      await mkdir(dirname(targetPath), { recursive: true });
+      await writeFile(targetPath, content, "utf-8");
     },
   };
 }

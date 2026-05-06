@@ -2,6 +2,7 @@ import { useRef, useEffect, useMemo, useState } from "react";
 import type { Theme } from "../hooks/use-theme";
 import type { TFunction } from "../hooks/use-i18n";
 import type { SSEMessage } from "../hooks/use-sse";
+import { fetchJson } from "../hooks/use-api";
 import { chatSelectors, useChatStore } from "../store/chat";
 import { useServiceStore } from "../store/service";
 import {
@@ -31,8 +32,10 @@ import {
   MessageContent,
 } from "../components/ai-elements/message";
 import {
+  type ChatPageModelPreference,
   filterModelGroups,
   getBookCreateSessionId,
+  pickModelSelection,
   setBookCreateSessionId,
 } from "./chat-page-state";
 
@@ -50,6 +53,11 @@ export interface ChatPageProps {
   readonly theme: Theme;
   readonly t: TFunction;
   readonly sse: { messages: ReadonlyArray<SSEMessage>; connected: boolean };
+}
+
+interface ServiceConfigPayload {
+  readonly service?: string | null;
+  readonly defaultModel?: string | null;
 }
 
 // -- Component --
@@ -89,41 +97,82 @@ export function ChatPage({ activeBookId, nav, theme, t, sse: _sse }: ChatPagePro
   // -- Model picker: read raw state, derive with useMemo (stable refs) --
   const services = useServiceStore((s) => s.services);
   const servicesLoading = useServiceStore((s) => s.servicesLoading);
+  const bankModelsLoading = useServiceStore((s) => s.bankModelsLoading);
+  const customModelsLoading = useServiceStore((s) => s.customModelsLoading);
   const modelsByService = useServiceStore((s) => s.modelsByService);
   const fetchServices = useServiceStore((s) => s.fetchServices);
-  const fetchModels = useServiceStore((s) => s.fetchModels);
+  const fetchBankModels = useServiceStore((s) => s.fetchBankModels);
+  const fetchCustomModels = useServiceStore((s) => s.fetchCustomModels);
+  const [configuredModelSelection, setConfiguredModelSelection] = useState<ChatPageModelPreference | null>(null);
+  const [serviceConfigLoaded, setServiceConfigLoaded] = useState(false);
 
   useEffect(() => { void fetchServices(); }, [fetchServices]);
   useEffect(() => {
-    for (const svc of services) {
-      if (svc.connected) void fetchModels(svc.service);
-    }
-  }, [services, fetchModels]);
+    void fetchBankModels();
+    void fetchCustomModels();
+  }, [fetchBankModels, fetchCustomModels]);
+  useEffect(() => {
+    let cancelled = false;
+
+    void fetchJson<ServiceConfigPayload>("/services/config")
+      .then((payload) => {
+        if (cancelled) return;
+        setConfiguredModelSelection({
+          service: payload.service ?? null,
+          model: payload.defaultModel ?? null,
+        });
+      })
+      .catch(() => {
+        if (!cancelled) setConfiguredModelSelection(null);
+      })
+      .finally(() => {
+        if (!cancelled) setServiceConfigLoaded(true);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const modelPickerStatus = useMemo(() => {
     if (servicesLoading || services.length === 0) return "loading" as const;
     const connected = services.filter((s) => s.connected);
     if (connected.length === 0) return "no-models" as const;
-    if (connected.some((s) => modelsByService[s.service]?.loading)) return "loading" as const;
-    return connected.some((s) => (modelsByService[s.service]?.models.length ?? 0) > 0)
-      ? "ready" as const : "no-models" as const;
-  }, [services, servicesLoading, modelsByService]);
+    if (bankModelsLoading) return "loading" as const;
+    if (connected.some((s) => (modelsByService[s.service]?.length ?? 0) > 0)) return "ready" as const;
+    const hasConnectedBank = connected.some((s) => !s.service.startsWith("custom"));
+    const hasConnectedCustom = connected.some((s) => s.service.startsWith("custom"));
+    if (!hasConnectedBank && hasConnectedCustom && customModelsLoading) return "loading" as const;
+    return "no-models" as const;
+  }, [services, servicesLoading, bankModelsLoading, customModelsLoading, modelsByService]);
 
   const groupedModels = useMemo(() => {
     return services
-      .filter((s) => s.connected && (modelsByService[s.service]?.models.length ?? 0) > 0)
-      .map((s) => ({ service: s.service, label: s.label, models: modelsByService[s.service]!.models }));
+      .filter((s) => s.connected && (modelsByService[s.service]?.length ?? 0) > 0)
+      .map((s) => ({ service: s.service, label: s.label, models: modelsByService[s.service]! }));
   }, [services, modelsByService]);
 
-  // Auto-select first model when models load and none selected
+  const selectedModelLabel = useMemo(() => {
+    if (!selectedModel) return "选择模型";
+    const group = groupedModels.find((item) => item.service === selectedService);
+    const model = group?.models.find((item) => item.id === selectedModel);
+    const modelLabel = model?.name ?? selectedModel;
+    return group ? `${group.label} · ${modelLabel}` : modelLabel;
+  }, [groupedModels, selectedModel, selectedService]);
+
+  // Auto-select from saved service config first, then fall back to the first available model.
   useEffect(() => {
-    if (!selectedModel && groupedModels.length > 0) {
-      const first = groupedModels[0];
-      if (first.models.length > 0) {
-        setSelectedModel(first.models[0].id, first.service);
-      }
+    if (!serviceConfigLoaded) return;
+    const nextSelection = pickModelSelection(
+      groupedModels,
+      selectedModel,
+      selectedService,
+      configuredModelSelection,
+    );
+    if (nextSelection) {
+      setSelectedModel(nextSelection.model, nextSelection.service);
     }
-  }, [groupedModels, selectedModel, setSelectedModel]);
+  }, [configuredModelSelection, groupedModels, selectedModel, selectedService, serviceConfigLoaded, setSelectedModel]);
 
   // Auto-resize textarea
   useEffect(() => {
@@ -209,7 +258,7 @@ export function ChatPage({ activeBookId, nav, theme, t, sse: _sse }: ChatPagePro
       {/* Message scroll area */}
       <div
         ref={scrollRef}
-        className="flex-1 overflow-y-auto px-4 py-6"
+        className="chat-message-scroll flex-1 overflow-y-auto [scrollbar-gutter:stable] px-4 py-6"
       >
         {messages.length === 0 && !loading ? (
           <div className="h-full flex flex-col items-center justify-center text-center select-none">
@@ -352,8 +401,8 @@ export function ChatPage({ activeBookId, nav, theme, t, sse: _sse }: ChatPagePro
                 ) : modelPickerStatus === "ready" ? (
                   <DropdownMenu>
                     <DropdownMenuTrigger className="flex items-center gap-1.5 px-2 py-1 rounded-md hover:bg-muted text-sm transition-colors cursor-pointer">
-                      <span className="font-medium text-xs truncate max-w-[140px]">
-                        {selectedModel ?? "选择模型"}
+                      <span className="font-medium text-xs truncate max-w-[220px]">
+                        {selectedModelLabel}
                       </span>
                       <ChevronDown size={14} className="text-muted-foreground" />
                     </DropdownMenuTrigger>

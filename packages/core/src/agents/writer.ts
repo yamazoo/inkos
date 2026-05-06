@@ -12,11 +12,12 @@ import { readStoryFrame, readVolumeMap, readCharacterContext, readCurrentStateWi
 import {
   detectCrossChapterRepetition,
   detectParagraphLengthDrift,
+  normalizePostWriteSurface,
   validatePostWrite,
   type PostWriteViolation,
 } from "./post-write-validator.js";
 import { analyzeAITells } from "./ai-tells.js";
-import type { ChapterTrace, ContextPackage, RuleStack } from "../models/input-governance.js";
+import type { ChapterIntent, ChapterMemo, ContextPackage, RuleStack } from "../models/input-governance.js";
 import type { LengthSpec } from "../models/length-governance.js";
 import type { RuntimeStateDelta } from "../models/runtime-state.js";
 import { buildLengthSpec, countChapterLength } from "../utils/length-metrics.js";
@@ -35,8 +36,20 @@ import type { RuntimeStateSnapshot } from "../state/state-reducer.js";
 import { parsePendingHooksMarkdown } from "../utils/memory-retrieval.js";
 import { analyzeHookHealth } from "../utils/hook-health.js";
 import { buildEnglishVarianceBrief } from "../utils/long-span-fatigue.js";
+import {
+  buildNarrativeIntentBrief,
+  renderMemoAsNarrativeBlock,
+  renderNarrativeSelectedContext,
+  sanitizeNarrativeEvidenceBlock,
+} from "../utils/narrative-control.js";
 import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { join } from "node:path";
+import {
+  readStoryFrame,
+  readVolumeMap,
+  readCharacterContext,
+  readCurrentStateWithFallback,
+} from "../utils/outline-paths.js";
 
 export interface WriteChapterInput {
   readonly book: BookConfig;
@@ -44,9 +57,10 @@ export interface WriteChapterInput {
   readonly chapterNumber: number;
   readonly externalContext?: string;
   readonly chapterIntent?: string;
+  readonly chapterMemo?: ChapterMemo;
+  readonly chapterIntentData?: ChapterIntent;
   readonly contextPackage?: ContextPackage;
   readonly ruleStack?: RuleStack;
-  readonly trace?: ChapterTrace;
   readonly lengthSpec?: LengthSpec;
   readonly wordCountOverride?: number;
   readonly temperatureOverride?: number;
@@ -119,21 +133,26 @@ export class WriterAgent extends BaseAgent {
   async writeChapter(input: WriteChapterInput): Promise<WriteChapterOutput> {
     const { book, bookDir, chapterNumber } = input;
 
+    const placeholder = "(文件尚未创建)";
     const [
       storyBible, volumeOutline, styleGuide, currentState, ledger, hooks,
       chapterSummaries, subplotBoard, emotionalArcs, characterMatrix, styleProfileRaw,
       parentCanon, fanficCanonRaw,
     ] = await Promise.all([
-        readStoryFrame(bookDir),
-        readVolumeMap(bookDir),
+        readStoryFrame(bookDir, placeholder),
+        readVolumeMap(bookDir, placeholder),
         this.readFileOrDefault(join(bookDir, "story/style_guide.md")),
-        readCurrentStateWithFallback(bookDir),
+        // Phase 5 consolidation: architect no longer emits an initial current_state
+        // section. When the file is only a seed placeholder, derive initial state
+        // from roles/*.Current_State + pending_hooks startChapter=0 rows so the
+        // writer still sees substantive content instead of a runtime-append note.
+        readCurrentStateWithFallback(bookDir, placeholder),
         this.readFileOrDefault(join(bookDir, "story/particle_ledger.md")),
         this.readFileOrDefault(join(bookDir, "story/pending_hooks.md")),
         this.readFileOrDefault(join(bookDir, "story/chapter_summaries.md")),
         this.readFileOrDefault(join(bookDir, "story/subplot_board.md")),
         this.readFileOrDefault(join(bookDir, "story/emotional_arcs.md")),
-        readCharacterContext(bookDir),
+        readCharacterContext(bookDir, placeholder),
         this.readFileOrDefault(join(bookDir, "story/style_profile.json")),
         this.readFileOrDefault(join(bookDir, "story/parent_canon.md")),
         this.readFileOrDefault(join(bookDir, "story/fanfic_canon.md")),
@@ -183,17 +202,18 @@ export class WriterAgent extends BaseAgent {
     const creativeSystemPrompt = buildWriterSystemPrompt(
       book, genreProfile, bookRules, bookRulesBody, genreBody, styleGuide, styleFingerprint,
       chapterNumber, "creative", fanficContext, resolvedLanguage,
-      input.chapterIntent ? "governed" : "legacy",
+      input.chapterMemo ? "governed" : "legacy",
       resolvedLengthSpec,
     );
 
-    const creativeUserPrompt = input.chapterIntent && input.contextPackage && input.ruleStack
+    const creativeUserPrompt = input.chapterMemo && input.contextPackage && input.ruleStack
       ? this.buildGovernedUserPrompt({
           chapterNumber,
-          chapterIntent: input.chapterIntent,
+          chapterMemo: input.chapterMemo,
+          chapterIntentData: input.chapterIntentData,
           contextPackage: input.contextPackage,
           ruleStack: input.ruleStack,
-          trace: input.trace,
+          externalContext: input.externalContext,
           lengthSpec: resolvedLengthSpec,
           language: book.language ?? genreProfile.language,
           varianceBrief: englishVarianceBrief?.text,
@@ -219,7 +239,6 @@ export class WriterAgent extends BaseAgent {
           return this.buildUserPrompt({
             chapterNumber,
             storyBible,
-            volumeOutline,
             currentState,
             ledger: genreProfile.numericalSystem ? ledger : "",
             hooks: povFilteredHooks,
@@ -244,19 +263,23 @@ export class WriterAgent extends BaseAgent {
       en: `Phase 1: creative writing for chapter ${chapterNumber}`,
     });
 
-    // Scale maxTokens to chapter word count (Chinese ≈ 1.5 tokens/char)
-    const creativeMaxTokens = Math.max(8192, Math.ceil(targetWords * 2));
-
     const creativeResponse = await this.chat(
       [
         { role: "system", content: creativeSystemPrompt },
         { role: "user", content: creativeUserPrompt },
       ],
-      { maxTokens: creativeMaxTokens, temperature: creativeTemperature },
+      { temperature: creativeTemperature },
     );
     const creativeUsage = creativeResponse.usage;
 
     const creative = parseCreativeOutput(chapterNumber, creativeResponse.content, resolvedLengthSpec.countingMode);
+
+    // Phase 4: soft-check that PRE_WRITE_CHECK aligns with the chapter memo.
+    // Memo was already parse-validated in the planner, so this only warns —
+    // the LLM self-check may have skipped or abbreviated a row.
+    if (input.chapterMemo) {
+      this.verifyPreWriteCheckAlignsWithMemo(creative.preWriteCheck, chapterNumber, resolvedLanguage);
+    }
 
     // ── Phase 2: State settlement (temperature 0.3) ──
     this.logInfo(resolvedLanguage, {
@@ -338,12 +361,14 @@ export class WriterAgent extends BaseAgent {
       : [];
 
     // ── Post-write validation (regex + rule-based, zero LLM cost) ──
+    const surfaceNormalizedContent = normalizePostWriteSurface(creative.content, resolvedLanguage);
+    const surfaceNormalizedWordCount = countChapterLength(surfaceNormalizedContent, resolvedLengthSpec.countingMode);
     const ruleViolations = [
-      ...validatePostWrite(creative.content, genreProfile, bookRules, resolvedLanguage),
-      ...detectCrossChapterRepetition(creative.content, fingerprintChapters, resolvedLanguage),
-      ...detectParagraphLengthDrift(creative.content, fingerprintChapters, resolvedLanguage),
+      ...validatePostWrite(surfaceNormalizedContent, genreProfile, bookRules, resolvedLanguage),
+      ...detectCrossChapterRepetition(surfaceNormalizedContent, fingerprintChapters, resolvedLanguage),
+      ...detectParagraphLengthDrift(surfaceNormalizedContent, fingerprintChapters, resolvedLanguage),
     ];
-    const aiTellIssues = analyzeAITells(creative.content, resolvedLanguage).issues;
+    const aiTellIssues = analyzeAITells(surfaceNormalizedContent, resolvedLanguage).issues;
 
     const postWriteErrors = ruleViolations.filter(v => v.severity === "error");
     const postWriteWarnings = ruleViolations.filter(v => v.severity === "warning");
@@ -386,8 +411,8 @@ export class WriterAgent extends BaseAgent {
     return {
       chapterNumber,
       title: creative.title,
-      content: creative.content,
-      wordCount: creative.wordCount,
+      content: surfaceNormalizedContent,
+      wordCount: surfaceNormalizedWordCount,
       preWriteCheck: creative.preWriteCheck,
       postSettlement: settlement.postSettlement,
       runtimeStateDelta: resolvedRuntimeStateDelta,
@@ -420,14 +445,15 @@ export class WriterAgent extends BaseAgent {
       characterMatrix,
       volumeOutline,
     ] = await Promise.all([
-      readCurrentStateWithFallback(input.bookDir),
+      // Phase 5 consolidation fallback: derive initial state when only seed on disk.
+      readCurrentStateWithFallback(input.bookDir, "(文件尚未创建)"),
       this.readFileOrDefault(join(input.bookDir, "story/particle_ledger.md")),
       this.readFileOrDefault(join(input.bookDir, "story/pending_hooks.md")),
       this.readFileOrDefault(join(input.bookDir, "story/chapter_summaries.md")),
       this.readFileOrDefault(join(input.bookDir, "story/subplot_board.md")),
       this.readFileOrDefault(join(input.bookDir, "story/emotional_arcs.md")),
-      readCharacterContext(input.bookDir),
-      readVolumeMap(input.bookDir),
+      readCharacterContext(input.bookDir, "(文件尚未创建)"),
+      readVolumeMap(input.bookDir, "(文件尚未创建)"),
     ]);
 
     const { profile: genreProfile } = await readGenreProfile(this.ctx.projectRoot, input.book.genre);
@@ -586,15 +612,12 @@ export class WriterAgent extends BaseAgent {
       validationFeedback: params.validationFeedback,
     });
 
-    // Settler outputs all truth files — scale with content size
-    const settlerMaxTokens = Math.max(8192, Math.ceil(params.content.length * 0.8));
-
     const response = await this.chat(
       [
         { role: "system", content: settlerSystem },
         { role: "user", content: settlerUser },
       ],
-      { maxTokens: settlerMaxTokens, temperature: 0.3 },
+      { temperature: 0.3 },
     );
 
     let mergedSettlement: ReturnType<typeof parseSettlementOutput> & {
@@ -694,7 +717,6 @@ export class WriterAgent extends BaseAgent {
   private buildUserPrompt(params: {
     readonly chapterNumber: number;
     readonly storyBible: string;
-    readonly volumeOutline: string;
     readonly currentState: string;
     readonly ledger: string;
     readonly hooks: string;
@@ -764,15 +786,6 @@ ${params.recentChapters || "(This is the first chapter, no previous text)"}
 ## Worldbuilding
 ${params.storyBible}
 
-## Volume Outline (Hard Constraint — Must Follow)
-${params.volumeOutline}
-
-[Outline Rules]
-- This chapter must advance the plot points assigned to it in the volume outline. Do not skip ahead or consume future plot points.
-- If the outline specifies an event for chapter N, do not resolve it early.
-- Pacing must match the outline's chapter span: if 5 chapters are planned for an arc, do not compress into 1-2.
-- PRE_WRITE_CHECK must identify which outline node this chapter covers.
-
 ${lengthRequirementBlock}
 - Output PRE_WRITE_CHECK first, then the chapter
 - Output only PRE_WRITE_CHECK, CHAPTER_TITLE, and CHAPTER_CONTENT blocks`;
@@ -792,15 +805,6 @@ ${params.recentChapters || "(这是第一章，无前文)"}
 ## 世界观设定
 ${params.storyBible}
 
-## 卷纲（硬约束——必须遵守）
-${params.volumeOutline}
-
-【卷纲遵守规则】
-- 本章内容必须对应卷纲中当前章节范围内的剧情节点，严禁跳过或提前消耗后续节点
-- 如果卷纲指定了某个事件/转折发生在第N章，不得提前到本章完成
-- 剧情推进速度必须与卷纲规划的章节跨度匹配：如果卷纲规划某段剧情跨5章，不得在1-2章内讲完
-- PRE_WRITE_CHECK中必须明确标注本章对应的卷纲节点
-
 ${lengthRequirementBlock}
 - 先输出写作自检表，再写正文
       - 只需输出 PRE_WRITE_CHECK、CHAPTER_TITLE、CHAPTER_CONTENT 三个区块`;
@@ -808,71 +812,51 @@ ${lengthRequirementBlock}
 
   private buildGovernedUserPrompt(params: {
     readonly chapterNumber: number;
-    readonly chapterIntent: string;
+    readonly chapterMemo: ChapterMemo;
+    readonly chapterIntentData?: ChapterIntent;
     readonly contextPackage: ContextPackage;
     readonly ruleStack: RuleStack;
-    readonly trace?: ChapterTrace;
+    readonly externalContext?: string;
     readonly lengthSpec: LengthSpec;
     readonly language?: "zh" | "en";
     readonly varianceBrief?: string;
     readonly selectedEvidenceBlock?: string;
   }): string {
-    const contextSections = params.contextPackage.selectedContext
-      .map((entry) => [
-        `### ${entry.source}`,
-        `- reason: ${entry.reason}`,
-        entry.excerpt ? `- excerpt: ${entry.excerpt}` : "",
-      ].filter(Boolean).join("\n"))
-      .join("\n\n");
-
-    const overrideLines = params.ruleStack.activeOverrides.length > 0
-      ? params.ruleStack.activeOverrides
-        .map((override) => `- ${override.from} -> ${override.to}: ${override.reason} (${override.target})`)
-        .join("\n")
-      : "- none";
+    const language = params.language ?? "zh";
+    const contextSections = renderNarrativeSelectedContext(
+      params.contextPackage.selectedContext,
+      language,
+    );
 
     const diagnosticLines = params.ruleStack.sections.diagnostic.length > 0
       ? params.ruleStack.sections.diagnostic.join(", ")
       : "none";
 
-    const traceNotes = params.trace && params.trace.notes.length > 0
-      ? params.trace.notes.map((note) => `- ${note}`).join("\n")
-      : "- none";
     const lengthRequirementBlock = this.buildLengthRequirementBlock(params.lengthSpec, params.language ?? "zh");
     const varianceBlock = params.varianceBrief
       ? `\n${params.varianceBrief}\n`
       : "";
     const selectedEvidenceBlock = params.selectedEvidenceBlock
-      ? `\n${params.selectedEvidenceBlock}\n`
+      ? `\n${sanitizeNarrativeEvidenceBlock(params.selectedEvidenceBlock, language)}\n`
       : "";
-    const explicitHookAgenda = this.extractMarkdownSection(params.chapterIntent, "## Hook Agenda");
-    const hookAgendaBlock = explicitHookAgenda
-      ? params.language === "en"
-        ? `\n## Explicit Hook Agenda\n${explicitHookAgenda}\n`
-        : `\n## 显式 Hook Agenda\n${explicitHookAgenda}\n`
-      : "";
+    const chapterContextBlock = this.buildChapterContextBlock(params.externalContext, language);
+    const briefNarrative = renderMemoAsNarrativeBlock(params.chapterMemo, params.chapterIntentData, language);
 
     if (params.language === "en") {
       return `Write chapter ${params.chapterNumber}.
 
-## Chapter Intent
-${params.chapterIntent}
+${chapterContextBlock}
+
+${briefNarrative}
 
 ## Selected Context
 ${contextSections || "(none)"}
 ${selectedEvidenceBlock}
-${hookAgendaBlock}
 
 ## Rule Stack
 - Hard: ${params.ruleStack.sections.hard.join(", ") || "(none)"}
 - Soft: ${params.ruleStack.sections.soft.join(", ") || "(none)"}
 - Diagnostic: ${diagnosticLines}
-
-## Active Overrides
-${overrideLines}
-
-## Trace Notes
-${traceNotes}
 
 ${varianceBlock}
 ${lengthRequirementBlock}
@@ -882,29 +866,38 @@ ${lengthRequirementBlock}
 
     return `请续写第${params.chapterNumber}章。
 
-## 本章意图
-${params.chapterIntent}
+${chapterContextBlock}
+
+${briefNarrative}
 
 ## 已选上下文
 ${contextSections || "(无)"}
 ${selectedEvidenceBlock}
-${hookAgendaBlock}
 
 ## 规则栈
 - 硬护栏：${params.ruleStack.sections.hard.join("、") || "(无)"}
 - 软约束：${params.ruleStack.sections.soft.join("、") || "(无)"}
 - 诊断规则：${diagnosticLines}
 
-## 当前覆盖
-${overrideLines}
-
-## 追踪说明
-${traceNotes}
-
 ${varianceBlock}
 ${lengthRequirementBlock}
 - 先输出写作自检表，再写正文
 - 只需输出 PRE_WRITE_CHECK、CHAPTER_TITLE、CHAPTER_CONTENT 三个区块`;
+  }
+
+  private buildChapterContextBlock(externalContext: string | undefined, language: "zh" | "en"): string {
+    const trimmed = externalContext?.trim();
+    if (!trimmed) return "";
+    if (language === "en") {
+      return `## Per-chapter user instruction (highest priority)
+${trimmed}
+
+Obey this direct instruction for the current chapter. If it specifies a chapter title, use that title exactly in CHAPTER_TITLE. Keep continuity, but do not replace this instruction with the outline fallback.`;
+    }
+    return `## 本章用户指令（最高优先级）
+${trimmed}
+
+这是用户对当前章节的直接指令。若其中指定章节标题，CHAPTER_TITLE 必须原样使用该标题。保持连续性，但不要用卷纲兜底替换这条指令。`;
   }
 
   private joinGovernedEvidenceBlocks(blocks: ReturnType<typeof buildGovernedMemoryEvidenceBlocks> | undefined): string | undefined {
@@ -927,47 +920,24 @@ ${lengthRequirementBlock}
     return joined || undefined;
   }
 
-  private extractMarkdownSection(content: string, heading: string): string | undefined {
-    const lines = content.split("\n");
-    let buffer: string[] | null = null;
-
-    for (const line of lines) {
-      if (line.trim() === heading) {
-        buffer = [];
-        continue;
-      }
-
-      if (buffer && line.startsWith("## ") && line.trim() !== heading) {
-        break;
-      }
-
-      if (buffer) {
-        buffer.push(line);
-      }
-    }
-
-    const section = buffer?.join("\n").trim();
-    return section && section.length > 0 ? section : undefined;
-  }
-
   private buildSettlerGovernedControlBlock(
     chapterIntent: string,
     contextPackage: ContextPackage,
     ruleStack: RuleStack,
     language: "zh" | "en",
   ): string {
-    const selectedContext = contextPackage.selectedContext
-      .map((entry) => `- ${entry.source}: ${entry.reason}${entry.excerpt ? ` | ${entry.excerpt}` : ""}`)
-      .join("\n");
+    const selectedContext = renderNarrativeSelectedContext(contextPackage.selectedContext, language)
+      .replace(/^### /gm, "- ");
     const overrides = ruleStack.activeOverrides.length > 0
       ? ruleStack.activeOverrides
         .map((override) => `- ${override.from} -> ${override.to}: ${override.reason} (${override.target})`)
         .join("\n")
       : "- none";
+    const narrativeIntent = buildNarrativeIntentBrief(chapterIntent, language);
 
     if (language === "en") {
       return `\n## Chapter Control Inputs
-${chapterIntent}
+${narrativeIntent || "(none)"}
 
 ### Selected Context
 ${selectedContext || "- none"}
@@ -982,7 +952,7 @@ ${overrides}\n`;
     }
 
     return `\n## 本章控制输入
-${chapterIntent}
+${narrativeIntent || "(无)"}
 
 ### 已选上下文
 ${selectedContext || "- none"}
@@ -994,6 +964,40 @@ ${selectedContext || "- none"}
 
 ### 当前覆盖
 ${overrides}\n`;
+  }
+
+  /**
+   * Soft-check that the LLM's PRE_WRITE_CHECK output references the three
+   * non-negotiable memo sections: 当前任务, 不要做, 章尾必须发生的改变.
+   *
+   * This is NOT a hard gate — the memo was already parse-validated in the
+   * planner, and the writer prompt already tells the LLM to align to memo.
+   * We only warn when the LLM skipped a section, so the chapter still ships.
+   */
+  private verifyPreWriteCheckAlignsWithMemo(
+    preWriteCheck: string,
+    chapterNumber: number,
+    language: "zh" | "en",
+  ): void {
+    if (!preWriteCheck || preWriteCheck.trim().length === 0) {
+      this.logWarn(language, {
+        zh: `第${chapterNumber}章 PRE_WRITE_CHECK 为空，无法对齐 chapter_memo`,
+        en: `Chapter ${chapterNumber} PRE_WRITE_CHECK is empty; cannot verify memo alignment`,
+      });
+      return;
+    }
+
+    const missing: string[] = [];
+    if (!preWriteCheck.includes("当前任务")) missing.push("当前任务");
+    if (!preWriteCheck.includes("不要做")) missing.push("不要做");
+    if (!preWriteCheck.includes("章尾")) missing.push("章尾必须发生的改变");
+
+    if (missing.length > 0) {
+      this.logWarn(language, {
+        zh: `第${chapterNumber}章 PRE_WRITE_CHECK 缺少 memo 章节检查：${missing.join("、")}`,
+        en: `Chapter ${chapterNumber} PRE_WRITE_CHECK missing memo sections: ${missing.join(", ")}`,
+      });
+    }
   }
 
   private buildLengthRequirementBlock(lengthSpec: LengthSpec, language: "zh" | "en"): string {

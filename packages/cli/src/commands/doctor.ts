@@ -2,6 +2,7 @@ import { Command } from "commander";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { findProjectRoot, log, logError, GLOBAL_ENV_PATH } from "../utils.js";
+import { fetchWithProxy } from "@actalk/inkos-core";
 import {
   ensureNodeRuntimePinFiles,
   evaluateSqliteMemorySupport,
@@ -74,13 +75,14 @@ export function resolveDoctorModelsBaseUrl(
 async function fetchDoctorModels(
   modelsBaseUrl: string,
   apiKey: string,
+  proxyUrl?: string,
 ): Promise<Array<{ id: string; name: string }>> {
   const modelsUrl = modelsBaseUrl.replace(/\/$/, "") + "/models";
   try {
-    const res = await fetch(modelsUrl, {
+    const res = await fetchWithProxy(modelsUrl, {
       headers: { Authorization: `Bearer ${apiKey}` },
       signal: AbortSignal.timeout(10_000),
-    });
+    }, proxyUrl);
     if (!res.ok) return [];
     const json = await res.json() as { data?: Array<{ id: string }> };
     return (json.data ?? []).map((model) => ({ id: model.id, name: model.id }));
@@ -154,23 +156,27 @@ export const doctorCommand = new Command("doctor")
       });
     }
 
-    // 5. Check LLM API key (global + project .env)
+    // 5. Check effective LLM config (Studio project base + env/CLI overlay, or legacy env)
     {
-      const { loadConfig } = await import("../utils.js");
-      const { config: loadDotenv } = await import("dotenv");
-      loadDotenv({ path: GLOBAL_ENV_PATH });
-      loadDotenv({ path: join(root, ".env"), override: true });
+      const { loadConfigWithDiagnostics } = await import("../utils.js");
       const { isApiKeyOptionalForEndpoint } = await import("@actalk/inkos-core");
-      let provider = process.env.INKOS_LLM_PROVIDER;
-      let baseUrl = process.env.INKOS_LLM_BASE_URL;
+      let configResult: Awaited<ReturnType<typeof loadConfigWithDiagnostics>> | undefined;
       try {
-        const config = await loadConfig({ requireApiKey: false });
-        provider = config.llm.provider;
-        baseUrl = config.llm.baseUrl;
+        configResult = await loadConfigWithDiagnostics({ requireApiKey: false });
+        checks.push({
+          name: "LLM Config Mode",
+          ok: true,
+          detail: `${configResult.diagnostics.configMode} (service=${configResult.diagnostics.serviceSource}, model=${configResult.diagnostics.modelSource}, key=${configResult.diagnostics.apiKeySource})`,
+        });
+        for (const warning of configResult.diagnostics.warnings) {
+          checks.push({ name: "  Config Hint", ok: true, detail: warning });
+        }
       } catch {
-        // Fall back to raw env inspection only.
+        // The API connectivity check below will report the concrete config failure.
       }
-      const apiKey = process.env.INKOS_LLM_API_KEY;
+      const provider = configResult?.llm.provider;
+      const baseUrl = configResult?.llm.baseUrl;
+      const apiKey = configResult?.llm.apiKey;
       const apiKeyOptional = isApiKeyOptionalForEndpoint({ provider, baseUrl });
       const hasKey = apiKeyOptional || (!!apiKey && apiKey.length > 10 && apiKey !== "your-api-key-here");
       checks.push({
@@ -180,7 +186,7 @@ export const doctorCommand = new Command("doctor")
           ? "Optional for local/self-hosted endpoint"
           : hasKey
             ? "Configured"
-            : "Missing — run 'inkos config set-global' or add to project .env",
+            : "Missing — save a Studio service key or set env for CLI/daemon/deploy",
       });
     }
 
@@ -280,7 +286,7 @@ export const doctorCommand = new Command("doctor")
           resolveServiceModelsBaseUrl,
         );
         const discoveredModels = (llmConfig.apiKey && modelsBaseUrl)
-          ? await fetchDoctorModels(modelsBaseUrl, llmConfig.apiKey)
+          ? await fetchDoctorModels(modelsBaseUrl, llmConfig.apiKey, llmConfig.proxyUrl)
           : [];
         const modelCandidates = (llmConfig.provider === "openai" || discoveredModels.length > 0)
           ? buildDoctorModelCandidates(llmConfig.model, discoveredModels)

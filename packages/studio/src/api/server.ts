@@ -15,8 +15,7 @@ import {
   resolveSessionActiveBook,
   listBookSessions,
   loadBookSession,
-  persistBookSession,
-  appendBookSessionMessage,
+  appendManualSessionMessages,
   createAndPersistBookSession,
   renameBookSession,
   deleteBookSession,
@@ -30,8 +29,11 @@ import {
   resolveServiceModel,
   loadSecrets,
   saveSecrets,
-  getServiceApiKey,
   listModelsForService,
+  isApiKeyOptionalForEndpoint,
+  getAllEndpoints,
+  probeModelsFromUpstream,
+  fetchWithProxy,
   chatCompletion,
   buildExportArtifact,
   GLOBAL_ENV_PATH,
@@ -42,7 +44,7 @@ import {
   type LogEntry,
 } from "@actalk/inkos-core";
 import { access, readFile, readdir, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { isAbsolute, join, relative, resolve } from "node:path";
 import { isSafeBookId } from "./safety.js";
 import { ApiError } from "./errors.js";
 import { buildStudioBookConfig } from "./book-create.js";
@@ -89,6 +91,46 @@ function summarizeResult(result: unknown): string {
   return String(result).slice(0, 200);
 }
 
+const NON_TEXT_MODEL_ID_PARTS = [
+  "image",
+  "embedding",
+  "embed",
+  "rerank",
+  "tts",
+  "speech",
+  "audio",
+  "moderation",
+] as const;
+
+function isTextChatModelId(modelId: string): boolean {
+  const normalized = modelId.trim().toLowerCase();
+  if (!normalized) return false;
+  return !NON_TEXT_MODEL_ID_PARTS.some((part) => normalized.includes(part));
+}
+
+function filterTextChatModels<T extends { readonly id: string }>(models: ReadonlyArray<T>): T[] {
+  return models.filter((model) => isTextChatModelId(model.id));
+}
+
+function normalizeApiBookId(value: unknown, fieldName: string): string | null {
+  if (value === undefined || value === null) return null;
+  if (typeof value !== "string") {
+    throw new ApiError(400, "INVALID_BOOK_ID", `${fieldName} must be a string`);
+  }
+  const bookId = value.trim();
+  if (!bookId) {
+    throw new ApiError(400, "INVALID_BOOK_ID", `${fieldName} cannot be blank`);
+  }
+  if (!isSafeBookId(bookId)) {
+    throw new ApiError(400, "INVALID_BOOK_ID", `Invalid ${fieldName}: "${bookId}"`);
+  }
+  return bookId;
+}
+
+function nonTextModelMessage(modelId: string): string {
+  return `模型 ${modelId} 不适合文本聊天/写作。请在模型选择器中改用文本模型，例如 gemini-2.5-flash、gemini-2.5-pro 或对应服务的 chat 模型。`;
+}
+
 function extractToolError(result: unknown): string {
   if (typeof result === "string") return result.slice(0, 500);
   if (result && typeof result === "object") {
@@ -102,6 +144,65 @@ function extractToolError(result: unknown): string {
   return String(result).slice(0, 500);
 }
 
+function isLikelyFailedToolResult(exec: CollectedToolExec): boolean {
+  if (exec.status === "error") return true;
+  const text = `${exec.error ?? ""}\n${exec.result ?? ""}`.toLowerCase();
+  return /\bfailed\b|\berror\b|失败|异常|出错/.test(text);
+}
+
+function hasSuccessfulSubAgentExec(
+  execs: ReadonlyArray<CollectedToolExec>,
+  agent: string,
+): boolean {
+  return execs.some((exec) =>
+    exec.tool === "sub_agent"
+    && exec.agent === agent
+    && exec.status === "completed"
+    && !isLikelyFailedToolResult(exec)
+  );
+}
+
+function isWriteNextInstruction(instruction: string): boolean {
+  const trimmed = instruction.trim();
+  return /^(continue|继续|继续写|写下一章|write next|下一章|再来一章)$/i.test(trimmed)
+    || /(继续写|写下一章|下一章|再来一章|write\s+next)/i.test(trimmed);
+}
+
+function looksLikeBookCreatedClaim(responseText: string): boolean {
+  return /(?:已|已经|成功).{0,12}(?:创建|建书|初始化|保存).{0,12}(?:作品|书|书籍|文件夹)?/.test(responseText)
+    || /\b(?:created|initiali[sz]ed|saved)\b.{0,40}\b(?:book|project|novel)\b/i.test(responseText);
+}
+
+function validateAgentActionExecution(args: {
+  readonly instruction: string;
+  readonly agentBookId: string | null | undefined;
+  readonly responseText: string;
+  readonly collectedToolExecs: ReadonlyArray<CollectedToolExec>;
+}): string | undefined {
+  const failedExec = args.collectedToolExecs.find(isLikelyFailedToolResult);
+  if (failedExec) {
+    return `${failedExec.label} 执行失败：${failedExec.error ?? failedExec.result ?? "未知错误"}`;
+  }
+
+  if (
+    args.agentBookId
+    && isWriteNextInstruction(args.instruction)
+    && !hasSuccessfulSubAgentExec(args.collectedToolExecs, "writer")
+  ) {
+    return "模型声称已完成下一章，但没有实际调用写作工具。请重试；如果仍失败，请检查模型是否支持工具调用。";
+  }
+
+  if (
+    !args.agentBookId
+    && looksLikeBookCreatedClaim(args.responseText)
+    && !resolveCreatedBookIdFromToolExecs(args.collectedToolExecs)
+  ) {
+    return "模型声称已创建作品，但没有实际调用建书工具，也没有生成作品文件。请补充书名/题材后重试，或换用支持工具调用的模型。";
+  }
+
+  return undefined;
+}
+
 interface CollectedToolExec {
   id: string;
   tool: string;
@@ -110,10 +211,20 @@ interface CollectedToolExec {
   status: "running" | "completed" | "error";
   args?: Record<string, unknown>;
   result?: string;
+  details?: unknown;
   error?: string;
   stages?: Array<{ label: string; status: "pending" | "completed" }>;
   startedAt: number;
   completedAt?: number;
+}
+
+interface StudioBookListSummary {
+  readonly id: string;
+  readonly title: string;
+  readonly genre: string;
+  readonly status: string;
+  readonly chaptersWritten: number;
+  readonly [key: string]: unknown;
 }
 
 // --- Event bus for SSE ---
@@ -130,7 +241,6 @@ interface ServiceConfigEntry {
   name?: string;
   baseUrl?: string;
   temperature?: number;
-  maxTokens?: number;
   apiFormat?: "chat" | "responses";
   stream?: boolean;
 }
@@ -149,6 +259,7 @@ interface EnvConfigStatus {
   project: EnvConfigSummary;
   global: EnvConfigSummary;
   effectiveSource: "project" | "global" | null;
+  runtimeUsesEnv: false;
 }
 
 interface ServiceProbeResult {
@@ -168,6 +279,50 @@ function broadcast(event: string, data: unknown): void {
   }
 }
 
+function deriveBookIdFromTitle(title: string): string {
+  return title
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fff]/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 30);
+}
+
+function resolveArchitectBookIdFromArgs(args?: Record<string, unknown>): string | null {
+  if (!args || args.agent !== "architect" || args.revise === true) return null;
+  if (typeof args.bookId === "string" && args.bookId.trim()) return args.bookId.trim();
+  if (typeof args.title === "string" && args.title.trim()) {
+    return deriveBookIdFromTitle(args.title) || null;
+  }
+  return null;
+}
+
+function resolveCreatedBookIdFromToolExecs(execs: ReadonlyArray<CollectedToolExec>): string | null {
+  for (let i = execs.length - 1; i >= 0; i -= 1) {
+    const exec = execs[i];
+    if (exec.tool !== "sub_agent" || exec.agent !== "architect" || exec.status !== "completed") continue;
+
+    const details = exec.details as { kind?: unknown; bookId?: unknown } | undefined;
+    if (details?.kind === "book_created" && typeof details.bookId === "string" && details.bookId.trim()) {
+      return details.bookId.trim();
+    }
+
+    const fromArgs = resolveArchitectBookIdFromArgs(exec.args);
+    if (fromArgs) return fromArgs;
+  }
+  return null;
+}
+
+async function loadStudioBookListSummary(
+  state: StateManager,
+  bookId: string,
+): Promise<StudioBookListSummary> {
+  const book = await state.loadBookConfig(bookId);
+  const nextChapter = await state.getNextChapterNumber(bookId);
+  return { ...book, chaptersWritten: nextChapter - 1 };
+}
+
 function isCustomServiceId(serviceId: string): boolean {
   return serviceId === "custom" || serviceId.startsWith("custom:");
 }
@@ -183,7 +338,6 @@ function normalizeServiceEntry(serviceId: string, value: Record<string, unknown>
       name: decodeURIComponent(serviceId.slice("custom:".length)),
       ...(typeof value.baseUrl === "string" && value.baseUrl.length > 0 ? { baseUrl: value.baseUrl } : {}),
       ...(typeof value.temperature === "number" ? { temperature: value.temperature } : {}),
-      ...(typeof value.maxTokens === "number" ? { maxTokens: value.maxTokens } : {}),
       ...(value.apiFormat === "chat" || value.apiFormat === "responses" ? { apiFormat: value.apiFormat } : {}),
       ...(typeof value.stream === "boolean" ? { stream: value.stream } : {}),
     };
@@ -195,7 +349,6 @@ function normalizeServiceEntry(serviceId: string, value: Record<string, unknown>
       ...(typeof value.name === "string" && value.name.length > 0 ? { name: value.name } : {}),
       ...(typeof value.baseUrl === "string" && value.baseUrl.length > 0 ? { baseUrl: value.baseUrl } : {}),
       ...(typeof value.temperature === "number" ? { temperature: value.temperature } : {}),
-      ...(typeof value.maxTokens === "number" ? { maxTokens: value.maxTokens } : {}),
       ...(value.apiFormat === "chat" || value.apiFormat === "responses" ? { apiFormat: value.apiFormat } : {}),
       ...(typeof value.stream === "boolean" ? { stream: value.stream } : {}),
     };
@@ -204,7 +357,6 @@ function normalizeServiceEntry(serviceId: string, value: Record<string, unknown>
   return {
     service: serviceId,
     ...(typeof value.temperature === "number" ? { temperature: value.temperature } : {}),
-    ...(typeof value.maxTokens === "number" ? { maxTokens: value.maxTokens } : {}),
     ...(value.apiFormat === "chat" || value.apiFormat === "responses" ? { apiFormat: value.apiFormat } : {}),
     ...(typeof value.stream === "boolean" ? { stream: value.stream } : {}),
   };
@@ -223,7 +375,6 @@ function normalizeServiceConfig(raw: unknown): ServiceConfigEntry[] {
         ...(typeof entry.name === "string" && entry.name.length > 0 ? { name: entry.name } : {}),
         ...(typeof entry.baseUrl === "string" && entry.baseUrl.length > 0 ? { baseUrl: entry.baseUrl } : {}),
         ...(typeof entry.temperature === "number" ? { temperature: entry.temperature } : {}),
-        ...(typeof entry.maxTokens === "number" ? { maxTokens: entry.maxTokens } : {}),
         ...(entry.apiFormat === "chat" || entry.apiFormat === "responses" ? { apiFormat: entry.apiFormat } : {}),
         ...(typeof entry.stream === "boolean" ? { stream: entry.stream } : {}),
       }));
@@ -301,6 +452,7 @@ async function readEnvConfigStatus(root: string): Promise<EnvConfigStatus> {
     project,
     global,
     effectiveSource: project.detected ? "project" : global.detected ? "global" : null,
+    runtimeUsesEnv: false,
   };
 }
 
@@ -363,6 +515,7 @@ function buildModelCandidates(args: {
   configModel?: string;
   envModel?: string | null;
   discoveredModels: Array<{ id: string; name: string }>;
+  includeGenericFallbacks?: boolean;
 }): string[] {
   const seen = new Set<string>();
   const candidates: string[] = [];
@@ -378,6 +531,7 @@ function buildModelCandidates(args: {
   push(args.configModel);
   push(args.envModel ?? undefined);
   for (const model of args.discoveredModels) push(model.id);
+  if (args.includeGenericFallbacks === false) return candidates;
   push("gpt-5.4");
   push("gpt-4o");
   push("claude-sonnet-4-6");
@@ -386,20 +540,79 @@ function buildModelCandidates(args: {
   return candidates;
 }
 
+function formatServiceProbeError(args: {
+  readonly service: string;
+  readonly label?: string;
+  readonly baseUrl: string;
+  readonly model?: string;
+  readonly apiFormat?: "chat" | "responses";
+  readonly stream?: boolean;
+  readonly error: string;
+}): string {
+  const rawDetail = args.error
+    .replace(/\n\s*\(baseUrl:[\s\S]*?\)$/m, "")
+    .trim();
+  const upstreamDetail = rawDetail.includes("上游详情：")
+    ? rawDetail
+    : "";
+  const context = [
+    `服务商：${args.label ?? args.service}`,
+    `测试模型：${args.model ?? "未确定"}`,
+    `协议：${args.apiFormat === "responses" ? "Responses" : "Chat / Completions"}${typeof args.stream === "boolean" ? `，${args.stream ? "流式" : "非流式"}` : ""}`,
+    `Base URL：${args.baseUrl}`,
+  ].join("\n");
+
+  if (args.service === "google") {
+    return [
+      "Google Gemini 测试连接失败。",
+      context,
+      "",
+      "请优先检查：",
+      "1. API Key 是否来自 Google AI Studio 的 Gemini API key，而不是 OAuth、Vertex AI 或其它 Google 服务凭据。",
+      "2. 该 key 所属项目是否已启用 Gemini API，并且没有被限制到其它 API、来源或服务。",
+      "3. 当前地区/账号是否允许访问 Gemini API。",
+      "4. 如果 key 曾经泄露，请在 AI Studio 重新生成后再保存。",
+      upstreamDetail ? `\n上游返回：${upstreamDetail}` : "",
+    ].filter(Boolean).join("\n");
+  }
+
+  if (args.service === "moonshot" || args.service === "kimiCodingPlan" || args.service === "kimicode") {
+    return [
+      `${args.label ?? args.service} 测试连接失败。`,
+      context,
+      "",
+      "请优先检查模型是否可用，以及 kimi-k2.x 这类模型是否需要 temperature=1。",
+      rawDetail ? `\n上游返回：${rawDetail}` : "",
+    ].filter(Boolean).join("\n");
+  }
+
+  return [
+    `${args.label ?? args.service} 测试连接失败。`,
+    context,
+    "",
+    "请检查 API Key、模型可用性、账号额度，以及协议类型是否匹配该服务商。",
+    rawDetail ? `\n上游返回：${rawDetail}` : "",
+  ].filter(Boolean).join("\n");
+}
+
 async function fetchModelsFromServiceBaseUrl(
   serviceId: string,
   baseUrl: string,
   apiKey: string,
+  proxyUrl?: string,
 ): Promise<{ models: Array<{ id: string; name: string }>; error?: string; authFailed?: boolean }> {
+  const endpoint = isCustomServiceId(serviceId)
+    ? undefined
+    : getAllEndpoints().find((ep) => ep.id === serviceId);
   const modelsBaseUrl = isCustomServiceId(serviceId)
     ? baseUrl
-    : resolveServiceModelsBaseUrl(serviceId) ?? baseUrl;
+    : endpoint?.modelsBaseUrl ?? (endpoint ? baseUrl : resolveServiceModelsBaseUrl(serviceId) ?? baseUrl);
   const modelsUrl = modelsBaseUrl.replace(/\/$/, "") + "/models";
   try {
-    const res = await fetch(modelsUrl, {
+    const res = await fetchWithProxy(modelsUrl, {
       headers: { Authorization: `Bearer ${apiKey}` },
       signal: AbortSignal.timeout(10_000),
-    });
+    }, proxyUrl);
     if (!res.ok) {
       const body = await res.text().catch(() => "");
       return {
@@ -428,6 +641,7 @@ async function probeServiceCapabilities(args: {
   preferredApiFormat?: "chat" | "responses";
   preferredStream?: boolean;
   preferredModel?: string;
+  proxyUrl?: string;
 }): Promise<ServiceProbeResult> {
   const rawConfig = await loadRawConfig(args.root).catch(() => ({} as Record<string, unknown>));
   const llm = (rawConfig.llm as Record<string, unknown> | undefined) ?? {};
@@ -439,7 +653,7 @@ async function probeServiceCapabilities(args: {
       : null;
 
   const baseService = isCustomServiceId(args.service) ? "custom" : args.service;
-  const modelsResponse = await fetchModelsFromServiceBaseUrl(baseService, args.baseUrl, args.apiKey);
+  const modelsResponse = await fetchModelsFromServiceBaseUrl(baseService, args.baseUrl, args.apiKey, args.proxyUrl);
   if (modelsResponse.authFailed) {
     return {
       ok: false,
@@ -448,14 +662,30 @@ async function probeServiceCapabilities(args: {
     };
   }
   const discoveredModels = modelsResponse.models;
-  // For services with knownModels, use their first model as top candidate — not the global default
+  // For bank services, probe with the service's own check model first — not the global default.
+  const endpoint = getAllEndpoints().find((ep) => ep.id === baseService);
   const preset = resolveServicePreset(baseService);
-  const serviceFirstModel = preset?.knownModels?.[0];
+  const serviceFirstModel =
+    endpoint?.checkModel
+    ?? preset?.knownModels?.[0]
+    ?? endpoint?.models.find((model) => model.enabled !== false)?.id;
+  const useDynamicLocalModels = baseService === "ollama";
+  const useEndpointCheckModel = !useDynamicLocalModels && !isCustomServiceId(args.service) && Boolean(endpoint?.checkModel);
+  const configService = typeof llm.service === "string" ? llm.service : undefined;
+  const configModel = !useEndpointCheckModel && configService === args.service
+    ? typeof llm.defaultModel === "string"
+      ? llm.defaultModel
+      : typeof llm.model === "string"
+        ? llm.model
+        : undefined
+    : undefined;
+  const useCustomFallbacks = isCustomServiceId(args.service);
   const modelCandidates = buildModelCandidates({
-    preferredModel: args.preferredModel ?? serviceFirstModel,
-    configModel: typeof llm.defaultModel === "string" ? llm.defaultModel : typeof llm.model === "string" ? llm.model : undefined,
-    envModel,
-    discoveredModels,
+    preferredModel: args.preferredModel ?? (useDynamicLocalModels ? discoveredModels[0]?.id ?? serviceFirstModel : serviceFirstModel),
+    configModel,
+    envModel: useCustomFallbacks ? envModel : undefined,
+    discoveredModels: useEndpointCheckModel ? [] : discoveredModels,
+    includeGenericFallbacks: useCustomFallbacks,
   });
 
   if (modelCandidates.length === 0) {
@@ -480,6 +710,7 @@ async function probeServiceCapabilities(args: {
         temperature: 0.7,
         maxTokens: 2048,
         thinkingBudget: 0,
+        proxyUrl: args.proxyUrl,
         apiFormat: plan.apiFormat,
         stream: plan.stream,
       } as ProjectConfig["llm"]);
@@ -488,7 +719,12 @@ async function probeServiceCapabilities(args: {
         await chatCompletion(client, model, [{ role: "user", content: "ping" }], { maxTokens: 2048 });
         const models = discoveredModels.length > 0
           ? discoveredModels
-          : preset?.knownModels?.map((id) => ({ id, name: id })) ?? [{ id: model, name: model }];
+          : endpoint?.models
+            .filter((m) => m.enabled !== false)
+            .filter((m) => isTextChatModelId(m.id))
+            .map((m) => ({ id: m.id, name: m.id }))
+            ?? preset?.knownModels?.map((id) => ({ id, name: id }))
+            ?? [{ id: model, name: model }];
         return {
           ok: true,
           models,
@@ -499,7 +735,15 @@ async function probeServiceCapabilities(args: {
           modelsSource: discoveredModels.length > 0 ? "api" : "fallback",
         };
       } catch (error) {
-        lastError = error instanceof Error ? error.message : String(error);
+        lastError = formatServiceProbeError({
+          service: baseService,
+          label: endpoint?.label ?? preset?.label,
+          baseUrl: args.baseUrl,
+          model,
+          apiFormat: plan.apiFormat,
+          stream: plan.stream,
+          error: error instanceof Error ? error.message : String(error),
+        });
       }
     }
   }
@@ -567,7 +811,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
   async function loadCurrentProjectConfig(
     options?: { readonly requireApiKey?: boolean },
   ): Promise<ProjectConfig> {
-    const freshConfig = await loadProjectConfig(root, options);
+    const freshConfig = await loadProjectConfig(root, { ...options, consumer: "studio" });
     cachedConfig = freshConfig;
     return freshConfig;
   }
@@ -597,6 +841,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
       model: overrides?.model ?? currentConfig.llm.model,
       projectRoot: root,
       defaultLLMConfig: currentConfig.llm,
+      foundationReviewRetries: currentConfig.foundation?.reviewRetries ?? 2,
       modelOverrides: currentConfig.modelOverrides,
       notifyChannels: currentConfig.notify,
       logger,
@@ -617,13 +862,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
 
   app.get("/api/v1/books", async (c) => {
     const bookIds = await state.listBooks();
-    const books = await Promise.all(
-      bookIds.map(async (id) => {
-        const book = await state.loadBookConfig(id);
-        const nextChapter = await state.getNextChapterNumber(id);
-        return { ...book, chaptersWritten: nextChapter - 1 };
-      }),
-    );
+    const books = await Promise.all(bookIds.map((id) => loadStudioBookListSummary(state, id)));
     return c.json({ books });
   });
 
@@ -667,6 +906,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
       platform?: string;
       chapterWordCount?: number;
       targetChapters?: number;
+      blurb?: string;
     }>();
 
     const now = new Date().toISOString();
@@ -697,16 +937,18 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
         platform: body.platform,
         chapterWordCount: body.chapterWordCount,
         targetChapters: body.targetChapters,
+        blurb: body.blurb,
       },
       tools,
     }).then(
-      (result: {
+      async (result: {
         readonly session: { readonly activeBookId?: string };
         readonly details?: Readonly<Record<string, unknown>>;
       }) => {
         const createdBookId = (result.details?.bookId as string | undefined) ?? result.session.activeBookId ?? bookId;
+        const book = await loadStudioBookListSummary(state, createdBookId).catch(() => undefined);
         bookCreateStatus.delete(createdBookId);
-        broadcast("book:created", { bookId: createdBookId });
+        broadcast("book:created", { bookId: createdBookId, ...(book ? { book } : {}) });
       },
       (e: unknown) => {
         const error = e instanceof Error ? e.message : String(e);
@@ -772,28 +1014,106 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
 
   // --- Truth files ---
 
-  const TRUTH_FILES = [
+  // Flat-file whitelist — the pre-Phase-5 story root files plus dev's legacy
+  // editor targets (author_intent / current_focus / volume_outline).
+  //
+  // Phase 5 cleanup #3 moved the authoritative YAML frontmatter + outline prose
+  // into story/outline/ and character sheets into story/roles/. `story_bible.md`
+  // and `book_rules.md` now exist only as compat pointer shims — we still allow
+  // reading them so legacy books keep rendering, but the server-side writer
+  // (write_truth_file) no longer accepts them as edit targets.
+  const TRUTH_FLAT_FILES = [
     "author_intent.md", "current_focus.md",
-    "story_bible.md", "volume_outline.md", "current_state.md",
+    "story_bible.md", "book_rules.md", "volume_outline.md", "current_state.md",
     "particle_ledger.md", "pending_hooks.md", "chapter_summaries.md",
     "subplot_board.md", "emotional_arcs.md", "character_matrix.md",
-    "style_guide.md", "parent_canon.md", "fanfic_canon.md", "book_rules.md",
+    "style_guide.md", "parent_canon.md", "fanfic_canon.md",
   ];
 
-  app.get("/api/v1/books/:id/truth/:file", async (c) => {
-    const id = c.req.param("id");
-    const file = c.req.param("file");
+  // Authoritative Phase 5 paths — prose outline + role sheets live under
+  // dedicated subdirectories of story/. The full path (relative to story/) is
+  // matched literally here. `节奏原则.md` / `rhythm_principles.md` is optional
+  // after Phase 5 consolidation (rhythm lives in volume_map's closing paragraph);
+  // the entries stay whitelisted for legacy books and manual overrides.
+  const TRUTH_OUTLINE_FILES = [
+    "outline/story_frame.md",
+    "outline/volume_map.md",
+    "outline/节奏原则.md",
+    "outline/rhythm_principles.md",
+  ];
 
-    if (!TRUTH_FILES.includes(file)) {
+  // Pointer shims that the runtime no longer treats as authoritative. The
+  // GET handler tags them with `legacy: true` so the UI can surface that the
+  // edits won't land where the user expects.
+  const LEGACY_SHIM_FILES = new Set(["story_bible.md", "book_rules.md"]);
+
+  /**
+   * Validate a requested truth-file path:
+   *   1. Must be one of the declared flat files, an outline/* allow-listed
+   *      entry, or a roles/**\/*.md file under 主要角色/ | 次要角色/.
+   *   2. Must resolve to a path inside bookDir/story/ (no `..`, no absolute
+   *      paths, no traversal via the tier-name segment).
+   */
+  function resolveTruthFilePath(bookDir: string, file: string): string | null {
+    // Reject absolute paths, traversal, null bytes outright.
+    if (!file || file.includes("\0") || isAbsolute(file) || file.includes("..")) {
+      return null;
+    }
+
+    // Phase hotfix 3: accept both Chinese and English locale role dirs so
+    // English-layout books (roles/major, roles/minor) are reachable through
+    // Studio. The runtime reader (utils/outline-paths.ts:75) already scans
+    // both — Studio used to drop English books to read-only.
+    const allowed =
+      TRUTH_FLAT_FILES.includes(file)
+      || TRUTH_OUTLINE_FILES.includes(file)
+      || /^roles\/(主要角色|次要角色|major|minor)\/[^/]+\.md$/.test(file);
+
+    if (!allowed) return null;
+
+    const storyDir = resolve(bookDir, "story");
+    const resolved = resolve(storyDir, file);
+    const relativePath = relative(storyDir, resolved);
+    if (relativePath === "" || relativePath.startsWith("..") || isAbsolute(relativePath)) {
+      return null;
+    }
+    return resolved;
+  }
+
+  async function fileExists(path: string): Promise<boolean> {
+    try {
+      await access(path);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  // Use `:file{.+}` wildcard so nested paths (outline/..., roles/.../...) match.
+  app.get("/api/v1/books/:id/truth/:file{.+}", async (c) => {
+    const file = c.req.param("file");
+    const id = c.req.param("id");
+
+    const bookDir = state.bookDir(id);
+    const resolved = resolveTruthFilePath(bookDir, file);
+    if (!resolved) {
       return c.json({ error: "Invalid truth file" }, 400);
     }
 
-    const bookDir = state.bookDir(id);
+    // Phase 5: new-layout books keep the authoritative prose under outline/.
+    // A legacy book may only have story_bible.md / book_rules.md on disk —
+    // we still serve those for read-only display, but flag them so the UI
+    // can warn users their edits won't reach the runtime.
+    // Hotfix: only tag as legacy when the book actually HAS the new layout.
+    // Pre-Phase-5 books use story_bible/book_rules as the authoritative source.
+    const { isNewLayoutBook } = await import("@actalk/inkos-core");
+    const legacy = LEGACY_SHIM_FILES.has(file) && await isNewLayoutBook(bookDir);
+
     try {
-      const content = await readFile(join(bookDir, "story", file), "utf-8");
-      return c.json({ file, content });
+      const content = await readFile(resolved, "utf-8");
+      return c.json({ file, content, ...(legacy ? { legacy: true } : {}) });
     } catch {
-      return c.json({ file, content: null });
+      return c.json({ file, content: null, ...(legacy ? { legacy: true } : {}) });
     }
   });
 
@@ -899,6 +1219,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
         stream.writeSSE({ event, data: JSON.stringify(data) });
       };
       subscribers.add(handler);
+      await stream.writeSSE({ event: "ping", data: "" });
 
       // Keep alive
       const keepAlive = setInterval(() => {
@@ -919,21 +1240,15 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
 
   app.get("/api/v1/services", async (c) => {
     const secrets = await loadSecrets(root);
+    const endpoints = getAllEndpoints().filter((ep) => ep.id !== "custom");
 
-    const SERVICE_KEYS = [
-      "openai", "anthropic", "deepseek", "moonshot", "minimax",
-      "bailian", "zhipu", "siliconflow", "ppio", "openrouter", "ollama",
-    ];
-
-    // Fast: only check connection status from secrets, no external API calls
-    const services = SERVICE_KEYS.map((key) => {
-      const preset = resolveServicePreset(key);
-      return {
-        service: key,
-        label: preset?.label ?? key,
-        connected: Boolean(secrets.services[key]?.apiKey),
-      };
-    });
+    // Fast: only check connection status from secrets, no external API calls.
+    const services = endpoints.map((ep) => ({
+      service: ep.id,
+      label: ep.label,
+      group: ep.group,
+      connected: Boolean(secrets.services[ep.id]?.apiKey),
+    }));
 
     // Add custom services from inkos.json
     try {
@@ -944,6 +1259,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
           services.push({
             service: secretKey,
             label: svc.name ?? "Custom",
+            group: undefined,
             connected: Boolean(secrets.services[secretKey]?.apiKey),
           });
         }
@@ -960,8 +1276,10 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
     const envConfig = await readEnvConfigStatus(root);
     return c.json({
       services,
+      service: typeof llm.service === "string" ? llm.service : null,
       defaultModel: llm.defaultModel ?? null,
-      configSource: normalizeConfigSource(llm.configSource),
+      configSource: "studio" satisfies LLMConfigSource,
+      storedConfigSource: normalizeConfigSource(llm.configSource),
       envConfig,
     });
   });
@@ -978,6 +1296,11 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
     }
     if (body.defaultModel !== undefined) {
       llm.defaultModel = body.defaultModel;
+    }
+    if (body.configSource === "env") {
+      return c.json({
+        error: "Studio 运行时不支持切换到 env；env 只在 CLI/daemon/部署运行时作为覆盖层使用。",
+      }, 400);
     }
     if (body.configSource !== undefined) {
       llm.configSource = normalizeConfigSource(body.configSource);
@@ -998,26 +1321,46 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
       stream?: boolean;
     }>();
 
-    if (!apiKey?.trim()) {
-      return c.json({ ok: false, error: "API Key 不能为空" }, 400);
-    }
-
     const resolvedBaseUrl = await resolveConfiguredServiceBaseUrl(root, service, baseUrl);
     if (!resolvedBaseUrl) {
       return c.json({ ok: false, error: `未知服务商: ${service}` }, 400);
     }
 
+    const baseService = isCustomServiceId(service) ? "custom" : service;
+    const apiKeyOptional = isApiKeyOptionalForEndpoint({
+      provider: resolveServiceProviderFamily(baseService) ?? "openai",
+      baseUrl: resolvedBaseUrl,
+    });
+    if (!apiKey?.trim() && !apiKeyOptional) {
+      return c.json({ ok: false, error: "API Key 不能为空" }, 400);
+    }
+
+    const rawConfig = await loadRawConfig(root).catch(() => ({} as Record<string, unknown>));
+    const llm = (rawConfig.llm as Record<string, unknown> | undefined) ?? {};
     const probe = await probeServiceCapabilities({
       root,
       service,
-      apiKey: apiKey.trim(),
+      apiKey: apiKey?.trim() ?? "",
       baseUrl: resolvedBaseUrl,
       preferredApiFormat: apiFormat,
       preferredStream: stream,
+      proxyUrl: typeof llm.proxyUrl === "string" ? llm.proxyUrl : undefined,
     });
 
+    // B12: 升级响应 shape 为 { probe, chat, ... }，同时保留老字段供 UI 过渡期兼容
+    const probeStatus = {
+      ok: probe.ok,
+      models: probe.models?.length ?? 0,
+      ...(probe.ok ? {} : { error: probe.error ?? "连接失败" }),
+    };
+
     if (!probe.ok) {
-      return c.json({ ok: false, error: probe.error ?? "连接失败" }, 400);
+      return c.json({
+        ok: false,
+        error: probe.error ?? "连接失败",
+        probe: probeStatus,
+        chat: null,
+      }, 400);
     }
 
     return c.json({
@@ -1031,6 +1374,9 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
         baseUrl: probe.baseUrl,
         modelsSource: probe.modelsSource,
       },
+      // B12 新字段：两步验证状态
+      probe: probeStatus,
+      chat: null,  // probeServiceCapabilities 本身只做 probe，chat hello 在 Studio 的 follow-up 调用里单独触发
     });
   });
 
@@ -1055,16 +1401,72 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
     });
   });
 
+  app.get("/api/v1/services/models", async (c) => {
+    const secrets = await loadSecrets(root);
+    const endpoints = getAllEndpoints()
+      .filter((ep) => ep.id !== "custom" && Boolean(secrets.services[ep.id]?.apiKey));
+
+    const groups = endpoints.map((ep) => ({
+      service: ep.id,
+      label: ep.label,
+      models: ep.models
+        .filter((m) => m.enabled !== false)
+        .filter((m) => isTextChatModelId(m.id))
+        .map((m) => ({
+          id: m.id,
+          name: m.id,
+          ...(typeof m.maxOutput === "number" ? { maxOutput: m.maxOutput } : {}),
+          ...(m.contextWindowTokens > 0 ? { contextWindow: m.contextWindowTokens } : {}),
+        })),
+    }));
+
+    return c.json({ groups });
+  });
+
+  app.get("/api/v1/services/models/custom", async (c) => {
+    const secrets = await loadSecrets(root);
+    let config: Record<string, unknown> = {};
+    try {
+      config = await loadRawConfig(root);
+    } catch {
+      // no config file
+    }
+
+    const customs = normalizeServiceConfig((config.llm as Record<string, unknown> | undefined)?.services)
+      .filter((s) => s.service === "custom")
+      .map((s) => ({
+        id: `custom:${s.name ?? "Custom"}`,
+        baseUrl: s.baseUrl ?? "",
+        label: s.name ?? "Custom",
+      }))
+      .filter((s) => s.baseUrl && Boolean(secrets.services[s.id]?.apiKey));
+
+    const groups = await Promise.all(customs.map(async (s) => ({
+      service: s.id,
+      label: s.label,
+      models: filterTextChatModels(
+        await probeModelsFromUpstream(s.baseUrl, secrets.services[s.id].apiKey, 10_000),
+      ),
+    })));
+
+    return c.json({ groups });
+  });
+
   app.get("/api/v1/services/:service/models", async (c) => {
     const service = c.req.param("service");
     const refresh = c.req.query("refresh") === "1";
-    const apiKey = c.req.query("apiKey") || await getServiceApiKey(root, service);
+    const secrets = await loadSecrets(root);
+    const apiKey = c.req.query("apiKey") || secrets.services[service]?.apiKey || "";
 
-    // No key = no models
-    if (!apiKey) return c.json({ models: [] });
-
-    const preset = resolveServicePreset(isCustomServiceId(service) ? "custom" : service);
     const resolvedBaseUrl = await resolveConfiguredServiceBaseUrl(root, service);
+    const baseService = isCustomServiceId(service) ? "custom" : service;
+    const apiKeyOptional = isApiKeyOptionalForEndpoint({
+      provider: resolveServiceProviderFamily(baseService) ?? "openai",
+      baseUrl: resolvedBaseUrl,
+    });
+
+    // No key = no models, except local/self-hosted endpoints such as Ollama.
+    if (!apiKey && !apiKeyOptional) return c.json({ models: [] });
 
     // Cache by service + resolved baseUrl + apiKey fingerprint; valid for 10 min unless ?refresh=1
     const cacheKey = `${service}::${resolvedBaseUrl ?? ""}::${apiKey.slice(-8)}`;
@@ -1075,33 +1477,18 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
       }
     }
 
-    // Fast path: services with knownModels return immediately
-    if (preset?.knownModels && preset.knownModels.length > 0) {
-      const models = preset.knownModels.map((id) => ({ id, name: id }));
-      modelListCache.set(cacheKey, { models, at: Date.now() });
-      return c.json({ models });
-    }
-
-    // Simple /models API call + fallback to pi-ai built-in list (no slow probe)
-    if (!resolvedBaseUrl) return c.json({ models: [] });
-
-    const modelsBase = preset?.modelsBaseUrl ?? resolvedBaseUrl;
-    let models: Array<{ id: string; name: string }> = [];
-    try {
-      const modelsUrl = modelsBase.replace(/\/$/, "") + "/models";
-      const res = await fetch(modelsUrl, {
-        headers: { Authorization: `Bearer ${apiKey}` },
-        signal: AbortSignal.timeout(10_000),
-      });
-      if (res.ok) {
-        const json = await res.json() as { data?: Array<{ id: string }> };
-        models = (json.data ?? []).map((m) => ({ id: m.id, name: m.id }));
-      }
-    } catch { /* timeout or network error */ }
-    if (models.length === 0) {
-      const builtIn = await listModelsForService(service, apiKey);
-      models = builtIn.map((m) => ({ id: m.id, name: m.name }));
-    }
+    // B13: 走 listModelsForService 走 live probe + bank 交叉，返回带元数据的 models
+    const enriched = await listModelsForService(
+      isCustomServiceId(service) ? "custom" : service,
+      apiKey,
+      isCustomServiceId(service) ? resolvedBaseUrl ?? undefined : undefined,
+    );
+    const models = filterTextChatModels(enriched).map((m) => ({
+      id: m.id,
+      name: m.name,
+      ...(m.maxOutput !== undefined ? { maxOutput: m.maxOutput } : {}),
+      ...(m.contextWindow > 0 ? { contextWindow: m.contextWindow } : {}),
+    }));
     modelListCache.set(cacheKey, { models, at: Date.now() });
     return c.json({ models });
   });
@@ -1123,7 +1510,6 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
       baseUrl: currentConfig.llm.baseUrl,
       stream: currentConfig.llm.stream,
       temperature: currentConfig.llm.temperature,
-      maxTokens: currentConfig.llm.maxTokens,
     });
   });
 
@@ -1138,9 +1524,6 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
       // Merge LLM settings
       if (updates.temperature !== undefined) {
         existing.llm.temperature = updates.temperature;
-      }
-      if (updates.maxTokens !== undefined) {
-        existing.llm.maxTokens = updates.maxTokens;
       }
       if (updates.stream !== undefined) {
         existing.llm.stream = updates.stream;
@@ -1162,15 +1545,56 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
     const id = c.req.param("id");
     const bookDir = state.bookDir(id);
     const storyDir = join(bookDir, "story");
+
+    async function listDir(subdir: string): Promise<string[]> {
+      try {
+        const entries = await readdir(join(storyDir, subdir));
+        return entries.filter((f) => f.endsWith(".md") || f.endsWith(".json"));
+      } catch {
+        return [];
+      }
+    }
+
+    // Hotfix: only tag shim files as legacy when the book has the new layout.
+    const { isNewLayoutBook } = await import("@actalk/inkos-core");
+    const newLayout = await isNewLayoutBook(bookDir);
+
+    async function describe(relPath: string): Promise<{ readonly name: string; readonly size: number; readonly preview: string; readonly legacy?: true } | null> {
+      try {
+        const content = await readFile(join(storyDir, relPath), "utf-8");
+        const isShim = LEGACY_SHIM_FILES.has(relPath) && newLayout;
+        const entry: { readonly name: string; readonly size: number; readonly preview: string; readonly legacy?: true } =
+          isShim
+            ? { name: relPath, size: content.length, preview: content.slice(0, 200), legacy: true }
+            : { name: relPath, size: content.length, preview: content.slice(0, 200) };
+        return entry;
+      } catch {
+        return null;
+      }
+    }
+
     try {
-      const files = await readdir(storyDir);
-      const mdFiles = files.filter((f) => f.endsWith(".md") || f.endsWith(".json"));
-      const result = await Promise.all(
-        mdFiles.map(async (f) => {
-          const content = await readFile(join(storyDir, f), "utf-8");
-          return { name: f, size: content.length, preview: content.slice(0, 200) };
-        }),
-      );
+      // Flat story/ files (legacy + runtime logs)
+      const flatFiles = (await listDir(".")).filter((f) => !f.startsWith("outline") && !f.startsWith("roles"));
+      // Phase 5 outline/ files
+      const outlineFiles = (await listDir("outline")).map((f) => `outline/${f}`);
+      // Phase 5 roles/主要角色 + roles/次要角色, plus Phase hotfix 3
+      // English-locale equivalents so en-language books are visible.
+      const majorRolesZh = (await listDir("roles/主要角色")).map((f) => `roles/主要角色/${f}`);
+      const minorRolesZh = (await listDir("roles/次要角色")).map((f) => `roles/次要角色/${f}`);
+      const majorRolesEn = (await listDir("roles/major")).map((f) => `roles/major/${f}`);
+      const minorRolesEn = (await listDir("roles/minor")).map((f) => `roles/minor/${f}`);
+
+      const all = [
+        ...flatFiles,
+        ...outlineFiles,
+        ...majorRolesZh,
+        ...minorRolesZh,
+        ...majorRolesEn,
+        ...minorRolesEn,
+      ];
+      const described = await Promise.all(all.map(describe));
+      const result = described.filter((x): x is NonNullable<typeof x> => x !== null);
       return c.json({ files: result });
     } catch {
       return c.json({ files: [] });
@@ -1282,7 +1706,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
 
   app.post("/api/v1/sessions", async (c) => {
     const body = await c.req.json<{ bookId?: string | null; sessionId?: string }>().catch(() => ({}));
-    const bookId = (body as { bookId?: string | null }).bookId ?? null;
+    const bookId = normalizeApiBookId((body as { bookId?: unknown }).bookId, "bookId");
     const sessionId = (body as { sessionId?: string }).sessionId;
     // sessionId 只允许 timestamp-random 格式；防止注入任意文件名
     const safeSessionId = sessionId && /^[0-9]+-[a-z0-9]+$/.test(sessionId) ? sessionId : undefined;
@@ -1325,6 +1749,10 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
     if (!sessionId?.trim()) {
       throw new ApiError(400, "SESSION_ID_REQUIRED", "sessionId is required");
     }
+    if (reqModel && !isTextChatModelId(reqModel)) {
+      const message = nonTextModelMessage(reqModel);
+      return c.json({ error: message, response: message }, 400);
+    }
 
     broadcast("agent:start", { instruction, activeBookId, sessionId });
 
@@ -1338,12 +1766,40 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
         throw new ApiError(404, "SESSION_NOT_FOUND", `Session not found: ${sessionId}`);
       }
       let bookSession = loadedBookSession;
+      const requestedActiveBookId = normalizeApiBookId(activeBookId, "activeBookId");
+      const persistedBookId = normalizeApiBookId(bookSession.bookId, "session.bookId");
+      if (
+        requestedActiveBookId
+        && persistedBookId
+        && persistedBookId !== requestedActiveBookId
+      ) {
+        throw new ApiError(
+          409,
+          "SESSION_BOOK_MISMATCH",
+          `Session ${bookSession.sessionId} is bound to ${persistedBookId}, not ${requestedActiveBookId}`,
+        );
+      }
+      const agentBookId = requestedActiveBookId ?? persistedBookId;
+      if (agentBookId) {
+        try {
+          await state.loadBookConfig(agentBookId);
+        } catch {
+          throw new ApiError(404, "BOOK_NOT_FOUND", `Book not found: ${agentBookId}`);
+        }
+      }
       const streamSessionId = loadedBookSession.sessionId;
-
-      // Build initial message context from persisted session
-      const initialMessages = bookSession.messages
-        .filter((m) => m.role === "user" || m.role === "assistant")
-        .map((m) => ({ role: m.role as "user" | "assistant", content: m.content }));
+      const titleBeforeRun = bookSession.title;
+      let sessionTitleBroadcasted = false;
+      const refreshBookSessionFromTranscript = async (): Promise<void> => {
+        const refreshed = await loadBookSession(root, bookSession.sessionId);
+        if (refreshed) {
+          bookSession = refreshed;
+        }
+        if (!sessionTitleBroadcasted && titleBeforeRun === null && bookSession.title) {
+          broadcast("session:title", { sessionId: bookSession.sessionId, title: bookSession.title });
+          sessionTitleBroadcasted = true;
+        }
+      };
 
       // Resolve model — multi-service resolution
       let resolvedModel: ResolvedModel["model"] | undefined;
@@ -1380,7 +1836,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
         const defaultModel = rawConfig.defaultModel as string | undefined;
         const servicesArr = normalizeServiceConfig(rawConfig.services);
         const firstService = servicesArr[0];
-        if (firstService?.service && defaultModel) {
+        if (firstService?.service && defaultModel && isTextChatModelId(defaultModel)) {
           try {
             const resolved = await resolveServiceModel(
               serviceConfigKey(firstService),
@@ -1402,11 +1858,12 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
           if (svcData?.apiKey) {
             try {
               const models = await listModelsForService(svcName, svcData.apiKey);
-              if (models.length > 0) {
+              const textModels = filterTextChatModels(models);
+              if (textModels.length > 0) {
                 const configuredEntry = await resolveConfiguredServiceEntry(root, svcName);
                 const resolved = await resolveServiceModel(
                   svcName,
-                  models[0].id,
+                  textModels[0].id,
                   root,
                   await resolveConfiguredServiceBaseUrl(root, svcName),
                   configuredEntry?.apiFormat,
@@ -1435,12 +1892,12 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
       // Create pipeline with resolved model (so sub_agent tools use the frontend-selected model)
       // Don't spread config.llm — its baseUrl/provider belong to the old service.
       // Let createLLMClient resolve baseUrl from the service preset.
-      const pipelineClient = (reqService && reqModel && resolvedApiKey)
+      const pipelineClient = (reqService && reqModel && resolvedModel)
         ? createLLMClient({
             ...config.llm,
             service: configuredEntry?.service ?? reqService,
             model: reqModel,
-            apiKey: resolvedApiKey,
+            apiKey: resolvedApiKey ?? "",
             ...(configuredEntry?.apiFormat ? { apiFormat: configuredEntry.apiFormat } : {}),
             ...(configuredEntry?.stream !== undefined ? { stream: configuredEntry.stream } : {}),
             baseUrl: configuredEntry?.baseUrl ?? "",
@@ -1453,6 +1910,86 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
         sessionIdForSSE: bookSession.sessionId,
       }));
 
+      if (agentBookId && isWriteNextInstruction(instruction)) {
+        const toolCallId = `direct-writer-${Date.now().toString(36)}`;
+        const toolArgs = { agent: "writer", bookId: agentBookId };
+        broadcast("tool:start", {
+          sessionId: streamSessionId,
+          id: toolCallId,
+          tool: "sub_agent",
+          args: toolArgs,
+          stages: PIPELINE_STAGES.writer,
+        });
+
+        try {
+          const writeResult = await pipeline.writeNextChapter(agentBookId);
+          const responseText = [
+            `已为 ${agentBookId} 完成第 ${writeResult.chapterNumber} 章`,
+            writeResult.title ? `《${writeResult.title}》` : "",
+            `，字数 ${writeResult.wordCount}，状态 ${writeResult.status}。`,
+          ].join("");
+          const toolResult = {
+            content: [{ type: "text", text: responseText }],
+            details: {
+              kind: "chapter_written",
+              bookId: agentBookId,
+              chapterNumber: writeResult.chapterNumber,
+              title: writeResult.title,
+              wordCount: writeResult.wordCount,
+              status: writeResult.status,
+            },
+          };
+          broadcast("tool:end", {
+            sessionId: streamSessionId,
+            id: toolCallId,
+            tool: "sub_agent",
+            result: toolResult,
+            isError: false,
+          });
+          await appendManualSessionMessages(root, bookSession.sessionId, [{
+            role: "assistant",
+            content: [{ type: "text", text: responseText }],
+            api: "anthropic-messages",
+            provider: configuredEntry?.service ?? reqService ?? config.llm.provider,
+            model: reqModel ?? config.llm.model,
+            usage: {
+              input: 0,
+              output: 0,
+              cacheRead: 0,
+              cacheWrite: 0,
+              totalTokens: 0,
+              cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 },
+            },
+            stopReason: "toolUse",
+            timestamp: Date.now(),
+          }], instruction);
+          await refreshBookSessionFromTranscript();
+          broadcast("agent:complete", { instruction, activeBookId: agentBookId, sessionId: bookSession.sessionId });
+          return c.json({
+            response: responseText,
+            session: {
+              sessionId: bookSession.sessionId,
+              activeBookId: agentBookId,
+            },
+          });
+        } catch (error) {
+          const message = error instanceof Error ? error.message : String(error);
+          const toolResult = { content: [{ type: "text", text: message }] };
+          broadcast("tool:end", {
+            sessionId: streamSessionId,
+            id: toolCallId,
+            tool: "sub_agent",
+            result: toolResult,
+            isError: true,
+          });
+          broadcast("agent:error", { instruction, activeBookId: agentBookId, sessionId: bookSession.sessionId, error: message });
+          return c.json({
+            error: { code: "AGENT_ACTION_FAILED", message },
+            response: message,
+          }, 502);
+        }
+      }
+
       // Run pi-agent session
       const collectedToolExecs: CollectedToolExec[] = [];
       const result = await runAgentSession(
@@ -1461,7 +1998,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
           apiKey: agentApiKey,
           pipeline,
           projectRoot: root,
-          bookId: activeBookId ?? null,
+          bookId: agentBookId,
           sessionId: bookSession.sessionId,
           language: config.language ?? "zh",
           onEvent: (event) => {
@@ -1495,6 +2032,17 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
                 startedAt: Date.now(),
               });
 
+              if (!agentBookId && event.toolName === "sub_agent" && agent === "architect") {
+                const bookId = resolveArchitectBookIdFromArgs(args);
+                if (bookId) {
+                  const title = typeof args?.title === "string" && args.title.trim()
+                    ? args.title.trim()
+                    : bookId;
+                  bookCreateStatus.set(bookId, { status: "creating" });
+                  broadcast("book:creating", { bookId, title, sessionId: streamSessionId });
+                }
+              }
+
               broadcast("tool:start", {
                 sessionId: streamSessionId,
                 id: event.toolCallId,
@@ -1518,6 +2066,20 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
                 exec.stages = exec.stages?.map(s => ({ ...s, status: "completed" as const }));
                 if (event.isError) exec.error = extractToolError(event.result);
                 else exec.result = summarizeResult(event.result);
+                exec.details = (event.result as { details?: unknown } | undefined)?.details;
+                if (
+                  event.isError &&
+                  !agentBookId &&
+                  exec.tool === "sub_agent" &&
+                  exec.agent === "architect"
+                ) {
+                  const bookId = resolveArchitectBookIdFromArgs(exec.args);
+                  if (bookId) {
+                    const error = exec.error ?? "Book creation failed";
+                    bookCreateStatus.set(bookId, { status: "error", error });
+                    broadcast("book:error", { bookId, sessionId: streamSessionId, error });
+                  }
+                }
               }
               broadcast("tool:end", {
                 sessionId: streamSessionId,
@@ -1530,37 +2092,63 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
           },
         },
         instruction,
-        initialMessages,
       );
 
-      // Persist user + assistant messages to BookSession
-      bookSession = appendBookSessionMessage(bookSession, {
-        role: "user",
-        content: instruction,
-        timestamp: Date.now(),
-      });
-      // 第一条用户消息就是 session 的标题：如果 title 还是 null，用消息内容（单行、≤20字）写入。
-      // 后续消息不覆盖；用户手动改名通过 renameBookSession 覆盖。
-      if (bookSession.title === null) {
-        const oneLine = instruction.trim().replace(/\s+/g, " ");
-        const title = oneLine.length > 20 ? `${oneLine.slice(0, 20)}…` : oneLine;
-        if (title) {
-          bookSession = { ...bookSession, title };
-          broadcast("session:title", { sessionId: bookSession.sessionId, title });
+      if (result.responseText) {
+        const actionExecutionError = validateAgentActionExecution({
+          instruction,
+          agentBookId,
+          responseText: result.responseText,
+          collectedToolExecs,
+        });
+        if (actionExecutionError) {
+          return c.json({
+            error: { code: "AGENT_ACTION_NOT_EXECUTED", message: actionExecutionError },
+            response: actionExecutionError,
+          }, 502);
         }
       }
-      if (result.responseText) {
-        const lastAssistant = result.messages?.filter((m: any) => m.role === "assistant").pop();
-        const thinking = lastAssistant?.thinking;
-        bookSession = appendBookSessionMessage(bookSession, {
-          role: "assistant",
-          content: result.responseText,
-          ...(thinking ? { thinking } : {}),
-          ...(collectedToolExecs.length > 0 ? { toolExecutions: collectedToolExecs } : {}),
-          timestamp: Date.now() + 1,
+
+      let broadcastedCreatedBookId: string | null = null;
+      const finalizeCreatedBook = async (): Promise<string | null> => {
+        if (agentBookId) return null;
+        const createdBookId = resolveCreatedBookIdFromToolExecs(collectedToolExecs);
+        if (!createdBookId) return null;
+        if (broadcastedCreatedBookId === createdBookId) return createdBookId;
+
+        try {
+          const migratedSession = await migrateBookSession(root, bookSession.sessionId, createdBookId);
+          if (migratedSession) {
+            bookSession = migratedSession;
+          }
+        } catch (e) {
+          if (!(e instanceof SessionAlreadyMigratedError)) {
+            throw e;
+          }
+        }
+
+        const book = await loadStudioBookListSummary(state, createdBookId).catch(() => undefined);
+        bookCreateStatus.delete(createdBookId);
+        broadcast("book:created", {
+          bookId: createdBookId,
+          sessionId: bookSession.sessionId,
+          ...(book ? { book } : {}),
         });
-      }
+        broadcastedCreatedBookId = createdBookId;
+        return createdBookId;
+      };
+
       if (!result.responseText) {
+        if (result.errorMessage) {
+          if (resolveCreatedBookIdFromToolExecs(collectedToolExecs)) {
+            await finalizeCreatedBook();
+          }
+          return c.json({
+            error: { code: "AGENT_LLM_ERROR", message: result.errorMessage },
+            response: result.errorMessage,
+          }, 502);
+        }
+
         try {
           const fallbackClient = createLLMClient({
             ...config.llm,
@@ -1575,21 +2163,49 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
             fallbackClient,
             reqModel ?? config.llm.model,
             [
-              { role: "system", content: buildAgentSystemPrompt(activeBookId ?? null, config.language ?? "zh") },
+              { role: "system", content: buildAgentSystemPrompt(agentBookId, config.language ?? "zh") },
               { role: "user", content: instruction },
             ],
             { maxTokens: 256 },
           );
           if (fallback.content?.trim()) {
-            bookSession = appendBookSessionMessage(bookSession, {
-              role: "assistant",
-              content: fallback.content,
-              timestamp: Date.now() + 1,
+            const actionExecutionError = validateAgentActionExecution({
+              instruction,
+              agentBookId,
+              responseText: fallback.content,
+              collectedToolExecs,
             });
-            await persistBookSession(root, bookSession);
+            if (actionExecutionError) {
+              return c.json({
+                error: { code: "AGENT_ACTION_NOT_EXECUTED", message: actionExecutionError },
+                response: actionExecutionError,
+              }, 502);
+            }
+            await appendManualSessionMessages(root, bookSession.sessionId, [{
+              role: "assistant",
+              content: [{ type: "text", text: fallback.content }],
+              api: "anthropic-messages",
+              provider: configuredEntry?.service ?? reqService ?? config.llm.provider,
+              model: reqModel ?? config.llm.model,
+              usage: {
+                input: 0,
+                output: 0,
+                cacheRead: 0,
+                cacheWrite: 0,
+                totalTokens: 0,
+                cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 },
+              },
+              stopReason: "stop",
+              timestamp: Date.now(),
+            }], instruction);
+            await refreshBookSessionFromTranscript();
+            const createdBookId = await finalizeCreatedBook();
             return c.json({
               response: fallback.content,
-              session: { sessionId: bookSession.sessionId },
+              session: {
+                sessionId: bookSession.sessionId,
+                ...(createdBookId ? { activeBookId: createdBookId } : {}),
+              },
             });
           }
         } catch {
@@ -1614,6 +2230,9 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
           );
         } catch (probeError) {
           const probeMessage = probeError instanceof Error ? probeError.message : String(probeError);
+          if (resolveCreatedBookIdFromToolExecs(collectedToolExecs)) {
+            await finalizeCreatedBook();
+          }
           return c.json({
             error: { code: "AGENT_EMPTY_RESPONSE", message: probeMessage },
             response: probeMessage,
@@ -1621,34 +2240,18 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
         }
 
         const emptyMessage = "模型未返回文本内容。请检查协议类型（chat/responses）、流式开关或上游服务兼容性。";
+        if (resolveCreatedBookIdFromToolExecs(collectedToolExecs)) {
+          await finalizeCreatedBook();
+        }
         return c.json({
           error: { code: "AGENT_EMPTY_RESPONSE", message: emptyMessage },
           response: emptyMessage,
         }, 502);
       }
-      await persistBookSession(root, bookSession);
+      await refreshBookSessionFromTranscript();
+      await finalizeCreatedBook();
 
       broadcast("agent:complete", { instruction, activeBookId, sessionId: bookSession.sessionId });
-
-      // If a sub_agent created a new book during this session, broadcast book:created
-      // so the sidebar refreshes.
-      if (!activeBookId && collectedToolExecs.some((t) => t.agent === "architect" && t.status === "completed")) {
-        const books = await state.listBooks();
-        const latestBook = books.at(-1);
-        if (latestBook) {
-          try {
-            const migratedSession = await migrateBookSession(root, bookSession.sessionId, latestBook);
-            if (migratedSession) {
-              bookSession = migratedSession;
-            }
-          } catch (e) {
-            if (!(e instanceof SessionAlreadyMigratedError)) {
-              throw e;
-            }
-          }
-          broadcast("book:created", { bookId: latestBook, sessionId: bookSession.sessionId });
-        }
-      }
 
       return c.json({
         response: result.responseText,
@@ -1921,17 +2524,31 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
 
   // --- Truth file edit ---
 
-  app.put("/api/v1/books/:id/truth/:file", async (c) => {
+  app.put("/api/v1/books/:id/truth/:file{.+}", async (c) => {
     const id = c.req.param("id");
     const file = c.req.param("file");
-    if (!TRUTH_FILES.includes(file)) {
+    const bookDir = state.bookDir(id);
+    const resolved = resolveTruthFilePath(bookDir, file);
+    if (!resolved) {
       return c.json({ error: "Invalid truth file" }, 400);
     }
+    // Legacy pointer shims are read-only in new-layout books: writing
+    // story_bible.md or book_rules.md does nothing at runtime (the pipeline
+    // reads outline/ instead). For pre-Phase-5 books these ARE authoritative.
+    if (LEGACY_SHIM_FILES.has(file)) {
+      const { isNewLayoutBook } = await import("@actalk/inkos-core");
+      if (await isNewLayoutBook(bookDir)) {
+        return c.json(
+          { error: "Legacy compat shim; edit outline/story_frame.md instead" },
+          400,
+        );
+      }
+    }
     const { content } = await c.req.json<{ content: string }>();
-    const bookDir = state.bookDir(id);
     const { writeFile: writeFileFs, mkdir: mkdirFs } = await import("node:fs/promises");
-    await mkdirFs(join(bookDir, "story"), { recursive: true });
-    await writeFileFs(join(bookDir, "story", file), content, "utf-8");
+    const { dirname: dirnameFs } = await import("node:path");
+    await mkdirFs(dirnameFs(resolved), { recursive: true });
+    await writeFileFs(resolved, content, "utf-8");
     return c.json({ ok: true });
   });
 
@@ -2185,6 +2802,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
   app.post("/api/v1/books/:id/style/import", async (c) => {
     const id = c.req.param("id");
     const { text, sourceName } = await c.req.json<{ text: string; sourceName: string }>();
+    if (!text?.trim()) return c.json({ error: "text is required" }, 400);
 
     broadcast("style:start", { bookId: id });
     try {
@@ -2359,6 +2977,7 @@ export function createStudioServer(initialConfig: ProjectConfig, root: string) {
         preferredApiFormat: currentConfig.llm.apiFormat,
         preferredStream: currentConfig.llm.stream,
         preferredModel: currentConfig.llm.model,
+        proxyUrl: currentConfig.llm.proxyUrl,
       });
       checks.llmConnected = probe.ok;
     } catch { /* ignore */ }
@@ -2376,7 +2995,7 @@ export async function startStudioServer(
   port = 4567,
   options?: { readonly staticDir?: string },
 ): Promise<void> {
-  const config = await loadProjectConfig(root, { requireApiKey: false });
+  const config = await loadProjectConfig(root, { consumer: "studio", requireApiKey: false });
 
   const app = createStudioServer(config, root);
 

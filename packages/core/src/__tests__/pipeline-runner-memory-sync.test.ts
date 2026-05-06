@@ -187,7 +187,7 @@ describe("PipelineRunner structured-state memory sync", () => {
           temperature: 0.7,
           maxTokens: 4096,
           thinkingBudget: 0,
-          maxTokensCap: null,
+
         },
       } as ConstructorParameters<typeof PipelineRunner>[0]["client"],
       model: "test-model",
@@ -256,6 +256,7 @@ describe("PipelineRunner structured-state memory sync", () => {
       passed: true,
       issues: [],
       summary: "clean",
+      overallScore: 90,
       tokenUsage: ZERO_USAGE,
     });
     vi.spyOn(StateValidatorAgent.prototype, "validate").mockResolvedValue({

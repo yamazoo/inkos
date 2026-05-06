@@ -15,6 +15,11 @@ import type {
   ToolCall as PiToolCall,
 } from "@mariozechner/pi-ai";
 import { resolveServicePreset } from "./service-presets.js";
+import { getEndpoint } from "./providers/index.js";
+import { lookupModel } from "./providers/lookup.js";
+import { fetchWithProxy } from "../utils/proxy-fetch.js";
+import { isApiKeyOptionalForEndpoint } from "../utils/llm-endpoint-auth.js";
+
 
 // === Streaming Monitor Types ===
 
@@ -26,6 +31,14 @@ export interface StreamProgress {
 }
 
 export type OnStreamProgress = (progress: StreamProgress) => void;
+
+const INKOS_USER_AGENT = "InkOS/1.3.5";
+const UNKNOWN_MODEL_FALLBACK_MAX_TOKENS = 8192 * 3;
+const TRANSIENT_LLM_RETRIES = 2;
+
+function mergeUserAgent(headers?: Record<string, string>): Record<string, string> {
+  return { "User-Agent": INKOS_USER_AGENT, ...(headers ?? {}) };
+}
 
 export function createStreamMonitor(
   onProgress?: OnStreamProgress,
@@ -89,25 +102,22 @@ export interface LLMClient {
   readonly configSource?: LLMConfig["configSource"];
   readonly apiFormat: "chat" | "responses";
   readonly stream: boolean;
+  readonly proxyUrl?: string;
   readonly _piModel?: PiModel<PiApi>;
   readonly _apiKey?: string;
   readonly defaults: {
     readonly temperature: number;
     /**
      * Per-call fallback: 当 agent 调 chat() 不传 options.maxTokens 时用这个值。
-     * 不是硬上限——per-call 显式传的值会覆盖它，不会被它限制。
+     * 命中模型卡时来自 providers bank 的 modelCard.maxOutput；未知模型走写作兜底预算。
      */
     readonly maxTokens: number;
     /**
-     * Per-call 硬上限。null 表示不封顶；非 null 表示给 chat() 的 per-call
-     * maxTokens 加一个 Math.min(perCall, cap) 约束。
-     *
-     * 语义必须跟 defaults.maxTokens 严格分开：maxTokens 是 fallback，
-     * maxTokensCap 是 cap。旧实现把两者用同一个数推导，导致 agent per-call 16384
-     * 被 config.maxTokens=8192 误裁（见 tests/__tests__/provider.test.ts 的
-     * "per-call maxTokens is not capped by config.maxTokens" 回归测试）。
+     * Legacy mock compatibility only. v2 provider resolution no longer caps
+     * per-call maxTokens from project config; model max output comes from the
+     * provider bank.
      */
-    readonly maxTokensCap: number | null;
+    readonly maxTokensCap?: number | null;
     readonly thinkingBudget: number;
     readonly extra: Record<string, unknown>;
   };
@@ -141,14 +151,11 @@ export interface ChatWithToolsResult {
 // === Factory ===
 
 export function createLLMClient(config: LLMConfig): LLMClient {
+  // C1 (v2.0.0)：config.maxTokens / maxTokensCap 已删除；defaults.maxTokens 完全从 modelCard 推导。
+  const _earlyCard = lookupModel(config.service ?? "custom", config.model);
   const defaults = {
     temperature: config.temperature ?? 0.7,
-    // fallback: agent 没传 per-call 时用这个
-    maxTokens: config.maxTokens ?? 8192,
-    // cap: 只在用户显式配 maxTokensCap 时生效；默认 null = 不封顶 per-call。
-    // **禁止**改成 `config.maxTokens ?? null` —— 那样会让 architect 的 per-call
-    // 16384 被用户 config.maxTokens=8192 自动裁剪，基础设定输出会被截断。
-    maxTokensCap: config.maxTokensCap ?? null,
+    maxTokens: _earlyCard?.maxOutput ?? UNKNOWN_MODEL_FALLBACK_MAX_TOKENS,
     thinkingBudget: config.thinkingBudget ?? 0,
     extra: config.extra ?? {},
   };
@@ -159,24 +166,45 @@ export function createLLMClient(config: LLMConfig): LLMClient {
   // --- Build pi-ai Model object ---
   const serviceName = config.service ?? "custom";
   const preset = resolveServicePreset(serviceName);
-  const piApi = resolvePiApi(serviceName, config.apiFormat, preset?.api) as PiApi;
-  const baseUrl = config.baseUrl || preset?.baseUrl || "";
+  const inkosProvider = getEndpoint(serviceName);
+  const modelCard = lookupModel(serviceName, config.model);
+
+  const piApi = resolvePiApi(serviceName, config.apiFormat, (inkosProvider?.api ?? preset?.api) as PiApi) as PiApi;
+  const baseUrl = config.baseUrl || inkosProvider?.baseUrl || preset?.baseUrl || "";
   const extraHeaders = config.headers ?? parseEnvHeaders();
+  const compat = piApi === "openai-completions"
+    ? resolveProviderCompat(inkosProvider, baseUrl)
+    : undefined;
 
   const provider = config.provider === "anthropic" ? "anthropic" : "openai";
+  // pi-ai provider 字段：大多数情况 pi-ai 会按 baseUrl 自动嗅探（openrouter.ai / api.z.ai /
+  // api.x.ai / deepseek.com / anthropic.com 等）。这里只列 pi-ai 嗅探不到、需要显式指定的少数情况。
+  let piProvider: string;
+  if (inkosProvider?.id === "google") piProvider = "google";
+  else if (inkosProvider?.id === "zhipu") piProvider = "zai";
+  else if (inkosProvider?.id === "openrouter") piProvider = "openrouter";
+  else if (inkosProvider?.id === "githubCopilot") piProvider = "githubCopilot";
+  else if (inkosProvider?.id === "ollama") piProvider = "ollama";
+  else if (inkosProvider?.api === "anthropic-messages") piProvider = "anthropic";
+  else piProvider = provider;
 
   const piModel: PiModel<PiApi> = {
-    id: config.model,
+    id: modelCard?.deploymentName ?? config.model,
     name: config.model,
     api: piApi,
-    provider,
+    provider: piProvider,
     baseUrl,
+    // 注意：piModel.reasoning 是"激活 reasoning 模式"标志（会让 pi-ai 把 system 改成 developer role 等），
+    // 不是"模型能力"标签。只有用户显式配了 thinkingBudget > 0 才启用 reasoning mode。
+    // 千万不要从 lobe abilities.reasoning 自动推导，否则 Moonshot 这类不支持 developer role 的服务
+    // 会把 content 吃掉，只返回 reasoning_content（见 R4 bug 1 诊断）。
     reasoning: (config.thinkingBudget ?? 0) > 0,
     input: ["text"] as ("text" | "image")[],
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-    contextWindow: 128_000,
-    maxTokens: config.maxTokens ?? 8192,
+    contextWindow: modelCard?.contextWindowTokens ?? 128_000,
+    maxTokens: modelCard?.maxOutput ?? UNKNOWN_MODEL_FALLBACK_MAX_TOKENS,
     ...(extraHeaders ? { headers: extraHeaders } : {}),
+    ...(compat ? { compat } : {}),
   };
 
   return {
@@ -185,6 +213,7 @@ export function createLLMClient(config: LLMConfig): LLMClient {
     configSource: config.configSource,
     apiFormat,
     stream,
+    proxyUrl: config.proxyUrl,
     _piModel: piModel,
     _apiKey: config.apiKey,
     defaults,
@@ -200,6 +229,17 @@ function resolvePiApi(
     return apiFormat === "responses" ? "openai-responses" : "openai-completions";
   }
   return (presetApi ?? "openai-completions") as PiApi;
+}
+
+function resolveProviderCompat(
+  provider: ReturnType<typeof getEndpoint>,
+  baseUrl: string,
+): Record<string, unknown> | undefined {
+  const compat = {
+    ...(provider?.compat ?? {}),
+    ...(baseUrl.includes("generativelanguage.googleapis.com") ? { supportsStore: false } : {}),
+  };
+  return Object.keys(compat).length > 0 ? compat : undefined;
 }
 
 function parseEnvHeaders(): Record<string, string> | undefined {
@@ -247,30 +287,34 @@ function stripReservedKeys(extra: Record<string, unknown>): Record<string, unkno
 
 // === Fixed-Temperature Model Clamp ===
 //
-// 部分 thinking 模型（如 Moonshot kimi-k2.5、kimi-thinking-preview）强制要求
-// temperature === 1，其他值会被 API 直接 400 拒绝。为让这类模型能和 inkos
-// 已有的 per-call 温度调参（0.1 validator → 0.8 architect brainstorm）共存，
-// 在 provider 层统一夹制：命中名单就把传入的 temperature 强制改成 1，并对
-// 每个模型名打一次 warning 提示用户。
-
-function requiresFixedTemperature(model: string): boolean {
-  const lower = model.toLowerCase();
-  // kimi-k2.5 及其子变体（k2.5-preview 等），以及任何名字里带 "thinking" 的模型
-  return lower.startsWith("kimi-k2.5") || lower.includes("thinking");
-}
+// 部分 thinking 模型（如 Moonshot kimi-k2.5/k2.6、kimi-k2-thinking）的 API
+// 硬要求 temperature === 1，其他值会被直接 400 拒绝（Moonshot 返回
+// `invalid temperature: only 1 is allowed for this model`）。
+//
+// inkos 让 writer/validator/architect 各自带 per-call 温度（0.1~1.5），
+// 所以 provider 层统一夹制：如果 bank 里模型卡标了 temperature 字段，
+// 就把 per-call 温度 clamp 到那个值，并对每个模型名打一次 warning。
+//
+// 这个字段只表达"服务端硬约束"，普通模型不要标，避免误伤 per-call 调参。
 
 const warnedFixedTemperatureModels = new Set<string>();
 
-function clampTemperatureForModel(model: string, requested: number): number {
-  if (!requiresFixedTemperature(model)) return requested;
-  if (requested === 1) return 1;
+function clampTemperatureForModel(
+  service: string | undefined,
+  model: string,
+  requested: number,
+): number {
+  const card = service ? lookupModel(service, model) : undefined;
+  if (card?.temperature === undefined) return requested;
+  const locked = card.temperature;
+  if (requested === locked) return locked;
   if (!warnedFixedTemperatureModels.has(model)) {
     warnedFixedTemperatureModels.add(model);
     console.warn(
-      `[inkos] 模型 "${model}" 是 thinking 模型，强制 temperature=1（原请求值 ${requested}）`,
+      `[inkos] 模型 "${model}" API 要求 temperature=${locked}，已 clamp（原值 ${requested}）`,
     );
   }
-  return 1;
+  return locked;
 }
 
 // 仅测试用：清空 warning 去重集合。
@@ -287,12 +331,23 @@ function wrapLLMError(error: unknown, context?: { readonly baseUrl?: string; rea
     : "";
 
   if (msg.includes("400")) {
+    // 抽上游 error body 的 message / reason / code（和下方 5xx 一致），让真实错因浮到用户面前
+    let detail = "";
+    if (error && typeof error === "object") {
+      const err = error as { error?: unknown; body?: unknown; message?: string };
+      const bodyLike = err.error ?? err.body;
+      if (bodyLike && typeof bodyLike === "object") {
+        const b = bodyLike as { reason?: string; message?: string; code?: number | string; type?: string };
+        if (b.message) detail = b.type ? `${b.type}: ${b.message}` : b.message;
+        else if (b.reason) detail = b.reason;
+      }
+    }
     return new Error(
-      `API 返回 400 (请求参数错误)。可能原因：\n` +
-      `  1. 模型名称不正确（检查 INKOS_LLM_MODEL）\n` +
-      `  2. 提供方不支持某些参数（如 max_tokens、stream）\n` +
-      `  3. 消息格式不兼容（部分提供方不支持 system role）\n` +
-      `  建议：检查提供方文档，确认该接口要求流式开启、流式关闭，还是根本不支持 stream${ctxLine}`,
+      `API 返回 400（请求参数错误）。${detail ? `上游详情：${detail}。\n` : ""}` +
+      `常见原因：\n` +
+      `  1. temperature / max_tokens 超出模型约束（如 Moonshot kimi-k2.X 强制 temperature=1）\n` +
+      `  2. 模型名称不正确或未上架\n` +
+      `  3. 消息格式不兼容（部分服务不支持 system role 或 developer role）${ctxLine}`,
     );
   }
   if (msg.includes("403")) {
@@ -314,7 +369,17 @@ function wrapLLMError(error: unknown, context?: { readonly baseUrl?: string; rea
       `API 返回 429 (请求过多)。请稍后重试，或检查 API 配额。${ctxLine}`,
     );
   }
-  if (msg.includes("Connection error") || msg.includes("ECONNREFUSED") || msg.includes("ENOTFOUND") || msg.includes("fetch failed")) {
+  if (
+    msg.includes("Connection error")
+    || msg.includes("ECONNREFUSED")
+    || msg.includes("ENOTFOUND")
+    || msg.includes("fetch failed")
+    || msg.includes("terminated")
+    || msg.includes("UND_ERR_SOCKET")
+    || msg.includes("ECONNRESET")
+    || msg.includes("ETIMEDOUT")
+    || msg.includes("EPIPE")
+  ) {
     return new Error(
       `无法连接到 API 服务。可能原因：\n` +
       `  1. baseUrl 地址不正确（当前：${context?.baseUrl ?? "未知"}）\n` +
@@ -323,13 +388,106 @@ function wrapLLMError(error: unknown, context?: { readonly baseUrl?: string; rea
       `  建议：检查 INKOS_LLM_BASE_URL 是否包含完整路径（如 /v1）`,
     );
   }
+  // R4 Bug 2: 5xx "status code (no body)" — 尝试从 OpenAI SDK APIError 里抽 body 给用户看具体原因
+  // （如 PPIO 的 {"code":500,"reason":"MODEL_NOT_AVAILABLE","message":"model not available"}）
+  if (msg.includes("status code") && msg.includes("no body")) {
+    let detail = "";
+    if (error && typeof error === "object") {
+      const err = error as { error?: unknown; body?: unknown; message?: string };
+      const bodyLike = err.error ?? err.body;
+      if (bodyLike && typeof bodyLike === "object") {
+        const b = bodyLike as { reason?: string; message?: string; code?: number | string };
+        if (b.reason) detail = `${b.reason}${b.message ? `: ${b.message}` : ""}`;
+        else if (b.message) detail = b.message;
+      }
+    }
+    return new Error(
+      `API 返回 5xx（上游服务异常）。${detail ? `上游详情：${detail}。` : ""}\n` +
+      `可能原因：\n` +
+      `  1. 模型在 /models 列表但 inference 未上架（如 PPIO 返回 MODEL_NOT_AVAILABLE）\n` +
+      `  2. 服务端临时故障，稍后重试\n` +
+      `  3. 当前 apikey 无权限调用该模型${ctxLine}`,
+    );
+  }
   return error instanceof Error ? error : new Error(msg);
 }
 
+function collectErrorText(error: unknown, depth = 0): string {
+  if (depth > 4 || error === null || error === undefined) return "";
+  const parts = [String(error)];
+  if (error instanceof Error) {
+    parts.push(error.name, error.message);
+    const cause = (error as Error & { cause?: unknown }).cause;
+    if (cause) parts.push(collectErrorText(cause, depth + 1));
+  } else if (typeof error === "object") {
+    const err = error as { code?: unknown; cause?: unknown; message?: unknown; name?: unknown };
+    if (err.name) parts.push(String(err.name));
+    if (err.message) parts.push(String(err.message));
+    if (err.code) parts.push(String(err.code));
+    if (err.cause) parts.push(collectErrorText(err.cause, depth + 1));
+  }
+  return parts.join("\n");
+}
+
+function isTransientLLMTransportError(error: unknown): boolean {
+  const text = collectErrorText(error);
+  return [
+    "terminated",
+    "UND_ERR_SOCKET",
+    "ECONNRESET",
+    "ETIMEDOUT",
+    "EPIPE",
+    "socket hang up",
+    "other side closed",
+    "network socket disconnected",
+  ].some((needle) => text.includes(needle));
+}
+
+async function withTransientLLMRetry<T>(
+  run: () => Promise<T>,
+  options?: { readonly enabled?: boolean },
+): Promise<T> {
+  const enabled = options?.enabled ?? true;
+  let lastError: unknown;
+  for (let attempt = 0; attempt <= TRANSIENT_LLM_RETRIES; attempt++) {
+    try {
+      return await run();
+    } catch (error) {
+      lastError = error;
+      if (
+        !enabled
+        || attempt >= TRANSIENT_LLM_RETRIES
+        || error instanceof PartialResponseError
+        || !isTransientLLMTransportError(error)
+      ) {
+        throw error;
+      }
+    }
+  }
+  throw lastError;
+}
+
 function shouldUseNativeCustomTransport(client: LLMClient): boolean {
-  return client.configSource === "studio"
-    && client.service === "custom"
-    && (client.provider === "openai" || client.provider === "anthropic");
+  if (client.service === "custom") {
+    if (
+      client.configSource === "studio"
+      && (client.provider === "openai" || client.provider === "anthropic")
+    ) {
+      return true;
+    }
+    return client.provider === "openai" && shouldUseNativeLocalOpenAICompatibleTransport(client);
+  }
+  return client.service === "ollama"
+    && client.provider === "openai"
+    && shouldUseNativeLocalOpenAICompatibleTransport(client);
+}
+
+function shouldUseNativeLocalOpenAICompatibleTransport(client: LLMClient): boolean {
+  return !client._apiKey
+    && isApiKeyOptionalForEndpoint({
+      provider: client.provider,
+      baseUrl: client._piModel?.baseUrl,
+    });
 }
 
 function buildCustomHeaders(client: LLMClient): Record<string, string> {
@@ -372,6 +530,38 @@ function buildResponsesInput(messages: ReadonlyArray<LLMMessage>): Array<{ role:
       role: message.role,
       content: [{ type: "input_text", text: message.content }],
     }));
+}
+
+function hasSystemMessages(messages: ReadonlyArray<LLMMessage>): boolean {
+  return messages.some((message) => message.role === "system" && message.content.trim().length > 0);
+}
+
+function foldSystemMessagesIntoFirstUser(messages: ReadonlyArray<LLMMessage>): LLMMessage[] {
+  const system = joinSystemPrompt(messages);
+  const nonSystemMessages = messages.filter((message) => message.role !== "system");
+  if (!system) return [...nonSystemMessages];
+
+  const firstUserIndex = nonSystemMessages.findIndex((message) => message.role === "user");
+  const prefix = `System instructions:\n${system}\n\nUser request:\n`;
+  if (firstUserIndex < 0) {
+    return [{ role: "user", content: `System instructions:\n${system}` }, ...nonSystemMessages];
+  }
+
+  return nonSystemMessages.map((message, index) => index === firstUserIndex
+    ? { ...message, content: `${prefix}${message.content}` }
+    : message);
+}
+
+function isSystemRoleUnsupportedErrorText(text: string): boolean {
+  const normalized = text.toLowerCase();
+  const mentionsSystemRole = normalized.includes("system") && normalized.includes("role");
+  if (!mentionsSystemRole) return false;
+  return normalized.includes("unsupported")
+    || normalized.includes("not support")
+    || normalized.includes("does not support")
+    || normalized.includes("invalid")
+    || normalized.includes("不支持")
+    || normalized.includes("不允许");
 }
 
 async function readErrorResponse(res: Response): Promise<string> {
@@ -421,15 +611,27 @@ function parseSseEvents(buffer: string): { readonly events: ParsedSseEvent[]; re
   return { events, rest };
 }
 
-function extractChatContent(json: any): string {
-  const content = json?.choices?.[0]?.message?.content;
-  if (typeof content === "string") return content;
-  if (Array.isArray(content)) {
-    return content
+function extractOpenAITextPart(value: any): string {
+  if (typeof value === "string") return value;
+  if (Array.isArray(value)) {
+    return value
       .map((item) => typeof item?.text === "string" ? item.text : typeof item?.content === "string" ? item.content : "")
       .join("");
   }
   return "";
+}
+
+function extractChatContent(json: any): string {
+  const message = json?.choices?.[0]?.message;
+  return extractOpenAITextPart(message?.content) || extractOpenAITextPart(message?.reasoning_content);
+}
+
+function extractChatDeltaContent(json: any): string {
+  return extractOpenAITextPart(json?.choices?.[0]?.delta?.content);
+}
+
+function extractChatDeltaReasoningContent(json: any): string {
+  return extractOpenAITextPart(json?.choices?.[0]?.delta?.reasoning_content);
 }
 
 function extractResponsesContent(json: any): string {
@@ -462,7 +664,6 @@ async function chatCompletionViaCustomAnthropicCompatible(
 ): Promise<LLMResponse> {
   const baseUrl = client._piModel?.baseUrl ?? "";
   const errorCtx = { baseUrl, model };
-  const monitor = createStreamMonitor(onStreamProgress);
   const extra = stripReservedKeys(resolved.extra);
   const payload: Record<string, unknown> = {
     model,
@@ -475,9 +676,10 @@ async function chatCompletionViaCustomAnthropicCompatible(
   const system = joinSystemPrompt(messages);
   if (system) payload.system = system;
 
-  const response = await fetch(`${baseUrl.replace(/\/$/, "")}/messages`, {
+  const response = await fetchWithProxy(`${baseUrl.replace(/\/$/, "")}/messages`, {
     method: "POST",
     headers: {
+      "User-Agent": INKOS_USER_AGENT,
       "x-api-key": client._apiKey ?? "",
       "anthropic-version": "2023-06-01",
       "Content-Type": "application/json",
@@ -485,7 +687,7 @@ async function chatCompletionViaCustomAnthropicCompatible(
       ...(client._piModel?.headers ?? {}),
     },
     body: JSON.stringify(payload),
-  });
+  }, client.proxyUrl);
 
   if (!response.ok) {
     throw wrapLLMError(new Error(await readErrorResponse(response)), errorCtx);
@@ -513,6 +715,7 @@ async function chatCompletionViaCustomAnthropicCompatible(
   let buffer = "";
   let content = "";
   let usage = { promptTokens: 0, completionTokens: 0, totalTokens: 0 };
+  const monitor = createStreamMonitor(onStreamProgress);
 
   try {
     while (true) {
@@ -560,6 +763,7 @@ async function chatCompletionViaCustomOpenAICompatible(
   resolved: { readonly temperature: number; readonly maxTokens: number; readonly extra: Record<string, unknown> },
   onStreamProgress?: OnStreamProgress,
   onTextDelta?: (text: string) => void,
+  allowSystemRoleFallback = true,
 ): Promise<LLMResponse> {
   if (client.provider === "anthropic") {
     return chatCompletionViaCustomAnthropicCompatible(client, model, messages, resolved, onStreamProgress, onTextDelta);
@@ -567,7 +771,6 @@ async function chatCompletionViaCustomOpenAICompatible(
   const baseUrl = client._piModel?.baseUrl ?? "";
   const headers = buildCustomHeaders(client);
   const errorCtx = { baseUrl, model };
-  const monitor = createStreamMonitor(onStreamProgress);
   const extra = stripReservedKeys(resolved.extra);
 
   if (client.apiFormat === "responses") {
@@ -583,11 +786,11 @@ async function chatCompletionViaCustomOpenAICompatible(
     const instructions = joinSystemPrompt(messages);
     if (instructions) payload.instructions = instructions;
 
-    const response = await fetch(`${baseUrl.replace(/\/$/, "")}/responses`, {
+    const response = await fetchWithProxy(`${baseUrl.replace(/\/$/, "")}/responses`, {
       method: "POST",
       headers,
       body: JSON.stringify(payload),
-    });
+    }, client.proxyUrl);
     if (!response.ok) {
       throw wrapLLMError(new Error(await readErrorResponse(response)), errorCtx);
     }
@@ -614,6 +817,7 @@ async function chatCompletionViaCustomOpenAICompatible(
     let buffer = "";
     let content = "";
     let usage = { promptTokens: 0, completionTokens: 0, totalTokens: 0 };
+    const monitor = createStreamMonitor(onStreamProgress);
 
     try {
       while (true) {
@@ -669,13 +873,25 @@ async function chatCompletionViaCustomOpenAICompatible(
     payload.stream_options = { include_usage: true };
   }
 
-  const response = await fetch(`${baseUrl.replace(/\/$/, "")}/chat/completions`, {
+  const response = await fetchWithProxy(`${baseUrl.replace(/\/$/, "")}/chat/completions`, {
     method: "POST",
     headers,
     body: JSON.stringify(payload),
-  });
+  }, client.proxyUrl);
   if (!response.ok) {
-    throw wrapLLMError(new Error(await readErrorResponse(response)), errorCtx);
+    const detail = await readErrorResponse(response);
+    if (allowSystemRoleFallback && hasSystemMessages(messages) && isSystemRoleUnsupportedErrorText(detail)) {
+      return chatCompletionViaCustomOpenAICompatible(
+        client,
+        model,
+        foldSystemMessagesIntoFirstUser(messages),
+        resolved,
+        onStreamProgress,
+        onTextDelta,
+        false,
+      );
+    }
+    throw wrapLLMError(new Error(detail), errorCtx);
   }
 
   if (!client.stream) {
@@ -699,7 +915,9 @@ async function chatCompletionViaCustomOpenAICompatible(
   const decoder = new TextDecoder();
   let buffer = "";
   let content = "";
+  let reasoningContent = "";
   let usage = { promptTokens: 0, completionTokens: 0, totalTokens: 0 };
+  const monitor = createStreamMonitor(onStreamProgress);
 
   try {
     while (true) {
@@ -711,11 +929,17 @@ async function chatCompletionViaCustomOpenAICompatible(
       for (const event of parsed.events) {
         if (!event.data || event.data === "[DONE]") continue;
         const json = JSON.parse(event.data);
-        const delta = json?.choices?.[0]?.delta?.content;
-        if (typeof delta === "string") {
+        const delta = extractChatDeltaContent(json);
+        if (delta) {
           content += delta;
           monitor.onChunk(delta);
           onTextDelta?.(delta);
+        } else {
+          const reasoningDelta = extractChatDeltaReasoningContent(json);
+          if (reasoningDelta) {
+            reasoningContent += reasoningDelta;
+            monitor.onChunk(reasoningDelta);
+          }
         }
         if (json?.usage) {
           usage = {
@@ -730,10 +954,11 @@ async function chatCompletionViaCustomOpenAICompatible(
     monitor.stop();
   }
 
-  if (!content) {
+  const finalContent = content || reasoningContent;
+  if (!finalContent) {
     throw wrapLLMError(new Error("LLM returned empty response from stream"), errorCtx);
   }
-  return { content, usage };
+  return { content: finalContent, usage };
 }
 
 // === Simple Chat (used by all agents via BaseAgent.chat()) ===
@@ -750,14 +975,14 @@ export async function chatCompletion(
     readonly onTextDelta?: (text: string) => void;
   },
 ): Promise<LLMResponse> {
-  const perCallMax = options?.maxTokens ?? client.defaults.maxTokens;
-  const cap = client.defaults.maxTokensCap;
+  // C1 (v2.0.0)：删除 maxTokensCap 机制。per-call 显式传的 maxTokens 永远不被裁剪。
   const resolved = {
     temperature: clampTemperatureForModel(
+      client.service,
       model,
       options?.temperature ?? client.defaults.temperature,
     ),
-    maxTokens: cap !== null ? Math.min(perCallMax, cap) : perCallMax,
+    maxTokens: options?.maxTokens ?? client.defaults.maxTokens,
     extra: client.defaults.extra,
   };
   const onStreamProgress = options?.onStreamProgress;
@@ -765,10 +990,16 @@ export async function chatCompletion(
   const errorCtx = { baseUrl: client._piModel?.baseUrl ?? "(unknown)", model };
 
   try {
-    if (shouldUseNativeCustomTransport(client)) {
-      return await chatCompletionViaCustomOpenAICompatible(client, model, messages, resolved, onStreamProgress, onTextDelta);
-    }
-    return await chatCompletionViaPiAi(client, model, messages, resolved, onStreamProgress, onTextDelta);
+    return await withTransientLLMRetry(
+      async () => {
+        if (shouldUseNativeCustomTransport(client)) {
+          return chatCompletionViaCustomOpenAICompatible(client, model, messages, resolved, onStreamProgress, onTextDelta);
+        }
+        return chatCompletionViaPiAi(client, model, messages, resolved, onStreamProgress, onTextDelta);
+      },
+      // Retrying after UI text deltas have been emitted can duplicate visible text.
+      { enabled: !onTextDelta },
+    );
   } catch (error) {
     // Stream interrupted but partial content is usable — return truncated response
     if (error instanceof PartialResponseError) {
@@ -796,6 +1027,7 @@ export async function chatWithTools(
   try {
     const resolved = {
       temperature: clampTemperatureForModel(
+        client.service,
         model,
         options?.temperature ?? client.defaults.temperature,
       ),
@@ -920,7 +1152,7 @@ async function chatCompletionViaPiAi(
     temperature: resolved.temperature,
     maxTokens: resolved.maxTokens,
     apiKey: client._apiKey,
-    headers: piModel.headers,
+    headers: mergeUserAgent(piModel.headers),
   };
 
   if (!client.stream) {
@@ -1016,7 +1248,7 @@ async function chatWithToolsViaPiAi(
     temperature: resolved.temperature,
     maxTokens: resolved.maxTokens,
     apiKey: client._apiKey,
-    headers: piModel.headers,
+    headers: mergeUserAgent(piModel.headers),
   };
 
   if (!client.stream) {

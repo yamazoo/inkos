@@ -1,10 +1,10 @@
 // Models
-export { type BookConfig, type Platform, type Genre, type BookStatus, type FanficMode, BookConfigSchema, PlatformSchema, GenreSchema, BookStatusSchema, FanficModeSchema } from "./models/book.js";
+export { type BookConfig, type Platform, type Genre, type BookStatus, type FanficMode, BookConfigSchema, PlatformSchema, GenreSchema, BookStatusSchema, FanficModeSchema, normalizePlatformId, normalizePlatformOrOther } from "./models/book.js";
 export { type ChapterMeta, type ChapterStatus, ChapterMetaSchema, ChapterStatusSchema } from "./models/chapter.js";
-export { type ProjectConfig, type LLMConfig, type NotifyChannel, type DetectionConfig, type QualityGates, type AgentLLMOverride, type InputGovernanceMode, ProjectConfigSchema, LLMConfigSchema, AgentLLMOverrideSchema, DetectionConfigSchema, QualityGatesSchema, InputGovernanceModeSchema } from "./models/project.js";
+export { type ProjectConfig, type LLMConfig, type NotifyChannel, type DetectionConfig, type QualityGates, type FoundationConfig, type AgentLLMOverride, type InputGovernanceMode, ProjectConfigSchema, LLMConfigSchema, AgentLLMOverrideSchema, DetectionConfigSchema, QualityGatesSchema, FoundationConfigSchema, InputGovernanceModeSchema } from "./models/project.js";
 export { type CurrentState, type ParticleLedger, type PendingHooks, type PendingHook, type LedgerEntry } from "./models/state.js";
 export { type GenreProfile, type ParsedGenreProfile, GenreProfileSchema, parseGenreProfile } from "./models/genre-profile.js";
-export { type BookRules, type ParsedBookRules, BookRulesSchema, parseBookRules } from "./models/book-rules.js";
+export { type BookRules, type ParsedBookRules, BookRulesSchema, parseBookRules, tryParseBookRulesFrontmatter } from "./models/book-rules.js";
 export { type DetectionHistoryEntry, type DetectionStats } from "./models/detection.js";
 export { type StyleProfile } from "./models/style-profile.js";
 export { type LengthCountingMode, type LengthNormalizeMode, type LengthSpec, type LengthTelemetry, type LengthWarning, LengthCountingModeSchema, LengthNormalizeModeSchema, LengthSpecSchema, LengthTelemetrySchema, LengthWarningSchema } from "./models/length-governance.js";
@@ -37,10 +37,7 @@ export {
   RuntimeStateDeltaSchema,
 } from "./models/runtime-state.js";
 export {
-  type ChapterConflict,
-  type HookMovement,
-  type HookPressureLevel,
-  type HookPressure,
+  type ChapterMemo,
   type ChapterIntent,
   type ContextSource,
   type ContextPackage,
@@ -51,10 +48,7 @@ export {
   type RuleStackSections,
   type RuleStack,
   type ChapterTrace,
-  ChapterConflictSchema,
-  HookMovementSchema,
-  HookPressureLevelSchema,
-  HookPressureSchema,
+  ChapterMemoSchema,
   ChapterIntentSchema,
   ContextSourceSchema,
   ContextPackageSchema,
@@ -67,7 +61,30 @@ export {
   ChapterTraceSchema,
 } from "./models/input-governance.js";
 export { PlannerAgent, type PlanChapterInput, type PlanChapterOutput } from "./agents/planner.js";
-export { ComposerAgent, type ComposeChapterInput, type ComposeChapterOutput } from "./agents/composer.js";
+export {
+  ComposerAgent,
+  composeGovernedChapter,
+  type ComposeChapterInput,
+  type ComposeChapterOutput,
+} from "./agents/composer.js";
+export {
+  PLANNER_MEMO_SYSTEM_PROMPT,
+  PLANNER_MEMO_USER_TEMPLATE,
+  buildPlannerUserMessage,
+  buildGoldenOpeningGuidance,
+  type PlannerUserMessageInput,
+} from "./agents/planner-prompts.js";
+export {
+  gatherPlanningMaterials,
+  type PlanningMaterials,
+} from "./utils/planning-materials.js";
+export {
+  buildProxyFetchInit,
+  fetchWithProxy,
+  resolveProxyUrl,
+} from "./utils/proxy-fetch.js";
+export { assertSafeBookId, deriveBookIdFromTitle, isSafeBookId } from "./utils/book-id.js";
+export { safeChildPath } from "./utils/path-safety.js";
 export {
   AutomationModeSchema,
   type AutomationMode,
@@ -132,6 +149,39 @@ export {
   createAndPersistBookSession,
   SessionAlreadyMigratedError,
 } from "./interaction/book-session-store.js";
+export {
+  appendManualSessionMessages,
+  appendTranscriptEvent,
+  sessionsDir,
+  readTranscriptEvents,
+  nextTranscriptSeq,
+  transcriptPath,
+  legacyBookSessionPath,
+} from "./interaction/session-transcript.js";
+export {
+  cleanRestoredAgentMessages,
+  committedMessageEvents,
+  deriveBookSessionFromTranscript,
+  restoreAgentMessagesFromTranscript,
+} from "./interaction/session-transcript-restore.js";
+export {
+  MessageEventSchema,
+  RequestCommittedEventSchema,
+  RequestFailedEventSchema,
+  RequestStartedEventSchema,
+  SessionCreatedEventSchema,
+  SessionMetadataUpdatedEventSchema,
+  TranscriptEventSchema,
+} from "./interaction/session-transcript-schema.js";
+export type {
+  TranscriptEvent,
+  MessageEvent,
+  RequestCommittedEvent,
+  RequestFailedEvent,
+  RequestStartedEvent,
+  SessionCreatedEvent,
+  SessionMetadataUpdatedEvent,
+} from "./interaction/session-transcript-schema.js";
 export { routeInteractionRequest } from "./interaction/request-router.js";
 export {
   routeNaturalLanguageIntent,
@@ -188,6 +238,8 @@ export {
 export { resolveServiceModel, type ResolvedModel } from "./llm/service-resolver.js";
 export { loadSecrets, saveSecrets, getServiceApiKey, type SecretsFile } from "./llm/secrets.js";
 export { migrateConfig, type MigrationResult } from "./llm/config-migration.js";
+export { getAllEndpoints, getEndpoint, type InkosEndpoint, type InkosModel, type EndpointGroup } from "./llm/providers/index.js";
+export { probeModelsFromUpstream, type ProbedModel } from "./llm/providers/probe.js";
 
 // Agents
 export { BaseAgent, type AgentContext } from "./agents/base.js";
@@ -196,10 +248,11 @@ export { WriterAgent, type WriteChapterInput, type WriteChapterOutput, type Toke
 export { LengthNormalizerAgent, type NormalizeLengthInput, type NormalizeLengthOutput } from "./agents/length-normalizer.js";
 export { ContinuityAuditor, type AuditResult, type AuditIssue } from "./agents/continuity.js";
 export { ReviserAgent, DEFAULT_REVISE_MODE, type ReviseOutput, type ReviseMode } from "./agents/reviser.js";
+export { PolisherAgent, type PolishChapterInput, type PolishChapterOutput } from "./agents/polisher.js";
 export { RadarAgent, type RadarResult, type RadarRecommendation } from "./agents/radar.js";
 export { FanqieRadarSource, QidianRadarSource, TextRadarSource, type RadarSource, type PlatformRankings, type RankingEntry } from "./agents/radar-source.js";
 export { readGenreProfile, readBookRules, listAvailableGenres, getBuiltinGenresDir } from "./agents/rules-reader.js";
-export { buildWriterSystemPrompt } from "./agents/writer-prompts.js";
+export { buildWriterSystemPrompt, buildGoldenOpeningDiscipline } from "./agents/writer-prompts.js";
 export { analyzeAITells, type AITellResult, type AITellIssue } from "./agents/ai-tells.js";
 export { analyzeSensitiveWords, type SensitiveWordResult, type SensitiveWordMatch } from "./agents/sensitive-words.js";
 export { detectAIContent, type DetectionResult } from "./agents/detector.js";
@@ -216,6 +269,7 @@ export { getFanficDimensionConfig, FANFIC_DIMENSIONS, type FanficDimensionConfig
 export { buildFanficCanonSection, buildCharacterVoiceProfiles, buildFanficModeInstructions } from "./agents/fanfic-prompt-sections.js";
 
 // Utils
+export { isNewLayoutBook } from "./utils/outline-paths.js";
 export { fetchUrl, searchWeb } from "./utils/web-search.js";
 export { filterHooks, filterSummaries, filterSubplots, filterEmotionalArcs, filterCharacterMatrix } from "./utils/context-filter.js";
 export { extractPOVFromOutline, filterMatrixByPOV, filterHooksByPOV } from "./utils/pov-filter.js";
@@ -227,6 +281,8 @@ export { splitChapters, type SplitChapter } from "./utils/chapter-splitter.js";
 export { countChapterLength, resolveLengthCountingMode, formatLengthCount, buildLengthSpec, isOutsideSoftRange, isOutsideHardRange, chooseNormalizeMode, type LengthLanguage } from "./utils/length-metrics.js";
 export { createLogger, createStderrSink, createJsonLineSink, nullSink, type Logger, type LogSink, type LogLevel, type LogEntry } from "./utils/logger.js";
 export { loadProjectConfig, GLOBAL_CONFIG_DIR, GLOBAL_ENV_PATH, isApiKeyOptionalForEndpoint } from "./utils/config-loader.js";
+export { resolveEffectiveLLMConfig, type EffectiveLLMConfigResult, type EffectiveLLMDiagnostics, type LLMConfigCliOverrides, type LLMConfigMode, type LLMConsumer, type LLMValueSource } from "./utils/effective-llm-config.js";
+export { loadLLMEnvLayers, mergeEnvMaps, studioIgnoredEnv, cliOverlayEnv, legacyEnv, type LLMEnvLayers, type LLMEnvMap } from "./utils/llm-env.js";
 export { computeAnalytics, type AnalyticsData, type TokenStats } from "./utils/analytics.js";
 export {
   collectStaleHookDebt,

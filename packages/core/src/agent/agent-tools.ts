@@ -3,17 +3,22 @@ import type { AgentTool, AgentToolResult, AgentToolUpdateCallback } from "@mario
 import type { PipelineRunner } from "../pipeline/runner.js";
 import { type ReviseMode } from "../agents/reviser.js";
 import { readFile, writeFile, readdir, stat } from "node:fs/promises";
-import { join, normalize, resolve } from "node:path";
+import { isAbsolute, join, resolve } from "node:path";
 import { StateManager } from "../state/manager.js";
-import { createInteractionToolsFromDeps } from "../interaction/project-tools.js";
+import { assertSafeTruthFileName, createInteractionToolsFromDeps } from "../interaction/project-tools.js";
 import { writeExportArtifact } from "../interaction/export-artifact.js";
+import { assertSafeBookId, deriveBookIdFromTitle } from "../utils/book-id.js";
+import { safeChildPath } from "../utils/path-safety.js";
+import { normalizePlatformId, normalizePlatformOrOther } from "../models/book.js";
 
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 
-function textResult(text: string): AgentToolResult<undefined> {
-  return { content: [{ type: "text", text }], details: undefined };
+function textResult(text: string): AgentToolResult<undefined>;
+function textResult<T>(text: string, details: T): AgentToolResult<T>;
+function textResult<T = undefined>(text: string, details?: T): AgentToolResult<T> {
+  return { content: [{ type: "text", text }], details: details as T };
 }
 
 /**
@@ -21,11 +26,7 @@ function textResult(text: string): AgentToolResult<undefined> {
  * against path-traversal (../ etc.).
  */
 function safeBooksPath(booksRoot: string, relativePath: string): string {
-  const resolved = resolve(booksRoot, normalize(relativePath));
-  if (!resolved.startsWith(booksRoot)) {
-    throw new Error(`Path traversal blocked: ${relativePath}`);
-  }
-  return resolved;
+  return safeChildPath(booksRoot, relativePath);
 }
 
 function resolveToolBookId(
@@ -37,7 +38,11 @@ function resolveToolBookId(
   if (!resolvedBookId) {
     throw new Error(`${toolName} requires bookId when there is no active book.`);
   }
-  return resolvedBookId;
+  const safeBookId = assertSafeBookId(resolvedBookId, `${toolName}.bookId`);
+  if (paramsBookId && activeBookId && safeBookId !== activeBookId) {
+    throw new Error(`${toolName}.bookId must match the active book.`);
+  }
+  return safeBookId;
 }
 
 function createDeterministicInteractionTools(pipeline: PipelineRunner, projectRoot: string) {
@@ -58,7 +63,9 @@ const SubAgentParams = Type.Object({
     Type.Literal("exporter"),
   ]),
   instruction: Type.String({ description: "Natural language instruction for the sub-agent" }),
-  bookId: Type.Optional(Type.String({ description: "Book ID — required for all agents except architect" })),
+  bookId: Type.Optional(Type.String({
+    description: "Optional book ID. In active-book sessions, omit it to use the current active book; if provided, it must match the current active book. For architect creation, this optionally sets the new book ID.",
+  })),
   chapterNumber: Type.Optional(Type.Number({ description: "auditor/reviser: target chapter number. Omit to use the latest chapter." })),
   // -- architect params --
   title: Type.Optional(Type.String({ description: "architect only: explicit book title. Required when creating a book." })),
@@ -76,7 +83,7 @@ const SubAgentParams = Type.Object({
   targetChapters: Type.Optional(Type.Number({ description: "architect only: total chapter count. Default: 200" })),
   chapterWordCount: Type.Optional(Type.Number({ description: "architect/writer: words per chapter. Default: 3000" })),
   revise: Type.Optional(Type.Boolean({
-    description: "architect only: true 表示在已有书上重新生成架构稿（比如把旧的条目式格式升级成段落式架构稿 + 一人一卡的角色目录、或者按 feedback 调整某些细节），而不是新建书籍。需要同时提供 bookId",
+    description: "architect only: true 表示在当前 active book 上重新生成架构稿，而不是新建书籍。no-book creation sessions cannot revise an existing book.",
   })),
   feedback: Type.Optional(Type.String({
     description: "architect only: revise 模式下的调整要求。举例：把架构稿从条目式升级成段落式架构稿、某个角色设定需要重新设计、主线冲突表达太弱需要加强等。如果是架构稿评审未通过要求重写的场景，把评审意见的 overallFeedback 原样传入即可",
@@ -98,13 +105,23 @@ const SubAgentParams = Type.Object({
   approvedOnly: Type.Optional(Type.Boolean({ description: "exporter only: export only approved chapters. Default: false" })),
 });
 
-function deriveBookIdFromTitle(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9\u4e00-\u9fff]/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 30);
+type SubAgentParamsType = Static<typeof SubAgentParams>;
+
+function prepareSubAgentArguments(args: unknown): SubAgentParamsType {
+  if (!args || typeof args !== "object" || Array.isArray(args)) {
+    return args as SubAgentParamsType;
+  }
+
+  const prepared = { ...(args as Record<string, unknown>) };
+  if ("platform" in prepared) {
+    const platform = normalizePlatformId(prepared.platform);
+    if (platform) {
+      prepared.platform = platform;
+    } else {
+      delete prepared.platform;
+    }
+  }
+  return prepared as SubAgentParamsType;
 }
 
 export function createSubAgentTool(
@@ -120,12 +137,13 @@ export function createSubAgentTool(
       "'auditor' to audit quality, 'reviser' to revise a chapter, 'exporter' to export.",
     label: "Sub-Agent",
     parameters: SubAgentParams,
+    prepareArguments: prepareSubAgentArguments,
     async execute(
       _toolCallId: string,
-      params: Static<typeof SubAgentParams>,
+      params: SubAgentParamsType,
       _signal?: AbortSignal,
       onUpdate?: AgentToolUpdateCallback,
-    ): Promise<AgentToolResult<undefined>> {
+    ): Promise<AgentToolResult<unknown>> {
       const { agent, instruction, bookId, title, chapterNumber, genre, platform, language, targetChapters, chapterWordCount, revise, feedback, mode, format, approvedOnly } = params;
 
       const progress = (msg: string) => {
@@ -133,27 +151,34 @@ export function createSubAgentTool(
       };
 
       try {
+        if (!activeBookId && agent !== "architect") {
+          return textResult("No active book. Only the architect agent can create a book from this session.");
+        }
+        if (activeBookId && agent === "architect" && !revise) {
+          return textResult("当前已有书籍，不需要建书。如果你想创建新书，请先回到首页。");
+        }
+
         switch (agent) {
           case "architect": {
             if (revise) {
-              if (!bookId) {
-                return textResult("Error: architect revise 模式需要 bookId，用于定位要重写的书。");
+              if (!activeBookId) {
+                return textResult("Open the book first before revising its foundation.");
               }
-              progress(`Revising foundation for "${bookId}"...`);
-              await pipeline.reviseFoundation(bookId, feedback ?? instruction);
-              progress(`Foundation revised for "${bookId}".`);
+              const targetBookId = resolveToolBookId("architect", bookId, activeBookId);
+              progress(`Revising foundation for "${targetBookId}"...`);
+              await pipeline.reviseFoundation(targetBookId, feedback ?? instruction);
+              progress(`Foundation revised for "${targetBookId}".`);
               return textResult(
-                `Book "${bookId}" 架构稿已按要求重写。原书的条目式架构稿已备份到 story/.backup-phase4-<时间戳>/。`,
+                `Book "${targetBookId}" 架构稿已按要求重写。原书的条目式架构稿已备份到 story/.backup-phase4-<时间戳>/。`,
               );
-            }
-            if (activeBookId) {
-              return textResult("当前已有书籍，不需要建书。如果你想创建新书，请先回到首页。");
             }
             const resolvedTitle = title?.trim();
             if (!resolvedTitle) {
               return textResult('Error: title is required for the architect agent.');
             }
-            const id = bookId || deriveBookIdFromTitle(resolvedTitle) || `book-${Date.now().toString(36)}`;
+            const id = bookId
+              ? assertSafeBookId(bookId, "architect.bookId")
+              : deriveBookIdFromTitle(resolvedTitle) || `book-${Date.now().toString(36)}`;
             const now = new Date().toISOString();
             progress(`Starting architect for book "${id}"...`);
             await pipeline.initBook(
@@ -161,7 +186,7 @@ export function createSubAgentTool(
                 id,
                 title: resolvedTitle,
                 genre: genre ?? "general",
-                platform: (platform ?? "other") as any,
+                platform: normalizePlatformOrOther(platform),
                 language: (language ?? "zh") as any,
                 status: "outlining" as any,
                 targetChapters: targetChapters ?? 200,
@@ -172,25 +197,36 @@ export function createSubAgentTool(
               { externalContext: instruction },
             );
             progress(`Architect finished — book "${id}" foundation created.`);
-            return textResult(`Book "${resolvedTitle}" (${id}) initialised successfully. Foundation files are ready.`);
+            return textResult(
+              `Book "${resolvedTitle}" (${id}) initialised successfully. Foundation files are ready.`,
+              { kind: "book_created", bookId: id, title: resolvedTitle },
+            );
           }
 
           case "writer": {
-            if (!bookId) return textResult("Error: bookId is required for the writer agent.");
-            progress(`Writing next chapter for "${bookId}"...`);
-            const result = await pipeline.writeNextChapter(bookId, chapterWordCount);
-            progress(`Writer finished chapter for "${bookId}".`);
+            const targetBookId = resolveToolBookId("writer", bookId, activeBookId);
+            progress(`Writing next chapter for "${targetBookId}"...`);
+            const result = await pipeline.writeNextChapter(targetBookId, chapterWordCount);
+            progress(`Writer finished chapter for "${targetBookId}".`);
             return textResult(
-              `Chapter written for "${bookId}". ` +
+              `Chapter written for "${targetBookId}". ` +
               `Word count: ${(result as any).wordCount ?? "unknown"}.`,
+              {
+                kind: "chapter_written",
+                bookId: targetBookId,
+                chapterNumber: (result as any).chapterNumber,
+                title: (result as any).title,
+                wordCount: (result as any).wordCount,
+                status: (result as any).status,
+              },
             );
           }
 
           case "auditor": {
-            if (!bookId) return textResult("Error: bookId is required for the auditor agent.");
-            progress(`Auditing chapter ${chapterNumber ?? "latest"} for "${bookId}"...`);
-            const audit = await pipeline.auditDraft(bookId, chapterNumber);
-            progress(`Audit complete for "${bookId}".`);
+            const targetBookId = resolveToolBookId("auditor", bookId, activeBookId);
+            progress(`Auditing chapter ${chapterNumber ?? "latest"} for "${targetBookId}"...`);
+            const audit = await pipeline.auditDraft(targetBookId, chapterNumber);
+            progress(`Audit complete for "${targetBookId}".`);
             const issueLines = (audit.issues ?? [])
               .map((i: any) => `[${i.severity}] ${i.description}`)
               .join("\n");
@@ -201,16 +237,16 @@ export function createSubAgentTool(
           }
 
           case "reviser": {
-            if (!bookId) return textResult("Error: bookId is required for the reviser agent.");
+            const targetBookId = resolveToolBookId("reviser", bookId, activeBookId);
             const resolvedMode: ReviseMode = (mode as ReviseMode) ?? "spot-fix";
-            progress(`Revising "${bookId}" chapter ${chapterNumber ?? "latest"} in ${resolvedMode} mode...`);
-            await pipeline.reviseDraft(bookId, chapterNumber, resolvedMode);
-            progress(`Revision complete for "${bookId}".`);
-            return textResult(`Revision (${resolvedMode}) complete for "${bookId}" chapter ${chapterNumber ?? "latest"}.`);
+            progress(`Revising "${targetBookId}" chapter ${chapterNumber ?? "latest"} in ${resolvedMode} mode...`);
+            await pipeline.reviseDraft(targetBookId, chapterNumber, resolvedMode);
+            progress(`Revision complete for "${targetBookId}".`);
+            return textResult(`Revision (${resolvedMode}) complete for "${targetBookId}" chapter ${chapterNumber ?? "latest"}.`);
           }
 
           case "exporter": {
-            if (!bookId) return textResult("Error: bookId is required for the exporter agent.");
+            const targetBookId = resolveToolBookId("exporter", bookId, activeBookId);
             if (!projectRoot) return textResult("Error: exporter requires projectRoot.");
             const inferredFormat = format ?? (/epub/i.test(instruction)
               ? "epub"
@@ -219,12 +255,12 @@ export function createSubAgentTool(
                 : "txt");
             const exportApprovedOnly = approvedOnly ?? /approved|已通过|通过章节/.test(instruction);
             const state = new StateManager(projectRoot);
-            const result = await writeExportArtifact(state, bookId, {
+            const result = await writeExportArtifact(state, targetBookId, {
               format: inferredFormat,
               approvedOnly: exportApprovedOnly,
             });
             return textResult(
-              `Exported "${bookId}": ${result.chaptersExported} chapters, ${result.totalWords} words → ${result.outputPath}`,
+              `Exported "${targetBookId}": ${result.chaptersExported} chapters, ${result.totalWords} words → ${result.outputPath}`,
             );
           }
 
@@ -233,7 +269,7 @@ export function createSubAgentTool(
         }
       } catch (err: any) {
         console.error(`[sub_agent] "${agent}" failed:`, err);
-        return textResult(`Sub-agent "${agent}" failed: ${err?.message ?? String(err)}`);
+        throw err;
       }
     },
   };
@@ -261,9 +297,14 @@ export function createWriteTruthFileTool(
     label: "Write Truth File",
     parameters: WriteTruthFileParams,
     async execute(_toolCallId, params): Promise<AgentToolResult<undefined>> {
-      const bookId = resolveToolBookId("write_truth_file", params.bookId, activeBookId);
-      await tools.writeTruthFile(bookId, params.fileName, params.content);
-      return textResult(`Updated "${params.fileName}" for "${bookId}".`);
+      try {
+        const bookId = resolveToolBookId("write_truth_file", params.bookId, activeBookId);
+        const fileName = assertSafeTruthFileName(params.fileName);
+        await tools.writeTruthFile(bookId, fileName, params.content);
+        return textResult(`Updated "${fileName}" for "${bookId}".`);
+      } catch (err: any) {
+        return textResult(`write_truth_file failed: ${err?.message ?? String(err)}`);
+      }
     },
   };
 }
@@ -335,15 +376,32 @@ export function createPatchChapterTextTool(
 // ---------------------------------------------------------------------------
 
 const ReadParams = Type.Object({
-  path: Type.String({ description: "File path relative to books/, e.g. {bookId}/story/story_bible.md" }),
+  path: Type.String({ description: "File path relative to books/, or an absolute path when system path reading is enabled." }),
 });
 
-export function createReadTool(projectRoot: string): AgentTool<typeof ReadParams> {
+export interface ReadToolOptions {
+  readonly allowSystemPaths?: boolean;
+}
+
+function resolveReadPath(booksRoot: string, requestedPath: string, options: ReadToolOptions): string {
+  if (options.allowSystemPaths && isAbsolute(requestedPath)) {
+    return resolve(requestedPath);
+  }
+  return safeBooksPath(booksRoot, requestedPath);
+}
+
+export function createReadTool(
+  projectRoot: string,
+  options: ReadToolOptions = {},
+): AgentTool<typeof ReadParams> {
   const booksRoot = join(projectRoot, "books");
+  const description = options.allowSystemPaths
+    ? "Read a file. Relative paths resolve under books/; absolute paths read from the system filesystem."
+    : "Read a file from the book directory. Path is relative to books/.";
 
   return {
     name: "read",
-    description: "Read a file from the book directory. Path is relative to books/.",
+    description,
     label: "Read File",
     parameters: ReadParams,
     async execute(
@@ -351,7 +409,7 @@ export function createReadTool(projectRoot: string): AgentTool<typeof ReadParams
       params: Static<typeof ReadParams>,
     ): Promise<AgentToolResult<undefined>> {
       try {
-        const filePath = safeBooksPath(booksRoot, params.path);
+        const filePath = resolveReadPath(booksRoot, params.path, options);
         let content = await readFile(filePath, "utf-8");
         if (content.length > 10_000) {
           content = content.slice(0, 10_000) + "\n\n... [truncated at 10 000 chars]";

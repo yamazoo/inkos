@@ -84,6 +84,33 @@ describe("resolveServiceModel", () => {
     expect(result.temperatureRange).toEqual([0, 2]);
   });
 
+  it("resolves Google to native google-generative-ai model", async () => {
+    await mkdir(join(root, ".inkos"), { recursive: true });
+    await writeFile(
+      join(root, ".inkos", "secrets.json"),
+      JSON.stringify({ services: { google: { apiKey: "sk-google" } } }),
+    );
+
+    const result = await resolveServiceModel("google", "gemini-pro-latest", root);
+
+    expect(result.model.api).toBe("google-generative-ai");
+    expect(result.model.provider).toBe("google");
+    expect(result.model.baseUrl).toBe("https://generativelanguage.googleapis.com/v1beta");
+    expect(result.model.compat).toBeUndefined();
+  });
+
+  it("preserves DeepSeek tool-result bridge compatibility on resolved model", async () => {
+    await mkdir(join(root, ".inkos"), { recursive: true });
+    await writeFile(
+      join(root, ".inkos", "secrets.json"),
+      JSON.stringify({ services: { deepseek: { apiKey: "sk-deep" } } }),
+    );
+
+    const result = await resolveServiceModel("deepseek", "deepseek-v4-pro", root);
+
+    expect(result.model.compat).toMatchObject({ requiresAssistantAfterToolResult: true });
+  });
+
   it("constructs model from preset when getModel returns undefined", async () => {
     await mkdir(join(root, ".inkos"), { recursive: true });
     await writeFile(
@@ -114,6 +141,33 @@ describe("resolveServiceModel", () => {
     await expect(
       resolveServiceModel("moonshot", "kimi-k2.5", root),
     ).rejects.toThrow(/API key/i);
+  });
+
+  it("resolves Ollama local models without an API key", async () => {
+    const result = await resolveServiceModel(
+      "ollama",
+      "Qwen3.6-35B-A3B-APEX-I-Mini.gguf",
+      root,
+    );
+
+    expect(result.apiKey).toBe("");
+    expect(result.model.id).toBe("Qwen3.6-35B-A3B-APEX-I-Mini.gguf");
+    expect(result.model.provider).toBe("ollama");
+    expect(result.model.baseUrl).toBe("http://localhost:11434/v1");
+  });
+
+  it("resolves local custom OpenAI-compatible services without an API key", async () => {
+    const result = await resolveServiceModel(
+      "custom:LocalProxy",
+      "gpt-5.5",
+      root,
+      "http://127.0.0.1:4567/v1",
+    );
+
+    expect(result.apiKey).toBe("");
+    expect(result.model.id).toBe("gpt-5.5");
+    expect(result.model.api).toBe("openai-completions");
+    expect(result.model.baseUrl).toBe("http://127.0.0.1:4567/v1");
   });
 
   it("resolves custom service with baseUrl", async () => {
