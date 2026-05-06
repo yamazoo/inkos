@@ -5,13 +5,6 @@ import type { LengthSpec } from "../models/length-governance.js";
 import { buildFanficCanonSection, buildCharacterVoiceProfiles, buildFanficModeInstructions } from "./fanfic-prompt-sections.js";
 import { buildEnglishCoreRules, buildEnglishAntiAIRules, buildEnglishCharacterMethod, buildEnglishPreWriteChecklist, buildEnglishGenreIntro } from "./en-prompt-sections.js";
 import { buildLengthSpec } from "../utils/length-metrics.js";
-import {
-  DEFAULT_MAX_TRANSITION_MARKERS_PER_3K,
-  DEFAULT_PARAGRAPH_CV_THRESHOLD,
-  buildTransitionMarkerRule,
-  buildParagraphUniformityRule,
-  buildPacingRule,
-} from "../prompt-tuning/defaults.js";
 
 export interface FanficContext {
   readonly fanficCanon: string;
@@ -43,7 +36,7 @@ export function buildWriterSystemPrompt(
   const resolvedLengthSpec = lengthSpec ?? buildLengthSpec(book.chapterWordCount, isEnglish ? "en" : "zh");
 
   const outputSection = mode === "creative"
-    ? buildCreativeOutputFormat(book, genreProfile, resolvedLengthSpec, chapterNumber)
+    ? buildCreativeOutputFormat(book, genreProfile, resolvedLengthSpec)
     : buildOutputFormat(book, genreProfile, resolvedLengthSpec);
 
   const sections = isEnglish
@@ -171,10 +164,7 @@ function buildCoreRules(lengthSpec: LengthSpec): string {
 
 - Show, don't tell：用细节堆砌真实，用行动证明强大；角色的野心和价值观内化于行为，不通过口号喊出来
 - 五感代入法：场景描写中加入1-2种五感细节（视觉、听觉、嗅觉、触觉），增强画面感
-- 章节结尾钩子（Must）：必须以具体外部事件/动作/对话收尾，禁止以"主角想着明天怎么办"收尾
-  - ✓ 好的钩子：有人敲门、意外来客、远处异响、角色发现异常痕迹、悬念对话未答
-  - ✗ 碎碎念钩子：主角内心盘算明天计划、总结本章收获、独自感慨局势
-  - 禁止句式：结尾出现"明天……"、"他要想……"、"他得知道……"、"下一步……"、"今晚/明天，他要看看……"等内心独白收尾
+- 钩子设计：每章结尾设置悬念/伏笔/钩子，勾住读者继续阅读
 - 对话驱动：有角色互动的场景中，优先用对话传递冲突和信息，不要用大段叙述替代角色交锋。独处/逃生/探索场景除外
 - 信息分层植入：基础信息在行动中自然带出，关键设定结合剧情节点揭示，严禁大段灌输世界观
 - 描写必须服务叙事：环境描写烘托氛围或暗示情节，一笔带过即可；禁止无效描写
@@ -200,21 +190,14 @@ function buildCoreRules(lengthSpec: LengthSpec): string {
 
 - 【铁律】叙述者永远不得替读者下结论。读者能从行为推断的意图，叙述者不得直接说出。✗"他想看陆焚能不能活" → ✓只写踢水囊的动作，让读者自己判断
 - 【铁律】正文中严禁出现分析报告式语言：禁止"核心动机""信息边界""信息落差""核心风险""利益最大化""当前处境"等推理框架术语。人物内心独白必须口语化、直觉化。✗"核心风险不在今晚吵赢" → ✓"他心里转了一圈，知道今晚不是吵赢的问题"
-- 【铁律】转折/惊讶标记词（仿佛、忽然、竟、竟然、猛地、猛然、不禁、宛如）全篇总数不超过每3000字${DEFAULT_MAX_TRANSITION_MARKERS_PER_3K}次。超出时改用具体动作或感官描写传递突然性
+- 【铁律】转折/惊讶标记词（仿佛、忽然、竟、竟然、猛地、猛然、不禁、宛如）全篇总数不超过每3000字1次。超出时改用具体动作或感官描写传递突然性
 - 【铁律】同一体感/意象禁止连续渲染超过两轮。第三次出现相同意象域（如"火在体内流动"）时必须切换到新信息或新动作，避免原地打转
 - 【铁律】六步走心理分析是写作推导工具，其中的术语（"当前处境""核心动机""信息边界""性格过滤"等）只用于PRE_WRITE_CHECK内部推理，绝不可出现在正文叙事中
-
-## 节奏控制
-
-${buildPacingRule()}
 
 ## 硬性禁令
 
 - 【硬性禁令】全文严禁出现"不是……而是……""不是……，是……""不是A，是B"句式，出现即判定违规。改用直述句
 - 【硬性禁令】全文严禁出现破折号"——"，用逗号或句号断句
-- 【硬性禁令】对白必须使用直引号"……"，严禁使用中文书名号「……」
-  - ✓ "你到底是谁？"他问道。
-  - ✗ 他问道：「你到底是谁？」
 - 正文中禁止出现hook_id/账本式数据（如"余量由X%降到Y%"），数值结算只放POST_SETTLEMENT`;
 }
 
@@ -510,11 +493,9 @@ function buildPreWriteChecklist(book: BookConfig, gp: GenreProfile): string {
     `${idx++}. 【大纲锚定】本章对应卷纲中的哪个节点/阶段？本章必须推进该节点的剧情，不得跳过或提前消耗后续节点。如果卷纲指定了章节范围，严格遵守节奏。`,
     `${idx++}. 主角此刻利益最大化的选择是什么？`,
     `${idx++}. 这场冲突是谁先动手，为什么非做不可？`,
-    `${idx++}. 【冲突节拍】本章是否包含至少一个外部冲突事件（威胁/战斗/决裂/谈判/意外阻碍/紧急抉择）？外部冲突必须来自外部事件，不能仅靠主角内心推动。如果没有，请先构思冲突再动笔。`,
     `${idx++}. 配角/反派是否有明确诉求、恐惧和反制？行为是否由"过往经历+当前利益+性格底色"驱动？`,
     `${idx++}. 反派当前掌握了哪些已知信息？哪些信息只有读者知道？有无信息越界？`,
-    `${idx++}. 【章尾检查】本章最后3段是外部事件/动作/对话，还是主角内心独白（盘算明天/总结/感慨）？内心独白结尾属于违规，必须改为具体外部事件收尾`,
-    `${idx++}. 章尾是否留了钩子（外部事件/悬念对话/异常发现）？`,
+    `${idx++}. 章尾是否留了钩子（悬念/伏笔/冲突升级）？`,
   ];
 
   if (gp.numericalSystem) {
@@ -538,7 +519,7 @@ function buildPreWriteChecklist(book: BookConfig, gp: GenreProfile): string {
 // Creative-only output format (no settlement blocks)
 // ---------------------------------------------------------------------------
 
-function buildCreativeOutputFormat(book: BookConfig, gp: GenreProfile, lengthSpec: LengthSpec, chapterNumber?: number): string {
+function buildCreativeOutputFormat(book: BookConfig, gp: GenreProfile, lengthSpec: LengthSpec): string {
   const resourceRow = gp.numericalSystem
     ? "| 当前资源总量 | X | 与账本一致 |\n| 本章预计增量 | +X（来源） | 无增量写+0 |"
     : "";
@@ -555,41 +536,6 @@ ${resourceRow}| 待回收伏笔 | 用真实 hook_id 填写（无则写 none） |
 | 章节类型 | ${gp.chapterTypes.join("/")} | |
 | 风险扫描 | OOC/信息越界/设定冲突${gp.powerScaling ? "/战力崩坏" : ""}/节奏/词汇疲劳 | |`;
 
-  const completionReportSection = `
-
-<!-- COMPLETION_REPORT
-{
-  "schemaVersion": 1,
-  "bookId": "",
-  "chapter": ${chapterNumber ?? 0},
-  "cost": "（一句话描述本章主角付出的代价）",
-  "gain": "（一句话描述本章主角的收获）",
-  "factionChanges": [],
-  "moodChange": {
-    "tensionBefore": 50,
-    "tensionAfter": 50,
-    "warmthBefore": 50,
-    "warmthAfter": 50,
-    "overallShift": "same",
-    "chapterTone": ""
-  },
-  "hookChanges": {
-    "advanced": [],
-    "newlyPlanted": [],
-    "paidOff": []
-  },
-  "arcProgress": {
-    "nodeId": "",
-    "progressBefore": 0,
-    "progressAfter": 0
-  },
-  "selfCheck": {
-    "beatCoverage": [],
-    "dialogueCheck": []
-  }
-}
--->`;
-
   return `## 输出格式（严格遵守）
 
 ${preWriteTable}
@@ -600,9 +546,7 @@ ${preWriteTable}
 === CHAPTER_CONTENT ===
 (正文内容，目标${lengthSpec.target}字，允许区间${lengthSpec.softMin}-${lengthSpec.softMax}字)
 
-${completionReportSection}
-
-【重要】本次只需输出以上区块（PRE_WRITE_CHECK、CHAPTER_TITLE、CHAPTER_CONTENT、COMPLETION_REPORT）。
+【重要】本次只需输出以上三个区块（PRE_WRITE_CHECK、CHAPTER_TITLE、CHAPTER_CONTENT）。
 状态卡、伏笔池、摘要等追踪文件将由后续结算阶段处理，请勿输出。`;
 }
 

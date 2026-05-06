@@ -28,3 +28,7 @@ books/
 inkos.json
 prompt/
 CLAUDE.md
+
+# Graphify 生成的图谱数据
+graphify-out/
+.graphify_*

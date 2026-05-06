@@ -93,8 +93,21 @@ export interface LLMClient {
   readonly _apiKey?: string;
   readonly defaults: {
     readonly temperature: number;
+    /**
+     * Per-call fallback: 当 agent 调 chat() 不传 options.maxTokens 时用这个值。
+     * 不是硬上限——per-call 显式传的值会覆盖它，不会被它限制。
+     */
     readonly maxTokens: number;
-    readonly maxTokensCap: number | null; // non-null only when user explicitly configured
+    /**
+     * Per-call 硬上限。null 表示不封顶；非 null 表示给 chat() 的 per-call
+     * maxTokens 加一个 Math.min(perCall, cap) 约束。
+     *
+     * 语义必须跟 defaults.maxTokens 严格分开：maxTokens 是 fallback，
+     * maxTokensCap 是 cap。旧实现把两者用同一个数推导，导致 agent per-call 16384
+     * 被 config.maxTokens=8192 误裁（见 tests/__tests__/provider.test.ts 的
+     * "per-call maxTokens is not capped by config.maxTokens" 回归测试）。
+     */
+    readonly maxTokensCap: number | null;
     readonly thinkingBudget: number;
     readonly extra: Record<string, unknown>;
   };
@@ -130,8 +143,12 @@ export interface ChatWithToolsResult {
 export function createLLMClient(config: LLMConfig): LLMClient {
   const defaults = {
     temperature: config.temperature ?? 0.7,
+    // fallback: agent 没传 per-call 时用这个
     maxTokens: config.maxTokens ?? 8192,
-    maxTokensCap: config.maxTokens ?? null, // only cap when user explicitly set maxTokens
+    // cap: 只在用户显式配 maxTokensCap 时生效；默认 null = 不封顶 per-call。
+    // **禁止**改成 `config.maxTokens ?? null` —— 那样会让 architect 的 per-call
+    // 16384 被用户 config.maxTokens=8192 自动裁剪，基础设定输出会被截断。
+    maxTokensCap: config.maxTokensCap ?? null,
     thinkingBudget: config.thinkingBudget ?? 0,
     extra: config.extra ?? {},
   };
@@ -719,32 +736,6 @@ async function chatCompletionViaCustomOpenAICompatible(
   return { content, usage };
 }
 
-// === Retry helper for transient server errors ===
-
-const RETRYABLE_STATUSES = ["500", "429"];
-
-function isRetryable(error: unknown): boolean {
-  return RETRYABLE_STATUSES.some((s) => String(error).includes(s));
-}
-
-async function retryOnTransientError<T>(fn: () => Promise<T>, maxAttempts = 3): Promise<T> {
-  let lastError: unknown;
-  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    try {
-      return await fn();
-    } catch (err) {
-      lastError = err;
-      if (attempt < maxAttempts && isRetryable(err)) {
-        const delay = Math.pow(2, attempt) * 1000;
-        await new Promise((resolve) => setTimeout(resolve, delay));
-      } else {
-        break;
-      }
-    }
-  }
-  throw lastError;
-}
-
 // === Simple Chat (used by all agents via BaseAgent.chat()) ===
 
 export async function chatCompletion(
@@ -773,21 +764,11 @@ export async function chatCompletion(
   const onTextDelta = options?.onTextDelta;
   const errorCtx = { baseUrl: client._piModel?.baseUrl ?? "(unknown)", model };
 
-  const dispatch = (): Promise<LLMResponse> =>
-    client.provider === "anthropic"
-      ? client.stream
-        ? chatCompletionAnthropic(client._anthropic!, model, messages, resolved, client.defaults.thinkingBudget, onStreamProgress, onTextDelta)
-        : chatCompletionAnthropicSync(client._anthropic!, model, messages, resolved, client.defaults.thinkingBudget, onTextDelta)
-      : client.apiFormat === "responses"
-        ? client.stream
-          ? chatCompletionOpenAIResponses(client._openai!, model, messages, resolved, options?.webSearch, onStreamProgress, onTextDelta)
-          : chatCompletionOpenAIResponsesSync(client._openai!, model, messages, resolved, options?.webSearch, onTextDelta)
-        : client.stream
-          ? chatCompletionOpenAIChat(client._openai!, model, messages, resolved, options?.webSearch, onStreamProgress, onTextDelta)
-          : chatCompletionOpenAIChatSync(client._openai!, model, messages, resolved, options?.webSearch, onTextDelta);
-
   try {
-    return await retryOnTransientError(dispatch);
+    if (shouldUseNativeCustomTransport(client)) {
+      return await chatCompletionViaCustomOpenAICompatible(client, model, messages, resolved, onStreamProgress, onTextDelta);
+    }
+    return await chatCompletionViaPiAi(client, model, messages, resolved, onStreamProgress, onTextDelta);
   } catch (error) {
     // Stream interrupted but partial content is usable — return truncated response
     if (error instanceof PartialResponseError) {
@@ -827,86 +808,19 @@ export async function chatWithTools(
 }
 
 // === pi-ai Unified Implementation ===
-async function chatCompletionOpenAIChat(
-  client: OpenAI,
-  model: string,
-  messages: ReadonlyArray<LLMMessage>,
-  options: { readonly temperature: number; readonly maxTokens: number; readonly extra: Record<string, unknown> },
-  webSearch?: boolean,
-  onStreamProgress?: OnStreamProgress,
-  onTextDelta?: (text: string) => void,
-): Promise<LLMResponse> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const createParams: any = {
-    model,
-    messages: messages.map((m) => ({ role: m.role, content: m.content })),
-    temperature: options.temperature,
-    max_tokens: options.maxTokens,
-    stream: true,
-    ...(webSearch ? { web_search_options: { search_context_size: "medium" as const } } : {}),
-    ...stripReservedKeys(options.extra),
-  };
-  const abortController = new AbortController();
-  let lastChunkTime = Date.now();
-  let idleTimer: ReturnType<typeof setTimeout> | undefined;
 
-  // Abort after 11min of inactivity — MiniMax API enforces a 10min/server-side timeout.
-  // Setting a slightly longer client timeout so the abort fires close to that limit,
-  // allowing a fast retry rather than waiting for an indefinite hang.
-  const IDLE_TIMEOUT_MS = 660_000;
-  const resetIdleTimer = () => {
-    if (idleTimer) clearTimeout(idleTimer);
-    idleTimer = setTimeout(() => abortController.abort(), IDLE_TIMEOUT_MS);
-  };
-  resetIdleTimer();
+/**
+ * Build a pi-ai Model<Api> for a specific per-call model name.
+ * The base template comes from client._piModel (created in createLLMClient);
+ * we override .id / .name when the caller passes a different model string
+ * (e.g. agent overrides).
+ */
+function resolvePiModel(client: LLMClient, model: string): PiModel<PiApi> {
+  const base = client._piModel!;
+  if (base.id === model) return base;
+  return { ...base, id: model, name: model };
+}
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const stream = await client.chat.completions.create({ ...createParams, signal: abortController.signal }) as any;
-
-  const chunks: string[] = [];
-  let inputTokens = 0;
-  let outputTokens = 0;
-  const monitor = createStreamMonitor(onStreamProgress);
-
-  try {
-    for await (const chunk of stream) {
-      lastChunkTime = Date.now();
-      resetIdleTimer();
-      const delta = chunk.choices[0]?.delta?.content;
-      if (delta) {
-        chunks.push(delta);
-        monitor.onChunk(delta);
-        onTextDelta?.(delta);
-      }
-      if (chunk.usage) {
-        inputTokens = chunk.usage.prompt_tokens ?? 0;
-        outputTokens = chunk.usage.completion_tokens ?? 0;
-      }
-    }
-  } catch (streamError) {
-    monitor.stop();
-    if (idleTimer) clearTimeout(idleTimer);
-    const partial = chunks.join("");
-    if (partial.length >= MIN_SALVAGEABLE_CHARS) {
-      throw new PartialResponseError(partial, streamError);
-    }
-    throw streamError;
-  } finally {
-    monitor.stop();
-    if (idleTimer) clearTimeout(idleTimer);
-  }
-
-  const content = chunks.join("");
-  if (!content) throw new Error("LLM returned empty response from stream");
-
-  return {
-    content,
-    usage: {
-      promptTokens: inputTokens,
-      completionTokens: outputTokens,
-      totalTokens: inputTokens + outputTokens,
-    },
-  };
 /** Convert inkos LLMMessage[] to pi-ai Context. */
 function toPiContext(messages: ReadonlyArray<LLMMessage>): PiContext {
   const systemParts = messages.filter((m) => m.role === "system").map((m) => m.content);
@@ -1009,6 +923,30 @@ async function chatCompletionViaPiAi(
     headers: piModel.headers,
   };
 
+  if (!client.stream) {
+    const response = await piCompleteSimple(piModel, context, streamOpts);
+    if (response.stopReason === "error" && response.errorMessage) {
+      throw new Error(response.errorMessage);
+    }
+    const content = response.content
+      .filter((block): block is { type: "text"; text: string } => block.type === "text")
+      .map((block) => block.text)
+      .join("");
+    if (!content) {
+      const diag = `usage=${response.usage.input}+${response.usage.output}`;
+      console.warn(`[inkos] LLM 非流式响应无文本内容 (${diag})`);
+      throw new Error(`LLM returned empty response (${diag})`);
+    }
+    return {
+      content,
+      usage: {
+        promptTokens: response.usage.input,
+        completionTokens: response.usage.output,
+        totalTokens: response.usage.totalTokens,
+      },
+    };
+  }
+
   const eventStream = piStreamSimple(piModel, context, streamOpts);
   const chunks: string[] = [];
   const monitor = createStreamMonitor(onStreamProgress);
@@ -1037,6 +975,7 @@ async function chatCompletionViaPiAi(
     }
   } catch (streamError) {
     monitor.stop();
+    if (streamError instanceof PartialResponseError) throw streamError;
     const partial = chunks.join("");
     if (partial.length >= MIN_SALVAGEABLE_CHARS) {
       throw new PartialResponseError(partial, streamError);

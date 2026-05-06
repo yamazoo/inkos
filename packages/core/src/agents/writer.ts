@@ -1,21 +1,14 @@
 import { BaseAgent } from "./base.js";
-import type { LLMResponse } from "../llm/provider.js";
 import type { BookConfig } from "../models/book.js";
 import type { GenreProfile } from "../models/genre-profile.js";
 import type { BookRules } from "../models/book-rules.js";
-import type { Scene } from "../models/input-governance.js";
 import { buildWriterSystemPrompt, type FanficContext } from "./writer-prompts.js";
-import {
-  repairChapterWithWriter,
-  type WriterRepairInput,
-  type ReviseMode,
-  type ReviseOutput,
-} from "./writer-repair.js";
 import { buildSettlerSystemPrompt, buildSettlerUserPrompt } from "./settler-prompts.js";
 import { buildObserverSystemPrompt, buildObserverUserPrompt } from "./observer-prompts.js";
 import { parseSettlerDeltaOutput } from "./settler-delta-parser.js";
 import { parseSettlementOutput } from "./settler-parser.js";
 import { readGenreProfile, readBookRules } from "./rules-reader.js";
+import { readStoryFrame, readVolumeMap, readCharacterContext, readCurrentStateWithFallback } from "../utils/outline-paths.js";
 import {
   detectCrossChapterRepetition,
   detectParagraphLengthDrift,
@@ -54,17 +47,9 @@ export interface WriteChapterInput {
   readonly contextPackage?: ContextPackage;
   readonly ruleStack?: RuleStack;
   readonly trace?: ChapterTrace;
-  readonly beatSheet?: string;
-  readonly scenePlan?: {
-    readonly scenePlan: string;
-    readonly scenes: readonly Scene[];
-    readonly totalScenes: number;
-    readonly totalTargetWords: number;
-  };
   readonly lengthSpec?: LengthSpec;
   readonly wordCountOverride?: number;
   readonly temperatureOverride?: number;
-  readonly allowReapply?: boolean;
 }
 
 export interface SettleChapterStateInput {
@@ -86,19 +71,12 @@ export interface TokenUsage {
   readonly totalTokens: number;
 }
 
-export type WriterRepairMode = ReviseMode;
-export type { ReviseMode, ReviseOutput } from "./writer-repair.js";
-export { DEFAULT_REVISE_MODE } from "./writer-repair.js";
-
-export interface RepairChapterInput extends WriterRepairInput {}
-
 export interface WriteChapterOutput {
   readonly chapterNumber: number;
   readonly title: string;
   readonly content: string;
   readonly wordCount: number;
   readonly preWriteCheck: string;
-  readonly completionReport?: unknown;
   readonly postSettlement: string;
   readonly runtimeStateDelta?: RuntimeStateDelta;
   readonly runtimeStateSnapshot?: RuntimeStateSnapshot;
@@ -121,27 +99,6 @@ export interface WriteChapterOutput {
   readonly tokenUsage?: TokenUsage;
 }
 
-// Strip all markdown formatting from prose content, keeping only plain text
-function stripMarkdown(content: string): string {
-  return content
-    .replace(/^```(?:md|markdown|yaml)?\s*\n?/gm, "")
-    .replace(/\n```\s*$/gm, "")
-    .replace(/\*\*(.+?)\*\*/g, "$1")
-    .replace(/__(.+?)__/g, "$1")
-    .replace(/\*(.+?)\*/g, "$1")
-    .replace(/_(.+?)_/g, "$1")
-    .replace(/^#{1,6}\s+(.+)$/gm, "$1")
-    .replace(/^>\s?/gm, "")
-    .replace(/^[-*_]{3,}\s*$/gm, "")
-    .replace(/`(.+?)`/g, "$1")
-    .replace(/!\[([^\]]*)\]\([^)]+\)/g, "$1")
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    .replace(/^[\s]*[-*+]\s+/gm, "")
-    .replace(/^[\s]*\d+\.\s+/gm, "")
-    .replace(/~~(.+?)~~/g, "$1")
-    .replace(/\n{3,}/g, "\n\n");
-}
-
 export class WriterAgent extends BaseAgent {
   get name(): string {
     return "writer";
@@ -159,19 +116,6 @@ export class WriterAgent extends BaseAgent {
     this.ctx.logger?.warn(this.localize(language, messages));
   }
 
-  async repairChapter(input: RepairChapterInput): Promise<ReviseOutput> {
-    return repairChapterWithWriter(
-      {
-        projectRoot: this.ctx.projectRoot,
-        temperature: typeof this.ctx.writerParamsOverride?.writer_temperature_settlement === "number"
-          ? this.ctx.writerParamsOverride.writer_temperature_settlement
-          : undefined,
-        chat: (messages, options) => this.chat(messages, options),
-      },
-      input,
-    );
-  }
-
   async writeChapter(input: WriteChapterInput): Promise<WriteChapterOutput> {
     const { book, bookDir, chapterNumber } = input;
 
@@ -180,16 +124,16 @@ export class WriterAgent extends BaseAgent {
       chapterSummaries, subplotBoard, emotionalArcs, characterMatrix, styleProfileRaw,
       parentCanon, fanficCanonRaw,
     ] = await Promise.all([
-        this.readFileOrDefault(join(bookDir, "story/story_bible.md")),
-        this.readFileOrDefault(join(bookDir, "story/volume_outline.md")),
+        readStoryFrame(bookDir),
+        readVolumeMap(bookDir),
         this.readFileOrDefault(join(bookDir, "story/style_guide.md")),
-        this.readFileOrDefault(join(bookDir, "story/current_state.md")),
+        readCurrentStateWithFallback(bookDir),
         this.readFileOrDefault(join(bookDir, "story/particle_ledger.md")),
         this.readFileOrDefault(join(bookDir, "story/pending_hooks.md")),
         this.readFileOrDefault(join(bookDir, "story/chapter_summaries.md")),
         this.readFileOrDefault(join(bookDir, "story/subplot_board.md")),
         this.readFileOrDefault(join(bookDir, "story/emotional_arcs.md")),
-        this.readFileOrDefault(join(bookDir, "story/character_matrix.md")),
+        readCharacterContext(bookDir),
         this.readFileOrDefault(join(bookDir, "story/style_profile.json")),
         this.readFileOrDefault(join(bookDir, "story/parent_canon.md")),
         this.readFileOrDefault(join(bookDir, "story/fanfic_canon.md")),
@@ -250,8 +194,6 @@ export class WriterAgent extends BaseAgent {
           contextPackage: input.contextPackage,
           ruleStack: input.ruleStack,
           trace: input.trace,
-          beatSheet: input.beatSheet,
-          scenePlan: input.scenePlan,
           lengthSpec: resolvedLengthSpec,
           language: book.language ?? genreProfile.language,
           varianceBrief: englishVarianceBrief?.text,
@@ -305,55 +247,16 @@ export class WriterAgent extends BaseAgent {
     // Scale maxTokens to chapter word count (Chinese ≈ 1.5 tokens/char)
     const creativeMaxTokens = Math.max(8192, Math.ceil(targetWords * 2));
 
-    const chatCreativeWithRetry = async (): Promise<LLMResponse> => {
-      const maxAttempts = 3;
-      for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-        try {
-          return await this.chat(
-            [
-              { role: "system", content: creativeSystemPrompt },
-              { role: "user", content: creativeUserPrompt },
-            ],
-            { maxTokens: creativeMaxTokens, temperature: creativeTemperature },
-          );
-        } catch (err) {
-          const is529 = String(err).includes("529") || String(err).includes("overloaded_error");
-          if (is529 && attempt < maxAttempts) {
-            const delaySec = attempt * 20;
-            this.log?.warn(`[writer] Creative phase 529 (attempt ${attempt}/${maxAttempts}), retrying in ${delaySec}s…`);
-            await new Promise((resolve) => setTimeout(resolve, delaySec * 1000));
-          } else {
-            throw err;
-          }
-        }
-      }
-      throw new Error("unreachable");
-    };
-
-    const creativeResponse = await chatCreativeWithRetry();
+    const creativeResponse = await this.chat(
+      [
+        { role: "system", content: creativeSystemPrompt },
+        { role: "user", content: creativeUserPrompt },
+      ],
+      { maxTokens: creativeMaxTokens, temperature: creativeTemperature },
+    );
     const creativeUsage = creativeResponse.usage;
 
     const creative = parseCreativeOutput(chapterNumber, creativeResponse.content, resolvedLengthSpec.countingMode);
-    // Mutable copy used when post-write enforcement rewrites the ending
-    let finalContent = creative.content;
-
-    // ── Emergency chapter file save ──
-    // If the Settler (Phase 2) fails due to API errors, the chapter content must still be
-    // persisted so it is never lost. Save immediately after Phase 1 completes.
-    try {
-      const chaptersDir = join(input.bookDir, "chapters");
-      await mkdir(chaptersDir, { recursive: true });
-      const paddedNum = String(chapterNumber).padStart(4, "0");
-      const sanitized = creative.title.replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_").slice(0, 50);
-      const filename = `${paddedNum}_${sanitized}.md`;
-      const plainContent = stripMarkdown(creative.content);
-      const titleLine = (resolvedLanguage === "en"
-        ? `Chapter ${chapterNumber}: ${creative.title}`
-        : `第${chapterNumber}章 ${creative.title}`).replace(/\*\*(.+?)\*\*/g, "$1").replace(/\*(.+?)\*/g, "$1").replace(/__(.+?)__/g, "$1").replace(/_(.+?)_/g, "$1");
-      await writeFile(join(chaptersDir, filename), `${titleLine}\n\n${plainContent}`, "utf-8");
-    } catch (emergencySaveError) {
-      this.log?.warn(`Emergency chapter file save failed (non-fatal): ${String(emergencySaveError)}`);
-    }
 
     // ── Phase 2: State settlement (temperature 0.3) ──
     this.logInfo(resolvedLanguage, {
@@ -411,7 +314,6 @@ export class WriterAgent extends BaseAgent {
       originalSubplots: subplotBoard,
       originalEmotionalArcs: emotionalArcs,
       originalCharacterMatrix: characterMatrix,
-      allowReapply: input.allowReapply,
     });
     const settlement = settleResult.settlement;
     const settleUsage = settleResult.usage;
@@ -420,7 +322,6 @@ export class WriterAgent extends BaseAgent {
       settlement.runtimeStateDelta,
       resolvedLanguage,
       chapterNumber,
-      input.allowReapply,
     );
     const resolvedRuntimeStateDelta = runtimeStateArtifacts?.resolvedDelta ?? settlement.runtimeStateDelta;
     const priorHookIds = new Set(parsePendingHooksMarkdown(hooks).map((hook) => hook.hookId));
@@ -475,45 +376,6 @@ export class WriterAgent extends BaseAgent {
       }
     }
 
-    // ── Post-write enforcement: 内心独白结尾 triggers targeted rewrite ──
-    const hasEndingViolation = postWriteErrors.some((e) => e.rule === "内心独白结尾");
-    if (hasEndingViolation) {
-      this.logWarn(resolvedLanguage, {
-        zh: `强制修复：第${chapterNumber}章以内心独白结尾，触发 rewrite 修复`,
-        en: `Enforcement: chapter ${chapterNumber} ends with internal monologue — triggering targeted rewrite`,
-      });
-      try {
-        const repairResult = await this.repairChapter({
-          bookDir,
-          chapterContent: creative.content,
-          chapterNumber,
-          issues: [{
-            severity: "critical",
-            category: "ending-violation",
-            description: resolvedLanguage === "zh"
-              ? "章节以主角内心独白收尾（反思/计划/盘算），无外部事件，违反「禁止内心独白结尾」规则。"
-              : "Chapter ends with protagonist internal monologue (reflection/planning) with no external event — forbidden.",
-            suggestion: resolvedLanguage === "zh"
-              ? "用 rewrite 模式修改最后2-3段，改为具体外部事件/动作/对话收尾（如：有人出现/意外来客/远处异响/悬念对话未答）。保持章节总字数不变。"
-              : "Rewrite the last 2-3 paragraphs to end with an external event, action, or dialogue — not the protagonist's thoughts. Keep total word count roughly the same.",
-          }],
-          mode: "rewrite",
-          genre: book.genre,
-          chapterIntent: input.chapterIntent,
-          contextPackage: input.contextPackage,
-          ruleStack: input.ruleStack,
-          lengthSpec: resolvedLengthSpec,
-        });
-        finalContent = repairResult.revisedContent;
-        this.logInfo(resolvedLanguage, {
-          zh: `强制修复完成：第${chapterNumber}章结尾已重写为外部事件收尾`,
-          en: `Enforcement complete: chapter ${chapterNumber} ending rewritten to external event`,
-        });
-      } catch (repairErr) {
-        this.ctx.logger?.warn(`Post-write ending rewrite failed for chapter ${chapterNumber}: ${String(repairErr)}`);
-      }
-    }
-
     // ── Merge into WriteChapterOutput ──
     const tokenUsage: TokenUsage = {
       promptTokens: creativeUsage.promptTokens + settleUsage.promptTokens,
@@ -524,10 +386,9 @@ export class WriterAgent extends BaseAgent {
     return {
       chapterNumber,
       title: creative.title,
-      content: finalContent,
+      content: creative.content,
       wordCount: creative.wordCount,
       preWriteCheck: creative.preWriteCheck,
-      completionReport: creative.completionReport,
       postSettlement: settlement.postSettlement,
       runtimeStateDelta: resolvedRuntimeStateDelta,
       runtimeStateSnapshot: runtimeStateArtifacts?.snapshot ?? settlement.runtimeStateSnapshot,
@@ -559,14 +420,14 @@ export class WriterAgent extends BaseAgent {
       characterMatrix,
       volumeOutline,
     ] = await Promise.all([
-      this.readFileOrDefault(join(input.bookDir, "story/current_state.md")),
+      readCurrentStateWithFallback(input.bookDir),
       this.readFileOrDefault(join(input.bookDir, "story/particle_ledger.md")),
       this.readFileOrDefault(join(input.bookDir, "story/pending_hooks.md")),
       this.readFileOrDefault(join(input.bookDir, "story/chapter_summaries.md")),
       this.readFileOrDefault(join(input.bookDir, "story/subplot_board.md")),
       this.readFileOrDefault(join(input.bookDir, "story/emotional_arcs.md")),
-      this.readFileOrDefault(join(input.bookDir, "story/character_matrix.md")),
-      this.readFileOrDefault(join(input.bookDir, "story/volume_outline.md")),
+      readCharacterContext(input.bookDir),
+      readVolumeMap(input.bookDir),
     ]);
 
     const { profile: genreProfile } = await readGenreProfile(this.ctx.projectRoot, input.book.genre);
@@ -665,7 +526,6 @@ export class WriterAgent extends BaseAgent {
     readonly originalSubplots: string;
     readonly originalEmotionalArcs: string;
     readonly originalCharacterMatrix: string;
-    readonly allowReapply?: boolean;
   }): Promise<{
     settlement: ReturnType<typeof parseSettlementOutput> & {
       runtimeStateDelta?: RuntimeStateDelta;
@@ -682,32 +542,14 @@ export class WriterAgent extends BaseAgent {
       zh: `阶段 2a：提取第${params.chapterNumber}章事实`,
       en: `Phase 2a: observing facts for chapter ${params.chapterNumber}`,
     });
-    const chatObserverWithRetry = async (): Promise<string> => {
-      const maxAttempts = 4;
-      for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-        try {
-          const r = await this.chat(
-            [
-              { role: "system", content: observerSystem },
-              { role: "user", content: observerUser },
-            ],
-            { maxTokens: 4096, temperature: 0.5 },
-          );
-          return r.content;
-        } catch (err) {
-          const is529 = String(err).includes("529") || String(err).includes("overloaded_error");
-          if (is529 && attempt < maxAttempts) {
-            const delaySec = attempt * 10;
-            this.log?.warn(`[writer] Observer 529 (attempt ${attempt}/${maxAttempts}), retrying in ${delaySec}s…`);
-            await new Promise((resolve) => setTimeout(resolve, delaySec * 1000));
-          } else {
-            throw err;
-          }
-        }
-      }
-      throw new Error("unreachable");
-    };
-    const observations = await chatObserverWithRetry();
+    const observerResponse = await this.chat(
+      [
+        { role: "system", content: observerSystem },
+        { role: "user", content: observerUser },
+      ],
+      { temperature: 0.5 },
+    );
+    const observations = observerResponse.content;
 
     // Phase 2b: Reflector — merge observations into truth files
     this.logInfo(resolvedLang, {
@@ -747,40 +589,20 @@ export class WriterAgent extends BaseAgent {
     // Settler outputs all truth files — scale with content size
     const settlerMaxTokens = Math.max(8192, Math.ceil(params.content.length * 0.8));
 
-    // Retry wrapper for rate-limited (529) responses
-    const chatSettlerWithRetry = async (): Promise<LLMResponse> => {
-      const maxAttempts = 5;
-      for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-        try {
-          return await this.chat(
-            [
-              { role: "system", content: settlerSystem },
-              { role: "user", content: settlerUser },
-            ],
-            { maxTokens: settlerMaxTokens, temperature: 0.3 },
-          );
-        } catch (err) {
-          const is529 = String(err).includes("529") || String(err).includes("overloaded_error");
-          if (is529 && attempt < maxAttempts) {
-            const delaySec = attempt * 15;
-            this.log?.warn(`[writer] Settler 529 (attempt ${attempt}/${maxAttempts}), retrying in ${delaySec}s…`);
-            await new Promise((resolve) => setTimeout(resolve, delaySec * 1000));
-          } else {
-            throw err;
-          }
-        }
-      }
-      throw new Error("unreachable");
-    };
-
-    const settlerResponse = await chatSettlerWithRetry();
+    const response = await this.chat(
+      [
+        { role: "system", content: settlerSystem },
+        { role: "user", content: settlerUser },
+      ],
+      { maxTokens: settlerMaxTokens, temperature: 0.3 },
+    );
 
     let mergedSettlement: ReturnType<typeof parseSettlementOutput> & {
       runtimeStateDelta?: RuntimeStateDelta;
       runtimeStateSnapshot?: RuntimeStateSnapshot;
     };
     try {
-      const deltaOutput = parseSettlerDeltaOutput(settlerResponse.content);
+      const deltaOutput = parseSettlerDeltaOutput(response.content);
       mergedSettlement = {
         postSettlement: deltaOutput.postSettlement,
         runtimeStateDelta: deltaOutput.runtimeStateDelta,
@@ -793,7 +615,7 @@ export class WriterAgent extends BaseAgent {
         updatedCharacterMatrix: "",
       };
     } catch {
-      const settlement = parseSettlementOutput(settlerResponse.content, params.genreProfile);
+      const settlement = parseSettlementOutput(response.content, params.genreProfile);
       mergedSettlement = governedControlBlock
         ? {
             ...settlement,
@@ -813,7 +635,7 @@ export class WriterAgent extends BaseAgent {
 
     return {
       settlement: mergedSettlement,
-      usage: settlerResponse.usage,
+      usage: response.usage,
     };
   }
 
@@ -830,18 +652,14 @@ export class WriterAgent extends BaseAgent {
     const paddedNum = String(output.chapterNumber).padStart(4, "0");
     const filename = `${paddedNum}_${this.sanitizeFilename(output.title)}.md`;
 
-    const rawTitle = language === "en"
-      ? `Chapter ${output.chapterNumber}: ${output.title}`
-      : `第${output.chapterNumber}章 ${output.title}`;
-    const titleLine = rawTitle.replace(/\*\*(.+?)\*\*/g, "$1").replace(/\*(.+?)\*/g, "$1").replace(/__(.+?)__/g, "$1").replace(/_(.+?)_/g, "$1");
-    // 硬性禁令：替换中文破折号，输出前拦截，不走LLM
-    // 对白引号：中文书名号「」改为双引号（正统对白格式）
-    const QD = "\u201C"; // "
-    const QDC = "\u201D"; // "
-    const plainContent = stripMarkdown(
-      output.content.replace(/——/g, "，").replace(/「/g, QD).replace(/」/g, QDC),
-    );
-    const chapterContent = `${titleLine}\n\n${plainContent}`;
+    const heading = language === "en"
+      ? `# Chapter ${output.chapterNumber}: ${output.title}`
+      : `# 第${output.chapterNumber}章 ${output.title}`;
+    const chapterContent = [
+      heading,
+      "",
+      output.content,
+    ].join("\n");
     const runtimeStateArtifacts = await this.resolveRuntimeStateArtifactsForOutput(
       bookDir,
       output,
@@ -994,12 +812,6 @@ ${lengthRequirementBlock}
     readonly contextPackage: ContextPackage;
     readonly ruleStack: RuleStack;
     readonly trace?: ChapterTrace;
-    readonly beatSheet?: string;
-    readonly scenePlan?: {
-      readonly scenePlan: string;
-      readonly totalScenes: number;
-      readonly totalTargetWords: number;
-    };
     readonly lengthSpec: LengthSpec;
     readonly language?: "zh" | "en";
     readonly varianceBrief?: string;
@@ -1040,41 +852,12 @@ ${lengthRequirementBlock}
         : `\n## 显式 Hook Agenda\n${explicitHookAgenda}\n`
       : "";
 
-    const beatSheetBlock = params.beatSheet
-      ? params.language === "en"
-        ? `\n## Chapter Beat Skeleton (Soft Constraint)\n${params.beatSheet}\n`
-        : `\n## 章节节拍骨架（软约束）\n${params.beatSheet}\n`
-      : "";
-
-    const scenePlanBlock = params.scenePlan
-      ? params.language === "en"
-        ? `\n## Scene Plan
-共 ${params.scenePlan.totalScenes} scenes, target ~${params.scenePlan.totalTargetWords} words.
-${params.scenePlan.scenePlan}
-
-## Scene Constraints
-- Write strictly in the given scene order
-- Each scene must cover the specified events, character reactions, and pacing notes
-- Per-scene word targets are listed in scenePlan.pacing[].wordCountTarget
-`
-        : `\n## 场景大纲（ScenePlan）
-共 ${params.scenePlan.totalScenes} 个场景，目标字数约 ${params.scenePlan.totalTargetWords} 字。
-${params.scenePlan.scenePlan}
-
-## 场景约束
-- 严格按照场景顺序写作
-- 每个场景必须包含指定的事件、人物反应、节奏指示
-- 每场景字数目标见 ScenePlan 中的 pacing.wordCountTarget
-`
-      : "";
-
     if (params.language === "en") {
       return `Write chapter ${params.chapterNumber}.
 
 ## Chapter Intent
 ${params.chapterIntent}
-${beatSheetBlock}
-${scenePlanBlock}
+
 ## Selected Context
 ${contextSections || "(none)"}
 ${selectedEvidenceBlock}
@@ -1101,8 +884,7 @@ ${lengthRequirementBlock}
 
 ## 本章意图
 ${params.chapterIntent}
-${beatSheetBlock}
-${scenePlanBlock}
+
 ## 已选上下文
 ${contextSections || "(无)"}
 ${selectedEvidenceBlock}

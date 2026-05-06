@@ -22,11 +22,6 @@ export {
   type HookOps,
   type NewHookCandidate,
   type RuntimeStateDelta,
-  type HookLedger,
-  type ArcTracker,
-  type FactionLedger,
-  type MoodArc,
-  type ChapterCompletionReport,
   RuntimeStateLanguageSchema,
   StateManifestSchema,
   HookStatusSchema,
@@ -40,34 +35,12 @@ export {
   HookOpsSchema,
   NewHookCandidateSchema,
   RuntimeStateDeltaSchema,
-  HookLedgerSchema,
-  ArcTrackerSchema,
-  OutlineNodeSchema,
-  MainSuspenseSchema,
-  FactionLedgerSchema,
-  FactionLedgerEntrySchema,
-  RelationshipSchema,
-  FactionDeltaSchema,
-  MoodArcSchema,
-  MoodArcEntrySchema,
-  ChapterCompletionReportSchema,
-  FactionChangeSchema,
-  HookAdvanceSchema,
-  NewlyPlantedHookSchema,
-  PaidOffHookSchema,
-  MoodChangeSchema,
-  ArcProgressSchema,
-  BeatCoverageSchema,
-  DialogueCheckSchema,
 } from "./models/runtime-state.js";
 export {
   type ChapterConflict,
   type HookMovement,
   type HookPressureLevel,
   type HookPressure,
-  type HookPressurePhase,
-  type HookPressureReason,
-  type HookAgenda,
   type ChapterIntent,
   type ContextSource,
   type ContextPackage,
@@ -78,21 +51,10 @@ export {
   type RuleStackSections,
   type RuleStack,
   type ChapterTrace,
-  type ChapterType,
-  type BeatPlannerInput,
-  type BeatPlannerOutput,
-  type Scene,
-  type BeatSheetOutputV2,
-  type ChapterIntentV2,
-  type ScenePlannerInput,
-  type ScenePlannerOutput,
   ChapterConflictSchema,
   HookMovementSchema,
   HookPressureLevelSchema,
   HookPressureSchema,
-  HookPressurePhaseSchema,
-  HookPressureReasonSchema,
-  HookAgendaSchema,
   ChapterIntentSchema,
   ContextSourceSchema,
   ContextPackageSchema,
@@ -103,14 +65,6 @@ export {
   RuleStackSectionsSchema,
   RuleStackSchema,
   ChapterTraceSchema,
-  ChapterTypeSchema,
-  SceneSchema,
-  BeatSheetOutputSchemaV2,
-  ArcPositionSchema,
-  MustAdvanceSchema,
-  FactionContextSchema,
-  MoodDirectiveSchema,
-  ChapterIntentSchemaV2,
 } from "./models/input-governance.js";
 export { PlannerAgent, type PlanChapterInput, type PlanChapterOutput } from "./agents/planner.js";
 export { ComposerAgent, type ComposeChapterInput, type ComposeChapterOutput } from "./agents/composer.js";
@@ -238,17 +192,10 @@ export { migrateConfig, type MigrationResult } from "./llm/config-migration.js";
 // Agents
 export { BaseAgent, type AgentContext } from "./agents/base.js";
 export { ArchitectAgent, type ArchitectOutput } from "./agents/architect.js";
-export {
-  WriterAgent,
-  DEFAULT_REVISE_MODE,
-  type WriteChapterInput,
-  type WriteChapterOutput,
-  type TokenUsage,
-} from "./agents/writer.js";
-export { ReviserAgent } from "./agents/reviser.js";
-export type { ReviseMode, ReviseOutput } from "./agents/writer.js";
+export { WriterAgent, type WriteChapterInput, type WriteChapterOutput, type TokenUsage } from "./agents/writer.js";
 export { LengthNormalizerAgent, type NormalizeLengthInput, type NormalizeLengthOutput } from "./agents/length-normalizer.js";
 export { ContinuityAuditor, type AuditResult, type AuditIssue } from "./agents/continuity.js";
+export { ReviserAgent, DEFAULT_REVISE_MODE, type ReviseOutput, type ReviseMode } from "./agents/reviser.js";
 export { RadarAgent, type RadarResult, type RadarRecommendation } from "./agents/radar.js";
 export { FanqieRadarSource, QidianRadarSource, TextRadarSource, type RadarSource, type PlatformRankings, type RankingEntry } from "./agents/radar-source.js";
 export { readGenreProfile, readBookRules, listAvailableGenres, getBuiltinGenresDir } from "./agents/rules-reader.js";
@@ -275,7 +222,6 @@ export { extractPOVFromOutline, filterMatrixByPOV, filterHooksByPOV } from "./ut
 export { ConsolidatorAgent } from "./agents/consolidator.js";
 export { MemoryDB, type Fact, type StoredSummary } from "./state/memory-db.js";
 export { StateValidatorAgent } from "./agents/state-validator.js";
-export { repairChapterWithWriter, type WriterRepairInput, type WriterRepairRuntime } from "./agents/writer-repair.js";
 export { loadRuntimeStateSnapshot, buildRuntimeStateArtifacts, saveRuntimeStateSnapshot, loadNarrativeMemorySeed, loadSnapshotCurrentStateFacts, type RuntimeStateArtifacts, type NarrativeMemorySeed } from "./state/runtime-state-store.js";
 export { splitChapters, type SplitChapter } from "./utils/chapter-splitter.js";
 export { countChapterLength, resolveLengthCountingMode, formatLengthCount, buildLengthSpec, isOutsideSoftRange, isOutsideHardRange, chooseNormalizeMode, type LengthLanguage } from "./utils/length-metrics.js";
@@ -294,40 +240,10 @@ export { arbitrateRuntimeStateDeltaHooks, type HookArbiterDecision } from "./uti
 export { analyzeHookHealth } from "./utils/hook-health.js";
 
 // Pipeline
-export { PipelineRunner, type PipelineConfig, type ChapterPipelineResult, type DraftResult, type PlanChapterResult, type ComposeChapterResult, type ReviseResult, type GepaEvalScores, type TruthFiles, type BookStatusInfo, type ImportChaptersInput, type ImportChaptersResult, type TokenUsageSummary } from "./pipeline/runner.js";
+export { PipelineRunner, type PipelineConfig, type ChapterPipelineResult, type DraftResult, type PlanChapterResult, type ComposeChapterResult, type ReviseResult, type TruthFiles, type BookStatusInfo, type ImportChaptersInput, type ImportChaptersResult, type TokenUsageSummary } from "./pipeline/runner.js";
 export { Scheduler, type SchedulerConfig } from "./pipeline/scheduler.js";
 export { runAgentLoop, AGENT_TOOLS as AGENT_TOOLS, type AgentLoopOptions } from "./pipeline/agent.js";
 export { detectChapter, detectAndRewrite, loadDetectionHistory, type DetectChapterResult, type DetectAndRewriteResult } from "./pipeline/detection-runner.js";
-
-// Upload
-export {
-  Uploader,
-  UploadStateManager,
-  launchBrowser,
-  saveCookies,
-  loadCookies,
-  waitForUserLogin,
-  TomatoPlatformAdapter,
-  COOKIES_DIR,
-  calibrateSelectors,
-  saveSelectorTemplate,
-  type UploadOptions,
-  type UploadProgress,
-  type UploadSummary,
-  type BrowserSession,
-  type BrowserDeps,
-} from "./upload/index.js";
-export {
-  UploadStateSchema,
-  UploadChapterStatusSchema,
-  UploadChapterResultSchema,
-  type UploadState,
-  type UploadChapterStatus,
-  type UploadChapterResult,
-  type ChapterContent,
-  type UploadResult,
-  type SelectorBundle,
-} from "./models/upload.js";
 
 // State
 export { StateManager } from "./state/manager.js";
@@ -342,31 +258,3 @@ export { sendTelegram, type TelegramConfig } from "./notify/telegram.js";
 export { sendFeishu, type FeishuConfig } from "./notify/feishu.js";
 export { sendWechatWork, type WechatWorkConfig } from "./notify/wechat-work.js";
 export { sendWebhook, type WebhookConfig, type WebhookEvent, type WebhookPayload } from "./notify/webhook.js";
-
-// Prompt tuning (GEPA integration)
-export {
-  optimizePrompts,
-  OptimizePrompts,
-  splitChaptersForOptimization,
-  computeAITellDensity,
-  computeWordCountAccuracy,
-  aggregateChapterScores,
-  evaluateChapter,
-  readHistory,
-  getLatestRun,
-  getOptimizationTrajectory,
-  applyOptimizedRun,
-  createBackup,
-  type ChapterEvaluationResult,
-  type MultiObjectiveScore,
-  type OptimizationCandidate,
-  type OptimizationRun,
-  type WriterParams,
-  type ContinuityParams,
-  type SettlerParams,
-  type AllParams,
-  DEFAULT_WRITER_PARAMS,
-  DEFAULT_CONTINUITY_PARAMS,
-  DEFAULT_SETTLER_PARAMS,
-  DEFAULT_ALL_PARAMS,
-} from "./prompt-tuning/index.js";

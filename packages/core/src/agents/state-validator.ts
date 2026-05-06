@@ -87,39 +87,20 @@ ${hooksDiff || "(no changes)"}
 ## Chapter Text (for reference)
 ${chapterContent.slice(0, 6000)}`;
 
-    const response = await this.chat(
-      [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userPrompt },
-      ],
-      { temperature: 0.1, maxTokens: 2048 },
-    );
-
-    const parsed = this.parseResult(response.content);
-    if (!parsed.ok) {
-      this.log?.warn(`State validator parse failed (attempt 1): ${parsed.error}. Response: ${JSON.stringify(response.content.slice(0, 500))}`);
-      // Retry once on parse failure — may be a transient LLM glitch
-      const retry = await this.chat(
+    try {
+      const response = await this.chat(
         [
           { role: "system", content: systemPrompt },
           { role: "user", content: userPrompt },
         ],
         { temperature: 0.1 },
       );
-      const retryParsed = this.parseResult(retry.content);
-      if (!retryParsed.ok) {
-        this.log?.warn(`State validator parse failed (attempt 2): ${retryParsed.error}. Response preview: ${retry.content.slice(0, 200)}`);
-        // Last resort: try to infer passed=true from markdown validation report
-        const markdownResult = this.parseMarkdownValidationResult(retry.content);
-        if (markdownResult) {
-          this.log?.warn("State validator falling back to markdown inference: passed=true (no hard contradictions found)");
-          return markdownResult;
-        }
-        throw new Error(`State validation failed for chapter ${chapterNumber}: ${retryParsed.error}`);
-      }
-      return retryParsed.result;
+
+      return this.parseResult(response.content);
+    } catch (error) {
+      this.log?.warn(`State validation failed: ${error}`);
+      throw error;
     }
-    return parsed.result;
   }
 
   private computeDiff(oldText: string, newText: string, label: string): string | null {
@@ -139,97 +120,25 @@ ${chapterContent.slice(0, 6000)}`;
     return parts.join("\n");
   }
 
-  /**
-   * Last-resort parser when LLM returns a markdown validation report
-   * instead of JSON. Infers passed=true if the report says no contradictions
-   * or all issues are minor observations.
-   */
-  private parseMarkdownValidationResult(content: string): ValidationResult | null {
-    // Skip if content is clearly empty or too short
-    if (!content || content.trim().length < 20) return null;
-
-    const text = content.trim();
-
-    // Look for indicators that the chapter passed validation
-    const passIndicators = [
-      // Chinese
-      /未发现[实质|严重]?[性]?矛盾/i,
-      /无[实质|严重]?矛盾/i,
-      /通过|合格|一致/i,
-      /passed|pass|通过|无问题/i,
-      // English / mixed
-      /no (serious |critical )?(contradiction|inconsistency)/i,
-      /all checks? (passed|passed|一致)/i,
-      /validation passed/i,
-    ];
-
-    // Hard failure indicators
-    const failIndicators = [
-      /发现[严重|实质]?矛盾/i,
-      /存在[严重|实质]?矛盾/i,
-      /hard contradiction/i,
-      /failed|失败/i,
-      /critical issue/i,
-      /cannot pass/i,
-    ];
-
-    const hasFail = failIndicators.some((re) => re.test(text));
-    if (hasFail) {
-      return { warnings: [{ category: "markdown_inference", description: "LLM returned markdown suggesting hard contradictions" }], passed: false };
-    }
-
-    const hasPass = passIndicators.some((re) => re.test(text));
-    if (hasPass) {
-      return { warnings: [], passed: true };
-    }
-
-    // Ambiguous: assume minor issues, pass with warning
-    return {
-      warnings: [{ category: "markdown_inference", description: "LLM returned non-JSON response; treating as passed with minor issues" }],
-      passed: true,
-    };
-  }
-
-  private parseResult(content: string): { ok: true; result: ValidationResult } | { ok: false; error: string } {
+  private parseResult(content: string): ValidationResult {
     const trimmed = content.trim();
     if (!trimmed) {
-      return { ok: false, error: "LLM returned empty response" };
+      throw new Error("LLM returned empty response");
     }
 
-    // Try JSON parsing first (robust extraction handles fences, embedded JSON, etc.)
-    const parsed = extractFirstValidJsonObject<{
-      warnings?: Array<{ category?: string; description?: string }>;
-      passed?: boolean;
-    }>(trimmed);
-    if (parsed) {
-      // Infer passed=true when JSON was extracted but 'passed' is missing.
-      // The system prompt says "passed=true means no serious contradictions found".
-      // When warnings are present but passed is absent, treat it as passed with
-      // minor issues (the LLM likely omitted 'passed' as obvious).
-      const hasPassed = typeof parsed.passed === "boolean";
-      const passed = hasPassed ? (parsed.passed as boolean) : true;
-
-      if (parsed.warnings !== undefined && !Array.isArray(parsed.warnings)) {
-        return { ok: false, error: "'warnings' must be an array" };
-      }
-
-      const warnings: ValidationWarning[] = (parsed.warnings ?? []).map((w) => ({
-        category: w.category ?? "unknown",
-        description: w.description ?? "",
-      }));
-
-      return { ok: true, result: { warnings, passed } };
+    const jsonResult = this.tryParseJsonResult(trimmed);
+    if (jsonResult) {
+      return jsonResult;
     }
 
-    // Fall through to line-based PASS/FAIL parsing (primary output format)
     const lines = trimmed.split("\n").map((line) => line.trim()).filter(Boolean);
     if (lines.length === 0) {
-      return { ok: false, error: "LLM returned empty response" };
+      throw new Error("LLM returned empty response");
     }
 
     const verdictLine = lines[0]!;
     if (!/^(PASS|FAIL)$/i.test(verdictLine)) {
-      return { ok: false, error: `State validator returned invalid response (expected PASS/FAIL, got: ${verdictLine.slice(0, 50)})` };
+      throw new Error("State validator returned invalid response");
     }
     const passed = /^PASS$/i.test(verdictLine);
 
@@ -257,55 +166,48 @@ ${chapterContent.slice(0, 6000)}`;
       }
     }
 
-    return { ok: true, result: { warnings, passed } };
-  }
-}
-
-// ---------------------------------------------------------------------------
-// JSON extraction utilities
-// ---------------------------------------------------------------------------
-
-function extractFirstValidJsonObject<T>(text: string): T | null {
-  // Try direct parse first (works for clean JSON)
-  const direct = tryParseJson<T>(text);
-  if (direct) {
-    return direct;
+    return { warnings, passed };
   }
 
-  // Strip markdown code fences (common LLM output format: ```json ... ```)
-  // Also strips a leading space before the fence (e.g. " ```json\n{...")
-  const stripped = text
-    .replace(/^[\s]*```(?:json)?\s*/i, "")
-    .replace(/\s*```[\s]*$/i, "")
-    .trim();
-  const fromStripped = tryParseJson<T>(stripped);
-  if (fromStripped) {
-    return fromStripped;
+  private tryParseJsonResult(text: string): ValidationResult | null {
+    const direct = this.tryParseExactJsonResult(text);
+    if (direct) {
+      return direct;
+    }
+
+    const candidate = extractBalancedJsonObject(text);
+    if (!candidate) {
+      return null;
+    }
+    return this.tryParseExactJsonResult(candidate);
   }
 
-  // Fall back to scanning for first balanced JSON object
-  for (let index = 0; index < text.length; index += 1) {
-    if (text[index] !== "{") continue;
-    const candidate = extractBalancedJsonObject(text, index);
-    if (!candidate) continue;
-    const parsed = tryParseJson<T>(candidate);
-    if (parsed) {
-      return parsed;
+  private tryParseExactJsonResult(text: string): ValidationResult | null {
+    try {
+      const parsed = JSON.parse(text) as {
+        warnings?: Array<{ category?: string; description?: string }>;
+        passed?: boolean;
+      };
+      if (typeof parsed.passed !== "boolean") return null;
+      return {
+        warnings: (parsed.warnings ?? []).map((w) => ({
+          category: w.category ?? "unknown",
+          description: w.description ?? "",
+        })),
+        passed: parsed.passed,
+      };
+    } catch {
+      return null;
     }
   }
-
-  return null;
 }
 
-function tryParseJson<T>(text: string): T | null {
-  try {
-    return JSON.parse(text) as T;
-  } catch {
+function extractBalancedJsonObject(text: string): string | null {
+  const start = text.indexOf("{");
+  if (start < 0) {
     return null;
   }
-}
 
-function extractBalancedJsonObject(text: string, start: number): string | null {
   let depth = 0;
   let inString = false;
   let escaped = false;

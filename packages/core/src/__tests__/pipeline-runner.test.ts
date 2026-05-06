@@ -9,10 +9,10 @@ import { StateManager } from "../state/manager.js";
 import { ArchitectAgent } from "../agents/architect.js";
 import { PlannerAgent } from "../agents/planner.js";
 import { ComposerAgent } from "../agents/composer.js";
-import { WriterAgent, type ReviseOutput, type WriteChapterOutput } from "../agents/writer.js";
-import { ReviserAgent } from "../agents/reviser.js";
+import { WriterAgent, type WriteChapterOutput } from "../agents/writer.js";
 import { LengthNormalizerAgent } from "../agents/length-normalizer.js";
 import { ContinuityAuditor, type AuditIssue, type AuditResult } from "../agents/continuity.js";
+import { ReviserAgent, type ReviseOutput } from "../agents/reviser.js";
 import { ChapterAnalyzerAgent } from "../agents/chapter-analyzer.js";
 import { StateValidatorAgent } from "../agents/state-validator.js";
 import { FoundationReviewerAgent } from "../agents/foundation-reviewer.js";
@@ -1456,7 +1456,7 @@ describe("PipelineRunner", () => {
     }
   });
 
-  it("passes reduced control inputs into auditor and writer repair in v2 mode", async () => {
+  it("passes reduced control inputs into auditor and reviser in v2 mode", async () => {
     const { root, runner, state, bookId } = await createRunnerFixture({
       inputGovernanceMode: "v2",
     });
@@ -1483,7 +1483,7 @@ describe("PipelineRunner", () => {
         summary: "needs revision",
       }),
     );
-    const reviseChapter = vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    const reviseChapter = vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: "Governed revised content.",
         wordCount: "Governed revised content.".length,
@@ -1508,7 +1508,7 @@ describe("PipelineRunner", () => {
           activeOverrides: expect.any(Array),
         }),
       });
-      expect(reviseChapter.mock.calls[0]?.[0]).toMatchObject({
+      expect(reviseChapter.mock.calls[0]?.[6]).toMatchObject({
         chapterIntent: expect.stringContaining("# Chapter Intent"),
         contextPackage: expect.objectContaining({
           selectedContext: expect.any(Array),
@@ -1562,7 +1562,7 @@ describe("PipelineRunner", () => {
           summary: "clean",
         }),
       );
-    vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: "Governed revised body.",
         wordCount: "Governed revised body.".length,
@@ -1619,7 +1619,7 @@ describe("PipelineRunner", () => {
           summary: "clean",
         }),
       );
-    const reviseChapter = vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    const reviseChapter = vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: overlongRevision,
         wordCount: overlongRevision.length,
@@ -1644,7 +1644,7 @@ describe("PipelineRunner", () => {
     try {
       await runner.writeNextChapter(bookId, 220);
 
-      expect(reviseChapter.mock.calls[0]?.[0]).toMatchObject({
+      expect(reviseChapter.mock.calls[0]?.[6]).toMatchObject({
         lengthSpec: expect.objectContaining({
           target: 220,
           softMin: 190,
@@ -1862,7 +1862,7 @@ describe("PipelineRunner", () => {
           summary: "",
         }),
       );
-    vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: revisedBody,
         wordCount: revisedBody.length,
@@ -1923,14 +1923,8 @@ describe("PipelineRunner", () => {
     }
   });
 
-  it("uses the latest revised content as the input for follow-up local-fix revisions", async () => {
+  it("uses the latest revised content as the input for follow-up spot-fix revisions", async () => {
     const { root, runner, bookId } = await createRunnerFixture();
-    const localIssue: AuditIssue = {
-      severity: "warning",
-      category: "continuity",
-      description: "Needs a tighter local correction",
-      suggestion: "Repair the line",
-    };
 
     vi.spyOn(WriterAgent.prototype, "writeChapter").mockResolvedValue(
       createWriterOutput({
@@ -1949,20 +1943,15 @@ describe("PipelineRunner", () => {
     vi.spyOn(ContinuityAuditor.prototype, "auditChapter")
       .mockResolvedValueOnce(createAuditResult({
         passed: false,
-        issues: [localIssue],
-        summary: "needs another local revision",
-      }))
-      .mockResolvedValueOnce(createAuditResult({
-        passed: false,
-        issues: [localIssue],
-        summary: "still local",
+        issues: [CRITICAL_ISSUE],
+        summary: "needs another revision",
       }))
       .mockResolvedValueOnce(createAuditResult({
         passed: true,
         issues: [],
         summary: "clean",
       }));
-    const reviseChapter = vi.spyOn(WriterAgent.prototype, "repairChapter")
+    const reviseChapter = vi.spyOn(ReviserAgent.prototype, "reviseChapter")
       .mockResolvedValueOnce(createReviseOutput({
         revisedContent: "After first fix.",
         wordCount: "After first fix.".length,
@@ -1983,7 +1972,7 @@ describe("PipelineRunner", () => {
     await runner.writeNextChapter(bookId);
 
     expect(reviseChapter).toHaveBeenCalledTimes(2);
-    expect(reviseChapter.mock.calls[1]?.[0]?.chapterContent).toBe("After first fix.");
+    expect(reviseChapter.mock.calls[1]?.[1]).toBe("After first fix.");
 
     await rm(root, { recursive: true, force: true });
   });
@@ -2019,7 +2008,7 @@ describe("PipelineRunner", () => {
         summary: "clean",
       }),
     );
-    vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: "Final revised body.",
         wordCount: "Final revised body.".length,
@@ -2501,34 +2490,6 @@ describe("PipelineRunner", () => {
     await rm(root, { recursive: true, force: true });
   });
 
-  it("blocks writing a new chapter when the latest persisted chapter is audit-failed", async () => {
-    const { root, runner, state, bookId } = await createRunnerFixture({
-      inputGovernanceMode: "legacy",
-    });
-    const now = "2026-03-19T00:00:00.000Z";
-    const storyDir = join(state.bookDir(bookId), "story");
-
-    await Promise.all([
-      writeFile(join(storyDir, "current_state.md"), "stable state", "utf-8"),
-      writeFile(join(storyDir, "pending_hooks.md"), "stable hooks", "utf-8"),
-      state.saveChapterIndex(bookId, [{
-        number: 1,
-        title: "Failed Review",
-        status: "audit-failed" as ChapterMeta["status"],
-        wordCount: 1234,
-        createdAt: now,
-        updatedAt: now,
-        auditIssues: ["[critical] continuity failed"],
-        lengthWarnings: [],
-      }]),
-      writeFile(join(state.bookDir(bookId), "chapters", "0001_Failed_Review.md"), "# 第1章 Failed Review\n\nbody", "utf-8"),
-    ]);
-
-    await expect(runner.writeNextChapter(bookId)).rejects.toThrow(/audit-failed/i);
-
-    await rm(root, { recursive: true, force: true });
-  });
-
   it("repairs the latest state-degraded chapter from persisted body without rewriting it", async () => {
     const { root, runner, state, bookId } = await createRunnerFixture({
       inputGovernanceMode: "legacy",
@@ -2788,7 +2749,7 @@ describe("PipelineRunner", () => {
           summary: "clean",
         }),
       );
-    vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: revisedBody,
         wordCount: revisedBody.length,
@@ -3628,7 +3589,7 @@ describe("PipelineRunner", () => {
           summary: "clean",
         }),
       );
-    vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: "Revised body.",
         wordCount: "Revised body.".length,
@@ -3865,7 +3826,7 @@ describe("PipelineRunner", () => {
           summary: "clean",
         }),
       );
-    vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: revisedBody,
         wordCount: revisedBody.length,
@@ -4019,7 +3980,7 @@ describe("PipelineRunner", () => {
     }
   });
 
-  it("defaults manual reviseDraft to local-fix when mode is omitted", async () => {
+  it("defaults manual reviseDraft to spot-fix when mode is omitted", async () => {
     const { root, runner, state, bookId } = await createRunnerFixture();
     const storyDir = join(state.bookDir(bookId), "story");
     const chaptersDir = join(state.bookDir(bookId), "chapters");
@@ -4053,7 +4014,7 @@ describe("PipelineRunner", () => {
         summary: "needs revision",
       }),
     );
-    const reviseChapter = vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    const reviseChapter = vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: "Spot-fixed body.",
         wordCount: "Spot-fixed body.".length,
@@ -4072,7 +4033,7 @@ describe("PipelineRunner", () => {
       await runner.reviseDraft(bookId, 1);
 
       expect(reviseChapter).toHaveBeenCalledTimes(1);
-      expect(reviseChapter.mock.calls[0]?.[0]?.mode).toBe("local-fix");
+      expect(reviseChapter.mock.calls[0]?.[4]).toBe("spot-fix");
     } finally {
       await rm(root, { recursive: true, force: true });
     }
@@ -4134,7 +4095,7 @@ describe("PipelineRunner", () => {
           summary: "clean",
         }),
       );
-    const reviseChapter = vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    const reviseChapter = vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: "林越推门进去，先停在门槛外听了一息，再去看柜台后那盏没关的灯。",
         wordCount: "林越推门进去，先停在门槛外听了一息，再去看柜台后那盏没关的灯。".length,
@@ -4162,7 +4123,7 @@ describe("PipelineRunner", () => {
           activeOverrides: expect.any(Array),
         }),
       });
-      expect(reviseChapter.mock.calls[0]?.[0]).toMatchObject({
+      expect(reviseChapter.mock.calls[0]?.[6]).toMatchObject({
         chapterIntent: expect.stringContaining("# Chapter Intent"),
         contextPackage: expect.objectContaining({
           selectedContext: expect.any(Array),
@@ -4311,7 +4272,7 @@ describe("PipelineRunner", () => {
           summary: "still weak",
         }),
       );
-    const reviseChapter = vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    const reviseChapter = vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: `${originalBody}\n\n修订后收束更利落。`,
         wordCount: `${originalBody}\n\n修订后收束更利落。`.length,
@@ -4325,7 +4286,7 @@ describe("PipelineRunner", () => {
       const savedIndex = await state.loadChapterIndex(bookId);
 
       expect(reviseChapter).toHaveBeenCalledTimes(1);
-      expect(reviseChapter.mock.calls[0]?.[0]?.issues).toEqual(
+      expect(reviseChapter.mock.calls[0]?.[3]).toEqual(
         expect.arrayContaining([
           expect.objectContaining({ category: "节奏" }),
           expect.objectContaining({ category: "列表式结构" }),
@@ -4391,7 +4352,7 @@ describe("PipelineRunner", () => {
           summary: "clean",
         }),
       );
-    vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: revisedBody,
         wordCount: revisedBody.length,
@@ -4509,7 +4470,7 @@ describe("PipelineRunner", () => {
         });
       });
 
-    vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: revisedBody,
         wordCount: countChapterLength(revisedBody, "en_words"),
@@ -4725,7 +4686,7 @@ describe("PipelineRunner", () => {
         }),
       );
 
-    const reviseChapter = vi.spyOn(WriterAgent.prototype, "repairChapter").mockResolvedValue(
+    const reviseChapter = vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
       createReviseOutput({
         revisedContent: revisedBody,
         wordCount: countChapterLength(revisedBody, "en_words"),
@@ -4745,7 +4706,7 @@ describe("PipelineRunner", () => {
       await runner.reviseDraft(bookId, 1, "polish");
 
       expect(reviseChapter).toHaveBeenCalledTimes(1);
-      expect(reviseChapter.mock.calls[0]?.[0]?.lengthSpec).toMatchObject({
+      expect(reviseChapter.mock.calls[0]?.[6]?.lengthSpec).toMatchObject({
         target: 900,
         countingMode: "en_words",
       });

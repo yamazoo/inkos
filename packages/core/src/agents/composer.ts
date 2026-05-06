@@ -219,27 +219,6 @@ export class ComposerAgent extends BaseAgent {
     }
 
     const entries: ContextPackage["selectedContext"] = [];
-
-    // ── IMMEDIATE CHAPTER BRIDGE (always included, never filtered) ──────────────
-    // The Writer MUST know what happened in the immediately preceding chapter
-    // regardless of whether its events overlap with the current chapter's goal.
-    // This prevents the "previous chapter events silently dropped" continuity bug.
-    const immediatePrevious = recentSummaries[0];
-    if (immediatePrevious) {
-      entries.push({
-        source: `story/chapter_summaries.md#chapter_${immediatePrevious.chapter}_bridge`,
-        reason: "MANDATORY: 直接承接上一章事件，确保剧情因果连贯，不得因术语不匹配而省略。",
-        excerpt: [
-          `第${immediatePrevious.chapter}章《${immediatePrevious.title}》`,
-          `出场人物：${immediatePrevious.characters || "(无)"}`,
-          `本章事件：${immediatePrevious.events || "(无)"}`,
-          `状态变化：${immediatePrevious.stateChanges || "(无)"}`,
-          `悬念活动：${immediatePrevious.hookActivity || "(无)"}`,
-        ].join(" | "),
-      });
-    }
-    // ─────────────────────────────────────────────────────────────────────────
-
     const recentTitles = recentSummaries
       .map((summary) => [summary.chapter, summary.title].filter(Boolean).join(": "))
       .filter(Boolean)

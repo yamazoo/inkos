@@ -1,6 +1,7 @@
-import { readFile, writeFile, mkdir, stat } from "node:fs/promises";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
 import { BaseAgent } from "./base.js";
+import { readStoryFrame, readVolumeMap, readCurrentStateWithFallback } from "../utils/outline-paths.js";
 import type { BookConfig } from "../models/book.js";
 import { parseBookRules } from "../models/book-rules.js";
 import { ChapterIntentSchema, type ChapterConflict, type ChapterIntent } from "../models/input-governance.js";
@@ -45,7 +46,6 @@ export class PlannerAgent extends BaseAgent {
       chapterSummaries: join(storyDir, "chapter_summaries.md"),
       bookRules: join(storyDir, "book_rules.md"),
       currentState: join(storyDir, "current_state.md"),
-      chapterOutlines: join(storyDir, "chapter_outlines.md"),
     } as const;
 
     const [
@@ -59,63 +59,11 @@ export class PlannerAgent extends BaseAgent {
     ] = await Promise.all([
       this.readFileOrDefault(sourcePaths.authorIntent),
       this.readFileOrDefault(sourcePaths.currentFocus),
-      this.readFileOrDefault(sourcePaths.storyBible),
-      this.readFileOrDefault(sourcePaths.volumeOutline),
+      readStoryFrame(input.bookDir),
+      readVolumeMap(input.bookDir),
       this.readFileOrDefault(sourcePaths.chapterSummaries),
       this.readFileOrDefault(sourcePaths.bookRules),
-      this.readFileOrDefault(sourcePaths.currentState),
-    ]);
-
-    // Extract this chapter's outline (context-window safe: only the single chapter, not the full file)
-    // Use stat to distinguish "file does not exist" (→ generate) from "file is empty or no match" (→ skip)
-    let chapterOutlineForIntent: string | undefined;
-    const outlinesPath = join(storyDir, "chapter_outlines.md");
-    let outlineFileExists = false;
-    try {
-      const fileStat = await stat(outlinesPath);
-      outlineFileExists = true;
-      if (fileStat.size > 0) {
-        const raw = await readFile(outlinesPath, "utf-8");
-        if (raw && raw !== "(文件尚未创建)") {
-          chapterOutlineForIntent = this.extractChapterOutline(raw, input.chapterNumber) ?? undefined;
-        }
-      }
-      // size === 0: empty file — skip generation, leave chapterOutlineForIntent as undefined
-    } catch {
-      // File does not exist — trigger incremental generation below
-      outlineFileExists = false;
-    }
-
-    // Incremental generation: only when the file genuinely does not exist
-    if (chapterOutlineForIntent === undefined && !outlineFileExists) {
-      this.log?.info(`[planner] Chapter ${input.chapterNumber} outline missing, generating incrementally...`);
-      const { DetailedOutlineAgent } = await import("./detailed-outline.js");
-      const agent = new DetailedOutlineAgent(this.ctx);
-      const singleOutline = await agent.generateSingle({
-        bookDir: input.bookDir,
-        chapterNumber: input.chapterNumber,
-        language: input.book.language ?? "zh",
-      });
-
-      // Patch chapter_outlines.md
-      const existing = await readFile(outlinesPath, "utf-8").catch(() => "");
-      const patched = this.patchChapterOutline(existing, input.chapterNumber, singleOutline);
-      await writeFile(outlinesPath, patched, "utf-8");
-      this.log?.info(`[planner] Incremental outline for chapter ${input.chapterNumber} written`);
-
-      chapterOutlineForIntent = singleOutline;
-    }
-
-    const chapterOutlineText = chapterOutlineForIntent ?? "[待生成 / Pending]";
-
-    // Load trackers (non-blocking — if missing, fields stay undefined)
-    const { loadTracker } = await import("../state/tracker-store.js");
-    const { ArcTrackerSchema, FactionLedgerSchema, MoodArcSchema } = await import("../models/runtime-state.js");
-
-    const [arcTrackerRaw, factionLedgerRaw, moodArcRaw] = await Promise.all([
-      loadTracker(input.bookDir, "arc-tracker", ArcTrackerSchema).catch(() => null),
-      loadTracker(input.bookDir, "faction-ledger", FactionLedgerSchema).catch(() => null),
-      loadTracker(input.bookDir, "mood-arc", MoodArcSchema).catch(() => null),
+      readCurrentStateWithFallback(input.bookDir),
     ]);
 
     const outlineNode = this.findOutlineNode(volumeOutline, input.chapterNumber);
@@ -152,67 +100,17 @@ export class PlannerAgent extends BaseAgent {
       chapterSummaries,
     });
 
-    // Build tracker-driven V2 fields
-    const activeNode = arcTrackerRaw?.outlineNodes?.find((n) => n.status === "active");
-    const arcPosition = arcTrackerRaw ? {
-      volumeId: arcTrackerRaw.volumeId ?? "vol-1",
-      currentNodeId: activeNode?.nodeId ?? "",
-      nodeProgress: activeNode?.progress ?? 0,
-      overallProgress: arcTrackerRaw.outlineNodes
-        ? Math.round(
-            arcTrackerRaw.outlineNodes.reduce(
-              (sum, n) => sum + (n.completedChapter != null ? 100 : (n.progress ?? 0)), 0,
-            ) / arcTrackerRaw.outlineNodes.length,
-          )
-        : 0,
-      nextNodeId: arcTrackerRaw.outlineNodes?.find((n) => n.status === "pending")?.nodeId ?? null,
-    } : undefined;
-
-    const factionContext = factionLedgerRaw ? {
-      currentThreatLevel: 50, // derived from faction Ledger hostile stances if needed
-      protagonistExposureRisk: factionLedgerRaw.protagonist.exposureRisk ?? 0,
-      keyRelationshipChanges: Object.entries(factionLedgerRaw.factions).map(([, f]) => ({
-        faction: f.factionName ?? f.factionId,
-        change: `态度: ${f.stance ?? "neutral"}`,
-      })),
-    } : undefined;
-
-    const v2MoodDirective = moodArcRaw?.nextChapterMoodTarget ? {
-      tensionDirection: (moodArcRaw.nextChapterMoodTarget.tension ?? "same") as "up" | "down" | "same",
-      excitementDirection: (moodArcRaw.nextChapterMoodTarget.excitement ?? "same") as "up" | "down" | "same",
-      warmthDirection: (moodArcRaw.nextChapterMoodTarget.warmth ?? "same") as "up" | "down" | "same",
-      reason: moodArcRaw.nextChapterMoodTarget.reason ?? "",
-      toneDescription: "",
-    } : undefined;
-
-    const chapterType = this.detectChapterType(goal, conflicts, outlineNode);
-
-    // ChapterIntentSchemaV2 redefines hookAgenda with HookPressure arrays, making it
-    // incompatible with the base ChapterIntent type needed by renderIntentMarkdown.
-    // Build with ChapterIntentSchema.parse (accepts all V2 fields) then narrow to ChapterIntent
-    // so renderIntentMarkdown / PlanChapterOutput.intent: ChapterIntent is satisfied.
-    // The V2 enrichments (arcPosition, factionContext, moodDirective, chapterType) are
-    // attached as plain properties — they're .optional() in the schema so this is safe.
     const intent = ChapterIntentSchema.parse({
       chapter: input.chapterNumber,
       goal,
       outlineNode,
-      arcDirective: directives.arcDirective,
-      sceneDirective: directives.sceneDirective,
-      titleDirective: directives.titleDirective,
-      conflictDirective: directives.conflictDirective,
+      ...directives,
       mustKeep,
       mustAvoid,
       styleEmphasis,
       conflicts,
       hookAgenda,
-    }) as ChapterIntent & {
-      schemaVersion: 2;
-      arcPosition: typeof arcPosition;
-      factionContext: typeof factionContext;
-      moodDirective: typeof v2MoodDirective;
-      chapterType: typeof chapterType;
-    };
+    });
 
     const runtimePath = join(runtimeDir, `chapter-${String(input.chapterNumber).padStart(4, "0")}.intent.md`);
     const intentMarkdown = this.renderIntentMarkdown(
@@ -221,7 +119,6 @@ export class PlannerAgent extends BaseAgent {
       renderHookSnapshot(memorySelection.hooks, input.book.language ?? "zh"),
       renderSummarySnapshot(memorySelection.summaries, input.book.language ?? "zh"),
       activeHookCount,
-      chapterOutlineText,
     );
     await writeFile(runtimePath, intentMarkdown, "utf-8");
 
@@ -244,7 +141,7 @@ export class PlannerAgent extends BaseAgent {
     readonly outlineNode: string | undefined;
     readonly matchedOutlineAnchor: boolean;
     readonly chapterSummaries: string;
-  }): Pick<ChapterIntent, "sceneDirective" | "arcDirective" | "moodDirective" | "titleDirective" | "conflictDirective"> {
+  }): Pick<ChapterIntent, "sceneDirective" | "arcDirective" | "moodDirective" | "titleDirective"> {
     const recentSummaries = parseChapterSummariesMarkdown(input.chapterSummaries)
       .filter((summary) => summary.chapter < input.chapterNumber)
       .sort((left, right) => left.chapter - right.chapter)
@@ -269,7 +166,6 @@ export class PlannerAgent extends BaseAgent {
       sceneDirective: this.buildSceneDirective(input.language, cadence),
       moodDirective: this.buildMoodDirective(input.language, cadence),
       titleDirective: this.buildTitleDirective(input.language, cadence),
-      conflictDirective: this.buildConflictDirective(input.language, cadence),
     };
   }
 
@@ -461,7 +357,7 @@ export class PlannerAgent extends BaseAgent {
     const repeatedType = cadence.scenePressure.repeatedType;
 
     return this.isChineseLanguage(language)
-      ? `最近章节连续停留在"${repeatedType}"，本章必须更换场景容器、地点或行动方式。`
+      ? `最近章节连续停留在“${repeatedType}”，本章必须更换场景容器、地点或行动方式。`
       : `Recent chapters are stuck in repeated ${repeatedType} beats. Change the scene container, location, or action pattern this chapter.`;
   }
 
@@ -489,18 +385,8 @@ export class PlannerAgent extends BaseAgent {
     const repeatedToken = cadence.titlePressure.repeatedToken;
 
     return this.isChineseLanguage(language)
-      ? `标题不要再围绕"${repeatedToken}"重复命名，换一个新的意象或动作焦点。`
+      ? `标题不要再围绕“${repeatedToken}”重复命名，换一个新的意象或动作焦点。`
       : `Avoid another ${repeatedToken}-centric title. Pick a new image or action focus for this chapter title.`;
-  }
-
-  private buildConflictDirective(
-    language: string | undefined,
-    cadence: ReturnType<typeof analyzeChapterCadence>,
-  ): string | undefined {
-    // Always require a conflict beat — the story needs external tension every chapter
-    return this.isChineseLanguage(language)
-      ? "本章必须包含至少一个外部冲突节拍：威胁出现/战斗爆发/关系决裂/正面谈判/意外阻碍/紧急抉择。上述冲突必须来自外部事件，不能仅靠主角内心推动。禁止以主角内心独白（反思/计划/盘算）作为章节结尾。"
-      : "This chapter must contain at least one external conflict beat: a threat emerges, a fight erupts, a relationship fractures, a negotiation occurs, an obstacle appears, or an urgent decision must be made. The conflict must be driven by external events, not the protagonist's internal deliberation. Internal-monologue endings are forbidden.";
   }
 
   private renderHookBudget(activeCount: number, language: "zh" | "en"): string {
@@ -759,7 +645,6 @@ export class PlannerAgent extends BaseAgent {
     pendingHooks: string,
     chapterSummaries: string,
     activeHookCount: number,
-    chapterOutline: string,
   ): string {
     const conflictLines = intent.conflicts.length > 0
       ? intent.conflicts.map((conflict) => `- ${conflict.type}: ${conflict.resolution}`).join("\n")
@@ -781,7 +666,6 @@ export class PlannerAgent extends BaseAgent {
       intent.sceneDirective ? `- scene: ${intent.sceneDirective}` : undefined,
       intent.moodDirective ? `- mood: ${intent.moodDirective}` : undefined,
       intent.titleDirective ? `- title: ${intent.titleDirective}` : undefined,
-      intent.conflictDirective ? `- conflict: ${intent.conflictDirective}` : undefined,
     ].filter(Boolean).join("\n") || "- none";
     const hookAgenda = [
       "### Must Advance",
@@ -812,9 +696,6 @@ export class PlannerAgent extends BaseAgent {
       "",
       "## Goal",
       intent.goal,
-      "",
-      "## 本章细纲",
-      chapterOutline,
       "",
       "## Outline Node",
       intent.outlineNode ?? "(not found)",
@@ -860,73 +741,5 @@ export class PlannerAgent extends BaseAgent {
     } catch {
       return "(文件尚未创建)";
     }
-  }
-
-  private detectChapterType(
-    goal: string,
-    conflicts: ChapterConflict[],
-    outlineNode?: string,
-  ): "combat" | "upgrade" | "scheme" | "payoff" | "transition" | "tribulation" | "enlightenment" {
-    const text = [goal, ...conflicts.map((c) => c.type), outlineNode ?? ""].join(" ");
-    if (/渡劫|天劫|雷劫/.test(text)) return "tribulation";
-    if (/悟|领悟|心境|突破/.test(text)) return "enlightenment";
-    if (/战斗|杀|打|争/.test(text)) return "combat";
-    if (/伏笔|揭露|揭秘|真相/.test(text)) return "payoff";
-    if (/阴谋|布局|计策/.test(text)) return "scheme";
-    if (/修炼|提升|境界|机缘/.test(text)) return "upgrade";
-    return "transition";
-  }
-
-  private extractChapterOutline(content: string, chapterNumber: number): string | undefined {
-    if (!content || content === "(文件尚未创建)") return undefined;
-    // Split-based approach: robust against JS \Z regex bug
-    const sections = content.split(/(?:^|\n)(?=##)/);
-    for (const section of sections) {
-      const trimmed = section.trim();
-      if (!trimmed) continue;
-      const headerMatch = trimmed.match(/^##\s*(?:第\s*(\d+)\s*章|Chapter\s*(\d+)\b)/i);
-      if (!headerMatch) continue;
-      const num = headerMatch[1] ?? headerMatch[2];
-      if (String(chapterNumber) === num) {
-        const afterHeader = trimmed.substring(trimmed.indexOf("\n") + 1);
-        return afterHeader.trim() || undefined;
-      }
-    }
-    return undefined;
-  }
-
-  private patchChapterOutline(existing: string, chapterNumber: number, newContent: string): string {
-    const headerPattern = /^##\s*第\s*(\d+)\s*章|^##\s*Chapter\s*(\d+)\b/i;
-    for (let i = 0; i < existing.length; i++) {
-      const lineEnd = existing.indexOf("\n", i);
-      if (lineEnd === -1) break;
-      const line = existing.slice(i, lineEnd);
-      const match = line.match(headerPattern);
-      if (!match) {
-        i = lineEnd;
-        continue;
-      }
-      const num = match[1] ?? match[2];
-      if (String(chapterNumber) === num) {
-        // Chapter exists — find the end of this section
-        let end = lineEnd + 1;
-        while (end < existing.length) {
-          const nextLineStart = end;
-          const nextLineEnd = existing.indexOf("\n", nextLineStart);
-          if (nextLineEnd === -1) break;
-          const nextLine = existing.slice(nextLineStart, nextLineEnd);
-          if (nextLine.match(headerPattern)) break;
-          end = nextLineEnd + 1;
-        }
-        const before = existing.slice(0, i);
-        const after = end < existing.length ? "\n" + existing.slice(end) : "";
-        return (before ? before + (before.endsWith("\n") ? "" : "\n") : "") +
-          line + "\n" + newContent + after;
-      }
-      i = lineEnd;
-    }
-    // Chapter doesn't exist — append
-    const newChapter = `## 第 ${chapterNumber} 章\n${newContent}`;
-    return existing.trimEnd() + (existing.endsWith("\n") ? "" : "\n\n") + newChapter + "\n";
   }
 }

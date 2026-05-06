@@ -172,29 +172,6 @@ writeCommand
         throw new Error(`Cannot rewrite chapter ${chapter}: expected next chapter to be ${chapter}, but resolved to ${nextChapter}`);
       }
 
-      // Reset manifest.lastAppliedChapter so applyRuntimeStateDelta does not reject
-      // chapter N's delta as "going backwards". Must be done AFTER restoreState because
-      // restoreState(0) deletes state/ when the snapshot has no state/ subdirectory.
-      const manifestPath = join(state.bookDir(bookId), "story", "state", "manifest.json");
-      const { readFile: rf, writeFile: wf, mkdir: mk } = await import("node:fs/promises");
-      const stateDir = join(state.bookDir(bookId), "story", "state");
-      await mk(stateDir, { recursive: true });
-      try {
-        const manifest = JSON.parse(await rf(manifestPath, "utf-8"));
-        manifest.lastAppliedChapter = restoreFrom;
-        await wf(manifestPath, JSON.stringify(manifest, null, 2), "utf-8");
-      } catch {
-        // Manifest gone (snapshot had no state/ subdirectory) — recreate it
-        const book = await state.loadBookConfig(bookId);
-        await wf(manifestPath, JSON.stringify({
-          schemaVersion: 2,
-          language: book.language ?? "zh",
-          lastAppliedChapter: restoreFrom,
-          projectionVersion: 1,
-          migrationWarnings: [],
-        }, null, 2), "utf-8");
-      }
-
       if (!opts.json) log(`Regenerating chapter ${chapter}...`);
 
       const wordCount = opts.words ? parseInt(opts.words, 10) : undefined;
@@ -204,33 +181,21 @@ writeCommand
         externalContext: opts.brief,
       }));
 
-      // Use writeDraft so the chapter file is saved immediately (before audit/revise).
-      // This ensures partial failures (e.g. API rate-limit) don't lose the draft.
-      // Audit + revise are run afterward via reviseDraft.
-      const draftResult = await pipeline.writeDraft(bookId, undefined, wordCount, true);
+      const result = await pipeline.writeNextChapter(bookId, wordCount);
       const book = await state.loadBookConfig(bookId);
       const language = resolveCliLanguage(book.language);
 
-      if (!opts.json) {
-        log(`Draft written: 第${draftResult.chapterNumber}章《${draftResult.title}》 (${draftResult.wordCount}字)`);
-        log(`Running audit + revise...`);
-      }
-
-      // Run audit + revise so the chapter goes through the full quality pipeline.
-      // If this fails (e.g. API 529), the draft is already saved and can be revised later.
-      const reviseResult = await pipeline.reviseDraft(bookId, draftResult.chapterNumber);
-
       if (opts.json) {
-        log(JSON.stringify({ draft: draftResult, revise: reviseResult }, null, 2));
+        log(JSON.stringify(result, null, 2));
       } else {
         for (const line of formatWriteNextResultLines(language, {
-          chapterNumber: draftResult.chapterNumber,
-          title: draftResult.title,
-          wordCount: draftResult.wordCount,
-          auditPassed: reviseResult.status === "unchanged" || reviseResult.applied,
-          revised: reviseResult.applied,
-          status: reviseResult.status,
-          issues: reviseResult.fixedIssues.map((s) => ({ severity: "fixed", category: "revise", description: s })),
+          chapterNumber: result.chapterNumber,
+          title: result.title,
+          wordCount: result.wordCount,
+          auditPassed: result.auditResult.passed,
+          revised: result.revised,
+          status: result.status,
+          issues: result.auditResult.issues,
         })) {
           log(line);
         }

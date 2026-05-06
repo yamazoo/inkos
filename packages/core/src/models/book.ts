@@ -19,9 +19,6 @@ export type BookStatus = z.infer<typeof BookStatusSchema>;
 export const FanficModeSchema = z.enum(["canon", "au", "ooc", "cp"]);
 export type FanficMode = z.infer<typeof FanficModeSchema>;
 
-export const NarrationTypeSchema = z.enum(["first-person", "third-person", "third-person-limited", "omniscient"]);
-export type NarrationType = z.infer<typeof NarrationTypeSchema>;
-
 export const BookConfigSchema = z.object({
   id: z.string().min(1),
   title: z.string().min(1),
@@ -31,7 +28,6 @@ export const BookConfigSchema = z.object({
   targetChapters: z.number().int().min(1).default(200),
   chapterWordCount: z.number().int().min(1000).default(3000),
   language: z.enum(["zh", "en"]).optional(),
-  narrationType: NarrationTypeSchema.optional(),
   createdAt: z.string().datetime(),
   updatedAt: z.string().datetime(),
   parentBookId: z.string().optional(),

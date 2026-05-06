@@ -92,21 +92,17 @@ export async function bootstrapStructuredStateFromMarkdown(params: {
   // currentState.chapter comes from markdown which can contain
   // hallucinated numbers (e.g. year 1988 parsed as chapter 1988).
   const derivedProgress = markdownState.durableStoryProgress;
-  // Preserve the MINIMUM of existing and derived progress:
-  // - Rewrite: existing=0, derived=1 → keep 0 (rewrite in progress, don't block delta)
-  // - Rollback: existing=8, derived=5 → keep 5 (trust durable artifacts over stale state)
-  const resolvedProgress = Math.min(existingManifest?.lastAppliedChapter ?? derivedProgress, derivedProgress);
-  if ((existingManifest?.lastAppliedChapter ?? 0) > resolvedProgress) {
+  if ((existingManifest?.lastAppliedChapter ?? 0) > derivedProgress) {
     appendWarning(
       warnings,
-      `manifest lastAppliedChapter normalized from ${existingManifest?.lastAppliedChapter ?? 0} to ${resolvedProgress}`,
+      `manifest lastAppliedChapter normalized from ${existingManifest?.lastAppliedChapter ?? 0} to ${derivedProgress}`,
     );
   }
 
   const manifest = StateManifestSchema.parse({
     schemaVersion: 2,
     language,
-    lastAppliedChapter: resolvedProgress,
+    lastAppliedChapter: derivedProgress,
     projectionVersion: existingManifest?.projectionVersion ?? 1,
     migrationWarnings: uniqueStrings([
       ...(existingManifest?.migrationWarnings ?? []),
@@ -227,14 +223,6 @@ async function loadOrBootstrapHooks(params: {
       "hooks.json",
     );
     if (existing) {
-      // Always deduplicate even when loading from JSON (stale data may have duplicates)
-      const deduped = deduplicateHookRecords(existing.hooks);
-      if (deduped.length < existing.hooks.length) {
-        appendWarning(params.warnings, `hooks.json had ${existing.hooks.length - deduped.length} duplicate hook id(s), repaired`);
-        const repaired = HooksStateSchema.parse({ hooks: deduped });
-        await writeFile(params.statePath, JSON.stringify(repaired, null, 2), "utf-8");
-        return repaired;
-      }
       return existing;
     }
   }
@@ -294,7 +282,7 @@ function parsePendingHooksStateMarkdown(markdown: string, warnings: string[]) {
   if (tableRows.length > 0) {
     return HooksStateSchema.parse({
       hooks: tableRows
-        .filter((row) => normalizeHookId(row[0]).length > 0 && (row[2] ?? "").trim().length > 0)
+        .filter((row) => normalizeHookId(row[0]).length > 0)
         .map((row) => {
           const hookId = normalizeHookId(row[0]);
           const legacyShape = row.length < 8;
@@ -524,18 +512,6 @@ function deduplicateSummaryRows<T extends { chapter: number }>(rows: ReadonlyArr
     byChapter.set(row.chapter, row);
   }
   return [...byChapter.values()].sort((a, b) => a.chapter - b.chapter);
-}
-
-function deduplicateHookRecords(hooks: ReadonlyArray<StoredHook>): StoredHook[] {
-  const byId = new Map<string, StoredHook>();
-  for (const hook of hooks) {
-    byId.set(hook.hookId, hook);
-  }
-  return [...byId.values()].sort((a, b) =>
-    a.startChapter - b.startChapter
-    || a.lastAdvancedChapter - b.lastAdvancedChapter
-    || a.hookId.localeCompare(b.hookId),
-  );
 }
 
 export function resolveContiguousChapterPrefix(chapterNumbers: ReadonlyArray<number>): number {

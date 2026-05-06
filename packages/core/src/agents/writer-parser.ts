@@ -1,8 +1,6 @@
 import type { GenreProfile } from "../models/genre-profile.js";
 import type { LengthCountingMode } from "../models/length-governance.js";
 import type { WriteChapterOutput } from "./writer.js";
-import type { ChapterCompletionReport } from "../models/runtime-state.js";
-import { ChapterCompletionReportSchema } from "../models/runtime-state.js";
 import { countChapterLength } from "../utils/length-metrics.js";
 
 export interface CreativeOutput {
@@ -10,7 +8,6 @@ export interface CreativeOutput {
   readonly content: string;
   readonly wordCount: number;
   readonly preWriteCheck: string;
-  readonly completionReport?: ChapterCompletionReport;
 }
 
 export function parseCreativeOutput(
@@ -44,7 +41,6 @@ export function parseCreativeOutput(
     content: chapterContent,
     wordCount: countChapterLength(chapterContent, countingMode),
     preWriteCheck: extract("PRE_WRITE_CHECK"),
-    completionReport: extractCompletionReport(content),
   };
 }
 
@@ -179,19 +175,4 @@ function defaultLedgerPlaceholder(countingMode: LengthCountingMode): string {
 
 function defaultHooksPlaceholder(countingMode: LengthCountingMode): string {
   return countingMode === "en_words" ? "(hooks pool not updated)" : "(伏笔池未更新)";
-}
-
-/**
- * Extract the COMPLETION_REPORT JSON block from the LLM output.
- * Returns the parsed JSON object, or undefined if not found or unparseable.
- */
-function extractCompletionReport(content: string): ChapterCompletionReport | undefined {
-  const match = content.match(/<!-- COMPLETION_REPORT\n([\s\S]*?)-->/);
-  if (!match) return undefined;
-  try {
-    const parsed = JSON.parse(match[1]!);
-    return ChapterCompletionReportSchema.parse(parsed);
-  } catch {
-    return undefined;
-  }
 }

@@ -194,47 +194,6 @@ describe("agent pipeline tools", () => {
     expect(writeNextChapter).not.toHaveBeenCalled();
   });
 
-  it("stops write_full_pipeline after the current chapter fails audit instead of continuing to later chapters", async () => {
-    const writeNextChapter = vi.spyOn(PipelineRunner.prototype, "writeNextChapter")
-      .mockResolvedValueOnce({
-        chapterNumber: 1,
-        title: "Failed Chapter",
-        wordCount: 100,
-        auditResult: {
-          passed: false,
-          issues: [{
-            severity: "critical",
-            category: "continuity",
-            description: "continuity failed",
-            suggestion: "repair first",
-          }],
-          summary: "failed",
-        },
-        revised: true,
-        status: "audit-failed",
-      } as Awaited<ReturnType<typeof pipeline.writeNextChapter>>)
-      .mockResolvedValueOnce({
-        chapterNumber: 2,
-        title: "Should Not Run",
-        wordCount: 100,
-        auditResult: { passed: true, issues: [], summary: "ok" },
-        revised: false,
-        status: "ready-for-review",
-      } as Awaited<ReturnType<typeof pipeline.writeNextChapter>>);
-
-    const result = JSON.parse(await executeAgentTool(
-      pipeline,
-      state,
-      config,
-      "write_full_pipeline",
-      { bookId, count: 3 },
-    ));
-
-    expect(writeNextChapter).toHaveBeenCalledTimes(1);
-    expect(result).toHaveLength(1);
-    expect(result[0]?.status).toBe("audit-failed");
-  });
-
   it("blocks write_truth_file from hacking chapter progress inside current_state.md", async () => {
     const result = JSON.parse(await executeAgentTool(
       pipeline,
