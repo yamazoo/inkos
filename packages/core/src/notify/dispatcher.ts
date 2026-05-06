@@ -1,5 +1,4 @@
 import type { NotifyChannel } from "../models/project.js";
-import { sendTelegram } from "./telegram.js";
 import { sendFeishu } from "./feishu.js";
 import { sendWechatWork } from "./wechat-work.js";
 import { sendWebhook, type WebhookPayload } from "./webhook.js";
@@ -18,12 +17,16 @@ export async function dispatchNotification(
   const tasks = channels.map(async (channel) => {
     try {
       switch (channel.type) {
-        case "telegram":
-          await sendTelegram(
-            { botToken: channel.botToken, chatId: channel.chatId },
-            fullText,
-          );
+        case "telegram": {
+          const url = `https://api.telegram.org/bot${channel.botToken}/sendMessage`;
+          const res = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id: channel.chatId, text: fullText, parse_mode: "Markdown" }),
+          });
+          if (!res.ok) throw new Error(`Telegram API error ${res.status}: ${await res.text()}`);
           break;
+        }
         case "feishu":
           await sendFeishu(
             { webhookUrl: channel.webhookUrl },

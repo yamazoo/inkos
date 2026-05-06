@@ -152,6 +152,10 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
     }
   }
 
+  async validateSession(page: Page): Promise<boolean> {
+    return this.isLoggedIn(page);
+  }
+
   async navigateToBookList(page: Page): Promise<void> {
     await page.goto(BOOK_MANAGE_URL, { waitUntil: "networkidle", timeout: 15_000 });
   }

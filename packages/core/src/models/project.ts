@@ -16,9 +16,10 @@ export const LLMConfigSchema = z.object({
   configSource: z.enum(["env", "studio"]).default("env"),
   baseUrl: z.string().url(),
   apiKey: z.string().default(""),
+  proxyUrl: z.string().optional(),
   model: z.string().min(1),
   temperature: z.number().min(0).max(2).default(0.7),
-  maxTokens: z.number().int().min(1).default(8192),
+  maxTokens: z.number().int().min(1).optional(),
   // per-call 硬上限。默认 undefined → createLLMClient 里变 null → 不封顶 per-call。
   // 只有用户确实要限制单次调用最大输出时才显式设。注意：这个字段跟 maxTokens
   // 语义不同：maxTokens 是"agent 没传 per-call 时的 fallback"，maxTokensCap
@@ -81,6 +82,12 @@ export const QualityGatesSchema = z.object({
 
 export type QualityGates = z.infer<typeof QualityGatesSchema>;
 
+export const FoundationConfigSchema = z.object({
+  reviewRetries: z.number().int().min(0).max(10).default(2),
+});
+
+export type FoundationConfig = z.infer<typeof FoundationConfigSchema>;
+
 export const AgentLLMOverrideSchema = z.object({
   model: z.string().min(1),
   provider: z.enum(["anthropic", "openai", "custom"]).optional(),
@@ -103,6 +110,9 @@ export const ProjectConfigSchema = z.object({
   llm: LLMConfigSchema,
   notify: z.array(NotifyChannelSchema).default([]),
   detection: DetectionConfigSchema.optional(),
+  foundation: FoundationConfigSchema.default({
+    reviewRetries: 2,
+  }),
   modelOverrides: z.record(z.string(), ModelOverrideValueSchema).optional(),
   inputGovernanceMode: InputGovernanceModeSchema.default("v2"),
   daemon: z.object({

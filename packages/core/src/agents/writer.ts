@@ -44,12 +44,6 @@ import {
 } from "../utils/narrative-control.js";
 import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { join } from "node:path";
-import {
-  readStoryFrame,
-  readVolumeMap,
-  readCharacterContext,
-  readCurrentStateWithFallback,
-} from "../utils/outline-paths.js";
 
 export interface WriteChapterInput {
   readonly book: BookConfig;

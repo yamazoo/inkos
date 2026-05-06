@@ -142,3 +142,198 @@ export const RuntimeStateDeltaSchema = z.object({
 });
 
 export type RuntimeStateDelta = z.infer<typeof RuntimeStateDeltaSchema>;
+
+// ── ArcTracker ────────────────────────────────────────────────
+export const OutlineNodeSchema = z.object({
+  nodeId: z.string(),
+  title: z.string(),
+  status: z.enum(["pending", "active", "completed"]),
+  startChapter: z.number(),
+  completedChapter: z.number().nullable(),
+  completionNote: z.string().optional(),
+  progress: z.number().min(0).max(100).default(0),
+});
+
+export const MainSuspenseSchema = z.object({
+  hookId: z.string(),
+  description: z.string(),
+  plantedAt: z.number(),
+  currentProgress: z.number().min(0).max(100).default(0),
+  expectedPayoff: z.number().nullable(),
+});
+
+export const ArcTrackerSchema = z.object({
+  schemaVersion: z.literal(1),
+  volumeId: z.string(),
+  volumeTitle: z.string(),
+  chapterRange: z.tuple([z.number(), z.number()]),
+  currentChapter: z.number(),
+  outlineNodes: z.array(OutlineNodeSchema),
+  mainSuspense: MainSuspenseSchema,
+  nextChapterDirection: z.object({
+    targetNodeId: z.string().nullable(),
+    targetProgress: z.number(),
+    tone: z.enum(["intensify", "relief", "transition", "breakthrough"]),
+  }),
+});
+
+export type ArcTracker = z.infer<typeof ArcTrackerSchema>;
+
+// ── FactionLedger ─────────────────────────────────────────────
+export const FactionPowerLevelSchema = z.object({
+  power: z.number().min(0).max(100).default(50),
+  resources: z.number().min(0).max(100).default(50),
+  influence: z.number().min(0).max(100).default(50),
+  morale: z.number().min(0).max(100).default(50),
+});
+
+export const FactionDeltaSchema = z.object({
+  chapter: z.number(),
+  powerDelta: z.number().optional(),
+  stanceDelta: z.number().optional(),
+  event: z.string(),
+});
+
+export const FactionLedgerEntrySchema = z.object({
+  factionId: z.string(),
+  factionName: z.string(),
+  stance: z.enum(["ally", "neutral", "hostile", "unknown"]),
+  stanceTowardsProtagonist: z.number().min(-100).max(100).default(0),
+  powerLevel: FactionPowerLevelSchema,
+  keyMembers: z.array(z.object({
+    name: z.string(),
+    status: z.enum(["active", "missing", "dead"]),
+    disposition: z.enum(["friendly", "neutral", "hostile"]),
+  })).default([]),
+  recentDeltas: z.array(FactionDeltaSchema).default([]),
+});
+
+export const RelationshipSchema = z.object({
+  from: z.string(),
+  to: z.string(),
+  type: z.enum(["trust", "rivalry", "debt", "secret"]),
+  strength: z.number().min(-100).max(100).default(0),
+  lastChangedChapter: z.number(),
+  event: z.string().optional(),
+});
+
+export const FactionLedgerSchema = z.object({
+  schemaVersion: z.literal(1),
+  factions: z.record(z.string(), FactionLedgerEntrySchema),
+  protagonist: z.object({
+    name: z.string(),
+    powerLevel: FactionPowerLevelSchema,
+    exposureRisk: z.number().min(0).max(100).default(0),
+    socialCapital: z.number().min(0).max(100).default(0),
+    recentDeltas: z.array(FactionDeltaSchema).default([]),
+  }),
+  relationships: z.array(RelationshipSchema).default([]),
+});
+
+export type FactionLedger = z.infer<typeof FactionLedgerSchema>;
+
+// ── MoodArc ────────────────────────────────────────────────────
+export const MoodArcEntrySchema = z.object({
+  chapter: z.number(),
+  tension: z.number().min(0).max(100).default(50),
+  excitement: z.number().min(0).max(100).default(50),
+  mystery: z.number().min(0).max(100).default(50),
+  warmth: z.number().min(0).max(100).default(50),
+  overall: z.enum(["suppressed", "tense", "intense", "breakthrough", "relief"]),
+  chapterTone: z.string(),
+});
+
+export const MoodArcSchema = z.object({
+  schemaVersion: z.literal(1),
+  volumeId: z.string(),
+  entries: z.array(MoodArcEntrySchema).default([]),
+  arcShape: z.enum(["escalating", "wave", "mounting-then-release", "steady-climax", "alternating"]),
+  arcDescription: z.string(),
+  nextChapterMoodTarget: z.object({
+    tension: z.enum(["up", "down", "same"]),
+    excitement: z.enum(["up", "down", "same"]),
+    warmth: z.enum(["up", "down", "same"]),
+    reason: z.string(),
+  }),
+});
+
+export type MoodArc = z.infer<typeof MoodArcSchema>;
+
+// ── ChapterCompletionReport ─────────────────────────────────────
+export const FactionChangeSchema = z.object({
+  faction: z.string(),
+  metric: z.string(),
+  before: z.number(),
+  after: z.number(),
+  delta: z.number(),
+  evidenceFromText: z.string(),
+});
+
+export const HookAdvanceSchema = z.object({
+  hookId: z.string(),
+  fromProgress: z.number(),
+  toProgress: z.number(),
+  evidenceFromText: z.string(),
+});
+
+export const NewlyPlantedHookSchema = z.object({
+  hookId: z.string(),
+  type: z.string(),
+  description: z.string(),
+  seedText: z.string(),
+  plantedAtScene: z.string(),
+});
+
+export const PaidOffHookSchema = z.object({
+  hookId: z.string(),
+  payoffChapter: z.number(),
+  payoffNote: z.string(),
+});
+
+export const MoodChangeSchema = z.object({
+  tensionBefore: z.number(),
+  tensionAfter: z.number(),
+  warmthBefore: z.number(),
+  warmthAfter: z.number(),
+  overallShift: z.enum(["tenser", "relieved", "same"]),
+  chapterTone: z.string(),
+});
+
+export const ArcProgressSchema = z.object({
+  nodeId: z.string(),
+  progressBefore: z.number(),
+  progressAfter: z.number(),
+  completionNote: z.string().optional(),
+});
+
+export const BeatCoverageSchema = z.object({
+  beatId: z.string(),
+  covered: z.boolean(),
+  coverageNote: z.string().optional(),
+});
+
+export const DialogueCheckSchema = z.object({
+  requiredLine: z.string(),
+  appeared: z.boolean(),
+});
+
+export const ChapterCompletionReportSchema = z.object({
+  schemaVersion: z.literal(1),
+  chapter: z.number(),
+  cost: z.string(),
+  gain: z.string(),
+  factionChanges: z.array(FactionChangeSchema).default([]),
+  moodChange: MoodChangeSchema,
+  hookChanges: z.object({
+    advanced: z.array(HookAdvanceSchema).default([]),
+    newlyPlanted: z.array(NewlyPlantedHookSchema).default([]),
+    paidOff: z.array(PaidOffHookSchema).default([]),
+  }),
+  arcProgress: ArcProgressSchema,
+  selfCheck: z.object({
+    beatCoverage: z.array(BeatCoverageSchema).default([]),
+    dialogueCheck: z.array(DialogueCheckSchema).default([]),
+  }),
+});
+
+export type ChapterCompletionReport = z.infer<typeof ChapterCompletionReportSchema>;
