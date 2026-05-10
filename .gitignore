@@ -43,3 +43,11 @@ CLAUDE.md
 # Graphify 生成的图谱数据
 graphify-out/
 .graphify_*
+
+# 临时调试脚本
+packages/core/src/test-regex*.cjs
+packages/core/src/test-confirm.cjs
+packages/core/src/test-final2.cjs
+packages/core/src/test-simple.cjs
+test-normalize.js
+test_format.js
