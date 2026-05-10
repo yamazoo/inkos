@@ -3,7 +3,7 @@ import type { Platform } from "../models/book.js";
 import type { ChapterContent, UploadResult, UploadChapterResult } from "../models/upload.js";
 import type { PlatformAdapter, UploadMode } from "./platforms/base.js";
 import { TomatoPlatformAdapter } from "./platforms/tomato.js";
-import { launchBrowser, waitForUserLogin } from "./browser.js";
+import { launchBrowser, loadCookies, waitForUserLogin } from "./browser.js";
 import { UploadStateManager } from "./state.js";
 import { loadSelectorTemplate } from "./selector-calibrator.js";
 import { readFile, readdir } from "node:fs/promises";
@@ -103,9 +103,24 @@ export class Uploader {
     // Load calibrated selectors from template if available
     if (this.platform === "tomato") {
       const template = await loadSelectorTemplate();
+
+      // Load platformBookId from book config
+      let platformBookId: string | undefined;
+      try {
+        const raw = await readFile(join(this.projectRoot, "books", this.bookId, "book.json"), "utf-8");
+        const cfg = JSON.parse(raw);
+        platformBookId = cfg.platformBookId;
+      } catch { /* ignore */ }
+
       if (template) {
         console.error("[upload] 已加载校准选择器模板");
-        this.adapter = new TomatoPlatformAdapter({ selectors: template.bundle });
+        this.adapter = new TomatoPlatformAdapter({
+          selectors: template.bundle,
+          platformBookId,
+          bookTitle: this.bookTitle,
+        });
+      } else {
+        this.adapter = new TomatoPlatformAdapter({ platformBookId, bookTitle: this.bookTitle });
       }
     }
   }
@@ -129,12 +144,13 @@ export class Uploader {
     const { context, page, close } = await launchBrowser(false);
     this.session = { context, page, close };
 
+    // Load saved cookies
+    await loadCookies(context, this.platform, this.username);
+
     // Check if already logged in (persistent context may have valid cookies)
     const loggedIn = await this.adapter.isLoggedIn(page);
     if (!loggedIn) {
-      await this.adapter.login(page, "", () => {
-        console.error("[upload] 请在浏览器中完成登录...");
-      });
+      await this.adapter.login(page, "");
       const ok = await waitForUserLogin(page);
       if (!ok) {
         await this.session.close();

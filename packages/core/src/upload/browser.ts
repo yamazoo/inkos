@@ -189,18 +189,26 @@ export async function waitForUserLogin(
 ): Promise<boolean> {
   console.error("[upload] 等待登录中（浏览器已打开，请在浏览器中操作）...");
 
+  const loggedInIndicators = [
+    "text=作品管理",
+    "text=我的作品",
+    "text=作者中心",
+    "text=创作者中心",
+  ];
+
   const deadline = Date.now() + timeoutMs;
+  // Wait 5 seconds before first check to avoid false positives from stale cookies
+  await new Promise((r) => setTimeout(r, 5000));
+
   while (Date.now() < deadline) {
     try {
-      const url = page.url();
-      if (
-        !url.includes("/login")
-        && !url.includes("/passport")
-        && !url.includes("signin")
-        && !url.includes("authorize")
-      ) {
-        console.error(`[upload] 检测到登录成功，URL: ${url}`);
-        return true;
+      // Check for visible login-confirmed elements
+      for (const sel of loggedInIndicators) {
+        const visible = await page.locator(sel).first().isVisible({ timeout: 500 }).catch(() => false);
+        if (visible) {
+          console.error(`[upload] 检测到已登录标志: ${sel}`);
+          return true;
+        }
       }
     } catch {
       // page might be closed

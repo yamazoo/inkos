@@ -1,6 +1,6 @@
 export { Uploader, type UploadOptions, type UploadProgress, type UploadSummary } from "./uploader.js";
 export { UploadStateManager } from "./state.js";
-export { calibrateSelectors, saveSelectorTemplate } from "./selector-calibrator.js";
+export { calibrateSelectors, saveSelectorTemplate, capturePageSnapshot, deriveSelectorBundle } from "./selector-calibrator.js";
 export {
   launchBrowser,
   saveCookies,

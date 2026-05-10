@@ -329,3 +329,24 @@ export { dispatchNotification, dispatchWebhookEvent, type NotifyMessage } from "
 export { sendFeishu, type FeishuConfig } from "./notify/feishu.js";
 export { sendWechatWork, type WechatWorkConfig } from "./notify/wechat-work.js";
 export { sendWebhook, type WebhookConfig, type WebhookEvent, type WebhookPayload } from "./notify/webhook.js";
+
+// Upload
+export {
+  Uploader,
+  UploadStateManager,
+  TomatoPlatformAdapter,
+  launchBrowser,
+  saveCookies,
+  loadCookies,
+  waitForUserLogin,
+  calibrateSelectors,
+  saveSelectorTemplate,
+  capturePageSnapshot,
+  deriveSelectorBundle,
+  type UploadOptions,
+  type UploadProgress,
+  type UploadSummary,
+  type BrowserSession,
+  type BrowserDeps,
+  type PlatformAdapter,
+} from "./upload/index.js";

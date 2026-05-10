@@ -3,11 +3,14 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import type { ChapterContent, UploadResult, SelectorBundle } from "../../models/upload.js";
 import { SelectorBundleSchema } from "../../models/upload.js";
-import type { PlatformAdapter } from "./base.js";
+import type { PlatformAdapter, UploadMode } from "./base.js";
 
 const LOGIN_URL = "https://fanqienovel.com/main/writer/book-manage";
 const BOOK_MANAGE_URL = "https://fanqienovel.com/main/writer/book-manage";
 const CHAPTER_EDITOR_URL = "https://fanqienovel.com/main/writer/chapter-edit";
+const CHAPTER_NEW_URL = (bookId: string) => `https://fanqienovel.com/main/writer/${bookId}/publish/new`;
+const CHAPTER_MANAGE_URL = (bookId: string, title: string) =>
+  `https://fanqienovel.com/main/writer/chapter-manage/${bookId}&${encodeURIComponent(title)}?type=1`;
 
 interface TomatoConfig {
   minDelaySec?: number;
@@ -18,6 +21,8 @@ interface TomatoConfig {
   dailyCharLimit?: number;
   scheduleIntervalMinutes?: number;
   selectors?: SelectorBundle;
+  platformBookId?: string;
+  bookTitle?: string;
 }
 
 function parseChineseNumber(text: string): number {
@@ -102,6 +107,8 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
   private readonly scheduleIntervalMinutes: number;
   private readonly selectors: SelectorBundle;
   private lastError = "";
+  private readonly platformBookId: string | null;
+  private readonly bookTitle: string;
 
   constructor(config: TomatoConfig = {}) {
     this.minDelaySec = config.minDelaySec ?? 15;
@@ -111,23 +118,26 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
     this.maxRetries = config.maxRetries ?? 2;
     this.scheduleIntervalMinutes = config.scheduleIntervalMinutes ?? 5;
     this.selectors = config.selectors ?? getDefaultSelectors();
+    this.platformBookId = config.platformBookId ?? null;
+    this.bookTitle = config.bookTitle ?? "";
   }
 
   deriveChapterNumber(title: string): string {
     const match = title.match(/第\s*([0-9零〇一二三四五六七八九十百千万两]+)\s*章/);
     if (!match) return "";
     const num = parseChineseNumber(match[1]);
-    return String(num).padStart(3, "0");
+    return String(num);
   }
 
   async login(page: Page, _cookiesPath: string): Promise<void> {
     await page.goto(LOGIN_URL, { waitUntil: "domcontentloaded", timeout: 30_000 });
+    await this._waitForPageRendered(page);
   }
 
   async isLoggedIn(page: Page): Promise<boolean> {
     try {
-      await page.goto(LOGIN_URL, { waitUntil: "load", timeout: 15_000 });
-      await page.waitForTimeout(2000);
+      await page.goto(LOGIN_URL, { waitUntil: "domcontentloaded", timeout: 30_000 });
+      await this._waitForPageRendered(page);
       const url = page.url();
       if (
         url.includes("/login")
@@ -161,10 +171,15 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
   }
 
   async navigateToChapterEditor(page: Page, _bookId: string): Promise<void> {
-    await page.goto(CHAPTER_EDITOR_URL, { waitUntil: "networkidle", timeout: 15_000 });
+    if (!this.platformBookId) {
+      throw new Error("platformBookId 未配置，请在 book.json 中设置 platformBookId");
+    }
+    const url = CHAPTER_MANAGE_URL(this.platformBookId, this.bookTitle);
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30_000 });
+    await this._waitForPageRendered(page);
   }
 
-  async uploadChapter(page: Page, chapter: ChapterContent): Promise<UploadResult> {
+  async uploadChapter(page: Page, chapter: ChapterContent, mode: UploadMode = "publish"): Promise<UploadResult> {
     const screenshotDir = join(tmpdir(), "inkos-upload");
     const screenshotPath = join(screenshotDir, `tomato-ch-${chapter.number}-${Date.now()}.png`);
 
@@ -172,52 +187,75 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
       try {
         await this.navigateToChapterEditor(page, "");
         await page.waitForLoadState("networkidle");
-        await this._waitForEditorReady(page);
 
-        const chapterNo = this.deriveChapterNumber(chapter.title);
-
-        if (chapterNo) {
-          const ok = await this._setFieldValue(page, "chapter_no_selectors", chapterNo);
-          if (!ok) {
-            await this._maybeScreenshot(page, screenshotPath);
-            return { success: false, error: `章节号填写失败: ${this.lastError}` };
+        // Click "新建章节" and handle new tab
+        let editorPage = page;
+        const createSelectors = this._splitSelectors(this.selectors.create_chapter_selectors);
+        let clicked = false;
+        for (const sel of createSelectors) {
+          const btn = page.locator(sel).first();
+          const visible = await btn.isVisible({ timeout: 2000 }).catch(() => false);
+          if (visible) {
+            const context = page.context();
+            const newPagePromise = context.waitForEvent("page", { timeout: 15_000 });
+            await btn.click();
+            const newPage = await newPagePromise;
+            await newPage.waitForLoadState("networkidle");
+            await newPage.waitForTimeout(3000);
+            editorPage = newPage;
+            clicked = true;
+            break;
           }
+        }
+
+        await this._waitForEditorReady(editorPage);
+
+        const chapterNo = this.deriveChapterNumber(chapter.title) || String(chapter.number);
+
+        const ok0 = await this._setFieldValue(editorPage, "chapter_no_selectors", chapterNo);
+        if (!ok0) {
+          await this._maybeScreenshot(editorPage, screenshotPath);
+          return { success: false, error: `章节号填写失败: ${this.lastError}` };
         }
 
         await this._actionDelay();
 
-        const ok = await this._setFieldValue(page, "title_selectors", chapter.title);
+        const ok = await this._setFieldValue(editorPage, "title_selectors", chapter.title);
         if (!ok) {
-          await this._maybeScreenshot(page, screenshotPath);
+          await this._maybeScreenshot(editorPage, screenshotPath);
           return { success: false, error: `标题填写失败: ${this.lastError}` };
         }
 
         await this._actionDelay();
 
-        const ok2 = await this._setFieldValue(page, "content_selectors", chapter.content);
+        const ok2 = await this._setFieldValue(editorPage, "content_selectors", chapter.content);
         if (!ok2) {
-          await this._maybeScreenshot(page, screenshotPath);
+          await this._maybeScreenshot(editorPage, screenshotPath);
           return { success: false, error: `正文填写失败: ${this.lastError}` };
         }
 
         await this._actionDelay();
 
-        await this._clickNextStep(page);
-        await this._actionDelay();
+        if (mode === "draft") {
+          await this._clickDraftSave(editorPage);
+        } else {
+          await this._clickNextStep(editorPage);
+          await this._actionDelay();
 
-        await this._handleContinuePrompt(page);
-        await this._actionDelay();
+          await this._handleContinuePrompt(editorPage);
+          await this._actionDelay();
 
-        await this._handleRiskConfirm(page);
-        await this._actionDelay();
+          await this._handleRiskConfirm(editorPage);
+          await this._actionDelay();
 
-        await this._handleAiPrompt(page);
-        await this._actionDelay();
+          await this._handleAiPrompt(editorPage);
+          await this._actionDelay();
 
-        await this._handlePublishSetting(page);
-        await this._actionDelay();
+          await this._handlePublishSetting(editorPage);
+          await this._actionDelay();
+        }
 
-        const success = await this._waitForPublishFeedback(page);
+        const success = await this._waitForPublishFeedback(editorPage);
         if (success) {
           return { success: true };
         }
@@ -249,6 +287,23 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
     await page.waitForTimeout(2000);
   }
 
+  /**
+   * Wait for SPA to render actual content. If the page body is still blank
+   * after initial wait, reload and wait again — fixes the cold-start blank
+   * page race condition on fanqienovel.com.
+   */
+  private async _waitForPageRendered(page: Page): Promise<void> {
+    // Give SPA framework time to hydrate after domcontentloaded
+    await page.waitForTimeout(3000);
+
+    const bodyText = await page.locator("body").innerText().catch(() => "");
+    if (bodyText.trim().length > 50) return;
+
+    // Page still blank — reload and wait again
+    await page.reload({ waitUntil: "domcontentloaded", timeout: 30_000 });
+    await page.waitForTimeout(3000);
+  }
+
   private _splitSelectors(raw: string): string[] {
     return raw.split("||").map((s) => s.trim()).filter(Boolean);
   }
@@ -271,7 +326,6 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
         // try next selector
       }
     }
-
     return { locator: page.locator("body"), found: false };
   }
 
@@ -305,8 +359,21 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
   private async _clickNextStep(page: Page): Promise<void> {
     const { locator, found } = await this._findVisibleLocator(page, "next_step_button_selectors");
     if (found) {
-      // Button may not be present on all chapter types — non-presence is acceptable.
       await locator.click({ timeout: 5000 }).catch(() => {});
+    }
+  }
+
+  private async _clickDraftSave(page: Page): Promise<void> {
+    const draftBtn = page.locator("button:has-text('存草稿')").first();
+    const visible = await draftBtn.isVisible({ timeout: 3000 }).catch(() => false);
+    if (visible) {
+      await draftBtn.click({ timeout: 5000 });
+    } else {
+      // Fallback: try confirm_button_selectors which may include "存草稿"
+      const { locator, found } = await this._findVisibleLocator(page, "confirm_button_selectors");
+      if (found) {
+        await locator.click({ timeout: 5000 }).catch(() => {});
+      }
     }
   }
 
