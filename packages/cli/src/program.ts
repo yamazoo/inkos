@@ -28,7 +28,6 @@ import { createStudioCommand, launchStudioEntry } from "./commands/studio.js";
 import { consolidateCommand } from "./commands/consolidate.js";
 import { createInteractCommand, type InteractCommandHooks } from "./commands/interact.js";
 import { createTuiCommand } from "./commands/tui.js";
-import { uploadCommand } from "./commands/upload.js";
 import { createOutlineCommand } from "./commands/outline.js";
 import { launchTui } from "./tui/app.js";
 
@@ -93,7 +92,6 @@ export function createProgram(hooks: ProgramHooks = {}): Command {
     readInput: hooks.readInteractionInput,
   }));
   program.addCommand(createTuiCommand({ launchTui: hooks.launchTui }));
-  program.addCommand(uploadCommand);
   program.addCommand(createOutlineCommand());
 
   return program;
