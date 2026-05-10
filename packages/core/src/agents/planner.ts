@@ -12,6 +12,7 @@ import {
   renderHookSnapshot,
   renderSummarySnapshot,
 } from "../utils/memory-retrieval.js";
+import { findChapterOutline } from "../utils/chapter-outline-store.js";
 import {
   gatherPlanningMaterials,
   loadPlanningSeedMaterials,
@@ -82,7 +83,28 @@ export class PlannerAgent extends BaseAgent {
       bookDir: input.bookDir,
       chapterNumber: input.chapterNumber,
     });
-    const outlineNode = this.findOutlineNode(seedMaterials.volumeOutline, input.chapterNumber);
+    // Prefer structured per-chapter outline from vol-N-chapters.json over
+    // prose-based volume_map.md parsing.  The structured outlines are generated
+    // by ensureChapterOutline() and contain event/beat/description fields that
+    // give the writer much richer guidance than prose text.
+    let outlineNode: string | undefined;
+    try {
+      const chapterOutline = await findChapterOutline(input.bookDir, input.chapterNumber);
+      if (chapterOutline) {
+        const parts: string[] = [];
+        parts.push(`【事件】${chapterOutline.event}`);
+        parts.push(`【节拍】${chapterOutline.beat}`);
+        if (chapterOutline.description) {
+          parts.push(`【详述】${chapterOutline.description}`);
+        }
+        outlineNode = parts.join("\n");
+      }
+    } catch {
+      // Fall through to prose parsing
+    }
+    if (!outlineNode) {
+      outlineNode = this.findOutlineNode(seedMaterials.volumeOutline, input.chapterNumber);
+    }
     const goal = this.deriveGoal(
       input.externalContext,
       seedMaterials.currentFocus,
