@@ -35,7 +35,7 @@ const RETRY_LIMIT = 2;
  */
 function extractJsonArray(raw: string): unknown[] {
   const fenced = raw.match(/```(?:json)?\n?([\s\S]*?)\n?```/);
-  const jsonStr = fenced?.[1] ?? raw.match(/(\[[\s\S]*\])/)?.[1];
+  const jsonStr = fenced?.[1] ?? raw.match(/(\[[\s\S]*?\])/)?.[1];
   if (!jsonStr) {
     throw new OutlineInitParseError("No JSON array found in LLM output");
   }

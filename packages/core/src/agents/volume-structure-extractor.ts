@@ -128,12 +128,19 @@ export class VolumeStructureExtractor extends BaseAgent {
   private _parseResponse(raw: string): z.infer<typeof ExtractionResponseSchema> {
     // Try fenced code block, then bare array
     const fenced = raw.match(/```(?:json)?\n?([\s\S]*?)\n?```/);
-    const jsonStr = fenced?.[1] ?? raw.match(/(\[[\s\S]*\])/)?.[1];
+    const jsonStr = fenced?.[1] ?? raw.match(/(\[[\s\S]*?\])/)?.[1];
     if (!jsonStr) {
       throw new Error("[volume-structure-extractor] No JSON array found in LLM output");
     }
 
-    const parsed: unknown = JSON.parse(jsonStr);
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(jsonStr);
+    } catch (err) {
+      throw new Error(
+        `[volume-structure-extractor] Malformed JSON in LLM output: ${err instanceof Error ? err.message : String(err)}`,
+      );
+    }
     return ExtractionResponseSchema.parse(parsed);
   }
 }

@@ -291,6 +291,244 @@ describe("ContinuityAuditor", () => {
     }
   });
 
+  describe("dimension 38 — outline compliance (checkOutlineCompliance)", () => {
+    it("flags a setting keyword from 【事件】 that is missing in chapter text", async () => {
+      const root = await mkdtemp(join(tmpdir(), "inkos-dim38-"));
+      const bookDir = join(root, "book");
+      const storyDir = join(bookDir, "story");
+      await mkdir(storyDir, { recursive: true });
+
+      await Promise.all([
+        writeFile(join(storyDir, "current_state.md"), "# Current State\n", "utf-8"),
+        writeFile(join(storyDir, "pending_hooks.md"), "# Pending Hooks\n", "utf-8"),
+        writeFile(join(storyDir, "chapter_summaries.md"), "# Chapter Summaries\n", "utf-8"),
+        writeFile(join(storyDir, "subplot_board.md"), "# Subplot\n", "utf-8"),
+        writeFile(join(storyDir, "emotional_arcs.md"), "# Emotion\n", "utf-8"),
+        writeFile(join(storyDir, "character_matrix.md"), "# Matrix\n", "utf-8"),
+        writeFile(join(storyDir, "style_guide.md"), "# Style\n", "utf-8"),
+      ]);
+
+      const auditor = new ContinuityAuditor({
+        client: {
+          provider: "openai", apiFormat: "chat", stream: false,
+          defaults: {
+            temperature: 0.7, maxTokens: 4096, thinkingBudget: 0, maxTokensCap: null, extra: {},
+          },
+        },
+        model: "test-model",
+        projectRoot: root,
+      });
+
+      vi.spyOn(ContinuityAuditor.prototype as never, "chat" as never).mockResolvedValue({
+        content: JSON.stringify({ passed: true, issues: [], summary: "ok" }),
+        usage: ZERO_USAGE,
+      });
+
+      try {
+        const result = await auditor.auditChapter(
+          bookDir,
+          "柴房里很暗。陈渊靠在土墙上，看着破窗外灰白的天。",
+          1,
+          "xuanhuan",
+          {
+            chapterIntent: [
+              "【事件】陈渊在宗门演武场遭遇陈岳的挑衅",
+              "【节拍】主角首次在公开场合展示实力",
+              "【详述】宗门演武场是家族大比的场地，围观者众多",
+            ].join("\n"),
+          },
+        );
+
+        const outlineIssues = result.issues.filter(
+          (i) => i.category === "细纲落地检查",
+        );
+        expect(outlineIssues.length).toBeGreaterThanOrEqual(1);
+        const settingIssue = outlineIssues.find(
+          (i) => i.description.includes("演武场"),
+        );
+        expect(settingIssue).toBeDefined();
+        expect(settingIssue!.severity).toBe("warning");
+      } finally {
+        await rm(root, { recursive: true, force: true });
+      }
+    });
+
+    it("filters out function-word-prefixed setting matches (在/的/被 etc.)", async () => {
+      const root = await mkdtemp(join(tmpdir(), "inkos-dim38-fn-"));
+      const bookDir = join(root, "book");
+      const storyDir = join(bookDir, "story");
+      await mkdir(storyDir, { recursive: true });
+
+      await Promise.all([
+        writeFile(join(storyDir, "current_state.md"), "# Current State\n", "utf-8"),
+        writeFile(join(storyDir, "pending_hooks.md"), "# Pending Hooks\n", "utf-8"),
+        writeFile(join(storyDir, "chapter_summaries.md"), "# Chapters\n", "utf-8"),
+        writeFile(join(storyDir, "subplot_board.md"), "# Subplot\n", "utf-8"),
+        writeFile(join(storyDir, "emotional_arcs.md"), "# Emotion\n", "utf-8"),
+        writeFile(join(storyDir, "character_matrix.md"), "# Matrix\n", "utf-8"),
+        writeFile(join(storyDir, "style_guide.md"), "# Style\n", "utf-8"),
+      ]);
+
+      const auditor = new ContinuityAuditor({
+        client: {
+          provider: "openai", apiFormat: "chat", stream: false,
+          defaults: {
+            temperature: 0.7, maxTokens: 4096, thinkingBudget: 0, maxTokensCap: null, extra: {},
+          },
+        },
+        model: "test-model",
+        projectRoot: root,
+      });
+
+      vi.spyOn(ContinuityAuditor.prototype as never, "chat" as never).mockResolvedValue({
+        content: JSON.stringify({ passed: true, issues: [], summary: "ok" }),
+        usage: ZERO_USAGE,
+      });
+
+      try {
+        // When the event has no location-suffix keywords (场/擂台/殿堂/etc.),
+        // the deterministic pre-check produces zero warnings — it doesn't
+        // fabricate issues from bare text.
+        const result = await auditor.auditChapter(
+          bookDir,
+          "陈渊醒了过来，周围很暗。",
+          1,
+          "xuanhuan",
+          {
+            chapterIntent: [
+              "【事件】陈渊从昏迷中醒来，浑身疼痛",
+              "【节拍】主角发现自己被扔在柴房里",
+            ].join("\n"),
+          },
+        );
+
+        const outlineIssues = result.issues.filter(
+          (i) => i.category === "细纲落地检查",
+        );
+        expect(outlineIssues.length).toBe(0);
+      } finally {
+        await rm(root, { recursive: true, force: true });
+      }
+    });
+
+    it("produces no warnings when all outline settings appear in chapter text", async () => {
+      const root = await mkdtemp(join(tmpdir(), "inkos-dim38-ok-"));
+      const bookDir = join(root, "book");
+      const storyDir = join(bookDir, "story");
+      await mkdir(storyDir, { recursive: true });
+
+      await Promise.all([
+        writeFile(join(storyDir, "current_state.md"), "# Current State\n", "utf-8"),
+        writeFile(join(storyDir, "pending_hooks.md"), "# Pending Hooks\n", "utf-8"),
+        writeFile(join(storyDir, "chapter_summaries.md"), "# Chapters\n", "utf-8"),
+        writeFile(join(storyDir, "subplot_board.md"), "# Subplot\n", "utf-8"),
+        writeFile(join(storyDir, "emotional_arcs.md"), "# Emotion\n", "utf-8"),
+        writeFile(join(storyDir, "character_matrix.md"), "# Matrix\n", "utf-8"),
+        writeFile(join(storyDir, "style_guide.md"), "# Style\n", "utf-8"),
+      ]);
+
+      const auditor = new ContinuityAuditor({
+        client: {
+          provider: "openai", apiFormat: "chat", stream: false,
+          defaults: {
+            temperature: 0.7, maxTokens: 4096, thinkingBudget: 0, maxTokensCap: null, extra: {},
+          },
+        },
+        model: "test-model",
+        projectRoot: root,
+      });
+
+      vi.spyOn(ContinuityAuditor.prototype as never, "chat" as never).mockResolvedValue({
+        content: JSON.stringify({ passed: true, issues: [], summary: "ok" }),
+        usage: ZERO_USAGE,
+      });
+
+      try {
+        // Suffix keyword "演武场" is extracted from outline event, and
+        // the chapter text contains it regardless of prefix variation.
+        const result = await auditor.auditChapter(
+          bookDir,
+          "陈渊踏入宗门演武场。四周围满了围观的族人。",
+          1,
+          "xuanhuan",
+          {
+            chapterIntent: [
+              "【事件】陈渊前往门派演武场参加比试",
+              "【节拍】主角首次在公开场合展示实力",
+            ].join("\n"),
+          },
+        );
+
+        const outlineIssues = result.issues.filter(
+          (i) => i.category === "细纲落地检查",
+        );
+        expect(outlineIssues.length).toBe(0);
+      } finally {
+        await rm(root, { recursive: true, force: true });
+      }
+    });
+
+    it("all outline compliance issues are always warning severity, never critical", async () => {
+      const root = await mkdtemp(join(tmpdir(), "inkos-dim38-sev-"));
+      const bookDir = join(root, "book");
+      const storyDir = join(bookDir, "story");
+      await mkdir(storyDir, { recursive: true });
+
+      await Promise.all([
+        writeFile(join(storyDir, "current_state.md"), "# Current State\n", "utf-8"),
+        writeFile(join(storyDir, "pending_hooks.md"), "# Pending Hooks\n", "utf-8"),
+        writeFile(join(storyDir, "chapter_summaries.md"), "# Chapters\n", "utf-8"),
+        writeFile(join(storyDir, "subplot_board.md"), "# Subplot\n", "utf-8"),
+        writeFile(join(storyDir, "emotional_arcs.md"), "# Emotion\n", "utf-8"),
+        writeFile(join(storyDir, "character_matrix.md"), "# Matrix\n", "utf-8"),
+        writeFile(join(storyDir, "style_guide.md"), "# Style\n", "utf-8"),
+      ]);
+
+      const auditor = new ContinuityAuditor({
+        client: {
+          provider: "openai", apiFormat: "chat", stream: false,
+          defaults: {
+            temperature: 0.7, maxTokens: 4096, thinkingBudget: 0, maxTokensCap: null, extra: {},
+          },
+        },
+        model: "test-model",
+        projectRoot: root,
+      });
+
+      vi.spyOn(ContinuityAuditor.prototype as never, "chat" as never).mockResolvedValue({
+        content: JSON.stringify({ passed: true, issues: [], summary: "ok" }),
+        usage: ZERO_USAGE,
+      });
+
+      try {
+        // Multiple missing settings to ensure we get several warnings
+        const result = await auditor.auditChapter(
+          bookDir,
+          "陈渊坐在房间里。外面天色已暗。",
+          1,
+          "xuanhuan",
+          {
+            chapterIntent: [
+              "【事件】陈渊在宗门演武场与陈岳殿堂对决，结束后转至城门密探",
+              "【节拍】主角首次展示实力",
+              "【详述】宗门演武场是家族核心场地，殿堂为长老议事处，城门为秘密通道",
+            ].join("\n"),
+          },
+        );
+
+        const outlineIssues = result.issues.filter(
+          (i) => i.category === "细纲落地检查",
+        );
+        expect(outlineIssues.length).toBeGreaterThan(0);
+        for (const issue of outlineIssues) {
+          expect(issue.severity).toBe("warning");
+        }
+      } finally {
+        await rm(root, { recursive: true, force: true });
+      }
+    });
+  });
+
   it("injects the chapter memo into the audit prompt for memo-drift checking", async () => {
     const root = await mkdtemp(join(tmpdir(), "inkos-auditor-memo-drift-"));
     const bookDir = join(root, "book");

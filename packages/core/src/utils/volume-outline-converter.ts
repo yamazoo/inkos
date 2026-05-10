@@ -30,7 +30,7 @@ import { writeVolumeChapters } from "./chapter-outline-store.js";
 // ---------------------------------------------------------------------------
 
 /** Parse a single Markdown table row (| a | b | c |) into cell strings. */
-function parseTableRow(row: string): string[] {
+export function parseTableRow(row: string): string[] {
   return row
     .split("|")
     .slice(1, -1)
@@ -39,8 +39,8 @@ function parseTableRow(row: string): string[] {
 }
 
 /** Check whether a line is a Markdown table separator (|---|---|). */
-function isTableSep(line: string): boolean {
-  return /^\|[- :]+\|$/.test(line.trim());
+export function isTableSep(line: string): boolean {
+  return /^\|[-:| ]+\|$/.test(line.trim());
 }
 
 /**
@@ -69,7 +69,7 @@ export function stripThinkingBlocks(text: string): string {
   return cleaned;
 }
 
-function splitSections(text: string): string[] {
+export function splitSections(text: string): string[] {
   // Normalize line endings first
   const normalized = text.replace(/\r\n/g, "\n");
 
@@ -174,7 +174,7 @@ function splitSections(text: string): string[] {
 // Overview table parser (总览)
 // ---------------------------------------------------------------------------
 
-interface VolumeSummary {
+export interface VolumeSummary {
   volumeId: number;
   volumeTitle: string;
   chapterRange: [number, number];
@@ -209,7 +209,7 @@ function isVolumeHeadingLine(line: string): boolean {
  * Also handles books that have NO overview table at all — in that case the
  * volume summaries are derived from the per-volume section headers.
  */
-function parseOverviewTable(text: string): VolumeSummary[] {
+export function parseOverviewTable(text: string): VolumeSummary[] {
   const lines = text.split("\n").map((l) => l.trim()).filter(Boolean);
   const summaries: VolumeSummary[] = [];
 
@@ -244,6 +244,7 @@ function parseOverviewTable(text: string): VolumeSummary[] {
         headerCols = cells.length;
         // Skip rows without enough columns (e.g. separator lines that pass as data)
         if (headerCols < 4) { inTable = false; }
+        continue; // skip header row — don't parse as data
       }
     }
     if (isTableSep(line)) continue;
@@ -335,7 +336,7 @@ function parseOverviewTable(text: string): VolumeSummary[] {
  *   "**卷一：剑冢觉醒（ch1-50）**"              — Bold, numeral in title position
  *   "- **卷名**：绝境求生，恶女觉醒"            — Appends to previous volume
  */
-function parseVolumeHeadings(text: string): VolumeSummary[] {
+export function parseVolumeHeadings(text: string): VolumeSummary[] {
   const chineseNums = [
     "零", "一", "二", "三", "四", "五",
     "六", "七", "八", "九", "十",
@@ -538,7 +539,7 @@ function parseVolumeHeadings(text: string): VolumeSummary[] {
  *   | 章节 | 事件 | 节奏点 |
  * Returns ChapterNode[].  Bold prefixes like **【威胁1】** are stripped.
  */
-function parseChapterTable(text: string): ChapterNode[] {
+export function parseChapterTable(text: string): ChapterNode[] {
   const lines = text.split("\n").map((l) => l.trim()).filter(Boolean);
   const chapters: ChapterNode[] = [];
 
@@ -588,7 +589,7 @@ return chapters;
  * Each bullet becomes a ChapterNode with event=bullet text and beat="bullet".
  * When both tables and bullets are present, parseChapterTable takes precedence.
  */
-function parseBulletChapters(text: string): ChapterNode[] {
+export function parseBulletChapters(text: string): ChapterNode[] {
   const lines = text.split("\n").map((l) => l.trim()).filter(Boolean);
   const chapters: ChapterNode[] = [];
 
@@ -639,7 +640,7 @@ function parseBulletChapters(text: string): ChapterNode[] {
 // Phase detection (Volume 3 multi-phase structure)
 // ---------------------------------------------------------------------------
 
-interface DetectedPhase {
+export interface DetectedPhase {
   label: string;
   range: [number, number];
   lines: string[];
@@ -651,7 +652,7 @@ interface DetectedPhase {
  *   **【第一阶段：第61-70章】威胁初显**
  *   **【第101-110章】阶段收束**
  */
-function detectPhases(lines: string[]): DetectedPhase[] {
+export function detectPhases(lines: string[]): DetectedPhase[] {
   const phases: DetectedPhase[] = [];
   let current: DetectedPhase | null = null;
 
@@ -684,7 +685,7 @@ function detectPhases(lines: string[]): DetectedPhase[] {
 // ---------------------------------------------------------------------------
 
 /** Parse a single volume section (from ### heading to next ---). */
-function parseVolumeSection(
+export function parseVolumeSection(
   sectionText: string,
   summary: VolumeSummary,
 ): VolumeNode {

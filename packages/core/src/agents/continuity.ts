@@ -725,14 +725,18 @@ ${chapterContent}`;
       ...eventText.matchAll(/[「""]([^「」""]{2,15})[」""]/g),
     ].map((m) => m[1]);
 
-    // Extract scene markers: any 2-6 char word followed by location/arena suffixes
-    const settingRaw = [
-      ...combinedText.matchAll(/[一-鿿]{2,6}(?:场|擂台|演武场|殿堂|大殿|祠堂|酒楼|城门|山谷|密洞|宫殿|武台|比武场)/g),
-    ].map((m) => m[0]);
-    // Filter out matches starting with function words (在/的/了/之/以/把/被/从/向/让/给/对/与)
-    const settingWords = settingRaw.filter(
-      (s) => !/^[在的了之以把被从向让给对与和跟]/.test(s),
-    );
+    // Extract scene markers: suffix captured in group 1, full match in group 0.
+    // We use the full match only for function-word filtering (在/的/被 etc. before a
+    // location word usually means it isn't a scene-setting noun), but check the
+    // chapter text against the suffix keyword alone to avoid false negatives from
+    // prefix variability (e.g. "踏入宗门演武场" vs "位于宗门演武场").
+    const settingSuffixes = [
+      ...combinedText.matchAll(
+        /[一-鿿]{2,6}(场|擂台|演武场|殿堂|大殿|祠堂|酒楼|城门|山谷|密洞|宫殿|武台|比武场)/g,
+      ),
+    ]
+      .filter((m) => !/^[在的了之以把被从向让给对与和跟]/.test(m[0]))
+      .map((m) => m[1]);
 
     // Extract character name candidates from combined text:
     // 2-char Chinese names before action particles or as known subject
@@ -760,20 +764,20 @@ ${chapterContent}`;
     }
 
     // Deduplicate
-    const uniqueSettings = [...new Set(settingWords)];
+    const uniqueSuffixes = [...new Set(settingSuffixes)];
     const uniqueCharacters = [...new Set(characters)].filter(
       (c) => c.length >= 2 && !/^[的是了在有不人这中大为上个]/.test(c),
     );
 
-    // Check missing settings
-    for (const setting of uniqueSettings) {
-      if (!chapterContent.includes(setting)) {
+    // Check missing settings (by suffix keyword, not full prefixed match)
+    for (const suffix of uniqueSuffixes) {
+      if (!chapterContent.includes(suffix)) {
         issues.push({
           severity: "warning" as const,
           category: "细纲落地检查",
           description: language === "en"
-            ? `Outline specifies setting "${setting}" but it does not appear in the chapter text.`
-            : `细纲事件指定场景「${setting}」在正文中未出现。`,
+            ? `Outline specifies setting "${suffix}" but it does not appear in the chapter text.`
+            : `细纲事件指定场景「${suffix}」在正文中未出现。`,
           suggestion: language === "en"
             ? `Ensure the chapter uses the described setting, or update the outline if the scene change is intentional.`
             : `请确保章节在细纲场景中展开，如场景变更属创作意图，请同步更新细纲。`,

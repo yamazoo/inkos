@@ -41,6 +41,9 @@ const BARE_PLACEHOLDER_PATTERN = /^第\d+章.*(?:内容待补充|推进剧情)$/
 
 export type GapType = "range-placeholder" | "gap-placeholder" | "null-description" | null;
 
+// NOTE: CLI has a duplicate classifyGap that checks event/beat fields
+// and includes a "short-description" type. Consolidate that logic here,
+// then have the CLI import from core. See packages/cli/src/commands/outline.ts.
 /** Classify a single chapter node's description. */
 export function classifyGap(node: ChapterNode): GapType {
   if (node.description === undefined || node.description === null) {
@@ -452,7 +455,6 @@ export async function auditChapterOutlines(
     for (let ch = rangeStart; ch <= rangeEnd; ch++) {
       const node = chapterMap.get(ch);
       if (!node || !node.event.trim() || !node.beat.trim()) {
-        totalComplete; // no increment
         volMissing.push({
           chapter: ch,
           volumeId: volId,

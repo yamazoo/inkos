@@ -74,6 +74,9 @@ interface OutlineAuditResult {
 
 const RANGE_PLACEHOLDER_RE = /^(第\d+[\s　]*[-–~～][\s　]*第?\d+[\s　]*章|[第\d\s　\-–~～章]+$)/;
 
+// TODO: Consolidate with core's classifyGap() in outline-auditor.ts.
+// CLI checks event/beat; core checks description. Merge into core
+// then re-export from @actalk/inkos-core so CLI can import it.
 function classifyGap(node: ChapterNode): GapType {
   // ChapterNode has event, beat, and optional description
   const event = node.event ?? "";
