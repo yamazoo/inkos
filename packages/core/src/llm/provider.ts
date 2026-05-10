@@ -1,4 +1,5 @@
 import type { LLMConfig } from "../models/project.js";
+import { stripThinkBlocks } from "../utils/strip-think-blocks.js";
 import {
   streamSimple as piStreamSimple,
   stream as piStream,
@@ -623,7 +624,8 @@ function extractOpenAITextPart(value: any): string {
 
 function extractChatContent(json: any): string {
   const message = json?.choices?.[0]?.message;
-  return extractOpenAITextPart(message?.content) || extractOpenAITextPart(message?.reasoning_content);
+  const raw = extractOpenAITextPart(message?.content) || extractOpenAITextPart(message?.reasoning_content);
+  return stripThinkBlocks(raw);
 }
 
 function extractChatDeltaContent(json: any): string {
@@ -958,7 +960,7 @@ async function chatCompletionViaCustomOpenAICompatible(
   if (!finalContent) {
     throw wrapLLMError(new Error("LLM returned empty response from stream"), errorCtx);
   }
-  return { content: finalContent, usage };
+  return { content: stripThinkBlocks(finalContent), usage };
 }
 
 // === Simple Chat (used by all agents via BaseAgent.chat()) ===

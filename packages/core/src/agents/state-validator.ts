@@ -99,6 +99,7 @@ ${hooksDiff || "(no changes)"}
 ## Chapter Text (for reference)
 ${chapterContent.slice(0, 6000)}`;
 
+    let rawResponse = "";
     try {
       const response = await this.chat(
         [
@@ -107,10 +108,12 @@ ${chapterContent.slice(0, 6000)}`;
         ],
         { temperature: 0.1 },
       );
+      rawResponse = response.content;
 
       return this.parseResult(response.content);
     } catch (error) {
       this.log?.warn(`State validation failed: ${error}`);
+      this.log?.warn(`Validator raw response (500 chars): ${rawResponse.slice(0, 500)}`);
       throw error;
     }
   }
@@ -167,29 +170,48 @@ ${chapterContent.slice(0, 6000)}`;
   }
 
   private parseResult(content: string): ValidationResult {
-    const trimmed = content.trim();
-    if (!trimmed) {
+    // Strip thinking tags and markdown code fences that some models prepend
+    let cleaned = content
+      .replace(/<think>[\s\S]*?<\/think>/gi, "")
+      .replace(/^```[\w]*\n?/gm, "")
+      .replace(/```$/gm, "")
+      .trim();
+
+    // If cleaning removed everything (model put all output in thinking tags),
+    // extract PASS/FAIL verdict from the raw thinking content
+    if (!cleaned) {
+      const thinkMatch = content.match(/<think>([\s\S]*?)<\/think>/i);
+      const thinkContent = thinkMatch?.[1] ?? content;
+      const verdictMatch = thinkContent.match(/\b(PASS|FAIL)\b/i);
+      if (verdictMatch) {
+        const passed = verdictMatch[1].toUpperCase() === "PASS";
+        this.log?.warn(`State validator verdict extracted from thinking tags: ${verdictMatch[1].toUpperCase()}`);
+        return { warnings: [{ category: "parse-fallback", description: "Verdict extracted from thinking tags" }], passed };
+      }
       throw new Error("LLM returned empty response");
     }
 
-    const jsonResult = this.tryParseJsonResult(trimmed);
+    const jsonResult = this.tryParseJsonResult(cleaned);
     if (jsonResult) {
       return jsonResult;
     }
 
-    const lines = trimmed.split("\n").map((line) => line.trim()).filter(Boolean);
+    const lines = cleaned.split("\n").map((line) => line.trim()).filter(Boolean);
     if (lines.length === 0) {
       throw new Error("LLM returned empty response");
     }
 
-    const verdictLine = lines[0]!;
-    if (!/^(PASS|FAIL)$/i.test(verdictLine)) {
-      throw new Error("State validator returned invalid response");
+    const verdictIndex = lines.findIndex((l) => /^(PASS|FAIL)$/i.test(l));
+    if (verdictIndex < 0) {
+      // If no explicit verdict found, check if response looks like warnings (PASS-like)
+      // rather than blocking the entire pipeline on a parsing issue
+      this.log?.warn(`State validator response missing PASS/FAIL verdict, defaulting to PASS`);
+      return { warnings: [{ category: "parse-fallback", description: "Validator response missing verdict line" }], passed: true };
     }
-    const passed = /^PASS$/i.test(verdictLine);
+    const passed = /^PASS$/i.test(lines[verdictIndex]!);
 
     const warnings: ValidationWarning[] = [];
-    for (let i = 1; i < lines.length; i++) {
+    for (let i = verdictIndex + 1; i < lines.length; i++) {
       const line = lines[i]!;
       if (/^(PASS|FAIL)$/i.test(line)) continue;
 

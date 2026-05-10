@@ -6,6 +6,7 @@
  */
 
 import { analyzeChapterCadence } from "../utils/chapter-cadence.js";
+import { stripThinkBlocks } from "../utils/strip-think-blocks.js";
 import type { BookRules } from "../models/book-rules.js";
 import type { GenreProfile } from "../models/genre-profile.js";
 
@@ -20,7 +21,8 @@ export function normalizePostWriteSurface(
   content: string,
   languageOverride?: "zh" | "en",
 ): string {
-  let normalized = stripPostWriteMetaLines(content);
+  let normalized = stripThinkBlocks(content);
+  normalized = stripPostWriteMetaLines(normalized);
   if (languageOverride !== "en") {
     normalized = normalized.replace(/——+/g, "，");
   }

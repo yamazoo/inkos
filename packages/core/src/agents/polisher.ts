@@ -1,5 +1,6 @@
 import { BaseAgent } from "./base.js";
 import type { ChapterMemo } from "../models/input-governance.js";
+import { stripThinkBlocks } from "../utils/strip-think-blocks.js";
 
 export interface PolishChapterInput {
   readonly chapterContent: string;
@@ -57,10 +58,10 @@ export class PolisherAgent extends BaseAgent {
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
       ],
-      { temperature: input.temperature ?? 0.4 },
+      { temperature: input.temperature ?? 0.4, maxTokens: 16384 },
     );
 
-    const raw = response.content.trim();
+    const raw = stripThinkBlocks(response.content).trim();
     // Strip any leading fenced code block wrapper if the model wraps the
     // chapter body defensively.
     const stripped = stripWrappingFence(raw);

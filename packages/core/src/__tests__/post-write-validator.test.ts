@@ -42,6 +42,28 @@ describe("validatePostWrite", () => {
     expect(normalized).toBe("他把U盘攥进手心，回头看了一眼档案室的黑窗。");
   });
 
+  it("strips <think> blocks from LLM thinking leakage", () => {
+    const content = [
+      "# 第5章 寒潭底（续）",
+      "",
+      "<think>",
+      "用户要求我作为章节长度修正器，将当前章节压缩到3000字左右。",
+      "当前字数：4712字",
+      "目标字数：3000字",
+      "</think>",
+      "",
+      "天黑了，又亮了。",
+      "陈渊第三次从剑冢里退出来时，窗外的天色已经从鱼肚白转成了淡金色。",
+    ].join("\n");
+
+    const normalized = normalizePostWriteSurface(content);
+
+    expect(normalized).toContain("天黑了，又亮了。");
+    expect(normalized).toContain("陈渊第三次");
+    expect(normalized).not.toContain("<think>");
+    expect(normalized).not.toContain("章节长度修正器");
+  });
+
   it("returns no violations for clean content", () => {
     const content = "他走过去，端起杯子，灌了一口。外面的雨越下越大。\n\n她站在窗前，看着街上的行人匆匆走过。";
     const result = validatePostWrite(content, baseProfile, null);
