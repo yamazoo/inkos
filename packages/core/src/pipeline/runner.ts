@@ -20,6 +20,8 @@ import type { RadarSource } from "../agents/radar-source.js";
 import { readGenreProfile } from "../agents/rules-reader.js";
 import { analyzeAITells } from "../agents/ai-tells.js";
 import { analyzeSensitiveWords } from "../agents/sensitive-words.js";
+import { OutlineInitAgent } from "../agents/outline-init-agent.js";
+import { VolumeStructureExtractor } from "../agents/volume-structure-extractor.js";
 import { StateManager } from "../state/manager.js";
 import { MemoryDB, type Fact } from "../state/memory-db.js";
 import { dispatchNotification, dispatchWebhookEvent } from "../notify/dispatcher.js";
@@ -29,6 +31,7 @@ import type { AuditResult, AuditIssue } from "../agents/continuity.js";
 import type { RadarResult } from "../agents/radar.js";
 import type { LengthSpec, LengthTelemetry } from "../models/length-governance.js";
 import type { ChapterMemo, ContextPackage, RuleStack } from "../models/input-governance.js";
+import type { OutlineInitResult } from "../models/volume-outline.js";
 import { buildLengthSpec, countChapterLength, formatLengthCount, isOutsideHardRange, isOutsideSoftRange, resolveLengthCountingMode, type LengthLanguage } from "../utils/length-metrics.js";
 import { analyzeLongSpanFatigue } from "../utils/long-span-fatigue.js";
 import { buildWritingMethodologySection } from "../utils/writing-methodology.js";
@@ -38,6 +41,13 @@ import {
   readStoryFrame,
   readVolumeMap,
 } from "../utils/outline-paths.js";
+import {
+  findChapterOutline,
+  readVolumeChapters,
+  writeVolumeChapters,
+} from "../utils/chapter-outline-store.js";
+import type { VolumeOutline, VolumeNode, ChapterNode } from "../models/volume-outline.js";
+import { findVolumeForChapter, VolumeOutlineSchema } from "../models/volume-outline.js";
 import { loadNarrativeMemorySeed, loadSnapshotCurrentStateFacts } from "../state/runtime-state-store.js";
 import { rewriteStructuredStateFromMarkdown } from "../state/state-bootstrap.js";
 import { readFile, readdir, writeFile, mkdir, rename, rm, stat } from "node:fs/promises";
@@ -905,6 +915,7 @@ export class PipelineRunner {
       const book = await this.state.loadBookConfig(bookId);
       const bookDir = this.state.bookDir(bookId);
       const chapterNumber = await this.state.getNextChapterNumber(bookId);
+      await this.ensureChapterOutline(bookId, book, bookDir, chapterNumber);
       const stageLanguage = await this.resolveBookLanguage(book);
       this.logStage(stageLanguage, { zh: "准备章节输入", en: "preparing chapter inputs" });
       const writeInput = await this.prepareWriteInput(
@@ -1100,6 +1111,43 @@ export class PipelineRunner {
       zh: `审计第${targetChapter}章`,
       en: `auditing chapter ${targetChapter}`,
     });
+    // Load outline data for deterministic outline compliance check (dim 38).
+    // In v2 mode, use full governed artifacts; in legacy mode, load outline
+    // directly from vol-N-chapters.json.
+    let auditOptions: Parameters<typeof this.evaluateMergedAudit>[0]["auditOptions"];
+    if ((this.config.inputGovernanceMode ?? "v2") !== "legacy") {
+      try {
+        const controlInput = await this.createGovernedArtifacts(
+          book,
+          bookDir,
+          targetChapter,
+          this.config.externalContext,
+          { reuseExistingIntentWhenContextMissing: true },
+        );
+        auditOptions = {
+          chapterIntent: controlInput.plan.intentMarkdown,
+          chapterMemo: controlInput.plan.memo,
+          contextPackage: controlInput.composed.contextPackage,
+          ruleStack: controlInput.composed.ruleStack,
+        };
+      } catch {
+        // Fall through to legacy outline loading
+      }
+    }
+    // Legacy mode or v2 fallback: load outline directly for dim 38 check
+    if (!auditOptions) {
+      const { findChapterOutline } = await import("../utils/chapter-outline-store.js");
+      const chapterOutline = await findChapterOutline(bookDir, targetChapter).catch(() => null);
+      if (chapterOutline) {
+        const parts: string[] = [];
+        parts.push(`【事件】${chapterOutline.event}`);
+        parts.push(`【节拍】${chapterOutline.beat}`);
+        if (chapterOutline.description) {
+          parts.push(`【详述】${chapterOutline.description}`);
+        }
+        auditOptions = { chapterIntent: parts.join("\n") };
+      }
+    }
     const evaluation = await this.evaluateMergedAudit({
       auditor,
       book,
@@ -1107,6 +1155,7 @@ export class PipelineRunner {
       chapterContent: content,
       chapterNumber: targetChapter,
       language,
+      auditOptions,
     });
     const result = evaluation.auditResult;
 
@@ -1506,6 +1555,7 @@ export class PipelineRunner {
     const bookDir = this.state.bookDir(bookId);
     await this.assertNoPendingStateRepair(bookId);
     const chapterNumber = await this.state.getNextChapterNumber(bookId);
+    await this.ensureChapterOutline(bookId, book, bookDir, chapterNumber);
     const stageLanguage = await this.resolveBookLanguage(book);
     this.logStage(stageLanguage, { zh: "准备章节输入", en: "preparing chapter inputs" });
     const writeInput = await this.prepareWriteInput(
@@ -2883,6 +2933,20 @@ ${matrix}`,
       };
     }
 
+    // Safety net: if normalizer expanded content when it should have compressed,
+    // reject and keep original. This catches LLM non-compliance in compress mode.
+    if (normalized.finalCount > writerCount * 1.1 && isOutsideSoftRange(writerCount, params.lengthSpec)) {
+      this.logWarn(this.languageFromLengthSpec(params.lengthSpec), {
+        zh: `字数归一化被拒绝（膨胀）：第${params.chapterNumber}章 ${writerCount} -> ${normalized.finalCount}（归一器在应压缩时反而膨胀了内容）`,
+        en: `Length normalization rejected (expanded): chapter ${params.chapterNumber} ${writerCount} -> ${normalized.finalCount} (normalizer expanded content when compression was needed)`,
+      });
+      return {
+        content: params.chapterContent,
+        wordCount: writerCount,
+        applied: false,
+      };
+    }
+
     this.logInfo(this.languageFromLengthSpec(params.lengthSpec), {
       zh: `审计前字数归一化：第${params.chapterNumber}章 ${writerCount} -> ${normalized.finalCount}`,
       en: `Length normalization before audit for chapter ${params.chapterNumber}: ${writerCount} -> ${normalized.finalCount}`,
@@ -3458,5 +3522,252 @@ ${matrix}`,
     const lines = raw.split("\n");
     const contentStart = lines.findIndex((l, i) => i > 0 && l.trim().length > 0);
     return contentStart >= 0 ? lines.slice(contentStart).join("\n") : raw;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Chapter outline generation (10-chapter lookahead)
+  // ---------------------------------------------------------------------------
+
+  /**
+   * Ensure the current chapter and the next 9 chapters have outlines.
+   * Generates missing outlines via OutlineInitAgent if needed.
+   * Zero LLM cost when all outlines already exist.
+   */
+  private async ensureChapterOutline(
+    bookId: string,
+    book: BookConfig,
+    bookDir: string,
+    chapterNumber: number,
+  ): Promise<void> {
+    const LOOKAHEAD = 10;
+    const start = chapterNumber;
+    const end = start + LOOKAHEAD - 1;
+
+    // Fast path: check if all chapters in [start, end] already have outlines
+    const checks = await Promise.all(
+      Array.from({ length: end - start + 1 }, (_, i) =>
+        findChapterOutline(bookDir, start + i),
+      ),
+    );
+    if (checks.every((c) => c !== null)) return;
+
+    // Find volume boundaries for these chapters
+    const volInfo = await this._findVolumeInfo(bookDir, start);
+    if (!volInfo) {
+      this.config.logger?.info(`[outline] no volume outline found, skipping outline generation for ch.${start}`);
+      return;
+    }
+
+    const { volumeId, volumeTitle, chapterRange } = volInfo;
+    const effectiveEnd = Math.min(end, chapterRange[1]);
+    const lang = (book.language ?? "zh") as "zh" | "en";
+
+    // Read existing volume chapters
+    const existing = await readVolumeChapters(bookDir, volumeId);
+    const existingChapters = existing?.chapters ?? [];
+
+    // Determine which chapters in [start, effectiveEnd] are missing
+    const existingSet = new Set(existingChapters.map((c) => c.chapter));
+    const missing: number[] = [];
+    for (let ch = start; ch <= effectiveEnd; ch++) {
+      if (!existingSet.has(ch)) missing.push(ch);
+    }
+    if (missing.length === 0) return;
+
+    // Build input for OutlineInitAgent
+    const volumeProse = await readVolumeMap(bookDir, "").catch(() => "");
+    const storyFrame = await readStoryFrame(bookDir, "").catch(() => "");
+    const agent = new OutlineInitAgent(this.agentCtxFor("outline-init", bookId));
+
+    const generated = await agent.generateChaptersRange(
+      {
+        bookTitle: book.title,
+        volumeTitle,
+        volumeProse,
+        storyFrame,
+        chapterRange: [start, effectiveEnd],
+        language: lang,
+      },
+      missing[0]!,
+      missing[missing.length - 1]!,
+    );
+
+    // Merge: replace missing chapters, keep existing ones
+    const mergedMap = new Map(existingChapters.map((c) => [c.chapter, c]));
+    for (const ch of generated) {
+      if (!mergedMap.has(ch.chapter)) {
+        mergedMap.set(ch.chapter, ch);
+      }
+    }
+    const merged = [...mergedMap.values()].sort((a, b) => a.chapter - b.chapter);
+
+    await writeVolumeChapters(bookDir, {
+      schemaVersion: 1,
+      volumeId,
+      volumeTitle,
+      chapterRange,
+      chapters: merged,
+    });
+
+    this.config.logger?.info(
+      `[outline] generated ${generated.length} chapter outlines (ch.${generated[0]!.chapter}-${generated[generated.length - 1]!.chapter})`,
+    );
+  }
+
+  /**
+   * Find volume info (id, title, range) for a given chapter number.
+   * Tries existing vol-N-chapters.json files first, then falls back to volume_map.json.
+   */
+  private async _findVolumeInfo(
+    bookDir: string,
+    chapterNumber: number,
+  ): Promise<{ volumeId: number; volumeTitle: string; chapterRange: [number, number] } | null> {
+    const outlineDir = join(bookDir, "story", "outline");
+
+    // 1. Try existing per-volume chapter files
+    try {
+      const entries = await readdir(outlineDir);
+      const volFiles = entries.filter((e) => /^vol-\d+-chapters\.json$/.test(e)).sort();
+      for (const file of volFiles) {
+        const match = file.match(/^vol-(\d+)-chapters\.json$/);
+        if (!match) continue;
+        const vol = await readVolumeChapters(bookDir, Number(match[1]));
+        if (vol && chapterNumber >= vol.chapterRange[0] && chapterNumber <= vol.chapterRange[1]) {
+          return {
+            volumeId: vol.volumeId,
+            volumeTitle: vol.volumeTitle,
+            chapterRange: vol.chapterRange as [number, number],
+          };
+        }
+      }
+    } catch {
+      // outline dir may not exist yet
+    }
+
+    // 2. Fallback: load volume_map.json
+    try {
+      const raw = await readFile(join(outlineDir, "volume_map.json"), "utf-8");
+      const outline: VolumeOutline = VolumeOutlineSchema.parse(JSON.parse(raw));
+      const vol = findVolumeForChapter(outline, chapterNumber);
+      if (vol) {
+        return {
+          volumeId: vol.volumeId,
+          volumeTitle: vol.volumeTitle,
+          chapterRange: vol.chapterRange as [number, number],
+        };
+      }
+    } catch {
+      // volume_map.json may not exist
+    }
+
+    // 3. Fallback: convert volume_map.md → volume_map.json, then retry
+    try {
+      const { convertVolumeOutlineToJson } = await import("../utils/volume-outline-converter.js");
+      const jsonPath = await convertVolumeOutlineToJson(bookDir);
+      if (jsonPath) {
+        const raw = await readFile(jsonPath, "utf-8");
+        const outline: VolumeOutline = VolumeOutlineSchema.parse(JSON.parse(raw));
+        const vol = findVolumeForChapter(outline, chapterNumber);
+        if (vol) {
+          return {
+            volumeId: vol.volumeId,
+            volumeTitle: vol.volumeTitle,
+            chapterRange: vol.chapterRange as [number, number],
+          };
+        }
+      }
+    } catch {
+      // conversion failed — no outline available
+    }
+
+    return null;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Bulk outline initialization
+  // ---------------------------------------------------------------------------
+
+  async initOutline(
+    bookId: string,
+    opts?: { volumeId?: number },
+  ): Promise<OutlineInitResult> {
+    const book = await this.state.loadBookConfig(bookId);
+    const bookDir = this.state.bookDir(bookId);
+    const lang = (book.language ?? "zh") as "zh" | "en";
+
+    // Load volume outline
+    let raw: string;
+    try {
+      raw = await readFile(join(bookDir, "story", "outline", "volume_map.json"), "utf-8");
+    } catch {
+      throw new Error("volume_map.json not found. Run volume outline conversion first.");
+    }
+    const outline: VolumeOutline = VolumeOutlineSchema.parse(JSON.parse(raw));
+    const volumeProse = await readVolumeMap(bookDir, "").catch(() => "");
+    const storyFrame = await readStoryFrame(bookDir, "").catch(() => "");
+
+    const targetVolumes = opts?.volumeId
+      ? outline.volumes.filter((v) => v.volumeId === opts.volumeId)
+      : outline.volumes;
+
+    if (targetVolumes.length === 0) {
+      throw new Error(`Volume ${opts?.volumeId} not found in outline`);
+    }
+
+    let chaptersFilled = 0;
+    let chaptersTotal = 0;
+    const completenessBefore = 0; // computed from audit
+
+    for (const vol of targetVolumes) {
+      const existing = await readVolumeChapters(bookDir, vol.volumeId);
+      const existingChapters = existing?.chapters ?? [];
+      const [rangeStart, rangeEnd] = vol.chapterRange;
+      const totalInRange = rangeEnd - rangeStart + 1;
+      chaptersTotal += totalInRange;
+
+      const existingSet = new Set(existingChapters.map((c) => c.chapter));
+      const missing: number[] = [];
+      for (let ch = rangeStart; ch <= rangeEnd; ch++) {
+        if (!existingSet.has(ch)) missing.push(ch);
+      }
+      if (missing.length === 0) continue;
+
+      const agent = new OutlineInitAgent(this.agentCtxFor("outline-init", bookId));
+      const generated = await agent.generateChaptersForVolume({
+        bookTitle: book.title,
+        volumeTitle: vol.volumeTitle,
+        volumeProse,
+        storyFrame,
+        chapterRange: [missing[0]!, missing[missing.length - 1]!],
+        language: lang,
+      });
+
+      const mergedMap = new Map(existingChapters.map((c) => [c.chapter, c]));
+      for (const ch of generated) {
+        if (!mergedMap.has(ch.chapter)) {
+          mergedMap.set(ch.chapter, ch);
+        }
+      }
+      const merged = [...mergedMap.values()].sort((a, b) => a.chapter - b.chapter);
+
+      await writeVolumeChapters(bookDir, {
+        schemaVersion: 1,
+        volumeId: vol.volumeId,
+        volumeTitle: vol.volumeTitle,
+        chapterRange: vol.chapterRange,
+        chapters: merged,
+      });
+
+      chaptersFilled += generated.length;
+    }
+
+    return {
+      chaptersFilled,
+      chaptersTotal,
+      completenessBefore,
+      completenessAfter: chaptersTotal > 0
+        ? Math.round(((outline.meta.totalChapters - chaptersTotal + chaptersFilled) / outline.meta.totalChapters) * 100) / 100
+        : 0,
+    };
   }
 }
