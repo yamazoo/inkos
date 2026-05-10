@@ -342,6 +342,7 @@ describe("PipelineRunner", () => {
           model: "base-model",
           temperature: 0.7,
           thinkingBudget: 0,
+          stripThinkingBlocks: true,
           apiFormat: "chat",
           stream: false,
         },

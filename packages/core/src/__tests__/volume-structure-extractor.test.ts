@@ -17,6 +17,7 @@ const STUB_CLIENT: LLMClient = {
     temperature: 0.7,
     maxTokens: 2048,
     thinkingBudget: 0,
+    stripThinkingBlocks: true,
     maxTokensCap: null,
     extra: {},
   },

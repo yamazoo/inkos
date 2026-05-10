@@ -63,7 +63,7 @@ const STUB_CLIENT: LLMClient = {
   provider: "openai",
   apiFormat: "chat",
   stream: false,
-  defaults: { temperature: 0.7, maxTokens: 2048, thinkingBudget: 0, maxTokensCap: null, extra: {} },
+  defaults: { temperature: 0.7, maxTokens: 2048, thinkingBudget: 0, maxTokensCap: null, stripThinkingBlocks: true, extra: {} },
 };
 
 function makeBook(): BookConfig {

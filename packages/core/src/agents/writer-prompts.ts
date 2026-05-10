@@ -50,7 +50,7 @@ export function buildWriterSystemPrompt(
         buildCreativeConstitution("en"),
         buildImmersionPillars("en"),
         buildGoldenOpeningDiscipline(chapterNumber, "en"),
-        buildGenreRules(genreProfile, genreBody),
+        buildGenreRules(genreProfile, genreBody, "en"),
         buildProtagonistRules(bookRules),
         buildBookRulesBody(bookRulesBody),
         buildStyleGuide(styleGuide),
@@ -643,26 +643,131 @@ function buildFullCastTracking(): string {
 // Genre-specific rules
 // ---------------------------------------------------------------------------
 
-function buildGenreRules(gp: GenreProfile, genreBody: string): string {
+function buildGenreRules(gp: GenreProfile, genreBody: string, language: "zh" | "en" = "zh"): string {
+  const isEn = language === "en";
+
   const fatigueLine = gp.fatigueWords.length > 0
-    ? `- 高疲劳词（${gp.fatigueWords.join("、")}）单章最多出现1次`
+    ? (isEn
+      ? `- High-fatigue words (${gp.fatigueWords.join(", ")}) — max 1 occurrence per chapter`
+      : `- 高疲劳词（${gp.fatigueWords.join("、")}）单章最多出现1次`)
     : "";
 
   const chapterTypesLine = gp.chapterTypes.length > 0
-    ? `动笔前先判断本章类型：\n${gp.chapterTypes.map(t => `- ${t}`).join("\n")}`
+    ? (isEn
+      ? `Determine chapter type before writing:\n${gp.chapterTypes.map(t => `- ${t}`).join("\n")}`
+      : `动笔前先判断本章类型：\n${gp.chapterTypes.map(t => `- ${t}`).join("\n")}`)
     : "";
 
   const pacingLine = gp.pacingRule
-    ? `- 节奏规则：${gp.pacingRule}`
+    ? (isEn ? `- Pacing rule: ${gp.pacingRule}` : `- 节奏规则：${gp.pacingRule}`)
     : "";
 
+  const header = isEn ? `## Genre Rules (${gp.name})` : `## 题材规范（${gp.name}）`;
+
   return [
-    `## 题材规范（${gp.name}）`,
+    header,
     fatigueLine,
     pacingLine,
     chapterTypesLine,
+    buildSatisfactionGuide(gp, language),
     genreBody,
   ].filter(Boolean).join("\n\n");
+}
+
+// ---------------------------------------------------------------------------
+// Satisfaction (爽点) delivery guide — psychology-grounded
+// ---------------------------------------------------------------------------
+
+/** Satisfaction type definitions with psychological mechanism and delivery technique. */
+const SATISFACTION_TYPE_GUIDE_ZH: Readonly<Record<string, { readonly mechanism: string; readonly delivery: string }>> = {
+  // ── 通用类型（文章提取的15种） ──
+  "打脸":            { mechanism: "屈辱→释放多巴胺链：读者代入主角被轻视的屈辱感，打脸瞬间正义伸张带来强烈快感", delivery: "铺垫必须充分：先让反派嚣张到读者憋屈，再用碾压式反转释放。关键——围观者的震惊反应比主角自证更爽" },
+  "逆袭":            { mechanism: "底层→逆袭的落差越大，多巴胺峰值越高。读者代入起点低的主角，逆袭时获得替代性满足", delivery: "起点越低越好，逆袭过程中要有他人见证和评价逆转。不是一步到位，而是一步步积累直到临界点爆发" },
+  "吊打":            { mechanism: "预期苦战→轻松碾压的认知反转产生意外快感。读者紧张时突然释放，情绪落差制造爽感", delivery: "先铺垫敌人强大（让读者以为主角会苦战），再用超出预期的实力差距瞬间结束战斗。用敌人的心理崩溃而非主角的自夸来展现碾压" },
+  "装X成功":         { mechanism: "隐藏身份/实力→关键时刻揭示的认知重构。读者'我早就知道'的优越感和旁人震惊的对比产生双重快感", delivery: "铺垫期用低调行为制造反差，转折点用在场者的'不可能！'反应来放大效果。主角越淡定，旁人越震惊，爽感越强" },
+  "突破重围":        { mechanism: "绝境→突围的极限反转。读者经历'完了→等等→居然'的三段情绪过山车", delivery: "绝境必须真实（不是假装危险），突围手段必须有前文伏笔。读者回顾时应该觉得'原来如此'而非'这也行？'" },
+  "实力碾压":        { mechanism: "绝对力量展示触发原始的安全感和掌控欲。不需要紧张，纯粹的力量展示本身就是爽点", delivery: "用旁观者的恐惧和敬畏来衬托，而不是主角自我评价。用具体的破坏效果（一掌碎山、一剑断河）而非抽象数字来传达力量" },
+  "智慧制胜":        { mechanism: "读者跟随主角推理的过程参与感强，揭晓答案时获得'思维共鸣'的满足", delivery: "让读者看到部分线索但猜不透全貌，揭晓时让读者觉得合理且意外。反派不是降智，而是被更高明的策略碾压" },
+  "宝藏现世":        { mechanism: "稀缺资源获取触发狩猎采集本能的满足感。意外收获比计划内的更爽（惊喜>预期）", delivery: "宝藏出现前要有铺垫（传说、地图、线索），获取过程要有竞争或危险。拿到后的实际收益要超出读者预期" },
+  "情场得意":        { mechanism: "社交吸引力和被认可的本能需求。读者代入主角被异性/他人倾慕时获得自尊满足", delivery: "不要直写主角魅力，而写对方的反应变化（从冷淡→好奇→心动→主动）。用第三方视角的嫉妒来侧面衬托" },
+  "强者归来":        { mechanism: "积蓄已久的回归产生'等待兑现'的期待满足。读者等待越久，回归瞬间的快感越强", delivery: "回归前让旧敌或旧友质疑/嘲笑，回归时用碾压实力证明一切。身份揭示的时机是关键——太早没悬念，太晚没耐心" },
+  "绝地反击":        { mechanism: "从0%到100%的极限反转。情绪从绝望谷底飙升至高峰，落差越大越爽", delivery: "绝境必须真实（队友全灭、资源耗尽），反击手段必须是前文铺垫过的。不能突然开挂，而是用已有条件的创造性组合逆转" },
+  "收获认同":        { mechanism: "社会认同需求的替代满足。读者代入主角被认可时获得'我做的一切都值得'的满足感", delivery: "认同来自之前误解/轻视主角的人最有力量。一个一直看不起主角的人说'我错了'比一百个路人鼓掌更爽" },
+  "力挽狂澜":        { mechanism: "集体危机中个人英雄主义的极端展现。读者获得'幸好有他'的安全感和崇敬感", delivery: "危机必须是团队/组织级别的（不是个人恩怨），主角的付出必须有代价（不是白嫖），事后要有实际的地位/关系变化" },
+  "奇遇连连":        { mechanism: "持续的新鲜感和意外收获维持多巴胺的持续分泌。读者跟着主角探索未知的兴奋感", delivery: "每次奇遇要有递进（一个比一个有价值），不能都是同类型。奇遇之间要有因果链，不能是随机事件的堆砌" },
+  "修炼突破":        { mechanism: "渐进式成长的每一步都释放微量多巴胺，累积突破时一次性爆发。类似游戏升级的快感", delivery: "每次突破前要有明确的瓶颈描述（读者知道'差在哪'），突破过程要有具象化描写（不是'叮，突破了'），突破后的实力对比要立刻体现" },
+  // ── 仙侠专有类型 ──
+  "悟道突破":        { mechanism: "修炼瓶颈→顿悟→突破的完整链条。读者跟随主角经历迷茫→领悟→蜕变，突破瞬间获得'终于等到'的满足", delivery: "悟道场景用五感描写（不是抽象哲理灌输），突破要有具体的身体/感知变化来验证。前文积累的修炼细节在这一刻汇聚" },
+  "斗法碾压":        { mechanism: "法术对抗中展现绝对实力差距。预期苦战→轻松碾压的认知反转产生意外快感", delivery: "用战场破坏（山崩地裂、阵法破碎）和旁观修士的恐惧来衬托力量。法宝组合和战术碾压比单纯力量碾压更有层次" },
+  "法宝收获":        { mechanism: "稀缺法宝触发狩猎本能满足。意外收获比计划内的更爽（惊喜>预期）", delivery: "法宝出现前要有传说/线索铺垫，获取过程需要竞争或险境。法宝的品级和能力要超出读者预期，同时有限制条件防止无限开挂" },
+  "身份揭示":        { mechanism: "隐藏身份/实力→关键时刻揭示的认知重构。读者'我早就知道'的优越感和旁人震惊的双重快感", delivery: "铺垫期用低调行为制造反差。身份揭示时用在场者尤其是之前轻视主角之人的'不可能！'反应放大效果。主角越淡定越有力" },
+  "天劫渡过":        { mechanism: "极限生存的紧张→释放。读者经历'要死了→居然活了'的情绪过山车", delivery: "天劫的威力要具象化（不是'九九雷劫'一笔带过），渡劫手段必须有前文伏笔。渡劫后的境界提升要立刻体现在实力对比上" },
+  "因果了结":        { mechanism: "前期种下的因在本章收果。读者等得越久，了结时的满足感越强——这是延迟满足的极致", delivery: "了结时要让读者回忆起种因的那一章。了结方式要有创意（不是简单复仇），因果链条要清晰可追溯" },
+  // ── 玄幻专有类型 ──
+  "升级突破":        { mechanism: "等级体系下的阶段性成长。每级提升释放小多巴胺，大境界突破一次性爆发——类似游戏升级", delivery: "突破前要有明确的瓶颈（读者知道'差在哪'），突破后立刻有实力验证场景。用具体的破坏力/速度/感知变化来展示提升" },
+  "收益兑现":        { mechanism: "投资回报的预期满足。读者等待主角的努力/牺牲得到回报，兑现时获得'值得'的确认感", delivery: "收益的种类要多样（资源、功法、人脉、信息），不能每次都是同一类。收益要超出读者预期但不能破坏平衡" },
+  "智斗碾压":        { mechanism: "智力碾压让读者获得思维优越感。读者跟随推理过程参与感强，揭晓时获得'原来如此'的满足", delivery: "让读者看到部分线索但猜不透全貌。反派不是降智，而是被更高明的策略碾压。计中计比简单算计更有快感" },
+  "底牌亮出":        { mechanism: "隐藏实力→关键时刻曝光。读者的期待被延迟后一次性释放，延迟越久快感越强", delivery: "铺垫期刻意压抑（让读者替主角着急），亮牌瞬间要有足够的落差感。底牌不能太频繁，用一次就贬值一次" },
+  // ── 都市专有类型 ──
+  "商战碾压":        { mechanism: "商业博弈中展现绝对信息/资源优势。读者获得'看穿一切'的掌控感", delivery: "用对手的心理崩溃展现碾压。操作过程比结果更重要——读者需要看到主角怎么赢的" },
+  "人脉兑现":        { mechanism: "前期铺垫的关系在关键时刻发挥作用。读者获得'原来这层关系用在这里'的惊喜", delivery: "人脉的价值要与之前读者的认知形成反差。一个小人物在关键时刻的作用超过预期" },
+  "对手打脸":        { mechanism: "对手的嚣张行为种下失败的因，用现实规则让其自食恶果。读者获得正义感的伸张", delivery: "让对手的失败来自自己的行为（不是主角主动打压）。法律、市场、制度等现实规则是比武力更爽的打脸工具" },
+  "资源收割":        { mechanism: "资源获取触发狩猎本能满足。竞争越激烈，收获越爽", delivery: "资源获取过程要有谈判、判断和魄力的展示。收获后的实际收益要超出读者预期" },
+  "地位跃升":        { mechanism: "社会地位提升满足读者的替代性自尊需求。从底层到顶层的每一步都有社会反应验证", delivery: "不是一步登天，而是一系列事件逐步积累。每一步都要有具体的社交圈反应来验证地位变化" },
+  // ── 恐怖专有类型 ──
+  "真相揭示":        { mechanism: "跟随角色拼凑线索，揭晓时获得'原来如此'的认知满足。真相要既合理又意外", delivery: "真相揭示要分层（不能一次全解），每层揭示同时引出更大的疑问。角色的反应（恐惧、震惊）比真相本身更能制造效果" },
+  "成功逃脱":        { mechanism: "长时间恐惧积累后的情绪释放。逃脱本身是对紧张感的极致回报", delivery: "逃脱手段要有代价（受伤、牺牲、失去物品），纯粹白嫖的逃脱不产生满足感。逃脱后的短暂安全感要写出'劫后余生'的质感" },
+  "反杀怪物":        { mechanism: "从猎物变成猎人的角色反转。之前积累的信息/工具在这一刻兑现", delivery: "反杀的关键不能是运气，而是角色之前积累的信息或技能的创造性运用。让读者觉得'我一直关注的那个细节原来是关键'" },
+  "谜团解开":        { mechanism: "好奇心的持续满足。每个谜团的解开同时引出更大的谜团，维持持续的追读动力", delivery: "不能一次全解（会失去追读动力），也不能永远不解（会失去耐心）。每3-5章解开一个小谜团，每卷解开一个大谜团" },
+  "同伴获救":        { mechanism: "在绝望时救出同伴，前提是读者真的担心过这个同伴的安全", delivery: "用时间压力（倒计时、最后一刻）放大快感。同伴获救后的互动要有情感重量，不能救完就翻篇" },
+  "规则发现":        { mechanism: "发现恐怖世界规则的过程本身是爽点——智力征服恐惧", delivery: "规则不能太简单也不能太复杂，要让读者觉得'聪明'。发现规则后立刻有应用（用规则反制恐怖），形成'发现→验证→应用'的闭环" },
+};
+
+const SATISFACTION_TYPE_GUIDE_EN: Readonly<Record<string, { readonly mechanism: string; readonly delivery: string }>> = {
+  "face-slapping":       { mechanism: "Humiliation → release dopamine chain: reader empathizes with the protagonist's humiliation, the slap delivers justice-catharsis", delivery: "Build up the antagonist's arrogance until readers feel genuine frustration, then release with overwhelming reversal. Spectator shock amplifies the payoff more than self-vindication" },
+  "rise-from-bottom":    { mechanism: "The greater the gap between starting point and peak, the higher the dopamine spike. Readers project onto the underdog and gain vicarious triumph", delivery: "Start as low as possible. Reversal needs witnesses and shifting evaluations. Build incrementally to a tipping point rather than one-step transformation" },
+  "dominant-victory":    { mechanism: "Expected tough fight → effortless crush creates cognitive reversal and surprise euphoria. Tension release amplified by unexpected ease", delivery: "Build up enemy strength (readers expect a hard fight), then end it instantly with a power gap that shocks. Let the enemy's psychological collapse show the domination, not the hero's boasting" },
+  "hidden-power-reveal": { mechanism: "Hidden identity/power revealed at the key moment produces cognitive restructuring. Dual pleasure: reader's 'I knew it' superiority + bystander shock", delivery: "Build contrast through humble behavior during concealment. Amplify the reveal with bystander 'impossible!' reactions. The calmer the hero, the more dramatic the witnesses' shock" },
+  "breakthrough":        { mechanism: "Desperate situation → breakout reversal. Reader rides a three-stage emotional rollercoaster: 'it's over' → 'wait' → 'no way'", delivery: "The danger must be real (not fake). The breakout method must have earlier foreshadowing. On review, readers should think 'of course' not 'really?'" },
+  "power-dominance":     { mechanism: "Absolute power display triggers primal safety/controllability instincts. No tension needed — pure strength display is its own reward", delivery: "Show through bystander fear and awe, not self-assessment. Use concrete destructive effects (shattering mountains, splitting rivers) not abstract numbers" },
+  "wit-victory":         { mechanism: "Reader follows the protagonist's reasoning process with high participation. The reveal delivers 'intellectual resonance' satisfaction", delivery: "Show partial clues but keep the full picture hidden. The reveal should feel both logical and surprising. The antagonist isn't dumbed down — they're outmaneuvered by superior strategy" },
+  "treasure-discovery":  { mechanism: "Rare resource acquisition triggers hunting/gathering instinct satisfaction. Unexpected gains hit harder than planned ones (surprise > expectation)", delivery: "Foreshadow the treasure (legends, maps, clues). The acquisition process needs competition or danger. The actual benefit should exceed reader expectations" },
+  "romantic-success":    { mechanism: "Social attractiveness and recognition need satisfaction. Reader gains self-esteem boost through the protagonist being desired", delivery: "Don't state the hero's charm directly — show the target's reaction shift (cold → curious → attracted → proactive). Use third-party jealousy as indirect contrast" },
+  "hero-return":         { mechanism: "Long-awaited return delivers accumulated expectation satisfaction. The longer the wait, the bigger the payoff spike on return", delivery: "Before return, have old enemies or friends mock/doubt. On return, prove everything with overwhelming power. Identity reveal timing is critical — too early kills suspense, too late loses patience" },
+  "last-stand-reversal": { mechanism: "0% to 100% extreme reversal. Emotions spike from despair's nadir to euphoria's peak — the bigger the gap, the stronger the payoff", delivery: "The desperation must be real (team wiped, resources exhausted). The reversal must use previously established tools. No deus ex machina — creative combination of existing conditions" },
+  "earned-recognition":  { mechanism: "Social recognition substitute satisfaction. Reader gains 'it was all worth it' fulfillment when the protagonist is acknowledged", delivery: "Recognition from those who previously misunderstood/dismissed the hero is most powerful. One person who always looked down saying 'I was wrong' beats a hundred bystanders applauding" },
+  "turning-the-tide":    { mechanism: "Individual heroism in collective crisis produces safety and admiration. Reader gains 'thank goodness for them' feeling", delivery: "Crisis must be team/org-level (not personal grudge). The hero's sacrifice must have a cost (not free). Aftermath must show concrete status/relationship changes" },
+  "chain-discoveries":   { mechanism: "Continuous novelty and unexpected gains maintain sustained dopamine secretion. Reader shares the excitement of exploring the unknown", delivery: "Each discovery should escalate (increasing value). Avoid same-type repetition. Discoveries should have causal chains, not be random events" },
+  "cultivation-breakthrough": { mechanism: "Each incremental step releases micro-dopamine; the breakthrough triggers a cumulative burst. Similar to game-leveling satisfaction", delivery: "Before each breakthrough, describe the bottleneck clearly (reader knows 'what's missing'). Use embodied breakthrough descriptions (not just 'ding, leveled up'). Show power comparison immediately after" },
+};
+
+function buildSatisfactionGuide(gp: GenreProfile, language: "zh" | "en"): string {
+  if (gp.satisfactionTypes.length === 0) return "";
+
+  const guide = language === "en" ? SATISFACTION_TYPE_GUIDE_EN : SATISFACTION_TYPE_GUIDE_ZH;
+  const isEn = language === "en";
+
+  const typeEntries = gp.satisfactionTypes
+    .map(t => {
+      const entry = guide[t];
+      if (!entry) return null;
+      return isEn
+        ? `- **${t}** — Mechanism: ${entry.mechanism}\n  Delivery: ${entry.delivery}`
+        : `- **${t}** — 机制：${entry.mechanism}\n  交付：${entry.delivery}`;
+    })
+    .filter(Boolean);
+
+  if (typeEntries.length === 0) return "";
+
+  const header = isEn ? "## Satisfaction (Payoff) Guide" : "## 爽点交付指南";
+  const intro = isEn
+    ? "Each chapter should deliver at least one payoff from the types below. Payoffs trigger dopamine through specific psychological mechanisms — understanding HOW they work lets you deploy them precisely rather than randomly."
+    : "每章应至少兑现以下一种爽点类型。爽点通过特定心理机制触发多巴胺——理解机制才能精准部署而非随机堆砌。";
+  const balanceNote = isEn
+    ? "**Balance rule**: Payoffs must serve the chapter's narrative goal. Don't stack unrelated payoffs — density without purpose reads as fan-service, not storytelling. Each payoff should advance the emotional arc, not just trigger a spike."
+    : "**平衡规则**：爽点必须服务于本章叙事目标。不要堆砌无关爽点——无目的的密度是注水，不是写作。每个爽点应推进情感弧线，而非仅仅制造一次刺激峰值。";
+
+  return [header, intro, ...typeEntries, balanceNote].join("\n");
 }
 
 // ---------------------------------------------------------------------------

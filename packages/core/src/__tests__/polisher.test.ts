@@ -16,7 +16,7 @@ function makeAgent(): PolisherAgent {
       defaults: {
         temperature: 0.7,
         maxTokens: 4096,
-        thinkingBudget: 0, maxTokensCap: null,
+        thinkingBudget: 0, maxTokensCap: null, stripThinkingBlocks: true,
         extra: {},
       },
     },

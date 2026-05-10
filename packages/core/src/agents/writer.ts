@@ -262,7 +262,7 @@ export class WriterAgent extends BaseAgent {
         { role: "system", content: creativeSystemPrompt },
         { role: "user", content: creativeUserPrompt },
       ],
-      { temperature: creativeTemperature },
+      { temperature: creativeTemperature, maxTokens: 24576 },
     );
     const creativeUsage = creativeResponse.usage;
 
@@ -567,7 +567,7 @@ export class WriterAgent extends BaseAgent {
         { role: "system", content: observerSystem },
         { role: "user", content: observerUser },
       ],
-      { temperature: 0.5 },
+      { temperature: 0.5, maxTokens: 8192 },
     );
     const observations = observerResponse.content;
 
@@ -611,7 +611,7 @@ export class WriterAgent extends BaseAgent {
         { role: "system", content: settlerSystem },
         { role: "user", content: settlerUser },
       ],
-      { temperature: 0.3 },
+      { temperature: 0.3, maxTokens: 16384 },
     );
 
     let mergedSettlement: ReturnType<typeof parseSettlementOutput> & {

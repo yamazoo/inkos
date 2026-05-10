@@ -120,6 +120,7 @@ export interface LLMClient {
      */
     readonly maxTokensCap?: number | null;
     readonly thinkingBudget: number;
+    readonly stripThinkingBlocks: boolean;
     readonly extra: Record<string, unknown>;
   };
 }
@@ -158,6 +159,7 @@ export function createLLMClient(config: LLMConfig): LLMClient {
     temperature: config.temperature ?? 0.7,
     maxTokens: _earlyCard?.maxOutput ?? UNKNOWN_MODEL_FALLBACK_MAX_TOKENS,
     thinkingBudget: config.thinkingBudget ?? 0,
+    stripThinkingBlocks: config.stripThinkingBlocks ?? true,
     extra: config.extra ?? {},
   };
 
@@ -622,10 +624,10 @@ function extractOpenAITextPart(value: any): string {
   return "";
 }
 
-function extractChatContent(json: any): string {
+function extractChatContent(json: any, stripThinking = true): string {
   const message = json?.choices?.[0]?.message;
   const raw = extractOpenAITextPart(message?.content) || extractOpenAITextPart(message?.reasoning_content);
-  return stripThinkBlocks(raw);
+  return stripThinking ? stripThinkBlocks(raw) : raw;
 }
 
 function extractChatDeltaContent(json: any): string {
@@ -898,7 +900,7 @@ async function chatCompletionViaCustomOpenAICompatible(
 
   if (!client.stream) {
     const json = await response.json() as any;
-    const content = extractChatContent(json);
+    const content = extractChatContent(json, client.defaults.stripThinkingBlocks);
     if (!content) {
       throw wrapLLMError(new Error("LLM returned empty response"), errorCtx);
     }
@@ -960,7 +962,7 @@ async function chatCompletionViaCustomOpenAICompatible(
   if (!finalContent) {
     throw wrapLLMError(new Error("LLM returned empty response from stream"), errorCtx);
   }
-  return { content: stripThinkBlocks(finalContent), usage };
+  return { content: client.defaults.stripThinkingBlocks ? stripThinkBlocks(finalContent) : finalContent, usage };
 }
 
 // === Simple Chat (used by all agents via BaseAgent.chat()) ===

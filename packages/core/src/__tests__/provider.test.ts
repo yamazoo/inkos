@@ -119,7 +119,7 @@ function makeClient(temperature = 0.7, extra: Partial<LLMClient> = {}): LLMClien
     defaults: {
       temperature,
       maxTokens: 512,
-      thinkingBudget: 0,
+      thinkingBudget: 0, stripThinkingBlocks: true,
 
       extra: {},
     },

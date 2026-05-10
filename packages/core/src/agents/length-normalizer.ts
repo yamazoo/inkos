@@ -1,6 +1,7 @@
 import { BaseAgent } from "./base.js";
 import type { LengthNormalizeMode, LengthSpec } from "../models/length-governance.js";
 import { countChapterLength, chooseNormalizeMode, isOutsideHardRange, isOutsideSoftRange } from "../utils/length-metrics.js";
+import { stripThinkBlocks } from "../utils/strip-think-blocks.js";
 
 export interface NormalizeLengthInput {
   readonly chapterContent: string;
@@ -128,7 +129,7 @@ ${input.chapterContent}`;
   }
 
   private sanitizeNormalizedContent(rawContent: string, fallbackContent: string): string {
-    const trimmed = rawContent.trim();
+    const trimmed = stripThinkBlocks(rawContent).trim();
     if (!trimmed) return fallbackContent;
 
     const fenced = this.extractFirstFencedBlock(trimmed);

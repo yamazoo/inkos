@@ -28,6 +28,8 @@ export const LLMConfigSchema = z.object({
   // per-call 16384 裁到 config.maxTokens=8192，导致基础设定输出被截断）。
   maxTokensCap: z.number().int().min(1).optional(),
   thinkingBudget: z.number().int().min(0).default(0),
+  /** Strip raw &lt;think&gt;/&lt;thinking&gt; XML blocks from LLM output. Default true. */
+  stripThinkingBlocks: z.boolean().default(true),
   extra: z.record(z.unknown()).optional(),
   headers: z.record(z.string()).optional(),
   apiFormat: z.enum(["chat", "responses"]).default("chat"),

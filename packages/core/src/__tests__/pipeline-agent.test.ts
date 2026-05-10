@@ -26,7 +26,7 @@ describe("agent pipeline tools", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0,
+          thinkingBudget: 0, stripThinkingBlocks: true,
           extra: {},
         },
       },

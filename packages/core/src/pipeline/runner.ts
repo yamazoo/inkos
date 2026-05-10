@@ -572,6 +572,7 @@ export class PipelineRunner {
         model: override.model,
         temperature: base?.temperature ?? 0.7,
         thinkingBudget: base?.thinkingBudget ?? 0,
+        stripThinkingBlocks: base?.stripThinkingBlocks ?? true,
         apiFormat,
         stream,
       });
@@ -3604,6 +3605,7 @@ ${matrix}`,
       }
     }
 
+
     // Merge: replace missing chapters, keep existing ones
     const mergedMap = new Map(existingChapters.map((c) => [c.chapter, c]));
     for (const ch of generated) {
@@ -3764,6 +3766,7 @@ ${matrix}`,
           this.config.logger?.warn(`  ch.${w.chapter} ${w.field}: ${w.issue} — ${w.detail}`);
         }
       }
+
 
       const mergedMap = new Map(existingChapters.map((c) => [c.chapter, c]));
       for (const ch of generated) {

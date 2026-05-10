@@ -56,7 +56,7 @@ describe("ContinuityAuditor", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0,
+          thinkingBudget: 0, stripThinkingBlocks: true,
           extra: {},
         },
       },
@@ -128,7 +128,7 @@ describe("ContinuityAuditor", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0,
+          thinkingBudget: 0, stripThinkingBlocks: true,
           extra: {},
         },
       },
@@ -224,7 +224,7 @@ describe("ContinuityAuditor", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0,
+          thinkingBudget: 0, stripThinkingBlocks: true,
           extra: {},
         },
       },
@@ -312,7 +312,7 @@ describe("ContinuityAuditor", () => {
         client: {
           provider: "openai", apiFormat: "chat", stream: false,
           defaults: {
-            temperature: 0.7, maxTokens: 4096, thinkingBudget: 0, maxTokensCap: null, extra: {},
+            temperature: 0.7, maxTokens: 4096, thinkingBudget: 0, maxTokensCap: null, stripThinkingBlocks: true, extra: {},
           },
         },
         model: "test-model",
@@ -373,7 +373,7 @@ describe("ContinuityAuditor", () => {
         client: {
           provider: "openai", apiFormat: "chat", stream: false,
           defaults: {
-            temperature: 0.7, maxTokens: 4096, thinkingBudget: 0, maxTokensCap: null, extra: {},
+            temperature: 0.7, maxTokens: 4096, thinkingBudget: 0, maxTokensCap: null, stripThinkingBlocks: true, extra: {},
           },
         },
         model: "test-model",
@@ -431,7 +431,7 @@ describe("ContinuityAuditor", () => {
         client: {
           provider: "openai", apiFormat: "chat", stream: false,
           defaults: {
-            temperature: 0.7, maxTokens: 4096, thinkingBudget: 0, maxTokensCap: null, extra: {},
+            temperature: 0.7, maxTokens: 4096, thinkingBudget: 0, maxTokensCap: null, stripThinkingBlocks: true, extra: {},
           },
         },
         model: "test-model",
@@ -488,7 +488,7 @@ describe("ContinuityAuditor", () => {
         client: {
           provider: "openai", apiFormat: "chat", stream: false,
           defaults: {
-            temperature: 0.7, maxTokens: 4096, thinkingBudget: 0, maxTokensCap: null, extra: {},
+            temperature: 0.7, maxTokens: 4096, thinkingBudget: 0, maxTokensCap: null, stripThinkingBlocks: true, extra: {},
           },
         },
         model: "test-model",
@@ -553,7 +553,7 @@ describe("ContinuityAuditor", () => {
         defaults: {
           temperature: 0.7,
           maxTokens: 4096,
-          thinkingBudget: 0, maxTokensCap: null,
+          thinkingBudget: 0, maxTokensCap: null, stripThinkingBlocks: true,
           extra: {},
         },
       },
