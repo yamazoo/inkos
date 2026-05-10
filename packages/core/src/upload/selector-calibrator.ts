@@ -53,6 +53,7 @@ import { join } from "node:path";
 import { homedir } from "node:os";
 import { existsSync } from "node:fs";
 import { chromium } from "@playwright/test";
+import { loadCookies } from "./browser.js";
 import type { SelectorBundle } from "../models/upload.js";
 import { SelectorBundleSchema } from "../models/upload.js";
 
@@ -463,6 +464,7 @@ export async function calibrateSelectors(
   publishUrl: string,
   log: (msg: string) => void,
   onReady?: () => void,
+  opts?: { readonly platform?: string; readonly username?: string },
 ): Promise<SelectorBundle> {
   log("正在启动 Edge 浏览器进行选择器校准...");
   const browser = await chromium.launch({
@@ -483,6 +485,12 @@ export async function calibrateSelectors(
   await context.addInitScript(() => {
     Object.defineProperty(navigator, "webdriver", { get: () => false });
   });
+
+  // Load saved cookies if platform/username provided
+  if (opts?.platform && opts?.username) {
+    const loaded = await loadCookies(context, opts.platform, opts.username);
+    if (loaded) log("已加载登录状态");
+  }
 
   const page = await context.newPage();
   await page.goto(publishUrl, { waitUntil: "domcontentloaded", timeout: 90_000 });
