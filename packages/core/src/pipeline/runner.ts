@@ -44,6 +44,7 @@ import {
 import {
   findChapterOutline,
   readVolumeChapters,
+  validateChapterOutlineSemantics,
   writeVolumeChapters,
 } from "../utils/chapter-outline-store.js";
 import type { VolumeOutline, VolumeNode, ChapterNode } from "../models/volume-outline.js";
@@ -3592,6 +3593,17 @@ ${matrix}`,
       missing[missing.length - 1]!,
     );
 
+    // Semantic validation before persistence
+    const semWarnings = validateChapterOutlineSemantics(generated, existingChapters);
+    if (semWarnings.length > 0) {
+      this.config.logger?.warn(
+        `[outline] ${semWarnings.length} semantic warning(s) in volume ${volumeId}:`,
+      );
+      for (const w of semWarnings) {
+        this.config.logger?.warn(`  ch.${w.chapter} ${w.field}: ${w.issue} — ${w.detail}`);
+      }
+    }
+
     // Merge: replace missing chapters, keep existing ones
     const mergedMap = new Map(existingChapters.map((c) => [c.chapter, c]));
     for (const ch of generated) {
@@ -3741,6 +3753,17 @@ ${matrix}`,
         chapterRange: [missing[0]!, missing[missing.length - 1]!],
         language: lang,
       });
+
+      // Semantic validation before persistence
+      const semWarnings = validateChapterOutlineSemantics(generated, existingChapters);
+      if (semWarnings.length > 0) {
+        this.config.logger?.warn(
+          `[outline] ${semWarnings.length} semantic warning(s) in volume ${vol.volumeId}:`,
+        );
+        for (const w of semWarnings) {
+          this.config.logger?.warn(`  ch.${w.chapter} ${w.field}: ${w.issue} — ${w.detail}`);
+        }
+      }
 
       const mergedMap = new Map(existingChapters.map((c) => [c.chapter, c]));
       for (const ch of generated) {

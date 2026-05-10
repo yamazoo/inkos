@@ -6,6 +6,7 @@ import {
   readVolumeChapters,
   writeVolumeChapters,
   findChapterOutline,
+  validateChapterOutlineSemantics,
   type VolumeChapterFile,
 } from "../utils/chapter-outline-store.js";
 import type { ChapterNode } from "../models/volume-outline.js";
@@ -178,5 +179,73 @@ describe("findChapterOutline", () => {
     // Chapter 5 is in vol-2 (valid) — should find it
     const ch5 = await findChapterOutline(tmpDir, 5);
     expect(ch5!.chapter).toBe(5);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// validateChapterOutlineSemantics
+// ---------------------------------------------------------------------------
+
+describe("validateChapterOutlineSemantics", () => {
+  it("returns empty warnings for clean chapters", () => {
+    const chapters: ChapterNode[] = [
+      { chapter: 1, event: "主角发现秘境入口", beat: "悬念引入，营造紧张感" },
+      { chapter: 2, event: "进入秘境第一层", beat: "小高潮，展示主角实力" },
+    ];
+    const warnings = validateChapterOutlineSemantics(chapters);
+    expect(warnings).toHaveLength(0);
+  });
+
+  it("flags placeholder event '待定'", () => {
+    const chapters: ChapterNode[] = [
+      { chapter: 1, event: "待定", beat: "正常节拍" },
+    ];
+    const warnings = validateChapterOutlineSemantics(chapters);
+    expect(warnings.some((w) => w.chapter === 1 && w.field === "event" && w.issue === "placeholder")).toBe(true);
+  });
+
+  it("flags placeholder beat 'TODO'", () => {
+    const chapters: ChapterNode[] = [
+      { chapter: 1, event: "正常事件", beat: "TODO" },
+    ];
+    const warnings = validateChapterOutlineSemantics(chapters);
+    expect(warnings.some((w) => w.chapter === 1 && w.field === "beat" && w.issue === "placeholder")).toBe(true);
+  });
+
+  it("flags too-short event (< 3 meaningful chars)", () => {
+    const chapters: ChapterNode[] = [
+      { chapter: 1, event: "打", beat: "正常节拍描述" },
+    ];
+    const warnings = validateChapterOutlineSemantics(chapters);
+    expect(warnings.some((w) => w.chapter === 1 && w.field === "event" && w.issue === "too-short")).toBe(true);
+  });
+
+  it("flags duplicate events across chapters", () => {
+    const chapters: ChapterNode[] = [
+      { chapter: 1, event: "主角突破境界", beat: "节拍1" },
+      { chapter: 2, event: "主角突破境界", beat: "节拍2" },
+    ];
+    const warnings = validateChapterOutlineSemantics(chapters);
+    expect(warnings.some((w) => w.issue === "duplicate-event")).toBe(true);
+  });
+
+  it("detects duplicates against existing chapters", () => {
+    const existing: ChapterNode[] = [
+      { chapter: 1, event: "主角突破境界", beat: "节拍1" },
+    ];
+    const generated: ChapterNode[] = [
+      { chapter: 2, event: "主角突破境界", beat: "节拍2" },
+    ];
+    const warnings = validateChapterOutlineSemantics(generated, existing);
+    expect(warnings.some((w) => w.issue === "duplicate-event")).toBe(true);
+  });
+
+  it("allows same beat across chapters (only events trigger duplicates)", () => {
+    const chapters: ChapterNode[] = [
+      { chapter: 1, event: "事件A", beat: "相同节拍" },
+      { chapter: 2, event: "事件B", beat: "相同节拍" },
+    ];
+    const warnings = validateChapterOutlineSemantics(chapters);
+    expect(warnings.filter((w) => w.issue === "duplicate-event")).toHaveLength(0);
   });
 });

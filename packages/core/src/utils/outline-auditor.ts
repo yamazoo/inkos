@@ -606,21 +606,26 @@ export async function auditOutlineCross(
       });
     }
 
-    // Build chapter number sets
+    // Build chapter number sets from actual arrays
     const vmChapterNums = new Set(vol.chapters.map((ch) => ch.chapter));
     const chChapterNums = new Set(volChapters.chapters.map((ch) => ch.chapter));
 
-    // Use the union of both ranges for comparison
-    const allStart = Math.min(vmRange[0], chRange[0]);
-    const allEnd = Math.max(vmRange[1], chRange[1]);
+    // Iterate over the union of actual chapter numbers (not just declared
+    // ranges) so chapters that exist outside their declared range are caught.
+    const allChapterNums = new Set([...vmChapterNums, ...chChapterNums]);
+    const rangeStart = Math.min(vmRange[0], chRange[0]);
+    const rangeEnd = Math.max(vmRange[1], chRange[1]);
+    for (let ch = rangeStart; ch <= rangeEnd; ch++) allChapterNums.add(ch);
 
     const missingInChapters: number[] = [];
     const missingInVolumeMap: number[] = [];
     const incompleteFields: number[] = [];
 
-    for (let ch = allStart; ch <= allEnd; ch++) {
+    for (const ch of [...allChapterNums].sort((a, b) => a - b)) {
       const inVolMap = vmChapterNums.has(ch);
       const inChapters = chChapterNums.has(ch);
+      const inVolRange = ch >= vmRange[0] && ch <= vmRange[1];
+      const inChRange = ch >= chRange[0] && ch <= chRange[1];
 
       if (inVolMap && !inChapters) {
         missingInChapters.push(ch);
@@ -641,6 +646,26 @@ export async function auditOutlineCross(
           issueType: "missing-in-volume-map",
           chapter: ch,
           detail: `Chapter ${ch} exists in vol-${vol.volumeId}-chapters.json but missing from volume_map.json`,
+        });
+      }
+
+      // Flag chapters that exist outside their declared range
+      if (inVolMap && !inVolRange) {
+        volEntries.push({
+          volumeId: vol.volumeId,
+          volumeTitle: vol.volumeTitle,
+          issueType: "range-mismatch",
+          chapter: ch,
+          detail: `Chapter ${ch} in volume_map.json is outside declared range [${vmRange[0]},${vmRange[1]}]`,
+        });
+      }
+      if (inChapters && !inChRange) {
+        volEntries.push({
+          volumeId: vol.volumeId,
+          volumeTitle: vol.volumeTitle,
+          issueType: "range-mismatch",
+          chapter: ch,
+          detail: `Chapter ${ch} in vol-${vol.volumeId}-chapters.json is outside declared range [${chRange[0]},${chRange[1]}]`,
         });
       }
 

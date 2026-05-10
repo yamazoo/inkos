@@ -631,4 +631,61 @@ describe("auditOutlineCross", () => {
     expect(result.totalVolumes).toBe(0);
     expect(result.entries).toHaveLength(0);
   });
+
+  it("detects chapter in vol-N-chapters.json outside its declared range", async () => {
+    // chapter 5 exists in the actual array but is outside declared range [1,3]
+    await writeVolumeMap([{
+      volumeId: 1, volumeTitle: "第一卷", chapterRange: [1, 3],
+      chapters: [
+        { chapter: 1, event: "事件1", beat: "节拍1" },
+        { chapter: 2, event: "事件2", beat: "节拍2" },
+        { chapter: 3, event: "事件3", beat: "节拍3" },
+      ],
+    }]);
+    await writeFile(
+      join(tmpDir, "story", "outline", "vol-1-chapters.json"),
+      JSON.stringify({
+        schemaVersion: 1, volumeId: 1, volumeTitle: "第一卷", chapterRange: [1, 3],
+        chapters: [
+          { chapter: 1, event: "事件1", beat: "节拍1" },
+          { chapter: 2, event: "事件2", beat: "节拍2" },
+          { chapter: 3, event: "事件3", beat: "节拍3" },
+          { chapter: 5, event: "孤立章节", beat: "节拍5" }, // outside range [1,3]
+        ],
+      }, null, 2),
+      "utf-8",
+    );
+
+    const result = await auditOutlineCross(tmpDir);
+    // chapter 5 should be flagged as outside declared range
+    const ch5Entry = result.entries.find(e => e.chapter === 5 && e.issueType === "range-mismatch");
+    expect(ch5Entry).toBeDefined();
+    expect(ch5Entry!.detail).toContain("outside declared range");
+  });
+
+  it("detects chapter in volume_map.json outside its declared range", async () => {
+    // chapter 10 exists in volume_map.json chapters but is outside declared range [1,3]
+    await writeVolumeMap([{
+      volumeId: 1, volumeTitle: "第一卷", chapterRange: [1, 3],
+      chapters: [
+        { chapter: 1, event: "事件1", beat: "节拍1" },
+        { chapter: 2, event: "事件2", beat: "节拍2" },
+        { chapter: 3, event: "事件3", beat: "节拍3" },
+        { chapter: 10, event: "孤立章节", beat: "节拍10" },
+      ],
+    }]);
+    await writeVolumeChapters(tmpDir, {
+      schemaVersion: 1, volumeId: 1, volumeTitle: "第一卷", chapterRange: [1, 3],
+      chapters: [
+        { chapter: 1, event: "事件1", beat: "节拍1" },
+        { chapter: 2, event: "事件2", beat: "节拍2" },
+        { chapter: 3, event: "事件3", beat: "节拍3" },
+      ],
+    });
+
+    const result = await auditOutlineCross(tmpDir);
+    const ch10Entry = result.entries.find(e => e.chapter === 10 && e.issueType === "range-mismatch");
+    expect(ch10Entry).toBeDefined();
+    expect(ch10Entry!.detail).toContain("outside declared range");
+  });
 });

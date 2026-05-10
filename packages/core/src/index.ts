@@ -282,7 +282,8 @@ export { buildFanficCanonSection, buildCharacterVoiceProfiles, buildFanficModeIn
 
 // Utils
 export { isNewLayoutBook } from "./utils/outline-paths.js";
-export { readVolumeChapters, writeVolumeChapters, findChapterOutline } from "./utils/chapter-outline-store.js";
+export { readVolumeChapters, writeVolumeChapters, findChapterOutline, validateChapterOutlineSemantics } from "./utils/chapter-outline-store.js";
+export type { SemanticWarning } from "./utils/chapter-outline-store.js";
 export { auditChapterOutlines, auditOutlineCross } from "./utils/outline-auditor.js";
 export type { CrossAuditResult, CrossAuditEntry, CrossAuditVolumeSummary } from "./utils/outline-auditor.js";
 export { fetchUrl, searchWeb } from "./utils/web-search.js";

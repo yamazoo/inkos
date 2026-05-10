@@ -12,6 +12,108 @@ import { z } from "zod";
 import { ChapterNodeSchema, type ChapterNode } from "../models/volume-outline.js";
 
 // ---------------------------------------------------------------------------
+// Semantic validation
+// ---------------------------------------------------------------------------
+
+const PLACEHOLDER_PATTERNS = [
+  /^待定$/,
+  /^TODO$/i,
+  /^TBD$/i,
+  /^无$/,
+  /^暂无$/,
+  /^N\/A$/i,
+  /^\.{2,}$/,        // "..."
+  /^—{2,}$/,         // "——"
+  /^\?{2,}$/,        // "???"
+  /^待补充$/,
+  /^略$/,
+];
+
+export interface SemanticWarning {
+  chapter: number;
+  field: "event" | "beat";
+  issue: "placeholder" | "too-short" | "duplicate-event";
+  detail: string;
+}
+
+/**
+ * Semantic checks on LLM-generated chapter outlines before persistence.
+ * Returns warnings only — callers decide whether to reject or persist.
+ */
+export function validateChapterOutlineSemantics(
+  chapters: ChapterNode[],
+  existingChapters?: ChapterNode[],
+): SemanticWarning[] {
+  const warnings: SemanticWarning[] = [];
+  const allChapters = [...(existingChapters ?? []), ...chapters];
+
+  for (const ch of chapters) {
+    // Check for placeholder event
+    if (PLACEHOLDER_PATTERNS.some((p) => p.test(ch.event.trim()))) {
+      warnings.push({
+        chapter: ch.chapter,
+        field: "event",
+        issue: "placeholder",
+        detail: `Chapter ${ch.chapter} event is a placeholder: "${ch.event}"`,
+      });
+    }
+
+    // Check for placeholder beat
+    if (PLACEHOLDER_PATTERNS.some((p) => p.test(ch.beat.trim()))) {
+      warnings.push({
+        chapter: ch.chapter,
+        field: "beat",
+        issue: "placeholder",
+        detail: `Chapter ${ch.chapter} beat is a placeholder: "${ch.beat}"`,
+      });
+    }
+
+    // Check for excessively short content (< 3 meaningful characters)
+    if (
+      !PLACEHOLDER_PATTERNS.some((p) => p.test(ch.event.trim())) &&
+      ch.event.trim().length < 3
+    ) {
+      warnings.push({
+        chapter: ch.chapter,
+        field: "event",
+        issue: "too-short",
+        detail: `Chapter ${ch.chapter} event is suspiciously short (${ch.event.trim().length} chars): "${ch.event}"`,
+      });
+    }
+
+    if (
+      !PLACEHOLDER_PATTERNS.some((p) => p.test(ch.beat.trim())) &&
+      ch.beat.trim().length < 3
+    ) {
+      warnings.push({
+        chapter: ch.chapter,
+        field: "beat",
+        issue: "too-short",
+        detail: `Chapter ${ch.chapter} beat is suspiciously short (${ch.beat.trim().length} chars): "${ch.beat}"`,
+      });
+    }
+
+    // Check for duplicate events within the same volume
+    const duplicate = allChapters.find(
+      (other) =>
+        other.chapter !== ch.chapter &&
+        other.event.trim() === ch.event.trim() &&
+        ch.event.trim().length > 0,
+    );
+    if (duplicate) {
+      warnings.push({
+        chapter: ch.chapter,
+        field: "event",
+        issue: "duplicate-event",
+        detail: `Chapter ${ch.chapter} event is identical to chapter ${duplicate.chapter}: "${ch.event}"`,
+      });
+    }
+  }
+
+  return warnings;
+}
+
+// ---------------------------------------------------------------------------
 // Schema
 // ---------------------------------------------------------------------------
 
