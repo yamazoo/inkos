@@ -3,6 +3,16 @@ export { type BookConfig, type Platform, type Genre, type BookStatus, type Fanfi
 export { type ChapterMeta, type ChapterStatus, ChapterMetaSchema, ChapterStatusSchema } from "./models/chapter.js";
 export { type ProjectConfig, type LLMConfig, type NotifyChannel, type DetectionConfig, type QualityGates, type FoundationConfig, type AgentLLMOverride, type InputGovernanceMode, ProjectConfigSchema, LLMConfigSchema, AgentLLMOverrideSchema, DetectionConfigSchema, QualityGatesSchema, FoundationConfigSchema, InputGovernanceModeSchema } from "./models/project.js";
 export { type CurrentState, type ParticleLedger, type PendingHooks, type PendingHook, type LedgerEntry } from "./models/state.js";
+export {
+  VolumeOutlineSchema,
+  type VolumeOutline,
+  type VolumeNode,
+  type ChapterNode,
+  type OutlineInitResult,
+  findVolumeForChapter,
+  buildChapterIndex,
+  getChaptersInRange,
+} from "./models/volume-outline.js";
 export { type GenreProfile, type ParsedGenreProfile, GenreProfileSchema, parseGenreProfile } from "./models/genre-profile.js";
 export { type BookRules, type ParsedBookRules, BookRulesSchema, parseBookRules, tryParseBookRulesFrontmatter } from "./models/book-rules.js";
 export { type DetectionHistoryEntry, type DetectionStats } from "./models/detection.js";
@@ -260,6 +270,8 @@ export { analyzeStyle } from "./agents/style-analyzer.js";
 export { analyzeDetectionInsights } from "./agents/detection-insights.js";
 export { validatePostWrite, detectParagraphLengthDrift, detectParagraphShapeWarnings, detectDuplicateTitle, type PostWriteViolation } from "./agents/post-write-validator.js";
 export { ChapterAnalyzerAgent, type AnalyzeChapterInput, type AnalyzeChapterOutput } from "./agents/chapter-analyzer.js";
+export { OutlineInitAgent, OutlineInitParseError } from "./agents/outline-init-agent.js";
+export { VolumeStructureExtractor } from "./agents/volume-structure-extractor.js";
 export { parseWriterOutput, parseCreativeOutput, type ParsedWriterOutput, type CreativeOutput } from "./agents/writer-parser.js";
 export { buildSettlerSystemPrompt, buildSettlerUserPrompt } from "./agents/settler-prompts.js";
 export { parseSettlementOutput, type SettlementOutput } from "./agents/settler-parser.js";
@@ -270,6 +282,9 @@ export { buildFanficCanonSection, buildCharacterVoiceProfiles, buildFanficModeIn
 
 // Utils
 export { isNewLayoutBook } from "./utils/outline-paths.js";
+export { readVolumeChapters, writeVolumeChapters, findChapterOutline } from "./utils/chapter-outline-store.js";
+export { auditChapterOutlines, auditOutlineCross } from "./utils/outline-auditor.js";
+export type { CrossAuditResult, CrossAuditEntry, CrossAuditVolumeSummary } from "./utils/outline-auditor.js";
 export { fetchUrl, searchWeb } from "./utils/web-search.js";
 export { filterHooks, filterSummaries, filterSubplots, filterEmotionalArcs, filterCharacterMatrix } from "./utils/context-filter.js";
 export { extractPOVFromOutline, filterMatrixByPOV, filterHooksByPOV } from "./utils/pov-filter.js";
@@ -313,3 +328,24 @@ export { dispatchNotification, dispatchWebhookEvent, type NotifyMessage } from "
 export { sendFeishu, type FeishuConfig } from "./notify/feishu.js";
 export { sendWechatWork, type WechatWorkConfig } from "./notify/wechat-work.js";
 export { sendWebhook, type WebhookConfig, type WebhookEvent, type WebhookPayload } from "./notify/webhook.js";
+
+// Upload
+export {
+  Uploader,
+  UploadStateManager,
+  TomatoPlatformAdapter,
+  launchBrowser,
+  saveCookies,
+  loadCookies,
+  waitForUserLogin,
+  calibrateSelectors,
+  saveSelectorTemplate,
+  capturePageSnapshot,
+  deriveSelectorBundle,
+  type UploadOptions,
+  type UploadProgress,
+  type UploadSummary,
+  type BrowserSession,
+  type BrowserDeps,
+  type PlatformAdapter,
+} from "./upload/index.js";
