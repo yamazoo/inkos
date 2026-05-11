@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 InkOS is a multi-agent novel production system. It orchestrates a 10-agent pipeline to generate, audit, and revise fiction content with long-term consistency via structured state per book.
 
+## Critical Rule
+
+**禁止直接修改 `books/` 目录下的任何文件。** 所有书籍、章节、状态文件的创建和修改必须通过 InkOS CLI 框架管理（`inkos` 命令）。唯一例外：当框架因 bug 无法完成操作时，可在明确告知用户并获得确认后，临时写入运行时产物（如 `story/runtime/*.plan.md`）以绕过故障点，但章节正文和 `story/state/*.json` 仍必须由框架生成。
+
 ## Commands
 
 ```bash
@@ -303,3 +307,21 @@ Set in `inkos.json`:
 ```json
 { "inputGovernanceMode": "v2" }
 ```
+
+## Skill routing
+
+When the user's request matches an available skill, invoke it via the Skill tool. When in doubt, invoke the skill.
+
+Key routing rules:
+- Product ideas/brainstorming → invoke /office-hours
+- Strategy/scope → invoke /plan-ceo-review
+- Architecture → invoke /plan-eng-review
+- Design system/plan review → invoke /design-consultation or /plan-design-review
+- Full review pipeline → invoke /autoplan
+- Bugs/errors → invoke /investigate
+- QA/testing site behavior → invoke /qa or /qa-only
+- Code review/diff check → invoke /review
+- Visual polish → invoke /design-review
+- Ship/deploy/PR → invoke /ship or /land-and-deploy
+- Save progress → invoke /context-save
+- Resume context → invoke /context-restore

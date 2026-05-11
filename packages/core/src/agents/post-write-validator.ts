@@ -23,10 +23,19 @@ export function normalizePostWriteSurface(
 ): string {
   let normalized = stripThinkBlocks(content);
   normalized = stripPostWriteMetaLines(normalized);
+  normalized = stripInlineMarkdown(normalized);
   if (languageOverride !== "en") {
     normalized = normalized.replace(/——+/g, "，");
   }
   return normalized.trimEnd();
+}
+
+// Order matters: bold (**) before underline (__). Single * is NOT stripped —
+// too aggressive for Chinese fiction where stray asterisks are common.
+function stripInlineMarkdown(content: string): string {
+  return content
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/__(.+?)__/g, "$1");
 }
 
 function stripPostWriteMetaLines(content: string): string {
@@ -934,4 +943,72 @@ function extractChineseTitleTerms(text: string): string[] {
 
 function capitalize(word: string): string {
   return word.length === 0 ? word : `${word[0]!.toUpperCase()}${word.slice(1)}`;
+}
+
+/** Stop words that carry no discriminative value for mustKeep matching. */
+const MUST_KEEP_STOP_WORDS = new Set([
+  "的", "了", "着", "在", "和", "与", "是", "有", "不", "到",
+  "被", "把", "从", "对", "也", "就", "都", "而", "及", "或",
+]);
+
+/**
+ * Extract key terms from a mustKeep item for fuzzy matching.
+ * Returns bigram (2-char) substrings from Chinese segments, filtering out stop words.
+ */
+function extractMustKeepTerms(item: string): ReadonlyArray<string> {
+  const terms: string[] = [];
+  const segments = item.match(/[一-鿿]+/g) ?? [];
+  for (const segment of segments) {
+    for (let i = 0; i < segment.length - 1; i++) {
+      const bigram = segment.slice(i, i + 2);
+      if (MUST_KEEP_STOP_WORDS.has(bigram)) continue;
+      terms.push(bigram);
+    }
+  }
+  return [...new Set(terms)];
+}
+
+/**
+ * Validate that mustKeep constraints are reflected in generated content.
+ * For each mustKeep item, extracts key terms and checks if ≥2/3 appear in content.
+ * Returns violations for items that appear to be missing.
+ */
+export function validateMustKeepCompliance(
+  content: string,
+  mustKeepItems: ReadonlyArray<string>,
+  language: "zh" | "en" = "zh",
+): ReadonlyArray<PostWriteViolation> {
+  if (!mustKeepItems || mustKeepItems.length === 0) return [];
+  if (!content || content.length < 50) return [];
+
+  const violations: PostWriteViolation[] = [];
+
+  for (const item of mustKeepItems) {
+    const trimmed = item.trim().slice(0, 50);
+    if (!trimmed) continue;
+
+    // Direct substring check — if the full item appears, it's compliant
+    if (content.includes(trimmed)) continue;
+
+    const terms = extractMustKeepTerms(trimmed);
+    if (terms.length === 0) continue;
+
+    const matchedCount = terms.filter((t) => content.includes(t)).length;
+    const threshold = Math.ceil(terms.length * (2 / 3));
+
+    if (matchedCount < threshold) {
+      violations.push({
+        rule: language === "en" ? "mustKeep compliance" : "mustKeep 合规",
+        severity: "warning",
+        description: language === "en"
+          ? `Must-keep constraint "${trimmed}" appears absent from chapter content (${matchedCount}/${terms.length} key terms found).`
+          : `mustKeep 约束"${trimmed}"在章节正文中似乎未体现（匹配${matchedCount}/${terms.length}个关键词）`,
+        suggestion: language === "en"
+          ? `Ensure the chapter content reflects: "${trimmed}"`
+          : `请确保章节内容体现：「${trimmed}」`,
+      });
+    }
+  }
+
+  return violations;
 }

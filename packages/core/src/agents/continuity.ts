@@ -14,6 +14,7 @@ import {
   readVolumeMap,
 } from "../utils/outline-paths.js";
 import { join } from "node:path";
+import { extractTemporalMarkers, formatTemporalMarkerBlock } from "../utils/temporal-markers.js";
 
 export interface AuditResult {
   readonly passed: boolean;
@@ -185,6 +186,12 @@ function buildDimensionNote(
     return language === "en"
       ? `${base}Check desire engine: Has the chapter created an emotional gap (reader wants release) OR delivered a payoff that exceeds expectations? A payoff that only satisfies 70% of built-up anticipation counts as diluted. If this chapter is in the aftermath phase of a mini-goal cycle, verify that consequences are shown — not just emotional reactions, but concrete changes to status, relationships, or resources.`
       : `${base}检查欲望驱动：本章是否制造了情绪缺口（读者渴望释放）或完成了超出预期的兑现？只满足读者70%期待的兑现等于爽点虚化。如果本章处于小目标周期的后效阶段，检查是否展示了具体改变——不只是情绪反应，而是地位、关系或资源的实际变化。`;
+  }
+
+  if (id === 2) {
+    return language === "en"
+      ? "Timeline check (two-layer): 1. The appendix provides deterministic temporal marker extraction for current and previous chapters. Compare numeric values — e.g. previous says '2.5 days left' but current says '3 days left' is a hard contradiction (time reversal). 2. Semantic layer: check scene time (day/night, season) continuity with previous chapter, and whether implied time passage is reasonable. Report: [dimension=2] prev markers vs curr markers → consistency verdict."
+      : "时间线检查（双层）：1. 附录提供了当前章和前一章的时间标记提取结果（确定性层）。对比数值：如前章「还剩两天半」当前章「还有三天」是硬矛盾（时间倒退）。2. 语义层：检查场景时间（日夜/季节）是否与前章衔接，隐含时间流逝是否合理。如「月亮偏西」=深夜，不能接「清晨的阳光」。报告格式：[dimension=2] 前章标记 vs 当前章标记 → 一致性判定。";
   }
 
   if (id === 25) {
@@ -650,13 +657,24 @@ overall_score 评分校准：
         : `\n## 上一章全文（用于衔接检查）\n${previousChapter}\n`
       : "";
 
+    const hasDimension2 = dimensions.some((d) => d.id === 2);
+    const temporalMarkerBlock = hasDimension2
+      ? (() => {
+          const currMarkers = extractTemporalMarkers(chapterContent);
+          const prevMarkers = previousChapter ? extractTemporalMarkers(previousChapter) : [];
+          return currMarkers.length > 0 || prevMarkers.length > 0
+            ? `\n${formatTemporalMarkerBlock(currMarkers, prevMarkers, resolvedLanguage)}\n`
+            : "";
+        })()
+      : "";
+
     const userPrompt = isEnglish
       ? `Review chapter ${chapterNumber}.
 
 ## Current State Card
 ${currentState}
 ${ledgerBlock}
-${hooksBlock}${volumeSummariesBlock}${subplotBlock}${emotionalBlock}${matrixBlock}${summariesBlock}${canonBlock}${fanficCanonBlock}${reducedControlBlock}${memoBlock}${prevChapterBlock}${styleGuideBlock}
+${hooksBlock}${volumeSummariesBlock}${subplotBlock}${emotionalBlock}${matrixBlock}${summariesBlock}${canonBlock}${fanficCanonBlock}${reducedControlBlock}${memoBlock}${temporalMarkerBlock}${prevChapterBlock}${styleGuideBlock}
 
 ## Chapter Content Under Review
 ${chapterContent}`
@@ -665,7 +683,7 @@ ${chapterContent}`
 ## 当前状态卡
 ${currentState}
 ${ledgerBlock}
-${hooksBlock}${volumeSummariesBlock}${subplotBlock}${emotionalBlock}${matrixBlock}${summariesBlock}${canonBlock}${fanficCanonBlock}${reducedControlBlock}${memoBlock}${prevChapterBlock}${styleGuideBlock}
+${hooksBlock}${volumeSummariesBlock}${subplotBlock}${emotionalBlock}${matrixBlock}${summariesBlock}${canonBlock}${fanficCanonBlock}${reducedControlBlock}${memoBlock}${temporalMarkerBlock}${prevChapterBlock}${styleGuideBlock}
 
 ## 待审章节内容
 ${chapterContent}`;

@@ -1250,13 +1250,29 @@ export class PipelineRunner {
       });
 
       if (preRevision.blockingCount === 0 && preRevision.aiTellCount === 0) {
+        const { normalizePostWriteSurface: normalize } = await import("../agents/post-write-validator.js");
+        const normalized = normalize(content, language);
+        if (normalized !== content) {
+          const chaptersDir = join(bookDir, "chapters");
+          const files = await readdir(chaptersDir);
+          const paddedNum = String(targetChapter).padStart(4, "0");
+          const existingFile = files.find((f) => f.startsWith(paddedNum) && f.endsWith(".md"));
+          if (existingFile) {
+            const heading = language === "en"
+              ? `# Chapter ${targetChapter}: ${chapterMeta.title}`
+              : `# 第${targetChapter}章 ${chapterMeta.title}`;
+            await writeFile(join(chaptersDir, existingFile), `${heading}\n\n${normalized}`, "utf-8");
+          }
+        }
         return {
           chapterNumber: targetChapter,
-          wordCount: countChapterLength(content, countingMode),
+          wordCount: countChapterLength(normalized, countingMode),
           fixedIssues: [],
-          applied: false,
-          status: "unchanged",
-          skippedReason: "No warning, critical, or AI-tell issues to fix.",
+          applied: normalized !== content,
+          status: normalized !== content ? "ready-for-review" : "unchanged",
+          skippedReason: normalized === content
+            ? "No warning, critical, or AI-tell issues to fix."
+            : "No audit issues; surface normalization applied.",
         };
       }
 
@@ -1289,8 +1305,9 @@ export class PipelineRunner {
               contextPackage: reviseControlInput.composed.contextPackage,
               ruleStack: reviseControlInput.composed.ruleStack,
               lengthSpec,
+              externalContext: this.config.externalContext,
             }
-          : { lengthSpec },
+          : { lengthSpec, externalContext: this.config.externalContext },
       );
 
       if (reviseOutput.revisedContent.length === 0) {
@@ -1335,6 +1352,34 @@ export class PipelineRunner {
         preRevision,
         postRevision,
       );
+
+      // Deterministic mustKeep compliance check (B2 from constraint propagation spec)
+      const mustKeepItems = reviseControlInput?.plan.intent.mustKeep ?? [];
+      let mustKeepChecked = effectivePostRevision;
+      if (mustKeepItems.length > 0) {
+        const { validateMustKeepCompliance: checkMustKeep } = await import("../agents/post-write-validator.js");
+        const mustKeepViolations = checkMustKeep(
+          normalizedRevision.content,
+          mustKeepItems,
+          language === "en" ? "en" : "zh",
+        );
+        if (mustKeepViolations.length > 0) {
+          const newIssues = mustKeepViolations.map((v) => ({
+            severity: v.severity === "error" ? "critical" as const : "warning" as const,
+            category: v.rule,
+            description: v.description,
+            suggestion: v.suggestion,
+          }));
+          mustKeepChecked = {
+            ...effectivePostRevision,
+            auditResult: {
+              ...effectivePostRevision.auditResult,
+              issues: [...effectivePostRevision.auditResult.issues, ...newIssues],
+            },
+          };
+        }
+      }
+
       const revisionBaseCount = countChapterLength(content, lengthSpec.countingMode);
       const lengthWarnings = this.buildLengthWarnings(
         targetChapter,
@@ -1351,11 +1396,11 @@ export class PipelineRunner {
         lengthWarning: lengthWarnings.length > 0,
       });
 
-      const improvedBlocking = effectivePostRevision.blockingCount < preRevision.blockingCount;
-      const improvedAITells = effectivePostRevision.aiTellCount < preRevision.aiTellCount;
-      const blockingDidNotWorsen = effectivePostRevision.blockingCount <= preRevision.blockingCount;
-      const criticalDidNotWorsen = effectivePostRevision.criticalCount <= preRevision.criticalCount;
-      const aiDidNotWorsen = effectivePostRevision.aiTellCount <= preRevision.aiTellCount;
+      const improvedBlocking = mustKeepChecked.blockingCount < preRevision.blockingCount;
+      const improvedAITells = mustKeepChecked.aiTellCount < preRevision.aiTellCount;
+      const blockingDidNotWorsen = mustKeepChecked.blockingCount <= preRevision.blockingCount;
+      const criticalDidNotWorsen = mustKeepChecked.criticalCount <= preRevision.criticalCount;
+      const aiDidNotWorsen = mustKeepChecked.aiTellCount <= preRevision.aiTellCount;
       const shouldApplyRevision = blockingDidNotWorsen
         && criticalDidNotWorsen
         && aiDidNotWorsen
@@ -1413,10 +1458,10 @@ export class PipelineRunner {
         ch.number === targetChapter
           ? {
               ...ch,
-              status: (effectivePostRevision.auditResult.passed ? "ready-for-review" : "audit-failed") as ChapterMeta["status"],
+              status: (mustKeepChecked.auditResult.passed ? "ready-for-review" : "audit-failed") as ChapterMeta["status"],
               wordCount: normalizedRevision.wordCount,
               updatedAt: new Date().toISOString(),
-              auditIssues: effectivePostRevision.auditResult.issues.map((i) => `[${i.severity}] ${i.description}`),
+              auditIssues: mustKeepChecked.auditResult.issues.map((i) => `[${i.severity}] ${i.description}`),
               lengthWarnings,
               lengthTelemetry,
             }
@@ -1428,7 +1473,7 @@ export class PipelineRunner {
         await this.persistAuditDriftGuidance({
           bookDir,
           chapterNumber: targetChapter,
-          issues: effectivePostRevision.auditResult.issues.filter(
+          issues: mustKeepChecked.auditResult.issues.filter(
             (issue) => issue.severity === "critical" || issue.severity === "warning",
           ),
           language,
@@ -1454,7 +1499,7 @@ export class PipelineRunner {
         wordCount: normalizedRevision.wordCount,
         fixedIssues: reviseOutput.fixedIssues,
         applied: true,
-        status: effectivePostRevision.auditResult.passed ? "ready-for-review" : "audit-failed",
+        status: mustKeepChecked.auditResult.passed ? "ready-for-review" : "audit-failed",
         lengthWarnings,
         lengthTelemetry,
       };

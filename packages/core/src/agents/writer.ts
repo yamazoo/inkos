@@ -826,6 +826,9 @@ ${lengthRequirementBlock}
       ? params.ruleStack.sections.diagnostic.join(", ")
       : "none";
 
+    const mustKeepItems = params.chapterIntentData?.mustKeep?.slice(0, 8) ?? [];
+    const mustAvoidItems = params.chapterIntentData?.mustAvoid?.slice(0, 8) ?? [];
+
     const lengthRequirementBlock = this.buildLengthRequirementBlock(params.lengthSpec, params.language ?? "zh");
     const varianceBlock = params.varianceBrief
       ? `\n${params.varianceBrief}\n`
@@ -848,8 +851,8 @@ ${contextSections || "(none)"}
 ${selectedEvidenceBlock}
 
 ## Rule Stack
-- Hard: ${params.ruleStack.sections.hard.join(", ") || "(none)"}
-- Soft: ${params.ruleStack.sections.soft.join(", ") || "(none)"}
+- Hard: ${params.ruleStack.sections.hard.join(", ") || "(none)"}${mustKeepItems.length > 0 ? mustKeepItems.map((item) => `, [MUST-KEEP] ${item}`).join("") : ""}
+- Soft: ${params.ruleStack.sections.soft.join(", ") || "(none)"}${mustAvoidItems.length > 0 ? mustAvoidItems.map((item) => `, [MUST-AVOID] ${item}`).join("") : ""}
 - Diagnostic: ${diagnosticLines}
 
 ${varianceBlock}
@@ -869,8 +872,8 @@ ${contextSections || "(无)"}
 ${selectedEvidenceBlock}
 
 ## 规则栈
-- 硬护栏：${params.ruleStack.sections.hard.join("、") || "(无)"}
-- 软约束：${params.ruleStack.sections.soft.join("、") || "(无)"}
+- 硬护栏：${params.ruleStack.sections.hard.join("、") || "(无)"}${mustKeepItems.length > 0 ? mustKeepItems.map((item) => `、[MUST-KEEP] ${item}`).join("") : ""}
+- 软约束：${params.ruleStack.sections.soft.join("、") || "(无)"}${mustAvoidItems.length > 0 ? mustAvoidItems.map((item) => `、[MUST-AVOID] ${item}`).join("") : ""}
 - 诊断规则：${diagnosticLines}
 
 ${varianceBlock}

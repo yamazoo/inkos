@@ -132,3 +132,99 @@ plannerInputs: []
     expect(loaded).toBeNull();
   });
 });
+
+describe("persisted-governed-plan YAML fallback strategies", () => {
+  it("Strategy 2: parses alternative delimiter (:::) frontmatter", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "inkos-plan-"));
+    await mkdir(join(dir, "story", "runtime"), { recursive: true });
+
+    const content = `:::
+chapter: 1
+goal: 取回账册离开旧港
+isGoldenOpening: true
+threadRefs: ["H1"]
+intent:
+  goal: 取回账册离开旧港
+  outlineNode: "Chapter 1"
+  mustKeep: ["林越父亲已死"]
+  mustAvoid: []
+  styleEmphasis: []
+plannerInputs: []
+:::
+${MEMO_BODY}`;
+    await writeFile(
+      join(dir, "story", "runtime", "chapter-0001.plan.md"),
+      content,
+      "utf-8",
+    );
+
+    const loaded = await loadPersistedPlan(dir, 1);
+    expect(loaded).not.toBeNull();
+    expect(loaded!.intent.goal).toBe("取回账册离开旧港");
+    expect(loaded!.intent.mustKeep).toContain("林越父亲已死");
+  });
+
+  it("Strategy 3: parses line-by-line key-value when delimiters are missing", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "inkos-plan-"));
+    await mkdir(join(dir, "story", "runtime"), { recursive: true });
+
+    // Broken frontmatter: no --- delimiters, just raw key-value lines
+    const content = `chapter: 1
+goal: 取回账册离开旧港
+isGoldenOpening: true
+threadRefs: []
+intent:
+  goal: 取回账册离开旧港
+  outlineNode: "Chapter 1"
+  mustKeep: []
+  mustAvoid: []
+  styleEmphasis: []
+plannerInputs: []
+
+${MEMO_BODY}`;
+    await writeFile(
+      join(dir, "story", "runtime", "chapter-0001.plan.md"),
+      content,
+      "utf-8",
+    );
+
+    const loaded = await loadPersistedPlan(dir, 1);
+    expect(loaded).not.toBeNull();
+    expect(loaded!.intent.goal).toBe("取回账册离开旧港");
+  });
+
+  it("Strategy 4: section-based fallback when frontmatter is completely broken", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "inkos-plan-"));
+    await mkdir(join(dir, "story", "runtime"), { recursive: true });
+
+    // Completely broken frontmatter — goal as a section heading, not a key-value
+    const content = `## Goal\n取回账册离开旧港\n\n${MEMO_BODY}`;
+    const filePath = join(dir, "story", "runtime", "chapter-0001.plan.md");
+    await writeFile(filePath, content, "utf-8");
+
+    // Verify file was written correctly
+    const { readFile: rf } = await import("node:fs/promises");
+    const written = await rf(filePath, "utf-8");
+    expect(written.length).toBeGreaterThan(100);
+
+    const loaded = await loadPersistedPlan(dir, 1);
+    expect(loaded).not.toBeNull();
+    expect(loaded!.intent.goal).toBe("取回账册离开旧港");
+    expect(loaded!.memo.chapter).toBe(1);
+  });
+
+  it("returns null when no strategy can extract valid data", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "inkos-plan-"));
+    await mkdir(join(dir, "story", "runtime"), { recursive: true });
+
+    // Garbage content with no structure
+    await writeFile(
+      join(dir, "story", "runtime", "chapter-0001.plan.md"),
+      "this is just random text with no structure whatsoever",
+      "utf-8",
+    );
+
+    const loaded = await loadPersistedPlan(dir, 1);
+    expect(loaded).toBeNull();
+  });
+});

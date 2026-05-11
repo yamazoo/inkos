@@ -72,17 +72,19 @@ export async function loadPersistedPlan(
     return loadLegacyIntentPlan(bookDir, chapterNumber);
   }
 
-  const match = raw.trim().match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
-  if (!match) return null;
+  const trimmed = raw.trim();
+  // Multi-strategy parse chain. Each returns { fm, body } or null.
+  const s1 = parseFrontmatterPrimary(trimmed);
+  const s2 = s1 ? null : parseFrontmatterAlternativeDelimiters(trimmed);
+  const s3 = s1 || s2 ? null : parseFrontmatterLineByLine(trimmed);
+  const parsed = s1 ?? s2 ?? s3;
 
-  let fm: unknown;
-  try {
-    fm = YAML.load(match[1]!);
-  } catch {
-    return null;
+  if (!parsed) {
+    // Strategy 4: section-based memo body extraction — bypasses frontmatter entirely
+    return parseSectionBasedFallback(trimmed, chapterNumber, bookDir);
   }
-  if (!fm || typeof fm !== "object" || Array.isArray(fm)) return null;
-  const f = fm as Record<string, unknown>;
+
+  const { fm: f, body } = parsed;
 
   if (typeof f.chapter !== "number" || f.chapter !== chapterNumber) return null;
   if (typeof f.isGoldenOpening !== "boolean") return null;
@@ -97,7 +99,7 @@ export async function loadPersistedPlan(
       chapter: f.chapter,
       goal: f.goal,
       threadRefs: f.threadRefs,
-    })}---\n${match[2]!}`;
+    })}---\n${body}`;
     memo = parseMemo(reconstructed, chapterNumber, f.isGoldenOpening);
   } catch (error) {
     if (error instanceof PlannerParseError) return null;
@@ -133,6 +135,138 @@ export async function loadPersistedPlan(
     memo,
     intentMarkdown,
     plannerInputs,
+    runtimePath: intentPath(bookDir, chapterNumber),
+  };
+}
+
+// ── Frontmatter parse strategies ─────────────────────────────────────────────
+
+interface ParsedFrontmatter {
+  readonly fm: Record<string, unknown>;
+  readonly body: string;
+}
+
+/** Strategy 1: Primary `---` delimited YAML frontmatter. */
+function parseFrontmatterPrimary(raw: string): ParsedFrontmatter | null {
+  const match = raw.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
+  if (!match) return null;
+  return tryLoadYaml(match[1]!, match[2]!);
+}
+
+/** Strategy 2: Alternative delimiters (`:::` or `+++`). */
+function parseFrontmatterAlternativeDelimiters(raw: string): ParsedFrontmatter | null {
+  const match = raw.match(/^(?::::|\+\+\+)\s*\n([\s\S]*?)\n(?::::|\+\+\+)\s*\n([\s\S]*)$/);
+  if (!match) return null;
+  return tryLoadYaml(match[1]!, match[2]!);
+}
+
+function tryLoadYaml(yamlText: string, body: string): ParsedFrontmatter | null {
+  try {
+    const fm = YAML.load(yamlText);
+    if (!fm || typeof fm !== "object" || Array.isArray(fm)) return null;
+    return { fm: fm as Record<string, unknown>, body };
+  } catch {
+    return null;
+  }
+}
+
+/** Strategy 3: Line-by-line key-value extraction for broken frontmatter. */
+function parseFrontmatterLineByLine(raw: string): ParsedFrontmatter | null {
+  const lines = raw.split("\n");
+  const kvLines: string[] = [];
+  let bodyStart = lines.length;
+
+  // Scan first 30 lines for key-value patterns
+  for (let i = 0; i < Math.min(30, lines.length); i++) {
+    const line = lines[i]!;
+    if (/^\w[\w-]*\s*:/.test(line)) {
+      kvLines.push(line);
+    } else if (kvLines.length > 0 && /^\s+/.test(line)) {
+      // Continuation of previous key (indented)
+      kvLines.push(line);
+    } else if (kvLines.length > 0 && line.trim() === "") {
+      // Empty line after key-values — body starts after this
+      bodyStart = i + 1;
+      break;
+    }
+  }
+
+  if (kvLines.length === 0) return null;
+
+  const yamlFragment = kvLines.join("\n");
+  const body = lines.slice(bodyStart).join("\n");
+
+  try {
+    const fm = YAML.load(yamlFragment);
+    if (!fm || typeof fm !== "object" || Array.isArray(fm)) return null;
+    const record = fm as Record<string, unknown>;
+    // Strategy 3 must find at least one recognized plan field to avoid
+    // false matches on memo body key-value lines (e.g., hook entries).
+    const PLAN_KEYS = ["chapter", "goal", "intent", "isGoldenOpening"];
+    if (!PLAN_KEYS.some((k) => k in record)) return null;
+    return { fm: record, body };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Strategy 4: Section-based memo body extraction.
+ * Works when frontmatter is completely broken — reconstructs from ## headings.
+ * Returns null if the markdown body lacks the required section structure.
+ */
+function parseSectionBasedFallback(
+  raw: string,
+  chapterNumber: number,
+  bookDir: string,
+): PlanChapterOutput | null {
+  // Extract goal from the raw text — look for a "goal:" line or a ## Goal section
+  const goalMatch = raw.match(/^goal:\s*(.+)$/m)
+    ?? raw.match(/^##\s*Goal\s*\n(.+)$/m);
+  const goal = goalMatch?.[1]?.trim();
+  if (!goal) return null;
+
+  // Extract isGoldenOpening if present
+  const goldenMatch = raw.match(/^isGoldenOpening:\s*(\w+)$/m);
+  const isGoldenOpening = goldenMatch?.[1] === "true";
+
+  // Check for the required memo section headings
+  const sectionHeadings = [
+    "当前任务", "Current Task",
+    "该兑现", "Payoffs",
+    "读者此刻在等什么", "Reader Expectations",
+    "日常", "Daily/Transition",
+    "关键抉择", "Three-question",
+    "章尾必须发生的改变", "End-of-chapter Changes",
+    "不要做", "Hard Don'ts",
+  ];
+  const foundSections = sectionHeadings.filter((h) => raw.includes(`## ${h}`));
+  if (foundSections.length < 2) return null;
+
+  // Build a minimal intent from what we can extract
+  let intent: ChapterIntent;
+  try {
+    intent = ChapterIntentSchema.parse({
+      chapter: chapterNumber,
+      goal: goal.slice(0, 200),
+      mustKeep: extractListSection(raw, "Must Keep"),
+      mustAvoid: extractListSection(raw, "Must Avoid"),
+    });
+  } catch {
+    return null;
+  }
+
+  return {
+    intent,
+    memo: {
+      chapter: chapterNumber,
+      goal: goal.slice(0, 50),
+      isGoldenOpening,
+      body: raw,
+      threadRefs: [],
+    },
+    intentMarkdown: raw,
+    plannerInputs: [],
     runtimePath: intentPath(bookDir, chapterNumber),
   };
 }

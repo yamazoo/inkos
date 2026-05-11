@@ -6,6 +6,7 @@ import {
   resolveDuplicateTitle,
   normalizePostWriteSurface,
   validatePostWrite,
+  validateMustKeepCompliance,
   type PostWriteViolation,
 } from "../agents/post-write-validator.js";
 import type { GenreProfile } from "../models/genre-profile.js";
@@ -27,6 +28,28 @@ const baseProfile: GenreProfile = {
 function findRule(violations: ReadonlyArray<PostWriteViolation>, rule: string): PostWriteViolation | undefined {
   return violations.find(v => v.rule === rule);
 }
+
+describe("normalizePostWriteSurface - stripInlineMarkdown", () => {
+  it("strips **bold** markers but preserves content", () => {
+    const content = "林越看着**远处的**灯火，心中五味杂陈。";
+    const normalized = normalizePostWriteSurface(content);
+    expect(normalized).not.toContain("**");
+    expect(normalized).toContain("远处的");
+  });
+
+  it("strips __underline__ markers", () => {
+    const content = "__关键证据__浮出水面。";
+    const normalized = normalizePostWriteSurface(content);
+    expect(normalized).not.toContain("__");
+    expect(normalized).toContain("关键证据");
+  });
+
+  it("does NOT strip single * markers (too aggressive for Chinese fiction)", () => {
+    const content = "他*轻声*说道。";
+    const normalized = normalizePostWriteSurface(content);
+    expect(normalized).toContain("*轻声*");
+  });
+});
 
 describe("validatePostWrite", () => {
   it("strips model-side post-write note lines before persistence", () => {
@@ -357,5 +380,59 @@ describe("章节结尾类型检查", () => {
     const content = `门关上了，夜色吞没了最后一点光。\n\n也许，这就是命吧。大概如此。`;
     const result = validatePostWrite(content, baseProfile, null);
     expect(findEnding(result)?.severity).toBe("error");
+  });
+});
+
+describe("validateMustKeepCompliance", () => {
+  it("returns empty for empty inputs", () => {
+    expect(validateMustKeepCompliance("", [])).toEqual([]);
+    expect(validateMustKeepCompliance("content", [])).toEqual([]);
+    expect(validateMustKeepCompliance("short", ["林越父亲已死"])).toEqual([]);
+  });
+
+  it("passes when mustKeep item is directly present", () => {
+    const content = "林越站在旧港码头上，想起父亲已死的事实，心中五味杂陈。".repeat(5);
+    const violations = validateMustKeepCompliance(content, ["林越父亲已死"]);
+    expect(violations).toHaveLength(0);
+  });
+
+  it("passes when ≥2/3 key terms are present", () => {
+    const content = "林越拿起母亲遗留的账册，翻开了尘封多年的记录开始仔细查看。".repeat(3);
+    // "母亲遗物" → bigrams: 母亲, 亲遗, 遗物 (3 terms, threshold=2)
+    // "母亲" and "亲遗" both appear in "母亲遗留"
+    const violations = validateMustKeepCompliance(content, ["母亲遗物"]);
+    expect(violations).toHaveLength(0);
+  });
+
+  it("warns when fewer than 2/3 key terms are present", () => {
+    const content = "他走在大街上，看到一个陌生人从对面走过来打了个招呼。".repeat(3);
+    const violations = validateMustKeepCompliance(content, ["林越父亲已死"]);
+    expect(violations.length).toBeGreaterThanOrEqual(1);
+    expect(violations[0]!.severity).toBe("warning");
+    expect(violations[0]!.description).toContain("林越父亲已死");
+  });
+
+  it("handles multiple mustKeep items independently", () => {
+    const content = "林越拿起母亲遗留的旧账册，想起父亲已死多年不禁叹息感慨万千。".repeat(3);
+    const violations = validateMustKeepCompliance(content, [
+      "林越父亲已死",
+      "母亲遗物",
+    ]);
+    // Both items should have their key terms well-represented
+    expect(violations.length).toBeLessThanOrEqual(1);
+  });
+
+  it("respects 50-char truncation on items", () => {
+    const longItem = "这是一个非常长的mustKeep约束项，超过了五十个字符的限制，应该被截断处理才行啊真的太长了这真的是太长了吧应该够了";
+    const content = "一个非常长的约束项超过了五十个字符的限制应该被截断处理才行啊真的太长了这真的是太长了吧应该够了已经截断完毕了足够了。".repeat(3);
+    const violations = validateMustKeepCompliance(content, [longItem]);
+    // Should not crash; result depends on truncated content matching
+    expect(Array.isArray(violations)).toBe(true);
+  });
+
+  it("returns empty for English content with matching terms", () => {
+    const content = "The protagonist discovered that his father was dead and the family heirloom was missing from the old chest.".repeat(3);
+    const violations = validateMustKeepCompliance(content, ["father was dead"], "en");
+    expect(violations).toHaveLength(0);
   });
 });

@@ -127,6 +127,7 @@ export class ReviserAgent extends BaseAgent {
       contextPackage?: ContextPackage;
       ruleStack?: RuleStack;
       lengthSpec?: LengthSpec;
+      externalContext?: string; // max 500 chars, user creative guidance from --brief
     },
   ): Promise<ReviseOutput> {
     const [currentState, ledger, hooks, styleGuideRaw, volumeOutline, storyBible, characterMatrix, chapterSummaries, parentCanon, fanficCanon] = await Promise.all([
@@ -263,7 +264,12 @@ export class ReviserAgent extends BaseAgent {
       ? `\n## 文风指南\n${styleGuide}`
       : "";
 
+    const externalContextBlock = options?.externalContext?.trim()
+      ? `\n## 用户创作指令\n${options.externalContext.trim().slice(0, 500)}\n`
+      : "";
+
     const userPrompt = `请修正第${chapterNumber}章。
+${externalContextBlock}
 
 ## 审稿问题
 ${issueList}
