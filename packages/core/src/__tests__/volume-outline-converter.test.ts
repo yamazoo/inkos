@@ -10,6 +10,7 @@ import {
   parseBulletChapters,
   detectPhases,
   parseVolumeSection,
+  parseOkrSection,
 } from "../utils/volume-outline-converter.js";
 import type { VolumeSummary } from "../utils/volume-outline-converter.js";
 
@@ -352,6 +353,15 @@ describe("parseVolumeHeadings", () => {
     expect(summaries[0].volumeTitle).toContain("绝境求生");
   });
 
+  it("parses Pattern F: bold **第N卷：title** without chapter range", () => {
+    const text = "**第一卷：孤坟**\n**第二卷：燃灯**";
+    const summaries = parseVolumeHeadings(text);
+    expect(summaries).toHaveLength(2);
+    expect(summaries[0].volumeTitle).toBe("第一卷：孤坟");
+    expect(summaries[1].volumeTitle).toBe("第二卷：燃灯");
+    expect(summaries[0].chapterRange).toEqual([0, 0]);
+  });
+
   it("returns empty array for non-heading text", () => {
     const text = "Some random prose without any volume heading patterns.";
     const summaries = parseVolumeHeadings(text);
@@ -646,5 +656,38 @@ describe("parseVolumeSection", () => {
     });
     // Falls back to chapterRange[0] since no "关键" event found
     expect(volume.keyTurnChapter).toBe(1);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// parseOkrSection — Fix 3: bold KR format
+// ---------------------------------------------------------------------------
+
+describe("parseOkrSection", () => {
+  it("parses bold KR labels like **KR1**：", () => {
+    const text = `## 各卷 OKR
+
+**第一卷 OKR：**
+- **KR1**：完成主角觉醒
+- **KR2**：建立力量体系
+`;
+    const result = parseOkrSection(text);
+    expect(result.get(1)).toEqual(["KR1：完成主角觉醒", "KR2：建立力量体系"]);
+  });
+
+  it("parses plain KR labels without bold", () => {
+    const text = `## 各卷 OKR
+
+**第二卷 OKR：**
+- KR1：推进主线冲突
+- KR2：引入新角色
+`;
+    const result = parseOkrSection(text);
+    expect(result.get(2)).toEqual(["KR1：推进主线冲突", "KR2：引入新角色"]);
+  });
+
+  it("returns empty map when no OKR section exists", () => {
+    const result = parseOkrSection("## 概述\n没有OKR内容");
+    expect(result.size).toBe(0);
   });
 });

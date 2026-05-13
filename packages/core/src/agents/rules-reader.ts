@@ -93,21 +93,18 @@ export function getBuiltinGenresDir(): string {
  * still live in book_rules.md instead, so we fall back to that legacy path
  * when story_frame.md has no frontmatter (or no file at all).
  *
- * Phase 5 hotfix 2: when the source is story_frame.md, the prose body
- * underneath the frontmatter is NOT semantic "book rules" text — it is the
- * 5-section outline essay. We therefore slice out ONLY the frontmatter block
- * for parseBookRules, so ParsedBookRules.body ends up empty for new-layout
- * books. Legacy book_rules.md still carries narrow narrative rules in its
- * body, so we pass it through verbatim.
+ * Phase 5 hotfix 2 (revised): when the source is story_frame.md, the prose
+ * body underneath the frontmatter is the 5-section outline essay. We extract
+ * the YAML frontmatter for structured rules AND pass the body prose as
+ * bookRulesBody so the Writer's system prompt includes world iron rules,
+ * power system definitions, and core conflict framing.
  *
  * Returns null only if NEITHER source yields parseable rules.
  */
 export async function readBookRules(bookDir: string): Promise<ParsedBookRules | null> {
   const storyFrameRaw = await tryReadFile(join(bookDir, "story/outline/story_frame.md"));
   if (storyFrameRaw) {
-    // Extract just the leading `---\n...\n---` block. Anything after it is
-    // outline prose and must NOT leak into ParsedBookRules.body.
-    const frontmatterMatch = storyFrameRaw.match(/^\s*(---\s*\n[\s\S]*?\n---\s*)(?:\n|$)/);
+    const frontmatterMatch = storyFrameRaw.match(/^\s*(---\s*\n[\s\S]*?\n---\s*)(?:\n|$)([\s\S]*)$/);
     if (frontmatterMatch) {
       // Phase 5 hotfix 3: use the strict parser so a broken YAML block does
       // NOT silently zero out protagonist / prohibitions / genreLock. If the
@@ -118,7 +115,13 @@ export async function readBookRules(bookDir: string): Promise<ParsedBookRules | 
           `[rules-reader] story_frame.md frontmatter is malformed at ${bookDir}/story/outline/story_frame.md — falling back to legacy book_rules.md. Error: ${err instanceof Error ? err.message : String(err)}`,
         );
       });
-      if (parsed) return parsed;
+      if (parsed) {
+        // Attach the narrative body so the Writer receives world iron rules,
+        // power system definitions, and core conflict framing in its system
+        // prompt under "## 本书专属规则".
+        const storyFrameBody = frontmatterMatch[2]?.trim() ?? "";
+        return { ...parsed, body: storyFrameBody || parsed.body };
+      }
       // fall through to legacy fallback below
     }
   }

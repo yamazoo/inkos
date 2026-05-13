@@ -70,7 +70,7 @@ bookCommand
 
       const pipeline = new PipelineRunner(buildPipelineConfig(config, root, { externalContext: brief }));
 
-      await pipeline.initBook(book);
+      await pipeline.initBook(book, { briefPath: opts.brief });
 
       if (opts.json) {
         log(JSON.stringify({

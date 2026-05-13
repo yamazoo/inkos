@@ -151,7 +151,11 @@ export class ArchitectAgent extends BaseAgent {
       { role: "user", content: userMessage },
     ], { temperature: 0.8 });
 
-    return this.parseSections(response.content, resolvedLanguage);
+    const result = this.parseSections(response.content, resolvedLanguage);
+    if (externalContext) {
+      this.checkFoundationCompleteness(result, externalContext);
+    }
+    return result;
   }
 
   private buildRevisePrompt(reviseFrom: {
@@ -1283,5 +1287,70 @@ ${trimmed}\n`;
     return language === "zh"
       ? `${trimmedNotes}（${trimmedSeed}）`
       : `${trimmedNotes} (${trimmedSeed})`;
+  }
+
+  /**
+   * Post-generation completeness check: scan the creative brief for hook IDs
+   * and character names, then warn about any that are missing from the
+   * architect's output. This catches LLM omissions that the prompt alone
+   * cannot guarantee.
+   */
+  private checkFoundationCompleteness(
+    result: ArchitectOutput,
+    brief: string,
+  ): void {
+    // 1. Hook completeness: extract H-prefixed IDs from the brief
+    const briefHookIds = new Set<string>();
+    for (const m of brief.matchAll(/\bH(\d{3,})\b/g)) {
+      briefHookIds.add(`H${m[1]}`);
+    }
+    if (briefHookIds.size > 0) {
+      const generatedHooks = result.pendingHooks ?? "";
+      const missingHooks: string[] = [];
+      for (const hookId of briefHookIds) {
+        if (!generatedHooks.includes(hookId)) {
+          missingHooks.push(hookId);
+        }
+      }
+      if (missingHooks.length > 0) {
+        this.log?.warn(
+          `[architect] brief references ${briefHookIds.size} hooks but generated table is missing: ${missingHooks.join(", ")}`,
+        );
+      }
+    }
+
+    // 2. Role completeness: extract character names from hooks/roles sections
+    const roles = result.roles ?? [];
+    if (roles.length > 0) {
+      const roleNames = new Set(roles.map((r) => r.name));
+      // Extract names from patterns like "陈渊的..." or "祖父陈守渊" in hooks section
+      const hooksSection = brief.match(/##\s*卷间钩子[\s\S]*?(?=\n##\s|$)/)?.[0] ?? "";
+      const namePattern = /(?:^|[\s，。；])([^\s，。；]{2,4})(?:的剑|被|在|从|与|为|将|向|道出|传授|现身|察觉|收到|出现|牺牲|觉醒)/gm;
+      const mentionedNames = new Set<string>();
+      for (const m of hooksSection.matchAll(namePattern)) {
+        const name = m[1]!.trim();
+        if (name.length >= 2 && !/^[一二三四五六七八九十第卷终]/.test(name)) {
+          mentionedNames.add(name);
+        }
+      }
+      // Also scan the full brief for "角色" or character mentions in role descriptions
+      const roleSection = brief.match(/##\s*(?:主要)?角色[\s\S]*?(?=\n##\s|$)/)?.[0] ?? "";
+      for (const m of roleSection.matchAll(/(?:^|\n)\s*(?:-|[-–])\s*(\S{2,4})[：:]/gm)) {
+        mentionedNames.add(m[1]!.trim());
+      }
+
+      const missingNames: string[] = [];
+      for (const name of mentionedNames) {
+        const found = [...roleNames].some(
+          (rn) => rn.includes(name) || name.includes(rn),
+        );
+        if (!found) missingNames.push(name);
+      }
+      if (missingNames.length > 0) {
+        this.log?.warn(
+          `[architect] brief mentions characters not in generated roles: ${missingNames.join(", ")}`,
+        );
+      }
+    }
   }
 }

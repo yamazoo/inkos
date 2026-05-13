@@ -18,6 +18,7 @@ import {
   loadPlanningSeedMaterials,
 } from "../utils/planning-materials.js";
 import { parseMemo, PlannerParseError } from "../utils/chapter-memo-parser.js";
+import { stripThinkBlocks } from "../utils/strip-think-blocks.js";
 import {
   buildPlannerUserMessage,
   getPlannerMemoSystemPrompt,
@@ -28,6 +29,7 @@ import {
   extractOpponentRows,
   extractProtagonistRow,
   extractRelevantThreads,
+  extractHookIds,
   formatRecentSummaries,
   formatRecyclableHooks,
   readBookRules,
@@ -158,6 +160,7 @@ export class PlannerAgent extends BaseAgent {
       chapterNumber: input.chapterNumber,
       isGoldenOpening,
       fallbackGoal: goal,
+      outlineNode,
       chapterSummariesRaw: seedMaterials.chapterSummariesRaw,
       previousEndingExcerpt: seedMaterials.previousEndingExcerpt,
       brief: seedMaterials.brief,
@@ -205,6 +208,7 @@ export class PlannerAgent extends BaseAgent {
     readonly chapterNumber: number;
     readonly isGoldenOpening: boolean;
     readonly fallbackGoal: string;
+    readonly outlineNode?: string;
     readonly chapterSummariesRaw: string;
     readonly previousEndingExcerpt?: string;
     readonly brief?: string;
@@ -240,6 +244,7 @@ export class PlannerAgent extends BaseAgent {
         ? input.previousEndingExcerpt.trim()
         : noPriorChapter,
       recentSummaries: formatRecentSummaries(input.chapterSummariesRaw, input.chapterNumber, 3),
+      outlineNode: input.outlineNode,
       currentArcProse: composeCurrentArcProse(subplotBoard, emotionalArcs, input.chapterNumber),
       protagonistMatrixRow: extractProtagonistRow(characterMatrix),
       opponentRows: extractOpponentRows(characterMatrix, 3),
@@ -272,7 +277,18 @@ export class PlannerAgent extends BaseAgent {
       );
 
       try {
-        return parseMemo(response.content, input.chapterNumber, input.isGoldenOpening);
+        const memo = parseMemo(stripThinkBlocks(response.content), input.chapterNumber, input.isGoldenOpening);
+        // Validate threadRefs: warn about fabricated hook IDs (don't retry)
+        if (memo.threadRefs.length > 0) {
+          const knownIds = extractHookIds(pendingHooks);
+          const fabricated = memo.threadRefs.filter((id) => !knownIds.has(id));
+          if (fabricated.length > 0) {
+            this.log?.warn(
+              `[planner] fabricated threadRefs detected: ${fabricated.join(", ")} (known: ${knownIds.size} hooks)`,
+            );
+          }
+        }
+        return memo;
       } catch (error) {
         if (!(error instanceof PlannerParseError)) {
           throw error;

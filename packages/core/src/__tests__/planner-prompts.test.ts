@@ -1,7 +1,9 @@
 import { describe, it, expect } from "vitest";
 import {
   PLANNER_MEMO_SYSTEM_PROMPT,
+  PLANNER_MEMO_SYSTEM_PROMPT_EN,
   PLANNER_MEMO_USER_TEMPLATE,
+  PLANNER_MEMO_USER_TEMPLATE_EN,
   buildPlannerUserMessage,
   buildGoldenOpeningGuidance,
 } from "../agents/planner-prompts.js";
@@ -14,6 +16,8 @@ describe("PLANNER_MEMO_SYSTEM_PROMPT", () => {
     expect(PLANNER_MEMO_SYSTEM_PROMPT).toContain("goal 字段不超过 50 字");
     expect(PLANNER_MEMO_SYSTEM_PROMPT).toContain("## 当前任务");
     expect(PLANNER_MEMO_SYSTEM_PROMPT).toContain("## 不要做");
+    expect(PLANNER_MEMO_SYSTEM_PROMPT).toContain("细纲拆解");
+    expect(PLANNER_MEMO_SYSTEM_PROMPT).toContain("五感细节锚点");
   });
 
   it("is not accidentally empty", () => {
@@ -27,6 +31,7 @@ describe("PLANNER_MEMO_USER_TEMPLATE", () => {
       "{{chapterNumber}}",
       "{{previous_chapter_ending_excerpt}}",
       "{{recent_summaries}}",
+      "{{outline_node}}",
       "{{current_arc_prose}}",
       "{{protagonist_matrix_row}}",
       "{{opponent_rows}}",
@@ -167,5 +172,85 @@ describe("buildGoldenOpeningGuidance", () => {
 
     const ch4 = buildPlannerUserMessage({ ...base, chapterNumber: 4 });
     expect(ch4).not.toContain("黄金三章规划指引");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Outline node threading — prevents Planner from drifting off-outline
+// ---------------------------------------------------------------------------
+
+describe("outline node in planner prompt", () => {
+  it("PLANNER_MEMO_USER_TEMPLATE contains {{outline_node}} placeholder", () => {
+    expect(PLANNER_MEMO_USER_TEMPLATE).toContain("{{outline_node}}");
+    expect(PLANNER_MEMO_USER_TEMPLATE).toContain("本章细纲节点");
+  });
+
+  it("PLANNER_MEMO_USER_TEMPLATE_EN contains {{outline_node}} placeholder", () => {
+    expect(PLANNER_MEMO_USER_TEMPLATE_EN).toContain("{{outline_node}}");
+    expect(PLANNER_MEMO_USER_TEMPLATE_EN).toContain("Chapter outline node");
+  });
+
+  it("PLANNER_MEMO_SYSTEM_PROMPT contains outline primacy principle #15", () => {
+    expect(PLANNER_MEMO_SYSTEM_PROMPT).toContain("细纲优先");
+    expect(PLANNER_MEMO_SYSTEM_PROMPT).toContain("不得改变核心事件方向");
+  });
+
+  it("PLANNER_MEMO_SYSTEM_PROMPT_EN contains outline primacy principle #15", () => {
+    expect(PLANNER_MEMO_SYSTEM_PROMPT_EN).toContain("Outline primacy");
+    expect(PLANNER_MEMO_SYSTEM_PROMPT_EN).toContain("core event direction must not change");
+  });
+
+  const base = {
+    previousChapterEndingExcerpt: "",
+    recentSummaries: "",
+    currentArcProse: "",
+    protagonistMatrixRow: "",
+    opponentRows: "",
+    collaboratorRows: "",
+    relevantThreads: "",
+    recyclableHooks: "",
+    isGoldenOpening: false,
+    bookRulesRelevant: "",
+  };
+
+  it("renders outline node content when provided", () => {
+    const outlineNode = "【事件】天覆剑宗大典，秦无名被当众宣布为弑师逆徒\n【节拍】从云端坠入深渊";
+    const out = buildPlannerUserMessage({ ...base, chapterNumber: 1, outlineNode });
+    expect(out).toContain("天覆剑宗大典");
+    expect(out).toContain("从云端坠入深渊");
+    expect(out).toContain("细纲对齐");
+    expect(out).not.toContain("{{");
+  });
+
+  it("renders fallback text when outlineNode is undefined", () => {
+    const out = buildPlannerUserMessage({ ...base, chapterNumber: 1 });
+    expect(out).toContain("本章无细纲节点");
+    expect(out).not.toContain("{{");
+  });
+
+  it("renders fallback text when outlineNode is empty string", () => {
+    const out = buildPlannerUserMessage({ ...base, chapterNumber: 1, outlineNode: "" });
+    expect(out).toContain("本章无细纲节点");
+    expect(out).not.toContain("{{");
+  });
+
+  it("renders fallback text when outlineNode is whitespace-only", () => {
+    const out = buildPlannerUserMessage({ ...base, chapterNumber: 1, outlineNode: "   " });
+    expect(out).toContain("本章无细纲节点");
+    expect(out).not.toContain("{{");
+  });
+
+  it("renders English fallback for English books without outline", () => {
+    const out = buildPlannerUserMessage({ ...base, chapterNumber: 1, language: "en" });
+    expect(out).toContain("no outline node");
+    expect(out).not.toContain("{{");
+  });
+
+  it("renders English outline for English books with outline", () => {
+    const outlineNode = "【事件】Confrontation at the grand hall";
+    const out = buildPlannerUserMessage({ ...base, chapterNumber: 1, outlineNode, language: "en" });
+    expect(out).toContain("Confrontation at the grand hall");
+    expect(out).toContain("MUST align with this outline");
+    expect(out).not.toContain("{{");
   });
 });

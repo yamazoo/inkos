@@ -519,6 +519,24 @@ export function parseVolumeHeadings(text: string): VolumeSummary[] {
       continue;
     }
 
+    // Pattern F: Bold **第N卷：title** without chapter range
+    // e.g. "**第一卷：孤坟**" or "**第二卷：燃灯**"
+    const headingF = trimmed.match(
+      /^\*\*第([一二三四五六七八九十零]+)卷[：:](.+?)\*\*$/,
+    );
+    if (headingF) {
+      const chineseIdx = chineseNums.indexOf(headingF[1]);
+      summaries.push({
+        volumeId: chineseIdx > 0 ? chineseIdx : summaries.length + 1,
+        volumeTitle: `第${headingF[1]}卷：${headingF[2].trim()}`,
+        chapterRange: [0, 0],
+        coreConflict: "",
+        keyTurnEvent: "",
+        harvestGoals: [],
+      });
+      continue;
+    }
+
     // Pattern E: Prose heading — e.g. "**卷名**：绝境求生，恶女觉醒" or "**卷名**：觉醒——末日降临的第一天"
     // Appends subtitle to the last volume title. Handles optional closing **.
     const headingE = trimmed.match(/^\*\*卷名[）]*\*\*?[：:]\s*(.+)$/);
@@ -765,6 +783,44 @@ export function parseVolumeSection(
 const OUTLINE_DIR = "outline";
 
 /**
+ * Parse a dedicated OKR section from volume_map.md text.
+ * Matches patterns like "**第一卷 OKR：**" and extracts KR items as harvest goals.
+ * Returns a map from volumeId (1-based) to goals array.
+ */
+export function parseOkrSection(text: string): Map<number, string[]> {
+  const result = new Map<number, string[]>();
+  const okrSectionMatch = text.match(
+    /##\s*各卷\s*OKR[\s\S]*?(?=\n---|\n##\s|$)/i,
+  );
+  if (!okrSectionMatch) return result;
+
+  const okrText = okrSectionMatch[0];
+  const chineseNums = [
+    "零", "一", "二", "三", "四", "五",
+    "六", "七", "八", "九", "十",
+  ];
+
+  const volBlocks = okrText.split(/(?=\*\*第[一二三四五六七八九十零]+卷\s*OKR)/);
+  for (const block of volBlocks) {
+    const volMatch = block.match(/\*\*第([一二三四五六七八九十零]+)卷\s*OKR/);
+    if (!volMatch) continue;
+    const volId = chineseNums.indexOf(volMatch[1]);
+    if (volId <= 0) continue;
+
+    const goals: string[] = [];
+    const krMatches = block.matchAll(/(?:^|\n)\s*(?:-|[-–])\s*\*{0,2}(KR\d+)\*{0,2}[：:]\s*(.+)/gm);
+    for (const m of krMatches) {
+      const text = `${m[1]}：${m[2]}`.trim().replace(/\*\*/g, "");
+      if (text) goals.push(text);
+    }
+    if (goals.length > 0) {
+      result.set(volId, goals.slice(0, 5));
+    }
+  }
+  return result;
+}
+
+/**
  * Convert volume_outline.md → story/outline/volume_map.json for a given book.
  *
  * @param bookDir  Path to a book root (contains `story/` subdirectory)
@@ -801,6 +857,15 @@ export async function convertVolumeOutlineToJson(
 
   // 3. Ensure output directory exists
   await mkdir(outlineDir, { recursive: true });
+
+  // 3a. Read book.json once for title and targetChapters
+  let bookTitle = "未知书名";
+  let targetChapters = 200;
+  try {
+    const bookJson = JSON.parse(await readFile(join(bookDir, "book.json"), "utf-8"));
+    if (bookJson.title) bookTitle = bookJson.title;
+    if (bookJson.targetChapters > 0) targetChapters = bookJson.targetChapters;
+  } catch { /* use defaults */ }
 
   // 4. Split into sections
   const sections = splitSections(mdText);
@@ -854,6 +919,30 @@ export async function convertVolumeOutlineToJson(
     }
   }
 
+  // Fallback: if still no summaries, scan ALL sections for volume headings.
+  // This handles "段" prose format where volumes are described within the
+  // overview section (e.g. **卷一·残剑**：...) without chapter ranges.
+  let allVolumesInSingleSection = false;
+  let allVolumesSourceIdx = 0;
+  if (summaries.length === 0) {
+    let sourceSectionIdx = -1;
+    let allFromSame = true;
+    for (let si = 0; si < sections.length; si++) {
+      const headingSummaries = parseVolumeHeadings(sections[si]);
+      for (const s of headingSummaries) {
+        if (!summaries.some((existing) => existing.volumeId === s.volumeId)) {
+          summaries.push(s);
+          if (sourceSectionIdx === -1) sourceSectionIdx = si;
+          else if (si !== sourceSectionIdx) allFromSame = false;
+        }
+      }
+    }
+    if (summaries.length > 0 && allFromSame) {
+      allVolumesInSingleSection = true;
+      allVolumesSourceIdx = sourceSectionIdx;
+    }
+  }
+
   // 5b. Detect duplicate mode (single-volume file split into 2 identical sections):
   //    sections.length === 2 AND both sections reference the SAME string (sections[0] === sections[1]).
   //    In this case, there is only 1 real volume — cap summaries to 1.
@@ -862,6 +951,11 @@ export async function convertVolumeOutlineToJson(
   if (isDuplicateMode && summaries.length > 1) {
     summaries = summaries.slice(0, 1);
   }
+
+  // Pre-parse OKR section to distribute harvestGoals correctly by volume.
+  // When volume_map.md has a dedicated "各卷 OKR" section containing all volumes' goals,
+  // the per-section enrichment below would pick up wrong goals. Parse centrally instead.
+  const okrGoalsByVolume = parseOkrSection(mdText);
 
   // Enrich summaries with coreConflict / keyTurnEvent / harvestGoals from section prose.
   // The chapter table for summaries[0] lives in sections[0] when section0IsVolumeHeading,
@@ -883,6 +977,23 @@ export async function convertVolumeOutlineToJson(
       const ktMatch = dataSection.match(/(?:^|\n)\s*(?:-|[-–])\s*(?:Ch?[.]?\s*)?\d+[：:]\s*([^\n-]+)/m);
       if (ktMatch) sum.keyTurnEvent = ktMatch[1].trim();
     }
+    // Prose fallback for coreConflict: first meaningful sentence ≥10 chars
+    if (!sum.coreConflict) {
+      const CONFLICT_KEYWORDS = /冲突|矛盾|对抗|危机|抉择|背叛|阴谋|困境|对立/;
+      const sentences = dataSection
+        .split(/[。\n]/)
+        .map((s) => s.replace(/\*\*/g, "").trim())
+        .filter((s) => s.length >= 10 && CONFLICT_KEYWORDS.test(s));
+      if (sentences[0]) sum.coreConflict = sentences[0];
+    }
+    // Prose fallback for keyTurnEvent: first bullet line with content
+    if (!sum.keyTurnEvent) {
+      const bulletMatch = dataSection.match(/(?:^|\n)\s*(?:-|[-–])\s*([^\n-]{5,})/m);
+      if (bulletMatch) sum.keyTurnEvent = bulletMatch[1].trim();
+    }
+    if (!sum.harvestGoals.length && okrGoalsByVolume.has(sum.volumeId)) {
+      sum.harvestGoals = okrGoalsByVolume.get(sum.volumeId)!;
+    }
     if (!sum.harvestGoals.length) {
       const goalMatches = dataSection.matchAll(/(?:^|\n)\s*(?:-|[-–])\s*(.+)/gm);
       const goals: string[] = [];
@@ -894,6 +1005,15 @@ export async function convertVolumeOutlineToJson(
       const filtered = goals.filter((g) => g.includes("：") || !g.includes("关键"));
       sum.harvestGoals = filtered.slice(0, 5);
     }
+    // Prose fallback: scan for keyword-bearing sentences when bullets are empty
+    if (!sum.harvestGoals.length) {
+      const GOAL_KEYWORDS = /目标|收获|推进|揭示|探索|揭露|铺垫|引入|建立|打破|完成|收束/;
+      const sentences = dataSection
+        .split(/[。\n]/)
+        .map((s) => s.replace(/\*\*/g, "").trim())
+        .filter((s) => s.length >= 8 && GOAL_KEYWORDS.test(s));
+      sum.harvestGoals = sentences.slice(0, 3);
+    }
   }
 
   if (summaries.length === 0) {
@@ -901,21 +1021,17 @@ export async function convertVolumeOutlineToJson(
   }
 
   // 5a-fill: Infer missing chapter ranges ([0,0]) by distributing evenly.
+  // MUST run before 5c (parseVolumeSection) because VolumeNodeSchema requires
+  // chapterRange ≥ [1,1] and keyTurnChapter falls back to chapterRange[0].
   const missingRange = summaries.filter((s) => s.chapterRange[0] === 0);
   if (missingRange.length > 0) {
-    // Try to read targetChapters from book.json
-    let totalChapters = 200;
-    try {
-      const bookJson = JSON.parse(await readFile(join(bookDir, "book.json"), "utf-8"));
-      if (bookJson.targetChapters > 0) totalChapters = bookJson.targetChapters;
-    } catch { /* use default */ }
     const volCount = summaries.length;
-    const perVol = Math.floor(totalChapters / volCount);
+    const perVol = Math.floor(targetChapters / volCount);
     for (let i = 0; i < summaries.length; i++) {
       const s = summaries[i];
       if (s.chapterRange[0] === 0) {
         const start = i * perVol + 1;
-        const end = i === volCount - 1 ? totalChapters : (i + 1) * perVol;
+        const end = i === volCount - 1 ? targetChapters : (i + 1) * perVol;
         s.chapterRange = [start, end];
       }
     }
@@ -932,25 +1048,35 @@ export async function convertVolumeOutlineToJson(
   for (let i = 0; i < summaries.length; i++) {
     const summary = summaries[i];
     if (!summary) continue;
-    const sectionIdx = isDuplicateMode ? i % sections.length : (firstSectionIsVolume ? i : i + 1);
+    const sectionIdx = allVolumesInSingleSection
+      ? allVolumesSourceIdx
+      : isDuplicateMode ? i % sections.length : (firstSectionIsVolume ? i : i + 1);
     const sectionForChapter = sections[sectionIdx];
     if (!sectionForChapter) continue;
     volumes.push(parseVolumeSection(sectionForChapter, summary));
   }
 
-  // 6. Book title — try to extract from first section's prose (before first ---).
-  const rawSection0 = sections[0];
-  const bookTitleMatch =
-    rawSection0.match(/^#{1,2}\s*(?!第[一二三四五六七八九十零卷])([\u4e00-\u9fff][^\n（#]*)/m) ??
-    mdText.match(/^#+\s*(.+?)\s*$/m);
-  const bookTitle = bookTitleMatch
-    ? bookTitleMatch[1].trim().replace(/\*\*/g, "")
-    : "未知书名";
+  // 6. Book title — prefer book.json title; fallback to regex extraction.
+  if (bookTitle === "未知书名") {
+    const rawSection0 = sections[0];
+    const bookTitleMatch =
+      rawSection0.match(/^#{1,2}\s*(?!第[一二三四五六七八九十零卷])([一-鿿][^\n（#]*)/m) ??
+      mdText.match(/^#+\s*(.+?)\s*$/m);
+    if (bookTitleMatch) {
+      bookTitle = bookTitleMatch[1].trim().replace(/\*\*/g, "");
+    }
+  }
 
-  const totalChapters = volumes.reduce(
+  // totalChapters: take the larger of inline chapter count and declared range.
+  const inlineChapterCount = volumes.reduce(
     (acc, vol) => acc + vol.chapters.length,
     0,
   );
+  const declaredRangeEnd = volumes.reduce(
+    (max, vol) => Math.max(max, vol.chapterRange[1]),
+    0,
+  );
+  const totalChapters = Math.max(inlineChapterCount, declaredRangeEnd);
 
   const schemaObj = VolumeOutlineSchema.parse({
     schemaVersion: 1,

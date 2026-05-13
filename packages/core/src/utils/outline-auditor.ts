@@ -506,7 +506,7 @@ export async function auditChapterOutlines(
 export interface CrossAuditEntry {
   volumeId: number;
   volumeTitle: string;
-  issueType: "range-mismatch" | "missing-in-chapters" | "missing-in-volume-map" | "empty-event" | "empty-beat";
+  issueType: "range-mismatch" | "missing-in-chapters" | "missing-in-volume-map" | "empty-event" | "empty-beat" | "cross-volume-overlap" | "cross-file-overlap";
   chapter: number | null;
   detail: string;
 }
@@ -710,6 +710,69 @@ export async function auditOutlineCross(
       incompleteFields,
       status: isDiverged ? "diverged" : "aligned",
     });
+  }
+
+  // Cross-volume overlap detection: find chapters claimed by multiple volumes.
+  const chapterToVolumes = new Map<number, number[]>();
+  for (const vol of outline.volumes) {
+    for (const ch of vol.chapters) {
+      const existing = chapterToVolumes.get(ch.chapter) ?? [];
+      existing.push(vol.volumeId);
+      chapterToVolumes.set(ch.chapter, existing);
+    }
+  }
+  for (const [chapter, volumeIds] of chapterToVolumes) {
+    if (volumeIds.length > 1) {
+      const volNames = volumeIds
+        .map((id) => {
+          const v = outline.volumes.find((vv) => vv.volumeId === id);
+          return v ? `卷${id}(${v.volumeTitle})` : `卷${id}`;
+        })
+        .join("、");
+      entries.push({
+        volumeId: volumeIds[0]!,
+        volumeTitle: "",
+        issueType: "cross-volume-overlap",
+        chapter,
+        detail: `Chapter ${chapter} appears in multiple volumes: ${volNames}`,
+      });
+    }
+  }
+
+  // Cross-file overlap detection: scan vol-N-chapters.json files for chapters
+  // claimed by multiple files, independent of volume_map.json.
+  let volFileEntries: string[];
+  try {
+    volFileEntries = (await readdir(join(bookDir, "story", "outline"))).filter(
+      (e) => /^vol-\d+-chapters\.json$/.test(e),
+    );
+  } catch {
+    volFileEntries = [];
+  }
+  const fileChapterToVolumes = new Map<number, number[]>();
+  for (const file of volFileEntries) {
+    const m = file.match(/^vol-(\d+)-chapters\.json$/);
+    if (!m) continue;
+    const volId = Number(m[1]);
+    const volData = await readVolumeChapters(bookDir, volId);
+    if (!volData) continue;
+    for (const ch of volData.chapters) {
+      const arr = fileChapterToVolumes.get(ch.chapter) ?? [];
+      arr.push(volId);
+      fileChapterToVolumes.set(ch.chapter, arr);
+    }
+  }
+  for (const [chapter, volumeIds] of fileChapterToVolumes) {
+    if (volumeIds.length > 1) {
+      const volNames = volumeIds.map((id) => `vol-${id}`).join(", ");
+      entries.push({
+        volumeId: volumeIds[0]!,
+        volumeTitle: "",
+        issueType: "cross-file-overlap",
+        chapter,
+        detail: `Chapter ${chapter} exists in multiple chapter files: ${volNames}`,
+      });
+    }
   }
 
   return {

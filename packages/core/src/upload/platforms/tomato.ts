@@ -184,14 +184,16 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
     const screenshotPath = join(screenshotDir, `tomato-ch-${chapter.number}-${Date.now()}.png`);
 
     for (let attempt = 0; attempt <= this.maxRetries; attempt++) {
+      // Track editor tab separately so we can close it after each attempt
+      let editorPage: Page = page;
+      let editorOpened = false;
+
       try {
         await this.navigateToChapterEditor(page, "");
         await page.waitForLoadState("networkidle");
 
         // Click "新建章节" and handle new tab
-        let editorPage = page;
         const createSelectors = this._splitSelectors(this.selectors.create_chapter_selectors);
-        let clicked = false;
         for (const sel of createSelectors) {
           const btn = page.locator(sel).first();
           const visible = await btn.isVisible({ timeout: 2000 }).catch(() => false);
@@ -203,7 +205,7 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
             await newPage.waitForLoadState("networkidle");
             await newPage.waitForTimeout(3000);
             editorPage = newPage;
-            clicked = true;
+            editorOpened = true;
             break;
           }
         }
@@ -263,6 +265,11 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
         this.lastError = "未检测到发布成功反馈";
       } catch (err) {
         this.lastError = err instanceof Error ? err.message : String(err);
+      } finally {
+        // Close leaked editor tab between retries to avoid tab accumulation
+        if (editorOpened && editorPage !== page) {
+          await editorPage.close().catch(() => {});
+        }
       }
 
       if (attempt < this.maxRetries) {
@@ -425,9 +432,17 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
     }
   }
 
+  /**
+   * Determine whether the publish action succeeded.
+   *
+   * Three-tier detection:
+   * 1. Explicit success keywords found → success
+   * 2. Editor still visible ("下一步"/"存草稿" buttons) → the publish flow
+   *    didn't complete; page is still on the editor → failure
+   * 3. Explicit error keywords found → failure
+   * 4. No editor, no errors → page navigated away from editor after publish → success
+   */
   private async _waitForPublishFeedback(page: Page): Promise<boolean> {
-    const keywords = this._splitSelectors(this.selectors.success_text_keywords);
-
     try {
       await page.waitForLoadState("networkidle");
     } catch {
@@ -435,15 +450,30 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
     }
     await page.waitForTimeout(this.successWaitSec * 1000);
 
-    for (const keyword of keywords) {
+    // Step 1: Check for explicit success keywords (fast path)
+    const successKeywords = this._splitSelectors(this.selectors.success_text_keywords);
+    for (const keyword of successKeywords) {
       try {
-        const visible = await page.locator(`text=${keyword}`).first().isVisible({ timeout: 3000 });
+        const visible = await page.locator(`text=${keyword}`).first().isVisible({ timeout: 2000 });
         if (visible) return true;
       } catch {
         // try next keyword
       }
     }
 
+    // Step 2: Check if we're still on the editor page. If the "下一步" or
+    // "存草稿" buttons are visible, the publish flow never completed.
+    const editorIndicators = ["button:has-text('下一步')", "button:has-text('存草稿')"];
+    for (const sel of editorIndicators) {
+      try {
+        const visible = await page.locator(sel).first().isVisible({ timeout: 1000 });
+        if (visible) return false;
+      } catch {
+        // button not found — good, we left the editor
+      }
+    }
+
+    // Step 3: Check for explicit error keywords
     const errorKeywords = this._splitSelectors(this.selectors.error_text_keywords);
     for (const kw of errorKeywords) {
       try {
@@ -454,7 +484,8 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
       }
     }
 
-    return false;
+    // Step 4: No editor buttons, no errors — page navigated away after publish
+    return true;
   }
 
   private async _actionDelay(): Promise<void> {

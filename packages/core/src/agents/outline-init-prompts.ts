@@ -28,15 +28,17 @@ Each element must have exactly these fields:
 - "chapter": number (sequential starting from the given start)
 - "event": string (the core event/conflict of this chapter, 10-50 chars)
 - "beat": string (the pacing beat / turning point, 10-50 chars)
-- "description": string (detailed plot summary including chapter-end hook, 50-200 chars)
+- "description": string (detailed scene-by-scene breakdown, 200-500 chars)
 
 Rules:
 1. Chapter numbers must be sequential with no gaps
 2. Each chapter must have a distinct event and beat
-3. Description must include a chapter-end hook (cliffhanger or question)
+3. Description must cover 2-5 concrete scene beats with: who does what, where, key sensory detail, and a chapter-end hook (cliffhanger or question). Write each scene beat as a short clause separated by "；". The description is the primary input for downstream planning — it must contain enough narrative substance for a 3000+ word chapter.
 4. Maintain narrative arc: setup → rising action → climax → resolution
 5. Do NOT repeat the same event across chapters
-6. If the prose is vague, create plausible content that fits the volume theme`;
+6. If the prose is vague, create plausible content that fits the volume theme
+7. Strictly respect event boundaries from the source — events described separately (e.g., awakening vs. clan competition) MUST be in different chapters, never merged
+8. Strictly follow exact quantities from the source — if it says "first sword intent" that is 1, not 3; if it says "clan competition" that is one event, not multiple`;
   }
 
   return `你是一位专业的小说细纲架构师。你的任务是从卷纲散文中提取结构化的章节细纲。
@@ -47,15 +49,17 @@ Rules:
 - "chapter": 数字（从指定的起始章节号顺序递增）
 - "event": 字符串（本章核心事件/冲突，10-50字）
 - "beat": 字符串（本章节奏转折点，10-50字）
-- "description": 字符串（详细剧情概述，含章末钩子，50-200字）
+- "description": 字符串（详细场景分解，200-500字）
 
 规则：
 1. 章节号必须连续递增，不能有间隔
 2. 每章必须有独立的事件和节奏点
-3. description 必须包含章末钩子（悬念或疑问）
+3. description 必须覆盖 2-5 个具体场景节拍：谁做了什么、在哪里、关键感官细节、章末钩子（悬念或疑问）。每个场景节拍用短句描述，以"；"分隔。description 是下游规划的核心输入——必须包含足够的叙事细节来支撑 3000 字以上的章节正文
 4. 保持叙事弧线：铺垫 → 上升 → 高潮 → 收束
 5. 不同章节不能重复相同的事件
-6. 如果散文内容模糊，请根据卷主题创建合理内容`;
+6. 如果散文内容模糊，请根据卷主题创建合理内容
+7. 严格尊重源材料中的事件边界——散文中分开描述的事件（如觉醒与族比）必须分配到不同章节，不能合并为一章
+8. 严格遵守源材料中的数量——散文说"第一道剑意"就是1道，不能自行增加为多道；说"族比"就是一场，不能拆为多场`;
 }
 
 /**

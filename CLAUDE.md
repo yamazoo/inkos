@@ -40,9 +40,9 @@ inkos init [name]                      # Initialize project (omit name for curre
 inkos doctor                           # Diagnose config issues
 
 # Writing pipeline
-inkos write next <book-id>                  # Full pipeline: draft → audit → revise (--count N for multiple)
-inkos write rewrite <book-id> <n>          # Rewrite chapter N from snapshot (--force skip confirm)
-inkos draft <book-id>                       # Draft only (no audit/revise)
+inkos write next <book-id>                  # Full pipeline: draft → audit → revise (--count N --words 3000 --context "...")
+inkos write rewrite <book-id> <n>          # Rewrite chapter N and all after from snapshot (--force skip confirm)
+inkos draft <book-id> <n>                  # Draft only (no audit/revise) (--words 3000 --context "...")
 inkos revise <book-id> <n>                  # Revise chapter N (default mode: local-fix)
 inkos audit <book-id> <n>                   # Audit chapter N only
 
@@ -76,7 +76,24 @@ inkos consolidate <book-id>                   # Rebuild state/*.json from truth 
 inkos update                                  # Update book state after editing truth files manually
 
 # Fanfic
-inkos fanfic init --from <file> --mode canon|au|ooc|cp  # Create fanfic from source text
+inkos fanfic init --title "..." --from <file> --mode canon|au|ooc|cp [--genre ...]  # Create fanfic
+inkos fanfic show <book-id>                            # Show fanfic canon state
+inkos fanfic refresh <book-id>                         # Refresh fanfic from source
+
+# Upload to publishing platforms
+inkos upload login --platform tomato                   # Login via browser
+inkos upload calibrate <book-id> --platform tomato     # Auto-detect editor UI selectors
+inkos upload status <book-id> [--json]                 # Check upload status
+inkos upload run <book-id> [--chapters 1-50] [--approved-only] [--draft] [--dry-run]
+inkos upload mark-uploaded <book-id> --up-to <n>       # Mark manually uploaded chapters
+
+# Outline management
+inkos outline audit <book-id> [--volume 1] [--fix] [--cross] [--json]
+inkos outline init <book-id> [--volume 1] [--force]    # Generate missing outlines via LLM
+
+# TUI & Interact
+inkos [tui]                                            # Full-screen terminal dashboard
+inkos interact [message...] [--book <id>] [--json]     # Natural language interaction mode
 
 # Quality
 inkos eval <book-id> [--json] [--chapters 1-20]  # Structured quality report
@@ -114,10 +131,16 @@ packages/
 
 ### InkOS Studio
 
-`inkos studio` launches a local web workbench. It resolves the entry point in order:
+`inkos studio` launches a local web workbench (default port 4567). Running `inkos` with no arguments launches the TUI dashboard instead. Entry point resolution order:
 1. Monorepo TypeScript sources (`packages/studio/src/api/index.ts`) via local tsx loader
 2. Monorepo TypeScript sources via `npx tsx`
 3. Published npm package `dist/api/index.js`
+
+Studio features: book management, chapter review/approval, real-time SSE writing progress, market radar, analytics, AIGC detection, style analysis, genre management, daemon control, truth file editor, config editor.
+
+**TUI Dashboard** (`inkos` or `inkos tui`): full-screen terminal UI with conversational creation, slash command autocomplete, themed animations, bilingual i18n (zh/en).
+
+**Interact** (`inkos interact`): natural language mode for entity renaming, text patching, conversational book management.
 
 On Windows, path separators in tests use `\` — mock path assertions must handle both `/` and `\` (e.g., use `path.replace(/\\/g, "/")` normalization or regex like `[\\/]`).
 
@@ -220,6 +243,10 @@ ready-for-review → inkos review approve <book> <n>       # approve and continu
 
 Valid revise modes: `local-fix` (default), `spot-fix` (alias for local-fix), `polish`, `rewrite`, `rework`, `anti-detect`.
 
+### Snapshot Rollback
+
+`inkos write rewrite <book-id> <n>` deletes chapter N and all after, restores state from snapshot, and rewrites. Snapshots are stored in `books/<id>/story/snapshots/` (snapshot `0` = initial state before chapter 1). Manual restore: copy `snapshots/<n>/state/*.json` → `story/state/`, update `manifest.json` → `lastAppliedChapter`, delete stale chapters.
+
 ### Adding a CLI Command
 
 1. Create `packages/cli/src/commands/<name>.ts` exporting a Commander `Command`
@@ -234,6 +261,14 @@ The `packages/studio/src/api/server.ts` exports `createStudioServer(config, root
 ### Book ID Resolution
 
 Book IDs are directory names under `books/`. When only one book exists in the project, `<book-id>` can be omitted from most commands. The project root is detected by finding the nearest `inkos.json` upward from the current directory.
+
+### Outline System
+
+The outline system uses a structured `volume_map.json` (Zod-validated) stored at `books/<id>/story/outline/`. Chapter nodes are classified as `complete`, `range-placeholder`, `null-description`, or `short-description`. `--fix` expands range placeholders into individual entries. `--cross` audits cross-volume consistency.
+
+### Upload System
+
+Uses Playwright-based browser automation with Edge-first strategy. `SelectorCalibrator` auto-detects editor UI fields via DOM snapshot. Upload state persisted at `books/<id>/story/state/upload_state.json`. Currently supports **Tomato (fanqienovel.com)** only.
 
 ### Adding a Genre
 

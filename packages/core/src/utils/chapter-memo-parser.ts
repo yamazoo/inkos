@@ -78,25 +78,19 @@ export function parseMemo(
   isGoldenOpening: boolean,
 ): ChapterMemo {
   const trimmed = raw.trim();
-  const match = trimmed.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
-  if (!match) {
+
+  // Multi-strategy parse chain (same defense-in-depth as persisted-governed-plan).
+  // Strategy 1: Primary `---` delimited YAML frontmatter.
+  // Strategy 2: Line-by-line KV extraction (LLM omits `---` delimiters).
+  const s1 = parseFrontmatterPrimary(trimmed);
+  const s2 = s1 ? null : parseFrontmatterLineByLine(trimmed);
+  const parsed = s1 ?? s2;
+
+  if (!parsed) {
     throw new PlannerParseError("missing YAML frontmatter delimiters");
   }
 
-  const yamlText = match[1]!;
-  const body = match[2]!.trim();
-
-  let fm: unknown;
-  try {
-    fm = YAML.load(yamlText);
-  } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
-    throw new PlannerParseError(`invalid YAML in frontmatter: ${message}`);
-  }
-  if (!fm || typeof fm !== "object" || Array.isArray(fm)) {
-    throw new PlannerParseError("frontmatter is not an object");
-  }
-  const f = fm as Record<string, unknown>;
+  const { fm: f, body } = parsed;
 
   if (typeof f.chapter !== "number" || !Number.isInteger(f.chapter)) {
     throw new PlannerParseError("chapter must be an integer");
@@ -154,4 +148,75 @@ export function parseMemo(
     body,
     threadRefs,
   });
+}
+
+// ── Fallback parse strategies (D issue: MiniMax M2.7 omits `---` delimiters) ─
+
+interface ParsedFrontmatter {
+  readonly fm: Record<string, unknown>;
+  readonly body: string;
+}
+
+/** Strategy 1: Primary `---` delimited YAML frontmatter. */
+function parseFrontmatterPrimary(raw: string): ParsedFrontmatter | null {
+  const match = raw.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
+  if (!match) return null;
+  return tryLoadYaml(match[1]!, match[2]!);
+}
+
+/**
+ * Strategy 2: Line-by-line key-value extraction.
+ * Some LLMs (MiniMax M2.7) produce valid YAML KV lines but omit the `---`
+ * delimiters. We scan the first ~15 lines for `key: value` patterns, then
+ * split at the first `## ` heading to separate frontmatter from body.
+ */
+function parseFrontmatterLineByLine(raw: string): ParsedFrontmatter | null {
+  const lines = raw.split("\n");
+  const kvLines: string[] = [];
+  let bodyStart = lines.length;
+
+  for (let i = 0; i < Math.min(15, lines.length); i++) {
+    const line = lines[i]!;
+    if (/^\w[\w-]*\s*:/.test(line)) {
+      kvLines.push(line);
+    } else if (kvLines.length > 0 && /^\s+/.test(line)) {
+      // Continuation of previous key (indented)
+      kvLines.push(line);
+    } else if (line.startsWith("## ")) {
+      // First heading — body starts here
+      bodyStart = i;
+      break;
+    } else if (kvLines.length > 0 && line.trim() === "") {
+      // Empty line after key-values — body starts after this
+      bodyStart = i + 1;
+      break;
+    } else if (kvLines.length === 0) {
+      // Non-KV line before any KV — not our format
+      return null;
+    }
+  }
+
+  if (kvLines.length === 0) return null;
+
+  // Must find at least `chapter` and `goal` to be a valid memo
+  const yamlFragment = kvLines.join("\n");
+  const body = lines.slice(bodyStart).join("\n");
+
+  const result = tryLoadYaml(yamlFragment, body);
+  if (!result) return null;
+
+  // Guard: must contain the two core memo fields
+  if (!("chapter" in result.fm) || !("goal" in result.fm)) return null;
+
+  return result;
+}
+
+function tryLoadYaml(yamlText: string, body: string): ParsedFrontmatter | null {
+  try {
+    const fm = YAML.load(yamlText);
+    if (!fm || typeof fm !== "object" || Array.isArray(fm)) return null;
+    return { fm: fm as Record<string, unknown>, body };
+  } catch {
+    return null;
+  }
 }

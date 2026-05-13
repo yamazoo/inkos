@@ -31,8 +31,8 @@ const PLACEHOLDER_PATTERNS = [
 
 export interface SemanticWarning {
   chapter: number;
-  field: "event" | "beat";
-  issue: "placeholder" | "too-short" | "duplicate-event";
+  field: "event" | "beat" | "description";
+  issue: "placeholder" | "too-short" | "duplicate-event" | "duplicate-description";
   detail: string;
 }
 
@@ -108,6 +108,51 @@ export function validateChapterOutlineSemantics(
         detail: `Chapter ${ch.chapter} event is identical to chapter ${duplicate.chapter}: "${ch.event}"`,
       });
     }
+
+    // Check description field (when present)
+    if (ch.description !== undefined) {
+      const descTrimmed = ch.description.trim();
+
+      // Placeholder detection
+      if (PLACEHOLDER_PATTERNS.some((p) => p.test(descTrimmed))) {
+        warnings.push({
+          chapter: ch.chapter,
+          field: "description",
+          issue: "placeholder",
+          detail: `Chapter ${ch.chapter} description is a placeholder: "${descTrimmed.slice(0, 30)}"`,
+        });
+      }
+
+      // Too-short: < 100 chars cannot support 3000+ word chapter expansion
+      if (
+        !PLACEHOLDER_PATTERNS.some((p) => p.test(descTrimmed)) &&
+        descTrimmed.length < 100
+      ) {
+        warnings.push({
+          chapter: ch.chapter,
+          field: "description",
+          issue: "too-short",
+          detail: `Chapter ${ch.chapter} description is too short (${descTrimmed.length} chars, min 100) to support 3000+ word chapter expansion`,
+        });
+      }
+
+      // Duplicate description detection
+      const dupDesc = allChapters.find(
+        (other) =>
+          other.chapter !== ch.chapter &&
+          other.description !== undefined &&
+          other.description.trim() === descTrimmed &&
+          descTrimmed.length > 0,
+      );
+      if (dupDesc) {
+        warnings.push({
+          chapter: ch.chapter,
+          field: "description",
+          issue: "duplicate-description",
+          detail: `Chapter ${ch.chapter} description is identical to chapter ${dupDesc.chapter}`,
+        });
+      }
+    }
   }
 
   return warnings;
@@ -160,10 +205,23 @@ export async function writeVolumeChapters(
   data: VolumeChapterFile,
 ): Promise<void> {
   const validated = VolumeChapterFileSchema.parse(data);
+  const [lo, hi] = validated.chapterRange;
+  const filtered = validated.chapters.filter(
+    (ch) => ch.chapter >= lo && ch.chapter <= hi,
+  );
+  if (filtered.length !== validated.chapters.length) {
+    console.warn(
+      `[chapter-outline-store] vol-${validated.volumeId}: dropped ${validated.chapters.length - filtered.length} chapter(s) outside range [${lo},${hi}]`,
+    );
+  }
   const dir = join(bookDir, "story", "outline");
   await mkdir(dir, { recursive: true });
   const filePath = volChaptersPath(bookDir, validated.volumeId);
-  await writeFile(filePath, JSON.stringify(validated, null, 2), "utf-8");
+  await writeFile(
+    filePath,
+    JSON.stringify({ ...validated, chapters: filtered }, null, 2),
+    "utf-8",
+  );
 }
 
 // ---------------------------------------------------------------------------

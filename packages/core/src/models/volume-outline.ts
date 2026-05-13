@@ -8,7 +8,7 @@ export const ChapterNodeSchema = z.object({
   chapter: z.number().int().min(1),
   event: z.string().min(1),
   beat: z.string().min(1),
-  /** Detailed plot description including chapter-end hook (章末钩子) */
+  /** Detailed scene-by-scene breakdown including chapter-end hook (章末钩子). Target 200-500 chars for 3000+ word expansion. */
   description: z.string().optional(),
   /** Optional POV character for this chapter */
   pov: z.string().optional(),

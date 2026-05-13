@@ -37,8 +37,8 @@ describe("length metrics", () => {
       target: 2200,
       softMin: 1900,
       softMax: 2500,
-      hardMin: 1600,
-      hardMax: 2800,
+      hardMin: 1450,
+      hardMax: 2950,
       countingMode: "zh_chars",
       normalizeMode: "none",
     });
@@ -50,8 +50,8 @@ describe("length metrics", () => {
     expect(spec.countingMode).toBe("en_words");
     expect(spec.softMin).toBe(1900);
     expect(spec.softMax).toBe(2500);
-    expect(spec.hardMin).toBe(1600);
-    expect(spec.hardMax).toBe(2800);
+    expect(spec.hardMin).toBe(1450);
+    expect(spec.hardMax).toBe(2950);
   });
 
   it("scales the conservative bands for smaller targets", () => {
@@ -59,8 +59,8 @@ describe("length metrics", () => {
 
     expect(spec.softMin).toBe(190);
     expect(spec.softMax).toBe(250);
-    expect(spec.hardMin).toBe(160);
-    expect(spec.hardMax).toBe(280);
+    expect(spec.hardMin).toBe(145);
+    expect(spec.hardMax).toBe(295);
   });
 
   it("detects soft and hard range drift", () => {
@@ -68,7 +68,7 @@ describe("length metrics", () => {
 
     expect(isOutsideSoftRange(1800, spec)).toBe(true);
     expect(isOutsideSoftRange(2200, spec)).toBe(false);
-    expect(isOutsideHardRange(1500, spec)).toBe(true);
+    expect(isOutsideHardRange(1400, spec)).toBe(true);
     expect(isOutsideHardRange(2200, spec)).toBe(false);
   });
 

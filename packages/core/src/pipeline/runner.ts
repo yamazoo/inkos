@@ -347,6 +347,7 @@ export interface InitBookOptions {
   readonly externalContext?: string;
   readonly authorIntent?: string;
   readonly currentFocus?: string;
+  readonly briefPath?: string;
 }
 
 export class PipelineRunner {
@@ -642,8 +643,11 @@ export class PipelineRunner {
       stageLanguage,
     });
     try {
+      const bookWithBrief = effectiveExternalContext
+        ? { ...book, briefSource: options.briefPath ?? "inline" }
+        : book;
       this.logStage(stageLanguage, { zh: "保存书籍配置", en: "saving book config" });
-      await this.state.saveBookConfigAt(stagingBookDir, book);
+      await this.state.saveBookConfigAt(stagingBookDir, bookWithBrief);
 
       this.logStage(stageLanguage, { zh: "写入基础设定文件", en: "writing foundation files" });
       await architect.writeFoundationFiles(
@@ -686,6 +690,17 @@ export class PipelineRunner {
       }
 
       await rename(stagingBookDir, bookDir);
+
+      try {
+        this.logStage(stageLanguage, { zh: "初始化章节细纲", en: "initializing chapter outlines" });
+        const { convertVolumeOutlineToJson } = await import("../utils/volume-outline-converter.js");
+        await convertVolumeOutlineToJson(bookDir);
+        await this.initOutline(book.id);
+      } catch (outlineErr) {
+        this.config.logger?.warn(
+          `[initBook] Outline initialization failed (book created without per-chapter outlines): ${outlineErr instanceof Error ? outlineErr.message : outlineErr}`,
+        );
+      }
     } catch (error) {
       await rm(stagingBookDir, { recursive: true, force: true }).catch(() => undefined);
       throw error;
@@ -3640,7 +3655,7 @@ ${matrix}`,
     );
 
     // Semantic validation before persistence
-    const semWarnings = validateChapterOutlineSemantics(generated, existingChapters);
+    let semWarnings = validateChapterOutlineSemantics(generated, existingChapters);
     if (semWarnings.length > 0) {
       this.config.logger?.warn(
         `[outline] ${semWarnings.length} semantic warning(s) in volume ${volumeId}:`,
@@ -3650,6 +3665,47 @@ ${matrix}`,
       }
     }
 
+    // Retry thin descriptions: if >30% of generated chapters have description < 100 chars,
+    // regenerate those specific chapters with emphasis on description quality
+    const thinDescChapters = semWarnings
+      .filter((w) => w.field === "description" && w.issue === "too-short")
+      .map((w) => w.chapter);
+    if (thinDescChapters.length > 0 && thinDescChapters.length >= generated.length * 0.3) {
+      this.config.logger?.info(
+        `[outline] retrying ${thinDescChapters.length} chapters with thin descriptions...`,
+      );
+      const retryStart = Math.min(...thinDescChapters);
+      const retryEnd = Math.max(...thinDescChapters);
+      try {
+        const retried = await agent.generateChaptersRange(
+          {
+            bookTitle: book.title,
+            volumeTitle,
+            volumeProse,
+            storyFrame,
+            chapterRange: [retryStart, retryEnd],
+            language: lang,
+          },
+          retryStart,
+          retryEnd,
+        );
+        // Only replace chapters that still have thin descriptions
+        const retriedMap = new Map(retried.map((c) => [c.chapter, c]));
+        for (let i = 0; i < generated.length; i++) {
+          const ch = generated[i]!;
+          if (thinDescChapters.includes(ch.chapter)) {
+            const replacement = retriedMap.get(ch.chapter);
+            if (replacement && (replacement.description?.length ?? 0) > (ch.description?.length ?? 0)) {
+              generated[i] = replacement;
+            }
+          }
+        }
+        // Re-validate after retry
+        semWarnings = validateChapterOutlineSemantics(generated, existingChapters);
+      } catch (retryErr) {
+        this.config.logger?.warn(`[outline] description retry failed: ${retryErr}`);
+      }
+    }
 
     // Merge: replace missing chapters, keep existing ones
     const mergedMap = new Map(existingChapters.map((c) => [c.chapter, c]));
@@ -3779,8 +3835,12 @@ ${matrix}`,
 
     for (const vol of targetVolumes) {
       const existing = await readVolumeChapters(bookDir, vol.volumeId);
-      const existingChapters = existing?.chapters ?? [];
       const [rangeStart, rangeEnd] = vol.chapterRange;
+      // Filter out stale chapters that fall outside the authoritative range
+      // from volume_map.json (defense against earlier bugs that wrote out-of-range data).
+      const existingChapters = (existing?.chapters ?? []).filter(
+        (ch) => ch.chapter >= rangeStart && ch.chapter <= rangeEnd,
+      );
       const totalInRange = rangeEnd - rangeStart + 1;
       chaptersTotal += totalInRange;
 

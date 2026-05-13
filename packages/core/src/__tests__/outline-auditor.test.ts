@@ -688,4 +688,169 @@ describe("auditOutlineCross", () => {
     expect(ch10Entry).toBeDefined();
     expect(ch10Entry!.detail).toContain("outside declared range");
   });
+
+  it("detects cross-volume chapter overlap", async () => {
+    // Volume 1: chapters 1-3, Volume 2: chapters 3-5 (chapter 3 overlaps)
+    await writeVolumeMap([
+      {
+        volumeId: 1, volumeTitle: "觉醒篇", chapterRange: [1, 3],
+        chapters: [
+          { chapter: 1, event: "事件1", beat: "节拍1" },
+          { chapter: 2, event: "事件2", beat: "节拍2" },
+          { chapter: 3, event: "事件3", beat: "节拍3" },
+        ],
+      },
+      {
+        volumeId: 2, volumeTitle: "成长篇", chapterRange: [3, 5],
+        chapters: [
+          { chapter: 3, event: "重复事件", beat: "重复节拍" },
+          { chapter: 4, event: "事件4", beat: "节拍4" },
+          { chapter: 5, event: "事件5", beat: "节拍5" },
+        ],
+      },
+    ]);
+    await writeVolumeChapters(tmpDir, {
+      schemaVersion: 1, volumeId: 1, volumeTitle: "觉醒篇", chapterRange: [1, 3],
+      chapters: [
+        { chapter: 1, event: "事件1", beat: "节拍1" },
+        { chapter: 2, event: "事件2", beat: "节拍2" },
+        { chapter: 3, event: "事件3", beat: "节拍3" },
+      ],
+    });
+    await writeVolumeChapters(tmpDir, {
+      schemaVersion: 1, volumeId: 2, volumeTitle: "成长篇", chapterRange: [3, 5],
+      chapters: [
+        { chapter: 3, event: "重复事件", beat: "重复节拍" },
+        { chapter: 4, event: "事件4", beat: "节拍4" },
+        { chapter: 5, event: "事件5", beat: "节拍5" },
+      ],
+    });
+
+    const result = await auditOutlineCross(tmpDir);
+    const overlapEntries = result.entries.filter(e => e.issueType === "cross-volume-overlap");
+    expect(overlapEntries.length).toBe(1);
+    expect(overlapEntries[0].chapter).toBe(3);
+    expect(overlapEntries[0].detail).toContain("觉醒篇");
+    expect(overlapEntries[0].detail).toContain("成长篇");
+  });
+
+  it("reports no cross-volume overlap when chapters are disjoint", async () => {
+    await writeVolumeMap([
+      {
+        volumeId: 1, volumeTitle: "第一卷", chapterRange: [1, 2],
+        chapters: [
+          { chapter: 1, event: "事件1", beat: "节拍1" },
+          { chapter: 2, event: "事件2", beat: "节拍2" },
+        ],
+      },
+      {
+        volumeId: 2, volumeTitle: "第二卷", chapterRange: [3, 4],
+        chapters: [
+          { chapter: 3, event: "事件3", beat: "节拍3" },
+          { chapter: 4, event: "事件4", beat: "节拍4" },
+        ],
+      },
+    ]);
+    await writeVolumeChapters(tmpDir, {
+      schemaVersion: 1, volumeId: 1, volumeTitle: "第一卷", chapterRange: [1, 2],
+      chapters: [
+        { chapter: 1, event: "事件1", beat: "节拍1" },
+        { chapter: 2, event: "事件2", beat: "节拍2" },
+      ],
+    });
+    await writeVolumeChapters(tmpDir, {
+      schemaVersion: 1, volumeId: 2, volumeTitle: "第二卷", chapterRange: [3, 4],
+      chapters: [
+        { chapter: 3, event: "事件3", beat: "节拍3" },
+        { chapter: 4, event: "事件4", beat: "节拍4" },
+      ],
+    });
+
+    const result = await auditOutlineCross(tmpDir);
+    const overlapEntries = result.entries.filter(e => e.issueType === "cross-volume-overlap");
+    expect(overlapEntries.length).toBe(0);
+  });
+
+  it("detects cross-file overlap when vol-N-chapters.json files share chapters", async () => {
+    // volume_map.json has correct disjoint ranges, but vol-1-chapters.json
+    // contains chapters 21-40 that belong to vol-2 (the exact bug we're fixing).
+    await writeVolumeMap([
+      {
+        volumeId: 1, volumeTitle: "第一卷", chapterRange: [1, 20],
+        chapters: Array.from({ length: 20 }, (_, i) => ({
+          chapter: i + 1, event: `事件${i + 1}`, beat: `节拍${i + 1}`,
+        })),
+      },
+      {
+        volumeId: 2, volumeTitle: "第二卷", chapterRange: [21, 40],
+        chapters: Array.from({ length: 20 }, (_, i) => ({
+          chapter: i + 21, event: `事件${i + 21}`, beat: `节拍${i + 21}`,
+        })),
+      },
+    ]);
+    // Write stale vol-1 with overlapping chapters 21-40 to simulate the bug
+    // (bypasses writeVolumeChapters range filter by writing directly to disk)
+    await writeFile(
+      join(tmpDir, "story", "outline", "vol-1-chapters.json"),
+      JSON.stringify({
+        schemaVersion: 1, volumeId: 1, volumeTitle: "第一卷", chapterRange: [1, 40],
+        chapters: Array.from({ length: 40 }, (_, i) => ({
+          chapter: i + 1, event: `事件${i + 1}`, beat: `节拍${i + 1}`,
+        })),
+      }, null, 2),
+      "utf-8",
+    );
+
+    await writeVolumeChapters(tmpDir, {
+      schemaVersion: 1, volumeId: 2, volumeTitle: "第二卷", chapterRange: [21, 40],
+      chapters: Array.from({ length: 20 }, (_, i) => ({
+        chapter: i + 21, event: `事件${i + 21}`, beat: `节拍${i + 21}`,
+      })),
+    });
+
+    const result = await auditOutlineCross(tmpDir);
+    const fileOverlapEntries = result.entries.filter(e => e.issueType === "cross-file-overlap");
+    // Chapters 21-40 exist in both vol-1 and vol-2 chapter files
+    expect(fileOverlapEntries.length).toBe(20);
+    expect(fileOverlapEntries[0].chapter).toBe(21);
+    expect(fileOverlapEntries[0].detail).toContain("vol-1");
+    expect(fileOverlapEntries[0].detail).toContain("vol-2");
+  });
+
+  it("reports no cross-file overlap when chapter files have disjoint ranges", async () => {
+    await writeVolumeMap([
+      {
+        volumeId: 1, volumeTitle: "第一卷", chapterRange: [1, 2],
+        chapters: [
+          { chapter: 1, event: "事件1", beat: "节拍1" },
+          { chapter: 2, event: "事件2", beat: "节拍2" },
+        ],
+      },
+      {
+        volumeId: 2, volumeTitle: "第二卷", chapterRange: [3, 4],
+        chapters: [
+          { chapter: 3, event: "事件3", beat: "节拍3" },
+          { chapter: 4, event: "事件4", beat: "节拍4" },
+        ],
+      },
+    ]);
+    await writeVolumeChapters(tmpDir, {
+      schemaVersion: 1, volumeId: 1, volumeTitle: "第一卷", chapterRange: [1, 2],
+      chapters: [
+        { chapter: 1, event: "事件1", beat: "节拍1" },
+        { chapter: 2, event: "事件2", beat: "节拍2" },
+      ],
+    });
+    await writeVolumeChapters(tmpDir, {
+      schemaVersion: 1, volumeId: 2, volumeTitle: "第二卷", chapterRange: [3, 4],
+      chapters: [
+        { chapter: 3, event: "事件3", beat: "节拍3" },
+        { chapter: 4, event: "事件4", beat: "节拍4" },
+      ],
+    });
+
+    const result = await auditOutlineCross(tmpDir);
+    const fileOverlapEntries = result.entries.filter(e => e.issueType === "cross-file-overlap");
+    expect(fileOverlapEntries.length).toBe(0);
+  });
 });

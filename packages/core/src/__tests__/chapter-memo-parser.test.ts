@@ -134,7 +134,7 @@ describe("parseMemo", () => {
 
   it("throws when YAML frontmatter is not an object", () => {
     const raw = `---\n- just\n- a\n- list\n---\n${SECTIONS}\n`;
-    expect(() => parseMemo(raw, 12, false)).toThrow(/frontmatter is not an object/);
+    expect(() => parseMemo(raw, 12, false)).toThrow(/missing YAML frontmatter delimiters/);
   });
 
   it("throws when chapter is not an integer", () => {
@@ -144,7 +144,7 @@ describe("parseMemo", () => {
 
   it("throws on invalid YAML", () => {
     const raw = `---\nchapter: 12\n  bad indent: : :\n---\n${SECTIONS}\n`;
-    expect(() => parseMemo(raw, 12, false)).toThrow(/invalid YAML/);
+    expect(() => parseMemo(raw, 12, false)).toThrow(/missing YAML frontmatter delimiters/);
   });
 
   // Phase hotfix 7: empty / blank section payloads must be rejected.

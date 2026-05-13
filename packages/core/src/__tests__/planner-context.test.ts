@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   composeCurrentArcProse,
   extractCollaboratorRows,
+  extractHookIds,
   extractOpponentRows,
   extractProtagonistRow,
   extractRelevantThreads,
@@ -133,5 +134,52 @@ describe("extractRelevantThreads", () => {
     expect(threads).not.toContain("H002");
     expect(threads).toContain("S001");
     expect(threads).not.toContain("S007");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// extractHookIds — Fix 6: threadRefs validation
+// ---------------------------------------------------------------------------
+
+describe("extractHookIds", () => {
+  it("extracts hook IDs from pending_hooks markdown table", () => {
+    const raw = `
+| hook_id | 描述 | 状态 |
+|---------|------|------|
+| H001 | 主角觉醒伏笔 | activating |
+| H002 | 配角秘密 | dormant |
+| S001 | 支线冲突 | partial_payoff |
+`;
+    const ids = extractHookIds(raw);
+    expect(ids.has("H001")).toBe(true);
+    expect(ids.has("H002")).toBe(true);
+    expect(ids.has("S001")).toBe(true);
+    expect(ids.size).toBe(3);
+  });
+
+  it("strips bold formatting from hook IDs", () => {
+    const raw = `
+| hook_id | 描述 |
+|---------|------|
+| **H003** | 暗线 |
+`;
+    const ids = extractHookIds(raw);
+    expect(ids.has("H003")).toBe(true);
+  });
+
+  it("returns empty set for empty input", () => {
+    const ids = extractHookIds("");
+    expect(ids.size).toBe(0);
+  });
+
+  it("skips the header row", () => {
+    const raw = `
+| hook_id | 描述 |
+|---------|------|
+| H001 | test |
+`;
+    const ids = extractHookIds(raw);
+    expect(ids.has("hook_id")).toBe(false);
+    expect(ids.has("H001")).toBe(true);
   });
 });

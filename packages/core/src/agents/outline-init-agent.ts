@@ -180,7 +180,17 @@ export class OutlineInitAgent extends BaseAgent {
 
       try {
         const raw = extractJsonArray(response.content);
-        return validateChapters(raw, expectedStart);
+        const chapters = validateChapters(raw, expectedStart);
+        // Description quality gate: reject batches where >50% of descriptions are too thin
+        const thinCount = chapters.filter(
+          (c) => c.description !== undefined && c.description.trim().length < 100,
+        ).length;
+        if (thinCount > chapters.length / 2) {
+          throw new OutlineInitParseError(
+            `${thinCount}/${chapters.length} chapters have description < 100 chars. Each description needs 200-500 chars with 2-5 scene beats.`,
+          );
+        }
+        return chapters;
       } catch (error) {
         if (!(error instanceof OutlineInitParseError)) {
           throw error;

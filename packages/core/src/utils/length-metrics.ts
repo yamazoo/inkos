@@ -4,7 +4,7 @@ export type LengthLanguage = "zh" | "en";
 
 const REFERENCE_TARGET = 2200;
 const SOFT_RANGE_DELTA = 300;
-const HARD_RANGE_DELTA = 600;
+const HARD_RANGE_DELTA = 750;
 
 export function countChapterLength(
   content: string,

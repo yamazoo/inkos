@@ -237,6 +237,21 @@ function extractRowsByRelation(
   return rows.map((row) => `| ${row.join(" | ")} |`).join("\n");
 }
 
+/**
+ * Extract all known hook IDs from pending_hooks.md table.
+ * Returns a Set of normalized hook IDs for threadRefs validation.
+ */
+export function extractHookIds(pendingHooksRaw: string): Set<string> {
+  const ids = new Set<string>();
+  const rows = parseMarkdownTableRows(pendingHooksRaw);
+  for (const row of rows) {
+    if (!row[0] || /^(hook_id)$/i.test(row[0])) continue;
+    const id = row[0].replace(/\*\*/g, "").trim();
+    if (id) ids.add(id);
+  }
+  return ids;
+}
+
 const RELEVANT_THREAD_STATUS_PATTERN = /activat|partial_payoff|推进|高压|open|progress/i;
 const STALE_STATUS_PATTERN = /resolved|deferred|dormant|暂稳待续|暂挂|已回收/i;
 

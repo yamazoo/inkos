@@ -119,6 +119,30 @@ describe("writeVolumeChapters", () => {
     const result = await readVolumeChapters(tmpDir, 1);
     expect(result!.chapters).toHaveLength(3);
   });
+
+  it("drops chapters outside declared chapterRange", async () => {
+    const data = makeVolumeFile(1, [1, 3], [
+      makeChapter(1), makeChapter(2), makeChapter(3),
+      makeChapter(4), makeChapter(5),
+    ]);
+    await writeVolumeChapters(tmpDir, data);
+
+    const result = await readVolumeChapters(tmpDir, 1);
+    expect(result).not.toBeNull();
+    expect(result!.chapters).toHaveLength(3);
+    expect(result!.chapters.map((c) => c.chapter)).toEqual([1, 2, 3]);
+  });
+
+  it("preserves all chapters within range", async () => {
+    const data = makeVolumeFile(1, [5, 8], [
+      makeChapter(5), makeChapter(6), makeChapter(7), makeChapter(8),
+    ]);
+    await writeVolumeChapters(tmpDir, data);
+
+    const result = await readVolumeChapters(tmpDir, 1);
+    expect(result!.chapters).toHaveLength(4);
+    expect(result!.chapters.map((c) => c.chapter)).toEqual([5, 6, 7, 8]);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -247,5 +271,49 @@ describe("validateChapterOutlineSemantics", () => {
     ];
     const warnings = validateChapterOutlineSemantics(chapters);
     expect(warnings.filter((w) => w.issue === "duplicate-event")).toHaveLength(0);
+  });
+
+  // Description validation
+  it("flags too-short description (< 100 chars)", () => {
+    const chapters: ChapterNode[] = [
+      { chapter: 1, event: "正常事件", beat: "正常节拍", description: "太短的描述" },
+    ];
+    const warnings = validateChapterOutlineSemantics(chapters);
+    expect(warnings.some((w) => w.chapter === 1 && w.field === "description" && w.issue === "too-short")).toBe(true);
+  });
+
+  it("accepts description >= 100 chars without warning", () => {
+    const longDesc = "陈渊在陈家大宅最偏僻的柴房里醒来，经脉有缺，修行无望，连仆役都不如；他开始一天的劳作，在灰白色的青瓦屋檐下沉默穿行；午间走进三房婶婆的灶房，灶台边留着一碗粥和半块咸菜。婶婆没有说话，只是用手指点了点那只碗。章末钩子：三长老为什么注意一个废物？他的三秒停留意味着什么？";
+    const chapters: ChapterNode[] = [
+      { chapter: 1, event: "正常事件", beat: "正常节拍", description: longDesc },
+    ];
+    const warnings = validateChapterOutlineSemantics(chapters);
+    expect(warnings.filter((w) => w.field === "description")).toHaveLength(0);
+  });
+
+  it("flags placeholder description '待定'", () => {
+    const chapters: ChapterNode[] = [
+      { chapter: 1, event: "正常事件", beat: "正常节拍", description: "待定" },
+    ];
+    const warnings = validateChapterOutlineSemantics(chapters);
+    expect(warnings.some((w) => w.field === "description" && w.issue === "placeholder")).toBe(true);
+  });
+
+  it("flags duplicate descriptions across chapters", () => {
+    const desc = "陈渊在陈家大宅最偏僻的柴房里醒来，经脉有缺，修行无望，连仆役都不如；他开始一天的劳作，在灰白色的青瓦屋檐下沉默穿行；午间走进三房婶婆的灶房，灶台边留着一碗粥和半块咸菜。章末钩子：三长老的目光为何停留三秒？";
+    const chapters: ChapterNode[] = [
+      { chapter: 1, event: "事件A", beat: "节拍1", description: desc },
+      { chapter: 2, event: "事件B", beat: "节拍2", description: desc },
+    ];
+    const warnings = validateChapterOutlineSemantics(chapters);
+    expect(warnings.some((w) => w.issue === "duplicate-description")).toBe(true);
+  });
+
+  it("does not flag description when field is absent", () => {
+    const chapters: ChapterNode[] = [
+      { chapter: 1, event: "正常事件", beat: "正常节拍" },
+    ];
+    const warnings = validateChapterOutlineSemantics(chapters);
+    expect(warnings.filter((w) => w.field === "description")).toHaveLength(0);
   });
 });

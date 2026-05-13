@@ -403,12 +403,22 @@ function outlineFallback(fileName: string): string | null {
     return null;
 }
 
+/**
+ * Strip leading YAML frontmatter (--- ... ---) and return the body portion.
+ * Returns the original content unchanged if no frontmatter is present.
+ */
+function stripFrontmatter(content: string): string {
+  const match = content.match(/^\s*---\s*\n[\s\S]*?\n---\s*\n?([\s\S]*)$/);
+  return match ? match[1] : content;
+}
+
 function pickExcerpt(content: string, preferredExcerpts: ReadonlyArray<string>): string | undefined {
     for (const preferred of preferredExcerpts) {
       if (preferred && content.includes(preferred)) return preferred;
     }
 
-    return content
+    const body = stripFrontmatter(content);
+    return body
       .split("\n")
       .map((line) => line.trim())
       .find((line) => line.length > 0 && !line.startsWith("#"));
