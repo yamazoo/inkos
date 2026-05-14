@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, beforeEach, afterEach } from "vitest";
 import {
   stripThinkingBlocks,
   parseTableRow,
@@ -11,8 +11,12 @@ import {
   detectPhases,
   parseVolumeSection,
   parseOkrSection,
+  convertVolumeOutlineToJson,
 } from "../utils/volume-outline-converter.js";
 import type { VolumeSummary } from "../utils/volume-outline-converter.js";
+import { mkdtemp, rm, writeFile, mkdir, readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { tmpdir } from "node:os";
 
 // ---------------------------------------------------------------------------
 // parseTableRow
@@ -689,5 +693,197 @@ describe("parseOkrSection", () => {
   it("returns empty map when no OKR section exists", () => {
     const result = parseOkrSection("## 概述\n没有OKR内容");
     expect(result.size).toBe(0);
+  });
+
+  it("matches OKR heading with 段 prefix (e.g. ## 段 3：各卷 OKR)", () => {
+    const text = `## 段 3：各卷 OKR
+
+**第一卷 OKR：**
+- KR1：完成主角觉醒
+- KR2：建立力量体系
+
+**第二卷 OKR：**
+- KR1：推进主线冲突
+- KR2：引入新角色
+`;
+    const result = parseOkrSection(text);
+    expect(result.get(1)).toEqual(["KR1：完成主角觉醒", "KR2：建立力量体系"]);
+    expect(result.get(2)).toEqual(["KR1：推进主线冲突", "KR2：引入新角色"]);
+  });
+
+  it("matches abbreviated **第N卷 O** format (real volume_map.md style)", () => {
+    const text = `## 段 3：各卷 OKR
+
+**第一卷 O**：从家族废物到剑冢觉醒者。
+- KR1：陈渊在族比中击败陈珏。
+
+**第二卷 O**：离开家族游历散修世界。
+- KR1：沈秋登场。
+- KR2：陈渊首次进入剑修遗迹。
+
+**第三卷 O**：遭遇丹道宗门的道统之争。
+- KR1：与丹道宗门的道统之争爆发。
+`;
+    const result = parseOkrSection(text);
+    expect(result.get(1)).toEqual(["KR1：陈渊在族比中击败陈珏。"]);
+    expect(result.get(2)).toEqual(["KR1：沈秋登场。", "KR2：陈渊首次进入剑修遗迹。"]);
+    expect(result.get(3)).toEqual(["KR1：与丹道宗门的道统之争爆发。"]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// convertVolumeOutlineToJson — cross-volume contamination guard
+// ---------------------------------------------------------------------------
+
+describe("convertVolumeOutlineToJson cross-volume contamination", () => {
+  let tmpDir: string;
+
+  beforeEach(async () => {
+    tmpDir = await mkdtemp(join(tmpdir(), "vol-conv-"));
+    await mkdir(join(tmpDir, "story", "outline"), { recursive: true });
+  });
+
+  afterEach(async () => {
+    await rm(tmpDir, { recursive: true, force: true });
+  });
+
+  /**
+   * "段" format: all volume descriptions in 段1, separated by --- from
+   * other sections (hooks, OKR, end-of-volume changes, rhythm rules).
+   * This mirrors the real volume_map.md structure.
+   */
+  const DUAN_FORMAT_MD = `## 段 1：各卷主题与情绪曲线
+
+**第一卷：寒渊（1-40章）**
+主题：在沉默中积蓄爆发。情绪曲线：前段压抑到极致。
+
+**第二卷：游尘（41-80章）**
+主题：在无路中找出路。情绪曲线：离开家族后的迷茫。
+
+**第三卷：问剑（81-120章）**
+主题：剑道的敌人不是比你强的人。情绪曲线：道统之争。
+
+**第四卷：绝渊（121-160章）**
+主题：在死亡边缘找到突破。情绪曲线：剑冢容量逼近极限。
+
+**第五卷：炉火（161-200章）**
+主题：炉火不灭，剑道永生。情绪曲线：封锁者现身。
+
+---
+
+## 段 2：卷间钩子与回收承诺
+
+- H001：陈珏践踏陈渊，第10章回收。
+- H002：婶婆的馒头，第2卷中段回收。
+
+---
+
+## 各卷 OKR
+
+**第一卷 O**：从家族废物到剑冢觉醒者，在族比中完成身份翻转。
+- KR1：陈渊在第10章族比中击败陈珏
+- KR2：陈渊在第20章发现经脉缺陷是优势
+- KR3：第40章三长老出手干预
+
+**第二卷 O**：离开家族游历散修世界，与沈秋结伴。
+- KR1：第50章沈秋登场
+- KR2：第60章沈秋师门真相被揭开
+- KR3：第75章剑冢容量扩展到三道
+
+**第三卷 O**：遭遇丹道宗门的道统之争，面对沈远现身。
+- KR1：第90章道统之争爆发
+- KR2：第105章祖父道出剑冢是桥梁
+- KR3：第115章祖父牺牲
+
+**第四卷 O**：在剑冢容量逼近极限完成剑意归一的突破。
+- KR1：第130章多道剑意冲突
+- KR2：第145章完成剑意整合
+- KR3：第155章突破完成
+
+**第五卷 O**：终结末法时代，剑道重回世间。
+- KR1：第170章封锁者现身
+- KR2：第190章九道剑意归一
+- KR3：第200章终局画面
+
+---
+
+## 段 4：卷尾必须发生的改变
+
+**第一卷尾（第40章）**：陈渊完成族比碾压，陈珏崩溃，但三长老正式出手干预。
+**第二卷尾（第80章）**：陈渊与沈秋的同行关系在第75章经历考验。
+**第三卷尾（第120章）**：祖父牺牲、父亲剑意苏醒。
+**第四卷尾（第160章）**：剑意归一完成，但代价是陈渊的身体已经到了极限。
+**第五卷尾（第200章）**：末法时代终结，陈渊的生命也走到了终点。
+
+---
+
+## 段 5：节奏原则
+
+1. **高潮间距**：大高潮之间最长不超过18章。
+2. **喘息频率**：每连续3章高压情节后，必须插入1章喘息章。
+3. **钩子密度**：每章章末必须有钩子。
+`;
+
+  it("does not contaminate volumes when all volumes are in a single section (段 format)", async () => {
+    await writeFile(join(tmpDir, "book.json"), JSON.stringify({
+      title: "测试书", targetChapters: 200, genre: "xianxia",
+    }), "utf-8");
+    await writeFile(join(tmpDir, "story", "outline", "volume_map.md"), DUAN_FORMAT_MD, "utf-8");
+
+    const result = await convertVolumeOutlineToJson(tmpDir);
+    expect(result).not.toBeNull();
+
+    const json = JSON.parse(await readFile(join(tmpDir, "story", "outline", "volume_map.json"), "utf-8"));
+    const vols = json.volumes;
+
+    expect(vols).toHaveLength(5);
+
+    // Vol 2 harvestGoals must NOT contain vol-1 OKR content (e.g. "第10章族比")
+    const vol2Goals = vols[1].harvestGoals.join(" ");
+    expect(vol2Goals).not.toContain("第10章");
+    expect(vol2Goals).not.toContain("族比");
+
+    // Vol 3 harvestGoals must NOT contain vol-1 or vol-2 content
+    const vol3Goals = vols[2].harvestGoals.join(" ");
+    expect(vol3Goals).not.toContain("第一卷尾");
+    expect(vol3Goals).not.toContain("第40章");
+
+    // Vol 4 coreConflict must NOT be rhythm rules from 段5
+    expect(vols[3].coreConflict).not.toContain("喘息章");
+    expect(vols[3].coreConflict).not.toContain("钩子密度");
+
+    // Vol 4 harvestGoals must NOT contain rhythm rules
+    const vol4Goals = vols[3].harvestGoals.join(" ");
+    expect(vol4Goals).not.toContain("喘息章");
+    expect(vol4Goals).not.toContain("高潮间距");
+  });
+
+  it("correctly assigns OKR goals by volume in 段 format", async () => {
+    await writeFile(join(tmpDir, "book.json"), JSON.stringify({
+      title: "测试书", targetChapters: 200, genre: "xianxia",
+    }), "utf-8");
+    await writeFile(join(tmpDir, "story", "outline", "volume_map.md"), DUAN_FORMAT_MD, "utf-8");
+
+    await convertVolumeOutlineToJson(tmpDir);
+    const json = JSON.parse(await readFile(join(tmpDir, "story", "outline", "volume_map.json"), "utf-8"));
+    const vols = json.volumes;
+
+    // Vol 1: should have its own KR goals
+    expect(vols[0].harvestGoals.some((g: string) => g.includes("第10章"))).toBe(true);
+    expect(vols[0].harvestGoals.some((g: string) => g.includes("三长老"))).toBe(true);
+
+    // Vol 2: should have its own KR goals (沈秋, 剑冢容量)
+    expect(vols[1].harvestGoals.some((g: string) => g.includes("沈秋"))).toBe(true);
+    expect(vols[1].harvestGoals.some((g: string) => g.includes("剑冢容量") || g.includes("三道"))).toBe(true);
+
+    // Vol 3: should have its own KR goals (道统之争, 祖父)
+    expect(vols[2].harvestGoals.some((g: string) => g.includes("道统"))).toBe(true);
+    expect(vols[2].harvestGoals.some((g: string) => g.includes("祖父"))).toBe(true);
+
+    // Vol 4: should have its own KR goals (剑意冲突, 整合)
+    expect(vols[3].harvestGoals.some((g: string) => g.includes("剑意冲突") || g.includes("剑意整合"))).toBe(true);
+
+    // Vol 5: should have its own KR goals (封锁者, 归一)
+    expect(vols[4].harvestGoals.some((g: string) => g.includes("封锁者") || g.includes("归一"))).toBe(true);
   });
 });

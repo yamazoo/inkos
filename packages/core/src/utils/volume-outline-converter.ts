@@ -789,8 +789,9 @@ const OUTLINE_DIR = "outline";
  */
 export function parseOkrSection(text: string): Map<number, string[]> {
   const result = new Map<number, string[]>();
+  // Match headings like "## 各卷 OKR" or "## 段 3：各卷 OKR" (with optional prefix)
   const okrSectionMatch = text.match(
-    /##\s*各卷\s*OKR[\s\S]*?(?=\n---|\n##\s|$)/i,
+    /##[^\n]*各卷\s*OKR[\s\S]*?(?=\n---|\n##\s|$)/i,
   );
   if (!okrSectionMatch) return result;
 
@@ -800,9 +801,10 @@ export function parseOkrSection(text: string): Map<number, string[]> {
     "六", "七", "八", "九", "十",
   ];
 
-  const volBlocks = okrText.split(/(?=\*\*第[一二三四五六七八九十零]+卷\s*OKR)/);
+  // Match both "**第N卷 OKR**" and "**第N卷 O**" (real files often abbreviate OKR as O)
+  const volBlocks = okrText.split(/(?=\*\*第[一二三四五六七八九十零]+卷\s*(?:OKR|O\b))/);
   for (const block of volBlocks) {
-    const volMatch = block.match(/\*\*第([一二三四五六七八九十零]+)卷\s*OKR/);
+    const volMatch = block.match(/\*\*第([一二三四五六七八九十零]+)卷\s*(?:OKR|O\b)/);
     if (!volMatch) continue;
     const volId = chineseNums.indexOf(volMatch[1]);
     if (volId <= 0) continue;
@@ -960,59 +962,70 @@ export async function convertVolumeOutlineToJson(
   // Enrich summaries with coreConflict / keyTurnEvent / harvestGoals from section prose.
   // The chapter table for summaries[0] lives in sections[0] when section0IsVolumeHeading,
   // and in volumeSections[i] otherwise.
+  //
+  // IMPORTANT: When all volumes are in a single section (段 format — "各卷主题与情绪曲线"),
+  // per-section enrichment CANNOT map fields to individual volumes because sections[i+1]
+  // points to unrelated content (hooks, OKR, rhythm rules, etc.). In that case, skip
+  // prose-based enrichment and rely only on parseOkrSection() for harvestGoals.
   for (let i = 0; i < summaries.length; i++) {
-    // When sections[0] is the overview (firstSectionIsVolume=false): volumes map to volumeSections[i]
-    //   where volumeSections = sections.slice(1) = [vol1, vol2, ...].
-    // When sections[0] IS the first volume (firstSectionIsVolume=true): volumes map to sections[i].
-    const dataSection =
-      firstSectionIsVolume ? sections[i] : volumeSections[i];
-    if (!dataSection) continue;
     const sum = summaries[i];
-    if (!sum.coreConflict) {
-      const conflictMatch = dataSection.match(/\*\*核心冲突[）]*\*\*[：:]\s*([^\n\-*]+)/);
-      if (conflictMatch) sum.coreConflict = conflictMatch[1].replace(/\*\*/g, "").trim();
+
+    if (!allVolumesInSingleSection) {
+      // When sections[0] is the overview (firstSectionIsVolume=false): volumes map to volumeSections[i]
+      //   where volumeSections = sections.slice(1) = [vol1, vol2, ...].
+      // When sections[0] IS the first volume (firstSectionIsVolume=true): volumes map to sections[i].
+      const dataSection =
+        firstSectionIsVolume ? sections[i] : volumeSections[i];
+      if (!dataSection) continue;
+      if (!sum.coreConflict) {
+        const conflictMatch = dataSection.match(/\*\*核心冲突[）]*\*\*[：:]\s*([^\n\-*]+)/);
+        if (conflictMatch) sum.coreConflict = conflictMatch[1].replace(/\*\*/g, "").trim();
+      }
+      if (!sum.keyTurnEvent) {
+        // Extract first key-turn item: "- Ch.N：..." or "1. ...（Ch.N：...）"
+        const ktMatch = dataSection.match(/(?:^|\n)\s*(?:-|[-–])\s*(?:Ch?[.]?\s*)?\d+[：:]\s*([^\n-]+)/m);
+        if (ktMatch) sum.keyTurnEvent = ktMatch[1].trim();
+      }
+      // Prose fallback for coreConflict: first meaningful sentence ≥10 chars
+      if (!sum.coreConflict) {
+        const CONFLICT_KEYWORDS = /冲突|矛盾|对抗|危机|抉择|背叛|阴谋|困境|对立/;
+        const sentences = dataSection
+          .split(/[。\n]/)
+          .map((s) => s.replace(/\*\*/g, "").trim())
+          .filter((s) => s.length >= 10 && CONFLICT_KEYWORDS.test(s));
+        if (sentences[0]) sum.coreConflict = sentences[0];
+      }
+      // Prose fallback for keyTurnEvent: first bullet line with content
+      if (!sum.keyTurnEvent) {
+        const bulletMatch = dataSection.match(/(?:^|\n)\s*(?:-|[-–])\s*([^\n-]{5,})/m);
+        if (bulletMatch) sum.keyTurnEvent = bulletMatch[1].trim();
+      }
+      if (!sum.harvestGoals.length) {
+        const goalMatches = dataSection.matchAll(/(?:^|\n)\s*(?:-|[-–])\s*(.+)/gm);
+        const goals: string[] = [];
+        for (const g of goalMatches) {
+          const text = g[1].trim().replace(/\*\*/g, "");
+          if (text && !/^(Ch|章节|第)/.test(text)) goals.push(text);
+        }
+        // Filter out key-turn items (contain "：")
+        const filtered = goals.filter((g) => g.includes("：") || !g.includes("关键"));
+        sum.harvestGoals = filtered.slice(0, 5);
+      }
+      // Prose fallback: scan for keyword-bearing sentences when bullets are empty
+      if (!sum.harvestGoals.length) {
+        const GOAL_KEYWORDS = /目标|收获|推进|揭示|探索|揭露|铺垫|引入|建立|打破|完成|收束/;
+        const sentences = dataSection
+          .split(/[。\n]/)
+          .map((s) => s.replace(/\*\*/g, "").trim())
+          .filter((s) => s.length >= 8 && GOAL_KEYWORDS.test(s));
+        sum.harvestGoals = sentences.slice(0, 3);
+      }
     }
-    if (!sum.keyTurnEvent) {
-      // Extract first key-turn item: "- Ch.N：..." or "1. ...（Ch.N：...）"
-      const ktMatch = dataSection.match(/(?:^|\n)\s*(?:-|[-–])\s*(?:Ch?[.]?\s*)?\d+[：:]\s*([^\n-]+)/m);
-      if (ktMatch) sum.keyTurnEvent = ktMatch[1].trim();
-    }
-    // Prose fallback for coreConflict: first meaningful sentence ≥10 chars
-    if (!sum.coreConflict) {
-      const CONFLICT_KEYWORDS = /冲突|矛盾|对抗|危机|抉择|背叛|阴谋|困境|对立/;
-      const sentences = dataSection
-        .split(/[。\n]/)
-        .map((s) => s.replace(/\*\*/g, "").trim())
-        .filter((s) => s.length >= 10 && CONFLICT_KEYWORDS.test(s));
-      if (sentences[0]) sum.coreConflict = sentences[0];
-    }
-    // Prose fallback for keyTurnEvent: first bullet line with content
-    if (!sum.keyTurnEvent) {
-      const bulletMatch = dataSection.match(/(?:^|\n)\s*(?:-|[-–])\s*([^\n-]{5,})/m);
-      if (bulletMatch) sum.keyTurnEvent = bulletMatch[1].trim();
-    }
+
+    // OKR goals are always volume-specific (parsed by **第N卷 OKR** markers)
+    // and safe to apply regardless of section layout.
     if (!sum.harvestGoals.length && okrGoalsByVolume.has(sum.volumeId)) {
       sum.harvestGoals = okrGoalsByVolume.get(sum.volumeId)!;
-    }
-    if (!sum.harvestGoals.length) {
-      const goalMatches = dataSection.matchAll(/(?:^|\n)\s*(?:-|[-–])\s*(.+)/gm);
-      const goals: string[] = [];
-      for (const g of goalMatches) {
-        const text = g[1].trim().replace(/\*\*/g, "");
-        if (text && !/^(Ch|章节|第)/.test(text)) goals.push(text);
-      }
-      // Filter out key-turn items (contain "：")
-      const filtered = goals.filter((g) => g.includes("：") || !g.includes("关键"));
-      sum.harvestGoals = filtered.slice(0, 5);
-    }
-    // Prose fallback: scan for keyword-bearing sentences when bullets are empty
-    if (!sum.harvestGoals.length) {
-      const GOAL_KEYWORDS = /目标|收获|推进|揭示|探索|揭露|铺垫|引入|建立|打破|完成|收束/;
-      const sentences = dataSection
-        .split(/[。\n]/)
-        .map((s) => s.replace(/\*\*/g, "").trim())
-        .filter((s) => s.length >= 8 && GOAL_KEYWORDS.test(s));
-      sum.harvestGoals = sentences.slice(0, 3);
     }
   }
 
