@@ -215,6 +215,17 @@ function renderProgressBar(complete: number, total: number): string {
   return `[${"=".repeat(filled)}${" ".repeat(empty_)}]`;
 }
 
+/** Merge per-volume chapter data from vol-N-chapters.json into volume_map.json skeleton. */
+async function mergeVolumeChapters(bookDir: string, outline: VolumeOutline): Promise<VolumeOutline> {
+  const { readVolumeChapters } = await import("@actalk/inkos-core");
+  const merged: VolumeNode[] = [];
+  for (const vol of outline.volumes) {
+    const vc = await readVolumeChapters(bookDir, vol.volumeId);
+    merged.push(vc && vc.chapters.length > 0 ? { ...vol, chapters: vc.chapters } : vol);
+  }
+  return { ...outline, volumes: merged };
+}
+
 async function resolveBookDir(bookId?: string): Promise<string> {
   const projectRoot = findProjectRoot();
   const resolved = await resolveBookId(bookId, projectRoot);
@@ -300,6 +311,10 @@ function buildAuditCommand(): Command {
         );
         process.exit(1);
       }
+
+      // Merge per-volume chapter data from vol-N-chapters.json files
+      // (volume_map.json stores only the skeleton; detailed chapters live separately)
+      outline = await mergeVolumeChapters(bookDir, outline);
 
       // Filter to single volume if requested
       let filteredOutline = outline;
@@ -432,6 +447,9 @@ function buildInitCommand(): Command {
         process.exit(1);
       }
 
+      // Merge per-volume chapter data for accurate audit
+      outline = await mergeVolumeChapters(bookDir, outline);
+
       // Pre-check completeness (skip when --force)
       if (!opts.force) {
         const result = auditOutline(outline);
@@ -455,20 +473,35 @@ function buildInitCommand(): Command {
           volumeId: opts.volume !== undefined ? Number(opts.volume) : undefined,
         });
 
+        // Run actual audit for accurate completeness reporting
+        const postRaw = await readFile(jsonPath, "utf-8");
+        const postOutline = await mergeVolumeChapters(
+          bookDir,
+          VolumeOutlineSchema.parse(JSON.parse(postRaw)),
+        );
+
+        let postFiltered = postOutline;
+        if (opts.volume !== undefined) {
+          const volNum = Number(opts.volume);
+          const vol = postOutline.volumes.find((v) => v.volumeId === volNum);
+          if (vol) {
+            postFiltered = { ...postOutline, volumes: [vol] };
+          }
+        }
+        const postResult = auditOutline(postFiltered);
+
         if (opts.json) {
-          console.log(JSON.stringify(initResult, null, 2));
+          console.log(JSON.stringify({ ...initResult, audit: postResult }, null, 2));
           return;
         }
 
         const filled = initResult.chaptersFilled;
-        const before = initResult.completenessBefore;
-        const after = initResult.completenessAfter;
         const total = initResult.chaptersTotal;
-        const bar = renderProgressBar(initResult.completenessAfter / 100, 1);
+        const bar = renderProgressBar(postResult.totalComplete, postResult.totalChapters);
         console.log("");
         console.log("=== 细纲初始化完成 ===");
         console.log(
-          `整体完整度: ${bar}  ${before}% → ${after}%`,
+          `整体完整度: ${bar}  ${postResult.totalComplete}/${postResult.totalChapters} (${postResult.completenessPercent}%)`,
         );
         console.log(`填充章节数：${filled} / ${total}`);
         if (opts.volume !== undefined) {

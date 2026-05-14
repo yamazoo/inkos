@@ -728,6 +728,20 @@ export class PipelineRunner {
         const { convertVolumeOutlineToJson } = await import("../utils/volume-outline-converter.js");
         await convertVolumeOutlineToJson(bookDir);
         await this.initOutline(book.id);
+
+        // Auto-audit after outline generation
+        const { auditChapterOutlines, renderProgressBar } = await import("../utils/outline-auditor.js");
+        const auditResult = await auditChapterOutlines(bookDir);
+        const bar = renderProgressBar(auditResult.totalComplete, auditResult.totalChapters);
+        this.config.logger?.info(
+          `[initBook] 大纲审计: ${bar}  ${auditResult.totalComplete}/${auditResult.totalChapters} (${auditResult.completenessPercent}%)`,
+        );
+        for (const vol of auditResult.volumeSummaries) {
+          const status = vol.status === "complete" ? "✓" : vol.status === "partial" ? "⚠" : "✗";
+          this.config.logger?.info(
+            `  ${status} ${vol.volumeTitle}: ${vol.complete}/${vol.total}`,
+          );
+        }
       } catch (outlineErr) {
         this.config.logger?.warn(
           `[initBook] Outline initialization failed (book created without per-chapter outlines): ${outlineErr instanceof Error ? outlineErr.message : outlineErr}`,
@@ -3759,6 +3773,16 @@ ${matrix}`,
 
     this.config.logger?.info(
       `[outline] generated ${generated.length} chapter outlines (ch.${generated[0]!.chapter}-${generated[generated.length - 1]!.chapter})`,
+    );
+
+    // Lightweight audit: log volume completeness after generation
+    const completeCount = merged.filter(
+      (ch) => ch.event.trim().length >= 6 && ch.beat.trim().length >= 2,
+    ).length;
+    const totalInRange = chapterRange[1] - chapterRange[0] + 1;
+    const volPct = totalInRange > 0 ? Math.round((completeCount / totalInRange) * 100) : 0;
+    this.config.logger?.info(
+      `[outline] ${volumeTitle} 完整度: ${completeCount}/${totalInRange} (${volPct}%)`,
     );
   }
 
