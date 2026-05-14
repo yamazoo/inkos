@@ -582,6 +582,95 @@ describe("PipelineRunner", () => {
     }
   });
 
+  it("retries with format reminder when regeneration output is missing section markers", async () => {
+    const { root, runner, bookId } = await createRunnerFixture();
+    const reviewer = new FoundationReviewerAgent({
+      client: {
+        provider: "openai",
+        apiFormat: "chat",
+        stream: false,
+        defaults: {
+          temperature: 0.7,
+          thinkingBudget: 0,
+        },
+      } as ConstructorParameters<typeof PipelineRunner>[0]["client"],
+      model: "test-model",
+      projectRoot: root,
+      bookId,
+    });
+    const foundation = {
+      storyBible: "# Story Bible",
+      volumeOutline: "# Volume Outline",
+      bookRules: "---\nversion: \"1.0\"\n---\n\n# Book Rules",
+      currentState: "# Current State",
+      pendingHooks: "# Pending Hooks",
+    };
+
+    // First call: returns valid foundation.
+    // Second call (after rejection): throws parse error.
+    // Third call (format reminder retry): returns valid foundation.
+    const generate = vi.fn(async (reviewFeedback?: string) => {
+      if (reviewFeedback && !reviewFeedback.includes("严重格式提醒")) {
+        throw new Error("Architect output missing required sections: story_frame, volume_map, roles, book_rules, pending_hooks");
+      }
+      return foundation;
+    });
+    const reviewMock = vi.mocked(FoundationReviewerAgent.prototype.review);
+
+    reviewMock.mockReset();
+    reviewMock
+      .mockResolvedValueOnce({
+        passed: false,
+        totalScore: 72,
+        dimensions: [
+          {
+            name: "核心冲突",
+            score: 71,
+            feedback: "核心冲突张力不足。",
+          },
+        ],
+        overallFeedback: "需要加强核心冲突。",
+      })
+      .mockResolvedValueOnce({
+        passed: true,
+        totalScore: 85,
+        dimensions: [],
+        overallFeedback: "通过",
+      });
+
+    try {
+      const result = await (runner as unknown as {
+        generateAndReviewFoundation: (params: {
+          readonly generate: (reviewFeedback?: string) => Promise<typeof foundation>;
+          readonly reviewer: FoundationReviewerAgent;
+          readonly mode: "original";
+          readonly language: "zh";
+          readonly stageLanguage: "zh";
+          readonly maxRetries: number;
+        }) => Promise<typeof foundation>;
+      }).generateAndReviewFoundation({
+        generate,
+        reviewer,
+        mode: "original",
+        language: "zh",
+        stageLanguage: "zh",
+        maxRetries: 2,
+      });
+
+      expect(result).toEqual(foundation);
+      // generate called 3 times: initial, regeneration (fails), retry with format reminder
+      expect(generate).toHaveBeenCalledTimes(3);
+      // Second call has review feedback but no format reminder
+      expect(generate.mock.calls[1]?.[0]).toContain("核心冲突");
+      // Third call has both review feedback AND format reminder
+      expect(generate.mock.calls[2]?.[0]).toContain("核心冲突");
+      expect(generate.mock.calls[2]?.[0]).toContain("严重格式提醒");
+      expect(generate.mock.calls[2]?.[0]).toContain("=== SECTION: story_frame ===");
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  });
+
   it("honors configured foundation review retry count before accepting a rejected foundation", async () => {
     const { root, runner, bookId } = await createRunnerFixture({
       foundationReviewRetries: 4,

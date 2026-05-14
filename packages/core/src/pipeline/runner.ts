@@ -436,7 +436,23 @@ export class PipelineRunner {
     readonly maxRetries?: number;
   }): Promise<ArchitectOutput> {
     const maxRetries = params.maxRetries ?? this.config.foundationReviewRetries ?? 2;
-    let foundation = await params.generate();
+    const FORMAT_REMINDER = params.language === "en"
+      ? "\n\n## CRITICAL FORMAT REMINDER: Your previous output was missing ALL === SECTION: === markers. You MUST output exactly 5 sections:\n=== SECTION: story_frame ===\n=== SECTION: volume_map ===\n=== SECTION: roles ===\n=== SECTION: book_rules ===\n=== SECTION: pending_hooks ===\nMissing any section will cause a system crash."
+      : "\n\n## 严重格式提醒：你的上一次输出完全没有使用 === SECTION: === 标记。你必须严格按照以下格式输出 5 个 section：\n=== SECTION: story_frame ===\n=== SECTION: volume_map ===\n=== SECTION: roles ===\n=== SECTION: book_rules ===\n=== SECTION: pending_hooks ===\n缺少任何一个 section 都会导致系统崩溃。";
+
+    let foundation: ArchitectOutput;
+    try {
+      foundation = await params.generate();
+    } catch (err) {
+      if (this.isSectionParseError(err)) {
+        this.config.logger?.warn(
+          "[generateAndReviewFoundation] Initial generation missing sections, retrying with format reminder",
+        );
+        foundation = await params.generate(FORMAT_REMINDER);
+      } else {
+        throw err;
+      }
+    }
 
     for (let attempt = 0; attempt < maxRetries; attempt++) {
       this.logStage(params.stageLanguage, {
@@ -468,7 +484,19 @@ export class PipelineRunner {
         en: `Foundation rejected (${review.totalScore}/100), regenerating...`,
       });
 
-      foundation = await params.generate(this.buildFoundationReviewFeedback(review, params.language));
+      const reviewFeedback = this.buildFoundationReviewFeedback(review, params.language);
+      try {
+        foundation = await params.generate(reviewFeedback);
+      } catch (err) {
+        if (this.isSectionParseError(err)) {
+          this.config.logger?.warn(
+            "[generateAndReviewFoundation] Regeneration missing sections, retrying with format reminder",
+          );
+          foundation = await params.generate(reviewFeedback + FORMAT_REMINDER);
+        } else {
+          throw err;
+        }
+      }
     }
 
     // Final review
@@ -520,6 +548,10 @@ export class PipelineRunner {
           "## 分项问题",
           dimensionLines || "- 无",
         ].join("\n");
+  }
+
+  private isSectionParseError(err: unknown): boolean {
+    return err instanceof Error && /missing required section/i.test(err.message);
   }
 
   private agentCtx(bookId?: string): AgentContext {
