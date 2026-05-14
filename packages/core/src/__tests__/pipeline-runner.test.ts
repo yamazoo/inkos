@@ -2099,7 +2099,9 @@ describe("PipelineRunner", () => {
   it("records a length warning when a single normalize pass still misses the hard range", async () => {
     const { root, runner, state, bookId } = await createRunnerFixture();
     const overlongDraft = "冗余句子。".repeat(60);
-    const stillOverHard = "仍然过长。".repeat(70);
+    // Must stay above hardMax (295 for target=220) but within 110% of original (330)
+    // to pass the expansion safety net in normalizeDraftLengthIfNeeded.
+    const stillOverHard = "仍然过长。".repeat(61);
 
     vi.spyOn(WriterAgent.prototype, "writeChapter").mockResolvedValue(
       createWriterOutput({

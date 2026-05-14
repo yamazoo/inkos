@@ -2995,9 +2995,10 @@ ${matrix}`,
       };
     }
 
-    // Safety net: if normalizer expanded content when it should have compressed,
-    // reject and keep original. This catches LLM non-compliance in compress mode.
-    if (normalized.finalCount > writerCount * 1.1 && isOutsideSoftRange(writerCount, params.lengthSpec)) {
+    // Safety net: if normalizer expanded content past the soft-max when it should
+    // have compressed, reject and keep original. This catches LLM non-compliance
+    // in compress mode while allowing legitimate expansion from below soft-min.
+    if (normalized.finalCount > writerCount * 1.1 && normalized.finalCount > params.lengthSpec.softMax && isOutsideSoftRange(writerCount, params.lengthSpec)) {
       this.logWarn(this.languageFromLengthSpec(params.lengthSpec), {
         zh: `字数归一化被拒绝（膨胀）：第${params.chapterNumber}章 ${writerCount} -> ${normalized.finalCount}（归一器在应压缩时反而膨胀了内容）`,
         en: `Length normalization rejected (expanded): chapter ${params.chapterNumber} ${writerCount} -> ${normalized.finalCount} (normalizer expanded content when compression was needed)`,

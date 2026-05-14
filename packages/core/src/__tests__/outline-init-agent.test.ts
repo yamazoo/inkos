@@ -27,9 +27,9 @@ const STUB_CLIENT: LLMClient = {
 function chapterJson(start: number, count: number): string {
   const chapters = Array.from({ length: count }, (_, i) => ({
     chapter: start + i,
-    event: `核心事件第${start + i}章`,
-    beat: `节奏转折第${start + i}章`,
-    description: `详细描述第${start + i}章的剧情推进和章末钩子`,
+    event: `核心事件第${start + i}章——主角遭遇关键转折，敌人现身，盟友出现，局势彻底改变`,
+    beat: `节奏转折第${start + i}章——从平静到紧张再到爆发的氛围三段切换，每段五到六个自然段推进`,
+    description: `详细描述第${start + i}章的剧情推进：主角在本章面临重要抉择，通过内心挣扎展现角色成长弧线，随后在中段遭遇核心冲突的第一次正面碰撞，最终在章末留下引人深思的钩子为下一章的冲突升级做好铺垫。场景描写兼具视觉冲击力与情感张力。`,
   }));
   return `\`\`\`json\n${JSON.stringify(chapters, null, 2)}\n\`\`\``;
 }

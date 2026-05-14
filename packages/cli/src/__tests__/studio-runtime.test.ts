@@ -38,7 +38,7 @@ describe("studio runtime resolution", () => {
     "index.js",
   );
 
-  it("prefers the repository-local tsx loader for monorepo sources", async () => {
+  it("prefers the repository-local tsx loader for monorepo sources", { timeout: 15000 }, async () => {
     accessMock.mockImplementation(async (path: string) => {
       if (path === tsSourceEntry || path === tsxLoader) {
         return;

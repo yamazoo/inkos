@@ -116,11 +116,10 @@ export async function readBookRules(bookDir: string): Promise<ParsedBookRules | 
         );
       });
       if (parsed) {
-        // Attach the narrative body so the Writer receives world iron rules,
-        // power system definitions, and core conflict framing in its system
-        // prompt under "## 本书专属规则".
-        const storyFrameBody = frontmatterMatch[2]?.trim() ?? "";
-        return { ...parsed, body: storyFrameBody || parsed.body };
+        // Phase 5 hotfix 2: the prose body underneath story_frame.md is the
+        // 5-section outline essay — it must NOT leak into ParsedBookRules.body.
+        // Body is only meaningful for legacy book_rules.md (narrow narrative rules).
+        return { ...parsed, body: "" };
       }
       // fall through to legacy fallback below
     }

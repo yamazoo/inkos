@@ -126,7 +126,7 @@ export class TomatoPlatformAdapter implements PlatformAdapter {
     const match = title.match(/第\s*([0-9零〇一二三四五六七八九十百千万两]+)\s*章/);
     if (!match) return "";
     const num = parseChineseNumber(match[1]);
-    return String(num);
+    return String(num).padStart(3, "0");
   }
 
   async login(page: Page, _cookiesPath: string): Promise<void> {

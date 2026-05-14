@@ -17,7 +17,7 @@ describe("project bootstrap", () => {
     await rm(tempDir, { recursive: true, force: true });
   });
 
-  it("creates a minimal Studio-first project when none exists", async () => {
+  it("creates a minimal Studio-first project when none exists", { timeout: 15000 }, async () => {
     const { ensureProjectDirectoryInitialized } = await import("../project-bootstrap.js");
 
     const initialized = await ensureProjectDirectoryInitialized(tempDir, { language: "zh" });

@@ -223,6 +223,15 @@ async function loadOrBootstrapHooks(params: {
       "hooks.json",
     );
     if (existing) {
+      // Always deduplicate even when loading from JSON (stale data may have duplicates)
+      const dedupedHooks = deduplicateStoredHooks(existing.hooks);
+      if (dedupedHooks.length < existing.hooks.length) {
+        const removedCount = existing.hooks.length - dedupedHooks.length;
+        appendWarning(params.warnings, `hooks.json: removed ${removedCount} duplicate hook entries`);
+        const repaired = HooksStateSchema.parse({ hooks: dedupedHooks });
+        await writeFile(params.statePath, JSON.stringify(repaired, null, 2), "utf-8");
+        return repaired;
+      }
       return existing;
     }
   }
@@ -512,6 +521,17 @@ function deduplicateSummaryRows<T extends { chapter: number }>(rows: ReadonlyArr
     byChapter.set(row.chapter, row);
   }
   return [...byChapter.values()].sort((a, b) => a.chapter - b.chapter);
+}
+
+function deduplicateStoredHooks(hooks: ReadonlyArray<StoredHook>): StoredHook[] {
+  const byId = new Map<string, StoredHook>();
+  for (const hook of hooks) {
+    const existing = byId.get(hook.hookId);
+    if (!existing || hook.lastAdvancedChapter > existing.lastAdvancedChapter) {
+      byId.set(hook.hookId, hook);
+    }
+  }
+  return [...byId.values()];
 }
 
 export function resolveContiguousChapterPrefix(chapterNumbers: ReadonlyArray<number>): number {

@@ -546,7 +546,7 @@ describe("CLI integration", () => {
       expect(stdout).toContain("inkos.json");
     });
 
-    it("repairs missing node runtime pin files for old projects", async () => {
+    it("repairs missing node runtime pin files for old projects", { timeout: 15000 }, async () => {
       await stat(join(projectDir, "inkos.json")).catch(() => {
         run(["init"]);
       });

@@ -114,6 +114,7 @@ async function createRunnerFixture(
     } as ConstructorParameters<typeof PipelineRunner>[0]["client"],
     model: "test-model",
     projectRoot: root,
+    inputGovernanceMode: "legacy",
     ...configOverrides,
   });
 
