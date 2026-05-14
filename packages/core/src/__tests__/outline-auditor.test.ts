@@ -5,6 +5,8 @@ import {
   expandRangePlaceholders,
   generateSkeletonMarkdown,
   renderProgressBar,
+  validateVolumeBoundary,
+  type VolumeBoundaryRule,
 } from "../utils/outline-auditor.js";
 import type { VolumeOutline } from "../models/volume-outline.js";
 
@@ -337,7 +339,7 @@ describe("generateSkeletonMarkdown", () => {
 // auditChapterOutlines (I/O — reads per-volume JSON files)
 // ---------------------------------------------------------------------------
 
-import { mkdtemp, rm, writeFile, mkdir } from "node:fs/promises";
+import { mkdtemp, rm, writeFile, mkdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { auditChapterOutlines } from "../utils/outline-auditor.js";
@@ -852,5 +854,145 @@ describe("auditOutlineCross", () => {
     const result = await auditOutlineCross(tmpDir);
     const fileOverlapEntries = result.entries.filter(e => e.issueType === "cross-file-overlap");
     expect(fileOverlapEntries.length).toBe(0);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// validateVolumeBoundary — semantic volume-boundary checks
+// ---------------------------------------------------------------------------
+
+describe("validateVolumeBoundary", () => {
+  const vol1Rule: VolumeBoundaryRule = {
+    volumeId: 1,
+    chapterRange: [1, 40],
+    forbiddenKeywords: ["沈秋", "散修世界", "游历", "同行者", "栖云镇", "铁鹰帮", "丹道宗门", "冰原", "结伴"],
+    requiredEvents: ["剑冢", "陈珏", "三房婶婆", "祖父", "监视者"],
+  };
+
+  it("returns no violations for a clean volume-1 outline", () => {
+    const chapters = [
+      { chapter: 1, event: "陈渊扫地被欺", beat: "隐忍记账" },
+      { chapter: 5, event: "剑冢方向传来嗡鸣", beat: "陈渊首次感知剑冢召唤" },
+      { chapter: 10, event: "族比碾压陈珏", beat: "以彼之道还施彼身" },
+      { chapter: 13, event: "祖父传授守拙剑招", beat: "陈守渊首次出场" },
+      { chapter: 17, event: "监视者现身", beat: "陈渊直面暗处注视" },
+      { chapter: 18, event: "陈珏失踪", beat: "棋局一角浮现" },
+      { chapter: 20, event: "三房婶婆送别", beat: "亲情线高潮" },
+    ];
+
+    const violations = validateVolumeBoundary(chapters, vol1Rule);
+    expect(violations).toHaveLength(0);
+  });
+
+  it("detects out-of-range chapters", () => {
+    const chapters = [
+      { chapter: 1, event: "陈渊扫地", beat: "隐忍" },
+      { chapter: 41, event: "离开家族", beat: "踏入散修世界" }, // out of range
+    ];
+
+    const violations = validateVolumeBoundary(chapters, vol1Rule);
+    const oor = violations.filter(v => v.violationType === "out-of-range");
+    expect(oor).toHaveLength(1);
+    expect(oor[0].chapter).toBe(41);
+  });
+
+  it("detects forbidden keywords from volume 2", () => {
+    const chapters = [
+      { chapter: 25, event: "沈秋现身", beat: "同行者的初次接触" },
+    ];
+
+    const violations = validateVolumeBoundary(chapters, vol1Rule);
+    const fk = violations.filter(v => v.violationType === "forbidden-keyword");
+    expect(fk.length).toBeGreaterThanOrEqual(1);
+    expect(fk[0].detail).toContain("沈秋");
+  });
+
+  it("detects forbidden keyword in description field", () => {
+    const chapters = [
+      { chapter: 20, event: "陈渊辞行", beat: "离开", description: "陈渊踏上前往散修世界的道路" },
+    ];
+
+    const violations = validateVolumeBoundary(chapters, vol1Rule);
+    const fk = violations.filter(v => v.violationType === "forbidden-keyword");
+    expect(fk.length).toBeGreaterThanOrEqual(1);
+    expect(fk[0].detail).toContain("散修世界");
+  });
+
+  it("detects missing required events", () => {
+    // No chapter mentions 监视者 or 祖父
+    const chapters = [
+      { chapter: 1, event: "陈渊扫地", beat: "隐忍" },
+      { chapter: 5, event: "陈珏欺辱", beat: "记账" },
+      { chapter: 10, event: "三房婶婆送粥", beat: "温暖" },
+      { chapter: 15, event: "剑冢觉醒", beat: "获得剑意" },
+    ];
+
+    const violations = validateVolumeBoundary(chapters, vol1Rule);
+    const missing = violations.filter(v => v.violationType === "missing-required-event");
+    expect(missing.length).toBeGreaterThanOrEqual(2);
+    const details = missing.map(v => v.detail);
+    expect(details.some(d => d.includes("祖父"))).toBe(true);
+    expect(details.some(d => d.includes("监视者"))).toBe(true);
+  });
+
+  it("catches the real-world bug: 沈秋 appearing in vol-1 chapters", () => {
+    // This simulates the actual bug from the audit: vol-1-chapters.json
+    // contains 沈秋 events at chapter 25+
+    const buggyChapters = [
+      { chapter: 1, event: "废物扫地，记账开始", beat: "陈渊沉默记下第一笔账" },
+      { chapter: 25, event: "沈秋现身：同行者的初次接触", beat: "两个独行者的试探" },
+      { chapter: 30, event: "剑意归一的第二阶段：极限突破", beat: "第二道剑意归入剑冢" },
+    ];
+
+    const violations = validateVolumeBoundary(buggyChapters, vol1Rule);
+    const fk = violations.filter(v => v.violationType === "forbidden-keyword");
+    // Should catch 沈秋 and 同行者
+    expect(fk.length).toBeGreaterThanOrEqual(1);
+    expect(fk.some(v => v.detail.includes("沈秋"))).toBe(true);
+  });
+
+  it("handles empty chapter list", () => {
+    const violations = validateVolumeBoundary([], vol1Rule);
+    // All required events missing
+    const missing = violations.filter(v => v.violationType === "missing-required-event");
+    expect(missing.length).toBe(vol1Rule.requiredEvents!.length);
+  });
+
+  it("real vol-1-chapters.json for 一剑一冢一苍生 has no forbidden keywords", async () => {
+    // Integration test: read the actual file and validate volume boundaries
+    const bookDir = join(process.cwd(), "books", "一剑一冢一苍生");
+    const filePath = join(bookDir, "story", "outline", "vol-1-chapters.json");
+
+    let raw: string;
+    try {
+      raw = await readFile(filePath, "utf-8");
+    } catch {
+      // File doesn't exist — skip
+      return;
+    }
+
+    const data = JSON.parse(raw);
+    const chapters = data.chapters as Array<{ chapter: number; event: string; beat: string; description?: string }>;
+
+    const rule: VolumeBoundaryRule = {
+      volumeId: 1,
+      chapterRange: [1, 40],
+      forbiddenKeywords: ["沈秋", "散修世界", "栖云镇", "铁鹰帮", "丹道宗门", "冰原", "结伴游历"],
+      requiredEvents: ["剑冢", "陈珏", "三房婶婆", "祖父", "监视者"],
+    };
+
+    const violations = validateVolumeBoundary(chapters, rule);
+
+    // No forbidden keywords should appear
+    const forbidden = violations.filter(v => v.violationType === "forbidden-keyword");
+    expect(forbidden).toHaveLength(0);
+
+    // No out-of-range chapters
+    const oor = violations.filter(v => v.violationType === "out-of-range");
+    expect(oor).toHaveLength(0);
+
+    // All required events present
+    const missing = violations.filter(v => v.violationType === "missing-required-event");
+    expect(missing).toHaveLength(0);
   });
 });

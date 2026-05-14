@@ -395,6 +395,105 @@ export function generateSkeletonMarkdown(
 }
 
 // ---------------------------------------------------------------------------
+// Volume-boundary semantic validation (pure)
+// ---------------------------------------------------------------------------
+
+export interface VolumeBoundaryRule {
+  /** Volume ID these rules apply to */
+  volumeId: number;
+  /** Inclusive chapter range this volume must stay within */
+  chapterRange: [number, number];
+  /**
+   * Forbidden keywords — if any appear in event/beat/description, the chapter
+   * is flagged as leaking content from another volume.
+   * Matched as substring (case-sensitive).
+   */
+  forbiddenKeywords?: string[];
+  /**
+   * Required event keywords — at least one chapter in the volume must contain
+   * each keyword in its event or beat field. Ensures key plot beats are present.
+   */
+  requiredEvents?: string[];
+}
+
+export interface VolumeBoundaryViolation {
+  volumeId: number;
+  chapter: number;
+  violationType: "out-of-range" | "forbidden-keyword" | "missing-required-event";
+  detail: string;
+}
+
+/**
+ * Pure validation: check that a volume's chapter list respects its declared
+ * boundaries and doesn't leak content from other volumes.
+ *
+ * Returns violations only — empty array means clean.
+ */
+export function validateVolumeBoundary(
+  chapters: Array<{ chapter: number; event: string; beat: string; description?: string }>,
+  rule: VolumeBoundaryRule,
+): VolumeBoundaryViolation[] {
+  const violations: VolumeBoundaryViolation[] = [];
+  const [rangeStart, rangeEnd] = rule.chapterRange;
+
+  // Track which required events are found
+  const foundEvents = new Set<string>();
+
+  for (const ch of chapters) {
+    // Range check
+    if (ch.chapter < rangeStart || ch.chapter > rangeEnd) {
+      violations.push({
+        volumeId: rule.volumeId,
+        chapter: ch.chapter,
+        violationType: "out-of-range",
+        detail: `Chapter ${ch.chapter} is outside volume ${rule.volumeId} range [${rangeStart}, ${rangeEnd}]`,
+      });
+    }
+
+    // Forbidden keyword check
+    if (rule.forbiddenKeywords?.length) {
+      const text = [ch.event, ch.beat, ch.description ?? ""].join(" ");
+      for (const kw of rule.forbiddenKeywords) {
+        if (text.includes(kw)) {
+          violations.push({
+            volumeId: rule.volumeId,
+            chapter: ch.chapter,
+            violationType: "forbidden-keyword",
+            detail: `Chapter ${ch.chapter} contains forbidden keyword "${kw}" — likely content from another volume`,
+          });
+        }
+      }
+    }
+
+    // Required event tracking
+    if (rule.requiredEvents?.length) {
+      const text = [ch.event, ch.beat].join(" ");
+      for (const kw of rule.requiredEvents) {
+        if (text.includes(kw)) {
+          foundEvents.add(kw);
+        }
+      }
+    }
+  }
+
+  // Check for missing required events
+  if (rule.requiredEvents?.length) {
+    for (const kw of rule.requiredEvents) {
+      if (!foundEvents.has(kw)) {
+        violations.push({
+          volumeId: rule.volumeId,
+          chapter: -1,
+          violationType: "missing-required-event",
+          detail: `Volume ${rule.volumeId} is missing required event keyword: "${kw}"`,
+        });
+      }
+    }
+  }
+
+  return violations;
+}
+
+// ---------------------------------------------------------------------------
 // Per-volume chapter file audit (I/O)
 // ---------------------------------------------------------------------------
 
