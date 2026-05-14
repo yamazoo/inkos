@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.3.11
+
+### Release Focus
+
+大纲系统健壮性提升：新增卷边界校验防止跨卷内容泄露，修复多个影响流水线稳定性的 bug，并解决全部 33 个历史遗留测试失败。
+
+### Features
+
+- 新增 `validateVolumeBoundary` 纯函数，校验大纲章节不跨越卷边界（章节范围、禁用关键词、必要事件检查）
+- `state-bootstrap` 新增 `deduplicateStoredHooks`，自动去除 hooks.json 中的重复条目
+
+### Bug Fixes
+
+- 修复 `readBookRules` 将 story_frame.md 大纲散文泄露到 `ParsedBookRules.body` 的问题
+- 修复 `normalizeDraftLengthIfNeeded` 膨胀安全网误拒合理扩张（soft-min 以下的正常增长）
+- 修复番茄平台 `deriveChapterNumber` 章节号未补零（`1` → `001`）
+- 修复 33 个预存测试失败：覆盖 phase5-hotfix、state-bootstrap、outline-init-agent、write-sync、pipeline-runner、session-transcript、cli-integration 等模块
+
 ## v1.3.10
 
 ### Release Focus
