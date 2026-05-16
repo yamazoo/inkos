@@ -23,11 +23,22 @@ export function normalizePostWriteSurface(
 ): string {
   let normalized = stripThinkBlocks(content);
   normalized = stripPostWriteMetaLines(normalized);
+  normalized = stripFullLineItalic(normalized);
   normalized = stripInlineMarkdown(normalized);
   if (languageOverride !== "en") {
     normalized = normalized.replace(/——+/g, "，");
+    normalized = normalized.replace(/「/g, "“").replace(/」/g, "”");
   }
   return normalized.trimEnd();
+}
+
+/**
+ * Strip lines where the entire line is wrapped in markdown italic markers.
+ * e.g. "*不远处的三长老站在书房窗前，看着心腹传回来的消息。*"
+ * Safe: anchors (^...$) prevent matching inline asterisks within longer lines.
+ */
+function stripFullLineItalic(content: string): string {
+  return content.replace(/^\*([^*\n]+)\*$/gm, "$1");
 }
 
 // Order matters: bold (**) before underline (__). Single * is NOT stripped —
@@ -729,6 +740,47 @@ export function detectDuplicateTitle(
   }
 
   return violations;
+}
+
+/**
+ * Detect generic/default chapter titles that indicate the LLM failed to provide a meaningful title.
+ * Patterns: "第23章", "Chapter 23", or empty.
+ */
+export function detectGenericTitle(
+  title: string,
+  chapterNumber: number,
+  language: "zh" | "en" = "zh",
+): ReadonlyArray<PostWriteViolation> {
+  const trimmed = title.trim();
+  if (!trimmed) {
+    return [{
+      rule: language === "en" ? "empty-title" : "空标题",
+      severity: "warning",
+      description: language === "en"
+        ? `Chapter ${chapterNumber} has no title. The LLM failed to output a === CHAPTER_TITLE === tag.`
+        : `第${chapterNumber}章没有标题，LLM 未输出 === CHAPTER_TITLE === 标签`,
+      suggestion: language === "en"
+        ? "Re-run with a title generation prompt or manually assign a title."
+        : "重新生成或手动为章节命名",
+    }];
+  }
+
+  const isGeneric = language === "en"
+    ? /^Chapter\s+\d+$/i.test(trimmed)
+    : /^第\s*\d+\s*章$/.test(trimmed);
+
+  if (!isGeneric) return [];
+
+  return [{
+    rule: language === "en" ? "generic-title" : "默认标题",
+    severity: "warning",
+    description: language === "en"
+      ? `Chapter title "${trimmed}" is the default placeholder — no meaningful title was generated.`
+      : `章节标题"${trimmed}"是默认占位符，未生成有意义的标题`,
+    suggestion: language === "en"
+      ? "The LLM failed to follow the === CHAPTER_TITLE === output format. Consider re-running or manually assigning a 2-4 word title."
+      : "LLM 未遵循 === CHAPTER_TITLE === 输出格式。建议重新生成或手动赋予一个2-4字标题",
+  }];
 }
 
 export function resolveDuplicateTitle(

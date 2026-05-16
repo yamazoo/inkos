@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import {
   detectDuplicateTitle,
+  detectGenericTitle,
   detectParagraphLengthDrift,
   detectParagraphShapeWarnings,
   resolveDuplicateTitle,
@@ -48,6 +49,124 @@ describe("normalizePostWriteSurface - stripInlineMarkdown", () => {
     const content = "他*轻声*说道。";
     const normalized = normalizePostWriteSurface(content);
     expect(normalized).toContain("*轻声*");
+  });
+});
+
+describe("normalizePostWriteSurface - stripFullLineItalic", () => {
+  it("strips full-line italic markers from POV-shift sections", () => {
+    const content = [
+      "他转身离开。",
+      "",
+      "*不远处的三长老站在书房窗前，看着心腹传回来的消息。*",
+      "*\"陈渊回了破院，喝了半碗粥，坐到院墙下发呆。\"*",
+      "*三长老把纸条扔进炭盆，看着它烧成灰烬。*",
+    ].join("\n");
+    const normalized = normalizePostWriteSurface(content);
+    expect(normalized).not.toContain("*不");
+    expect(normalized).not.toContain("发呆。*");
+    expect(normalized).toContain("不远处的三长老站在书房窗前");
+    expect(normalized).toContain("三长老把纸条扔进炭盆");
+  });
+
+  it("does NOT strip inline * within longer lines", () => {
+    const content = "他*轻声*说道，然后转身离开。";
+    const normalized = normalizePostWriteSurface(content);
+    expect(normalized).toContain("*轻声*");
+  });
+
+  it("handles multiple consecutive full-line italic lines", () => {
+    const content = [
+      "*窗外起了风，吹得树枝沙沙作响。*",
+      "*没有人回答。*",
+      "*他念着这个名字，念得很轻。*",
+    ].join("\n");
+    const normalized = normalizePostWriteSurface(content);
+    expect(normalized).not.toContain("*窗");
+    expect(normalized).not.toContain("作响。*");
+    expect(normalized).toContain("窗外起了风");
+    expect(normalized).toContain("没有人回答。");
+  });
+
+  it("preserves lines with only one asterisk (not full-line italic)", () => {
+    const content = "这是正文。\n* 这是一行列表项\n继续正文。";
+    const normalized = normalizePostWriteSurface(content);
+    expect(normalized).toContain("* 这是一行列表项");
+  });
+});
+
+describe("normalizePostWriteSurface - quotation marks", () => {
+  it("converts corner brackets to Chinese double quotes", () => {
+    const content = "「你好。」他说道。";
+    const normalized = normalizePostWriteSurface(content);
+    expect(normalized).toBe("\u201c你好。\u201d他说道。");
+    expect(normalized).not.toContain("「");
+    expect(normalized).not.toContain("」");
+  });
+
+  it("converts mixed corner brackets and curly quotes to all curly quotes", () => {
+    const content = "「带毒上场，是想碰瓷我陈家吗？」\n\n他听见有人低声说了一句\u201c可惜了\u201d。";
+    const normalized = normalizePostWriteSurface(content);
+    expect(normalized).not.toContain("「");
+    expect(normalized).not.toContain("」");
+    expect(normalized).toContain("\u201c带毒上场");
+    expect(normalized).toContain("可惜了\u201d");
+  });
+
+  it("does NOT convert corner brackets when language is en", () => {
+    const content = "「Hello,」 he said.";
+    const normalized = normalizePostWriteSurface(content, "en");
+    expect(normalized).toContain("「");
+    expect(normalized).toContain("」");
+  });
+
+  it("converts em-dash to comma for zh content", () => {
+    const content = "他走进来——然后转身离开。";
+    const normalized = normalizePostWriteSurface(content, "zh");
+    expect(normalized).not.toContain("——");
+    expect(normalized).toContain("，");
+  });
+});
+
+describe("detectGenericTitle", () => {
+  it("returns warning for empty title", () => {
+    const violations = detectGenericTitle("", 1);
+    expect(violations).toHaveLength(1);
+    expect(violations[0]!.severity).toBe("warning");
+    expect(violations[0]!.rule).toBe("空标题");
+  });
+
+  it("returns warning for generic Chinese title", () => {
+    const violations = detectGenericTitle("第23章", 23);
+    expect(violations).toHaveLength(1);
+    expect(violations[0]!.rule).toBe("默认标题");
+  });
+
+  it("returns warning for generic Chinese title with whitespace", () => {
+    const violations = detectGenericTitle("  第 32 章  ", 32);
+    expect(violations).toHaveLength(1);
+  });
+
+  it("returns empty array for meaningful Chinese title", () => {
+    expect(detectGenericTitle("暗缝", 23)).toHaveLength(0);
+  });
+
+  it("does not flag title with subtitle after chapter number", () => {
+    expect(detectGenericTitle("第32章 暗缝", 32)).toHaveLength(0);
+  });
+
+  it("returns warning for generic English title", () => {
+    const violations = detectGenericTitle("Chapter 5", 5, "en");
+    expect(violations).toHaveLength(1);
+    expect(violations[0]!.rule).toBe("generic-title");
+  });
+
+  it("returns empty array for meaningful English title", () => {
+    expect(detectGenericTitle("The Descent", 5, "en")).toHaveLength(0);
+  });
+
+  it("uses zh rules by default", () => {
+    const violations = detectGenericTitle("第1章", 1);
+    expect(violations[0]!.rule).toBe("默认标题");
   });
 });
 

@@ -21,18 +21,19 @@ export function buildEnglishCoreRules(_book: BookConfig): string {
 10. **Description serves narrative**: Environment descriptions set mood or foreshadow. One line is enough.
 11. **Downtime earns its place**: Quiet scenes must plant hooks, advance relationships, or build contrast. Pure filler is padding.
 12. **Dialogue-driven**: In scenes with character interaction, deliver conflict and information through dialogue first, narration second. Solo/escape/exploration scenes are exempt.
+13. **No markdown formatting**: Never use markdown syntax (asterisks, underscores, backticks) in chapter prose. POV-shift sections are written as plain text.
 
 ### Logic / Consistency
-12. **World rules are law**: Once established, physics/magic/social rules cannot bend for plot convenience.
-13. **Cost matters**: Every power, ability, or advantage must have a cost or limitation that creates real trade-offs.
-14. **Consequences stick**: Actions have consequences. Characters can't escape repercussions through luck or author fiat.
-15. **No reset buttons**: The world must change permanently in response to major events.
+14. **World rules are law**: Once established, physics/magic/social rules cannot bend for plot convenience.
+15. **Cost matters**: Every power, ability, or advantage must have a cost or limitation that creates real trade-offs.
+16. **Consequences stick**: Actions have consequences. Characters can't escape repercussions through luck or author fiat.
+17. **No reset buttons**: The world must change permanently in response to major events.
 
 ### Reader Psychology
-16. **Promise and payoff**: Every planted hook must be resolved. Every mystery must have an answer.
-17. **Escalation**: Each conflict should feel higher-stakes than the last—either externally or emotionally.
-18. **Reader proxy**: One character should react with surprise/excitement/fear when remarkable things happen, giving readers permission to feel the same.
-19. **Pacing breathing room**: After a high-intensity sequence, give 0.5-1 chapter of lower intensity before the next escalation.`;
+18. **Promise and payoff**: Every planted hook must be resolved. Every mystery must have an answer.
+19. **Escalation**: Each conflict should feel higher-stakes than the last—either externally or emotionally.
+20. **Reader proxy**: One character should react with surprise/excitement/fear when remarkable things happen, giving readers permission to feel the same.
+21. **Pacing breathing room**: After a high-intensity sequence, give 0.5-1 chapter of lower intensity before the next escalation.`;
 }
 
 // English equivalent of buildAntiAIExamples()

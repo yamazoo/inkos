@@ -4749,7 +4749,8 @@ describe("PipelineRunner", () => {
         ]),
       );
       expect(result.applied).toBe(false);
-      expect(result.status).toBe("unchanged");
+      // Status reflects unresolved audit issues, not just "unchanged"
+      expect(result.status).toBe("audit-failed");
       expect(result.skippedReason).toContain("did not improve");
       expect(savedChapter).toContain(originalBody);
       expect(savedChapter).not.toContain("修订后收束更利落");
@@ -5166,6 +5167,132 @@ describe("PipelineRunner", () => {
         target: 900,
         countingMode: "en_words",
       });
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  });
+
+  it("recovers real title from CHAPTER_TITLE marker when index title is generic", async () => {
+    const { root, runner, state, bookId } = await createRunnerFixture();
+    const storyDir = join(state.bookDir(bookId), "story");
+    const chaptersDir = join(state.bookDir(bookId), "chapters");
+
+    // Chapter file has generic heading but real title in CHAPTER_TITLE marker
+    const chapterBody = "CHAPTER_TITLE\n暗缝\n\nCHAPTER_CONTENT\n夜风从东墙缺口灌进来，带着墙根青苔的潮气。陈渊靠在窗边，令牌压在掌心。";
+    await writeFile(
+      join(chaptersDir, "0032_第32章.md"),
+      `# 第32章 第32章\n\n${chapterBody}`,
+      "utf-8",
+    );
+    await Promise.all([
+      writeFile(join(storyDir, "current_state.md"), createStateCard({
+        chapter: 32,
+        location: "陈家",
+        protagonistState: "陈渊潜伏观察。",
+        goal: "追踪三长老信使。",
+        conflict: "监视与反监视。",
+      }), "utf-8"),
+      writeFile(join(storyDir, "pending_hooks.md"), "# Pending Hooks\n", "utf-8"),
+    ]);
+    // Index has generic title (the bug scenario)
+    await state.saveChapterIndex(bookId, [{
+      number: 32,
+      title: "第32章",
+      status: "audit-failed",
+      wordCount: 100,
+      createdAt: "2026-05-15T07:55:03.629Z",
+      updatedAt: "2026-05-15T07:55:03.629Z",
+      auditIssues: ["[critical] 正文中出现了章节号指称"],
+      lengthWarnings: [],
+    }]);
+
+    vi.spyOn(ContinuityAuditor.prototype, "auditChapter").mockResolvedValue(
+      createAuditResult({
+        passed: false,
+        issues: [CRITICAL_ISSUE],
+        summary: "needs revision",
+      }),
+    );
+    vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
+      createReviseOutput({
+        revisedContent: "修正后的正文内容。",
+        wordCount: 9,
+      }),
+    );
+
+    try {
+      await runner.reviseDraft(bookId, 32);
+
+      // File should be renamed to match recovered title
+      const chapterFiles = await readdir(chaptersDir);
+      expect(chapterFiles.some((f) => f.startsWith("0032_") && f.includes("第32章"))).toBe(false);
+      expect(chapterFiles.some((f) => f === "0032_暗缝.md")).toBe(true);
+      const savedContent = await readFile(join(chaptersDir, "0032_暗缝.md"), "utf-8");
+      expect(savedContent).toMatch(/^# 第32章 暗缝/);
+      expect(savedContent).not.toContain("第32章 第32章");
+
+      // Index should also be updated with recovered title
+      const updatedIndex = await state.loadChapterIndex(bookId);
+      const ch32 = updatedIndex.find((ch) => ch.number === 32);
+      expect(ch32?.title).toBe("暗缝");
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  });
+
+  it("preserves index title when it is already meaningful", async () => {
+    const { root, runner, state, bookId } = await createRunnerFixture();
+    const storyDir = join(state.bookDir(bookId), "story");
+    const chaptersDir = join(state.bookDir(bookId), "chapters");
+
+    await writeFile(
+      join(chaptersDir, "0001_Test_Chapter.md"),
+      "# 第1章 Test Chapter\n\nOriginal body.",
+      "utf-8",
+    );
+    await Promise.all([
+      writeFile(join(storyDir, "current_state.md"), createStateCard({
+        chapter: 1,
+        location: "Ashen ferry crossing",
+        protagonistState: "Lin Yue still hides the oath token.",
+        goal: "Find the vanished mentor.",
+        conflict: "The mentor debt is still personal.",
+      }), "utf-8"),
+      writeFile(join(storyDir, "pending_hooks.md"), "# Pending Hooks\n", "utf-8"),
+    ]);
+    // Index has a meaningful title (not generic)
+    await state.saveChapterIndex(bookId, [{
+      number: 1,
+      title: "Test Chapter",
+      status: "audit-failed",
+      wordCount: "Original body.".length,
+      createdAt: "2026-03-19T00:00:00.000Z",
+      updatedAt: "2026-03-19T00:00:00.000Z",
+      auditIssues: [],
+      lengthWarnings: [],
+    }]);
+
+    vi.spyOn(ContinuityAuditor.prototype, "auditChapter").mockResolvedValue(
+      createAuditResult({
+        passed: false,
+        issues: [CRITICAL_ISSUE],
+        summary: "needs revision",
+      }),
+    );
+    vi.spyOn(ReviserAgent.prototype, "reviseChapter").mockResolvedValue(
+      createReviseOutput({
+        revisedContent: "Spot-fixed body.",
+        wordCount: "Spot-fixed body.".length,
+      }),
+    );
+
+    try {
+      await runner.reviseDraft(bookId, 1);
+
+      // Title should remain unchanged (not overwritten by chapter body marker)
+      const updatedIndex = await state.loadChapterIndex(bookId);
+      const ch1 = updatedIndex.find((ch) => ch.number === 1);
+      expect(ch1?.title).toBe("Test Chapter");
     } finally {
       await rm(root, { recursive: true, force: true });
     }

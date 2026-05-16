@@ -79,4 +79,39 @@ paragraph 2`;
     const input = "before<Think>reasoning</Think>after";
     expect(stripThinkBlocks(input)).toBe("beforeafter");
   });
+
+  it("removes orphaned </think> closing tag without opening tag", () => {
+    const input = "# 第35章 荒祠\n</think>\n\n族务会的议堂里没剩几个人。";
+    const result = stripThinkBlocks(input);
+    expect(result).toContain("# 第35章 荒祠");
+    expect(result).toContain("族务会的议堂里没剩几个人。");
+    expect(result).not.toContain("</think>");
+  });
+
+  it("removes orphaned </think> after a matched pair is stripped", () => {
+    const input = "<think>first block</think>remaining<think>second</think>final";
+    const result = stripThinkBlocks(input);
+    expect(result).toBe("remainingfinal");
+  });
+
+  it("removes orphaned closing tags for thought and thinking", () => {
+    const input = "some text</thought>more text</thinking>end";
+    const result = stripThinkBlocks(input);
+    expect(result).toBe("some textmore textend");
+  });
+
+  it("handles the exact chapter 35 regression case", () => {
+    const input = `<think>
+章节构思...
+</think>
+# 第35章 荒祠
+</think>
+
+族务会的议堂里没剩几个人。`;
+    const result = stripThinkBlocks(input);
+    expect(result).toContain("# 第35章 荒祠");
+    expect(result).toContain("族务会的议堂里没剩几个人。");
+    expect(result).not.toContain("<think>");
+    expect(result).not.toContain("</think>");
+  });
 });

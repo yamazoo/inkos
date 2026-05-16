@@ -52,6 +52,7 @@ import { findVolumeForChapter, VolumeOutlineSchema } from "../models/volume-outl
 import { loadNarrativeMemorySeed, loadSnapshotCurrentStateFacts } from "../state/runtime-state-store.js";
 import { rewriteStructuredStateFromMarkdown } from "../state/state-bootstrap.js";
 import { readFile, readdir, writeFile, mkdir, rename, rm, stat } from "node:fs/promises";
+import { sanitizeFilename } from "../utils/filename.js";
 import { join } from "node:path";
 import {
   parseStateDegradedReviewNote,
@@ -1043,7 +1044,7 @@ export class PipelineRunner {
       // Save chapter file
       const chaptersDir = join(bookDir, "chapters");
       const paddedNum = String(chapterNumber).padStart(4, "0");
-      const sanitized = draftOutput.title.replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_").slice(0, 50);
+      const sanitized = sanitizeFilename(draftOutput.title);
       const filename = `${paddedNum}_${sanitized}.md`;
       const filePath = join(chaptersDir, filename);
 
@@ -1273,13 +1274,66 @@ export class PipelineRunner {
         en: `loading revision context for chapter ${targetChapter}`,
       });
       const index = await this.state.loadChapterIndex(bookId);
-      const chapterMeta = index.find((ch) => ch.number === targetChapter);
+      let chapterMeta = index.find((ch) => ch.number === targetChapter);
       if (!chapterMeta) {
         throw new Error(`Chapter ${targetChapter} not found in index`);
       }
 
       // Re-audit to get structured issues (index only stores strings)
       const content = await this.readChapterContent(bookDir, targetChapter);
+
+      // Recover real title from chapter file when the index title is generic.
+      // The original write may have stored "第32章" instead of the actual title
+      // (e.g. "暗缝") if the LLM failed to output a valid === CHAPTER_TITLE === tag.
+      // The real title lives behind the CHAPTER_TITLE marker in the chapter body.
+      const chaptersDir = join(bookDir, "chapters");
+      const chapterFiles = await readdir(chaptersDir);
+      const paddedNum = String(targetChapter).padStart(4, "0");
+      let existingFile = chapterFiles.find((f) => f.startsWith(paddedNum) && f.endsWith(".md"));
+      const { detectGenericTitle } = await import("../agents/post-write-validator.js");
+      if (existingFile && detectGenericTitle(chapterMeta.title, targetChapter).length > 0) {
+        const fullText = await readFile(join(chaptersDir, existingFile), "utf-8");
+        const recoveredTitle = this.extractTitleFromChapterContent(fullText, targetChapter);
+        if (recoveredTitle && recoveredTitle !== chapterMeta.title) {
+          chapterMeta = { ...chapterMeta, title: recoveredTitle };
+          // Rename the file to match the recovered title
+          existingFile = await this.renameChapterFileIfNeeded(
+            chaptersDir, paddedNum, existingFile, chapterMeta.title,
+          );
+        }
+      }
+
+      const titleWasRecovered = chapterMeta.title !== (index.find((ch) => ch.number === targetChapter)?.title ?? "");
+
+      // Defensive: ensure chapter summary exists in chapter_summaries.json
+      const summariesPath = join(bookDir, "story", "state", "chapter_summaries.json");
+      try {
+        const raw = await readFile(summariesPath, "utf-8");
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const parsed = JSON.parse(raw) as { rows: Array<any> };
+        const hasChapter = parsed.rows.some((r: any) => r.chapter === targetChapter);
+        if (!hasChapter) {
+          parsed.rows.push({
+            chapter: targetChapter,
+            title: chapterMeta.title,
+            characters: "",
+            events: `(修订后补充) 第${targetChapter}章 ${chapterMeta.title}`,
+            stateChanges: "",
+            hookActivity: "",
+            mood: "",
+            chapterType: "revision-recovery",
+          });
+          parsed.rows.sort((a: any, b: any) => a.chapter - b.chapter);
+          await writeFile(summariesPath, JSON.stringify(parsed, null, 2), "utf-8");
+        }
+      } catch (err: unknown) {
+        // ENOENT is expected when state directory or file doesn't exist yet (legacy bootstrap).
+        // Other errors (corrupt JSON, permission denied) should be surfaced.
+        if (err instanceof Error && "code" in err && (err as NodeJS.ErrnoException).code !== "ENOENT") {
+          this.config.logger?.warn(`[summaries] failed to ensure entry for ch${targetChapter}: ${err}`);
+        }
+      }
+
       const auditor = new ContinuityAuditor(this.agentCtxFor("auditor", bookId));
       const { profile: gp } = await this.loadGenreProfile(book.genre);
       const language = book.language ?? gp.language;
@@ -1313,17 +1367,18 @@ export class PipelineRunner {
       if (preRevision.blockingCount === 0 && preRevision.aiTellCount === 0) {
         const { normalizePostWriteSurface: normalize } = await import("../agents/post-write-validator.js");
         const normalized = normalize(content, language);
-        if (normalized !== content) {
-          const chaptersDir = join(bookDir, "chapters");
-          const files = await readdir(chaptersDir);
-          const paddedNum = String(targetChapter).padStart(4, "0");
-          const existingFile = files.find((f) => f.startsWith(paddedNum) && f.endsWith(".md"));
+        if (normalized !== content || titleWasRecovered) {
           if (existingFile) {
             const heading = language === "en"
               ? `# Chapter ${targetChapter}: ${chapterMeta.title}`
               : `# 第${targetChapter}章 ${chapterMeta.title}`;
             await writeFile(join(chaptersDir, existingFile), `${heading}\n\n${normalized}`, "utf-8");
           }
+        }
+        // Persist recovered title to index if it was updated from generic
+        if (titleWasRecovered) {
+          const fixedIndex = index.map((ch) => ch.number === targetChapter ? { ...ch, title: chapterMeta.title } : ch);
+          await this.state.saveChapterIndex(bookId, fixedIndex);
         }
         return {
           chapterNumber: targetChapter,
@@ -1380,11 +1435,20 @@ export class PipelineRunner {
         chapterContent: reviseOutput.revisedContent,
         lengthSpec,
       });
+      // Strip residual think blocks and surface metadata from revised content
+      const { normalizePostWriteSurface: normalizeSurface } = await import("../agents/post-write-validator.js");
+      const surfaceCleanedContent = normalizeSurface(normalizedRevision.content, stageLanguage);
+      const surfaceCleanedRevision = {
+        content: surfaceCleanedContent,
+        wordCount: countChapterLength(surfaceCleanedContent, lengthSpec.countingMode),
+        applied: normalizedRevision.applied,
+        tokenUsage: normalizedRevision.tokenUsage,
+      };
       const postRevision = await this.evaluateMergedAudit({
         auditor,
         book,
         bookDir,
-        chapterContent: normalizedRevision.content,
+        chapterContent: surfaceCleanedRevision.content,
         chapterNumber: targetChapter,
         language,
         auditOptions: reviseControlInput
@@ -1420,7 +1484,7 @@ export class PipelineRunner {
       if (mustKeepItems.length > 0) {
         const { validateMustKeepCompliance: checkMustKeep } = await import("../agents/post-write-validator.js");
         const mustKeepViolations = checkMustKeep(
-          normalizedRevision.content,
+          surfaceCleanedRevision.content,
           mustKeepItems,
           language === "en" ? "en" : "zh",
         );
@@ -1444,16 +1508,16 @@ export class PipelineRunner {
       const revisionBaseCount = countChapterLength(content, lengthSpec.countingMode);
       const lengthWarnings = this.buildLengthWarnings(
         targetChapter,
-        normalizedRevision.wordCount,
+        surfaceCleanedRevision.wordCount,
         lengthSpec,
       );
       const lengthTelemetry = this.buildLengthTelemetry({
         lengthSpec,
         writerCount: revisionBaseCount,
         postWriterNormalizeCount: 0,
-        postReviseCount: normalizedRevision.wordCount,
-        finalCount: normalizedRevision.wordCount,
-        normalizeApplied: normalizedRevision.applied,
+        postReviseCount: surfaceCleanedRevision.wordCount,
+        finalCount: surfaceCleanedRevision.wordCount,
+        normalizeApplied: surfaceCleanedRevision.applied,
         lengthWarning: lengthWarnings.length > 0,
       });
 
@@ -1468,13 +1532,37 @@ export class PipelineRunner {
         && (improvedBlocking || improvedAITells);
 
       if (!shouldApplyRevision) {
+        // Even when keeping the original, apply surface normalization (「」→"" etc.)
+        const { normalizePostWriteSurface: normalizeOriginal } = await import("../agents/post-write-validator.js");
+        const normalizedOriginal = normalizeOriginal(content, stageLanguage);
+        if (normalizedOriginal !== content || titleWasRecovered) {
+          if (existingFile) {
+            const origHeading = stageLanguage === "en"
+              ? `# Chapter ${targetChapter}: ${chapterMeta.title}`
+              : `# 第${targetChapter}章 ${chapterMeta.title}`;
+            await writeFile(join(chaptersDir, existingFile), `${origHeading}\n\n${normalizedOriginal}`, "utf-8");
+          }
+        }
+        // Persist recovered title to index if it was updated from generic
+        if (titleWasRecovered) {
+          const fixedIndex = index.map((ch) => ch.number === targetChapter ? { ...ch, title: chapterMeta.title } : ch);
+          await this.state.saveChapterIndex(bookId, fixedIndex);
+        }
+        // Don't promote audit-failed to ready-for-review based on cosmetic normalization alone.
+        // Only promote if there were no blocking audit issues in the first place.
+        const normalizedApplied = normalizedOriginal !== content;
+        const hasUnresolvedAuditIssues = preRevision.blockingCount > 0 || preRevision.aiTellCount > 0;
         return {
           chapterNumber: targetChapter,
-          wordCount: revisionBaseCount,
+          wordCount: countChapterLength(normalizedOriginal, countingMode),
           fixedIssues: [],
-          applied: false,
-          status: "unchanged",
-          skippedReason: "Manual revision did not improve merged audit or AI-tell metrics; kept original chapter.",
+          applied: normalizedApplied,
+          status: hasUnresolvedAuditIssues ? "audit-failed" : normalizedApplied ? "ready-for-review" : "unchanged",
+          skippedReason: normalizedApplied
+            ? hasUnresolvedAuditIssues
+              ? "Revision kept original; surface normalization applied but audit issues remain."
+              : "Revision kept original; surface normalization applied."
+            : "Manual revision did not improve merged audit or AI-tell metrics; kept original chapter.",
         };
       }
       this.logLengthWarnings(lengthWarnings);
@@ -1484,10 +1572,6 @@ export class PipelineRunner {
         zh: `落盘第${targetChapter}章修订结果`,
         en: `persisting revision for chapter ${targetChapter}`,
       });
-      const chaptersDir = join(bookDir, "chapters");
-      const files = await readdir(chaptersDir);
-      const paddedNum = String(targetChapter).padStart(4, "0");
-      const existingFile = files.find((f) => f.startsWith(paddedNum) && f.endsWith(".md"));
       if (!existingFile) {
         throw new Error(`Chapter ${targetChapter} file not found in ${chaptersDir} (expected filename starting with ${paddedNum})`);
       }
@@ -1497,7 +1581,7 @@ export class PipelineRunner {
         : `# 第${targetChapter}章 ${chapterMeta.title}`;
       await writeFile(
         join(chaptersDir, existingFile),
-        `${reviseHeading}\n\n${normalizedRevision.content}`,
+        `${reviseHeading}\n\n${surfaceCleanedRevision.content}`,
         "utf-8",
       );
 
@@ -1512,6 +1596,7 @@ export class PipelineRunner {
       if (reviseOutput.updatedHooks !== "(伏笔池未更新)") {
         await writeFile(join(storyDir, "pending_hooks.md"), reviseOutput.updatedHooks, "utf-8");
       }
+
       await this.syncLegacyStructuredStateFromMarkdown(bookDir, targetChapter);
 
       // Update index
@@ -1519,8 +1604,9 @@ export class PipelineRunner {
         ch.number === targetChapter
           ? {
               ...ch,
+              title: chapterMeta.title,
               status: (mustKeepChecked.auditResult.passed ? "ready-for-review" : "audit-failed") as ChapterMeta["status"],
-              wordCount: normalizedRevision.wordCount,
+              wordCount: surfaceCleanedRevision.wordCount,
               updatedAt: new Date().toISOString(),
               auditIssues: mustKeepChecked.auditResult.issues.map((i) => `[${i.severity}] ${i.description}`),
               lengthWarnings,
@@ -1551,13 +1637,13 @@ export class PipelineRunner {
       await this.syncCurrentStateFactHistory(bookId, targetChapter);
 
       await this.emitWebhook("revision-complete", bookId, targetChapter, {
-        wordCount: normalizedRevision.wordCount,
+        wordCount: surfaceCleanedRevision.wordCount,
         fixedCount: reviseOutput.fixedIssues.length,
       });
 
       return {
         chapterNumber: targetChapter,
-        wordCount: normalizedRevision.wordCount,
+        wordCount: surfaceCleanedRevision.wordCount,
         fixedIssues: reviseOutput.fixedIssues,
         applied: true,
         status: mustKeepChecked.auditResult.passed ? "ready-for-review" : "audit-failed",
@@ -1821,7 +1907,7 @@ export class PipelineRunner {
     this.logStage(stageLanguage, { zh: "落盘最终章节", en: "persisting final chapter" });
     this.logStage(stageLanguage, { zh: "生成最终真相文件", en: "rebuilding final truth files" });
     const chapterIndexBeforePersist = await this.state.loadChapterIndex(bookId);
-    const { resolveDuplicateTitle } = await import("../agents/post-write-validator.js");
+    const { resolveDuplicateTitle, detectGenericTitle } = await import("../agents/post-write-validator.js");
     const initialTitleResolution = resolveDuplicateTitle(
       output.title,
       chapterIndexBeforePersist.map((chapter) => chapter.title),
@@ -1867,6 +1953,19 @@ export class PipelineRunner {
             ? "If the auto-renamed title is weak, revise the chapter title manually."
             : "如果自动改名不理想，可以在后续手动修订章节标题。",
         }],
+      };
+    }
+    const genericTitleIssues = detectGenericTitle(persistenceOutput.title, chapterNumber, pipelineLang);
+    if (genericTitleIssues.length > 0) {
+      this.config.logger?.warn(`[title] ${genericTitleIssues[0]!.description}`);
+      auditResult = {
+        ...auditResult,
+        issues: [...auditResult.issues, ...genericTitleIssues.map((issue) => ({
+          severity: issue.severity === "error" ? "critical" as const : "warning" as const,
+          category: "generic-title",
+          description: issue.description,
+          suggestion: issue.suggestion,
+        }))],
       };
     }
     const longSpanFatigue = await analyzeLongSpanFatigue({
@@ -2721,6 +2820,7 @@ ${matrix}`,
       const analyzer = new ChapterAnalyzerAgent(this.agentCtxFor("chapter-analyzer", input.bookId));
       const writer = new WriterAgent(this.agentCtxFor("writer", input.bookId));
       const countingMode = resolveLengthCountingMode(book.language ?? gp.language);
+      const { normalizePostWriteSurface: normalizeSurface } = await import("../agents/post-write-validator.js");
       let totalWords = 0;
       let importedCount = 0;
 
@@ -2734,12 +2834,15 @@ ${matrix}`,
           en: `Analyzing chapter ${chapterNumber}/${input.chapters.length}: ${ch.title}...`,
         }));
 
+        // Normalize surface formatting (「」→"", ——→，, strip residual markdown)
+        const normalizedContent = normalizeSurface(ch.content, resolvedLanguage);
+
         // Analyze chapter to get truth file updates
         const output = await analyzer.analyzeChapter({
           book,
           bookDir,
           chapterNumber,
-          chapterContent: ch.content,
+          chapterContent: normalizedContent,
           chapterTitle: ch.title,
           chapterIntent: governedInput.chapterIntent,
           contextPackage: governedInput.contextPackage,
@@ -3631,6 +3734,62 @@ ${matrix}`,
     const lines = raw.split("\n");
     const contentStart = lines.findIndex((l, i) => i > 0 && l.trim().length > 0);
     return contentStart >= 0 ? lines.slice(contentStart).join("\n") : raw;
+  }
+
+  /**
+   * Extract the real chapter title from the full chapter file content.
+   * Tries `# 第N章 <title>` heading first, then `CHAPTER_TITLE\n<title>` marker.
+   * Returns empty string if no meaningful title is found.
+   */
+  private extractTitleFromChapterContent(fullText: string, chapterNumber: number): string {
+    // Try: # 第N章 Title
+    const headingMatch = fullText.match(/^#\s*第\d+章\s+(.+)/m);
+    if (headingMatch) {
+      let candidate = headingMatch[1]!.trim();
+      // Strip leading "第N章" prefix if LLM repeated the chapter number (e.g. "# 第32章 第32章 暗缝")
+      const stripped = candidate.replace(/^第\s*\d+\s*章\s+/, "").trim();
+      if (stripped) candidate = stripped;
+      if (candidate && !/^第\s*\d+\s*章$/.test(candidate)) {
+        return candidate;
+      }
+    }
+    // Try: CHAPTER_TITLE\nTitle (marker without === delimiters)
+    const markerMatch = fullText.match(/CHAPTER_TITLE\s*\n\s*(.+)/);
+    if (markerMatch) {
+      const candidate = markerMatch[1]!.trim();
+      if (candidate && !/^第\s*\d+\s*章$/.test(candidate)) {
+        return candidate;
+      }
+    }
+    return "";
+  }
+
+  /**
+   * Rename a chapter file when the recovered title differs from the filename stem.
+   * Returns the (possibly new) filename.
+   */
+  private async renameChapterFileIfNeeded(
+    chaptersDir: string,
+    paddedNum: string,
+    currentFilename: string,
+    recoveredTitle: string,
+  ): Promise<string> {
+    const expectedFilename = `${paddedNum}_${sanitizeFilename(recoveredTitle)}.md`;
+    if (currentFilename === expectedFilename) {
+      return currentFilename;
+    }
+    const oldPath = join(chaptersDir, currentFilename);
+    const newPath = join(chaptersDir, expectedFilename);
+    // Clean up any orphan with the same chapter prefix
+    const files = await readdir(chaptersDir);
+    const conflict = files.find(
+      (f) => f !== currentFilename && f.startsWith(paddedNum) && f.endsWith(".md"),
+    );
+    if (conflict) {
+      await rm(join(chaptersDir, conflict), { force: true });
+    }
+    await rename(oldPath, newPath);
+    return expectedFilename;
   }
 
   // ---------------------------------------------------------------------------

@@ -20,6 +20,7 @@ import {
   renderNarrativeSelectedContext,
   sanitizeNarrativeEvidenceBlock,
 } from "../utils/narrative-control.js";
+import { stripThinkBlocks } from "../utils/strip-think-blocks.js";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import {
@@ -316,11 +317,12 @@ ${chapterContent}`;
     originalChapter: string,
     autoOutputMode: AutoOutputMode = "allow-full",
   ): ReviseOutput {
+    const cleaned = stripThinkBlocks(content);
     const extract = (tag: string): string => {
       const regex = new RegExp(
         `=== ${tag} ===\\s*([\\s\\S]*?)(?==== [A-Z_]+ ===|$)`,
       );
-      const match = content.match(regex);
+      const match = cleaned.match(regex);
       return match?.[1]?.trim() ?? "";
     };
 

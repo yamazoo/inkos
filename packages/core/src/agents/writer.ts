@@ -42,7 +42,8 @@ import {
   renderNarrativeSelectedContext,
   sanitizeNarrativeEvidenceBlock,
 } from "../utils/narrative-control.js";
-import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, readdir, rm } from "node:fs/promises";
+import { sanitizeFilename as _sanitizeFilename } from "../utils/filename.js";
 import { join } from "node:path";
 
 export interface WriteChapterInput {
@@ -706,6 +707,15 @@ export class WriterAgent extends BaseAgent {
     }
 
     await Promise.all(writes);
+
+    // Clean up orphan files with same chapter number prefix but different name.
+    // Runs AFTER writes succeed to avoid data loss if writeFile fails.
+    const existingChapterFiles = await readdir(chaptersDir);
+    for (const existing of existingChapterFiles) {
+      if (existing.startsWith(paddedNum) && existing.endsWith(".md") && existing !== filename) {
+        await rm(join(chaptersDir, existing), { force: true });
+      }
+    }
   }
 
   private buildUserPrompt(params: {
@@ -1313,7 +1323,7 @@ ${overrides}\n`;
         .filter(([, count]) => count >= 2)
         .sort((a, b) => b[1] - a[1])
         .slice(0, 3)
-        .map(([w]) => `「${w}」`);
+        .map(([w]) => `"${w}"`);
 
       // Detect style markers
       const markers: string[] = [];
@@ -1389,9 +1399,6 @@ ${overrides}\n`;
   }
 
   private sanitizeFilename(title: string): string {
-    return title
-      .replace(/[/\\?%*:|"<>]/g, "")
-      .replace(/\s+/g, "_")
-      .slice(0, 50);
+    return _sanitizeFilename(title);
   }
 }

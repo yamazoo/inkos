@@ -345,4 +345,156 @@ He looked at the sky.`;
     const result = parseCreativeOutput(1, raw, "en_words");
     expect(result.wordCount).toBe(countChapterLength("He looked at the sky.", "en_words"));
   });
+
+  it("strips leading metadata table when LLM uses bare tags without === delimiters", () => {
+    // Reproduces the bug where LLM outputs CHAPTER_TITLE/CHAPTER_CONTENT
+    // without === wrappers, causing fallback to include the PRE_WRITE_CHECK
+    // table in chapter content.
+    const prose = "夜风从东墙缺口灌进来，带着墙根青苔的潮气。".repeat(10);
+    const raw = `# 第32章 暗缝
+
+| 检查项 | 本章记录 | 备注 |
+|--------|----------|------|
+| 当前任务 | 跟踪信使 | 动作链 |
+| 读者在等什么 | 部分兑现 | 与memo一致 |
+| 章节类型 | 悬疑/布局章 | 双段结构 |
+
+---
+
+CHAPTER_TITLE
+暗缝
+
+---
+
+CHAPTER_CONTENT
+${prose}`;
+
+    const result = parseCreativeOutput(32, raw);
+    expect(result.title).toBe("暗缝");
+    expect(result.content).toContain("夜风从东墙缺口灌进来");
+    expect(result.content).not.toContain("检查项");
+    expect(result.content).not.toContain("当前任务");
+    expect(result.content).not.toContain("CHAPTER_TITLE");
+    expect(result.content).not.toContain("CHAPTER_CONTENT");
+  });
+
+  it("strips leading metadata table from English chapter with bare tags", () => {
+    const prose = "He stood at the edge of the cliff, staring into the void below. ".repeat(10);
+    const raw = `# Chapter 5: The Descent
+
+| Check | Record | Note |
+|-------|--------|------|
+| Task  | Explore the cave | Done |
+| Risk  | Low | OK |
+
+CHAPTER_CONTENT
+${prose}`;
+
+    const result = parseCreativeOutput(5, raw, "en_words");
+    expect(result.content).toContain("He stood at the edge");
+    expect(result.content).not.toContain("| Check");
+    expect(result.content).not.toContain("CHAPTER_CONTENT");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// parseWriterOutput think block stripping
+// ---------------------------------------------------------------------------
+
+describe("parseWriterOutput think block stripping", () => {
+  it("strips <think> blocks before parsing === TAG === sections", () => {
+    const raw = `<think>
+内部推理过程...</think>
+=== CHAPTER_TITLE ===
+测试标题
+
+=== CHAPTER_CONTENT ===
+陈渊走进了祠堂。
+
+=== UPDATED_STATE ===
+状态更新内容`;
+
+    const result = callParseOutput(5, raw);
+    expect(result.title).toBe("测试标题");
+    expect(result.content).toBe("陈渊走进了祠堂。");
+    expect(result.updatedState).toBe("状态更新内容");
+    expect(result.content).not.toContain("<think>");
+    expect(result.content).not.toContain("内部推理");
+  });
+
+  it("strips orphaned </think> from provider-level cleanup before parsing", () => {
+    // Simulates: provider stripped opening <think> tag, orphaned closing tag remains.
+    // The orphaned `</think>` must not trigger unclosed-block removal (which would
+    // eat all content after it).
+    const raw = `=== CHAPTER_CONTENT ===
+# 第35章 荒祠
+</think>
+
+族务会的议堂里没剩几个人。`;
+
+    const result = callParseOutput(35, raw);
+    expect(result.content).toContain("第35章 荒祠");
+    expect(result.content).toContain("族务会的议堂里没剩几个人。");
+    expect(result.content).not.toContain("<think>");
+    expect(result.content).not.toContain("</think>");
+  });
+
+  it("handles the exact chapter 35 regression with orphaned closing tags", () => {
+    // Reproduces the actual bug: provider stripped the opening <think> tag,
+    // leaving an orphaned </think> closing tag. This orphaned tag must NOT
+    // trigger the unclosed-block regex (which would consume all content).
+    const raw = `=== CHAPTER_TITLE ===
+荒祠
+
+=== CHAPTER_CONTENT ===
+# 第35章 荒祠
+</think>
+
+族务会的议堂里没剩几个人。三长老靠在椅背上。`;
+
+    const result = callParseOutput(35, raw);
+    expect(result.title).toBe("荒祠");
+    expect(result.content).toContain("族务会的议堂里没剩几个人");
+    expect(result.content).toContain("第35章 荒祠");
+    expect(result.content).not.toContain("<think>");
+    expect(result.content).not.toContain("</think>");
+  });
+
+  it("strips trailing bare === from title (regression: chapter 31 filename)", () => {
+    // LLM outputs a bare === separator after the title without CHAPTER_CONTENT tag
+    const raw = `=== CHAPTER_TITLE ===
+请
+
+===
+正文内容开始`;
+
+    const result = parseCreativeOutput(31, raw);
+    expect(result.title).toBe("请");
+    expect(result.title).not.toContain("===");
+  });
+
+  it("strips trailing === with colon from title (regression: chapter 34 filename)", () => {
+    const raw = `=== CHAPTER_TITLE ===
+祠堂
+
+===：香炉
+正文内容开始`;
+
+    const result = parseCreativeOutput(34, raw);
+    expect(result.title).toBe("祠堂");
+    expect(result.title).not.toContain("===");
+  });
+
+  it("strips trailing === from parseWriterOutput title", () => {
+    const raw = `=== CHAPTER_TITLE ===
+请
+
+=== CHAPTER_CONTENT ===
+正文内容
+
+=== UPDATED_STATE ===
+状态卡`;
+    const result = callParseOutput(31, raw);
+    expect(result.title).toBe("请");
+  });
 });
