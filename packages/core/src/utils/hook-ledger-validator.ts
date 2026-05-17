@@ -27,6 +27,10 @@ export interface HookLedgerEntry {
   readonly descriptor: string;
   /** 2+ char CJK sequences and 3+ letter ASCII words extracted from descriptor. */
   readonly keywords: ReadonlyArray<string>;
+  /** Minimum number of distinct keywords that must appear in the draft.
+   *  Default 1. Set to 2 when only action-description keywords are available
+   *  (no quoted hook name), to reduce false positives from generic character names. */
+  readonly minKeywordMatches: number;
 }
 
 export interface HookLedger {
@@ -128,8 +132,12 @@ export function validateHookLedger(
   const violations: HookLedgerViolation[] = [];
 
   // Evidence check for everything the memo committed to land in prose.
+  // Skip entries whose descriptor explicitly defers revelation — the planner
+  // intentionally told the writer to hold back, so the validator must not
+  // demand matching keywords in the draft.
   const committed = dedupeById([...ledger.advance, ...ledger.resolve]);
   for (const entry of committed) {
+    if (isExplicitDefer(entry.descriptor)) continue;
     if (!draftEchoesEntry(draftContent, entry)) {
       violations.push({
         severity: "critical",
@@ -180,7 +188,7 @@ function extractLedgerEntry(line: string): HookLedgerEntry | undefined {
   const firstWord = cleaned.split(/\s+/)[0] ?? "";
   if (PLACEHOLDER_TOKENS.test(firstWord)) return undefined;
 
-  const idMatch = cleaned.match(/^([A-Za-z\u4e00-\u9fff][A-Za-z0-9_\-\u4e00-\u9fff]{0,19})/);
+  const idMatch = cleaned.match(/^([A-Za-z一-鿿][A-Za-z0-9_\-一-鿿]{0,19})/);
   if (!idMatch) return undefined;
 
   const candidate = idMatch[1]!;
@@ -188,7 +196,8 @@ function extractLedgerEntry(line: string): HookLedgerEntry | undefined {
   if (PLACEHOLDER_TOKENS.test(candidate)) return undefined;
 
   const descriptor = cleaned.slice(candidate.length).trim();
-  return { id: candidate, descriptor, keywords: extractKeywords(descriptor) };
+  const { keywords, minMatches } = extractKeywords(descriptor);
+  return { id: candidate, descriptor, keywords, minKeywordMatches: minMatches };
 }
 
 /**
@@ -200,18 +209,41 @@ function extractLedgerEntry(line: string): HookLedgerEntry | undefined {
  * partial echoes still count.
  *
  * Priority 2: if no quoted name, fall back to the descriptor text UP TO the
- * first state-transition arrow (→ or ->), same CJK/ASCII splitting. Anything
- * AFTER the arrow describes new state, not the hook itself, and risks
- * character-name false positives.
+ * first state-transition arrow (→ or ->), same CJK/ASCII splitting.
+ *
+ * Priority 3 (fallback): keywords from the post-arrow action description.
+ * For entries like `H073 "身不由己网络" → 比武场周围有人在议论陈渊的来历`,
+ * the quoted name may never appear in prose, but the action description
+ * contains narrative terms the writer is likely to use (e.g. "议论", "来历").
  */
-function extractKeywords(descriptor: string): ReadonlyArray<string> {
-  if (!descriptor) return [];
+function extractKeywords(descriptor: string): { keywords: ReadonlyArray<string>; minMatches: number } {
+  if (!descriptor) return { keywords: [], minMatches: 1 };
 
   // Try the quoted-name anchor first — matches "..." or "..." quotes.
   const quotedMatch = descriptor.match(/[""]([^""\n]+)[""]/);
   const source = quotedMatch ? quotedMatch[1]! : descriptor.split(/[→]|->/, 1)[0]!;
 
-  const cjkRuns = source.match(/[\u4e00-\u9fff]{2,}/g) ?? [];
+  const nameKeywords = tokenizeCjkAscii(source);
+
+  // Only use action-description keywords as fallback when the quoted name
+  // produced no usable tokens. This avoids false-positive matches from generic
+  // character names or verbs that appear in the post-arrow state-change text.
+  if (nameKeywords.length > 0) return { keywords: dedupeStrings(nameKeywords), minMatches: 1 };
+
+  const arrowParts = descriptor.split(/[→]|->/);
+  if (arrowParts.length <= 1) return { keywords: [], minMatches: 1 };
+  const actionText = arrowParts.slice(1).join(" ");
+  // Action keywords require 2 distinct matches (not 1) because character
+  // names in action text (e.g. "陈渊") can create false positives.
+  const actionKws = dedupeStrings(tokenizeCjkAscii(actionText));
+  // Require 2+ matches when we have enough keywords to be selective;
+  // when only 1 keyword exists, requiring 2 would make the hook unsatisfiable.
+  return { keywords: actionKws, minMatches: actionKws.length >= 2 ? 2 : 1 };
+}
+
+/** Tokenize text into 2+/3+ CJK grams and 3+ letter ASCII words. */
+function tokenizeCjkAscii(text: string, minCjkRunLength = 2): string[] {
+  const cjkRuns = text.match(new RegExp("[一-鿿]{" + minCjkRunLength + ",}", "g")) ?? [];
   const cjkTokens: string[] = [];
   for (const run of cjkRuns) {
     cjkTokens.push(run);
@@ -225,8 +257,8 @@ function extractKeywords(descriptor: string): ReadonlyArray<string> {
       cjkTokens.push(run.slice(-3));
     }
   }
-  const ascii = (source.match(/[A-Za-z]{3,}/g) ?? []).map((w) => w.toLowerCase());
-  return dedupeStrings([...cjkTokens, ...ascii].filter((tok) => !ASCII_STOPWORDS.has(tok)));
+  const ascii = (text.match(/[A-Za-z]{3,}/g) ?? []).map((w) => w.toLowerCase());
+  return [...cjkTokens, ...ascii].filter((tok) => !ASCII_STOPWORDS.has(tok));
 }
 
 const ASCII_STOPWORDS = new Set([
@@ -238,10 +270,11 @@ const ASCII_STOPWORDS = new Set([
 function draftEchoesEntry(draft: string, entry: HookLedgerEntry): boolean {
   if (entry.keywords.length > 0) {
     const draftLower = draft.toLowerCase();
-    return entry.keywords.some((kw) => {
+    const matchCount = entry.keywords.filter((kw) => {
       // ASCII keywords are already lowercased; CJK keywords case doesn't matter.
       return /^[a-z]/.test(kw) ? draftLower.includes(kw) : draft.includes(kw);
-    });
+    }).length;
+    return matchCount >= entry.minKeywordMatches;
   }
   // Bare-id ledger line with no descriptor — fall back to ID match.
   if (/^[A-Za-z0-9_-]+$/.test(entry.id)) {
@@ -267,6 +300,18 @@ function dedupeStrings(values: ReadonlyArray<string>): string[] {
 
 function escapeRegex(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/**
+ * Detect whether a hook ledger descriptor explicitly tells the writer NOT to
+ * reveal the hook in this chapter. When the planner defers revelation, the
+ * validator must not demand matching keywords in the draft.
+ *
+ * Matches patterns like "具体关联本章不揭示", "暂不掀", "留作悬念",
+ * "本章不揭示", "不揭示身份" etc.
+ */
+function isExplicitDefer(descriptor: string): boolean {
+  return /暂不[揭示掀触及]|留作悬念|本章不[揭示触及]|具体.*不揭示|不揭示.*身份|先不展开|暂且搁置|故意留白|本章不动/.test(descriptor);
 }
 
 export const INTERNAL = {

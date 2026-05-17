@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { PlannerAgent } from "../agents/planner.js";
+import { PlannerAgent, sanitizeOutlineForDraft } from "../agents/planner.js";
 import * as llmProvider from "../llm/provider.js";
 import type { LLMClient } from "../llm/provider.js";
 import type { BookConfig } from "../models/book.js";
@@ -358,5 +358,34 @@ defer:
 
     expect(result.intent.mustAvoid).toContain("禁止主角降智");
     expect(result.intent.mustAvoid).toContain("禁止神化反派");
+  });
+});
+
+describe("sanitizeOutlineForDraft", () => {
+  it("strips '不是X而是Y' pattern, keeping the affirmative half", () => {
+    const input = "这不是陈珏那种养尊处优的羞辱式挑衅，而是底层人的本能反抗。";
+    const result = sanitizeOutlineForDraft(input);
+    expect(result).not.toContain("不是");
+    expect(result).toContain("而是底层人的本能反抗");
+  });
+
+  it("replaces em dashes with full-width commas", () => {
+    const input = "陈渊走进比武场——这是他第一次公开亮相。";
+    const result = sanitizeOutlineForDraft(input);
+    expect(result).not.toContain("——");
+    expect(result).toContain("，这是他第一次公开亮相");
+  });
+
+  it("passes through text with neither pattern unchanged", () => {
+    const input = "陈渊站在比武场中央，感受体内的剑意冲突。";
+    const result = sanitizeOutlineForDraft(input);
+    expect(result).toBe(input);
+  });
+
+  it("handles multiple patterns in the same text", () => {
+    const input = "他不是逃避——而是直面。不是退缩，而是蓄力。";
+    const result = sanitizeOutlineForDraft(input);
+    expect(result).not.toContain("不是");
+    expect(result).not.toContain("——");
   });
 });

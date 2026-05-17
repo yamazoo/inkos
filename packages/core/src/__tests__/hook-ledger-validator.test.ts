@@ -233,4 +233,45 @@ advance:
     const violations = validateHookLedger(memo, draft);
     expect(violations).toEqual([]);
   });
+
+  it("skips evidence check when advance descriptor explicitly defers revelation", () => {
+    const memo = `## 本章 hook 账
+advance:
+- H080 "血刀会" → 从"大汉背景"推进到"黑衣刀客与血刀会有关联"（具体关联本章不揭示，留作悬念）
+- H073 "身不由己网络" → 从"青石镇是更大网络中的一点"深化到"比武场周围有人在议论陈渊的来历"
+resolve:
+- H081 "比武场" → 战斗场景完成
+`;
+    // Draft only mentions 比武场 (H081), not 血刀会 (H080) or 身不由己 (H073)
+    const draft = "陈渊站在比武场中央，体内两道剑意开始产生微妙的摩擦。";
+    const violations = validateHookLedger(memo, draft);
+    // H080 should be skipped (explicit defer); H073 has quoted name "身不由己网络"
+    // so name keywords take priority — draft lacks those keywords → still flagged.
+    const ids = violations.map((v) => v.description);
+    expect(ids.some((d) => d.includes("H080"))).toBe(false);
+    expect(ids.some((d) => d.includes("H073"))).toBe(true);
+  });
+
+  it("matches action keywords when descriptor has no quoted name", () => {
+    const memo = `## 本章 hook 账
+advance:
+- H073 → 比武场周围有人在议论陈渊的来历
+`;
+    // Draft uses "议论" and "来历" from the action description
+    const draft = "比武场周围有人在低声议论，陈渊的来历成了茶余饭后的谈资。";
+    const violations = validateHookLedger(memo, draft);
+    expect(violations).toEqual([]);
+  });
+
+  it("still fails when neither name keywords nor action keywords appear", () => {
+    const memo = `## 本章 hook 账
+advance:
+- H073 → 比武场周围有人在议论陈渊的来历
+`;
+    // Draft has nothing matching
+    const draft = "陈渊独自坐在客栈里，喝了一碗汤。";
+    const violations = validateHookLedger(memo, draft);
+    expect(violations).toHaveLength(1);
+    expect(violations[0]!.description).toContain("H073");
+  });
 });

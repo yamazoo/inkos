@@ -194,6 +194,26 @@ export function validatePostWrite(
     });
   }
 
+  // 2b. 英文句子检测（中文小说中的 LLM artifact）
+  {
+    // Match quoted text that is entirely Latin script (English sentences in dialogue)
+    const englishInQuotes =
+      /["“”「」]([A-Za-z][\p{Script=Latin}\s,.!?;:'"()\-]{9,})["“”「」]/gu;
+    const matches = [...content.matchAll(englishInQuotes)];
+    if (matches.length > 0) {
+      const samples = matches
+        .slice(0, 3)
+        .map((m) => `"${m[1].slice(0, 40)}${m[1].length > 40 ? "..." : ""}"`)
+        .join("、");
+      violations.push({
+        rule: "英文句子",
+        severity: "error",
+        description: `中文正文中出现英文整句（${matches.length}处），如 ${samples}`,
+        suggestion: "中文小说正文禁止出现英文对话/叙述，改用中文表达",
+      });
+    }
+  }
+
   // 3. 转折/惊讶标记词密度 ≤ 1次/3000字
   const markerCounts: Record<string, number> = {};
   let totalMarkerCount = 0;

@@ -107,6 +107,12 @@ export class PlannerAgent extends BaseAgent {
     if (!outlineNode) {
       outlineNode = this.findOutlineNode(seedMaterials.volumeOutline, input.chapterNumber);
     }
+    // Sanitize outline text: strip sentence patterns that the post-write
+    // validator would flag as forbidden. Without this, the Writer tends to
+    // reproduce outline phrasing verbatim in the draft.
+    if (outlineNode) {
+      outlineNode = sanitizeOutlineForDraft(outlineNode);
+    }
     const goal = this.deriveGoal(
       input.externalContext,
       seedMaterials.currentFocus,
@@ -818,4 +824,17 @@ export class PlannerAgent extends BaseAgent {
       return "(文件尚未创建)";
     }
   }
+}
+
+/**
+ * Strip forbidden sentence patterns from outline text so the Writer does not
+ * reproduce them verbatim in the draft.
+ */
+export function sanitizeOutlineForDraft(text: string): string {
+  let result = text;
+  // "不是X而是Y" → "Y" — keep the affirmative half
+  result = result.replace(/不是[^，。！？\n]{0,30}[，,]?\s*而是/g, "而是");
+  // Em dashes are a hard ban in the post-write validator
+  result = result.replaceAll("——", "，");
+  return result;
 }

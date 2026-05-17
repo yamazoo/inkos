@@ -226,6 +226,32 @@ describe("validatePostWrite", () => {
     expect(findRule(result, "禁止破折号")!.severity).toBe("error");
   });
 
+  it("detects English dialogue sentences in Chinese text", () => {
+    const content = '疤脸开口了。"Demonstrate your ability. Show me what you can see."空气忽然静了一拍。';
+    const result = validatePostWrite(content, baseProfile, null);
+    const rule = findRule(result, "英文句子");
+    expect(rule).toBeDefined();
+    expect(rule!.severity).toBe("error");
+  });
+
+  it("does not flag short English words/names in Chinese text", () => {
+    const content = '他打开了iPhone，看了一眼GPS定位。';
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findRule(result, "英文句子")).toBeUndefined();
+  });
+
+  it("detects English in Chinese quotes 「」", () => {
+    const content = '考官说「Hello everyone, welcome to the test」然后转身离开。';
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findRule(result, "英文句子")).toBeDefined();
+  });
+
+  it("skips English detection for English books", () => {
+    const content = '"Demonstrate your ability," the examiner said.';
+    const result = validatePostWrite(content, { ...baseProfile, language: "en" }, null);
+    expect(findRule(result, "英文句子")).toBeUndefined();
+  });
+
   it("skips Chinese-only rules when the book language override is English", () => {
     const content = "He stepped forward——then stopped at the door.";
     const validateWithLanguage = validatePostWrite as (
