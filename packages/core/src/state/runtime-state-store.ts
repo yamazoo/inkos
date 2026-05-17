@@ -7,9 +7,10 @@ import {
   StateManifestSchema,
   type RuntimeStateDelta,
 } from "../models/runtime-state.js";
+import { TimelineStateSchema } from "../models/timeline.js";
 import type { Fact, StoredHook, StoredSummary } from "./memory-db.js";
 import { bootstrapStructuredStateFromMarkdown, parseCurrentStateFacts } from "./state-bootstrap.js";
-import { renderChapterSummariesProjection, renderCurrentStateProjection, renderHooksProjection } from "./state-projections.js";
+import { renderChapterSummariesProjection, renderCurrentStateProjection, renderHooksProjection, renderTimelineProjection } from "./state-projections.js";
 import { applyRuntimeStateDelta, type RuntimeStateSnapshot } from "./state-reducer.js";
 import { validateRuntimeState } from "./state-validator.js";
 import { arbitrateRuntimeStateDeltaHooks } from "../utils/hook-arbiter.js";
@@ -31,18 +32,20 @@ export async function loadRuntimeStateSnapshot(bookDir: string): Promise<Runtime
   await bootstrapStructuredStateFromMarkdown({ bookDir });
   const stateDir = join(bookDir, "story", "state");
 
-  const [manifest, currentState, hooks, chapterSummaries] = await Promise.all([
+  const [manifest, currentState, hooks, chapterSummaries, timeline] = await Promise.all([
     readJson(join(stateDir, "manifest.json"), StateManifestSchema),
     readJson(join(stateDir, "current_state.json"), CurrentStateStateSchema),
     readJson(join(stateDir, "hooks.json"), HooksStateSchema),
     readJson(join(stateDir, "chapter_summaries.json"), ChapterSummariesStateSchema),
+    readJsonOrNull(join(stateDir, "timeline.json"), TimelineStateSchema),
   ]);
 
-  const snapshot = {
+  const snapshot: RuntimeStateSnapshot = {
     manifest,
     currentState,
     hooks,
     chapterSummaries,
+    timeline: timeline ?? undefined,
   };
 
   const issues = validateRuntimeState(snapshot);
@@ -92,12 +95,20 @@ export async function saveRuntimeStateSnapshot(
   const stateDir = join(bookDir, "story", "state");
   await mkdir(stateDir, { recursive: true });
 
-  await Promise.all([
+  const writes: Array<Promise<void>> = [
     writeFile(join(stateDir, "manifest.json"), JSON.stringify(snapshot.manifest, null, 2), "utf-8"),
     writeFile(join(stateDir, "current_state.json"), JSON.stringify(snapshot.currentState, null, 2), "utf-8"),
     writeFile(join(stateDir, "hooks.json"), JSON.stringify(snapshot.hooks, null, 2), "utf-8"),
     writeFile(join(stateDir, "chapter_summaries.json"), JSON.stringify(snapshot.chapterSummaries, null, 2), "utf-8"),
-  ]);
+  ];
+
+  if (snapshot.timeline) {
+    writes.push(
+      writeFile(join(stateDir, "timeline.json"), JSON.stringify(snapshot.timeline, null, 2), "utf-8"),
+    );
+  }
+
+  await Promise.all(writes);
 }
 
 export async function loadNarrativeMemorySeed(bookDir: string): Promise<NarrativeMemorySeed> {

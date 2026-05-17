@@ -3,6 +3,7 @@ import type {
   CurrentStateState,
   HooksState,
 } from "../models/runtime-state.js";
+import type { TimelineState } from "../models/timeline.js";
 import {
   localizeHookPayoffTiming,
   resolveHookPayoffTiming,
@@ -252,4 +253,50 @@ function normalizePredicate(value: string): string {
 
 function escapeTableCell(value: string | number): string {
   return String(value).replace(/\|/g, "\\|").trim();
+}
+
+export function renderTimelineProjection(
+  timeline: TimelineState,
+  language: "zh" | "en",
+): string {
+  const isEn = language === "en";
+  if (timeline.storyDays.length === 0) return "";
+
+  const lines: string[] = [
+    isEn ? "# Timeline" : "# 时间线",
+    "",
+    isEn ? "| Chapter | Story Day | Label |" : "| 章节 | 故事日 | 标签 |",
+    isEn ? "|---------|-----------|-------|" : "|------|--------|------|",
+  ];
+
+  for (const day of timeline.storyDays) {
+    lines.push(`| ${day.chapter} | ${day.storyDay} | ${day.label || "-"} |`);
+  }
+
+  if (timeline.eventAnchors.length > 0) {
+    lines.push("");
+    lines.push(isEn ? "## Event Anchors" : "## 事件锚点");
+    lines.push("");
+    for (const anchor of timeline.eventAnchors) {
+      const refs = anchor.crossReferences
+        .map((r) => `ch${r.chapter}:"${r.raw}"→day${r.impliedDay}`)
+        .join(", ");
+      const cdowns = anchor.countdowns
+        .map((c) => `ch${c.chapter}:"${c.raw}"→${c.daysLeft}d`)
+        .join(", ");
+      const allRefs = [refs, cdowns].filter(Boolean).join("; ");
+      lines.push(`- **${anchor.eventId}** (day${anchor.storyDay}): ${anchor.label}${allRefs ? ` | ${allRefs}` : ""}`);
+    }
+  }
+
+  if (timeline.conflicts.length > 0) {
+    lines.push("");
+    lines.push(isEn ? "## Conflicts" : "## 矛盾");
+    lines.push("");
+    for (const c of timeline.conflicts) {
+      lines.push(`- [${c.severity}] ${c.description}`);
+    }
+  }
+
+  return lines.join("\n");
 }

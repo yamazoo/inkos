@@ -11,6 +11,7 @@ import {
   type RuntimeStateDelta,
   type StateManifest,
 } from "../models/runtime-state.js";
+import type { TimelineState } from "../models/timeline.js";
 import { evaluateHookAdmission } from "../utils/hook-governance.js";
 import { resolveHookPayoffTiming } from "../utils/hook-lifecycle.js";
 import { validateRuntimeState } from "./state-validator.js";
@@ -20,6 +21,7 @@ export interface RuntimeStateSnapshot {
   readonly currentState: CurrentStateState;
   readonly hooks: HooksState;
   readonly chapterSummaries: ChapterSummariesState;
+  readonly timeline?: TimelineState;
 }
 
 export function applyRuntimeStateDelta(params: {
@@ -32,6 +34,7 @@ export function applyRuntimeStateDelta(params: {
     currentState: CurrentStateStateSchema.parse(params.snapshot.currentState),
     hooks: HooksStateSchema.parse(params.snapshot.hooks),
     chapterSummaries: ChapterSummariesStateSchema.parse(params.snapshot.chapterSummaries),
+    timeline: params.snapshot.timeline,
   };
   const delta = RuntimeStateDeltaSchema.parse(params.delta);
   const allowReapply = params.allowReapply ?? false;
@@ -68,6 +71,7 @@ export function applyRuntimeStateDelta(params: {
     currentState,
     hooks,
     chapterSummaries,
+    timeline: snapshot.timeline,
   };
 
   const issues = validateRuntimeState(next);

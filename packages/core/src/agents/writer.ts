@@ -20,6 +20,7 @@ import { analyzeAITells } from "./ai-tells.js";
 import type { ChapterIntent, ChapterMemo, ContextPackage, RuleStack } from "../models/input-governance.js";
 import type { LengthSpec } from "../models/length-governance.js";
 import type { RuntimeStateDelta } from "../models/runtime-state.js";
+import type { TimelineDelta } from "../models/timeline.js";
 import { buildLengthSpec, countChapterLength } from "../utils/length-metrics.js";
 import { filterHooks, filterSummaries, filterSubplots, filterEmotionalArcs, filterCharacterMatrix } from "../utils/context-filter.js";
 import { buildGovernedMemoryEvidenceBlocks } from "../utils/governed-context.js";
@@ -33,6 +34,8 @@ import { extractPOVFromOutline, filterMatrixByPOV, filterHooksByPOV } from "../u
 import { parseCreativeOutput } from "./writer-parser.js";
 import { buildRuntimeStateArtifacts, saveRuntimeStateSnapshot, type RuntimeStateArtifacts } from "../state/runtime-state-store.js";
 import type { RuntimeStateSnapshot } from "../state/state-reducer.js";
+import { renderTimelineProjection } from "../state/state-projections.js";
+import { loadTimeline, saveTimeline, applyTimelineDelta } from "../utils/timeline.js";
 import { parsePendingHooksMarkdown } from "../utils/memory-retrieval.js";
 import { analyzeHookHealth } from "../utils/hook-health.js";
 import { buildEnglishVarianceBrief } from "../utils/long-span-fatigue.js";
@@ -89,6 +92,7 @@ export interface WriteChapterOutput {
   readonly postSettlement: string;
   readonly runtimeStateDelta?: RuntimeStateDelta;
   readonly runtimeStateSnapshot?: RuntimeStateSnapshot;
+  readonly timelineDelta?: TimelineDelta;
   readonly updatedState: string;
   readonly updatedLedger: string;
   readonly updatedHooks: string;
@@ -412,6 +416,7 @@ export class WriterAgent extends BaseAgent {
       postSettlement: settlement.postSettlement,
       runtimeStateDelta: resolvedRuntimeStateDelta,
       runtimeStateSnapshot: runtimeStateArtifacts?.snapshot ?? settlement.runtimeStateSnapshot,
+      timelineDelta: settleResult.settlement.timelineDelta,
       updatedState: runtimeStateArtifacts?.currentStateMarkdown ?? settlement.updatedState,
       updatedLedger: settlement.updatedLedger,
       updatedHooks: runtimeStateArtifacts?.hooksMarkdown ?? settlement.updatedHooks,
@@ -507,6 +512,7 @@ export class WriterAgent extends BaseAgent {
       postSettlement: settlement.postSettlement,
       runtimeStateDelta: runtimeStateArtifacts?.resolvedDelta ?? settlement.runtimeStateDelta,
       runtimeStateSnapshot: runtimeStateArtifacts?.snapshot ?? settlement.runtimeStateSnapshot,
+      timelineDelta: settleResult.settlement.timelineDelta,
       updatedState: runtimeStateArtifacts?.currentStateMarkdown ?? settlement.updatedState,
       updatedLedger: settlement.updatedLedger,
       updatedHooks: runtimeStateArtifacts?.hooksMarkdown ?? settlement.updatedHooks,
@@ -618,12 +624,14 @@ export class WriterAgent extends BaseAgent {
     let mergedSettlement: ReturnType<typeof parseSettlementOutput> & {
       runtimeStateDelta?: RuntimeStateDelta;
       runtimeStateSnapshot?: RuntimeStateSnapshot;
+      timelineDelta?: TimelineDelta;
     };
     try {
       const deltaOutput = parseSettlerDeltaOutput(response.content);
       mergedSettlement = {
         postSettlement: deltaOutput.postSettlement,
         runtimeStateDelta: deltaOutput.runtimeStateDelta,
+        timelineDelta: deltaOutput.timelineDelta,
         updatedState: "",
         updatedLedger: "",
         updatedHooks: "",
@@ -704,6 +712,22 @@ export class WriterAgent extends BaseAgent {
       writes.push(
         writeFile(join(storyDir, "particle_ledger.md"), output.updatedLedger, "utf-8"),
       );
+    }
+
+    // Process timeline delta if present
+    if (output.timelineDelta) {
+      const existingTimeline = await loadTimeline(bookDir);
+      const { updated: nextTimeline } = applyTimelineDelta(
+        existingTimeline,
+        output.timelineDelta,
+        output.chapterNumber,
+      );
+      writes.push(saveTimeline(bookDir, nextTimeline));
+
+      const timelineMd = renderTimelineProjection(nextTimeline, language);
+      if (timelineMd) {
+        writes.push(writeFile(join(storyDir, "timeline.md"), timelineMd, "utf-8"));
+      }
     }
 
     await Promise.all(writes);
