@@ -156,7 +156,29 @@ function buildSettlerOutputFormat(gp: GenreProfile): string {
 5. 如果旧 hook 只是被提到、没有真实状态变化，把它放进 mention，不要更新 lastAdvancedChapter
 6. 如果本章推进了旧 hook，lastAdvancedChapter 必须等于当前章号
 7. 如果回收或延后 hook，必须放在 resolve / defer 数组里
-8. chapterSummary.chapter 必须等于当前章节号`;
+8. chapterSummary.chapter 必须等于当前章节号
+
+=== TIMELINE ===
+（必须输出 JSON，不要输出 Markdown）
+\`\`\`json
+{
+  "storyDay": 2,
+  "dayLabel": "对赌挑衅日",
+  "events": [
+    { "id": "wolf-fight", "reference": "三天前在后山", "impliedOffset": -3 },
+    { "id": "exam", "reference": "考核还有三天", "countdown": 3 }
+  ]
+}
+\`\`\`
+
+时间线提取规则：
+1. storyDay：基于上一章的 storyDay 和本章时间标记推算。无推进标记→同上章，"第二天"→+1，"三天后"→+3
+2. 倒计时标记（"考核还有N天"）→ storyDay = 事件锚点storyDay - N（若已知），否则只记录 countdown
+3. events 数组：记录本章中所有对已知事件的时间引用（回溯或前瞻）
+4. impliedOffset：回溯引用的天数偏移（负数），如"三天前"→-3
+5. countdown：前瞻倒计时天数，如"考核还有3天"→3
+6. 只记录对故事关键事件的时间引用，不记录日常琐事（吃饭、走路等）
+7. 同一事件的多次引用只记最有信息量的一条`;
 }
 
 export function buildSettlerUserPrompt(params: {
@@ -175,6 +197,7 @@ export function buildSettlerUserPrompt(params: {
   readonly selectedEvidenceBlock?: string;
   readonly governedControlBlock?: string;
   readonly validationFeedback?: string;
+  readonly timeline?: string;
 }): string {
   const ledgerBlock = params.ledger
     ? `\n## 当前资源账本\n${params.ledger}\n`
@@ -194,6 +217,10 @@ export function buildSettlerUserPrompt(params: {
 
   const matrixBlock = params.characterMatrix !== "(文件尚未创建)"
     ? `\n## 当前角色交互矩阵\n${params.characterMatrix}\n`
+    : "";
+
+  const timelineBlock = params.timeline && params.timeline !== "(文件尚未创建)"
+    ? `\n## 当前时间线\n${params.timeline}\n`
     : "";
 
   const observationsBlock = params.observations
@@ -223,7 +250,7 @@ ${params.currentState}
 ${ledgerBlock}
 ## 当前伏笔池
 ${params.hooks}
-${selectedEvidenceBlock}${summariesBlock}${subplotBlock}${emotionalBlock}${matrixBlock}
+${selectedEvidenceBlock}${summariesBlock}${subplotBlock}${emotionalBlock}${matrixBlock}${timelineBlock}
 ${outlineBlock}
 
 请严格按照 === TAG === 格式输出结算结果。`;
