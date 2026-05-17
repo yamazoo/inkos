@@ -131,3 +131,77 @@ describe("parseSettlerDeltaOutput", () => {
     ]);
   });
 });
+
+describe("parseSettlerDeltaOutput with TIMELINE", () => {
+  const validDelta = JSON.stringify({
+    chapter: 1,
+    hookOps: { upsert: [], mention: [], resolve: [], defer: [] },
+    newHookCandidates: [],
+    subplotOps: [],
+    emotionalArcOps: [],
+    characterMatrixOps: [],
+    notes: [],
+  });
+
+  it("extracts TIMELINE block when present", () => {
+    const content = [
+      "=== POST_SETTLEMENT ===",
+      "test",
+      "",
+      "=== RUNTIME_STATE_DELTA ===",
+      "```json",
+      validDelta,
+      "```",
+      "",
+      "=== TIMELINE ===",
+      "```json",
+      JSON.stringify({
+        storyDay: 2,
+        dayLabel: "test day",
+        events: [
+          { id: "wolf-fight", reference: "三天前", impliedOffset: -3 },
+        ],
+      }, null, 2),
+      "```",
+    ].join("\n");
+
+    const result = parseSettlerDeltaOutput(content);
+    expect(result.timelineDelta).toBeDefined();
+    expect(result.timelineDelta!.storyDay).toBe(2);
+    expect(result.timelineDelta!.events).toHaveLength(1);
+    expect(result.timelineDelta!.events[0]!.id).toBe("wolf-fight");
+  });
+
+  it("returns undefined timelineDelta when TIMELINE block missing", () => {
+    const content = [
+      "=== POST_SETTLEMENT ===",
+      "test",
+      "",
+      "=== RUNTIME_STATE_DELTA ===",
+      "```json",
+      validDelta,
+      "```",
+    ].join("\n");
+
+    const result = parseSettlerDeltaOutput(content);
+    expect(result.timelineDelta).toBeUndefined();
+  });
+
+  it("returns undefined timelineDelta for invalid TIMELINE JSON", () => {
+    const content = [
+      "=== POST_SETTLEMENT ===",
+      "test",
+      "",
+      "=== RUNTIME_STATE_DELTA ===",
+      "```json",
+      validDelta,
+      "```",
+      "",
+      "=== TIMELINE ===",
+      "not json at all",
+    ].join("\n");
+
+    const result = parseSettlerDeltaOutput(content);
+    expect(result.timelineDelta).toBeUndefined();
+  });
+});

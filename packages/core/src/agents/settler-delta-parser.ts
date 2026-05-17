@@ -2,10 +2,15 @@ import {
   RuntimeStateDeltaSchema,
   type RuntimeStateDelta,
 } from "../models/runtime-state.js";
+import {
+  TimelineDeltaSchema,
+  type TimelineDelta,
+} from "../models/timeline.js";
 
 export interface SettlerDeltaOutput {
   readonly postSettlement: string;
   readonly runtimeStateDelta: RuntimeStateDelta;
+  readonly timelineDelta?: TimelineDelta;
 }
 
 function sanitizeJSON(str: string): string {
@@ -36,14 +41,31 @@ export function parseSettlerDeltaOutput(content: string): SettlerDeltaOutput {
     throw new Error(`runtime state delta is not valid JSON: ${String(error)}`);
   }
 
+  let runtimeStateDelta: RuntimeStateDelta;
   try {
-    return {
-      postSettlement: extract("POST_SETTLEMENT"),
-      runtimeStateDelta: RuntimeStateDeltaSchema.parse(parsed),
-    };
+    runtimeStateDelta = RuntimeStateDeltaSchema.parse(parsed);
   } catch (error) {
     throw new Error(`runtime state delta failed schema validation: ${String(error)}`);
   }
+
+  let timelineDelta: TimelineDelta | undefined;
+  const rawTimeline = extract("TIMELINE");
+  if (rawTimeline) {
+    try {
+      const timelinePayload = stripCodeFence(rawTimeline);
+      timelineDelta = TimelineDeltaSchema.parse(
+        JSON.parse(sanitizeJSON(timelinePayload)),
+      );
+    } catch {
+      // TIMELINE block is optional — invalid content is silently ignored
+    }
+  }
+
+  return {
+    postSettlement: extract("POST_SETTLEMENT"),
+    runtimeStateDelta,
+    timelineDelta,
+  };
 }
 
 function stripCodeFence(value: string): string {
