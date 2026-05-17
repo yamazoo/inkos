@@ -35,7 +35,7 @@ import { parseCreativeOutput } from "./writer-parser.js";
 import { buildRuntimeStateArtifacts, saveRuntimeStateSnapshot, type RuntimeStateArtifacts } from "../state/runtime-state-store.js";
 import type { RuntimeStateSnapshot } from "../state/state-reducer.js";
 import { renderTimelineProjection } from "../state/state-projections.js";
-import { loadTimeline, saveTimeline, applyTimelineDelta } from "../utils/timeline.js";
+import { loadTimeline, saveTimeline, applyTimelineDelta, formatTimelineAuditSummary } from "../utils/timeline.js";
 import { parsePendingHooksMarkdown } from "../utils/memory-retrieval.js";
 import { analyzeHookHealth } from "../utils/hook-health.js";
 import { buildEnglishVarianceBrief } from "../utils/long-span-fatigue.js";
@@ -312,6 +312,7 @@ export class WriterAgent extends BaseAgent {
 
     const settleResult = await this.settle({
       book,
+      bookDir,
       genreProfile,
       bookRules,
       chapterNumber,
@@ -466,6 +467,7 @@ export class WriterAgent extends BaseAgent {
 
     const settleResult = await this.settle({
       book: input.book,
+      bookDir: input.bookDir,
       genreProfile,
       bookRules,
       chapterNumber: input.chapterNumber,
@@ -531,6 +533,7 @@ export class WriterAgent extends BaseAgent {
 
   private async settle(params: {
     readonly book: BookConfig;
+    readonly bookDir: string;
     readonly genreProfile: GenreProfile;
     readonly bookRules: BookRules | null;
     readonly chapterNumber: number;
@@ -557,6 +560,7 @@ export class WriterAgent extends BaseAgent {
     settlement: ReturnType<typeof parseSettlementOutput> & {
       runtimeStateDelta?: RuntimeStateDelta;
       runtimeStateSnapshot?: RuntimeStateSnapshot;
+      timelineDelta?: TimelineDelta;
     };
     usage: TokenUsage;
   }> {
@@ -595,6 +599,11 @@ export class WriterAgent extends BaseAgent {
         )
       : undefined;
 
+    const timelineState = await loadTimeline(params.bookDir);
+    const timelineStr = timelineState.storyDays.length > 0
+      ? formatTimelineAuditSummary(timelineState, resolvedLang ?? "zh")
+      : "(文件尚未创建)";
+
     const settlerUser = buildSettlerUserPrompt({
       chapterNumber: params.chapterNumber,
       title: params.title,
@@ -611,6 +620,7 @@ export class WriterAgent extends BaseAgent {
       selectedEvidenceBlock: params.selectedEvidenceBlock,
       governedControlBlock,
       validationFeedback: params.validationFeedback,
+      timeline: timelineStr,
     });
 
     const response = await this.chat(
@@ -639,6 +649,7 @@ export class WriterAgent extends BaseAgent {
         updatedSubplots: "",
         updatedEmotionalArcs: "",
         updatedCharacterMatrix: "",
+        timeline: "",
       };
     } catch {
       const settlement = parseSettlementOutput(response.content, params.genreProfile);
