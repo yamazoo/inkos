@@ -14,6 +14,7 @@ import {
   mergeTableMarkdownByKey,
 } from "../utils/governed-working-set.js";
 import { applySpotFixPatches, parseSpotFixPatches } from "../utils/spot-fix-patches.js";
+import { loadTimeline } from "../utils/timeline.js";
 import {
   buildNarrativeIntentBrief,
   renderMemoAsNarrativeBlock,
@@ -131,7 +132,7 @@ export class ReviserAgent extends BaseAgent {
       externalContext?: string; // max 500 chars, user creative guidance from --brief
     },
   ): Promise<ReviseOutput> {
-    const [currentState, ledger, hooks, styleGuideRaw, volumeOutline, storyBible, characterMatrix, chapterSummaries, parentCanon, fanficCanon] = await Promise.all([
+    const [currentState, ledger, hooks, styleGuideRaw, volumeOutline, storyBible, characterMatrix, chapterSummaries, parentCanon, fanficCanon, timeline] = await Promise.all([
       // Phase 5 consolidation: derive initial state from roles + seed hooks
       // when current_state.md is still the architect seed placeholder.
       readCurrentStateWithFallback(bookDir, "(文件不存在)"),
@@ -144,6 +145,7 @@ export class ReviserAgent extends BaseAgent {
       this.readFileSafe(join(bookDir, "story/chapter_summaries.md")),
       this.readFileSafe(join(bookDir, "story/parent_canon.md")),
       this.readFileSafe(join(bookDir, "story/fanfic_canon.md")),
+      loadTimeline(bookDir),
     ]);
 
     // Load genre profile and book rules
@@ -167,6 +169,21 @@ export class ReviserAgent extends BaseAgent {
 
     const isEnglish = (bookLanguage ?? gp.language) === "en";
     const resolvedLanguage = isEnglish ? "en" : "zh";
+
+    const timelineCriticalIssues = issues.filter(
+      (i) => i.severity === "critical" && i.category.startsWith("Timeline"),
+    );
+
+    let timelineRepairBlock = "";
+    if (timelineCriticalIssues.length > 0) {
+      const conflictLines = timelineCriticalIssues.map((issue, idx) => {
+        return `[矛盾${idx + 1}] ${issue.description}\n修正方向：${issue.suggestion}`;
+      });
+
+      timelineRepairBlock = isEnglish
+        ? `\n## Timeline Repair Instructions\nThe following timeline contradictions were detected and MUST be fixed:\n\n${conflictLines.join("\n\n")}\n\nAfter repair, all event references must be consistent with timeline.json anchors.\n`
+        : `\n## 时间线修复指令\n检测到以下矛盾，必须修正：\n\n${conflictLines.join("\n\n")}\n\n修复后，所有事件引用必须与 timeline.json 中的锚点一致。\n`;
+    }
 
     const issueList = mode === "auto"
       ? buildTieredIssueList(issues, isEnglish)
@@ -281,7 +298,7 @@ ${ledgerBlock}
 ${sanitizeNarrativeEvidenceBlock(hookDebtBlock, resolvedLanguage) ?? ""}${sanitizeNarrativeEvidenceBlock(hooksBlock, resolvedLanguage) ?? ""}${sanitizeNarrativeEvidenceBlock(volumeSummariesBlock, resolvedLanguage) ?? ""}${reducedControlBlock || outlineBlock}${bibleBlock}${matrixBlock}${sanitizeNarrativeEvidenceBlock(summariesBlock, resolvedLanguage) ?? ""}${canonBlock}${fanficCanonBlock}${styleGuideBlock}${lengthGuidanceBlock}
 
 ## 待修正章节
-${chapterContent}`;
+${chapterContent}${timelineRepairBlock}`;
 
     const response = await this.chat(
       [
