@@ -19,6 +19,18 @@ export { type DetectionHistoryEntry, type DetectionStats } from "./models/detect
 export { type StyleProfile } from "./models/style-profile.js";
 export { type LengthCountingMode, type LengthNormalizeMode, type LengthSpec, type LengthTelemetry, type LengthWarning, LengthCountingModeSchema, LengthNormalizeModeSchema, LengthSpecSchema, LengthTelemetrySchema, LengthWarningSchema } from "./models/length-governance.js";
 export {
+  type TimelineState,
+  type TimelineDelta,
+  type EventAnchor,
+  type TimelineConflict,
+  type StoryDay,
+  type TimelineEventRef,
+  TimelineStateSchema,
+  TimelineDeltaSchema,
+  EventAnchorSchema,
+  TimelineConflictSchema,
+} from "./models/timeline.js";
+export {
   type RuntimeStateLanguage,
   type StateManifest,
   type HookStatus,
@@ -310,6 +322,7 @@ export {
 } from "./utils/hook-governance.js";
 export { arbitrateRuntimeStateDeltaHooks, type HookArbiterDecision } from "./utils/hook-arbiter.js";
 export { analyzeHookHealth } from "./utils/hook-health.js";
+export { loadTimeline, saveTimeline, applyTimelineDelta, computeDeterministicTimelineIssues, formatTimelineAuditSummary } from "./utils/timeline.js";
 
 // Pipeline
 export { PipelineRunner, type PipelineConfig, type ChapterPipelineResult, type DraftResult, type PlanChapterResult, type ComposeChapterResult, type ReviseResult, type TruthFiles, type BookStatusInfo, type ImportChaptersInput, type ImportChaptersResult, type TokenUsageSummary } from "./pipeline/runner.js";
@@ -320,7 +333,7 @@ export { detectChapter, detectAndRewrite, loadDetectionHistory, type DetectChapt
 // State
 export { StateManager } from "./state/manager.js";
 export { bootstrapStructuredStateFromMarkdown } from "./state/state-bootstrap.js";
-export { renderCurrentStateProjection, renderHooksProjection, renderChapterSummariesProjection } from "./state/state-projections.js";
+export { renderCurrentStateProjection, renderHooksProjection, renderChapterSummariesProjection, renderTimelineProjection } from "./state/state-projections.js";
 export { applyRuntimeStateDelta, type RuntimeStateSnapshot } from "./state/state-reducer.js";
 export { validateRuntimeState, type RuntimeStateValidationIssue } from "./state/state-validator.js";
 
