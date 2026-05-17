@@ -15,6 +15,7 @@ import {
 } from "../utils/outline-paths.js";
 import { join } from "node:path";
 import { extractTemporalMarkers, formatTemporalMarkerBlock } from "../utils/temporal-markers.js";
+import { loadTimeline, computeDeterministicTimelineIssues, formatTimelineAuditSummary } from "../utils/timeline.js";
 
 export interface AuditResult {
   readonly passed: boolean;
@@ -190,8 +191,8 @@ function buildDimensionNote(
 
   if (id === 2) {
     return language === "en"
-      ? "Timeline check (two-layer): 1. The appendix provides deterministic temporal marker extraction for current and previous chapters. Compare numeric values — e.g. previous says '2.5 days left' but current says '3 days left' is a hard contradiction (time reversal). 2. Semantic layer: check scene time (day/night, season) continuity with previous chapter, and whether implied time passage is reasonable. Report: [dimension=2] prev markers vs curr markers → consistency verdict."
-      : "时间线检查（双层）：1. 附录提供了当前章和前一章的时间标记提取结果（确定性层）。对比数值：如前章「还剩两天半」当前章「还有三天」是硬矛盾（时间倒退）。2. 语义层：检查场景时间（日夜/季节）是否与前章衔接，隐含时间流逝是否合理。如「月亮偏西」=深夜，不能接「清晨的阳光」。报告格式：[dimension=2] 前章标记 vs 当前章标记 → 一致性判定。";
+      ? "Timeline check (three-layer): 1. Deterministic temporal marker extraction in appendix — compare numeric values for hard contradictions. 2. Timeline state summary: the ## Timeline Status block provides cross-chapter event anchors with known conflicts marked [CONFLICT!]. Verify these conflicts against the chapter text. 3. Calendar continuity: check that storyDay progression between chapters is reasonable. Report: [dimension=2] consistency verdict with specific conflicting references."
+      : "时间线检查（三层）：1. 附录中的时间标记提取——对比数值检测硬矛盾。2. 时间线状态摘要：## 时间线状态 块提供了跨章事件锚点，已知矛盾标记为[矛盾!]，请对照正文验证。3. 日历连续性：检查章间 storyDay 跳跃是否合理。报告格式：[dimension=2] 一致性判定，标注具体冲突引用。";
   }
 
   if (id === 25) {
@@ -458,6 +459,8 @@ export class ContinuityAuditor extends BaseAgent {
     const ledger = options?.truthFileOverrides?.ledger ?? diskLedger;
     const hooks = options?.truthFileOverrides?.hooks ?? diskHooks;
 
+    const timeline = await loadTimeline(bookDir);
+
     const hasParentCanon = parentCanon !== "(文件不存在)";
     const hasFanficCanon = fanficCanon !== "(文件不存在)";
 
@@ -670,13 +673,17 @@ overall_score 评分校准：
         })()
       : "";
 
+    const timelineSummaryBlock = hasDimension2 && timeline.storyDays.length > 0
+      ? `\n${formatTimelineAuditSummary(timeline, resolvedLanguage)}\n`
+      : "";
+
     const userPrompt = isEnglish
       ? `Review chapter ${chapterNumber}.
 
 ## Current State Card
 ${currentState}
 ${ledgerBlock}
-${hooksBlock}${volumeSummariesBlock}${subplotBlock}${emotionalBlock}${matrixBlock}${summariesBlock}${canonBlock}${fanficCanonBlock}${reducedControlBlock}${memoBlock}${temporalMarkerBlock}${prevChapterBlock}${styleGuideBlock}
+${hooksBlock}${volumeSummariesBlock}${subplotBlock}${emotionalBlock}${matrixBlock}${summariesBlock}${canonBlock}${fanficCanonBlock}${reducedControlBlock}${memoBlock}${temporalMarkerBlock}${timelineSummaryBlock}${prevChapterBlock}${styleGuideBlock}
 
 ## Chapter Content Under Review
 ${chapterContent}`
@@ -685,7 +692,7 @@ ${chapterContent}`
 ## 当前状态卡
 ${currentState}
 ${ledgerBlock}
-${hooksBlock}${volumeSummariesBlock}${subplotBlock}${emotionalBlock}${matrixBlock}${summariesBlock}${canonBlock}${fanficCanonBlock}${reducedControlBlock}${memoBlock}${temporalMarkerBlock}${prevChapterBlock}${styleGuideBlock}
+${hooksBlock}${volumeSummariesBlock}${subplotBlock}${emotionalBlock}${matrixBlock}${summariesBlock}${canonBlock}${fanficCanonBlock}${reducedControlBlock}${memoBlock}${temporalMarkerBlock}${timelineSummaryBlock}${prevChapterBlock}${styleGuideBlock}
 
 ## 待审章节内容
 ${chapterContent}`;
@@ -705,14 +712,22 @@ ${chapterContent}`;
     const outlineWarnings = this.checkOutlineCompliance(
       options?.chapterIntent, chapterContent, resolvedLanguage,
     );
-    if (outlineWarnings.length > 0) {
-      return {
-        ...result,
-        issues: [...result.issues, ...outlineWarnings],
-        tokenUsage: response.usage,
-      };
-    }
-    return { ...result, tokenUsage: response.usage };
+
+    const deterministicTimelineIssues = hasDimension2
+      ? computeDeterministicTimelineIssues(timeline)
+      : [];
+
+    const hasCriticalTimeline = deterministicTimelineIssues.some(
+      (i) => i.severity === "critical",
+    );
+
+    return {
+      passed: hasCriticalTimeline ? false : result.passed,
+      issues: [...result.issues, ...outlineWarnings, ...deterministicTimelineIssues],
+      summary: result.summary,
+      overallScore: result.overallScore,
+      tokenUsage: response.usage,
+    };
   }
 
   /**
