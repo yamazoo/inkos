@@ -1,0 +1,226 @@
+import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { join } from "node:path";
+import {
+  TimelineStateSchema,
+  type TimelineState,
+  type TimelineDelta,
+  type EventAnchor,
+  type TimelineConflict,
+} from "../models/timeline.js";
+import type { AuditIssue } from "../agents/continuity.js";
+
+const DAY_GAP_WARNING_THRESHOLD = 10;
+
+const EMPTY_TIMELINE: TimelineState = {
+  storyDays: [],
+  eventAnchors: [],
+  conflicts: [],
+  lastUpdatedChapter: 0,
+};
+
+export async function loadTimeline(bookDir: string): Promise<TimelineState> {
+  const path = join(bookDir, "story", "state", "timeline.json");
+  try {
+    const raw = await readFile(path, "utf-8");
+    return TimelineStateSchema.parse(JSON.parse(raw));
+  } catch {
+    return { ...EMPTY_TIMELINE };
+  }
+}
+
+export async function saveTimeline(bookDir: string, state: TimelineState): Promise<void> {
+  const stateDir = join(bookDir, "story", "state");
+  await mkdir(stateDir, { recursive: true });
+  await writeFile(join(stateDir, "timeline.json"), JSON.stringify(state, null, 2), "utf-8");
+}
+
+export function applyTimelineDelta(
+  existing: TimelineState,
+  delta: TimelineDelta,
+  chapter: number,
+): { readonly updated: TimelineState; readonly conflicts: ReadonlyArray<TimelineConflict> } {
+  const newConflicts: TimelineConflict[] = [];
+
+  // 1. Update storyDays: replace same-chapter entry or append, sort by chapter
+  const filteredDays = existing.storyDays.filter((d) => d.chapter !== chapter);
+  const nextStoryDays = [
+    ...filteredDays,
+    { chapter, storyDay: delta.storyDay, label: delta.dayLabel },
+  ].sort((a, b) => a.chapter - b.chapter);
+
+  // 2. Process events - deep copy anchors to avoid mutation
+  const anchorsById = new Map<string, EventAnchor>(
+    existing.eventAnchors.map((a) => [
+      a.eventId,
+      {
+        ...a,
+        crossReferences: [...a.crossReferences],
+        countdowns: [...a.countdowns],
+      },
+    ]),
+  );
+
+  for (const evt of delta.events) {
+    const existingAnchor = anchorsById.get(evt.id);
+
+    if (!existingAnchor) {
+      // New anchor: first mention
+      const anchor: EventAnchor = {
+        eventId: evt.id,
+        label: evt.id,
+        storyDay: delta.storyDay,
+        firstMentioned: { chapter, raw: evt.reference },
+        crossReferences: [],
+        countdowns: [],
+      };
+      anchorsById.set(evt.id, anchor);
+    } else {
+      if (evt.countdown !== undefined) {
+        existingAnchor.countdowns.push({
+          chapter,
+          raw: evt.reference,
+          daysLeft: evt.countdown,
+        });
+        const impliedDay = delta.storyDay + evt.countdown;
+        if (impliedDay !== existingAnchor.storyDay) {
+          newConflicts.push({
+            conflictId: `cd-${evt.id}-ch${chapter}`,
+            severity: "critical",
+            type: "countdown-mismatch",
+            description: `${evt.id} countdown "${evt.reference}" at ch${chapter}(storyDay=${delta.storyDay}) implies event at day ${impliedDay}, but anchor is day ${existingAnchor.storyDay}`,
+            chapters: [existingAnchor.firstMentioned.chapter, chapter],
+            detectedAtChapter: chapter,
+          });
+        }
+      } else {
+        const impliedDay =
+          evt.impliedOffset !== undefined ? delta.storyDay + evt.impliedOffset : delta.storyDay;
+        existingAnchor.crossReferences.push({
+          chapter,
+          raw: evt.reference,
+          impliedDay,
+        });
+        if (impliedDay !== existingAnchor.storyDay) {
+          newConflicts.push({
+            conflictId: `xr-${evt.id}-ch${chapter}`,
+            severity: "critical",
+            type: "anchor-mismatch",
+            description: `${evt.id} reference "${evt.reference}" at ch${chapter}(storyDay=${delta.storyDay}) implies event at day ${impliedDay}, but anchor is day ${existingAnchor.storyDay}`,
+            chapters: [existingAnchor.firstMentioned.chapter, chapter],
+            detectedAtChapter: chapter,
+          });
+        }
+      }
+    }
+  }
+
+  const updated: TimelineState = {
+    storyDays: nextStoryDays,
+    eventAnchors: [...anchorsById.values()].sort(
+      (a, b) => a.storyDay - b.storyDay || a.eventId.localeCompare(b.eventId),
+    ),
+    conflicts: [...existing.conflicts, ...newConflicts],
+    lastUpdatedChapter: chapter,
+  };
+
+  return { updated, conflicts: newConflicts };
+}
+
+export function computeDeterministicTimelineIssues(
+  timeline: TimelineState,
+): ReadonlyArray<AuditIssue> {
+  const issues: AuditIssue[] = [];
+
+  // L1 & L2: stored conflicts (critical severity only)
+  for (const conflict of timeline.conflicts) {
+    if (conflict.severity === "critical") {
+      issues.push({
+        severity: "critical",
+        category:
+          conflict.type === "countdown-mismatch"
+            ? "Timeline Countdown Conflict"
+            : "Timeline Anchor Conflict",
+        description: conflict.description,
+        suggestion: `修正第${conflict.chapters[1] ?? conflict.chapters[0]}章中对事件的时间引用，使其与 timeline.json 中的锚点一致。`,
+      });
+    }
+  }
+
+  // L3: day gap detection
+  const sorted = [...timeline.storyDays].sort((a, b) => a.chapter - b.chapter);
+  for (let i = 1; i < sorted.length; i++) {
+    const prev = sorted[i - 1]!;
+    const curr = sorted[i]!;
+    const jump = curr.storyDay - prev.storyDay;
+    if (jump > DAY_GAP_WARNING_THRESHOLD) {
+      issues.push({
+        severity: "warning",
+        category: "Timeline Day Gap",
+        description: `第${prev.chapter}章(storyDay=${prev.storyDay})到第${curr.chapter}章(storyDay=${curr.storyDay})跳过了${jump}天，超过${DAY_GAP_WARNING_THRESHOLD}天阈值。`,
+        suggestion: `检查是否需要在中间章节补充时间过渡说明，或确认时间跳跃在故事中合理。`,
+      });
+    }
+  }
+
+  return issues;
+}
+
+export function formatTimelineAuditSummary(
+  timeline: TimelineState,
+  language: "zh" | "en",
+): string {
+  const isEn = language === "en";
+
+  if (timeline.storyDays.length === 0 && timeline.eventAnchors.length === 0) {
+    return isEn ? "## Timeline Status\n(no data yet)" : "## 时间线状态\n（尚无数据）";
+  }
+
+  const lines: string[] = [isEn ? "## Timeline Status" : "## 时间线状态"];
+
+  // Story calendar
+  if (timeline.storyDays.length > 0) {
+    const calLabel = isEn ? "Story Calendar: " : "故事日历：";
+    const calParts = timeline.storyDays.map(
+      (d) => `ch${d.chapter}=day${d.storyDay}${d.label ? `\"${d.label}\"` : ""}`,
+    );
+    lines.push(calLabel + calParts.join(", "));
+  }
+
+  // Event anchors
+  if (timeline.eventAnchors.length > 0) {
+    lines.push(isEn ? "Key Event Anchors:" : "关键事件锚点：");
+
+    // Collect eventIds that have conflicts
+    const conflictEventIds = new Set<string>();
+    for (const c of timeline.conflicts) {
+      const match = /^(\S+)/.exec(c.description);
+      if (match?.[1]) conflictEventIds.add(match[1]);
+    }
+
+    for (const anchor of timeline.eventAnchors) {
+      const hasConflict = conflictEventIds.has(anchor.eventId);
+      const conflictMark = hasConflict
+        ? isEn
+          ? " [CONFLICT!]"
+          : "[矛盾!]"
+        : "";
+      lines.push(`- ${anchor.eventId}(day${anchor.storyDay}): ${anchor.label}${conflictMark}`);
+
+      for (const xr of anchor.crossReferences) {
+        const xrConflict = xr.impliedDay !== anchor.storyDay;
+        lines.push(
+          `  ch${xr.chapter} "${xr.raw}"→day${xr.impliedDay}${xrConflict ? (isEn ? " [CONFLICT!]" : "[矛盾!]") : ""}`,
+        );
+      }
+      for (const cd of anchor.countdowns) {
+        const chapterDay = timeline.storyDays.find((d) => d.chapter === cd.chapter);
+        const impliedDay = chapterDay ? chapterDay.storyDay + cd.daysLeft : cd.daysLeft;
+        lines.push(
+          `  ch${cd.chapter} countdown "${cd.raw}"→${cd.daysLeft}d left (day${impliedDay})`,
+        );
+      }
+    }
+  }
+
+  return lines.join("\n");
+}
