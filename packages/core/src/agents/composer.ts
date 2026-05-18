@@ -113,6 +113,7 @@ async function collectSelectedContext(
         }];
 
     const entries = await Promise.all([
+      maybeContextSource(storyDir, "brief.md", "User creation brief — the foundational intent document. Contains core settings, protagonist identity, and world premises that must be preserved throughout."),
       maybeContextSource(storyDir, "current_focus.md", "Current task focus for this chapter."),
       maybeContextSource(
         storyDir,

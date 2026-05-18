@@ -118,6 +118,40 @@ describe("ComposerAgent", () => {
     await expect(readFile(result.contextPath, "utf-8")).resolves.toContain("current_focus.md");
   });
 
+  it("includes brief.md in selected context for downstream writer access", async () => {
+    await writeFile(
+      join(storyDir, "brief.md"),
+      [
+        "# Creation Brief",
+        "",
+        "主角魂穿异世界，成为一名废柴少爷。",
+        "金手指：系统面板，可查看他人属性。",
+        "",
+      ].join("\n"),
+      "utf-8",
+    );
+
+    const composer = new ComposerAgent({
+      client: {} as ConstructorParameters<typeof ComposerAgent>[0]["client"],
+      model: "test-model",
+      projectRoot: root,
+      bookId: book.id,
+    });
+
+    const result = await composer.composeChapter({
+      book,
+      bookDir,
+      chapterNumber: 4,
+      plan,
+    });
+
+    const briefEntry = result.contextPackage.selectedContext.find(
+      (entry) => entry.source === "story/brief.md",
+    );
+    expect(briefEntry).toBeDefined();
+    expect(briefEntry?.excerpt).toContain("魂穿");
+  });
+
   it("emits a rule stack with hard, soft, and diagnostic sections", async () => {
     const composer = new ComposerAgent({
       client: {} as ConstructorParameters<typeof ComposerAgent>[0]["client"],
