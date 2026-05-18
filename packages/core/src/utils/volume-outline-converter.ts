@@ -191,6 +191,12 @@ const VOLUME_HEADING_PATTERNS = [
   /^\*\*第?[零一二三四五六七八九十0-9]+卷?[：:\s·]/,
   // H1-H3 heading with "卷" followed by numeral + separator: "## 卷一·觉醒..."
   /^#{1,3}\s*卷[零一二三四五六七八九十0-9]+[·.\s：:]/,
+  // Bold range-first format: "**卷一（1-30章）：觉醒·蛰伏·破茧**"
+  /^\*\*卷[零一二三四五六七八九十0-9]+（\d+/,
+  // Bold title format: "**卷一「猎手初啼」**：..." or "**卷一·觉醒**：..."
+  /^\*\*卷[零一二三四五六七八九十0-9]+[「『·]/,
+  // Non-bold range-first format: "## 卷一（1-30章）：觉醒"
+  /^#{1,3}\s*卷[零一二三四五六七八九十0-9]+[（「]/,
 ];
 
 /** Returns true if `line` looks like a volume-section heading rather than table content. */
@@ -529,6 +535,54 @@ export function parseVolumeHeadings(text: string): VolumeSummary[] {
       summaries.push({
         volumeId: chineseIdx > 0 ? chineseIdx : summaries.length + 1,
         volumeTitle: `第${headingF[1]}卷：${headingF[2].trim()}`,
+        chapterRange: [0, 0],
+        coreConflict: "",
+        keyTurnEvent: "",
+        harvestGoals: [],
+      });
+      continue;
+    }
+
+    // Pattern I: Bold range-first format — range before title
+    // e.g. "**卷一（1-30章）：觉醒·蛰伏·破茧**" or "**卷二（31-80章）：学院·暗涌**"
+    const headingI = trimmed.match(
+      /^\*\*卷([零一二三四五六七八九十0-9]+)[（(](\d+)[-–~至](\d+)[^）)]*[）)][：:](.+?)\*\*$/,
+    );
+    if (headingI) {
+      const volIdStr = headingI[1];
+      const arabicVolId = Number.parseInt(volIdStr, 10);
+      const volId = Number.isFinite(arabicVolId)
+        ? arabicVolId
+        : (chineseNums.indexOf(volIdStr) || summaries.length + 1);
+      const rangeStart = Number.parseInt(headingI[2], 10);
+      const rangeEnd = Number.parseInt(headingI[3], 10);
+      const title = headingI[4].trim();
+      summaries.push({
+        volumeId: volId > 0 ? volId : summaries.length + 1,
+        volumeTitle: `卷${volIdStr}：${title}`,
+        chapterRange: [rangeStart, rangeEnd],
+        coreConflict: "",
+        keyTurnEvent: "",
+        harvestGoals: [],
+      });
+      continue;
+    }
+
+    // Pattern J: Bold title in brackets — "**卷一「猎手初啼」**：description"
+    // Handles fullwidth「」, ASCII brackets, and middle-dot separator "**卷一·title**"
+    const headingJ = trimmed.match(
+      /^\*\*卷([零一二三四五六七八九十0-9]+)[「『]([^」』]+)[」』]\*\*[：:]\s*(.+)$/,
+    );
+    if (headingJ) {
+      const volIdStr = headingJ[1];
+      const arabicVolId = Number.parseInt(volIdStr, 10);
+      const volId = Number.isFinite(arabicVolId)
+        ? arabicVolId
+        : (chineseNums.indexOf(volIdStr) || summaries.length + 1);
+      const title = headingJ[2].trim();
+      summaries.push({
+        volumeId: volId > 0 ? volId : summaries.length + 1,
+        volumeTitle: `卷${volIdStr}「${title}」`,
         chapterRange: [0, 0],
         coreConflict: "",
         keyTurnEvent: "",
