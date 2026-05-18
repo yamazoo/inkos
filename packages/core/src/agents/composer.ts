@@ -419,10 +419,24 @@ function pickExcerpt(content: string, preferredExcerpts: ReadonlyArray<string>):
     }
 
     const body = stripFrontmatter(content);
-    return body
+    const lines = body
       .split("\n")
       .map((line) => line.trim())
-      .find((line) => line.length > 0 && !line.startsWith("#"));
+      .filter((line) => line.length > 0 && !line.startsWith("#"));
+
+    if (lines.length === 0) return undefined;
+
+    // Accumulate lines up to ~500 chars so foundational documents (e.g. brief.md)
+    // convey meaningful context instead of a single header-line fragment.
+    const MAX_EXCERPT = 500;
+    const parts: string[] = [];
+    let total = 0;
+    for (const line of lines) {
+      if (total > 0 && total + line.length + 1 > MAX_EXCERPT) break;
+      parts.push(line);
+      total += line.length + 1;
+    }
+    return parts.join("\n");
 }
 
 function toFactAnchor(predicate: string): string {

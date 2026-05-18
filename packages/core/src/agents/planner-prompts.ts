@@ -362,16 +362,80 @@ export function buildPlannerUserMessage(input: PlannerUserMessageInput): string 
 function buildBriefBlock(brief: string, language: "zh" | "en"): string {
   const trimmed = brief.trim();
   if (!trimmed) return "";
+
+  // Extract critical sections from the brief that the planner must not ignore.
+  // "节奏要求" contains pacing milestones (e.g. "前3章: LOL玩家狂喜") that
+  // are often deferred by the LLM unless explicitly surfaced.
+  const pacingSection = extractBriefSection(trimmed, "节奏要求", "禁忌");
+  const prohibitionSection = extractBriefSection(trimmed, "禁忌");
+
   if (language === "en") {
-    return `## Creative brief (user's original intent — authoritative)
+    const parts = [`## Creative brief (user's original intent — authoritative)
 ${trimmed}
 
-The brief is the user's direct instruction. When planning this chapter, honor the brief's core setup (protagonist concept, world premise, opening mechanics, sample chapter hooks if any) before anything else. Do NOT defer the brief's core setup to later chapters; land it early.`;
+The brief is the user's direct instruction. When planning this chapter, honor the brief's core setup (protagonist concept, world premise, opening mechanics, sample chapter hooks if any) before anything else. Do NOT defer the brief's core setup to later chapters; land it early.`];
+
+    if (pacingSection) {
+      parts.push(`\n## Pacing milestones from brief (MUST NOT DEFER)
+${pacingSection}
+
+These milestones specify WHEN core elements must appear. They are as binding as the outline node. If a milestone says "chapters 1-3", that means chapter 1 must begin delivering it — not chapter 4.`);
+    }
+    if (prohibitionSection) {
+      parts.push(`\n## Prohibitions from brief (hard constraints)
+${prohibitionSection}`);
+    }
+    return parts.join("\n");
   }
-  return `## 用户创作 brief（原始意图——最高优先级）
+
+  const parts = [`## 用户创作 brief（原始意图——最高优先级）
 ${trimmed}
 
-brief 是用户的直接指令。本章规划时，必须优先兑现 brief 里写明的核心设定（主角设定、世界前提、开场机制、样本章回钩子等）。**不要把 brief 里的核心设定推迟到后面的章节**——该在前几章落地的必须落地。`;
+brief 是用户的直接指令。本章规划时，必须优先兑现 brief 里写明的核心设定（主角设定、世界前提、开场机制、样本章回钩子等）。**"核心设定"包括节奏要求、机制展示时机、主角认知里程碑——不只是世界观事实。不要把 brief 里的核心设定推迟到后面的章节**——该在前几章落地的必须落地。`];
+
+  if (pacingSection) {
+    parts.push(`\n## brief 节奏要求（硬约束——不可推迟）
+${pacingSection}
+
+以上节奏要求规定了核心元素必须在哪些章节落地。它们和细纲节点一样具有约束力。如果节奏要求写"前3章"，意味着第1章就必须开始兑现，不能推迟到第4章。`);
+  }
+  if (prohibitionSection) {
+    parts.push(`\n## brief 禁忌（硬约束）
+${prohibitionSection}`);
+  }
+  return parts.join("\n");
+}
+
+/**
+ * Extract a markdown section from `brief` starting at the heading that contains
+ * `sectionKeyword` up to (but not including) the next heading at the same or
+ * higher level. Returns undefined if the section is not found or empty.
+ */
+function extractBriefSection(brief: string, sectionKeyword: string, stopBefore?: string): string | undefined {
+  const lines = brief.split("\n");
+  let capturing = false;
+  let headingLevel = 0;
+  const captured: string[] = [];
+
+  for (const line of lines) {
+    const headingMatch = line.match(/^(#{1,6})\s+/);
+    if (headingMatch) {
+      const level = headingMatch[1].length;
+      if (capturing && level <= headingLevel) break;
+      if (line.includes(sectionKeyword)) {
+        capturing = true;
+        headingLevel = level;
+        continue;
+      }
+    }
+    if (capturing) {
+      if (stopBefore && headingMatch && line.includes(stopBefore)) break;
+      captured.push(line);
+    }
+  }
+
+  const result = captured.join("\n").trim();
+  return result.length > 0 ? result : undefined;
 }
 
 function buildChapterContextBlock(chapterContext: string, language: "zh" | "en"): string {
