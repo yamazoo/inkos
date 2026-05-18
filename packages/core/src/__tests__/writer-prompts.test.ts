@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { BookConfig } from "../models/book.js";
 import type { GenreProfile } from "../models/genre-profile.js";
 import { LengthSpecSchema } from "../models/length-governance.js";
-import { buildWriterSystemPrompt, buildGoldenOpeningDiscipline } from "../agents/writer-prompts.js";
+import { buildWriterSystemPrompt, buildGoldenOpeningDiscipline, buildIdentityPerspectiveRules } from "../agents/writer-prompts.js";
 
 const BOOK: BookConfig = {
   id: "prompt-book",
@@ -265,5 +265,49 @@ describe("buildWriterSystemPrompt", () => {
 
     expect(prompt).toContain("English Variance Brief");
     expect(prompt).toContain("resistance-bearing exchange");
+  });
+});
+
+describe("buildIdentityPerspectiveRules", () => {
+  it("returns empty when no characterContext", () => {
+    expect(buildIdentityPerspectiveRules(undefined)).toBe("");
+  });
+
+  it("returns empty when no identity tags", () => {
+    expect(buildIdentityPerspectiveRules("云辰，16岁，斗者初期。")).toBe("");
+  });
+
+  it("generates transmigration rules for 魂穿", () => {
+    const result = buildIdentityPerspectiveRules(
+      "云辰前世是某大学体育特长生，魂穿废柴。",
+    );
+    expect(result).toContain("身份视角守则");
+    expect(result).toContain("前世记忆");
+    expect(result).toContain("认知冲突");
+  });
+
+  it("generates game knowledge rules for LOL reference", () => {
+    const result = buildIdentityPerspectiveRules(
+      "云辰前世是LOL钻石段位玩家，穿越到异世界。",
+    );
+    expect(result).toContain("游戏机制");
+    expect(result).toContain("内心想法");
+  });
+
+  it("generates English rules when language=en", () => {
+    const result = buildIdentityPerspectiveRules(
+      "Yun Chen transmigrated to another world. Past life: LOL diamond player.",
+      "en",
+    );
+    expect(result).toContain("Identity Perspective");
+    expect(result).toContain("past life");
+  });
+
+  it("generates rebirth rules for 重生", () => {
+    const result = buildIdentityPerspectiveRules(
+      "主角重生回到十年前，这一次要改变命运。",
+    );
+    expect(result).toContain("先知先觉");
+    expect(result).toContain("前世经历");
   });
 });

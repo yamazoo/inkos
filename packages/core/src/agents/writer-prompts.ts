@@ -30,6 +30,7 @@ export function buildWriterSystemPrompt(
   languageOverride?: "zh" | "en",
   inputProfile: "legacy" | "governed" = "legacy",
   lengthSpec?: LengthSpec,
+  characterContext?: string,
 ): string {
   const isEnglish = (languageOverride ?? genreProfile.language) === "en";
   const governed = inputProfile === "governed";
@@ -52,6 +53,7 @@ export function buildWriterSystemPrompt(
         buildGoldenOpeningDiscipline(chapterNumber, "en"),
         buildGenreRules(genreProfile, genreBody, "en"),
         buildProtagonistRules(bookRules),
+        buildIdentityPerspectiveRules(characterContext, isEnglish ? "en" : "zh"),
         buildBookRulesBody(bookRulesBody),
         buildStyleGuide(styleGuide),
         buildStyleFingerprint(styleFingerprint),
@@ -75,6 +77,7 @@ export function buildWriterSystemPrompt(
         bookRules?.enableFullCastTracking ? buildFullCastTracking() : "",
         buildGenreRules(genreProfile, genreBody),
         buildProtagonistRules(bookRules),
+        buildIdentityPerspectiveRules(characterContext, isEnglish ? "en" : "zh"),
         buildBookRulesBody(bookRulesBody),
         buildStyleGuide(styleGuide),
         buildStyleFingerprint(styleFingerprint),
@@ -806,6 +809,80 @@ function buildProtagonistRules(bookRules: BookRules | null): string {
 }
 
 // ---------------------------------------------------------------------------
+// Identity perspective rules (auto-detected from character context)
+// ---------------------------------------------------------------------------
+
+/**
+ * Detect identity tags (transmigration, rebirth, isekai, system) from character
+ * context and auto-generate narrative perspective constraints. These ensure the
+ * writer maintains the protagonist's dual-identity voice throughout the chapter.
+ */
+export function buildIdentityPerspectiveRules(
+  characterContext: string | undefined,
+  language: "zh" | "en" = "zh",
+): string {
+  if (!characterContext) return "";
+
+  const identityPatterns = [
+    /穿越|魂穿|身穿|胎穿/,
+    /重生|reborn|reincarnat/i,
+    /异世界|isekai|transmigrat/i,
+    /系统面板|system panel/i,
+    /前世|past life|previous life/i,
+    /原来的世界|original world/i,
+    /现代人|modern person/i,
+  ];
+
+  const hasIdentityTag = identityPatterns.some((p) => p.test(characterContext));
+  if (!hasIdentityTag) return "";
+
+  const isTransmigration = /穿越|魂穿|身穿|胎穿|transmigrat|isekai/i.test(characterContext);
+  const hasPastLife = /前世|past life|previous life|原来的世界|original world/i.test(characterContext);
+  const isRebirth = /重生|reborn|reincarnat/i.test(characterContext);
+  const hasGameKnowledge = /LOL|游戏|game|段位|rank/i.test(characterContext);
+
+  if (language === "en") {
+    const lines = ["## Protagonist Identity Perspective (auto-detected)"];
+    lines.push("");
+    lines.push("The protagonist has a dual identity. The narrative MUST reflect this:");
+    if (isTransmigration || hasPastLife) {
+      lines.push("- Include inner monologue that references the protagonist's past life at least once per chapter — comparing, contrasting, or applying prior knowledge");
+      lines.push("- Show moments of cognitive dissonance: the protagonist's modern/past-life instincts clashing with this world's rules");
+      lines.push("- The protagonist's inner voice should occasionally use expressions or thought patterns from their original world (not in dialogue — only in internal monologue)");
+    }
+    if (isRebirth) {
+      lines.push("- The protagonist has foreknowledge — show them making decisions informed by their previous life's events");
+      lines.push("- Include at least one moment per chapter where the protagonist recognizes something from their past life or deliberately changes course because of it");
+    }
+    if (hasGameKnowledge) {
+      lines.push("- When the protagonist encounters mechanics that resemble game systems, include their internal comparison to game knowledge — but mark the differences, not just the similarities");
+      lines.push("- Game references should appear as private thoughts, never spoken aloud to other characters");
+    }
+    lines.push("- NEVER write as if the protagonist is a native of this world — they carry their original identity in every thought and decision");
+    return lines.join("\n");
+  }
+
+  const lines = ["## 主角身份视角守则（自动检测）"];
+  lines.push("");
+  lines.push("主角具有双重身份。叙事必须体现这一点：");
+  if (isTransmigration || hasPastLife) {
+    lines.push("- 每章至少有一段内心独白涉及主角的前世记忆——对比、分析、或运用前世经验");
+    lines.push("- 展示认知冲突时刻：主角的现代/前世本能与此世界规则的碰撞");
+    lines.push("- 主角的内心声音应偶尔使用其原来世界的表达方式或思维模式（只在内心独白中，不在对话中）");
+  }
+  if (isRebirth) {
+    lines.push("- 主角有先知先觉——展现他们基于前世经历做出的决策");
+    lines.push("- 每章至少有一个瞬间主角认出前世的某件事，或因为前世记忆而刻意改变行动");
+  }
+  if (hasGameKnowledge) {
+    lines.push("- 主角遇到类似游戏机制的能力时，内心应有与游戏知识的对比——但重点标注差异而非仅标注相似");
+    lines.push("- 游戏相关参照只作为内心想法出现，绝不能在对话中向其他角色说出");
+  }
+  lines.push("- 绝不能写成主角是此世界原住民——他们的每一个想法和决策都带着原来世界的烙印");
+  return lines.join("\n");
+}
+
+// ---------------------------------------------------------------------------
 // Book rules body (user-written markdown)
 // ---------------------------------------------------------------------------
 
@@ -901,7 +978,7 @@ ${resourceRow}| 待回收伏笔 | 用真实 hook_id 填写（无则写 none） |
 ${preWriteTable}
 
 === CHAPTER_TITLE ===
-(章节标题，不含"第X章"。标题必须与已有章节标题不同，不要重复使用相同或相似的标题；若提供了 recent title history 或高频标题词，必须主动避开重复词根和高频意象)
+(章节标题，不含"第X章"。标题最少2个字，2-4字为宜；标题必须与已有章节标题不同，不要重复使用相同或相似的标题；若提供了 recent title history 或高频标题词，必须主动避开重复词根和高频意象)
 
 === CHAPTER_CONTENT ===
 (正文内容，目标${lengthSpec.target}字，允许区间${lengthSpec.softMin}-${lengthSpec.softMax}字)
@@ -959,7 +1036,7 @@ ${resourceRow}| 待回收伏笔 | 用真实 hook_id 填写（无则写 none） |
 ${preWriteTable}
 
 === CHAPTER_TITLE ===
-(章节标题，不含"第X章"。标题必须与已有章节标题不同，不要重复使用相同或相似的标题；若提供了 recent title history 或高频标题词，必须主动避开重复词根和高频意象)
+(章节标题，不含"第X章"。标题最少2个字，2-4字为宜；标题必须与已有章节标题不同，不要重复使用相同或相似的标题；若提供了 recent title history 或高频标题词，必须主动避开重复词根和高频意象)
 
 === CHAPTER_CONTENT ===
 (正文内容，目标${lengthSpec.target}字，允许区间${lengthSpec.softMin}-${lengthSpec.softMax}字)

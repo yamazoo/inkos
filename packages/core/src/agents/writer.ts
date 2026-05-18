@@ -203,6 +203,7 @@ export class WriterAgent extends BaseAgent {
       chapterNumber, "creative", fanficContext, resolvedLanguage,
       input.chapterMemo ? "governed" : "legacy",
       resolvedLengthSpec,
+      characterMatrix !== placeholder ? characterMatrix : undefined,
     );
 
     const creativeUserPrompt = input.chapterMemo && input.contextPackage && input.ruleStack
