@@ -48,14 +48,16 @@ export function applyTimelineDelta(
     { chapter, storyDay: delta.storyDay, label: delta.dayLabel },
   ].sort((a, b) => a.chapter - b.chapter);
 
-  // 2. Process events - deep copy anchors to avoid mutation
+  // 2. Process events - deep copy anchors to avoid mutation.
+  //    When a chapter is rewritten, strip stale cross-refs and countdowns
+  //    from that chapter so the new delta replaces them cleanly.
   const anchorsById = new Map<string, EventAnchor>(
     existing.eventAnchors.map((a) => [
       a.eventId,
       {
         ...a,
-        crossReferences: [...a.crossReferences],
-        countdowns: [...a.countdowns],
+        crossReferences: a.crossReferences.filter((r) => r.chapter !== chapter),
+        countdowns: a.countdowns.filter((c) => c.chapter !== chapter),
       },
     ]),
   );
@@ -64,14 +66,21 @@ export function applyTimelineDelta(
     const existingAnchor = anchorsById.get(evt.id);
 
     if (!existingAnchor) {
-      // New anchor: first mention
+      // New anchor: first mention. For countdown events, anchor to the
+      // implied target day (current + countdown) rather than the current
+      // day, so subsequent references don't generate false conflicts.
+      const anchorStoryDay = evt.countdown !== undefined
+        ? delta.storyDay + evt.countdown
+        : delta.storyDay;
       const anchor: EventAnchor = {
         eventId: evt.id,
         label: evt.id,
-        storyDay: delta.storyDay,
+        storyDay: anchorStoryDay,
         firstMentioned: { chapter, raw: evt.reference },
         crossReferences: [],
-        countdowns: [],
+        countdowns: evt.countdown !== undefined
+          ? [{ chapter, raw: evt.reference, daysLeft: evt.countdown }]
+          : [],
       };
       anchorsById.set(evt.id, anchor);
     } else {
@@ -114,12 +123,24 @@ export function applyTimelineDelta(
     }
   }
 
+  // 3. Deduplicate conflicts: strip old conflicts from this chapter,
+  //    then append new ones. Prevents accumulation on re-revision.
+  const retainedConflicts = existing.conflicts.filter(
+    (c) => c.detectedAtChapter !== chapter,
+  );
+  const seenIds = new Set(retainedConflicts.map((c) => c.conflictId));
+  const dedupedNew = newConflicts.filter((c) => {
+    if (seenIds.has(c.conflictId)) return false;
+    seenIds.add(c.conflictId);
+    return true;
+  });
+
   const updated: TimelineState = {
     storyDays: nextStoryDays,
     eventAnchors: [...anchorsById.values()].sort(
       (a, b) => a.storyDay - b.storyDay || a.eventId.localeCompare(b.eventId),
     ),
-    conflicts: [...existing.conflicts, ...newConflicts],
+    conflicts: [...retainedConflicts, ...dedupedNew],
     lastUpdatedChapter: chapter,
   };
 

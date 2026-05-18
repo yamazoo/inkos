@@ -1,4 +1,4 @@
-import type { LLMClient, OnStreamProgress } from "../llm/provider.js";
+import type { LLMClient, LLMMessage, LLMResponse, OnStreamProgress } from "../llm/provider.js";
 import { chatCompletion, createLLMClient } from "../llm/provider.js";
 import type { Logger } from "../utils/logger.js";
 import type { BookConfig, FanficMode } from "../models/book.js";
@@ -21,6 +21,7 @@ import { readGenreProfile } from "../agents/rules-reader.js";
 import { analyzeAITells } from "../agents/ai-tells.js";
 import { analyzeSensitiveWords } from "../agents/sensitive-words.js";
 import { OutlineInitAgent } from "../agents/outline-init-agent.js";
+import { validateOpeningPacing, buildOpeningRegenerationPrompt } from "../utils/pacing-validator.js";
 import { VolumeStructureExtractor } from "../agents/volume-structure-extractor.js";
 import { StateManager } from "../state/manager.js";
 import { MemoryDB, type Fact } from "../state/memory-db.js";
@@ -48,7 +49,7 @@ import {
   writeVolumeChapters,
 } from "../utils/chapter-outline-store.js";
 import type { VolumeOutline, VolumeNode, ChapterNode } from "../models/volume-outline.js";
-import { findVolumeForChapter, VolumeOutlineSchema } from "../models/volume-outline.js";
+import { findVolumeForChapter, VolumeOutlineSchema, ChapterNodeSchema } from "../models/volume-outline.js";
 import { loadNarrativeMemorySeed, loadSnapshotCurrentStateFacts } from "../state/runtime-state-store.js";
 import { rewriteStructuredStateFromMarkdown } from "../state/state-bootstrap.js";
 import { readFile, readdir, writeFile, mkdir, rename, rm, stat } from "node:fs/promises";
@@ -76,6 +77,11 @@ const SEQUENCE_LEVEL_CATEGORIES = new Set([
 function isSequenceLevelCategory(category: string): boolean {
   return SEQUENCE_LEVEL_CATEGORIES.has(category);
 }
+
+const PACING_GATE_GENRES = new Set([
+  "xianxia", "xuanhuan", "urban", "litrpg", "progression",
+  "isekai", "cultivation", "system-apocalypse", "dungeon-core", "tower-climber",
+]);
 
 interface ImportFoundationSourceOptions {
   readonly maxFullTextChars?: number;
@@ -4095,7 +4101,64 @@ ${matrix}`,
           mergedMap.set(ch.chapter, ch);
         }
       }
-      const merged = [...mergedMap.values()].sort((a, b) => a.chapter - b.chapter);
+      let merged = [...mergedMap.values()].sort((a, b) => a.chapter - b.chapter);
+
+      // Pacing validation gate: check opening chapters (Ch1-3) for golden finger pacing.
+      // Only applies to combat/progression genres where golden fingers are expected.
+      // Skipped for non-combat genres (romance, horror, cozy, sci-fi, other).
+      if (rangeStart === 1 && merged.length >= 3 && PACING_GATE_GENRES.has(book.genre)) {
+        const openingChapters = merged.filter((ch) => ch.chapter >= 1 && ch.chapter <= 3);
+        if (openingChapters.length === 3) {
+          const pCtx = this.agentCtxFor("outline-init", bookId);
+          const chatFn = (
+            msgs: ReadonlyArray<LLMMessage>,
+            opts?: { readonly temperature?: number; readonly maxTokens?: number },
+          ): Promise<LLMResponse> =>
+            chatCompletion(pCtx.client, pCtx.model, msgs, { ...opts, onStreamProgress: pCtx.onStreamProgress });
+
+          const pacingResult = await validateOpeningPacing(openingChapters, chatFn, lang);
+          if (!pacingResult.pass) {
+            this.config.logger?.warn(`[outline] Opening pacing validation failed: ${pacingResult.reason}`);
+            this.config.logger?.info(`[outline] Regenerating Ch1-3 with accelerated pacing...`);
+
+            // Truncate volumeProse to first volume only for the regeneration prompt
+            const vol1Prose = volumeProse.length > 8000 ? volumeProse.slice(0, 8000) + "\n...(truncated)" : volumeProse;
+            const { system, user } = buildOpeningRegenerationPrompt(openingChapters, vol1Prose, storyFrame, lang);
+
+            let regenChapters: ChapterNode[] | undefined;
+            for (let attempt = 0; attempt < 2; attempt++) {
+              const response = await chatCompletion(pCtx.client, pCtx.model, [
+                { role: "system", content: system } as LLMMessage,
+                { role: "user", content: user } as LLMMessage,
+              ], { temperature: 0.3, maxTokens: 4000, onStreamProgress: pCtx.onStreamProgress });
+
+              try {
+                const fenced = response.content.match(/```(?:json)?\n?([\s\S]*?)\n?```/);
+                const jsonStr = fenced?.[1] ?? response.content.match(/(\[[\s\S]*\])/)?.[1];
+                if (!jsonStr) throw new Error("No JSON array found");
+                const parsed = JSON.parse(jsonStr);
+                if (!Array.isArray(parsed) || parsed.length !== 3) throw new Error("Expected 3 chapters");
+                regenChapters = parsed.map((raw: unknown, i: number) => {
+                  const result = ChapterNodeSchema.safeParse(raw);
+                  if (!result.success) throw new Error(`Chapter at index ${i} failed validation`);
+                  return result.data;
+                });
+                break;
+              } catch (err) {
+                this.config.logger?.warn(`[outline] Regen attempt ${attempt + 1} failed: ${err instanceof Error ? err.message : err}`);
+              }
+            }
+
+            if (regenChapters) {
+              const regenMap = new Map(regenChapters.map((c) => [c.chapter, c]));
+              merged = merged.map((ch) => regenMap.get(ch.chapter) ?? ch);
+              this.config.logger?.info(`[outline] Ch1-3 regenerated with accelerated pacing`);
+            } else {
+              this.config.logger?.warn(`[outline] Ch1-3 regeneration failed after retries, keeping original`);
+            }
+          }
+        }
+      }
 
       await writeVolumeChapters(bookDir, {
         schemaVersion: 1,

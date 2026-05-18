@@ -90,7 +90,8 @@ chapter 2 settled
       lastUpdatedChapter: 0,
     };
 
-    // Ch1: first mention of "exam" with countdown=3, anchor at current storyDay=1
+    // Ch1: first mention of "exam" with countdown=3 at storyDay=1
+    // Anchor should be at storyDay = 1+3 = 4, and the countdown is recorded
     const ch1Delta = {
       storyDay: 1,
       dayLabel: "",
@@ -99,19 +100,19 @@ chapter 2 settled
     const ch1 = applyTimelineDelta(empty, ch1Delta, 1);
     expect(ch1.updated.eventAnchors).toHaveLength(1);
     expect(ch1.updated.eventAnchors[0]!.eventId).toBe("exam");
-    // First mention only creates the anchor — countdown is not stored until a second reference
-    expect(ch1.updated.eventAnchors[0]!.countdowns).toHaveLength(0);
+    expect(ch1.updated.eventAnchors[0]!.storyDay).toBe(4);
+    expect(ch1.updated.eventAnchors[0]!.countdowns).toHaveLength(1);
+    expect(ch1.updated.eventAnchors[0]!.countdowns[0]!.daysLeft).toBe(3);
 
-    // Ch2: countdown=2, impliedDay = 2+2=4, anchor=1 → mismatch
+    // Ch2: countdown=2 at storyDay=2, impliedDay = 2+2=4, anchor=4 → consistent, no conflict
     const ch2Delta = {
       storyDay: 2,
       dayLabel: "",
       events: [{ id: "exam", reference: "考核还有2天", countdown: 2 }],
     };
     const ch2 = applyTimelineDelta(ch1.updated, ch2Delta, 2);
-    expect(ch2.conflicts).toHaveLength(1);
-    expect(ch2.conflicts[0]!.type).toBe("countdown-mismatch");
-    expect(ch2.conflicts[0]!.severity).toBe("critical");
+    expect(ch2.conflicts).toHaveLength(0);
+    expect(ch2.updated.eventAnchors[0]!.countdowns).toHaveLength(2);
   });
 
   it("no conflict when references are consistent", () => {

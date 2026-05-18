@@ -715,30 +715,37 @@ export class WriterAgent extends BaseAgent {
       );
     }
 
-    if (runtimeStateArtifacts?.snapshot ?? output.runtimeStateSnapshot) {
-      writes.push(saveRuntimeStateSnapshot(bookDir, runtimeStateArtifacts?.snapshot ?? output.runtimeStateSnapshot!));
-    }
-
-    if (numericalSystem) {
-      writes.push(
-        writeFile(join(storyDir, "particle_ledger.md"), output.updatedLedger, "utf-8"),
-      );
-    }
-
-    // Process timeline delta if present
+    // Process timeline delta BEFORE building the snapshot, so the snapshot
+    // contains the updated timeline state (avoids snapshot/timeline divergence).
+    let nextTimeline: import("../models/timeline.js").TimelineState | undefined;
     if (output.timelineDelta) {
       const existingTimeline = await loadTimeline(bookDir);
-      const { updated: nextTimeline } = applyTimelineDelta(
+      const result = applyTimelineDelta(
         existingTimeline,
         output.timelineDelta,
         output.chapterNumber,
       );
+      nextTimeline = result.updated;
       writes.push(saveTimeline(bookDir, nextTimeline));
 
       const timelineMd = renderTimelineProjection(nextTimeline, language);
       if (timelineMd) {
         writes.push(writeFile(join(storyDir, "timeline.md"), timelineMd, "utf-8"));
       }
+    }
+
+    if (runtimeStateArtifacts?.snapshot ?? output.runtimeStateSnapshot) {
+      const baseSnapshot = runtimeStateArtifacts?.snapshot ?? output.runtimeStateSnapshot!;
+      const snapshotWithTimeline = nextTimeline
+        ? { ...baseSnapshot, timeline: nextTimeline }
+        : baseSnapshot;
+      writes.push(saveRuntimeStateSnapshot(bookDir, snapshotWithTimeline));
+    }
+
+    if (numericalSystem) {
+      writes.push(
+        writeFile(join(storyDir, "particle_ledger.md"), output.updatedLedger, "utf-8"),
+      );
     }
 
     await Promise.all(writes);

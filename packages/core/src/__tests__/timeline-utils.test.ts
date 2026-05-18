@@ -401,12 +401,52 @@ describe("applyTimelineDelta", () => {
     expect(updated.eventAnchors[0]!.crossReferences).toHaveLength(1);
   });
 
-  it("preserves existing conflicts and appends new ones", () => {
+  it("preserves existing conflicts from other chapters and appends new ones", () => {
     const existingConflict: TimelineConflict = {
       conflictId: "old-conflict",
       severity: "critical",
       type: "anchor-mismatch",
-      description: "old conflict",
+      description: "old conflict from chapter 1",
+      chapters: [1, 2],
+      detectedAtChapter: 1,
+    };
+
+    const base: TimelineState = {
+      storyDays: [{ chapter: 1, storyDay: 1, label: "" }],
+      eventAnchors: [
+        {
+          eventId: "wedding",
+          label: "wedding",
+          storyDay: 1,
+          firstMentioned: { chapter: 1, raw: "wedding" },
+          crossReferences: [],
+          countdowns: [],
+        },
+      ],
+      conflicts: [existingConflict],
+      lastUpdatedChapter: 1,
+    };
+
+    const delta: TimelineDelta = {
+      storyDay: 5,
+      dayLabel: "",
+      events: [{ id: "wedding", reference: "days since wedding", impliedOffset: 10 }],
+    };
+
+    const { updated, conflicts } = applyTimelineDelta(base, delta, 2);
+    // Old conflict from chapter 1 is preserved; new conflict from chapter 2 is appended
+    expect(updated.conflicts).toHaveLength(2);
+    expect(updated.conflicts[0]!.conflictId).toBe("old-conflict");
+    expect(conflicts).toHaveLength(1);
+    expect(conflicts[0]!.conflictId).not.toBe("old-conflict");
+  });
+
+  it("deduplicates same-chapter conflicts on re-apply", () => {
+    const existingConflict: TimelineConflict = {
+      conflictId: "stale-conflict",
+      severity: "critical",
+      type: "anchor-mismatch",
+      description: "conflict from previous ch2 apply",
       chapters: [1, 2],
       detectedAtChapter: 2,
     };
@@ -433,11 +473,10 @@ describe("applyTimelineDelta", () => {
       events: [{ id: "wedding", reference: "days since wedding", impliedOffset: 10 }],
     };
 
-    const { updated, conflicts } = applyTimelineDelta(base, delta, 2);
-    expect(updated.conflicts).toHaveLength(2);
-    expect(updated.conflicts[0]!.conflictId).toBe("old-conflict");
-    expect(conflicts).toHaveLength(1);
-    expect(conflicts[0]!.conflictId).not.toBe("old-conflict");
+    const { updated } = applyTimelineDelta(base, delta, 2);
+    // Stale conflict from same chapter is replaced, not accumulated
+    expect(updated.conflicts).toHaveLength(1);
+    expect(updated.conflicts[0]!.conflictId).not.toBe("stale-conflict");
   });
 
   it("does not mutate the input timeline", () => {

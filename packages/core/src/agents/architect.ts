@@ -2,6 +2,8 @@ import { BaseAgent } from "./base.js";
 import type { BookConfig, FanficMode } from "../models/book.js";
 import type { GenreProfile } from "../models/genre-profile.js";
 import { readGenreProfile } from "./rules-reader.js";
+import { BookRulesSchema } from "../models/book-rules.js";
+import yaml from "js-yaml";
 import { writeFile, mkdir, rm } from "node:fs/promises";
 import { join } from "node:path";
 import { renderHookSnapshot } from "../utils/memory-retrieval.js";
@@ -288,13 +290,14 @@ ${eraBlock}
 每一卷最后一章必须发生什么不可逆的事——权力结构改变、关系破裂、秘密暴露、主角身份重定位。写散文，一卷一段。**只写"必须发生什么"，不指定是第几章**。
 
 ### 段 5：节奏原则（具体化 + 通用）
-**这是节奏原则的唯一归宿，不再有独立 rhythm_principles section。** 本段输出 6 条节奏原则。**至少 3 条必须具体化到本书**（例："前 30 章每 5 章一个小爽点"），其余可保留通用原则（例："拒绝机械降神"、"高潮前 3-5 章埋伏笔"）。具体化 + 通用混合是合法的。反面例子："节奏要张弛有度"（废话）。正面例子："前 30 章每 5 章一个小爽点，且小爽点必须落在章末 300 字内"。6 条各写 2-3 句，覆盖（顺序不强制、可替换同权重议题）：
+**这是节奏原则的唯一归宿，不再有独立 rhythm_principles section。** 本段输出 7 条节奏原则。**至少 3 条必须具体化到本书**（例："前 30 章每 5 章一个小爽点"），其余可保留通用原则（例："拒绝机械降神"、"高潮前 3-5 章埋伏笔"）。具体化 + 通用混合是合法的。反面例子："节奏要张弛有度"（废话）。正面例子："前 30 章每 5 章一个小爽点，且小爽点必须落在章末 300 字内"。7 条各写 2-3 句，覆盖（顺序不强制、可替换同权重议题）：
 1. 高潮间距——本书大高潮之间最长多少章？（具体化优先）
 2. 喘息频率——高压段多长必须插一章喘息？喘息章承担什么任务？
 3. 钩子密度——每章章末留钩数量，主钩最多允许悬多少章？
 4. 信息释放节奏——主线信息在前 1/3、中段、后 1/3 分别释放多少比例？（可通用）
 5. 爽点节奏——爽点间距多少章一个？什么类型为主？（具体化优先）
 6. 情感节点递进——情感关系每多少章必须有一次实质推进？
+7. 开篇加速——主角金手指（特殊能力）必须在前 3 章叙事内完成"发现→首次战斗触发"。觉醒/感知/学习不算战斗触发，必须对真实敌人产生可见战果。第一卷散文必须明确写出这一时间线，不能留给下游猜测
 
 === SECTION: roles ===
 
@@ -490,7 +493,7 @@ Supporting characters' stage changes (master dies end of vol 2, opponent breaks 
 Each volume's last chapter must contain an irreversible event. Prose, one paragraph per volume. **Write what must happen, not which chapter**.
 
 ## 05_Rhythm_Principles (concrete + universal)
-**This is the single home for rhythm principles — no separate rhythm_principles section exists.** Output 6 rhythm principles. **At least 3 must be concretized for this book** (e.g., "every 5 chapters in the first 30, hit one small payoff"); the rest may stay as universal rules (e.g., "no deus ex machina", "plant the foreshadow 3-5 chapters before the climax"). A mix of concrete + universal is valid. Bad: "rhythm must balance tension and release". Good: "every 5 chapters in the first 30 carries a small payoff landing in the last 300 chars of the chapter". Cover (order flexible, substitutions of equal weight are allowed): (1) climax spacing, (2) breath frequency, (3) hook density, (4) information release pacing, (5) payoff rhythm, (6) relationship advancement — each 2-3 sentences.
+**This is the single home for rhythm principles — no separate rhythm_principles section exists.** Output 7 rhythm principles. **At least 3 must be concretized for this book** (e.g., "every 5 chapters in the first 30, hit one small payoff"); the rest may stay as universal rules (e.g., "no deus ex machina", "plant the foreshadow 3-5 chapters before the climax"). A mix of concrete + universal is valid. Bad: "rhythm must balance tension and release". Good: "every 5 chapters in the first 30 carries a small payoff landing in the last 300 chars of the chapter". Cover (order flexible, substitutions of equal weight are allowed): (1) climax spacing, (2) breath frequency, (3) hook density, (4) information release pacing, (5) payoff rhythm, (6) relationship advancement, (7) opening acceleration — the protagonist's golden finger (special ability) must be discovered and combat-triggered (producing a visible result against a real enemy) within the first 3 chapters of narrative. The volume prose must explicitly specify this timeline. Awakening/sensing/learning does not count as combat trigger — each 2-3 sentences.
 
 === SECTION: roles ===
 
@@ -835,7 +838,30 @@ You MUST emit all **5 SECTION blocks in order**: story_frame → volume_map → 
     // book_rules.md becomes a compat shim.
     const { frontmatter: bookRulesFrontmatter, body: bookRulesBody } =
       extractYamlFrontmatter(output.bookRules);
-    const storyFrame = bookRulesFrontmatter
+
+    // Write-time YAML validation: ensure the frontmatter is actually valid
+    // YAML that passes BookRulesSchema. Without this check, malformed YAML
+    // (e.g. invalid list items) gets written to story_frame.md and every
+    // downstream readBookRules() call silently falls back to the compat shim,
+    // causing all agents to lose access to structured rules.
+    let frontmatterValid = false;
+    if (bookRulesFrontmatter) {
+      try {
+        const fmContent = bookRulesFrontmatter.replace(/^---\s*\n/, "").replace(/\n---\s*$/, "");
+        const parsed = yaml.load(fmContent) as Record<string, unknown>;
+        BookRulesSchema.parse(parsed);
+        frontmatterValid = true;
+      } catch (err) {
+        // eslint-disable-next-line no-console
+        console.warn(
+          `[architect] book_rules YAML frontmatter failed validation at write time — ` +
+          `story_frame.md will NOT include frontmatter; book_rules.md will retain full content as fallback. ` +
+          `Error: ${err instanceof Error ? err.message : String(err)}`,
+        );
+      }
+    }
+
+    const storyFrame = frontmatterValid && bookRulesFrontmatter
       ? `${bookRulesFrontmatter}\n\n${storyFrameBody.trim()}\n`
       : storyFrameBody;
 
@@ -879,12 +905,18 @@ You MUST emit all **5 SECTION blocks in order**: story_frame → volume_map → 
     // outline/volume_map.md and falls back to legacy volume_outline.md for
     // books initialized before Phase 5.
 
-    // book_rules.md is now a compat shim — the authoritative YAML
+    // book_rules.md is normally a compat shim — the authoritative YAML
     // frontmatter lives on story_frame.md (cleanup #3). readBookRules()
     // prefers story_frame.md but still falls back here for older books.
+    //
+    // When frontmatter validation failed above, we write the full LLM
+    // output instead of a shim so readBookRules() can fall back to
+    // parseBookRules() on the legacy file and still extract valid rules.
     writes.push(writeFile(
       join(storyDir, "book_rules.md"),
-      this.buildBookRulesShim(bookRulesBody, language),
+      frontmatterValid
+        ? this.buildBookRulesShim(bookRulesBody, language)
+        : output.bookRules,
       "utf-8",
     ));
 

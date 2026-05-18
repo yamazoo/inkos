@@ -38,7 +38,15 @@ Rules:
 5. Do NOT repeat the same event across chapters
 6. If the prose is vague, create plausible content that fits the volume theme
 7. Strictly respect event boundaries from the source — events described separately (e.g., awakening vs. clan competition) MUST be in different chapters, never merged
-8. Strictly follow exact quantities from the source — if it says "first sword intent" that is 1, not 3; if it says "clan competition" that is one event, not multiple`;
+8. Strictly follow exact quantities from the source — if it says "first sword intent" that is 1, not 3; if it says "clan competition" that is one event, not multiple
+
+Pacing constraints (mandatory, same priority as rules above):
+9. Satisfaction beat ceiling: every 3 chapters must include at least one reader payoff (face-slap, breakthrough, reversal, surprise gain, enemy setback). Pure setup/training/suffering cannot exceed 2 consecutive chapters
+10. Opening acceleration: the protagonist's golden finger (special ability) must be DISCOVERED in chapter 1 and COMBAT-TRIGGERED (used against a real enemy, not just awakened or tested on animals) by chapter 3 at the latest. "Discovery" or "awakening" does NOT count as a highlight — only the moment it produces a visible, irreversible result in conflict counts. No all-setup/all-suffering openings
+11. Chapter type rotation: no more than 2 consecutive chapters of the same pacing type (e.g., no 3 chapters of pure "passive suffering" or "training montage"). Rotate between conflict, scheming, breakthrough, payoff, and suspense
+12. Every chapter must end with clear "page-turn drive" — a question or conflict the reader must turn the page to resolve. No "summarizing" or "calm" endings
+13. The protagonist must have at least 2 proactive actions (setting traps, counterattacking, initiating offense) within the first 10 chapters — no purely passive suffering
+14. Golden finger pacing: the "learning/discovery" phase cannot exceed 1 chapter. After the ability is first noticed, the protagonist must attempt combat use in the very next chapter. Do NOT spread awakening → learning → first test → first real use across 4+ chapters. The reader wants to see it WORK, not study it`;
   }
 
   return `你是一位专业的小说细纲架构师。你的任务是从卷纲散文中提取结构化的章节细纲。
@@ -59,7 +67,15 @@ Rules:
 5. 不同章节不能重复相同的事件
 6. 如果散文内容模糊，请根据卷主题创建合理内容
 7. 严格尊重源材料中的事件边界——散文中分开描述的事件（如觉醒与族比）必须分配到不同章节，不能合并为一章
-8. 严格遵守源材料中的数量——散文说"第一道剑意"就是1道，不能自行增加为多道；说"族比"就是一场，不能拆为多场`;
+8. 严格遵守源材料中的数量——散文说"第一道剑意"就是1道，不能自行增加为多道；说"族比"就是一场，不能拆为多场
+
+节奏约束（强制执行，与上述规则同等优先级）：
+9. 爽点间距上限：连续不超过3章必须出现至少一个读者爽点（打脸、突破、逆转、意外收获、敌人吃亏）。纯铺垫/修炼/受辱不能连续超过2章
+10. 开篇加速：金手指（主角特殊能力）必须在第1章末尾或第2章初被发现，在第3章之前必须完成首次战斗触发（对真实敌人使用，产生可见的不可逆结果）。"觉醒""感知到""发现机制"不算高光时刻——只有金手指在冲突中产生实际战果才算。不允许前3章全是铺垫和受辱
+11. 章节类型轮换：不能连续3章使用同一种节奏类型（如不能连续3章都是"被动受辱"或"修炼成长"）。必须在冲突、布局、突破、打脸、悬念之间轮换
+12. 每章结尾必须有明确的「翻页驱动力」——一个读者必须翻到下一章才能知道答案的问题或冲突。不能以"总结式"或"平静式"收尾
+13. 主角在前10章内必须有至少2次主动行动（设计陷阱、反击、主动出击），不能全是被动承受
+14. 金手指节奏：「学习/发现」阶段不超过1章。能力被发现后，下一章就必须尝试战斗使用。不要把觉醒→学习→首次测试→首次实战分散到4章以上。读者想看到它起作用，而不是研究它`;
 }
 
 /**

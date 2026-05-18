@@ -56,8 +56,12 @@ export function parseSettlerDeltaOutput(content: string): SettlerDeltaOutput {
       timelineDelta = TimelineDeltaSchema.parse(
         JSON.parse(sanitizeJSON(timelinePayload)),
       );
-    } catch {
-      // TIMELINE block is optional — invalid content is silently ignored
+    } catch (err) {
+      // TIMELINE block is optional — log but don't fail the entire parse
+      // eslint-disable-next-line no-console
+      console.warn(
+        `[settler-delta-parser] TIMELINE block parse failed, ignoring: ${err instanceof Error ? err.message : String(err)}`,
+      );
     }
   }
 

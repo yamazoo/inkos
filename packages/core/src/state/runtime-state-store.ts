@@ -10,7 +10,7 @@ import {
 import { TimelineStateSchema } from "../models/timeline.js";
 import type { Fact, StoredHook, StoredSummary } from "./memory-db.js";
 import { bootstrapStructuredStateFromMarkdown, parseCurrentStateFacts } from "./state-bootstrap.js";
-import { renderChapterSummariesProjection, renderCurrentStateProjection, renderHooksProjection, renderTimelineProjection } from "./state-projections.js";
+import { renderChapterSummariesProjection, renderCurrentStateProjection, renderHooksProjection } from "./state-projections.js";
 import { applyRuntimeStateDelta, type RuntimeStateSnapshot } from "./state-reducer.js";
 import { validateRuntimeState } from "./state-validator.js";
 import { arbitrateRuntimeStateDeltaHooks } from "../utils/hook-arbiter.js";

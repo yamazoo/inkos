@@ -170,14 +170,19 @@ export class ReviserAgent extends BaseAgent {
     const isEnglish = (bookLanguage ?? gp.language) === "en";
     const resolvedLanguage = isEnglish ? "en" : "zh";
 
-    const timelineCriticalIssues = issues.filter(
-      (i) => i.severity === "critical" && i.category.startsWith("Timeline"),
+    // Use the loaded timeline directly (not the stale `issues` parameter)
+    // so re-revisions see the current timeline state, not the original audit.
+    const timelineCriticalConflicts = timeline.conflicts.filter(
+      (c) => c.severity === "critical",
     );
 
     let timelineRepairBlock = "";
-    if (timelineCriticalIssues.length > 0) {
-      const conflictLines = timelineCriticalIssues.map((issue, idx) => {
-        return `[矛盾${idx + 1}] ${issue.description}\n修正方向：${issue.suggestion}`;
+    if (timelineCriticalConflicts.length > 0) {
+      const conflictLines = timelineCriticalConflicts.map((conflict, idx) => {
+        const ch = conflict.chapters[1] ?? conflict.chapters[0];
+        return isEnglish
+          ? `[Conflict ${idx + 1}] ${conflict.description}\nFix direction: align event references in chapter ${ch} with timeline.json anchors.`
+          : `[矛盾${idx + 1}] ${conflict.description}\n修正方向：修正第${ch}章中对事件的时间引用，使其与 timeline.json 中的锚点一致。`;
       });
 
       timelineRepairBlock = isEnglish
