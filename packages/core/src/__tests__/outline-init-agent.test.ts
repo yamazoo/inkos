@@ -216,6 +216,32 @@ describe("OutlineInitAgent", () => {
         agent.generateChaptersForVolume(BASE_INPUT),
       ).rejects.toThrow();
     });
+
+    it("includes brief and characterContext in user prompt", async () => {
+      const spy = vi.spyOn(llmProvider, "chatCompletion").mockResolvedValue({
+        content: chapterJson(1, 1),
+        usage: ZERO_USAGE,
+      });
+
+      const agent = new OutlineInitAgent({
+        client: STUB_CLIENT,
+        model: "test-model",
+        projectRoot: "/tmp/test",
+      });
+
+      await agent.generateChaptersForVolume({
+        ...BASE_INPUT,
+        brief: "玄幻 / 魂穿 / 升级爽文。主角是LOL钻石段位玩家，魂穿废柴。",
+        characterContext: "## 主要角色\n\n### 云辰\n\n云辰前世是某大学体育特长生。",
+        chapterRange: [1, 1] as [number, number],
+      });
+
+      const userMsg = spy.mock.calls[0]![2]![1]!.content as string;
+      expect(userMsg).toContain("用户创作简报");
+      expect(userMsg).toContain("LOL钻石段位");
+      expect(userMsg).toContain("角色档案");
+      expect(userMsg).toContain("体育特长生");
+    });
   });
 
   // -------------------------------------------------------------------------

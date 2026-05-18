@@ -1309,7 +1309,41 @@ export class PipelineRunner {
         }
       }
 
-      const titleWasRecovered = chapterMeta.title !== (index.find((ch) => ch.number === targetChapter)?.title ?? "");
+      // If title is still too short after recovery, generate a better one via LLM.
+      const shortTitleThreshold = stageLanguage === "en" ? 1 : 2;
+      const titleNeedsRegeneration = chapterMeta.title.trim().length > 0
+        && chapterMeta.title.trim().length < shortTitleThreshold;
+      const originalShortTitle = chapterMeta.title;
+      let titleWasRegenerated = false;
+      if (titleNeedsRegeneration) {
+        this.logStage(stageLanguage, {
+          zh: `标题"${chapterMeta.title}"过短，正在生成新标题`,
+          en: `Title "${chapterMeta.title}" is too short, generating a better one`,
+        });
+        const regeneratedTitle = await this.regenerateShortTitle(
+          bookId, content, targetChapter, chapterMeta.title, stageLanguage,
+        );
+        if (regeneratedTitle && regeneratedTitle.trim().length >= shortTitleThreshold) {
+          const oldTitle = chapterMeta.title;
+          chapterMeta = { ...chapterMeta, title: regeneratedTitle.trim() };
+          titleWasRegenerated = true;
+          if (existingFile) {
+            existingFile = await this.renameChapterFileIfNeeded(
+              chaptersDir, paddedNum, existingFile, chapterMeta.title,
+            );
+            // Update heading inside the chapter file
+            const heading = stageLanguage === "en"
+              ? `# Chapter ${targetChapter}: ${chapterMeta.title}`
+              : `# 第${targetChapter}章 ${chapterMeta.title}`;
+            const body = content.replace(/^#\s*第\d+章\s+.+\n?/, "").trim();
+            await writeFile(join(chaptersDir, existingFile), `${heading}\n\n${body}`, "utf-8");
+          }
+          this.config.logger?.info(`[title] regenerated "${oldTitle}" → "${chapterMeta.title}" for chapter ${targetChapter}`);
+        }
+      }
+
+      const titleWasRecovered = titleWasRegenerated
+        || chapterMeta.title !== (index.find((ch) => ch.number === targetChapter)?.title ?? "");
 
       // Defensive: ensure chapter summary exists in chapter_summaries.json
       const summariesPath = join(bookDir, "story", "state", "chapter_summaries.json");
@@ -1373,7 +1407,8 @@ export class PipelineRunner {
       if (preRevision.blockingCount === 0 && preRevision.aiTellCount === 0) {
         const { normalizePostWriteSurface: normalize } = await import("../agents/post-write-validator.js");
         const normalized = normalize(content, language);
-        if (normalized !== content || titleWasRecovered) {
+        const contentChanged = normalized !== content;
+        if (contentChanged || titleWasRecovered) {
           if (existingFile) {
             const heading = language === "en"
               ? `# Chapter ${targetChapter}: ${chapterMeta.title}`
@@ -1386,15 +1421,18 @@ export class PipelineRunner {
           const fixedIndex = index.map((ch) => ch.number === targetChapter ? { ...ch, title: chapterMeta.title } : ch);
           await this.state.saveChapterIndex(bookId, fixedIndex);
         }
+        const anyChange = contentChanged || titleWasRecovered;
         return {
           chapterNumber: targetChapter,
           wordCount: countChapterLength(normalized, countingMode),
-          fixedIssues: [],
-          applied: normalized !== content,
-          status: normalized !== content ? "ready-for-review" : "unchanged",
-          skippedReason: normalized === content
-            ? "No warning, critical, or AI-tell issues to fix."
-            : "No audit issues; surface normalization applied.",
+          fixedIssues: titleWasRegenerated
+            ? [`标题已从"${originalShortTitle}"修正为"${chapterMeta.title}"`]
+            : [],
+          applied: anyChange,
+          status: anyChange ? "ready-for-review" : "unchanged",
+          skippedReason: anyChange
+            ? (titleWasRegenerated ? "Short title regenerated." : "No audit issues; surface normalization applied.")
+            : "No warning, critical, or AI-tell issues to fix.",
         };
       }
 
@@ -3743,6 +3781,54 @@ ${matrix}`,
   }
 
   /**
+   * Generate a better title for a chapter whose title is too short.
+   * Uses a brief LLM call to suggest a 2-4 character Chinese title (or 2-4 word English title)
+   * based on the chapter content.
+   */
+  private async regenerateShortTitle(
+    bookId: string,
+    chapterContent: string,
+    chapterNumber: number,
+    _currentTitle: string,
+    language: LengthLanguage,
+  ): Promise<string> {
+    // Grab existing titles to avoid duplicates
+    const index = await this.state.loadChapterIndex(bookId);
+    const existingTitles = index.map((ch) => ch.title).filter((t) => t.length >= 2);
+
+    // Use the first 1500 chars of content as context (enough for title generation)
+    const contentExcerpt = chapterContent.slice(0, 1500);
+
+    const systemPrompt = language === "en"
+      ? "You are a chapter title generator. Output ONLY the title, nothing else. 2-4 words."
+      : "你是一个章节标题生成器。只输出标题本身，不要任何解释。2-4个字。";
+
+    const userPrompt = language === "en"
+      ? `Generate a 2-4 word chapter title for Chapter ${chapterNumber}.\n\nExisting titles (avoid duplicates): ${existingTitles.join(", ")}\n\nChapter excerpt:\n${contentExcerpt}`
+      : `为第${chapterNumber}章生成一个2-4字的章节标题。\n\n已有标题（避免重复）：${existingTitles.join("、")}\n\n章节节选：\n${contentExcerpt}`;
+
+    try {
+      const response = await chatCompletion(
+        this.config.client,
+        this.config.model,
+        [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userPrompt },
+        ],
+        { temperature: 0.3 },
+      );
+      const { stripThinkBlocks } = await import("../utils/strip-think-blocks.js");
+      const cleaned = stripThinkBlocks(response.content).trim();
+      const candidate = cleaned.split("\n")[0]!.trim()   // Take first line only
+        .replace(/^["""「」『』]|["""「」『』]$/g, "")  // Strip quotes
+        .replace(/^第\s*\d+\s*章\s*/, "");               // Strip chapter prefix
+      return candidate;
+    } catch {
+      return "";
+    }
+  }
+
+  /**
    * Extract the real chapter title from the full chapter file content.
    * Tries `# 第N章 <title>` heading first, then `CHAPTER_TITLE\n<title>` marker.
    * Returns empty string if no meaningful title is found.
@@ -4042,6 +4128,8 @@ ${matrix}`,
     const outline: VolumeOutline = VolumeOutlineSchema.parse(JSON.parse(raw));
     const volumeProse = await readVolumeMap(bookDir, "").catch(() => "");
     const storyFrame = await readStoryFrame(bookDir, "").catch(() => "");
+    const brief = await readFile(join(bookDir, "story", "brief.md"), "utf-8").catch(() => "");
+    const characterContext = await readCharacterContext(bookDir);
 
     const targetVolumes = opts?.volumeId
       ? outline.volumes.filter((v) => v.volumeId === opts.volumeId)
@@ -4081,6 +4169,8 @@ ${matrix}`,
         storyFrame,
         chapterRange: [missing[0]!, missing[missing.length - 1]!],
         language: lang,
+        brief: brief || undefined,
+        characterContext: characterContext || undefined,
       });
 
       // Semantic validation before persistence
