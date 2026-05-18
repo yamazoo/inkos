@@ -131,11 +131,11 @@ export function splitSections(text: string): string[] {
   }
   if (altSections.length >= 2) return altSections;
 
-  // Attempt 5: split by bold **卷N：** or **第N卷：** or **卷N·name**：format (no # heading prefix)
-  // e.g. "**第一卷：青茅重梦（第1-25章）**" or "**卷一·铁与血**：主题是..."
+  // Attempt 5: split by bold **第N卷：title** or **卷N：** or **卷N·name**：format (no # heading prefix)
+  // e.g. "**第一卷：青茅重梦（第1-25章）**" or "**第一卷：觉醒与锚定**" or "**卷一·铁与血**：主题是..."
   const boldVolSections: string[] = [];
   const boldVolPattern =
-    /(^|\n)\*\*((第|卷)[零一二三四五六七八九十0-9]+(·[^*]+)?\*\*[：:]|(第|卷)[零一二三四五六七八九十0-9]+[：:])/gm;
+    /(^|\n)\*\*第[一二三四五六七八九十零]+卷[：:][^*]+\*\*/gm;
   let lastIdx = 0;
   let m: RegExpExecArray | null;
   boldVolPattern.lastIndex = 0;

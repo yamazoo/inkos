@@ -152,13 +152,11 @@ describe("splitSections", () => {
     expect(sections.length).toBeGreaterThanOrEqual(2);
   });
 
-  it("handles bold **第N卷：...** format (falls through to single section — no dedicated bold heading split)", () => {
-    // Bold headings with 第N卷 format do NOT match the current splitSections
-    // bold pattern which expects 第N without 卷. Falls through to single section.
+  it("handles bold **第N卷：title** format", () => {
     const input =
       "**第一卷：觉醒（第1-25章）**\n\nContent\n\n**第二卷：破局（第26-50章）**\n\nMore";
     const sections = splitSections(input);
-    expect(sections.length).toBe(1);
+    expect(sections.length).toBeGreaterThanOrEqual(2);
   });
 
   it("returns single section when no split pattern matches", () => {
