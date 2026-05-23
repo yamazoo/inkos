@@ -51,3 +51,6 @@ packages/core/src/test-final2.cjs
 packages/core/src/test-simple.cjs
 test-normalize.js
 test_format.js
+
+# Scraped data
+fanqie_novels/
