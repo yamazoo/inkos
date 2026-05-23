@@ -28,12 +28,20 @@ export function buildEnglishCoreRules(_book: BookConfig): string {
 15. **Cost matters**: Every power, ability, or advantage must have a cost or limitation that creates real trade-offs.
 16. **Consequences stick**: Actions have consequences. Characters can't escape repercussions through luck or author fiat.
 17. **No reset buttons**: The world must change permanently in response to major events.
+18. **Temporal variety**: Never end 3+ consecutive chapters at night or start them at dawn. Chapter breaks can land at any moment—a duel cut short at noon, a conversation dying at dusk, a 3 a.m. jolt awake, an unexpected visitor under harsh afternoon sun. Time itself is a suspense tool. When the last two chapters both closed at night, the third must shift.
 
 ### Reader Psychology
 18. **Promise and payoff**: Every planted hook must be resolved. Every mystery must have an answer.
 19. **Escalation**: Each conflict should feel higher-stakes than the last—either externally or emotionally.
 20. **Reader proxy**: One character should react with surprise/excitement/fear when remarkable things happen, giving readers permission to feel the same.
-21. **Pacing breathing room**: After a high-intensity sequence, give 0.5-1 chapter of lower intensity before the next escalation.`;
+21. **Pacing breathing room**: After a high-intensity sequence, give 0.5-1 chapter of lower intensity before the next escalation.
+
+### Cold-Restrained Satisfaction Delivery
+This book's tone is "cold warmth" — satisfaction delivery must match:
+- **Bystander amplifier**: silence → whisper → dead quiet → one sudden voice (NOT "everyone gasped")
+- **Evaluation reversal**: old assessment → new assessment → ultimate assessment. Each upgrade triggered by a concrete action, not narrator explanation.
+- **Micro-release rhythm**: every 1500 words of sustained pressure should include a small release — a glance shift, one sentence breaking silence, one action that stuns bystanders.
+- **Environment over explicit emotion**: don't say "hope ignited in his heart" — write "the wind stopped. He raised his hand. The crack in his palm was healing."`;
 }
 
 // English equivalent of buildAntiAIExamples()

@@ -3,6 +3,7 @@ import { OutlineInitAgent } from "../agents/outline-init-agent.js";
 import * as llmProvider from "../llm/provider.js";
 import type { LLMClient } from "../llm/provider.js";
 import { ChapterNodeSchema } from "../models/volume-outline.js";
+import { buildOutlineInitSystemPrompt, buildOutlineInitUserPrompt } from "../agents/outline-init-prompts.js";
 
 const ZERO_USAGE = {
   promptTokens: 0,
@@ -295,5 +296,49 @@ describe("OutlineInitAgent", () => {
         expect(() => ChapterNodeSchema.parse(node)).not.toThrow();
       }
     });
+  });
+});
+
+describe("OutlineInitPrompts — satisfactionType", () => {
+  it("system prompt (zh) contains satisfactionType rule", () => {
+    const prompt = buildOutlineInitSystemPrompt("zh");
+    expect(prompt).toContain("satisfactionType");
+    expect(prompt).toContain("连续不超过2章使用相同类型");
+  });
+
+  it("system prompt (en) contains satisfactionType rule", () => {
+    const prompt = buildOutlineInitSystemPrompt("en");
+    expect(prompt).toContain("satisfactionType");
+    expect(prompt).toContain("No more than 2 consecutive");
+  });
+
+  it("user prompt includes satisfactionTypes list when provided", () => {
+    const input = {
+      bookTitle: "测试书",
+      volumeTitle: "第一卷",
+      volumeProse: "内容",
+      chapterRange: [1, 5] as [number, number],
+      storyFrame: "框架",
+      language: "zh" as const,
+      satisfactionTypes: ["悟道突破", "绝地反击", "法宝收获"],
+    };
+    const prompt = buildOutlineInitUserPrompt(input, 1, 5);
+    expect(prompt).toContain("可用爽感类型");
+    expect(prompt).toContain("悟道突破");
+    expect(prompt).toContain("绝地反击");
+    expect(prompt).toContain("法宝收获");
+  });
+
+  it("user prompt omits satisfactionTypes block when not provided", () => {
+    const input = {
+      bookTitle: "测试书",
+      volumeTitle: "第一卷",
+      volumeProse: "内容",
+      chapterRange: [1, 5] as [number, number],
+      storyFrame: "框架",
+      language: "zh" as const,
+    };
+    const prompt = buildOutlineInitUserPrompt(input, 1, 5);
+    expect(prompt).not.toContain("可用爽感类型");
   });
 });

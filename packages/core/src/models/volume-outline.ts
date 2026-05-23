@@ -21,6 +21,12 @@ export const ChapterNodeSchema = z.object({
   chapterType: z
     .enum(["opening", "rising", "climax", "falling", "resolution", "transition"])
     .optional(),
+  /**
+   * Satisfaction type for this chapter — chosen from the genre's satisfactionTypes list.
+   * null/undefined for pure setup chapters.
+   * Populated by outline-init agent.
+   */
+  satisfactionType: z.string().optional(),
 });
 
 export type ChapterNode = z.infer<typeof ChapterNodeSchema>;
@@ -144,4 +150,34 @@ export function getChaptersInRange(
   return outline.volumes.flatMap((vol) =>
     vol.chapters.filter((ch) => ch.chapter >= start && ch.chapter <= end),
   );
+}
+
+/**
+ * Validate that no chapter reuses the same satisfactionType more than
+ * `maxConsecutive` times in a row. Returns an array of warning strings;
+ * empty means valid.
+ */
+export function validateSatisfactionSchedule(
+  nodes: readonly ChapterNode[],
+  maxConsecutive: number = 2,
+): string[] {
+  const warnings: string[] = [];
+  let runType: string | undefined = undefined;
+  let runLen = 0;
+
+  for (const node of nodes) {
+    const st = node.satisfactionType;
+    if (st && st === runType) {
+      runLen++;
+      if (runLen > maxConsecutive) {
+        warnings.push(
+          `Chapter ${node.chapter}: satisfactionType "${st}" exceeds ${maxConsecutive}-consecutive limit (run length ${runLen})`,
+        );
+      }
+    } else {
+      runType = st;
+      runLen = st ? 1 : 0;
+    }
+  }
+  return warnings;
 }

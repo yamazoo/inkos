@@ -43,10 +43,24 @@ export function applyTimelineDelta(
 
   // 1. Update storyDays: replace same-chapter entry or append, sort by chapter
   const filteredDays = existing.storyDays.filter((d) => d.chapter !== chapter);
-  const nextStoryDays = [
+  const nextStoryDaysRaw = [
     ...filteredDays,
     { chapter, storyDay: delta.storyDay, label: delta.dayLabel },
   ].sort((a, b) => a.chapter - b.chapter);
+
+  // 1b. Backfill gaps: when chapters are missing between entries, fill them
+  //     with the previous entry's storyDay (conservative "same day" assumption)
+  const nextStoryDays: typeof nextStoryDaysRaw = [];
+  for (let i = 0; i < nextStoryDaysRaw.length; i++) {
+    const entry = nextStoryDaysRaw[i]!;
+    if (i > 0) {
+      const prev = nextStoryDays[nextStoryDays.length - 1]!;
+      for (let ch = prev.chapter + 1; ch < entry.chapter; ch++) {
+        nextStoryDays.push({ chapter: ch, storyDay: prev.storyDay, label: "" });
+      }
+    }
+    nextStoryDays.push(entry);
+  }
 
   // 2. Process events - deep copy anchors to avoid mutation.
   //    When a chapter is rewritten, strip stale cross-refs and countdowns
@@ -81,6 +95,7 @@ export function applyTimelineDelta(
         countdowns: evt.countdown !== undefined
           ? [{ chapter, raw: evt.reference, daysLeft: evt.countdown }]
           : [],
+        ...(evt.recurring ? { recurring: true } : {}),
       };
       anchorsById.set(evt.id, anchor);
     } else {
@@ -91,7 +106,7 @@ export function applyTimelineDelta(
           daysLeft: evt.countdown,
         });
         const impliedDay = delta.storyDay + evt.countdown;
-        if (impliedDay !== existingAnchor.storyDay) {
+        if (impliedDay !== existingAnchor.storyDay && !existingAnchor.recurring) {
           newConflicts.push({
             conflictId: `cd-${evt.id}-ch${chapter}`,
             severity: "critical",
@@ -109,7 +124,7 @@ export function applyTimelineDelta(
           raw: evt.reference,
           impliedDay,
         });
-        if (impliedDay !== existingAnchor.storyDay) {
+        if (impliedDay !== existingAnchor.storyDay && !existingAnchor.recurring) {
           newConflicts.push({
             conflictId: `xr-${evt.id}-ch${chapter}`,
             severity: "critical",

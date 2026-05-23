@@ -38,6 +38,7 @@ export const EventAnchorSchema = z.object({
   firstMentioned: EventMentionSchema,
   crossReferences: z.array(CrossReferenceSchema).default([]),
   countdowns: z.array(CountdownSchema).default([]),
+  recurring: z.boolean().optional(),
 });
 export type EventAnchor = z.infer<typeof EventAnchorSchema>;
 
@@ -75,16 +76,57 @@ export type TimelineState = z.infer<typeof TimelineStateSchema>;
 
 // ── Timeline Delta (=== TIMELINE === block from Settler) ──────
 
-export const TimelineEventRefSchema = z.object({
-  id: z.string().min(1),
-  reference: z.string().min(1),
-  impliedOffset: z.number().int().optional(),
-  countdown: z.number().int().min(0).optional(),
-});
+// Coerce LLM quirks: "3" → 3, 2.0 → 2
+const intLike = () => z.preprocess(
+  (v) => {
+    if (v == null) return undefined;
+    if (typeof v === "string") return Math.round(Number(v));
+    if (typeof v === "number") return Math.round(v);
+    return v;
+  },
+  z.number().int(),
+);
+
+export const TimelineEventRefSchema = z.preprocess(
+  (v) => {
+    if (v && typeof v === "object" && !Array.isArray(v)) {
+      const obj = v as Record<string, unknown>;
+      return {
+        id: obj.id ?? obj.event ?? obj.eventId ?? obj.name,
+        reference: obj.reference ?? obj.description ?? obj.text ?? obj.ref,
+        impliedOffset: obj.impliedOffset ?? obj.offset ?? obj.daysAgo,
+        countdown: obj.countdown ?? obj.daysLeft ?? obj.remaining,
+        recurring: obj.recurring,
+      };
+    }
+    return v;
+  },
+  z.object({
+    id: z.string().min(1),
+    reference: z.string().min(1),
+    impliedOffset: intLike().optional(),
+    countdown: z.preprocess(
+    (v) => {
+      if (v == null) return undefined;
+      if (typeof v === "string") return Math.round(Number(v));
+      if (typeof v === "number") return Math.round(v);
+      return v;
+    },
+    z.number().int().min(0),
+  ).optional(),
+  recurring: z.boolean().optional(),
+}));
 export type TimelineEventRef = z.infer<typeof TimelineEventRefSchema>;
 
 export const TimelineDeltaSchema = z.object({
-  storyDay: z.number().int().min(1),
+  storyDay: z.preprocess(
+    (v) => {
+      if (typeof v === "string") return Math.round(Number(v));
+      if (typeof v === "number") return Math.round(v);
+      return v;
+    },
+    z.number().int().min(1),
+  ),
   dayLabel: z.string().default(""),
   events: z.array(TimelineEventRefSchema).default([]),
 });

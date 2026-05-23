@@ -121,6 +121,40 @@ describe("TimelineDeltaSchema", () => {
       }),
     ).toThrow();
   });
+
+  it("coerces string storyDay to number", () => {
+    const result = TimelineDeltaSchema.parse({
+      storyDay: "5",
+      dayLabel: "",
+      events: [],
+    });
+    expect(result.storyDay).toBe(5);
+    expect(typeof result.storyDay).toBe("number");
+  });
+
+  it("coerces float storyDay to integer", () => {
+    const result = TimelineDeltaSchema.parse({
+      storyDay: 3.0,
+      dayLabel: "",
+      events: [],
+    });
+    expect(result.storyDay).toBe(3);
+  });
+
+  it("coerces string countdown and float impliedOffset", () => {
+    const result = TimelineDeltaSchema.parse({
+      storyDay: 1,
+      dayLabel: "",
+      events: [
+        { id: "exam", reference: "考核还有三天", countdown: "3" },
+        { id: "wolf-fight", reference: "三天前", impliedOffset: -3.0 },
+      ],
+    });
+    expect(result.events[0]!.countdown).toBe(3);
+    expect(typeof result.events[0]!.countdown).toBe("number");
+    expect(result.events[1]!.impliedOffset).toBe(-3);
+    expect(typeof result.events[1]!.impliedOffset).toBe("number");
+  });
 });
 
 describe("EventAnchorSchema", () => {
@@ -149,5 +183,30 @@ describe("EventAnchorSchema", () => {
       ],
     });
     expect(result.countdowns).toHaveLength(2);
+  });
+
+  it("accepts recurring anchor", () => {
+    const result = EventAnchorSchema.parse({
+      eventId: "chenyuan-routine",
+      label: "陈远日常",
+      storyDay: 1,
+      firstMentioned: { chapter: 1, raw: "吃冷馒头" },
+      crossReferences: [],
+      countdowns: [],
+      recurring: true,
+    });
+    expect(result.recurring).toBe(true);
+  });
+
+  it("accepts anchor without recurring (backward compat)", () => {
+    const result = EventAnchorSchema.parse({
+      eventId: "wolf-fight",
+      label: "后山打狼",
+      storyDay: 1,
+      firstMentioned: { chapter: 1, raw: "后山独处时" },
+      crossReferences: [],
+      countdowns: [],
+    });
+    expect(result.recurring).toBeUndefined();
   });
 });

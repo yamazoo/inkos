@@ -507,6 +507,129 @@ describe("applyTimelineDelta", () => {
     applyTimelineDelta(base, delta, 2);
     expect(base).toEqual(snapshot);
   });
+
+  it("creates recurring anchor when delta event has recurring flag", () => {
+    const delta: TimelineDelta = {
+      storyDay: 1,
+      dayLabel: "",
+      events: [{ id: "morning-routine", reference: "晨起吃冷馒头", recurring: true }],
+    };
+
+    const { updated } = applyTimelineDelta(emptyTimeline, delta, 1);
+    expect(updated.eventAnchors).toHaveLength(1);
+    expect(updated.eventAnchors[0]!.eventId).toBe("morning-routine");
+    expect(updated.eventAnchors[0]!.recurring).toBe(true);
+  });
+
+  it("does not generate anchor-mismatch conflict for recurring events", () => {
+    const base: TimelineState = {
+      storyDays: [{ chapter: 1, storyDay: 1, label: "" }],
+      eventAnchors: [
+        {
+          eventId: "morning-routine",
+          label: "晨起吃冷馒头",
+          storyDay: 1,
+          firstMentioned: { chapter: 1, raw: "吃冷馒头" },
+          crossReferences: [],
+          countdowns: [],
+          recurring: true,
+        },
+      ],
+      conflicts: [],
+      lastUpdatedChapter: 1,
+    };
+
+    // Chapter 2 at storyDay=2 references the routine — different day but recurring
+    const delta: TimelineDelta = {
+      storyDay: 2,
+      dayLabel: "",
+      events: [{ id: "morning-routine", reference: "祠堂后破屋·清晨吃冷馒头" }],
+    };
+
+    const { conflicts } = applyTimelineDelta(base, delta, 2);
+    expect(conflicts).toHaveLength(0);
+  });
+
+  it("does not generate countdown-mismatch conflict for recurring events", () => {
+    const base: TimelineState = {
+      storyDays: [{ chapter: 1, storyDay: 1, label: "" }],
+      eventAnchors: [
+        {
+          eventId: "daily-training",
+          label: "每日修炼",
+          storyDay: 1,
+          firstMentioned: { chapter: 1, raw: "清晨修炼" },
+          crossReferences: [],
+          countdowns: [],
+          recurring: true,
+        },
+      ],
+      conflicts: [],
+      lastUpdatedChapter: 1,
+    };
+
+    // Chapter 2 at storyDay=3 with a countdown — different day but recurring
+    const delta: TimelineDelta = {
+      storyDay: 3,
+      dayLabel: "",
+      events: [{ id: "daily-training", reference: "还有两天就到期了", countdown: 2 }],
+    };
+
+    const { conflicts } = applyTimelineDelta(base, delta, 2);
+    expect(conflicts).toHaveLength(0);
+  });
+
+  it("still generates anchor-mismatch conflict for non-recurring events", () => {
+    const base: TimelineState = {
+      storyDays: [{ chapter: 1, storyDay: 1, label: "" }],
+      eventAnchors: [
+        {
+          eventId: "wedding",
+          label: "婚礼",
+          storyDay: 1,
+          firstMentioned: { chapter: 1, raw: "婚礼" },
+          crossReferences: [],
+          countdowns: [],
+        },
+      ],
+      conflicts: [],
+      lastUpdatedChapter: 1,
+    };
+
+    const delta: TimelineDelta = {
+      storyDay: 5,
+      dayLabel: "",
+      events: [{ id: "wedding", reference: "十天后的婚礼", impliedOffset: 10 }],
+    };
+
+    const { conflicts } = applyTimelineDelta(base, delta, 2);
+    expect(conflicts).toHaveLength(1);
+    expect(conflicts[0]!.type).toBe("anchor-mismatch");
+  });
+
+  it("backfills missing chapters when gap exists", () => {
+    // Existing timeline has chapters 1 and 4, missing 2 and 3
+    const base: TimelineState = {
+      storyDays: [
+        { chapter: 1, storyDay: 1, label: "day1" },
+        { chapter: 4, storyDay: 3, label: "day3" },
+      ],
+      eventAnchors: [],
+      conflicts: [],
+      lastUpdatedChapter: 4,
+    };
+
+    // Applying chapter 6 should backfill chapter 5 with previous entry's storyDay
+    const delta: TimelineDelta = { storyDay: 3, dayLabel: "", events: [] };
+    const { updated } = applyTimelineDelta(base, delta, 6);
+
+    const chapters = updated.storyDays.map((d) => d.chapter);
+    expect(chapters).toEqual([1, 2, 3, 4, 5, 6]);
+    // Backfilled chapters carry the previous entry's storyDay
+    expect(updated.storyDays.find((d) => d.chapter === 2)!.storyDay).toBe(1);
+    expect(updated.storyDays.find((d) => d.chapter === 3)!.storyDay).toBe(1);
+    expect(updated.storyDays.find((d) => d.chapter === 5)!.storyDay).toBe(3);
+  });
 });
 
 // ── computeDeterministicTimelineIssues ──────────────────────────

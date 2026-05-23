@@ -275,6 +275,24 @@ export async function runChapterReviewCycle(params: {
         break;
       }
 
+      // Rewrite loop protection: if dimension 15 (Payoff Dilution / 爽点虚化)
+      // critical persists after 2 full rewrites, stop and accept audit-failed.
+      // This prevents infinite rewrite loops on satisfaction delivery issues.
+      const hasPayoffDilutionCritical = nextAssessment.auditResult.issues.some(
+        (i) => i.severity === "critical"
+          && (/Payoff Dilution|爽点虚化/i.test(i.category) || /Payoff Dilution|爽点虚化/i.test(i.description)),
+      );
+      if (iteration >= 1 && hasPayoffDilutionCritical) {
+        params.logWarn({
+          zh: `修复轮次 ${iteration + 1}：维度 15（爽点虚化）critical 持续未解决，停止重写循环`,
+          en: `repair iteration ${iteration + 1}: dimension 15 (Payoff Dilution) critical persists, stopping rewrite loop`,
+        });
+        finalContent = revisedContent;
+        finalWordCount = revisedWordCount;
+        currentAudit = nextAssessment;
+        break;
+      }
+
       // Check net improvement
       if (nextAssessment.score >= currentAudit.score + NET_IMPROVEMENT_EPSILON) {
         finalContent = revisedContent;

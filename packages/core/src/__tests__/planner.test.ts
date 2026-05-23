@@ -389,3 +389,104 @@ describe("sanitizeOutlineForDraft", () => {
     expect(result).not.toContain("——");
   });
 });
+
+describe("PlannerAgent — satisfactionType", () => {
+  let root: string;
+  let bookDir: string;
+
+  beforeEach(async () => {
+    root = await mkdtemp(join(tmpdir(), "planner-st-"));
+    bookDir = join(root, "book");
+    await seedStoryFiles(bookDir);
+  });
+
+  afterEach(async () => {
+    vi.restoreAllMocks();
+    await rm(root, { recursive: true, force: true });
+  });
+
+  function makePlanner(): PlannerAgent {
+    return new PlannerAgent({
+      client: { ...STUB_CLIENT },
+      model: "test-model",
+      projectRoot: root,
+      bookId: "book-plan-1",
+    });
+  }
+
+  it("passes satisfactionType from outline to intent", async () => {
+    // Create vol-1-chapters.json with satisfactionType
+    const outlineDir = join(bookDir, "story", "outline");
+    await mkdir(outlineDir, { recursive: true });
+    await writeFile(
+      join(outlineDir, "vol-1-chapters.json"),
+      JSON.stringify({
+        schemaVersion: 1,
+        volumeId: 1,
+        volumeTitle: "第一卷：困龙出渊",
+        chapterRange: [1, 1],
+        chapters: [
+          {
+            chapter: 1,
+            event: "开场觉醒",
+            beat: "主角发现金手指",
+            description: "详细描述",
+            satisfactionType: "绝地反击",
+          },
+        ],
+      }),
+      "utf-8",
+    );
+
+    vi.spyOn(llmProvider, "chatCompletion").mockResolvedValue({
+      content: validMemoRaw(1),
+      usage: ZERO_USAGE,
+    } as unknown as Awaited<ReturnType<typeof llmProvider.chatCompletion>>);
+
+    const result = await makePlanner().planChapter({
+      book: makeBook(),
+      bookDir,
+      chapterNumber: 1,
+    });
+
+    expect(result.intent.satisfactionType).toBe("绝地反击");
+    // outlineNode should contain the satisfaction type label
+    expect(result.intent.outlineNode).toContain("【爽感类型】绝地反击");
+  });
+
+  it("omits satisfactionType when outline has no satisfactionType field", async () => {
+    const outlineDir = join(bookDir, "story", "outline");
+    await mkdir(outlineDir, { recursive: true });
+    await writeFile(
+      join(outlineDir, "vol-1-chapters.json"),
+      JSON.stringify({
+        schemaVersion: 1,
+        volumeId: 1,
+        volumeTitle: "第一卷：困龙出渊",
+        chapterRange: [1, 1],
+        chapters: [
+          {
+            chapter: 1,
+            event: "开场觉醒",
+            beat: "主角发现金手指",
+          },
+        ],
+      }),
+      "utf-8",
+    );
+
+    vi.spyOn(llmProvider, "chatCompletion").mockResolvedValue({
+      content: validMemoRaw(1),
+      usage: ZERO_USAGE,
+    } as unknown as Awaited<ReturnType<typeof llmProvider.chatCompletion>>);
+
+    const result = await makePlanner().planChapter({
+      book: makeBook(),
+      bookDir,
+      chapterNumber: 1,
+    });
+
+    expect(result.intent.satisfactionType).toBeUndefined();
+    expect(result.intent.outlineNode).not.toContain("【爽感类型】");
+  });
+});

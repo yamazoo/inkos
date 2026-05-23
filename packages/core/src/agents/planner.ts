@@ -90,14 +90,19 @@ export class PlannerAgent extends BaseAgent {
     // by ensureChapterOutline() and contain event/beat/description fields that
     // give the writer much richer guidance than prose text.
     let outlineNode: string | undefined;
+    let satisfactionType: string | undefined;
     try {
       const chapterOutline = await findChapterOutline(input.bookDir, input.chapterNumber);
       if (chapterOutline) {
+        satisfactionType = chapterOutline.satisfactionType ?? undefined;
         const parts: string[] = [];
         parts.push(`【事件】${chapterOutline.event}`);
         parts.push(`【节拍】${chapterOutline.beat}`);
         if (chapterOutline.description) {
           parts.push(`【详述】${chapterOutline.description}`);
+        }
+        if (satisfactionType) {
+          parts.push(`【爽感类型】${satisfactionType}`);
         }
         outlineNode = parts.join("\n");
       }
@@ -157,6 +162,7 @@ export class PlannerAgent extends BaseAgent {
       mustKeep,
       mustAvoid,
       styleEmphasis,
+      satisfactionType,
     });
 
     const isGoldenOpening = this.isGoldenOpeningChapter(input.book.language, input.chapterNumber);

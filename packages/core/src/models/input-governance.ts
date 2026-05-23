@@ -18,6 +18,8 @@ export const ChapterIntentSchema = z.object({
   mustKeep: z.array(z.string()).default([]),
   mustAvoid: z.array(z.string()).default([]),
   styleEmphasis: z.array(z.string()).default([]),
+  /** Satisfaction type for this chapter — from genre's satisfactionTypes list. */
+  satisfactionType: z.string().optional(),
 });
 
 export type ChapterIntent = z.infer<typeof ChapterIntentSchema>;

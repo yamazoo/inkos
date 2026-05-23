@@ -16,6 +16,8 @@ export interface OutlineInitPromptInput {
   readonly brief?: string;
   /** Concatenated role cards — used for protagonist identity detection. */
   readonly characterContext?: string;
+  /** Available satisfaction types from genre profile. LLM picks one per chapter. */
+  readonly satisfactionTypes?: readonly string[];
 }
 
 /**
@@ -48,10 +50,11 @@ Pacing constraints (mandatory, same priority as rules above):
 9. Satisfaction beat ceiling: every 3 chapters must include at least one reader payoff (face-slap, breakthrough, reversal, surprise gain, enemy setback). Pure setup/training/suffering cannot exceed 2 consecutive chapters
 10. Opening acceleration: the protagonist's golden finger (special ability) must be DISCOVERED in chapter 1 and COMBAT-TRIGGERED (used against a real enemy, not just awakened or tested on animals) by chapter 3 at the latest. "Discovery" or "awakening" does NOT count as a highlight — only the moment it produces a visible, irreversible result in conflict counts. No all-setup/all-suffering openings
 11. Chapter type rotation: no more than 2 consecutive chapters of the same pacing type (e.g., no 3 chapters of pure "passive suffering" or "training montage"). Rotate between conflict, scheming, breakthrough, payoff, and suspense
-12. Every chapter must end with clear "page-turn drive" — a question or conflict the reader must turn the page to resolve. No "summarizing" or "calm" endings
+12. Every chapter must end with clear "page-turn drive" — a question or conflict the reader must turn the page to resolve. No "summarizing" or "calm" endings. The final paragraph must contain an external anchor (concrete action, dialogue, or environmental detail) — pure internal monologue, emotional declarations, or vague announcements are forbidden
 13. The protagonist must have at least 2 proactive actions (setting traps, counterattacking, initiating offense) within the first 10 chapters — no purely passive suffering
 14. Golden finger pacing: the "learning/discovery" phase cannot exceed 1 chapter. After the ability is first noticed, the protagonist must attempt combat use in the very next chapter. Do NOT spread awakening → learning → first test → first real use across 4+ chapters. The reader wants to see it WORK, not study it
-15. If the story frame or character background contains identity tags (transmigration, reincarnation, isekai, system, rebirth), at least 1 of the first 3 chapters MUST have a description that explicitly includes the protagonist's "identity awareness" inner activity — e.g., "recalling past life", "comparing this world to the previous one", "applying prior-life knowledge to analyze the situation". This is a core setting, not optional`;
+15. If the story frame or character background contains identity tags (transmigration, reincarnation, isekai, system, rebirth), at least 1 of the first 3 chapters MUST have a description that explicitly includes the protagonist's "identity awareness" inner activity — e.g., "recalling past life", "comparing this world to the previous one", "applying prior-life knowledge to analyze the situation". This is a core setting, not optional
+16. satisfactionType annotation: for each chapter, add a "satisfactionType" field chosen from the genre's satisfaction type list. Use null for pure setup chapters. No more than 2 consecutive chapters may reuse the same type. When fewer than 5 types are available, consecutive-reuse limit relaxes to 3`;
   }
 
   return `你是一位专业的小说细纲架构师。你的任务是从卷纲散文中提取结构化的章节细纲。
@@ -78,10 +81,11 @@ Pacing constraints (mandatory, same priority as rules above):
 9. 爽点间距上限：连续不超过3章必须出现至少一个读者爽点（打脸、突破、逆转、意外收获、敌人吃亏）。纯铺垫/修炼/受辱不能连续超过2章
 10. 开篇加速：金手指（主角特殊能力）必须在第1章末尾或第2章初被发现，在第3章之前必须完成首次战斗触发（对真实敌人使用，产生可见的不可逆结果）。"觉醒""感知到""发现机制"不算高光时刻——只有金手指在冲突中产生实际战果才算。不允许前3章全是铺垫和受辱
 11. 章节类型轮换：不能连续3章使用同一种节奏类型（如不能连续3章都是"被动受辱"或"修炼成长"）。必须在冲突、布局、突破、打脸、悬念之间轮换
-12. 每章结尾必须有明确的「翻页驱动力」——一个读者必须翻到下一章才能知道答案的问题或冲突。不能以"总结式"或"平静式"收尾
+12. 每章结尾必须有明确的「翻页驱动力」——一个读者必须翻到下一章才能知道答案的问题或冲突。不能以"总结式"或"平静式"收尾。最后一段必须包含外部锚点（具体动作/对话/环境细节），禁止以纯心理活动、情绪声明或模糊预告收尾
 13. 主角在前10章内必须有至少2次主动行动（设计陷阱、反击、主动出击），不能全是被动承受
 14. 金手指节奏：「学习/发现」阶段不超过1章。能力被发现后，下一章就必须尝试战斗使用。不要把觉醒→学习→首次测试→首次实战分散到4章以上。读者想看到它起作用，而不是研究它
-15. 如果故事框架或角色背景中包含「穿越」「重生」「魂穿」「系统」「异世界」等身份标签，前3章中必须有至少1章的description明确包含主角的「身份意识」内心活动——例如「回忆前世经历」「对比异世界与前世的认知差异」「用前世知识分析当前处境」等。这是核心设定，不是可选项`;
+15. 如果故事框架或角色背景中包含「穿越」「重生」「魂穿」「系统」「异世界」等身份标签，前3章中必须有至少1章的description明确包含主角的「身份意识」内心活动——例如「回忆前世经历」「对比异世界与前世的认知差异」「用前世知识分析当前处境」等。这是核心设定，不是可选项
+16. satisfactionType 标注：每章必须添加一个 "satisfactionType" 字段，从本类型的爽感类型列表中选择。纯铺垫章使用 null。连续不超过2章使用相同类型。当可用类型少于5种时，连续重复上限放宽到3`;
 }
 
 /**
@@ -115,7 +119,7 @@ ${input.volumeProse}
 Story Frame:
 ${input.storyFrame}
 
-Output exactly ${count} chapter objects in a JSON array, with chapter numbers from ${start} to ${end}.`;
+Output exactly ${count} chapter objects in a JSON array, with chapter numbers from ${start} to ${end}.${input.satisfactionTypes?.length ? `\n\nAvailable satisfaction types (choose one per chapter, null for pure setup):\n${input.satisfactionTypes.map((t) => `- ${t}`).join("\n")}` : ""}`;
   }
 
   const briefBlock = input.brief
@@ -137,7 +141,7 @@ ${input.volumeProse}
 故事框架：
 ${input.storyFrame}
 
-输出恰好 ${count} 个章节对象的 JSON 数组，chapter 字段从 ${start} 到 ${end}。`;
+输出恰好 ${count} 个章节对象的 JSON 数组，chapter 字段从 ${start} 到 ${end}。${input.satisfactionTypes?.length ? `\n\n可用爽感类型（每章选一个，纯铺垫章用 null）：\n${input.satisfactionTypes.map((t) => `- ${t}`).join("\n")}` : ""}`;
 }
 
 /**
@@ -165,7 +169,7 @@ ${previousSummary}
 Volume prose:
 ${input.volumeProse}
 
-Maintain narrative continuity with the previous chapters. Output only the JSON array.`;
+Maintain narrative continuity with the previous chapters. Output only the JSON array.${input.satisfactionTypes?.length ? `\n\nAvailable satisfaction types (choose one per chapter, null for pure setup):\n${input.satisfactionTypes.map((t) => `- ${t}`).join("\n")}` : ""}`;
   }
 
   const briefBlock = input.brief
@@ -180,7 +184,7 @@ ${previousSummary}
 卷纲散文：
 ${input.volumeProse}
 
-保持与前面章节的叙事连贯性。只输出 JSON 数组。`;
+保持与前面章节的叙事连贯性。只输出 JSON 数组。${input.satisfactionTypes?.length ? `\n\n可用爽感类型（每章选一个，纯铺垫章用 null）：\n${input.satisfactionTypes.map((t) => `- ${t}`).join("\n")}` : ""}`;
 }
 
 /**

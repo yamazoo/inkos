@@ -311,3 +311,70 @@ describe("buildIdentityPerspectiveRules", () => {
     expect(result).toContain("前世经历");
   });
 });
+
+describe("Cold-style satisfaction delivery", () => {
+  const XIANXIA_GENRE: GenreProfile = {
+    ...GENRE,
+    satisfactionTypes: ["悟道突破", "绝地反击", "法宝收获", "身份揭示", "因果了结"],
+  };
+
+  it("buildSatisfactionGuide includes cold-style adaptation paragraph", () => {
+    const prompt = buildWriterSystemPrompt(
+      BOOK,
+      XIANXIA_GENRE,
+      null,
+      "# Book Rules",
+      "# Genre Body",
+      "# Style Guide",
+      undefined,
+      3,
+      "creative",
+      undefined,
+      "zh",
+      "governed",
+    );
+    expect(prompt).toContain("冷冽风格爽点交付附加指引");
+    expect(prompt).toContain("安静→低语→死寂→突然一声");
+    expect(prompt).toContain("环境暗示替代直白情绪");
+  });
+
+  it("core rules include bystander amplifier and evaluation reversal", () => {
+    const prompt = buildWriterSystemPrompt(
+      BOOK,
+      XIANXIA_GENRE,
+      null,
+      "# Book Rules",
+      "# Genre Body",
+      "# Style Guide",
+      undefined,
+      3,
+      "creative",
+      undefined,
+      "zh",
+      "governed",
+    );
+    expect(prompt).toContain("旁观者反应放大器");
+    expect(prompt).toContain("评价逆转模板");
+    expect(prompt).toContain("情绪释放节拍");
+  });
+
+  it("English prompts include cold-style section", () => {
+    const enGenre: GenreProfile = { ...XIANXIA_GENRE, language: "en" };
+    const prompt = buildWriterSystemPrompt(
+      { ...BOOK, language: "en" },
+      enGenre,
+      null,
+      "# Book Rules",
+      "# Genre Body",
+      "# Style Guide",
+      undefined,
+      3,
+      "creative",
+      undefined,
+      "en",
+      "governed",
+    );
+    expect(prompt).toContain("Cold-Restrained Style Adaptation");
+    expect(prompt).toContain("silence → whisper → dead quiet");
+  });
+});
