@@ -56,3 +56,11 @@ test_format.js
 fanqie_novels/
 books/
 radar/
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.bmp
