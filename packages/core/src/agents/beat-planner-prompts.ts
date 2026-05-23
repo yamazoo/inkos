@@ -2,6 +2,146 @@ import type { ChapterType } from "../models/input-governance.js";
 import type { BeatPlannerInput } from "../models/input-governance.js";
 
 // ---------------------------------------------------------------------------
+// Fanqie Pacing Template (reverse-engineered from 5 bestseller novels)
+// ---------------------------------------------------------------------------
+
+interface PacingBeat {
+  chapter: number;
+  type: string;
+  intensity: string;
+  note: string;
+}
+
+const PACING_BEATS: PacingBeat[] = [
+  { chapter: 1, type: "emotional_hook", intensity: "high", note: "极度苦难开场：孤儿、贫穷、被欺辱。5/5 books必有。" },
+  { chapter: 2, type: "golden_finger_reveal", intensity: "high", note: "金手指揭示！天大机缘降临。最迟不超过Ch3。" },
+  { chapter: 3, type: "golden_finger_deepening", intensity: "medium", note: "金手指深化或身份暗示。展示能力细节。" },
+  { chapter: 4, type: "small_payoff", intensity: "medium", note: "第一次小规模打脸或小爽点。让读者尝到甜头。" },
+  { chapter: 5, type: "world_expansion", intensity: "medium", note: "世界观初步展开或紧张感铺垫。" },
+  { chapter: 6, type: "major_face_slap", intensity: "high", note: "第一次重大爽点：大规模打脸、以弱胜强。5/5 books在Ch5-8内交付。" },
+  { chapter: 7, type: "weak_defeats_strong", intensity: "medium-high", note: "延续Ch6的高潮或获取资源奖励。" },
+  { chapter: 8, type: "transition", intensity: "low-medium", note: "过渡章节，为下一轮大高潮铺垫。" },
+  { chapter: 9, type: "power_gain", intensity: "medium-high", note: "金手指能力升级或重大悬念揭示。" },
+  { chapter: 10, type: "world_expansion", intensity: "high", note: "世界观重大扩展。5/5 books在Ch10必有世界扩展。" },
+  { chapter: 11, type: "setup", intensity: "low-medium", note: "过渡章，建立新任务或挑战。为Ch15-17大高潮铺垫。" },
+  { chapter: 12, type: "training", intensity: "medium", note: "修炼、学习、技能提升。金手指深化使用。" },
+  { chapter: 13, type: "conflict_setup", intensity: "medium", note: "冲突铺垫，引入新的对手或障碍。" },
+  { chapter: 14, type: "escalation", intensity: "medium-high", note: "矛盾升级，小规模战斗或对抗。" },
+  { chapter: 15, type: "power_breakthrough", intensity: "high", note: "重大突破！5/5 books在Ch15-17内完成第一次重大突破。" },
+  { chapter: 16, type: "breakthrough_payoff", intensity: "high", note: "突破后的爽感延续。展示新实力。" },
+  { chapter: 17, type: "reward_or_expansion", intensity: "medium-high", note: "突破奖励或世界扩展。第一个高潮群的收尾。" },
+  { chapter: 18, type: "transition", intensity: "low-medium", note: "过渡章节，恢复节奏。为第二波大高潮铺垫。" },
+  { chapter: 19, type: "escalation", intensity: "medium-high", note: "第二波矛盾升级。" },
+  { chapter: 20, type: "climax", intensity: "high", note: "第二波大高潮或重大悬念揭示。Ch20必须设置强钩子。" },
+  { chapter: 21, type: "new_arc_setup", intensity: "low-medium", note: "新阶段开始。引入新环境、新目标、新敌人。" },
+  { chapter: 22, type: "training", intensity: "medium", note: "新阶段的修炼/技能获取。" },
+  { chapter: 23, type: "resource_gathering", intensity: "medium", note: "资源获取：狩猎、交易、探索。" },
+  { chapter: 24, type: "power_breakthrough", intensity: "high", note: "新阶段首次重大突破。" },
+  { chapter: 25, type: "combat", intensity: "high", note: "实战检验：与新敌人首次交锋。" },
+  { chapter: 26, type: "loot_gain", intensity: "medium-high", note: "战斗后的奖励：资源、身份、地位提升。" },
+  { chapter: 27, type: "world_expansion", intensity: "medium", note: "世界观扩展：揭示更大的权力结构。" },
+  { chapter: 28, type: "transition", intensity: "low-medium", note: "过渡章节，处理新信息，规划下一步。" },
+  { chapter: 29, type: "conflict_setup", intensity: "medium", note: "新的冲突铺垫，引入更高层次的敌人。" },
+  { chapter: 30, type: "power_breakthrough", intensity: "high", note: "再次突破：境界/技能/身份的质变。" },
+  { chapter: 31, type: "world_expansion", intensity: "medium-high", note: "重大世界观扩展：政治格局、派系冲突。" },
+  { chapter: 32, type: "mentor_arc", intensity: "medium", note: "导师角色深化：揭示真实动机或背景。" },
+  { chapter: 33, type: "escalation", intensity: "medium", note: "冲突升级，敌人更强或威胁更大。" },
+  { chapter: 34, type: "power_breakthrough", intensity: "high", note: "重大突破：技能精通或新能力解锁。" },
+  { chapter: 35, type: "face_slap", intensity: "medium-high", note: "打脸时刻：展示新实力震慑敌人。" },
+  { chapter: 36, type: "loot_gain", intensity: "medium", note: "资源获取：通过战斗或探索获得重要物资。" },
+  { chapter: 37, type: "combat_setup", intensity: "medium", note: "重大战斗铺垫：敌人正式宣战或危机逼近。" },
+  { chapter: 38, type: "combat", intensity: "high", note: "重大战斗：与强敌正面交锋。" },
+  { chapter: 39, type: "face_slap", intensity: "high", note: "打脸高潮：碾压敌人，展示绝对实力差距。" },
+  { chapter: 40, type: "loot_gain", intensity: "medium-high", note: "战斗后的丰厚奖励。" },
+  { chapter: 41, type: "transition", intensity: "low-medium", note: "过渡章节，消化战斗成果，为下一阶段铺垫。" },
+  { chapter: 42, type: "world_expansion", intensity: "medium", note: "世界观扩展：新的势力或规则揭示。" },
+  { chapter: 43, type: "conflict_setup", intensity: "medium", note: "新冲突引入，更大规模的威胁。" },
+  { chapter: 44, type: "training", intensity: "medium", note: "针对性修炼，为即将到来的战斗做准备。" },
+  { chapter: 45, type: "power_breakthrough", intensity: "high", note: "重大突破：进入新境界或解锁新能力。" },
+  { chapter: 46, type: "combat", intensity: "high", note: "突破后的实战检验。" },
+  { chapter: 47, type: "resource_gathering", intensity: "medium-high", note: "重要资源获取，为下一阶段做准备。" },
+  { chapter: 48, type: "world_expansion", intensity: "medium-high", note: "世界观重大扩展：新领土/敌人/盟友。" },
+  { chapter: 49, type: "face_slap", intensity: "high", note: "打脸高潮：碾压之前的敌人或挑衅者。" },
+  { chapter: 50, type: "climax", intensity: "high", note: "阶段性大高潮：重大胜利、身份揭示、或悬念设置。" },
+];
+
+/** Look up pacing beat for a specific chapter (1-50). Returns undefined if chapter > 50. */
+function getPacingBeat(chapterNumber: number): PacingBeat | undefined {
+  return PACING_BEATS.find(b => b.chapter === chapterNumber);
+}
+
+/** Get the arc segment a chapter belongs to. */
+function getPacingArc(chapterNumber: number): "ch1_10" | "ch11_20" | "ch21_50" | null {
+  if (chapterNumber >= 1 && chapterNumber <= 10) return "ch1_10";
+  if (chapterNumber >= 11 && chapterNumber <= 20) return "ch11_20";
+  if (chapterNumber >= 21 && chapterNumber <= 50) return "ch21_50";
+  return null;
+}
+
+const PACING_ARC_GUIDANCE: Record<string, { zh: string; en: string }> = {
+  ch1_10: {
+    zh: `### Ch1-10 节奏要求（前10章锁住读者）
+- **主导节奏**: 2章铺垫→1章爆发
+- **高强度爽点**: 前10章至少3个，中+高强度占比≥60%
+- **禁止**: 连续3章以上低强度
+- **关键窗口**: Ch5-8必须有第一次重大打脸，Ch10必须有世界观扩展
+- **金手指**: 必须在Ch1-3内揭示（推荐Ch1-2）`,
+    en: `### Ch1-10 Rhythm Requirements (lock readers in first 10 chapters)
+- **Dominant rhythm**: 2 chapters setup → 1 chapter explosion
+- **High intensity**: At least 3 high-intensity beats in first 10 chapters; medium+ ≥60%
+- **Forbidden**: 3+ consecutive low-intensity chapters
+- **Key windows**: Major face-slap by Ch5-8, world expansion at Ch10
+- **Golden finger**: Must reveal by Ch1-3 (recommended Ch1-2)`,
+  },
+  ch11_20: {
+    zh: `### Ch11-20 节奏要求（第一波高潮群）
+- **主导节奏**: 3章铺垫→2章高潮→1章过渡
+- **关键窗口**: Ch15-17必须有重大突破，Ch18-20必须有第二波世界扩展
+- **金手指深化**: 每2-3章必须展示新用法或升级
+- **情感刷新**: 每5-7章刷新读者情感（复仇/同情/盟友）
+- **Ch20铁律**: 必须设置强钩子驱动读者进入下一阶段`,
+    en: `### Ch11-20 Rhythm Requirements (first climax cluster)
+- **Dominant rhythm**: 3 chapters setup → 2 chapters climax → 1 chapter transition
+- **Key windows**: Major breakthrough at Ch15-17, second world expansion at Ch18-20
+- **Golden finger deepening**: Every 2-3 chapters must show new usage or upgrade
+- **Emotional refresh**: Every 5-7 chapters (revenge/sympathy/ally)
+- **Ch20 iron rule**: Must set strong cliffhanger for next arc`,
+  },
+  ch21_50: {
+    zh: `### Ch21-50 节奏要求（三峰分布模式）
+- **主导节奏**: 5章铺垫→3章高潮→2章过渡
+- **突破窗口**: Ch24-26（首次）、Ch34-36（二次）、Ch45-47（三次），间隔约10章
+- **打脸窗口**: Ch37-40（首次重大打脸）、Ch47-50（第二次重大打脸）
+- **世界扩展波**: Ch31-33（政治格局）、Ch41-43（隐藏势力）、Ch48-50（新领土）
+- **资源循环**: 每8-12章完成一个（狩猎→出售→升级）
+- **情感刷新**: 每7-10章（盟友支持/系统性压迫/复仇动机）
+- **敌人升级**: 本地恶霸→武馆→区域势力→隐藏势力
+- **强度分布**: Ch21-30低→中→高，Ch31-40中→高→高，Ch41-50低→中→高`,
+    en: `### Ch21-50 Rhythm Requirements (triple-peak distribution)
+- **Dominant rhythm**: 5 chapters setup → 3 chapters climax → 2 chapters transition
+- **Breakthrough windows**: Ch24-26 (first), Ch34-36 (second), Ch45-47 (third), ~10 chapter intervals
+- **Face-slap windows**: Ch37-40 (first major), Ch47-50 (second major)
+- **World expansion waves**: Ch31-33 (political), Ch41-43 (hidden forces), Ch48-50 (new territory)
+- **Resource cycle**: Every 8-12 chapters (hunt → sell → upgrade)
+- **Emotional refresh**: Every 7-10 chapters (ally support / systemic oppression / revenge motivation)
+- **Enemy escalation**: Local bully → martial school → regional power → hidden faction
+- **Intensity distribution**: Ch21-30 low→med→high, Ch31-40 med→high→high, Ch41-50 low→med→high`,
+  },
+};
+
+// Anti-patterns to warn about based on chapter number
+const PACING_ANTI_PATTERNS: Array<{ range: [number, number]; pattern: string; zh: string; en: string }> = [
+  { range: [1, 3], pattern: "delayed_golden_finger", zh: "金手指延迟到Ch4以后！5/5 books在Ch3内揭示。", en: "Golden finger delayed past Ch3! All 5 books reveal by Ch3." },
+  { range: [1, 10], pattern: "no_emotional_hook", zh: "开篇缺乏情感共鸣。5/5 books以极端苦难开场。", en: "Opening lacks emotional hook. All 5 books open with extreme suffering." },
+  { range: [5, 8], pattern: "missing_major_payoff_by_ch6", zh: "Ch6前无重大爽点！锁住读者的关键时刻。", en: "No major payoff by Ch6! Critical reader-locking moment." },
+  { range: [15, 17], pattern: "missing_climax_by_ch17", zh: "Ch15-17无重大突破！第一波高潮群必须交付。", en: "No major breakthrough at Ch15-17! First climax cluster must deliver." },
+  { range: [24, 26], pattern: "missing_power_breakthrough_ch24_26", zh: "Ch24-26无新阶段首次突破！读者期待第一个10章有一次重大突破。", en: "No breakthrough at Ch24-26! Readers expect first major breakthrough in new arc." },
+  { range: [37, 40], pattern: "missing_face_slap_ch37_40", zh: "Ch37-40无重大打脸高潮！这是锁住中期读者的关键时刻。", en: "No major face-slap at Ch37-40! Critical for retaining mid-arc readers." },
+  { range: [45, 47], pattern: "missing_third_breakthrough_ch45_47", zh: "Ch45-47无第三次重大突破！第50章前必须有一次质变。", en: "No third breakthrough at Ch45-47! Must have transformation before Ch50." },
+  { range: [49, 50], pattern: "weak_ch50_climax", zh: "Ch50无阶段性大高潮！必须设置强钩子驱动读者继续。", en: "No stage climax at Ch50! Must set strong hook for continuation." },
+];
+
+// ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 
@@ -162,8 +302,9 @@ function buildSystemPromptZh(): string {
    - 新困境（代价）+ 新机遇（收获）
 4. **衔接上章**：节拍1（悬念引入）必须自然承接上章结尾的情绪与节奏
 5. **遵守mustAvoid**：mustAvoid中的元素严禁出现在本章
-6. **避免重复**：不要重复近期章节结尾的场景类型（战斗/升级/布局等），保持结构多样性
+6. **避免重复**：不要重复近期章节结尾的场景类型（战斗/升级/布局等），也不要重复时间锚点（连续夜晚收尾、连续清晨开头），保持结构和时间多样性
 7. **字数容差**：目标字数±10%，节拍占比在合理范围内微调
+8. **章尾外部锚点**：最后一段必须包含外部锚点（具体动作/对话/环境细节）。禁止以纯心理活动、情绪声明或模糊预告收尾。节拍5（章末转折）的输出本身应是外部事件
 
 ## 章类自动检测（按优先级）
 
@@ -205,6 +346,16 @@ ${TRIBULATION_BEATS}
 ### 悟道章（enlightenment）
 
 ${ENLIGHTENMENT_BEATS}
+
+## 番茄爆款节奏模板（来自5本爆款书逆向工程）
+
+以下节奏要求基于对番茄平台5本爆款玄幻/仙侠小说前50章的逆向工程分析（凡骨、聚宝仙盆、从箭术开始修行、凡人仙葫、没钱修什么仙）。节拍规划必须遵守这些窗口要求。
+
+${PACING_ARC_GUIDANCE.ch1_10.zh}
+
+${PACING_ARC_GUIDANCE.ch11_20.zh}
+
+${PACING_ARC_GUIDANCE.ch21_50.zh}
 
 ## 输出格式
 
@@ -257,7 +408,7 @@ Based on chapter intent and global state, plan the beat sheet for the current ch
    - New dilemma (cost) + New opportunity (gain)
 4. **Connect to previous chapter**: Beat 1 (Hook Intro) must naturally follow the tone and rhythm of the previous chapter's ending
 5. **Respect mustAvoid**: Elements in mustAvoid must NOT appear in this chapter
-6. **Avoid repetition**: Do not repeat recent chapter-ending scene types (combat/upgrade/scheme etc.); maintain structural diversity
+6. **Avoid repetition**: Do not repeat recent chapter-ending scene types (combat/upgrade/scheme etc.) or time-of-day anchors (consecutive night endings, consecutive dawn openings); maintain structural and temporal diversity
 7. **Word count tolerance**: Target ±10%, beat proportions may be slightly adjusted within reason
 
 ## Chapter Type Detection (by priority)
@@ -300,6 +451,16 @@ ${EN_TRIBULATION_BEATS}
 ### Enlightenment Chapter (enlightenment)
 
 ${EN_ENLIGHTENMENT_BEATS}
+
+## Fanqie Bestseller Pacing Template (reverse-engineered from 5 hit novels)
+
+These pacing requirements are based on reverse-engineering the first 50 chapters of 5 bestselling xuanhuan/xianxia novels on the Fanqie platform. Beat planning must follow these window requirements.
+
+${PACING_ARC_GUIDANCE.ch1_10.en}
+
+${PACING_ARC_GUIDANCE.ch11_20.en}
+
+${PACING_ARC_GUIDANCE.ch21_50.en}
 
 ## Output Format
 
@@ -347,6 +508,28 @@ function buildUserPromptZh(input: BeatPlannerInput): string {
 
   lines.push(`# 第${input.chapterNumber}章 节拍规划请求`);
   lines.push("");
+
+  // Inject pacing template guidance based on chapter number
+  const pacingBeat = getPacingBeat(input.chapterNumber);
+  if (pacingBeat) {
+    lines.push("## 番茄爆款节奏模板要求（本章）");
+    lines.push(`- **推荐节拍类型**: ${pacingBeat.type}`);
+    lines.push(`- **推荐强度**: ${pacingBeat.intensity}`);
+    lines.push(`- **节奏指导**: ${pacingBeat.note}`);
+    lines.push("");
+  }
+
+  // Inject anti-pattern warnings
+  const relevantWarnings = PACING_ANTI_PATTERNS.filter(
+    w => input.chapterNumber >= w.range[0] && input.chapterNumber <= w.range[1]
+  );
+  if (relevantWarnings.length > 0) {
+    lines.push("## ⚠️ 节奏反模式警告（本章范围内）");
+    for (const w of relevantWarnings) {
+      lines.push(`- **${w.pattern}**: ${w.zh}`);
+    }
+    lines.push("");
+  }
 
   lines.push("## 章节目标");
   lines.push(intent.goal);
@@ -434,6 +617,28 @@ function buildUserPromptEn(input: BeatPlannerInput): string {
 
   lines.push(`# Chapter ${input.chapterNumber} Beat Planning Request`);
   lines.push("");
+
+  // Inject pacing template guidance based on chapter number
+  const pacingBeat = getPacingBeat(input.chapterNumber);
+  if (pacingBeat) {
+    lines.push("## Fanqie Bestseller Pacing Template (this chapter)");
+    lines.push(`- **Recommended beat type**: ${pacingBeat.type}`);
+    lines.push(`- **Recommended intensity**: ${pacingBeat.intensity}`);
+    lines.push(`- **Pacing guidance**: ${pacingBeat.note}`);
+    lines.push("");
+  }
+
+  // Inject anti-pattern warnings
+  const relevantWarnings = PACING_ANTI_PATTERNS.filter(
+    w => input.chapterNumber >= w.range[0] && input.chapterNumber <= w.range[1]
+  );
+  if (relevantWarnings.length > 0) {
+    lines.push("## ⚠️ Pacing Anti-Pattern Warnings (this chapter range)");
+    for (const w of relevantWarnings) {
+      lines.push(`- **${w.pattern}**: ${w.en}`);
+    }
+    lines.push("");
+  }
 
   lines.push("## Chapter Goal");
   lines.push(intent.goal);
@@ -525,4 +730,26 @@ export function buildBeatPlannerSystemPrompt(language: "zh" | "en"): string {
 
 export function buildBeatPlannerUserPrompt(input: BeatPlannerInput, language: "zh" | "en"): string {
   return language === "en" ? buildUserPromptEn(input) : buildUserPromptZh(input);
+}
+
+/** Get pacing beat recommendation for a specific chapter (1-50). */
+export function getPacingBeatForChapter(chapterNumber: number): PacingBeat | undefined {
+  return getPacingBeat(chapterNumber);
+}
+
+/** Get the pacing arc segment for a chapter. */
+export function getPacingArcSegment(chapterNumber: number): "ch1_10" | "ch11_20" | "ch21_50" | null {
+  return getPacingArc(chapterNumber);
+}
+
+/** Get all pacing beats (for analysis/tooling). */
+export function getAllPacingBeats(): readonly PacingBeat[] {
+  return PACING_BEATS;
+}
+
+/** Get anti-pattern warnings relevant to a chapter. */
+export function getPacingAntiPatterns(chapterNumber: number): Array<{ pattern: string; zh: string; en: string }> {
+  return PACING_ANTI_PATTERNS
+    .filter(w => chapterNumber >= w.range[0] && chapterNumber <= w.range[1])
+    .map(({ pattern, zh, en }) => ({ pattern, zh, en }));
 }

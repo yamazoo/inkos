@@ -250,6 +250,7 @@ function applySummaryDelta(
   allowReapply = false,
 ): ChapterSummariesState {
   if (!delta.chapterSummary) {
+    console.warn(`WARN [state-reducer] chapterSummary missing for chapter ${delta.chapter ?? "?"}`);
     return {
       rows: [...state.rows].sort((left, right) => left.chapter - right.chapter),
     };

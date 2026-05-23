@@ -87,4 +87,67 @@ describe("analyzeAITells", () => {
     const warningIssues = result.issues.filter((i) => i.severity === "warning");
     expect(warningIssues).toHaveLength(0);
   });
+
+  it("detects consecutive simile-heavy paragraphs (dim 24)", () => {
+    const content = [
+      "他的眼神像一把钝刀，迟缓地扫过人群。",
+      "",
+      "她的声音像是碎裂的瓷器，刺耳而破碎。",
+      "",
+      "空气像凝固了一般，沉重地压在每个人身上。",
+      "",
+      "远处的钟声响起，打破了沉默。",
+    ].join("\n");
+
+    const result = analyzeAITells(content);
+    const simileIssues = result.issues.filter((i) => i.category === "明喻同质化");
+    expect(simileIssues.length).toBeGreaterThan(0);
+    expect(simileIssues[0]!.description).toContain("连续");
+  });
+
+  it("does not flag simile homogeneity with fewer than 3 consecutive simile paragraphs (dim 24)", () => {
+    const content = [
+      "他的眼神像一把钝刀，迟缓地扫过人群。",
+      "",
+      "远处的钟声响起，打破了沉默。",
+      "",
+      "她的声音像是碎裂的瓷器，刺耳而破碎。",
+    ].join("\n");
+
+    const result = analyzeAITells(content);
+    const simileIssues = result.issues.filter((i) => i.category === "明喻同质化");
+    expect(simileIssues).toHaveLength(0);
+  });
+
+  it("detects high emotion label density (dim 25)", () => {
+    // "感到"×4 + "心里"×3 = 7 occurrences in ~400 chars → density ~17.5/千字
+    const content = [
+      "他感到一阵莫名的烦躁，感到胸口堵得慌。",
+      "",
+      "心里像是有什么东西在翻涌，心里的不安越来越强烈。",
+      "",
+      "她感到前所未有的恐惧，感到整个世界都在坍塌。",
+      "",
+      "心里那根弦终于断了。",
+    ].join("\n");
+
+    const result = analyzeAITells(content);
+    const emotionIssues = result.issues.filter((i) => i.category === "情感标签密度");
+    expect(emotionIssues.length).toBeGreaterThan(0);
+    expect(emotionIssues[0]!.severity).toBe("info");
+  });
+
+  it("does not flag low emotion label density (dim 25)", () => {
+    const content = [
+      "他捏紧了拳头，指甲陷进掌心。",
+      "",
+      "远处传来号角的声音，低沉而悠长。",
+      "",
+      "她转过身，没有说话，只是加快了脚步。",
+    ].join("\n");
+
+    const result = analyzeAITells(content);
+    const emotionIssues = result.issues.filter((i) => i.category === "情感标签密度");
+    expect(emotionIssues).toHaveLength(0);
+  });
 });

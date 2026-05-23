@@ -38,5 +38,8 @@
       "@mariozechner/pi-ai": "0.67.1",
       "@mariozechner/pi-agent-core": "0.67.1"
     }
+  },
+  "devDependencies": {
+    "opentype.js": "^2.0.0"
   }
 }

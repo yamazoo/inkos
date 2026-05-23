@@ -30,6 +30,8 @@ import { createInteractCommand, type InteractCommandHooks } from "./commands/int
 import { createTuiCommand } from "./commands/tui.js";
 import { createOutlineCommand } from "./commands/outline.js";
 import { uploadCommand } from "./commands/upload.js";
+import { packageCommand } from "./commands/package.js";
+import { coverCommand } from "./commands/cover.js";
 import { launchTui } from "./tui/app.js";
 
 const require = createRequire(import.meta.url);
@@ -95,6 +97,8 @@ export function createProgram(hooks: ProgramHooks = {}): Command {
   program.addCommand(createTuiCommand({ launchTui: hooks.launchTui }));
   program.addCommand(createOutlineCommand());
   program.addCommand(uploadCommand);
+  program.addCommand(packageCommand);
+  program.addCommand(coverCommand);
 
   return program;
 }

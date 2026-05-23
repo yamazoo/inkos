@@ -50,7 +50,7 @@ export class LengthNormalizerAgent extends BaseAgent {
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
       ],
-      { temperature: 0.2 },
+      { temperature: 0.2, maxTokens: Math.max(4096, Math.round((input.lengthSpec.hardMax ?? 4000) * 1.5 * 1.5)) },
     );
 
     const normalizedContent = this.sanitizeNormalizedContent(response.content, input.chapterContent);

@@ -18,6 +18,8 @@ export { type BookRules, type ParsedBookRules, BookRulesSchema, parseBookRules, 
 export { type DetectionHistoryEntry, type DetectionStats } from "./models/detection.js";
 export { type StyleProfile } from "./models/style-profile.js";
 export { type LengthCountingMode, type LengthNormalizeMode, type LengthSpec, type LengthTelemetry, type LengthWarning, LengthCountingModeSchema, LengthNormalizeModeSchema, LengthSpecSchema, LengthTelemetrySchema, LengthWarningSchema } from "./models/length-governance.js";
+export { type PackageScore, type PackageCandidate, type PackageResult, type PackageCandidatesState, TOMATO_TITLE_MAX, TOMATO_SYNOPSIS_MAX, PackageScoreSchema, PackageCandidateSchema, PackageResultSchema, PackageCandidatesStateSchema } from "./models/packaging.js";
+export { type CoverCandidate, type CoverOutput, CoverCandidateSchema, CoverOutputSchema, COVER_TITLE_MIN, COVER_TITLE_MAX, COVER_PROMPT_MIN, COVER_PROMPT_MAX, COVER_SYNOPSIS_MIN, COVER_SYNOPSIS_MAX, COVER_CANDIDATE_COUNT } from "./models/cover.js";
 export {
   type TimelineState,
   type TimelineDelta,
@@ -272,7 +274,9 @@ export { ContinuityAuditor, type AuditResult, type AuditIssue } from "./agents/c
 export { ReviserAgent, DEFAULT_REVISE_MODE, type ReviseOutput, type ReviseMode } from "./agents/reviser.js";
 export { PolisherAgent, type PolishChapterInput, type PolishChapterOutput } from "./agents/polisher.js";
 export { RadarAgent, type RadarResult, type RadarRecommendation } from "./agents/radar.js";
-export { FanqieRadarSource, QidianRadarSource, TextRadarSource, type RadarSource, type PlatformRankings, type RankingEntry } from "./agents/radar-source.js";
+export { PackagerAgent, type PackagerGenerateParams } from "./agents/packager.js";
+export { CoverAgent, type CoverGenerateParams } from "./agents/cover-agent.js";
+export { FanqieRadarSource, QidianRadarSource, TextRadarSource, type RadarSource, type PlatformRankings, type RankingEntry, type BookDetailsResult } from "./agents/radar-source.js";
 export { readGenreProfile, readBookRules, listAvailableGenres, getBuiltinGenresDir } from "./agents/rules-reader.js";
 export { buildWriterSystemPrompt, buildGoldenOpeningDiscipline } from "./agents/writer-prompts.js";
 export { analyzeAITells, type AITellResult, type AITellIssue } from "./agents/ai-tells.js";
@@ -280,7 +284,7 @@ export { analyzeSensitiveWords, type SensitiveWordResult, type SensitiveWordMatc
 export { detectAIContent, type DetectionResult } from "./agents/detector.js";
 export { analyzeStyle } from "./agents/style-analyzer.js";
 export { analyzeDetectionInsights } from "./agents/detection-insights.js";
-export { validatePostWrite, detectParagraphLengthDrift, detectParagraphShapeWarnings, detectDuplicateTitle, detectGenericTitle, type PostWriteViolation } from "./agents/post-write-validator.js";
+export { validatePostWrite, detectParagraphLengthDrift, detectParagraphShapeWarnings, detectDuplicateTitle, detectGenericTitle, detectSimileOveruse, detectCrossChapterSimile, detectExcessiveMonologue, type PostWriteViolation } from "./agents/post-write-validator.js";
 export { ChapterAnalyzerAgent, type AnalyzeChapterInput, type AnalyzeChapterOutput } from "./agents/chapter-analyzer.js";
 export { OutlineInitAgent, OutlineInitParseError } from "./agents/outline-init-agent.js";
 export { VolumeStructureExtractor } from "./agents/volume-structure-extractor.js";

@@ -93,92 +93,99 @@ function buildSettlerOutputFormat(gp: GenreProfile): string {
   return `=== POST_SETTLEMENT ===
 （简要说明本章有哪些状态变动、伏笔推进、结算注意事项；允许 Markdown 表格或要点）
 
+=== TIMELINE ===
+⚠️ 此块不可省略！必须输出 JSON（不要输出 Markdown）
+\`\`\`json
+{
+  “storyDay”: 2,
+  “dayLabel”: “对赌挑衅日”,
+  “events”: [
+    { “id”: “wolf-fight”, “reference”: “三天前在后山”, “impliedOffset”: -3 },
+    { “id”: “exam”, “reference”: “考核还有三天”, “countdown”: 3 }
+  ]
+}
+\`\`\`
+
+时间线提取规则（必须执行，不可跳过）：
+1. storyDay：基于上一章的 storyDay 和本章时间标记推算。无推进标记→同上章，”第二天”→+1，”三天后”→+3
+2. 如果时间线文件尚未创建（这是第一章或首次写入），本章 storyDay = 1，dayLabel 留空字符串””，events 可以为空数组[]
+3. 倒计时标记（”考核还有N天”）→ storyDay = 事件锚点storyDay - N（若已知），否则只记录 countdown
+4. events 数组：记录本章中所有对已知事件的时间引用（回溯或前瞻）
+5. impliedOffset：回溯引用的天数偏移（负数），如”三天前”→-3
+6. countdown：前瞻倒计时天数，如”考核还有3天”→3
+7. 只记录对故事关键事件的时间引用，不记录日常琐事（吃饭、走路等）
+8. 同一事件的多次引用只记最有信息量的一条
+9. 即使本章没有明确的时间标记，也必须输出 === TIMELINE === 块，storyDay 沿用上一章的值
+
 === RUNTIME_STATE_DELTA ===
 （必须输出 JSON，不要输出 Markdown，不要加解释）
 \`\`\`json
 {
-  "chapter": 12,
-  "currentStatePatch": {
-    "currentLocation": "可选",
-    "protagonistState": "可选",
-    "currentGoal": "可选",
-    "currentConstraint": "可选",
-    "currentAlliances": "可选",
-    "currentConflict": "可选"
+  “chapter”: 12,
+  “currentStatePatch”: {
+    “currentLocation”: “可选”,
+    “protagonistState”: “可选”,
+    “currentGoal”: “可选”,
+    “currentConstraint”: “可选”,
+    “currentAlliances”: “可选”,
+    “currentConflict”: “可选”
   },
-  "hookOps": {
-    "upsert": [
+  “hookOps”: {
+    “upsert”: [
       {
-        "hookId": "mentor-oath",
-        "startChapter": 8,
-        "type": "relationship",
-        "status": "progressing",
-        "lastAdvancedChapter": 12,
-        "expectedPayoff": "揭开师债真相",
-        "payoffTiming": "slow-burn",
-        "notes": "本章为何推进/延后/回收"
+        “hookId”: “mentor-oath”,
+        “startChapter”: 8,
+        “type”: “relationship”,
+        “status”: “progressing”,
+        “lastAdvancedChapter”: 12,
+        “expectedPayoff”: “揭开师债真相”,
+        “payoffTiming”: “slow-burn”,
+        “notes”: “本章为何推进/延后/回收”
       }
     ],
-    "mention": ["本章只是被提到、没有真实推进的 hookId"],
-    "resolve": ["已回收的 hookId"],
-    "defer": ["需要标记延后的 hookId"]
+    “mention”: [“本章只是被提到、没有真实推进的 hookId”],
+    “resolve”: [“已回收的 hookId”],
+    “defer”: [“需要标记延后的 hookId”]
   },
-  "newHookCandidates": [
+  “newHookCandidates”: [
     {
-      "type": "mystery",
-      "expectedPayoff": "新伏笔未来要回收到哪里",
-      "payoffTiming": "near-term",
-      "notes": "本章为什么会形成新的未解问题"
+      “type”: “mystery”,
+      “expectedPayoff”: “新伏笔未来要回收到哪里”,
+      “payoffTiming”: “near-term”,
+      “notes”: “本章为什么会形成新的未解问题”
     }
   ],
-  "chapterSummary": {
-    "chapter": 12,
-    "title": "本章标题",
-    "characters": "角色1,角色2",
-    "events": "一句话概括关键事件",
-    "stateChanges": "一句话概括状态变化",
-    "hookActivity": "mentor-oath advanced",
-    "mood": "紧绷",
-    "chapterType": "${chapterTypeExample}"
+  “chapterSummary”: {
+    “chapter”: 12,
+    “title”: “本章标题”,
+    “characters”: “角色1,角色2”,
+    “events”: “一句话概括关键事件”,
+    “stateChanges”: “一句话概括状态变化”,
+    “hookActivity”: “mentor-oath advanced”,
+    “mood”: “紧绷”,
+    “chapterType”: “${chapterTypeExample}”
   },
-  "subplotOps": [],
-  "emotionalArcOps": [],
-  "characterMatrixOps": [],
-  "notes": []
+  “subplotOps”: [],
+  “emotionalArcOps”: [],
+  “characterMatrixOps”: [],
+  “notes”: []
 }
 \`\`\`
 
 规则：
 1. 只输出增量，不要重写完整 truth files
 2. 所有章节号字段都必须是整数，不能写自然语言
-3. hookOps.upsert 里只能写“当前伏笔池里已经存在”的 hookId，不允许发明新的 hookId
+3. hookOps.upsert 里只能写”当前伏笔池里已经存在”的 hookId，不允许发明新的 hookId
 4. brand-new unresolved thread 一律写进 newHookCandidates，不要自造 hookId
 5. 如果旧 hook 只是被提到、没有真实状态变化，把它放进 mention，不要更新 lastAdvancedChapter
 6. 如果本章推进了旧 hook，lastAdvancedChapter 必须等于当前章号
 7. 如果回收或延后 hook，必须放在 resolve / defer 数组里
 8. chapterSummary.chapter 必须等于当前章节号
 
-=== TIMELINE ===
-（必须输出 JSON，不要输出 Markdown）
-\`\`\`json
-{
-  "storyDay": 2,
-  "dayLabel": "对赌挑衅日",
-  "events": [
-    { "id": "wolf-fight", "reference": "三天前在后山", "impliedOffset": -3 },
-    { "id": "exam", "reference": "考核还有三天", "countdown": 3 }
-  ]
-}
-\`\`\`
-
-时间线提取规则：
-1. storyDay：基于上一章的 storyDay 和本章时间标记推算。无推进标记→同上章，"第二天"→+1，"三天后"→+3
-2. 倒计时标记（"考核还有N天"）→ storyDay = 事件锚点storyDay - N（若已知），否则只记录 countdown
-3. events 数组：记录本章中所有对已知事件的时间引用（回溯或前瞻）
-4. impliedOffset：回溯引用的天数偏移（负数），如"三天前"→-3
-5. countdown：前瞻倒计时天数，如"考核还有3天"→3
-6. 只记录对故事关键事件的时间引用，不记录日常琐事（吃饭、走路等）
-7. 同一事件的多次引用只记最有信息量的一条`;
+⚠️ 输出顺序提醒（你必须严格按此顺序输出三个块，缺任何一个都是错误）：
+1. === POST_SETTLEMENT ===
+2. === TIMELINE ===（不可省略！即使没有时间变动也必须输出，storyDay 沿用上一章）
+3. === RUNTIME_STATE_DELTA ===`;
 }
 
 export function buildSettlerUserPrompt(params: {
@@ -221,7 +228,7 @@ export function buildSettlerUserPrompt(params: {
 
   const timelineBlock = params.timeline && params.timeline !== "(文件尚未创建)"
     ? `\n## 当前时间线\n${params.timeline}\n`
-    : "";
+    : `\n## 当前时间线\n（尚无数据——这是首章或首次写入，请按规则从 storyDay=1 开始创建时间线）\n`;
 
   const observationsBlock = params.observations
     ? `\n## 观察日志（由 Observer 提取，包含本章所有事实变化）\n${params.observations}\n\n基于以上观察日志和正文，更新所有追踪文件。确保观察日志中的每一项变化都反映在对应的文件中。\n`

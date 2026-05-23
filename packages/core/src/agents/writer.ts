@@ -11,6 +11,8 @@ import { readGenreProfile, readBookRules } from "./rules-reader.js";
 import { readStoryFrame, readVolumeMap, readCharacterContext, readCurrentStateWithFallback } from "../utils/outline-paths.js";
 import {
   detectCrossChapterRepetition,
+  detectExcessiveMonologue,
+  detectNarrativeBeatRepetition,
   detectParagraphLengthDrift,
   normalizePostWriteSurface,
   validatePostWrite,
@@ -20,7 +22,7 @@ import { analyzeAITells } from "./ai-tells.js";
 import type { ChapterIntent, ChapterMemo, ContextPackage, RuleStack } from "../models/input-governance.js";
 import type { LengthSpec } from "../models/length-governance.js";
 import type { RuntimeStateDelta } from "../models/runtime-state.js";
-import type { TimelineDelta } from "../models/timeline.js";
+import { TimelineDeltaSchema, type TimelineDelta } from "../models/timeline.js";
 import { buildLengthSpec, countChapterLength } from "../utils/length-metrics.js";
 import { filterHooks, filterSummaries, filterSubplots, filterEmotionalArcs, filterCharacterMatrix } from "../utils/context-filter.js";
 import { buildGovernedMemoryEvidenceBlocks } from "../utils/governed-context.js";
@@ -268,7 +270,7 @@ export class WriterAgent extends BaseAgent {
         { role: "system", content: creativeSystemPrompt },
         { role: "user", content: creativeUserPrompt },
       ],
-      { temperature: creativeTemperature, maxTokens: 24576 },
+      { temperature: creativeTemperature, maxTokens: Math.max(4096, Math.round(targetWords * 1.5 * 2.5)) },
     );
     const creativeUsage = creativeResponse.usage;
 
@@ -367,7 +369,9 @@ export class WriterAgent extends BaseAgent {
     const ruleViolations = [
       ...validatePostWrite(surfaceNormalizedContent, genreProfile, bookRules, resolvedLanguage),
       ...detectCrossChapterRepetition(surfaceNormalizedContent, fingerprintChapters, resolvedLanguage),
+      ...detectNarrativeBeatRepetition(surfaceNormalizedContent, resolvedLanguage),
       ...detectParagraphLengthDrift(surfaceNormalizedContent, fingerprintChapters, resolvedLanguage),
+      ...detectExcessiveMonologue(surfaceNormalizedContent, resolvedLanguage),
     ];
     const aiTellIssues = analyzeAITells(surfaceNormalizedContent, resolvedLanguage).issues;
 
@@ -639,6 +643,23 @@ export class WriterAgent extends BaseAgent {
     };
     try {
       const deltaOutput = parseSettlerDeltaOutput(response.content);
+      if (deltaOutput.timelineDelta) {
+        this.logInfo(resolvedLang, {
+          zh: `时间线：第${params.chapterNumber}章 storyDay=${deltaOutput.timelineDelta.storyDay}`,
+          en: `timeline: ch${params.chapterNumber} storyDay=${deltaOutput.timelineDelta.storyDay}`,
+        });
+      } else {
+        this.logWarn(resolvedLang, {
+          zh: `时间线：Settler 未输出 TIMELINE 块（第${params.chapterNumber}章）`,
+          en: `timeline: Settler did not output TIMELINE block (ch${params.chapterNumber})`,
+        });
+      }
+      if (deltaOutput.runtimeStateDelta && !deltaOutput.runtimeStateDelta.chapterSummary) {
+        this.logWarn(resolvedLang, {
+          zh: `章节摘要：第${params.chapterNumber}章 delta 缺少 chapterSummary，摘要将不会被持久化`,
+          en: `chapter summary: ch${params.chapterNumber} delta missing chapterSummary — summary will not be persisted`,
+        });
+      }
       mergedSettlement = {
         postSettlement: deltaOutput.postSettlement,
         runtimeStateDelta: deltaOutput.runtimeStateDelta,
@@ -654,6 +675,24 @@ export class WriterAgent extends BaseAgent {
       };
     } catch {
       const settlement = parseSettlementOutput(response.content, params.genreProfile);
+      // Attempt to salvage TIMELINE block even when full delta parsing fails
+      let salvagedTimeline: TimelineDelta | undefined;
+      try {
+        const timelineMatch = response.content.match(
+          /=== TIMELINE ===\s*([\s\S]*?)(?==== [A-Z_]+ ===|$)/,
+        );
+        if (timelineMatch?.[1]) {
+          const fenced = timelineMatch[1].trim().match(/^```(?:json)?\s*([\s\S]*?)\s*```$/i);
+          const json = (fenced?.[1] ?? timelineMatch[1]).trim().replace(/,\s*([}\]])/g, "$1");
+          salvagedTimeline = TimelineDeltaSchema.parse(JSON.parse(json));
+        }
+      } catch { /* TIMELINE salvage is best-effort */ }
+      if (salvagedTimeline) {
+        this.logInfo(resolvedLang, {
+          zh: `时间线：从 Settler 回退路径抢救出 TIMELINE（第${params.chapterNumber}章 storyDay=${salvagedTimeline.storyDay}）`,
+          en: `timeline: salvaged TIMELINE from fallback path (ch${params.chapterNumber} storyDay=${salvagedTimeline.storyDay})`,
+        });
+      }
       mergedSettlement = governedControlBlock
         ? {
             ...settlement,
@@ -667,8 +706,72 @@ export class WriterAgent extends BaseAgent {
             updatedCharacterMatrix: settlement.updatedCharacterMatrix
               ? mergeCharacterMatrixMarkdown(params.originalCharacterMatrix, settlement.updatedCharacterMatrix)
               : settlement.updatedCharacterMatrix,
+            timelineDelta: salvagedTimeline,
           }
-        : settlement;
+        : { ...settlement, timelineDelta: salvagedTimeline };
+    }
+
+    // Retry: if TIMELINE still missing, make a focused extraction call
+    if (!mergedSettlement.timelineDelta) {
+      try {
+        const retryPrompt = `你是一个时间线提取器。根据以下章节正文和当前时间线状态，输出 TIMELINE JSON。
+
+规则：
+- storyDay：基于上一章的 storyDay 和本章时间标记推算。无推进标记→同上章，"第二天"→+1，"三天后"→+3
+- events 数组：记录本章中所有对已知事件的时间引用
+- impliedOffset：回溯引用的天数偏移（负数），如"三天前"→-3
+- countdown：前瞻倒计时天数，如"考核还有3天"→3
+- 如果没有明确时间标记，storyDay 沿用上一章值
+
+当前时间线状态：
+${timelineStr}
+
+第${params.chapterNumber}章正文（摘要）：
+${params.content.substring(0, 2000)}
+
+只输出 JSON，不要输出其他内容：
+{ "storyDay": N, "dayLabel": "...", "events": [...] }`;
+
+        const retryResponse = await this.chat(
+          [{ role: "user", content: retryPrompt }],
+          { temperature: 0.1, maxTokens: 2048 },
+        );
+
+        const retryJson = retryResponse.content
+          .replace(/<think>[\s\S]*?<\/think>/g, "")
+          .trim()
+          .replace(/^```(?:json)?\s*/i, "")
+          .replace(/\s*```$/i, "")
+          .replace(/,\s*([}\]])/g, "$1");
+        const retryTimeline = TimelineDeltaSchema.parse(JSON.parse(retryJson));
+        mergedSettlement = { ...mergedSettlement, timelineDelta: retryTimeline };
+        this.logInfo(resolvedLang, {
+          zh: `时间线：重试提取成功（第${params.chapterNumber}章 storyDay=${retryTimeline.storyDay}）`,
+          en: `timeline: retry extraction succeeded (ch${params.chapterNumber} storyDay=${retryTimeline.storyDay})`,
+        });
+      } catch (retryErr) {
+        this.logWarn(resolvedLang, {
+          zh: `时间线：重试提取也失败了（第${params.chapterNumber}章）：${retryErr instanceof Error ? retryErr.message : String(retryErr)}`,
+          en: `timeline: retry extraction also failed (ch${params.chapterNumber}): ${retryErr instanceof Error ? retryErr.message : String(retryErr)}`,
+        });
+      }
+    }
+
+    // Deterministic fallback: if TIMELINE still missing after retry, derive from existing timeline state
+    if (!mergedSettlement.timelineDelta) {
+      const lastStoryDay = timelineState.storyDays.length > 0
+        ? timelineState.storyDays[timelineState.storyDays.length - 1]!.storyDay
+        : 1;
+      const fallbackDelta: TimelineDelta = {
+        storyDay: lastStoryDay,
+        dayLabel: "",
+        events: [],
+      };
+      mergedSettlement = { ...mergedSettlement, timelineDelta: fallbackDelta };
+      this.logWarn(resolvedLang, {
+        zh: `时间线：使用确定性兜底（第${params.chapterNumber}章 storyDay=${lastStoryDay}，沿用上一章）`,
+        en: `timeline: deterministic fallback (ch${params.chapterNumber} storyDay=${lastStoryDay}, carried from previous chapter)`,
+      });
     }
 
     return {

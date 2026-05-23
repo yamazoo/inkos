@@ -6,7 +6,9 @@ import { describe, expect, it } from "vitest";
 // Agents that may legitimately set maxTokens because their output budget
 // exceeds modelCard defaults (long-form chapter generation / polishing).
 const ALLOWED_MAX_TOKENS = new Set([
+  "../agents/length-normalizer.ts",
   "../agents/polisher.ts",
+  "../agents/reviser.ts",
   "../agents/writer.ts",
 ]);
 

@@ -1387,7 +1387,7 @@ export class PipelineRunner {
           this.config.externalContext,
           { reuseExistingIntentWhenContextMissing: true },
         );
-      const preRevision = await this.evaluateMergedAudit({
+      let preRevision = await this.evaluateMergedAudit({
         auditor,
         book,
         bookDir,
@@ -1403,6 +1403,33 @@ export class PipelineRunner {
             }
           : undefined,
       });
+
+      // Merge deterministic post-write validation errors into audit issues
+      // so the Reviser's AI-pattern repair block can act on them.
+      // Must happen BEFORE the early-exit check so that "不是而是" patterns
+      // at error level are not silently skipped.
+      const { validatePostWrite: postWriteCheck } = await import("../agents/post-write-validator.js");
+      const { readBookRules: readRules } = await import("../agents/rules-reader.js");
+      const parsedRules = (await readRules(bookDir))?.rules ?? null;
+      const { profile: genreProfile } = await this.loadGenreProfile(book.genre);
+      const postWriteIssues = postWriteCheck(content, genreProfile, parsedRules, language)
+        .filter((v) => v.severity === "error")
+        .map((v) => ({
+          severity: "critical" as const,
+          category: v.rule,
+          description: v.description,
+          suggestion: v.suggestion,
+        }));
+      const mergedIssues = [...preRevision.auditResult.issues, ...postWriteIssues];
+      const postWriteCritical = postWriteIssues.filter(i => i.severity === "critical").length;
+      if (postWriteCritical > 0) {
+        preRevision = {
+          ...preRevision,
+          auditResult: { ...preRevision.auditResult, issues: mergedIssues },
+          blockingCount: preRevision.blockingCount + postWriteCritical,
+          criticalCount: preRevision.criticalCount + postWriteCritical,
+        };
+      }
 
       if (preRevision.blockingCount === 0 && preRevision.aiTellCount === 0) {
         const { normalizePostWriteSurface: normalize } = await import("../agents/post-write-validator.js");
@@ -1454,7 +1481,7 @@ export class PipelineRunner {
         bookDir,
         content,
         targetChapter,
-        preRevision.auditResult.issues,
+        mergedIssues,
         mode,
         book.genre,
         reviseControlInput
@@ -1517,10 +1544,31 @@ export class PipelineRunner {
               },
             },
       });
-      const effectivePostRevision = this.restoreActionableAuditIfLost(
+      const effectivePostRevisionRaw = this.restoreActionableAuditIfLost(
         preRevision,
         postRevision,
       );
+      // Also apply post-write checks to revised content so the comparison
+      // with preRevision (which includes postWriteIssues) is apples-to-apples.
+      const postRevWriteViolations = postWriteCheck(surfaceCleanedRevision.content, genreProfile, parsedRules, language)
+        .filter((v) => v.severity === "error")
+        .map((v) => ({
+          severity: "critical" as const,
+          category: v.rule,
+          description: v.description,
+          suggestion: v.suggestion,
+        }));
+      const effectivePostRevision = postRevWriteViolations.length > 0
+        ? {
+            ...effectivePostRevisionRaw,
+            auditResult: {
+              ...effectivePostRevisionRaw.auditResult,
+              issues: [...effectivePostRevisionRaw.auditResult.issues, ...postRevWriteViolations],
+            },
+            blockingCount: effectivePostRevisionRaw.blockingCount + postRevWriteViolations.filter(i => i.severity === "critical").length,
+            criticalCount: effectivePostRevisionRaw.criticalCount + postRevWriteViolations.length,
+          }
+        : effectivePostRevisionRaw;
 
       // Deterministic mustKeep compliance check (B2 from constraint propagation spec)
       const mustKeepItems = reviseControlInput?.plan.intent.mustKeep ?? [];
@@ -1575,7 +1623,22 @@ export class PipelineRunner {
         && aiDidNotWorsen
         && (improvedBlocking || improvedAITells);
 
-      if (!shouldApplyRevision) {
+      // If deterministic post-write issues (e.g. "不是而是") existed pre-revision
+      // and are resolved post-revision, accept the revision even if the
+      // non-deterministic LLM audit found different issues. The LLM audit
+      // is inherently noisy; deterministic checks are not.
+      const postWriteImproved = postWriteCritical > 0
+        && postRevWriteViolations.length < postWriteCritical;
+      // Accept if deterministic issues improved, UNLESS the LLM audit
+      // found clearly MORE blocking issues than before.  We compare
+      // LLM-only blocking counts (excluding the deterministic portion)
+      // to avoid false rejections from audit noise.
+      const preLLMBlocking = preRevision.blockingCount - postWriteCritical;
+      const postLLMBlocking = mustKeepChecked.blockingCount - postRevWriteViolations.filter(i => i.severity === "critical").length;
+      const llmBlockingDidNotWorsen = postLLMBlocking <= preLLMBlocking;
+      const shouldApplyByDeterministic = postWriteImproved && llmBlockingDidNotWorsen;
+
+      if (!shouldApplyRevision && !shouldApplyByDeterministic) {
         // Even when keeping the original, apply surface normalization (「」→"" etc.)
         const { normalizePostWriteSurface: normalizeOriginal } = await import("../agents/post-write-validator.js");
         const normalizedOriginal = normalizeOriginal(content, stageLanguage);
@@ -2091,6 +2154,7 @@ export class PipelineRunner {
       const {
         detectParagraphLengthDrift,
         detectParagraphShapeWarnings,
+        detectTemporalHomogeneity,
       } = await import("../agents/post-write-validator.js");
       const chapDir = join(bookDir, "chapters");
       const recentFiles = (await readdir(chapDir).catch(() => [] as string[]))
@@ -2103,6 +2167,7 @@ export class PipelineRunner {
       const paragraphIssues = [
         ...detectParagraphShapeWarnings(finalContent, pipelineLang),
         ...detectParagraphLengthDrift(finalContent, recentContent, pipelineLang),
+        ...detectTemporalHomogeneity(finalContent, recentContent, pipelineLang),
       ];
       if (paragraphIssues.length > 0) {
         for (const issue of paragraphIssues) {
@@ -3009,6 +3074,7 @@ ${matrix}`,
       postWriteWarnings: [],
       hookHealthIssues: output.hookHealthIssues,
       tokenUsage: output.tokenUsage,
+      timelineDelta: output.timelineDelta,
     };
   }
 
@@ -3677,6 +3743,7 @@ ${matrix}`,
         issues,
         summary: llmAudit.summary,
         tokenUsage: llmAudit.tokenUsage,
+        overallScore: llmAudit.overallScore,
       },
       aiTellCount: aiTells.issues.length,
       blockingCount: revisionBlockingIssues.filter((issue) => issue.severity === "warning" || issue.severity === "critical").length,

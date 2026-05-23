@@ -153,6 +153,11 @@ describe("WriterAgent.settleChapterState", () => {
           "=== POST_SETTLEMENT ===",
           "- mentor-debt advanced",
           "",
+          "=== TIMELINE ===",
+          "```json",
+          JSON.stringify({ storyDay: 1, dayLabel: "", events: [] }, null, 2),
+          "```",
+          "",
           "=== RUNTIME_STATE_DELTA ===",
           "```json",
           JSON.stringify({
@@ -265,6 +270,11 @@ describe("WriterAgent.settleChapterState", () => {
         content: [
           "=== POST_SETTLEMENT ===",
           "- new mystery introduced",
+          "",
+          "=== TIMELINE ===",
+          "```json",
+          JSON.stringify({ storyDay: 1, dayLabel: "", events: [] }, null, 2),
+          "```",
           "",
           "=== RUNTIME_STATE_DELTA ===",
           "```json",
@@ -393,6 +403,11 @@ describe("WriterAgent.settleChapterState", () => {
           "=== POST_SETTLEMENT ===",
           "- new character encounter: gate-guard",
           "",
+          "=== TIMELINE ===",
+          "```json",
+          JSON.stringify({ storyDay: 1, dayLabel: "", events: [] }, null, 2),
+          "```",
+          "",
           "=== RUNTIME_STATE_DELTA ===",
           "```json",
           JSON.stringify({
@@ -511,6 +526,11 @@ describe("WriterAgent.settleChapterState", () => {
           "=== POST_SETTLEMENT ===",
           "- shrine revisited",
           "",
+          "=== TIMELINE ===",
+          "```json",
+          JSON.stringify({ storyDay: 1, dayLabel: "", events: [] }, null, 2),
+          "```",
+          "",
           "=== RUNTIME_STATE_DELTA ===",
           "```json",
           JSON.stringify({
@@ -602,6 +622,11 @@ describe("WriterAgent.settleChapterState", () => {
         content: [
           "=== POST_SETTLEMENT ===",
           "- done",
+          "",
+          "=== TIMELINE ===",
+          "```json",
+          JSON.stringify({ storyDay: 1, dayLabel: "", events: [] }, null, 2),
+          "```",
           "",
           "=== RUNTIME_STATE_DELTA ===",
           "```json",
@@ -711,6 +736,11 @@ describe("WriterAgent.settleChapterState", () => {
           "=== POST_SETTLEMENT ===",
           "- mentor-debt advanced",
           "",
+          "=== TIMELINE ===",
+          "```json",
+          JSON.stringify({ storyDay: 1, dayLabel: "", events: [] }, null, 2),
+          "```",
+          "",
           "=== RUNTIME_STATE_DELTA ===",
           "```json",
           JSON.stringify(validDelta, null, 2),
@@ -728,6 +758,11 @@ describe("WriterAgent.settleChapterState", () => {
         content: [
           "=== POST_SETTLEMENT ===",
           "- mentor-debt advanced (re-settle)",
+          "",
+          "=== TIMELINE ===",
+          "```json",
+          JSON.stringify({ storyDay: 1, dayLabel: "", events: [] }, null, 2),
+          "```",
           "",
           "=== RUNTIME_STATE_DELTA ===",
           "```json",
@@ -791,7 +826,165 @@ describe("WriterAgent.settleChapterState", () => {
     }
   });
 
-  // ─── Test 7: settlement uses control inputs (chapterIntent, contextPackage, ruleStack) ───
+  // ─── Test 7: TIMELINE salvaged when RUNTIME_STATE_DELTA is missing (fallback path) ───
+  it("timelineDelta salvaged from TIMELINE block even when RUNTIME_STATE_DELTA is missing — fallback path", async () => {
+    const root = await mkdtemp(join(tmpdir(), "inkos-settle-timeline-salvage-"));
+    const bookDir = await buildBookDir(root);
+
+    const agent = new WriterAgent({
+      client: {
+        provider: "openai",
+        apiFormat: "chat",
+        stream: false,
+        defaults: {
+          temperature: 0.7,
+          maxTokens: 4096,
+          thinkingBudget: 0,
+          stripThinkingBlocks: true, maxTokensCap: null,
+          extra: {},
+        },
+      },
+      model: "test-model",
+      projectRoot: root,
+    });
+
+    vi.spyOn(WriterAgent.prototype as never, "chat" as never)
+      .mockResolvedValueOnce({
+        content: "=== OBSERVATIONS ===\n- Lin Yue enters the cave.",
+        usage: ZERO_USAGE,
+      })
+      // Settler output: missing RUNTIME_STATE_DELTA block → triggers catch in settle()
+      // but has a valid TIMELINE block that should be salvaged
+      .mockResolvedValueOnce({
+        content: [
+          "=== POST_SETTLEMENT ===",
+          "- cave exploration begins",
+          "",
+          "=== TIMELINE ===",
+          "```json",
+          JSON.stringify({
+            storyDay: 5,
+            dayLabel: "探洞日",
+            events: [
+              { id: "cave-entry", reference: "进入山洞", impliedOffset: 0 },
+            ],
+          }),
+          "```",
+        ].join("\n"),
+        usage: ZERO_USAGE,
+      });
+
+    try {
+      const output = await agent.settleChapterState({
+        book: {
+          id: "timeline-salvage-book",
+          title: "Timeline Salvage Book",
+          platform: "tomato",
+          genre: "xuanhuan",
+          status: "active",
+          targetChapters: 20,
+          chapterWordCount: 2200,
+          language: "en",
+          createdAt: "2026-03-25T00:00:00.000Z",
+          updatedAt: "2026-03-25T00:00:00.000Z",
+        },
+        bookDir,
+        chapterNumber: 3,
+        title: "Cave Entry",
+        content: "Lin Yue entered the dark cave.",
+      });
+
+      // settle() should NOT throw — it falls back to parseSettlementOutput
+      expect(output.chapterNumber).toBe(3);
+
+      // The TIMELINE block should have been salvaged from the fallback path
+      expect(output.timelineDelta).toBeDefined();
+      expect(output.timelineDelta!.storyDay).toBe(5);
+      expect(output.timelineDelta!.dayLabel).toBe("探洞日");
+      expect(output.timelineDelta!.events).toHaveLength(1);
+      expect(output.timelineDelta!.events[0]!.id).toBe("cave-entry");
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  });
+
+  // ─── Test 7b: TIMELINE NOT salvaged when TIMELINE block has invalid JSON ───
+  it("timelineDelta undefined when TIMELINE block has malformed JSON — salvage is best-effort", async () => {
+    const root = await mkdtemp(join(tmpdir(), "inkos-settle-timeline-salvage-fail-"));
+    const bookDir = await buildBookDir(root);
+
+    const agent = new WriterAgent({
+      client: {
+        provider: "openai",
+        apiFormat: "chat",
+        stream: false,
+        defaults: {
+          temperature: 0.7,
+          maxTokens: 4096,
+          thinkingBudget: 0,
+          stripThinkingBlocks: true, maxTokensCap: null,
+          extra: {},
+        },
+      },
+      model: "test-model",
+      projectRoot: root,
+    });
+
+    vi.spyOn(WriterAgent.prototype as never, "chat" as never)
+      .mockResolvedValueOnce({
+        content: "=== OBSERVATIONS ===\n- Nothing important.",
+        usage: ZERO_USAGE,
+      })
+      .mockResolvedValueOnce({
+        content: [
+          "=== POST_SETTLEMENT ===",
+          "- done",
+          "",
+          "=== TIMELINE ===",
+          "```json",
+          '{ "storyDay": "not-a-number" }',
+          "```",
+        ].join("\n"),
+        usage: ZERO_USAGE,
+      })
+      // Retry mock (also malformed — triggers deterministic fallback)
+      .mockResolvedValueOnce({
+        content: "not valid json at all",
+        usage: ZERO_USAGE,
+      });
+
+    try {
+      const output = await agent.settleChapterState({
+        book: {
+          id: "timeline-salvage-fail-book",
+          title: "Timeline Salvage Fail Book",
+          platform: "tomato",
+          genre: "xuanhuan",
+          status: "active",
+          targetChapters: 20,
+          chapterWordCount: 2200,
+          language: "en",
+          createdAt: "2026-03-25T00:00:00.000Z",
+          updatedAt: "2026-03-25T00:00:00.000Z",
+        },
+        bookDir,
+        chapterNumber: 3,
+        title: "Bad Timeline",
+        content: "Chapter with bad timeline.",
+      });
+
+      // settle() should NOT throw
+      expect(output.chapterNumber).toBe(3);
+      // Deterministic fallback: when both primary and retry fail, timelineDelta
+      // is still populated with the previous chapter's storyDay
+      expect(output.timelineDelta).toBeDefined();
+      expect(output.timelineDelta!.storyDay).toBe(1);
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  });
+
+  // ─── Test 8: settlement uses control inputs (chapterIntent, contextPackage, ruleStack) ───
   it("settlement uses control inputs — chapterIntent, contextPackage, ruleStack passed to LLM during settlement phase", async () => {
     const root = await mkdtemp(join(tmpdir(), "inkos-settle-ctrl-test-"));
     const bookDir = await buildBookDir(root);
@@ -822,6 +1015,11 @@ describe("WriterAgent.settleChapterState", () => {
         content: [
           "=== POST_SETTLEMENT ===",
           "- harbor conflict escalated",
+          "",
+          "=== TIMELINE ===",
+          "```json",
+          JSON.stringify({ storyDay: 1, dayLabel: "", events: [] }, null, 2),
+          "```",
           "",
           "=== RUNTIME_STATE_DELTA ===",
           "```json",

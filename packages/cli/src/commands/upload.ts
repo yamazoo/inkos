@@ -188,6 +188,7 @@ export function createUploadCommand(): Command {
     .option("--chapters <range>", "Chapter range, e.g. 1-10 or 5 (default: all pending)")
     .option("--draft", "Save as draft instead of publishing")
     .option("--approved-only", "Only upload approved chapters (default: true for no --chapters)")
+    .option("--force", "Re-upload already uploaded chapters")
     .option("--dry-run", "Preview what would be uploaded without uploading")
     .option("--max-per-hour <number>", "Rate limit: max chapters per hour", String(3))
     .option("--json", "Output JSON")
@@ -205,6 +206,7 @@ export function createUploadCommand(): Command {
           chapters: opts.chapters,
           approvedOnly: Boolean(opts.approvedOnly),
           dryRun: Boolean(opts.dryRun),
+          force: Boolean(opts.force),
           draftMode: Boolean(opts.draft),
           maxChaptersPerHour: Number(opts.maxPerHour),
           bookTitle: book.title,

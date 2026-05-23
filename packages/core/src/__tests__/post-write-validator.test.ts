@@ -1,9 +1,15 @@
 import { describe, it, expect } from "vitest";
 import {
+  detectCrossChapterSimile,
+  detectExcessiveMonologue,
   detectDuplicateTitle,
   detectGenericTitle,
+  splitSentences,
+  detectNarrativeBeatRepetition,
   detectParagraphLengthDrift,
   detectParagraphShapeWarnings,
+  detectSimileOveruse,
+  detectTemporalHomogeneity,
   resolveDuplicateTitle,
   normalizePostWriteSurface,
   validatePostWrite,
@@ -150,6 +156,27 @@ describe("detectGenericTitle", () => {
     expect(detectGenericTitle("暗缝", 23)).toHaveLength(0);
   });
 
+  it("returns warning for single-character Chinese title", () => {
+    const violations = detectGenericTitle("静", 28);
+    expect(violations).toHaveLength(1);
+    expect(violations[0]!.rule).toBe("短标题");
+    expect(violations[0]!.severity).toBe("warning");
+  });
+
+  it("does not flag two-character Chinese title", () => {
+    expect(detectGenericTitle("归剑", 9)).toHaveLength(0);
+  });
+
+  it("returns warning for single-word English title", () => {
+    const violations = detectGenericTitle("Silence", 5, "en");
+    expect(violations).toHaveLength(1);
+    expect(violations[0]!.rule).toBe("short-title");
+  });
+
+  it("does not flag multi-word English title", () => {
+    expect(detectGenericTitle("The Descent", 5, "en")).toHaveLength(0);
+  });
+
   it("does not flag title with subtitle after chapter number", () => {
     expect(detectGenericTitle("第32章 暗缝", 32)).toHaveLength(0);
   });
@@ -216,7 +243,7 @@ describe("validatePostWrite", () => {
     const content = "这不是勇气，而是愚蠢。他知道这一点。";
     const result = validatePostWrite(content, baseProfile, null);
     expect(findRule(result, "禁止句式")).toBeDefined();
-    expect(findRule(result, "禁止句式")!.severity).toBe("error");
+    expect(findRule(result, "禁止句式")!.severity).toBe("warning");
   });
 
   it("detects dash '——'", () => {
@@ -480,9 +507,9 @@ describe("validatePostWrite", () => {
   });
 });
 
-describe("章节结尾类型检查", () => {
+describe("章节结尾质量检查", () => {
   function findEnding(violations: ReadonlyArray<PostWriteViolation>) {
-    return violations.find(v => v.rule === "内心独白结尾");
+    return violations.find(v => v.rule === "弱章尾");
   }
 
   it("✓ 对话结尾是好的", () => {
@@ -503,8 +530,20 @@ describe("章节结尾类型检查", () => {
     expect(findEnding(result)).toBeUndefined();
   });
 
-  it("✗ 主角内心盘算结尾是违规", () => {
-    const content = `他躺在床上，闭上眼睛。\n\n他想，明天得想个办法把这件事解决了。`;
+  it("✓ 动作结尾是好的", () => {
+    const content = `他站起来。\n\n他把断剑柄插进泥里，转身走了。`;
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findEnding(result)).toBeUndefined();
+  });
+
+  it("✓ 微动作结尾是好的（叹气）", () => {
+    const content = `他看着窗外。\n\n他叹了口气。`;
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findEnding(result)).toBeUndefined();
+  });
+
+  it("✗ 纯心理活动结尾是违规", () => {
+    const content = `他躺在床上。\n\n他想活下去。他必须活下去。`;
     const result = validatePostWrite(content, baseProfile, null);
     expect(findEnding(result)?.severity).toBe("error");
   });
@@ -515,16 +554,40 @@ describe("章节结尾类型检查", () => {
     expect(findEnding(result)?.severity).toBe("error");
   });
 
-  it("✗ 计划式结尾无外部事件是违规", () => {
-    const content = `他站起身，拍了拍衣服上的土。\n\n明天要去找那个猎人问清楚情况。`;
+  it("✗ 情绪声明结尾是违规", () => {
+    const content = `他站起来。\n\n可他不怕了。`;
     const result = validatePostWrite(content, baseProfile, null);
     expect(findEnding(result)?.severity).toBe("error");
   });
 
-  it("✗ 多主观词结尾无外部事件是违规", () => {
-    const content = `门关上了，夜色吞没了最后一点光。\n\n也许，这就是命吧。大概如此。`;
+  it("✗ 氛围式结尾是违规", () => {
+    const content = `他走出门。\n\n夜还很长。`;
     const result = validatePostWrite(content, baseProfile, null);
     expect(findEnding(result)?.severity).toBe("error");
+  });
+
+  it("✗ 模糊预告结尾是违规", () => {
+    const content = `他看着远方。\n\n这一次，是真正的证明。`;
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findEnding(result)?.severity).toBe("error");
+  });
+
+  it("✗ 有时间词但无承诺词是违规（三天。）", () => {
+    const content = `他走出门。\n\n三天。`;
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findEnding(result)?.severity).toBe("error");
+  });
+
+  it("✓ 短但有外部锚点的结尾是好的", () => {
+    const content = `他走过去。\n\n门响了。`;
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findEnding(result)).toBeUndefined();
+  });
+
+  it("短章节（<2 段）不报错", () => {
+    const content = `只有这一段。`;
+    const result = validatePostWrite(content, baseProfile, null);
+    expect(findEnding(result)).toBeUndefined();
   });
 });
 
@@ -579,5 +642,518 @@ describe("validateMustKeepCompliance", () => {
     const content = "The protagonist discovered that his father was dead and the family heirloom was missing from the old chest.".repeat(3);
     const violations = validateMustKeepCompliance(content, ["father was dead"], "en");
     expect(violations).toHaveLength(0);
+  });
+});
+
+// Helper: generate padding text (~N chars) without similes or banned patterns
+function padding(n: number): string {
+  const base = "他走在青石铺就的长街上，脚步不紧不慢，两侧的店铺已经关了门板，只剩几盏灯笼挂在檐下，映出一圈昏黄的光晕。";
+  return base.repeat(Math.ceil(n / base.length)).slice(0, n);
+}
+
+describe("不是而是 density", () => {
+  it("warns (not errors) for a single 不是而是 instance", () => {
+    const content = `他不是害怕，而是愤怒。${padding(2000)}`;
+    const result = validatePostWrite(content, baseProfile, null);
+    const v = findRule(result, "禁止句式");
+    expect(v).toBeDefined();
+    expect(v!.severity).toBe("warning");
+  });
+
+  it("errors for 2+ 不是而是 instances", () => {
+    const content = `他不是害怕，而是愤怒。这不是普通的剑，而是一柄杀过人的剑。${padding(2000)}`;
+    const result = validatePostWrite(content, baseProfile, null);
+    const v = findRule(result, "禁止句式");
+    expect(v).toBeDefined();
+    expect(v!.severity).toBe("error");
+  });
+
+  it("detects 不是A，是B variant", () => {
+    const content = `他不是害怕，是愤怒。${padding(2000)}`;
+    const result = validatePostWrite(content, baseProfile, null);
+    const v = findRule(result, "禁止句式");
+    expect(v).toBeDefined();
+  });
+});
+
+describe("detectSimileOveruse", () => {
+  it("warns when simile density exceeds 3/千字", () => {
+    // 8 similes in ~1300 chars → density > 6/千字, well above threshold
+    const similes = [
+      "他的目光像刀子一样锋利。",
+      "她的话像冰水浇在头上。",
+      "他的心像被什么揪住了一样。",
+      "空气像凝固了一般。",
+      "远处的灯火像鬼火般摇曳。",
+      "他的背影像一座孤峰。",
+      "夜色像墨汁一样浓稠。",
+      "她的笑容像春天的花一样灿烂。",
+    ].join("");
+    const content = similes + padding(1000);
+    const result = detectSimileOveruse(content);
+    expect(result.length).toBeGreaterThanOrEqual(1);
+    expect(result[0]!.rule).toBe("明喻密度过高");
+  });
+
+  it("passes when simile density is under threshold", () => {
+    const content = `他的目光像刀子一样锋利。${padding(2000)}`;
+    const result = detectSimileOveruse(content);
+    expect(result).toHaveLength(0);
+  });
+
+  it("does not trigger on speculative 像 usage", () => {
+    const content = "像是想起了什么，他停下了脚步。像是想起了往事，她叹了口气。像是想起了什么重要的事，他猛地回头。" + padding(1500);
+    const result = detectSimileOveruse(content);
+    expect(result).toHaveLength(0);
+  });
+
+  it("does not trigger on speculative 好像 usage", () => {
+    const content = "好像有人来了。好像有人在叫他。好像有人在门外。" + padding(1500);
+    const result = detectSimileOveruse(content);
+    expect(result).toHaveLength(0);
+  });
+});
+
+describe("detectCrossChapterSimile", () => {
+  it("warns when current chapter repeats a simile from recent chapters", () => {
+    // Both have "像是一件易碎的东西要…" → 8-char fingerprint "一件易碎的东西要" matches
+    const current = "他的眼神像是一件易碎的东西要轻拿轻放。" + padding(500);
+    const recent = "她看着那物件，像是一件易碎的东西要看护好。" + padding(500);
+    const result = detectCrossChapterSimile(current, recent);
+    expect(result.length).toBeGreaterThanOrEqual(1);
+    expect(result[0]!.rule).toBe("跨章比喻重复");
+  });
+
+  it("passes when similes are different", () => {
+    const current = "他的目光像刀子一样锋利，让人不敢直视。" + padding(500);
+    const recent = "她的心像一潭死水，照不出任何情绪。" + padding(500);
+    const result = detectCrossChapterSimile(current, recent);
+    expect(result).toHaveLength(0);
+  });
+
+  it("does not trigger on speculative usage across chapters", () => {
+    const current = "像是想起了什么，他停下了脚步。" + padding(500);
+    const recent = "像是想起了往事，她叹了口气。" + padding(500);
+    const result = detectCrossChapterSimile(current, recent);
+    expect(result).toHaveLength(0);
+  });
+
+  it("returns empty for short recent content", () => {
+    const current = "像一件易碎的东西。" + padding(500);
+    const result = detectCrossChapterSimile(current, "短");
+    expect(result).toHaveLength(0);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// detectTemporalHomogeneity
+// ---------------------------------------------------------------------------
+
+function makeChapter(ending: string, opening: string, bodyLen = 500): string {
+  const body = padding(bodyLen);
+  return `# 第N章 标题\n\n${opening}\n\n${body}\n\n${ending}`;
+}
+
+describe("detectTemporalHomogeneity", () => {
+  it("warns when all 3 recent chapters end at night (zh)", () => {
+    const ch1 = makeChapter("月光透过窗帘洒在地上，夜色沉沉。", "清晨的阳光照进房间。");
+    const ch2 = makeChapter("夜深了，他关灯躺下，黑暗中只有呼吸声。", "天亮了，新的一天开始了。");
+    const ch3 = makeChapter("子时已过，万籁俱寂，只有远处传来几声犬吠。", "晨光透过窗户照进来。");
+    const recent = `${ch1}\n\n${ch2}`;
+    const result = detectTemporalHomogeneity(ch3, recent, "zh");
+    const nightWarning = result.find((v) => v.rule === "时间节奏同质化" && v.description.includes("夜晚收尾"));
+    expect(nightWarning).toBeDefined();
+    expect(nightWarning!.severity).toBe("warning");
+  });
+
+  it("warns when all 3 recent chapters open at morning (zh)", () => {
+    const ch1 = makeChapter("他转身离去。", "清晨的阳光洒在院子里，露水还没干。");
+    const ch2 = makeChapter("战斗结束了。", "天亮了，鸡鸣声此起彼伏。");
+    const ch3 = makeChapter("他握紧了拳头。", "晨光透过窗户，新的一天开始了。");
+    const recent = `${ch1}\n\n${ch2}`;
+    const result = detectTemporalHomogeneity(ch3, recent, "zh");
+    const morningWarning = result.find((v) => v.rule === "时间节奏同质化" && v.description.includes("清晨"));
+    expect(morningWarning).toBeDefined();
+  });
+
+  it("passes when time anchors are varied", () => {
+    const ch1 = makeChapter("月光洒在地上，夜色沉沉。", "清晨的阳光照进房间。");
+    const ch2 = makeChapter("午后阳光正好，院子里一片安静。", "下午三点，训练馆里热火朝天。");
+    const ch3 = makeChapter("黄昏时分，天边染上了橘红色。", "正午时分，太阳毒辣辣地照着。");
+    const recent = `${ch1}\n\n${ch2}`;
+    const result = detectTemporalHomogeneity(ch3, recent, "zh");
+    expect(result).toHaveLength(0);
+  });
+
+  it("returns empty for fewer than 3 chapters", () => {
+    const ch1 = makeChapter("月光洒在地上。", "清晨天亮了。");
+    const result = detectTemporalHomogeneity(ch1, "", "zh");
+    expect(result).toHaveLength(0);
+  });
+
+  it("detects night endings in English", () => {
+    const ch1 = makeChapter("The moonlight fell across the floor as darkness settled in.", "Morning came with the first light of dawn.");
+    const ch2 = makeChapter("He lay in bed, staring at the ceiling in the pitch dark midnight.", "She woke at sunrise, ready for the day.");
+    const ch3 = makeChapter("The stars shone above as the night deepened around them.", "Dawn broke over the mountains.");
+    const recent = `${ch1}\n\n${ch2}`;
+    const result = detectTemporalHomogeneity(ch3, recent, "en");
+    const nightWarning = result.find((v) => v.rule === "Temporal homogeneity" && v.description.includes("night"));
+    expect(nightWarning).toBeDefined();
+  });
+});
+
+// --- detectNarrativeBeatRepetition ---
+
+describe("detectNarrativeBeatRepetition", () => {
+  // Helper: generate unique paragraphs with distinct content per index
+  const filler = (n: number, seed: string): string[] =>
+    Array.from({ length: n }, (_, i) => {
+      const unique = `${seed}第${i + 1}节，这是第${i + 1}段独有的内容，${seed}场景推进中。`;
+      return unique;
+    });
+  const makeContent = (refParas: string[], checkParas: string[]): string =>
+    [...refParas, ...checkParas].join("\n\n");
+
+  it("returns empty for language=en", () => {
+    const content = makeContent(filler(5, "英文"), filler(4, "英文"));
+    expect(detectNarrativeBeatRepetition(content, "en")).toHaveLength(0);
+  });
+
+  it("returns empty for short chapters (< 8 non-dialogue paragraphs)", () => {
+    const content = makeContent(filler(3, "短章"), filler(3, "短章"));
+    expect(detectNarrativeBeatRepetition(content, "zh")).toHaveLength(0);
+  });
+
+  // --- Rule A ---
+  it("Rule A: detects paragraph-level restatement (bigram Jaccard > 0.4)", () => {
+    const ref = filler(6, "前文");
+    // Near-duplicate of ref[0] — same structure and most characters
+    const dup = "前文第1节，这是第1段独有的内容，前文场景推进中。";
+    const check = [dup, ...filler(3, "章末")];
+    const result = detectNarrativeBeatRepetition(makeContent(ref, check), "zh");
+    expect(findRule(result, "章内段落重述")).toBeDefined();
+  });
+
+  it("Rule A: passes when check paragraphs are distinct from reference", () => {
+    // Use completely different character sets to avoid accidental bigram overlap
+    const ref = filler(6, "东南西北春夏秋冬");
+    const check = [
+      "山河湖海日月星辰风云变幻大地苍茫。",
+      "虎豹豺狼鹰隼翱翔深林密谷溪流潺潺。",
+      "刀枪剑戟斧钺钩叉十八般武艺样样精通。",
+      "琴棋书画诗词歌赋风花雪月雅韵悠长。",
+    ];
+    const result = detectNarrativeBeatRepetition(makeContent(ref, check), "zh");
+    expect(findRule(result, "章内段落重述")).toBeUndefined();
+  });
+
+  // --- Rule B ---
+  it("Rule B: detects noun-phrase amplification (density ratio ≥ 2x)", () => {
+    const ref = [
+      ...filler(5, "正常段落"),
+      "他的冻伤的手指已经裂开了血口，疼痛从指尖蔓延到手腕。",
+    ];
+    const check = [
+      "他低头看着冻伤的手指，血口还在渗血。",
+      "冻伤的手指僵硬地握着碗边，疼痛让他皱起了眉头。",
+      "那双冻伤的手指在寒风中微微发抖，血口已经被冻住了。",
+      ...filler(2, "章末其他"),
+    ];
+    const result = detectNarrativeBeatRepetition(makeContent(ref, check), "zh");
+    expect(findRule(result, "章内短语重复")).toBeDefined();
+  });
+
+  it("Rule B: passes when character names are uniformly distributed", () => {
+    // Each paragraph is unique but mentions "陈渊" — uniform density, no amplification
+    const ref = [
+      "陈渊站在院子里，看着远方的山脉，心中若有所思。",
+      "陈渊走进灶房，点燃了灶台上的柴火。",
+      "陈渊蹲在地上，用树枝在泥地上画着什么。",
+      "陈渊抬起头，看着天边渐渐暗下来的云层。",
+      "陈渊摸了摸口袋，里面只剩下几枚铜钱。",
+      "陈渊叹了口气，转身朝屋内走去。",
+    ];
+    const check = [
+      "陈渊坐在桌前，翻看着一本破旧的书册。",
+      "陈渊站起身来，走到窗前望着外面的雨。",
+      "陈渊拿起茶杯，却发现茶水已经凉透了。",
+      "陈渊推开门，一阵冷风扑面而来。",
+    ];
+    const result = detectNarrativeBeatRepetition(makeContent(ref, check), "zh");
+    expect(findRule(result, "章内短语重复")).toBeUndefined();
+  });
+
+  // --- Rule C ---
+  it("Rule C: detects scene-cycle structure (A→B→A→B)", () => {
+    const ref = filler(6, "前文");
+    const sceneA = "老者凝视着陈渊的眼睛，浑浊的目光中带着一丝深意。";
+    const sceneB = "老者转身离开，拐杖敲击青石板的声音渐行渐远。";
+    const check = [sceneA, sceneB, sceneA, sceneB];
+    const result = detectNarrativeBeatRepetition(makeContent(ref, check), "zh");
+    expect(findRule(result, "章内场景循环")).toBeDefined();
+  });
+
+  it("Rule C: passes for normal progressive paragraphs", () => {
+    const ref = filler(6, "前文");
+    const check = [
+      "清晨的阳光照进厨房，灶台上的火已经熄灭了灰烬残留。",
+      "他站起来走到门口，看着远处的山脉若隐若现云雾缭绕。",
+      "院子里传来脚步声，老者从拐角处走了出来手拄拐杖。",
+      "陈渊低下头，开始收拾地上的碗筷碎片默默无言。",
+    ];
+    const result = detectNarrativeBeatRepetition(makeContent(ref, check), "zh");
+    expect(findRule(result, "章内场景循环")).toBeUndefined();
+  });
+
+    // --- Dialogue filtering ---
+  it("excludes dialogue-only paragraphs from detection", () => {
+    // Use fully distinct content in ref and check to avoid accidental bigram overlap
+    const ref = [
+      "东南方的群山连绵起伏，苍翠的松柏覆盖了整个山谷地带。",
+      "春雨绵绵不断，打湿了庭院里的青石板路面。",
+      "西风吹过田野，金黄的麦浪翻滚起伏不定。",
+      "北极星高悬夜空，指引着旅人前行的方向。",
+      "古老的城墙历经风雨，依然巍峨耸立不倒。",
+      "潺潺溪水从山间流过，清澈见底鱼虾嬉戏。",
+    ];
+    // Use Chinese quotes that isDialogueParagraph matches (U+201C / U+201D)
+    const dialogueParas = [
+      "“你来了。”",
+      "“嗯，我来了。”",
+      "“坐下吧。”",
+      "“好的，谢谢。”",
+    ];
+    const check = [
+      ...dialogueParas,
+      "刀光剑影闪烁不停，江湖恩怨情仇难解难分。",
+      "虎啸龙吟震山林，英雄豪杰齐聚一堂论短长。",
+    ];
+    const result = detectNarrativeBeatRepetition(makeContent(ref, check), "zh");
+    // After dialogue filtering: 6 ref + 2 check = 8 total, passes guard
+    // The 2 check paragraphs are distinct from ref -> no violations
+    expect(result).toHaveLength(0);
+  });
+});
+
+describe("splitSentences", () => {
+  it("splits on Chinese sentence-ending punctuation", () => {
+    const result = splitSentences("他走了。她哭了。");
+    expect(result).toEqual(["他走了。", "她哭了。"]);
+  });
+
+  it("splits on question and exclamation marks", () => {
+    const result = splitSentences("你是谁？我不知道！");
+    expect(result).toEqual(["你是谁？", "我不知道！"]);
+  });
+
+  it("does not split inside Chinese double quotes", () => {
+    const input = "他开口道：“你疯了。这是不可能的。”然后转身离开。";
+    const result = splitSentences(input);
+    expect(result).toHaveLength(2);
+    expect(result[0]).toContain("这是不可能的");
+  });
+
+  it("does not split inside Chinese single quotes", () => {
+    const input = "他低声道：‘来了。’然后站起身。";
+    const result = splitSentences(input);
+    expect(result).toHaveLength(2);
+  });
+
+  it("handles ellipsis followed by sentence-ending punctuation", () => {
+    const result = splitSentences("他愣住了……。怎么办？");
+    expect(result).toHaveLength(2);
+  });
+
+  it("handles standalone ellipsis as sentence break", () => {
+    const result = splitSentences("他沉默了……她也沉默了。");
+    expect(result).toHaveLength(2);
+  });
+
+  it("handles half-width punctuation", () => {
+    const result = splitSentences("He thought. This is wrong.");
+    expect(result).toHaveLength(2);
+  });
+
+  it("returns empty array for empty input", () => {
+    expect(splitSentences("")).toEqual([]);
+  });
+
+  it("returns single element for text without sentence-ending punctuation", () => {
+    const result = splitSentences("一段没有句号的文字");
+    expect(result).toEqual(["一段没有句号的文字"]);
+  });
+
+  it("handles mixed dialogue and narration", () => {
+    const input = "“你疯了。”他低声道，“这意味着战争。”然后他走了。";
+    const result = splitSentences(input);
+    expect(result.length).toBeGreaterThanOrEqual(2);
+  });
+});
+
+describe("detectExcessiveMonologue", () => {
+  const pad = "陈渊站在院子里，看着天空。远处的山峰在晨光中显得格外清晰。陈渊站在院子里，看着天空。远处的山峰在晨光中显得格外清晰。陈渊站在院子里，看着天空。远处的山峰在晨光中显得格外清晰。陈渊站在院子里，看着天空。远处的山峰在晨光中显得格外清晰。陈渊站在院子里，看着天空。远处的山峰在晨光中显得格外清晰。陈渊站在院子里，看着天空。远处的山峰在晨光中显得格外清晰。陈渊站在院子里，看着天空。远处的山峰在晨光中显得格外";
+
+  it("returns empty for English", () => {
+    const violations = detectExcessiveMonologue("He felt fear. She was angry.", "en");
+    expect(violations).toHaveLength(0);
+  });
+
+  it('returns empty for short chapters (< 500 words)', () => {
+    const content = '他感到恐惧。心中涌起一股寒意。他终于明白这一切都是假的。';
+    const violations = detectExcessiveMonologue(content);
+    expect(violations).toHaveLength(0);
+  });
+
+  it('Rule A: detects emotion declarations beyond frequency threshold', () => {
+    const emotionSentences = [
+      '“他感到一阵莫名的恐惧，仿佛整个世界都在崩塞。”',
+      '“她感受到前所未有的压力，心中涌起一股绝望。”',
+      '“他心中涌起一股暖意，终于明白了她的用心良苦。”',
+      '“她心头一震，不由得想到这或许是最后的机会。”',
+    ];
+    const content = pad + emotionSentences.join(pad.substring(0, 100));
+    const violations = detectExcessiveMonologue(content);
+    const emotionViols = violations.filter(v => v.rule === 'excessive-monologue');
+    expect(emotionViols.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('Rule A: does not flag short oral reactions', () => {
+    const content = pad + '操。完了。不对劲。' + pad;
+    const violations = detectExcessiveMonologue(content);
+    const emotionViols = violations.filter(v => v.rule === 'excessive-monologue');
+    expect(emotionViols).toHaveLength(0);
+  });
+
+  it('Rule A: does not flag dialogue paragraphs', () => {
+    const content = pad + '“我感到非常害怕。”他低声道。' + pad;
+    const violations = detectExcessiveMonologue(content);
+    const emotionViols = violations.filter(v => v.rule === 'excessive-monologue');
+    expect(emotionViols).toHaveLength(0);
+  });
+
+  it('Rule B: detects analytical reasoning', () => {
+    const content = pad + pad + '\n\n他心里盘算着，如果此时动手，那么风险在于对方的修为远超自己，综合考虑利大于弊。' + pad;
+    const violations = detectExcessiveMonologue(content);
+    const analyticalViols = violations.filter(v => v.rule === 'analytical-monologue');
+    expect(analyticalViols.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('Rule B: does not flag short analytical phrases', () => {
+    const content = pad + '这意味着战争。' + pad;
+    const violations = detectExcessiveMonologue(content);
+    const analyticalViols = violations.filter(v => v.rule === 'analytical-monologue');
+    expect(analyticalViols).toHaveLength(0);
+  });
+
+  it('Rule C: detects consecutive monologue paragraphs', () => {
+    const monoParas = [
+      '他心中暗想，这一切究竟是怎么回事。恐惧在心底蔓延，他感到前所未有的无助。',
+      '内心深处有个声音在呼唤，记忆涌上心头，他终于明白了一切的真相。',
+      '脑海中的画面不断闪回，思绪万千，百感交集，他觉得自己快要崩溃了。',
+    ];
+    const normalPara = '他转身走了出去。门外的阳光刺得他睁不开眼。院子里的老槐树沙沙作响。';
+    const content = normalPara + '\n\n' + monoParas.join('\n\n') + '\n\n' + normalPara;
+    const violations = detectExcessiveMonologue(content);
+    const consecViols = violations.filter(v => v.rule === 'consecutive-monologue');
+    expect(consecViols.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('Rule C: does not flag when monologue is interspersed with action', () => {
+    const mixed = [
+      '他心中暗想，这不对劲。',
+      '他转身推开门，走到院子里。',
+      '心里明白，这一关躲不过去了。',
+      '他拔出剑，握紧剑柄。',
+      '他觉得事情越来越复杂。',
+    ];
+    const content = mixed.join('\n\n');
+    const violations = detectExcessiveMonologue(content);
+    const consecViols = violations.filter(v => v.rule === 'consecutive-monologue');
+    expect(consecViols).toHaveLength(0);
+  });
+
+  it('Rule D: detects monologue ratio exceeding threshold', () => {
+    const monoBlock = '他心中暗想，这一切究竟是怎么回事。恐惧在心底蔓延。脑海中的画面不断闪回。思绪万千，百感交集。内心深处有个声音在呼唤。记忆涌上心头。灵魂深处的某个角落在颤抖。心底响起一个声音。';
+    const actionBlock = '他转身推开门。走到院子里。抬头看着天空。深吸一口气。拔出剑。握紧剑柄。踢开石子。捡起地上的信。';
+    const content = pad + (monoBlock + '\n\n' + actionBlock + '\n\n').repeat(5) + (monoBlock + '\n\n').repeat(5);
+    const violations = detectExcessiveMonologue(content);
+    const ratioViols = violations.filter(v => v.rule === 'monologue-ratio');
+    expect(ratioViols.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('Rule D: does not flag when ratio is within threshold', () => {
+    const content = pad + '\n\n他推开门，走到院子里。抬头看了看天。拔出剑。转身离开。' + pad;
+    const violations = detectExcessiveMonologue(content);
+    const ratioViols = violations.filter(v => v.rule === 'monologue-ratio');
+    expect(ratioViols).toHaveLength(0);
+  });
+
+  it('Rule D: strict mode via options.monologueRatioMax', () => {
+    const monoBlock = '他心中暗想，这一切究竟是怎么回事。恐惧在心底蔓延。脑海中的画面不断闪回。思绪万千，百感交集。内心深处有个声音在呼唤。记忆涌上心头。灵魂深处的某个角落在颤抖。心底响起一个声音。';
+    const actionBlock = '他转身推开门。走到院子里。抬头看着天空。深吸一口气。拔出剑。握紧剑柄。踢开石子。捡起地上的信。';
+    const content = pad + (monoBlock + '\n\n' + actionBlock + '\n\n').repeat(3);
+    const normalViolations = detectExcessiveMonologue(content);
+    const strictViolations = detectExcessiveMonologue(content, 'zh', { monologueRatioMax: 0.20 });
+    const normalRatio = normalViolations.filter(v => v.rule === 'monologue-ratio').length;
+    const strictRatio = strictViolations.filter(v => v.rule === 'monologue-ratio').length;
+    expect(strictRatio).toBeGreaterThanOrEqual(normalRatio);
+  });
+
+  it("regression: does not flag Chinese single-quote dialogue as monologue", () => {
+    const pad = "陈渊站在院子里，看着天空。远处的山峰在晨光中显得格外清晰。陈渊站在院子里，看着天空。远处的山峰在晨光中显得格外清晰。陈渊站在院子里，看着天空。远处的山峰在晨光中显得格外清晰。陈渊站在院子里，看着天空。远处的山峰在晨光中显得格外清晰。陈渊站在院子里，看着天空。远处的山峰在晨光中显得格外清晰。陈渊站在院子里，看着天空。远处的山峰在晨光中显得格外清晰";
+    const content = pad + "\n\n" + "‘我感到非常害怕。’他低声道。" + pad;
+    const violations = detectExcessiveMonologue(content);
+    const emotionViols = violations.filter(v => v.rule === "excessive-monologue");
+    expect(emotionViols).toHaveLength(0);
+  });
+
+
+  it('multiple rules can fire simultaneously', () => {
+    const monoBlock = '他心中涌起一股暖意，终于明白了她的用心良苦。恐惧在心底蔓延。记忆涌上心头。灵魂深处有个声音在呼唤。思绪万千。百感交集。内心深处有个声音在呼唤。脑海中的画面不断闪回。';
+    const content = pad + pad + '\n\n' + monoBlock.repeat(3);
+    const violations = detectExcessiveMonologue(content);
+    const rules = new Set(violations.map(v => v.rule));
+    expect(rules.size).toBeGreaterThanOrEqual(2);
+  });
+
+  it('violation descriptions include snippet of offending text', () => {
+    const content = pad + pad + '\n\n他心里盘算着，如果此时动手，那么风险在于对方的修为远超自己，综合考虑利大于弊。' + pad;
+    const violations = detectExcessiveMonologue(content);
+    const analytical = violations.find(v => v.rule === 'analytical-monologue');
+    expect(analytical).toBeDefined();
+    expect(analytical!.description).toContain('盘算');
+  });
+
+  it('short analytical sentence under 15 words is skipped', () => {
+    const content = pad + '\n\n这意味着战争。他转身离开。他推开门。他走向远方。' + pad;
+    const violations = detectExcessiveMonologue(content);
+    const analytical = violations.filter(v => v.rule === 'analytical-monologue');
+    expect(analytical).toHaveLength(0);
+  });
+
+  it('heavy dialogue chapter is not flagged as monologue ratio', () => {
+    const dialoguePara = [
+      '“你疯了。”他低声道。',
+      '“我没疯。”她笑了笑。',
+      '“这是不可能的。”他摇头。',
+      '“一切皆有可能。”她转身离开。',
+    ];
+    const content = dialoguePara.join('\n\n');
+    const violations = detectExcessiveMonologue(content);
+    const ratioViols = violations.filter(v => v.rule === 'monologue-ratio');
+    expect(ratioViols).toHaveLength(0);
+  });
+
+  it('paragraph with mixed action and monologue is classified correctly', () => {
+    const mixedPara = '他推开窗，心中暗想，这一切来得太突然了。恐惧让他握紧了拳头，转身走向门口。';
+    const normalPara = '门外传来脚步声。阳光洒在地上。院子里的树沙沙作响。远处有人在说话。';
+    const content = normalPara + '\n\n' + mixedPara + '\n\n' + normalPara;
+    const violations = detectExcessiveMonologue(content);
+    const consecViols = violations.filter(v => v.rule === 'consecutive-monologue');
+    expect(consecViols).toHaveLength(0);
+  });
+  it('error handling: returns empty array on exception', () => {
+    const violations = detectExcessiveMonologue(null as any);
+    expect(Array.isArray(violations)).toBe(true);
   });
 });

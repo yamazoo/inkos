@@ -6,6 +6,8 @@
  * - dim 21: Filler/hedge word density
  * - dim 22: Formulaic transition patterns
  * - dim 23: List-like structure (consecutive same-prefix sentences)
+ * - dim 24: Simile homogeneity (consecutive paragraphs with similes)
+ * - dim 25: Emotion label density
  */
 
 export interface AITellIssue {
@@ -153,6 +155,54 @@ export function analyzeAITells(content: string, language: AITellLanguage = "zh")
         suggestion: isEnglish
           ? "Vary how sentences open: change subject, timing, or action entry to break the list effect"
           : "变换句式开头：用不同主语、时间词、动作词开头，打破列表感",
+      });
+    }
+  }
+
+  // dim 24: Simile homogeneity — consecutive paragraphs with similes
+  if (language === "zh" && paragraphs.length >= 3) {
+    const similePattern = /(?:像|像是|好像|宛如|犹如|仿佛)/;
+    let consecutiveSimile = 1;
+    let maxConsecutiveSimile = 1;
+    for (let i = 1; i < paragraphs.length; i++) {
+      const prevHas = similePattern.test(paragraphs[i - 1]!);
+      const currHas = similePattern.test(paragraphs[i]!);
+      if (prevHas && currHas) {
+        consecutiveSimile++;
+        maxConsecutiveSimile = Math.max(maxConsecutiveSimile, consecutiveSimile);
+      } else {
+        consecutiveSimile = 1;
+      }
+    }
+    if (maxConsecutiveSimile >= 3) {
+      issues.push({
+        severity: "warning",
+        category: "明喻同质化",
+        description: `连续${maxConsecutiveSimile}段都使用了"像/像是"类明喻，句式单调`,
+        suggestion: "交替使用明喻、暗喻、直接描写、动作外化等多种修辞手法",
+      });
+    }
+  }
+
+  // dim 25: Emotion label density
+  const EMOTION_LABELS_ZH: ReadonlyArray<string> = [
+    "感到", "觉得", "心里", "内心", "心中", "胸口", "心头", "心底",
+  ];
+
+  if (language === "zh" && totalChars > 0) {
+    let emotionCount = 0;
+    for (const label of EMOTION_LABELS_ZH) {
+      const regex = new RegExp(label, "g");
+      const matches = content.match(regex);
+      emotionCount += matches?.length ?? 0;
+    }
+    const emotionDensity = emotionCount / (totalChars / 1000);
+    if (emotionDensity > 5) {
+      issues.push({
+        severity: "info",
+        category: "情感标签密度",
+        description: `情感直述词（感到/觉得/心里等）密度为${emotionDensity.toFixed(1)}次/千字（阈值>5），倾向于直接命名情绪而非用细节展示`,
+        suggestion: "用身体反应、动作、感官细节替代情感标签：✗'他感到愤怒' → ✓'他捏紧了拳头'",
       });
     }
   }

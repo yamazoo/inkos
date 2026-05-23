@@ -63,6 +63,9 @@ export function parseSettlerDeltaOutput(content: string): SettlerDeltaOutput {
         `[settler-delta-parser] TIMELINE block parse failed, ignoring: ${err instanceof Error ? err.message : String(err)}`,
       );
     }
+  } else {
+    // eslint-disable-next-line no-console
+    console.warn("[settler-delta-parser] TIMELINE block not found in Settler output");
   }
 
   return {
@@ -74,6 +77,7 @@ export function parseSettlerDeltaOutput(content: string): SettlerDeltaOutput {
 
 function stripCodeFence(value: string): string {
   const trimmed = value.trim();
-  const fenced = trimmed.match(/^```(?:json)?\s*([\s\S]*?)\s*```$/i);
+  // LLMs sometimes add --- separators or trailing whitespace after the closing ```
+  const fenced = trimmed.match(/^```(?:json)?\s*([\s\S]*?)\s*```(?:\s*---)?\s*$/i);
   return fenced?.[1]?.trim() ?? trimmed;
 }

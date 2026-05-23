@@ -80,10 +80,12 @@ export class UploadStateManager {
   async getPendingChapters(
     approvedOnly: boolean,
     chapterIndex: ReadonlyArray<{ number: number; title: string; status: string; wordCount: number }>,
+    force = false,
   ): Promise<ReadonlyArray<{ number: number; title: string; status: string; wordCount: number }>> {
     const state = await this.load();
     return chapterIndex.filter((ch) => {
       if (approvedOnly && ch.status !== "approved") return false;
+      if (force) return true;
       const uploaded = state?.chapters[String(ch.number)];
       return !uploaded || uploaded.status === "failed";
     });

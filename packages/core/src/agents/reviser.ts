@@ -196,6 +196,20 @@ export class ReviserAgent extends BaseAgent {
           .map((i) => `- [${i.severity}] ${i.category}: ${i.description}\n  ${isEnglish ? "Suggestion" : "建议"}: ${i.suggestion}`)
           .join("\n");
 
+    // AI pattern repair block — targeted fix instructions for AI-tell issues
+    const aiPatternRules = [
+      "禁止句式", "明喻密度", "跨章比喻重复", "跨章重复", "转折词密度",
+    ];
+    const aiPatternIssues = issueList
+      .split("\n")
+      .filter((line) => aiPatternRules.some((rule) => line.includes(rule)));
+    let aiPatternRepairBlock = "";
+    if (aiPatternIssues.length > 0) {
+      aiPatternRepairBlock = isEnglish
+        ? `\n## AI Pattern Repair\nThe following AI-tell patterns must be fixed:\n${aiPatternIssues.join("\n")}\n\nRepair principles:\n1. Replace abstract expressions with concrete actions and sensory details\n2. Remove excess similes; use direct description instead\n3. Replace repeated cross-chapter metaphors with fresh imagery\n4. Do not simply delete — replace with equally vivid concrete writing of similar length\n`
+        : `\n## AI 模式专项修复\n以下 AI 痕迹必须在本次修复中根治：\n${aiPatternIssues.join("\n")}\n修复原则：\n1. 用具体动作、感官细节、角色行为替代抽象表达\n2. 删除多余明喻，改用直接描写\n3. 替换跨章重复比喻为新意象\n4. 不要简单删除——替换为等长的具象描写，保持字数稳定\n`;
+    }
+
     const numericalRule = gp.numericalSystem
       ? (isEnglish
           ? "\n3. Numerical errors must be fixed precisely — cross-check before and after"
@@ -303,14 +317,14 @@ ${ledgerBlock}
 ${sanitizeNarrativeEvidenceBlock(hookDebtBlock, resolvedLanguage) ?? ""}${sanitizeNarrativeEvidenceBlock(hooksBlock, resolvedLanguage) ?? ""}${sanitizeNarrativeEvidenceBlock(volumeSummariesBlock, resolvedLanguage) ?? ""}${reducedControlBlock || outlineBlock}${bibleBlock}${matrixBlock}${sanitizeNarrativeEvidenceBlock(summariesBlock, resolvedLanguage) ?? ""}${canonBlock}${fanficCanonBlock}${styleGuideBlock}${lengthGuidanceBlock}
 
 ## 待修正章节
-${chapterContent}${timelineRepairBlock}`;
+${chapterContent}${timelineRepairBlock}${aiPatternRepairBlock}`;
 
     const response = await this.chat(
       [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
       ],
-      { temperature: 0.3 },
+      { temperature: 0.3, maxTokens: Math.max(4096, Math.round((options?.lengthSpec?.hardMax ?? 4000) * 1.5 * 1.5)) },
     );
 
     const output = this.parseOutput(
@@ -670,6 +684,9 @@ const LOCAL_ONLY_PATTERNS: ReadonlyArray<RegExp> = [
   /Fatigue word|高疲劳词/i,
   /Information Boundary Check|信息越界/i,
   /Knowledge Base Pollution|知识库污染/i,
+  /禁止句式/,
+  /明喻密度/,
+  /跨章比喻重复/,
 ];
 
 // Structural/semantic categories: character collapse, mainline drift, conflict

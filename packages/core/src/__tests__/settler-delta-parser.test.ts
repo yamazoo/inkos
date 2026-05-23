@@ -187,6 +187,36 @@ describe("parseSettlerDeltaOutput with TIMELINE", () => {
     expect(result.timelineDelta).toBeUndefined();
   });
 
+  it("parses TIMELINE block with --- separator after closing fence", () => {
+    const content = [
+      "=== POST_SETTLEMENT ===",
+      "test",
+      "",
+      "=== RUNTIME_STATE_DELTA ===",
+      "```json",
+      validDelta,
+      "```",
+      "",
+      "---",
+      "",
+      "=== TIMELINE ===",
+      "```json",
+      JSON.stringify({
+        storyDay: 1,
+        dayLabel: "",
+        events: [],
+      }, null, 2),
+      "```",
+      "",
+      "---",
+    ].join("\n");
+
+    const result = parseSettlerDeltaOutput(content);
+    expect(result.timelineDelta).toBeDefined();
+    expect(result.timelineDelta!.storyDay).toBe(1);
+    expect(result.timelineDelta!.events).toEqual([]);
+  });
+
   it("returns undefined timelineDelta for invalid TIMELINE JSON", () => {
     const content = [
       "=== POST_SETTLEMENT ===",

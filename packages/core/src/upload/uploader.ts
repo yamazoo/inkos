@@ -13,6 +13,7 @@ export interface UploadOptions {
   readonly chapters?: string; // e.g. "1-10" or "5"
   readonly approvedOnly?: boolean;
   readonly dryRun?: boolean;
+  readonly force?: boolean;
   readonly maxChaptersPerHour?: number;
   readonly draftMode?: boolean;
   readonly username?: string;
@@ -64,6 +65,7 @@ export class Uploader {
   private adapter: PlatformAdapter;
   private readonly dryRun: boolean;
   private readonly draftMode: boolean;
+  private readonly force: boolean;
   private readonly username: string;
   private readonly bookTitle: string;
   private readonly chapterRange: ReadonlyArray<number> | null;
@@ -90,6 +92,7 @@ export class Uploader {
     this.adapter = getAdapter(platform);
     this.dryRun = options.dryRun ?? false;
     this.draftMode = options.draftMode ?? false;
+    this.force = options.force ?? false;
     this.username = options.username ?? "default";
     this.bookTitle = options.bookTitle ?? "";
     this.chapterRange = parseChapterRange(options.chapters);
@@ -193,6 +196,7 @@ export class Uploader {
     let chaptersToUpload = await this.stateManager.getPendingChapters(
       this.chapterRange === null, // if no range specified, only upload approved
       this.chapterIndex,
+      this.force,
     );
 
     // Filter by explicit range
@@ -335,9 +339,9 @@ export class Uploader {
     const results: Array<{ number: number; title: string; status: string; wordCount: number }> = [];
 
     for (const num of numbers) {
-      // Skip if already uploaded
+      // Skip if already uploaded (unless --force)
       const existing = state?.chapters[String(num)];
-      if (existing?.status === "uploaded") continue;
+      if (existing?.status === "uploaded" && !this.force) continue;
 
       const chapterFile = files.find(
         (f) => f.startsWith(String(num).padStart(4, "0")) || f.match(new RegExp(`^0*${num}[_\\-]`)),

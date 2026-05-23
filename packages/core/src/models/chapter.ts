@@ -37,6 +37,7 @@ export const ChapterMetaSchema = z.object({
     completionTokens: z.number().int().default(0),
     totalTokens: z.number().int().default(0),
   }).optional(),
+  overallScore: z.number().min(0).max(100).optional(),
 });
 
 export type ChapterMeta = z.infer<typeof ChapterMetaSchema>;

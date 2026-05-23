@@ -67,6 +67,7 @@ export const BookConfigSchema = z.object({
   fanficMode: FanficModeSchema.optional(),
   platformBookId: z.string().optional(),
   briefSource: z.string().optional(),
+  synopsis: z.string().max(200).optional(),
 });
 
 export type BookConfig = z.infer<typeof BookConfigSchema>;

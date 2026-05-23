@@ -56,6 +56,7 @@ export async function persistChapterArtifacts(params: {
       : undefined,
     lengthTelemetry: params.lengthTelemetry,
     tokenUsage: params.tokenUsage,
+    overallScore: params.auditResult.overallScore,
   };
   const existingIdx = existingIndex.findIndex((e) => e.number === params.chapterNumber);
   const updatedIndex = existingIdx >= 0

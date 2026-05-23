@@ -10,6 +10,11 @@ export interface PlatformRankings {
   readonly entries: ReadonlyArray<RankingEntry>;
 }
 
+export interface BookDetailsResult {
+  readonly titles: ReadonlyArray<string>;
+  readonly synopses: ReadonlyArray<string>;
+}
+
 /**
  * Pluggable data source for the Radar agent.
  * Implement this interface to feed custom ranking/trend data
@@ -82,6 +87,38 @@ export class FanqieRadarSource implements RadarSource {
     }
 
     return { platform: "番茄小说", entries };
+  }
+
+  async fetchBookDetails(_genre: string): Promise<BookDetailsResult> {
+    const titles: string[] = [];
+    const synopses: string[] = [];
+    const seen = new Set<string>();
+
+    for (const { sideType } of FANQIE_RANK_TYPES) {
+      try {
+        const url = `https://api-lf.fanqiesdk.com/api/novel/channel/homepage/rank/rank_list/v2/?aid=13&limit=15&offset=0&side_type=${sideType}`;
+        const res = await globalThis.fetch(url, {
+          headers: { "User-Agent": "Mozilla/5.0 (compatible; InkOS/0.1)" },
+        });
+        if (!res.ok) continue;
+        const data = (await res.json()) as Record<string, unknown>;
+        const list = (data as { data?: { result?: unknown[] } }).data?.result;
+        if (!Array.isArray(list)) continue;
+
+        for (const item of list) {
+          const rec = item as Record<string, unknown>;
+          const title = String(rec.book_name ?? "");
+          if (!title || seen.has(title)) continue;
+          seen.add(title);
+          titles.push(title);
+          synopses.push(String(rec.abstract ?? ""));
+        }
+      } catch {
+        // skip on network error
+      }
+    }
+
+    return { titles, synopses };
   }
 }
 
