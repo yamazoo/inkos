@@ -66,3 +66,11 @@ radar/
 *.bmp
 TODOS.md
 test-split-debug-output.txt
+
+# Scraper & data files
+fanqie_scraper.js
+fanqie_decode.py
+fangu_pacing_template.json
+fanqie_pacing_template_consolidated.json
+font_mapping.json
+E*workspaceinkosfanqie_scraper.js
