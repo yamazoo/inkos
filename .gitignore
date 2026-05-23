@@ -74,3 +74,9 @@ fangu_pacing_template.json
 fanqie_pacing_template_consolidated.json
 font_mapping.json
 E*workspaceinkosfanqie_scraper.js
+
+# Engineering files
+*.tsbuildinfo
+*.log
+.env*
+pnpm-lock.yaml
