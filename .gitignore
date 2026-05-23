@@ -65,3 +65,4 @@ radar/
 *.webp
 *.bmp
 TODOS.md
+test-split-debug-output.txt
