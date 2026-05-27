@@ -1,10 +1,11 @@
 import { BaseAgent } from "./base.js";
 import type { BookConfig, FanficMode } from "../models/book.js";
 import type { GenreProfile } from "../models/genre-profile.js";
-import { readGenreProfile } from "./rules-reader.js";
+import { parseGenreProfile } from "../models/genre-profile.js";
+import { readGenreProfile, getBuiltinGenresDir } from "./rules-reader.js";
 import { BookRulesSchema } from "../models/book-rules.js";
 import yaml from "js-yaml";
-import { writeFile, mkdir, rm } from "node:fs/promises";
+import { writeFile, mkdir, rm, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { renderHookSnapshot } from "../utils/memory-retrieval.js";
 import {
@@ -100,6 +101,35 @@ export interface ArchitectOutput {
   readonly roles?: ReadonlyArray<ArchitectRole>;
 }
 
+/**
+ * If externalContext contains mortal-flow keywords, load mortal-flow.md
+ * character design constraints and append them to genreBody.
+ * Returns original genreBody when no sub-genre is detected.
+ */
+export async function loadSubGenreConstraints(
+  externalContext: string | undefined,
+  genreBody: string,
+): Promise<string> {
+  const ctx = externalContext ?? "";
+  if (!ctx.includes("凡人流") && !ctx.includes("凡人修仙")) {
+    return genreBody;
+  }
+  const subGenrePath = join(getBuiltinGenresDir(), "mortal-flow.md");
+  let raw: string | null = null;
+  try {
+    raw = await readFile(subGenrePath, "utf-8");
+  } catch {
+    return genreBody;
+  }
+  try {
+    const { body } = parseGenreProfile(raw);
+    return body ? genreBody + "\n\n" + body : genreBody;
+  } catch (e) {
+    console.warn(`[architect] mortal-flow.md exists but failed to parse: ${e instanceof Error ? e.message : String(e)}`);
+    return genreBody;
+  }
+}
+
 export class ArchitectAgent extends BaseAgent {
   get name(): string {
     return "architect";
@@ -121,6 +151,7 @@ export class ArchitectAgent extends BaseAgent {
   ): Promise<ArchitectOutput> {
     const { profile: gp, body: genreBody } =
       await readGenreProfile(this.ctx.projectRoot, book.genre);
+    const mergedGenreBody = await loadSubGenreConstraints(externalContext, genreBody);
     const resolvedLanguage = book.language ?? gp.language;
 
     const contextBlock = externalContext
@@ -138,8 +169,8 @@ export class ArchitectAgent extends BaseAgent {
     const eraBlock = gp.eraResearch ? "- 需要年代考据支撑（在 book_rules 中设置 eraConstraints）" : "";
 
     const systemPrompt = resolvedLanguage === "en"
-      ? this.buildEnglishFoundationPrompt(book, gp, genreBody, contextBlock, reviewFeedbackBlock, numericalBlock, powerBlock, eraBlock)
-      : this.buildChineseFoundationPrompt(book, gp, genreBody, contextBlock, reviewFeedbackBlock, numericalBlock, powerBlock, eraBlock);
+      ? this.buildEnglishFoundationPrompt(book, gp, mergedGenreBody, contextBlock, reviewFeedbackBlock, numericalBlock, powerBlock, eraBlock)
+      : this.buildChineseFoundationPrompt(book, gp, mergedGenreBody, contextBlock, reviewFeedbackBlock, numericalBlock, powerBlock, eraBlock);
 
     const langPrefix = resolvedLanguage === "en"
       ? `【LANGUAGE OVERRIDE】ALL output (story_frame, volume_map, roles, book_rules, pending_hooks) MUST be written in English. Character names, place names, and all prose must be in English. The === SECTION: === tags remain unchanged. Do NOT emit rhythm_principles or current_state sections — rhythm principles live inside the last paragraph of volume_map; environment/era anchors (when relevant) are woven into story_frame's world-tonal-ground paragraph.\n\n`
@@ -363,8 +394,8 @@ genreLock:
   primary: ${book.genre}
   forbidden: [(2-3种禁止混入的文风)]
 ${gp.numericalSystem ? `numericalSystemOverrides:
-  hardCap: (根据设定确定)
-  resourceTypes: [(核心资源类型列表)]` : ""}
+  hardCap: "渡劫期"
+  resourceTypes: [灵石, 丹药, 法器]` : ""}
 prohibitions:
   - (3-5条本书禁忌)
 chapterTypesOverride: []
@@ -557,8 +588,8 @@ genreLock:
   primary: ${book.genre}
   forbidden: [(2-3 forbidden style intrusions)]
 ${gp.numericalSystem ? `numericalSystemOverrides:
-  hardCap: (decide from setting)
-  resourceTypes: [(core resource types)]` : ""}
+  hardCap: "Nascent Soul"
+  resourceTypes: [spirit_stones, pills, artifacts]` : ""}
 prohibitions:
   - (3-5 book-specific prohibitions)
 chapterTypesOverride: []
